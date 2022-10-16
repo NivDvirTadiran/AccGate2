@@ -38,7 +38,8 @@ import { RegisterFormComponent } from './login/register-form/register-form.compo
 import {ReplacePassFormComponent} from "./login/replace-pass-form/replace-pass-form.component";
 import {ApiErrorMessagePipe} from "./pipes/api-error-message.pipe";
 import {LoginErrorMessagePipe} from "./pipes/login-error-message.pipe";
-
+import  Page2Component  from './page/page.component';
+import { LanguageIconComponent } from './page/language-icon/language-icon.component';
 
 @NgModule({
     declarations: [
@@ -53,7 +54,9 @@ import {LoginErrorMessagePipe} from "./pipes/login-error-message.pipe";
         RegisterFormComponent,
         ReplacePassFormComponent,
         ApiErrorMessagePipe,
-        LoginErrorMessagePipe
+        LoginErrorMessagePipe,
+        Page2Component,
+        LanguageIconComponent
     ],
   imports: [
     BrowserModule,

@@ -9,8 +9,10 @@ import { BoardUserComponent } from './board-user/board-user.component';
 import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { AppRoutingGuard } from './app-routing.guard';
+import Page2Component from "./page/page.component";
 
 const routes: Routes = [
+  { path: 'page', component: Page2Component },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },

@@ -1,0 +1,57 @@
+// also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
+import { Story, Meta } from '@storybook/angular/types-6-0';
+import { LanguageIconComponent } from './language-icon.component';
+import {moduleMetadata} from "@storybook/angular";
+import {CommonModule} from "@angular/common";
+
+// More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
+export default {
+  title: 'Example/LanguageIcon',
+  component: LanguageIconComponent,
+  decorators: [
+    moduleMetadata({
+      declarations: [],
+      imports: [CommonModule],
+    }),
+  ],
+  // More on argTypes: https://storybook.js.org/docs/angular/api/argtypes
+} as Meta;
+
+// More on component templates: https://storybook.js.org/docs/angular/writing-stories/introduction#using-args
+const Template: Story<LanguageIconComponent> = (args: LanguageIconComponent) => ({
+  props: args,
+});
+
+export const Primary = Template.bind({});
+// More on args: https://storybook.js.org/docs/angular/writing-stories/args
+Primary.args = {
+  primary: true,
+  label: 'language button1',
+};
+Primary.parameters = {
+  backgrounds: {
+    values: [
+      { name: 'red', value: '#f00' },
+      { name: 'green', value: '#0f0' },
+      { name: 'blue', value: '#00f' },
+    ],
+  },
+};
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+  label: 'button2',
+};
+
+
+export const Large = Template.bind({});
+Large.args = {
+  size: 'large',
+  label: 'button3',
+};
+
+export const Small = Template.bind({});
+Small.args = {
+  size: 'small',
+  label: 'button4',
+};
