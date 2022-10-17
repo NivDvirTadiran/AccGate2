@@ -1,11 +1,11 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'storybook-language-icon',
-  templateUrl: './language-icon.component.html',
-  styleUrls: ['./language-icon.component.css']
+  selector: 'storybook-language-icon2',
+  templateUrl: './language-icon2.component.html',
+  styleUrls: ['./language-icon2.component.css']
 })
-export class LanguageIconComponent {
+export class LanguageIcon2Component {
   /**
    * Is this the principal call to action on the page?
    */
@@ -39,9 +39,9 @@ export class LanguageIconComponent {
   onClick = new EventEmitter<Event>();
 
   public get classes(): string[] {
-    const mode = this.primary ? 'storybook-language-icon--primary' : 'storybook-language-icon--secondary';
+    const mode = this.primary ? 'storybook-language-icon2--primary' : 'storybook-language-icon2--secondary';
 
-    return ['storybook-language-icon', `storybook-language-icon--${this.size}`, mode];
+    return ['storybook-language-icon2', `storybook-language-icon2--${this.size}`, mode];
   }
 
 

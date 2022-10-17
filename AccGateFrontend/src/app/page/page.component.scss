@@ -1,23 +1,32 @@
 
-.Desktop-1Login-1 {
+.storybook-page2 {
+  position: absolute;
   width: inherit;
   height: inherit;
-  background: linear-gradient(228.37deg, #EFF8FF 22.25%, #B0DCFF 88.18%);
 }
+
+.Desktop-1Login-1 {
+  width: 100%;
+  height: 100%;
+  flex-grow: 0
+}
+
+/*background-image: linear-gradient(228.37deg, #EFF8FF 22.25%, #B0DCFF 88.18%)*/
+
+/*.Desktop-1Login-1 {
+  width: 1920px;
+  height: 1080px;
+  flex-grow: 0;
+  background-image: linear-gradient(228.37deg, #EFF8FF 22.25%, #B0DCFF 88.18%);
+}*/
+
 div.relative {
   position: relative;
   width: inherit;
   height: inherit;
 }
 
-div.absolute {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 200px;
-  height: 100px;
 
-}
 
 
 .Frame-1 {
@@ -48,4 +57,7 @@ img.icon-2 {
 }
 
 
+.storybook-page2--primary {
 
+  background: linear-gradient(228.37deg, #EFF8FF 22.25%, #B0DCFF 88.18%);
+}

@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 
 
@@ -7,13 +7,13 @@ import {Component, Input} from '@angular/core';
   templateUrl: './page.component.html',
   styleUrls: ['./page.component.scss']
 })
-export default class Page2Component {
+export default class Page2Component implements OnInit {
 
   /**
    * Is this the principal call to action on the page?
    */
   @Input()
-  primary = false;
+  primary = true;
 
 
   /**
@@ -22,6 +22,20 @@ export default class Page2Component {
   @Input()
   backgroundColor?: string;
 
+
+  /**
+   * What background color to use
+   */
+  @Input()
+  background?: string;
+
+  /**
+   * Button contents
+   *
+   * @required
+   */
+  @Input()
+  label = 'Page2Component';
 
   /*user: User | null = null;
 
@@ -43,5 +57,9 @@ export default class Page2Component {
 
     return ['storybook-page2', mode];
   }
+
+  constructor() {}
+
+  ngOnInit(): void {}
 }
 

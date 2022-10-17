@@ -1,7 +1,7 @@
 .Vector {
   position: absolute;
-  top: 54px;
-  right: 68px;
+  bottom: 54px;
+  left: 68px;
   width: 26px;
   height: 26px;
 }

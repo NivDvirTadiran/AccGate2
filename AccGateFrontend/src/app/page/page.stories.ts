@@ -7,10 +7,10 @@ import {CommonModule} from "@angular/common";
 export default {
   title: 'Example/Page2',
   component: Page2Component,
-  parameters: {
+  /*parameters: {
     // More on Story layout: https://storybook.js.org/docs/angular/configure/story-layout
     layout: 'fullscreen',
-  },
+  },*/
   decorators: [
     moduleMetadata({
       declarations: [],
@@ -33,16 +33,25 @@ Primary.args = {
 
 
 
-const Template: Story = (args) => ({
+const Template: Story<Page2Component> = (args: Page2Component) => ({
   props: args,
 });
 
 export const Primary = Template.bind({});
 Primary.args = {
   primary: true,
-  label: 'Button',
+  label: 'Button7',
   backgroundColor: '#ff0',
   background: 'linear-gradient(228.37deg, #EFF8FF 22.25%, #B0DCFF 88.18%)',
+};
+Primary.parameters = {
+  backgrounds: {
+    values: [
+      { name: 'red', value: '#f00' },
+      { name: 'green', value: '#0f0' },
+      { name: 'blue', value: '#00f' },
+    ],
+  },
 };
 
 export const Secondary = Template.bind({});

@@ -40,6 +40,7 @@ import {ApiErrorMessagePipe} from "./pipes/api-error-message.pipe";
 import {LoginErrorMessagePipe} from "./pipes/login-error-message.pipe";
 import  Page2Component  from './page/page.component';
 import { LanguageIconComponent } from './page/language-icon/language-icon.component';
+import { LanguageIcon2Component } from './page/language-icon2/language-icon2.component';
 
 @NgModule({
     declarations: [
@@ -56,7 +57,8 @@ import { LanguageIconComponent } from './page/language-icon/language-icon.compon
         ApiErrorMessagePipe,
         LoginErrorMessagePipe,
         Page2Component,
-        LanguageIconComponent
+        LanguageIconComponent,
+        LanguageIcon2Component,
     ],
   imports: [
     BrowserModule,

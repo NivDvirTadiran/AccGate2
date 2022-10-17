@@ -1699,7 +1699,7 @@
                     }
                 ]
             },
-            "templateData": "<div id=\"app\">\r\n  <nav class=\"navbar navbar-expand navbar-dark bg-dark\">\r\n\r\n    <a href=\"#\" class=\"navbar-brand\">\r\n      <img _ngcontent-c0=\"accGate\" class=\"nav-img\" srcset=\"./assets/images/TadiranTelecom2.webp\"  width=\"56\"\r\n           height=\"56\"><label>accGate</label>\r\n    </a>\r\n    <ul class=\"navbar-nav mr-auto\" routerLinkActive=\"active\">\r\n      <li class=\"nav-item\">\r\n        <a href=\"/home\" class=\"nav-link\" routerLink=\"home\">Home </a>\r\n      </li>\r\n      <li class=\"nav-item\" *ngIf=\"showAdminBoard\">\r\n        <a href=\"/admin\" class=\"nav-link\" routerLink=\"admin\">Admin Board</a>\r\n      </li>\r\n      <li class=\"nav-item\" *ngIf=\"showModeratorBoard\">\r\n        <a href=\"/mod\" class=\"nav-link\" routerLink=\"mod\">Moderator Board</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a href=\"/user\" class=\"nav-link\" *ngIf=\"isLoggedIn\" routerLink=\"user\">User</a>\r\n      </li>\r\n    </ul>\r\n\r\n    <ul class=\"navbar-nav ml-auto\" *ngIf=\"!isLoggedIn\">\r\n      <li class=\"nav-item\">\r\n        <a href=\"/register\" class=\"nav-link\" routerLink=\"register\">Sign Up</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a href=\"/login\" class=\"nav-link\" routerLink=\"login\">Login</a>\r\n      </li>\r\n    </ul>\r\n\r\n    <ul class=\"navbar-nav ml-auto\" *ngIf=\"isLoggedIn\">\r\n      <li class=\"nav-item\">\r\n        <a href=\"/profile\" class=\"nav-link\" routerLink=\"profile\">{{ username }}</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a href class=\"nav-link\" (click)=\"logout()\">LogOut</a>\r\n      </li>\r\n    </ul>\r\n  </nav>\r\n\r\n  <div class=\"container\">\r\n    <router-outlet></router-outlet>\r\n  </div>\r\n</div>\r\n"
+            "templateData": "\r\n<router-outlet  id=\"app\" ></router-outlet>\r\n\r\n\r\n<!--div id=\"app\">\r\n  <nav class=\"navbar navbar-expand navbar-dark bg-dark\">\r\n\r\n    <a href=\"#\" class=\"navbar-brand\">\r\n      <img _ngcontent-c0=\"accGate\" class=\"nav-img\" srcset=\"./assets/images/TadiranTelecom2.webp\"  width=\"56\"\r\n           height=\"56\"><label>accGate</label>\r\n    </a>\r\n    <ul class=\"navbar-nav mr-auto\" routerLinkActive=\"active\">\r\n      <li class=\"nav-item\">\r\n        <a href=\"/page\" class=\"nav-link\" routerLink=\"page\">Page </a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a href=\"/home\" class=\"nav-link\" routerLink=\"home\">Home </a>\r\n      </li>\r\n      <li class=\"nav-item\" *ngIf=\"showAdminBoard\">\r\n        <a href=\"/admin\" class=\"nav-link\" routerLink=\"admin\">Admin Board</a>\r\n      </li>\r\n      <li class=\"nav-item\" *ngIf=\"showModeratorBoard\">\r\n        <a href=\"/mod\" class=\"nav-link\" routerLink=\"mod\">Moderator Board</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a href=\"/user\" class=\"nav-link\" *ngIf=\"isLoggedIn\" routerLink=\"user\">User</a>\r\n      </li>\r\n    </ul>\r\n\r\n    <ul class=\"navbar-nav ml-auto\" *ngIf=\"!isLoggedIn\">\r\n      <li class=\"nav-item\">\r\n        <a href=\"/register\" class=\"nav-link\" routerLink=\"register\">Sign Up</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a href=\"/login\" class=\"nav-link\" routerLink=\"login\">Login</a>\r\n      </li>\r\n    </ul>\r\n\r\n    <ul class=\"navbar-nav ml-auto\" *ngIf=\"isLoggedIn\">\r\n      <li class=\"nav-item\">\r\n        <a href=\"/profile\" class=\"nav-link\" routerLink=\"profile\">{{ username }}</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a href class=\"nav-link\" (click)=\"logout()\">LogOut</a>\r\n      </li>\r\n    </ul>\r\n  </nav>\r\n\r\n  <div class=\"container\">\r\n    <router-outlet></router-outlet>\r\n  </div>\r\n</div-->\r\n"
         },
         {
             "name": "BoardAdminComponent",
@@ -2363,6 +2363,299 @@
             "templateData": "<div class=\"container \">\r\n  <br>\r\n  <header class=\"background jumbotron  \">\r\n    <h1 class=\"font_0\">\r\n      <span class=\"\" style=\"font-size:44px;\">\r\n        <dl>\r\n          <dt><span>{{ content }}</span></dt>\r\n          <dd><span>{{ ACC_VERSION }}</span></dd>\r\n        </dl>\r\n      </span>\r\n    </h1>\r\n  </header>\r\n\r\n  <aside>\r\n    <!-- Card -->\r\n    <div class=\"fa-pull-right bg-image card shadow-1-strong card-img\">\r\n      <div class=\"card-body text-white\">\r\n        <h5 class=\"card-title\">Card title</h5>\r\n        <p class=\"card-text\">\r\n          Some quick example text to build on the card title and make up the bulk of the\r\n          card's content.\r\n        </p>\r\n        <a href=\"#!\" class=\"btn btn-outline-light\">Button</a>\r\n      </div>\r\n    </div>\r\n    <!-- Card -->\r\n  </aside>\r\n\r\n  <div class=\"alert alert-success  \" role=\"alert\">\r\n    <h4 class=\"alert-heading \">Well done!</h4>\r\n    <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>\r\n    <hr>\r\n    <p class=\"mb-0\">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>\r\n  </div>\r\n\r\n</div>\r\n"
         },
         {
+            "name": "LanguageIconComponent",
+            "id": "component-LanguageIconComponent-2416ae558fd33326e3c78dd2378b286603a86d6ba7a53f453d5ee9c0b5824613adaaf3aeb2b1addf6e8cdb7d044b41c317367c3dd9cdbfaf9cdf080aae142cb9",
+            "file": "src/app/page/language-icon/language-icon.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-language-icon",
+            "styleUrls": [
+                "./language-icon.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./language-icon.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nWhat background color to use\n",
+                    "description": "<p>What background color to use</p>\n",
+                    "line": 19,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'accGateButton2'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 592,
+                            "end": 605,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 325,
+                            "tagName": {
+                                "pos": 593,
+                                "end": 601,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "required"
+                            },
+                            "comment": ""
+                        }
+                    ],
+                    "rawdescription": "\n\nButton contents\n\n",
+                    "description": "<p>Button contents</p>\n",
+                    "line": 33,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "primary",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nIs this the principal call to action on the page?\n",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 13,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nHow large should the button be?\n",
+                    "description": "<p>How large should the button be?</p>\n",
+                    "line": 25,
+                    "type": "\"small\" | \"medium\" | \"large\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nOptional click handler\n",
+                    "description": "<p>Optional click handler</p>\n",
+                    "line": 39,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 50,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-language-icon',\n  templateUrl: './language-icon.component.html',\n  styleUrls: ['./language-icon.component.css']\n})\nexport class LanguageIconComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'accGateButton2';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-language-icon--primary' : 'storybook-language-icon--secondary';\n\n    return ['storybook-language-icon', `storybook-language-icon--${this.size}`, mode];\n  }\n\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".Vector {\r\n  position: absolute;\r\n  top: 54px;\r\n  right: 68px;\r\n  width: 26px;\r\n  height: 26px;\r\n}\r\n\r\nimg.Language-Desktop-Icon {\r\n  position: absolute;\r\n  top: 1px;\r\n  right: 1px;\r\n  width: 26px;\r\n  height: 26px;\r\n  object-fit: contain;\r\n  box-shadow: 0 1px 1px 0 rgba(61, 142, 207, 0.15);\r\n}\r\n",
+                    "styleUrl": "./language-icon.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 45
+            },
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 41
+                    }
+                }
+            },
+            "templateData": "<div class=\"Vector\">\n<img (click)=\"onClick.emit($event)\" [ngClass]=\"classes\" [ngStyle]=\"{ 'background-color': backgroundColor }\"\n   src=\"/assets/images/language-desktop-icon.png\"\n       srcset=\"/assets/images/language-desktop-icon@2x.png 2x,\n             /assets/images/language-desktop-icon@3x.png 3x\"\n       class=\"Language-Desktop-Icon\"  alt=\"language-desktop-icon\"/>\n\n</div>\n"
+        },
+        {
+            "name": "LanguageIconComponent",
+            "id": "component-LanguageIconComponent-2416ae558fd33326e3c78dd2378b286603a86d6ba7a53f453d5ee9c0b5824613adaaf3aeb2b1addf6e8cdb7d044b41c317367c3dd9cdbfaf9cdf080aae142cb9-1",
+            "file": "src/app/page/language-icon2/language-icon.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-language-icon",
+            "styleUrls": [
+                "./language-icon.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./language-icon.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nWhat background color to use\n",
+                    "description": "<p>What background color to use</p>\n",
+                    "line": 19,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'accGateButton2'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 592,
+                            "end": 605,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 325,
+                            "tagName": {
+                                "pos": 593,
+                                "end": 601,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "required"
+                            },
+                            "comment": ""
+                        }
+                    ],
+                    "rawdescription": "\n\nButton contents\n\n",
+                    "description": "<p>Button contents</p>\n",
+                    "line": 33,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "primary",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nIs this the principal call to action on the page?\n",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 13,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nHow large should the button be?\n",
+                    "description": "<p>How large should the button be?</p>\n",
+                    "line": 25,
+                    "type": "\"small\" | \"medium\" | \"large\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nOptional click handler\n",
+                    "description": "<p>Optional click handler</p>\n",
+                    "line": 39,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 50,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-language-icon',\n  templateUrl: './language-icon.component.html',\n  styleUrls: ['./language-icon.component.css']\n})\nexport class LanguageIconComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'accGateButton2';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-language-icon--primary' : 'storybook-language-icon--secondary';\n\n    return ['storybook-language-icon', `storybook-language-icon--${this.size}`, mode];\n  }\n\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".Vector {\r\n  position: absolute;\r\n  top: 54px;\r\n  right: 68px;\r\n  width: 26px;\r\n  height: 26px;\r\n}\r\n\r\nimg.Language-Desktop-Icon {\r\n  position: absolute;\r\n  top: 1px;\r\n  right: 1px;\r\n  width: 26px;\r\n  height: 26px;\r\n  object-fit: contain;\r\n  box-shadow: 0 1px 1px 0 rgba(61, 142, 207, 0.15);\r\n}\r\n",
+                    "styleUrl": "./language-icon.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 45
+            },
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 41
+                    }
+                }
+            },
+            "isDuplicate": true,
+            "duplicateId": 1,
+            "duplicateName": "LanguageIconComponent-1",
+            "templateData": "<div class=\"Vector\">\n<img (click)=\"onClick.emit($event)\" [ngClass]=\"classes\" [ngStyle]=\"{ 'background-color': backgroundColor }\"\n   src=\"/assets/images/language-desktop-icon.png\"\n       srcset=\"/assets/images/language-desktop-icon@2x.png 2x,\n             /assets/images/language-desktop-icon@3x.png 3x\"\n       class=\"Language-Desktop-Icon\"  alt=\"language-desktop-icon\"/>\n\n</div>\n"
+        },
+        {
             "name": "LoginComponent",
             "id": "component-LoginComponent-36bd9058d95c7519ce13f79734698129284c2d762a9c2869ea645eedf342a8ac71a968a85fe85dd75164f85007ed80e7fa09ef47c27293f0a87028de4c09c58c",
             "file": "src/app/login/login.component.ts",
@@ -2625,6 +2918,79 @@
                 "OnInit"
             ],
             "templateData": "<div class=\"col-md-12\">\r\n  <div id=\"main-login-card\" class=\"card card-container\">\r\n\r\n    <img id=\"profile-img\" src=\"//ssl.gstatic.com/accounts/ui/avatar_2x.png\"\r\n      class=\"profile-img-card\" />\r\n    <form *ngIf=\"!isLoggedIn\" name=\"form\" (ngSubmit)=\"f.form.valid && onSubmit()\" #f=\"ngForm\" novalidate>\r\n      <div class=\"form-group\">\r\n        <label for=\"username\">Username</label>\r\n        <input type=\"text\" class=\"form-control\" name=\"username\" [(ngModel)]=\"form.username\"\r\n               placeholder=\"ea2\" required #username=\"ngModel\"/>\r\n        <div class=\"alert alert-danger\" role=\"alert\" *ngIf=\"username.errors && f.submitted\">\r\n          Username is required!\r\n        </div>\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"password\">Password</label>\r\n        <input type=\"password\" class=\"form-control\" name=\"password\"\r\n          [(ngModel)]=\"form.password\" placeholder=\"e1996\" required minlength=\"1\" #password=\"ngModel\"/>\r\n        <div\r\n          class=\"alert alert-danger\"\r\n          role=\"alert\"\r\n          *ngIf=\"password.errors && f.submitted\">\r\n          <div *ngIf=\"password.errors.required\">Password is required</div>\r\n          <div *ngIf=\"password.errors.minlength\">\r\n            Password must be at least 1 characters\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <button class=\"btn btn-primary btn-block\">Login</button>\r\n\r\n        <div>\r\n          <a (mouseover)=\"popover.show()\" (mouseleave)=\"popover.hide()\" (click)=\"openReplacePassword()\"\r\n             class=\"form-check-label white-text\"  href=\"#/login\" mdbPopoverTitle=\"Account recovery\" #popover=\"mdbPopover\"\r\n             mdbPopover=\"To help keep your account safe, we will make sure that it’s really you trying to sign in\">\r\n            Forgot password?\r\n          </a>\r\n        </div>\r\n\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <div class=\"alert alert-danger\" role=\"alert\" *ngIf=\"f.submitted && isLoginFailed\">\r\n          Login failed: {{ loginErrorMessage }}\r\n        </div>\r\n      </div>\r\n    </form>\r\n\r\n    <div class=\"alert alert-success\" *ngIf=\"isLoggedIn\">\r\n      Logged in as {{ roles }}.\r\n    </div>\r\n    <mdb-card-footer class=\"form-check-label white-text border-bottom-0\" id=\"tests\">\r\n      <label for=\"tests\" class=\"form-check-label white-text\"\r\n              style=\"margin-bottom: 1px; padding: 1px\">R&D test:\r\n        <a (click)=\"openRegisterForm()\" href=\"#/login\" class=\"green-text font-weight-bold\">RegistrationForm</a>\r\n        <b> ,</b>\r\n        <a (click)=\"openReplacePassword()\" href=\"#/login\" class=\"green-text font-weight-bold pl-2\">ReplacePassForm</a>\r\n        <b> ,</b>\r\n        <a (click)=\"test()\" href=\"#/login\" class=\"green-text font-weight-bold pl-2\">test</a>\r\n      </label>\r\n    </mdb-card-footer>\r\n  </div>\r\n\r\n\r\n\r\n</div>\r\n\r\n"
+        },
+        {
+            "name": "Page2Component",
+            "id": "component-Page2Component-babd58923db06021b5cf56f47ecd32d823ba13a0a1dbc7ec6af5e6f23cd08573f735bd0e1db2efd1b85d837090d3768f77dbd82260dfb7680a0781058adff474",
+            "file": "src/app/page/page.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-page2",
+            "styleUrls": [
+                "./page.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./page.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nWhat background color to use\n",
+                    "description": "<p>What background color to use</p>\n",
+                    "line": 23,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "primary",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nIs this the principal call to action on the page?\n",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 16,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component, Input} from '@angular/core';\n\n\n\n@Component({\n  selector: 'storybook-page2',\n  templateUrl: './page.component.html',\n  styleUrls: ['./page.component.scss']\n})\nexport default class Page2Component {\n\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n\n  /*user: User | null = null;\n\n  doLogout() {\n    this.user = null;\n  }\n\n  doLogin() {\n    this.user = { name: 'Jane Doe' };\n  }\n\n  doCreateAccount() {\n    this.user = { name: 'Jane Doe' };\n\n  }*/\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-page2--primary' : 'storybook-page2--secondary';\n\n    return ['storybook-page2', mode];\n  }\n}\n\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "\r\n.Desktop-1Login-1 {\r\n  width: inherit;\r\n  height: inherit;\r\n  background: linear-gradient(228.37deg, #EFF8FF 22.25%, #B0DCFF 88.18%);\r\n}\r\ndiv.relative {\r\n  position: relative;\r\n  width: inherit;\r\n  height: inherit;\r\n}\r\n\r\ndiv.absolute {\r\n  position: absolute;\r\n  bottom: 0;\r\n  right: 0;\r\n  width: 200px;\r\n  height: 100px;\r\n\r\n}\r\n\r\n\r\n.Frame-1 {\r\n  width: 1920px;\r\n  height: 1080px;\r\n  flex-grow: 0;\r\n}\r\n\r\n.fa-pull-left {float:left}\r\n\r\n.fa-pull-right {float:right}\r\n\r\nimg.icon-1 {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  width: 305.7px;\r\n  height: 309px;\r\n  transform: rotate(0deg);\r\n  background-position: bottom;\r\n}\r\n\r\nimg.icon-2 {\r\n  position: absolute;\r\n  bottom: 0;\r\n  right: 0;\r\n  width: 372px;\r\n  height: 343px;\r\n  flex-grow: 0;\r\n}\r\n\r\n\r\n\r\n",
+                    "styleUrl": "./page.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 41
+                    }
+                }
+            },
+            "templateData": "\n<html>\n<head>\n  <style>\n\n  </style>\n  <title></title>\n</head>\n<body>\n<!--article>\n<section class=\"relative \" Style=\"{ 'background': backgroundColor }\"-->\n  <div class=\"Frame-1 relative\">\n    <div class=\"Desktop-1Login-1\">\n    <img src=\"assets/images/icon-1.webp\" srcset=\"/assets/images/icon-1@2x.webp 2x, /assets/images/icon-1@3x.webp 3x\"\n         class=\"icon-1\" alt=\"icon-1\" />\n\n    <img src=\"assets/images/icon-2.webp\" srcset=\"/assets/images/icon-2@2x.webp 2x, /assets/images/icon-2@3x.webp 3x\"\n         class=\"icon-2  \" alt=\"icon-2fdf\" />\n    </div>\n    <storybook-language-icon size=\"large\"></storybook-language-icon>\n\n  </div>\n\n<!--/section>\n</article-->\n\n</body>\n</html>\n\n  <title></title>\n"
         },
         {
             "name": "PageComponent",
@@ -3654,13 +4020,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-72fe027226c385d80f20388a8d476e5f9fb6a800b0a25a72e530e3ccd9da2476a670ce29d51e1d0ce222251471a5eb62fb27ba83e32aee08c4602807900e05f6",
+            "id": "module-AppModule-692b226bb44456ab5e0c86087e19d5b609e70909be58c9760d2d706e625c567789297cb1bfeee6a6c930d88d23b18a9df9411f756ce9087de17d16271f1d640a",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport {FormsModule, ReactiveFormsModule} from '@angular/forms';\r\nimport { HttpClientModule } from '@angular/common/http';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { LoginComponent } from './login/login.component';\r\nimport { RegisterComponent } from './register/register.component';\r\nimport { HomeComponent } from './home/home.component';\r\nimport { ProfileComponent } from './profile/profile.component';\r\nimport { BoardAdminComponent } from './board-admin/board-admin.component';\r\nimport { BoardModeratorComponent } from './board-moderator/board-moderator.component';\r\nimport { BoardUserComponent } from './board-user/board-user.component';\r\n\r\nimport { authInterceptorProviders, AuthInterceptor } from './_helpers/auth.interceptor';\r\nimport {NgbDatepickerModule} from \"@ng-bootstrap/ng-bootstrap\";\r\nimport { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';\r\nimport { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';\r\nimport { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';\r\nimport { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';\r\nimport { MdbDropdownModule } from 'mdb-angular-ui-kit/dropdown';\r\nimport { MdbFormsModule } from 'mdb-angular-ui-kit/forms';\r\nimport { MdbModalModule } from 'mdb-angular-ui-kit/modal';\r\nimport { MdbPopoverModule } from 'mdb-angular-ui-kit/popover';\r\nimport { MdbRadioModule } from 'mdb-angular-ui-kit/radio';\r\nimport { MdbRangeModule } from 'mdb-angular-ui-kit/range';\r\nimport { MdbRippleModule } from 'mdb-angular-ui-kit/ripple';\r\nimport { MdbScrollspyModule } from 'mdb-angular-ui-kit/scrollspy';\r\nimport { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';\r\nimport { MdbModalRef } from 'mdb-angular-ui-kit/modal';\r\nimport { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';\r\nimport { MdbValidationModule, MdbErrorDirective, MdbSuccessDirective } from 'mdb-angular-ui-kit/validation';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { MdbInputDirective  } from 'mdb-angular-ui-kit/forms';\r\nimport { ModalModule, TooltipModule, PopoverModule, ButtonsModule, MDBBootstrapModule } from 'angular-bootstrap-md';\r\nimport { RegisterFormComponent } from './login/register-form/register-form.component';\r\nimport {ReplacePassFormComponent} from \"./login/replace-pass-form/replace-pass-form.component\";\r\nimport {ApiErrorMessagePipe} from \"./pipes/api-error-message.pipe\";\r\nimport {LoginErrorMessagePipe} from \"./pipes/login-error-message.pipe\";\r\n\r\n\r\n@NgModule({\r\n    declarations: [\r\n        AppComponent,\r\n        LoginComponent,\r\n        RegisterComponent,\r\n        HomeComponent,\r\n        ProfileComponent,\r\n        BoardAdminComponent,\r\n        BoardModeratorComponent,\r\n        BoardUserComponent,\r\n        RegisterFormComponent,\r\n        ReplacePassFormComponent,\r\n        ApiErrorMessagePipe,\r\n        LoginErrorMessagePipe\r\n    ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    FormsModule,\r\n    HttpClientModule,\r\n    NgbDatepickerModule,\r\n    MdbAccordionModule,\r\n    MdbCarouselModule,\r\n    MdbCheckboxModule,\r\n    MdbCollapseModule,\r\n    MdbDropdownModule,\r\n    MdbFormsModule,\r\n    MdbModalModule,\r\n    MdbPopoverModule,\r\n    MdbRadioModule,\r\n    MdbRangeModule,\r\n    MdbRippleModule,\r\n    MdbScrollspyModule,\r\n    MdbTabsModule,\r\n    MdbTooltipModule,\r\n    //MdbValidationModule,\r\n    BrowserAnimationsModule,\r\n    ReactiveFormsModule,\r\n    ModalModule,\r\n    ButtonsModule,\r\n    MDBBootstrapModule.forRoot(),\r\n  ],\r\n  providers: [authInterceptorProviders],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport {FormsModule, ReactiveFormsModule} from '@angular/forms';\r\nimport { HttpClientModule } from '@angular/common/http';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { LoginComponent } from './login/login.component';\r\nimport { RegisterComponent } from './register/register.component';\r\nimport { HomeComponent } from './home/home.component';\r\nimport { ProfileComponent } from './profile/profile.component';\r\nimport { BoardAdminComponent } from './board-admin/board-admin.component';\r\nimport { BoardModeratorComponent } from './board-moderator/board-moderator.component';\r\nimport { BoardUserComponent } from './board-user/board-user.component';\r\n\r\nimport { authInterceptorProviders, AuthInterceptor } from './_helpers/auth.interceptor';\r\nimport {NgbDatepickerModule} from \"@ng-bootstrap/ng-bootstrap\";\r\nimport { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';\r\nimport { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';\r\nimport { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';\r\nimport { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';\r\nimport { MdbDropdownModule } from 'mdb-angular-ui-kit/dropdown';\r\nimport { MdbFormsModule } from 'mdb-angular-ui-kit/forms';\r\nimport { MdbModalModule } from 'mdb-angular-ui-kit/modal';\r\nimport { MdbPopoverModule } from 'mdb-angular-ui-kit/popover';\r\nimport { MdbRadioModule } from 'mdb-angular-ui-kit/radio';\r\nimport { MdbRangeModule } from 'mdb-angular-ui-kit/range';\r\nimport { MdbRippleModule } from 'mdb-angular-ui-kit/ripple';\r\nimport { MdbScrollspyModule } from 'mdb-angular-ui-kit/scrollspy';\r\nimport { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';\r\nimport { MdbModalRef } from 'mdb-angular-ui-kit/modal';\r\nimport { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';\r\nimport { MdbValidationModule, MdbErrorDirective, MdbSuccessDirective } from 'mdb-angular-ui-kit/validation';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { MdbInputDirective  } from 'mdb-angular-ui-kit/forms';\r\nimport { ModalModule, TooltipModule, PopoverModule, ButtonsModule, MDBBootstrapModule } from 'angular-bootstrap-md';\r\nimport { RegisterFormComponent } from './login/register-form/register-form.component';\r\nimport {ReplacePassFormComponent} from \"./login/replace-pass-form/replace-pass-form.component\";\r\nimport {ApiErrorMessagePipe} from \"./pipes/api-error-message.pipe\";\r\nimport {LoginErrorMessagePipe} from \"./pipes/login-error-message.pipe\";\r\nimport  Page2Component  from './page/page.component';\r\nimport { LanguageIconComponent } from './page/language-icon/language-icon.component';\r\n\r\n@NgModule({\r\n    declarations: [\r\n        AppComponent,\r\n        LoginComponent,\r\n        RegisterComponent,\r\n        HomeComponent,\r\n        ProfileComponent,\r\n        BoardAdminComponent,\r\n        BoardModeratorComponent,\r\n        BoardUserComponent,\r\n        RegisterFormComponent,\r\n        ReplacePassFormComponent,\r\n        ApiErrorMessagePipe,\r\n        LoginErrorMessagePipe,\r\n        Page2Component,\r\n        LanguageIconComponent\r\n    ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    FormsModule,\r\n    HttpClientModule,\r\n    NgbDatepickerModule,\r\n    MdbAccordionModule,\r\n    MdbCarouselModule,\r\n    MdbCheckboxModule,\r\n    MdbCollapseModule,\r\n    MdbDropdownModule,\r\n    MdbFormsModule,\r\n    MdbModalModule,\r\n    MdbPopoverModule,\r\n    MdbRadioModule,\r\n    MdbRangeModule,\r\n    MdbRippleModule,\r\n    MdbScrollspyModule,\r\n    MdbTabsModule,\r\n    MdbTooltipModule,\r\n    //MdbValidationModule,\r\n    BrowserAnimationsModule,\r\n    ReactiveFormsModule,\r\n    ModalModule,\r\n    ButtonsModule,\r\n    MDBBootstrapModule.forRoot(),\r\n  ],\r\n  providers: [authInterceptorProviders],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -3688,10 +4054,16 @@
                             "name": "HomeComponent"
                         },
                         {
+                            "name": "LanguageIconComponent"
+                        },
+                        {
                             "name": "LoginComponent"
                         },
                         {
                             "name": "LoginErrorMessagePipe"
+                        },
+                        {
+                            "name": "Page2Component"
                         },
                         {
                             "name": "ProfileComponent"
@@ -3735,13 +4107,13 @@
         },
         {
             "name": "AppRoutingModule",
-            "id": "module-AppRoutingModule-c230473bab0189def1395cf8b349ccd6f2904eb76736f726a6dca7e078a361d05a536bdf953a39cf30b53f03cd6b6a8fa77c09ea8f6d912de6340d2d2de414cd",
+            "id": "module-AppRoutingModule-8dc318f394320f2467311783457de4141fb1b3d1fb0a5d018106fd7b196f84039e8e524fa660ce970049be7fe3ec5fa2b143bc2e49b83df4913a98ad31260d1f",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app-routing.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { RouterModule, Routes } from '@angular/router';\r\n\r\nimport { RegisterComponent } from './register/register.component';\r\nimport { LoginComponent } from './login/login.component';\r\nimport { HomeComponent } from './home/home.component';\r\nimport { ProfileComponent } from './profile/profile.component';\r\nimport { BoardUserComponent } from './board-user/board-user.component';\r\nimport { BoardModeratorComponent } from './board-moderator/board-moderator.component';\r\nimport { BoardAdminComponent } from './board-admin/board-admin.component';\r\nimport { AppRoutingGuard } from './app-routing.guard';\r\n\r\nconst routes: Routes = [\r\n  { path: 'home', component: HomeComponent },\r\n  { path: 'login', component: LoginComponent },\r\n  { path: 'register', component: RegisterComponent },\r\n  { path: 'profile', component: ProfileComponent/*, canActivate: [AppRoutingGuard] */},\r\n  { path: 'user', component: BoardUserComponent },\r\n  { path: 'mod', component: BoardModeratorComponent },\r\n  { path: 'admin', component: BoardAdminComponent },\r\n  { path: '', redirectTo: 'home', pathMatch: 'full' },\r\n  { path: 'home', loadChildren: () => \"import('./app.module').then(m => m.AppModule)\",},\r\n  { path: '**', redirectTo: 'home', },\r\n];\r\n\r\n@NgModule({\r\n  imports: [RouterModule.forRoot(routes, {useHash: true})],\r\n  exports: [RouterModule]\r\n})\r\nexport class AppRoutingModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { RouterModule, Routes } from '@angular/router';\r\n\r\nimport { RegisterComponent } from './register/register.component';\r\nimport { LoginComponent } from './login/login.component';\r\nimport { HomeComponent } from './home/home.component';\r\nimport { ProfileComponent } from './profile/profile.component';\r\nimport { BoardUserComponent } from './board-user/board-user.component';\r\nimport { BoardModeratorComponent } from './board-moderator/board-moderator.component';\r\nimport { BoardAdminComponent } from './board-admin/board-admin.component';\r\nimport { AppRoutingGuard } from './app-routing.guard';\r\nimport Page2Component from \"./page/page.component\";\r\n\r\nconst routes: Routes = [\r\n  { path: 'page', component: Page2Component },\r\n  { path: 'home', component: HomeComponent },\r\n  { path: 'login', component: LoginComponent },\r\n  { path: 'register', component: RegisterComponent },\r\n  { path: 'profile', component: ProfileComponent/*, canActivate: [AppRoutingGuard] */},\r\n  { path: 'user', component: BoardUserComponent },\r\n  { path: 'mod', component: BoardModeratorComponent },\r\n  { path: 'admin', component: BoardAdminComponent },\r\n  { path: '', redirectTo: 'home', pathMatch: 'full' },\r\n  { path: 'home', loadChildren: () => \"import('./app.module').then(m => m.AppModule)\",},\r\n  { path: '**', redirectTo: 'home', },\r\n];\r\n\r\n@NgModule({\r\n  imports: [RouterModule.forRoot(routes, {useHash: true})],\r\n  exports: [RouterModule]\r\n})\r\nexport class AppRoutingModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -3883,6 +4255,26 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Large",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/page/language-icon/language-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Large",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/page/language-icon2/language-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "LoggedIn",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -3903,6 +4295,16 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "LoggedIn",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/page/page.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "LoggedOut",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -3917,6 +4319,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Page.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "LoggedOut",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/page/page.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -3947,6 +4359,36 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/page/page.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/page/language-icon/language-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/page/language-icon2/language-icon.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -3992,10 +4434,60 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Secondary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/page/page.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Secondary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/page/language-icon/language-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Secondary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/page/language-icon2/language-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Small",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/page/language-icon/language-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Small",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/page/language-icon2/language-icon.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4030,6 +4522,36 @@
                 "deprecationMessage": "",
                 "type": "Story<Page>",
                 "defaultValue": "(args: Page) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/page/page.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "(args) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/page/language-icon/language-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<LanguageIconComponent>",
+                "defaultValue": "(args: LanguageIconComponent) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/page/language-icon2/language-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<LanguageIconComponent>",
+                "defaultValue": "(args: LanguageIconComponent) => ({\n  props: args,\n})"
             },
             {
                 "name": "TOKEN_HEADER_KEY",
@@ -4301,6 +4823,110 @@
                     "defaultValue": "(args: Button) => ({\n  props: args,\n})"
                 }
             ],
+            "src/app/page/language-icon/language-icon.stories.ts": [
+                {
+                    "name": "Large",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/page/language-icon/language-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/page/language-icon/language-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/page/language-icon/language-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Small",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/page/language-icon/language-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/page/language-icon/language-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<LanguageIconComponent>",
+                    "defaultValue": "(args: LanguageIconComponent) => ({\n  props: args,\n})"
+                }
+            ],
+            "src/app/page/language-icon2/language-icon.stories.ts": [
+                {
+                    "name": "Large",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/page/language-icon2/language-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/page/language-icon2/language-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/page/language-icon2/language-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Small",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/page/language-icon2/language-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/page/language-icon2/language-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<LanguageIconComponent>",
+                    "defaultValue": "(args: LanguageIconComponent) => ({\n  props: args,\n})"
+                }
+            ],
             "src/stories/Header.stories.ts": [
                 {
                     "name": "LoggedIn",
@@ -4365,6 +4991,58 @@
                     "defaultValue": "(args: Page) => ({\n  props: args,\n})"
                 }
             ],
+            "src/app/page/page.stories.ts": [
+                {
+                    "name": "LoggedIn",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/page/page.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "LoggedOut",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/page/page.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/page/page.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/page/page.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/page/page.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "(args) => ({\n  props: args,\n})"
+                }
+            ],
             "src/app/_services/token-storage.service.ts": [
                 {
                     "name": "REFRESHTOKEN_KEY",
@@ -4412,6 +5090,10 @@
                 "filename": "src/app/app-routing.module.ts",
                 "module": "AppRoutingModule",
                 "children": [
+                    {
+                        "path": "page",
+                        "component": "Page2Component"
+                    },
                     {
                         "path": "home",
                         "component": "HomeComponent"
@@ -4466,7 +5148,7 @@
         ]
     },
     "coverage": {
-        "count": 1,
+        "count": 3,
         "status": "low",
         "files": [
             {
@@ -4752,6 +5434,183 @@
                 "name": "ReplacePassFormComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/14",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/page/language-icon/language-icon.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "LanguageIconComponent",
+                "coveragePercent": 62,
+                "coverageCount": "5/8",
+                "status": "good"
+            },
+            {
+                "filePath": "src/app/page/language-icon/language-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Large",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/page/language-icon/language-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/page/language-icon/language-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Secondary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/page/language-icon/language-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Small",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/page/language-icon/language-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/page/language-icon2/language-icon.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "LanguageIconComponent",
+                "coveragePercent": 62,
+                "coverageCount": "5/8",
+                "status": "good"
+            },
+            {
+                "filePath": "src/app/page/language-icon2/language-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Large",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/page/language-icon2/language-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/page/language-icon2/language-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Secondary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/page/language-icon2/language-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Small",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/page/language-icon2/language-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/page/page.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "Page2Component",
+                "coveragePercent": 66,
+                "coverageCount": "2/3",
+                "status": "good"
+            },
+            {
+                "filePath": "src/app/page/page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedIn",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/page/page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedOut",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/page/page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/page/page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Secondary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/page/page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
