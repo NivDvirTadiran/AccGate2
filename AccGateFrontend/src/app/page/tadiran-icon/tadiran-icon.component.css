@@ -1,0 +1,17 @@
+.Vector {
+  position: absolute;
+  bottom: 50px;
+  left: 30px;
+  width: 151px;
+  height: 39px;
+}
+
+img.Language-Desktop-Icon {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 151px;
+  height: 39px;
+  object-fit: contain;
+  box-shadow: 0 1px 1px 0 rgba(61, 142, 207, 0.15);
+}

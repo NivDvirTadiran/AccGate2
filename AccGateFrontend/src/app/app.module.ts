@@ -40,7 +40,9 @@ import {ApiErrorMessagePipe} from "./pipes/api-error-message.pipe";
 import {LoginErrorMessagePipe} from "./pipes/login-error-message.pipe";
 import  Page2Component  from './page/page.component';
 import { LanguageIconComponent } from './page/language-icon/language-icon.component';
-import { LanguageIcon2Component } from './page/language-icon2/language-icon2.component';
+import { TadiranIconComponent } from './page/tadiran-icon/tadiran-icon.component';
+import Button from '../stories/buttons/button.component'
+import Card from '../stories/cards/card.component'
 
 @NgModule({
     declarations: [
@@ -58,7 +60,10 @@ import { LanguageIcon2Component } from './page/language-icon2/language-icon2.com
         LoginErrorMessagePipe,
         Page2Component,
         LanguageIconComponent,
-        LanguageIcon2Component,
+        TadiranIconComponent,
+        Button,
+        Card,
+
     ],
   imports: [
     BrowserModule,

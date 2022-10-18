@@ -1699,7 +1699,7 @@
                     }
                 ]
             },
-            "templateData": "\r\n<router-outlet  id=\"app\" ></router-outlet>\r\n\r\n\r\n<!--div id=\"app\">\r\n  <nav class=\"navbar navbar-expand navbar-dark bg-dark\">\r\n\r\n    <a href=\"#\" class=\"navbar-brand\">\r\n      <img _ngcontent-c0=\"accGate\" class=\"nav-img\" srcset=\"./assets/images/TadiranTelecom2.webp\"  width=\"56\"\r\n           height=\"56\"><label>accGate</label>\r\n    </a>\r\n    <ul class=\"navbar-nav mr-auto\" routerLinkActive=\"active\">\r\n      <li class=\"nav-item\">\r\n        <a href=\"/page\" class=\"nav-link\" routerLink=\"page\">Page </a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a href=\"/home\" class=\"nav-link\" routerLink=\"home\">Home </a>\r\n      </li>\r\n      <li class=\"nav-item\" *ngIf=\"showAdminBoard\">\r\n        <a href=\"/admin\" class=\"nav-link\" routerLink=\"admin\">Admin Board</a>\r\n      </li>\r\n      <li class=\"nav-item\" *ngIf=\"showModeratorBoard\">\r\n        <a href=\"/mod\" class=\"nav-link\" routerLink=\"mod\">Moderator Board</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a href=\"/user\" class=\"nav-link\" *ngIf=\"isLoggedIn\" routerLink=\"user\">User</a>\r\n      </li>\r\n    </ul>\r\n\r\n    <ul class=\"navbar-nav ml-auto\" *ngIf=\"!isLoggedIn\">\r\n      <li class=\"nav-item\">\r\n        <a href=\"/register\" class=\"nav-link\" routerLink=\"register\">Sign Up</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a href=\"/login\" class=\"nav-link\" routerLink=\"login\">Login</a>\r\n      </li>\r\n    </ul>\r\n\r\n    <ul class=\"navbar-nav ml-auto\" *ngIf=\"isLoggedIn\">\r\n      <li class=\"nav-item\">\r\n        <a href=\"/profile\" class=\"nav-link\" routerLink=\"profile\">{{ username }}</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a href class=\"nav-link\" (click)=\"logout()\">LogOut</a>\r\n      </li>\r\n    </ul>\r\n  </nav>\r\n\r\n  <div class=\"container\">\r\n    <router-outlet></router-outlet>\r\n  </div>\r\n</div-->\r\n"
+            "templateData": "\r\n<router-outlet  id=\"app\" ></router-outlet>\r\n\r\n<!--div id=\"app\">\r\n  <nav class=\"navbar navbar-expand navbar-dark bg-dark\">\r\n\r\n    <a href=\"#\" class=\"navbar-brand\">\r\n      <img _ngcontent-c0=\"accGate\" class=\"nav-img\" srcset=\"./assets/images/TadiranTelecom2.webp\"  width=\"56\"\r\n           height=\"56\"><label>accGate</label>\r\n    </a>\r\n    <ul class=\"navbar-nav mr-auto\" routerLinkActive=\"active\">\r\n      <li class=\"nav-item\">\r\n        <a href=\"/page\" class=\"nav-link\" routerLink=\"page\">Page </a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a href=\"/home\" class=\"nav-link\" routerLink=\"home\">Home </a>\r\n      </li>\r\n      <li class=\"nav-item\" *ngIf=\"showAdminBoard\">\r\n        <a href=\"/admin\" class=\"nav-link\" routerLink=\"admin\">Admin Board</a>\r\n      </li>\r\n      <li class=\"nav-item\" *ngIf=\"showModeratorBoard\">\r\n        <a href=\"/mod\" class=\"nav-link\" routerLink=\"mod\">Moderator Board</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a href=\"/user\" class=\"nav-link\" *ngIf=\"isLoggedIn\" routerLink=\"user\">User</a>\r\n      </li>\r\n    </ul>\r\n\r\n    <ul class=\"navbar-nav ml-auto\" *ngIf=\"!isLoggedIn\">\r\n      <li class=\"nav-item\">\r\n        <a href=\"/register\" class=\"nav-link\" routerLink=\"register\">Sign Up</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a href=\"/login\" class=\"nav-link\" routerLink=\"login\">Login</a>\r\n      </li>\r\n    </ul>\r\n\r\n    <ul class=\"navbar-nav ml-auto\" *ngIf=\"isLoggedIn\">\r\n      <li class=\"nav-item\">\r\n        <a href=\"/profile\" class=\"nav-link\" routerLink=\"profile\">{{ username }}</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a href class=\"nav-link\" (click)=\"logout()\">LogOut</a>\r\n      </li>\r\n    </ul>\r\n  </nav>\r\n\r\n  <div class=\"container\">\r\n    <router-outlet></router-outlet>\r\n  </div>\r\n</div-->\r\n"
         },
         {
             "name": "BoardAdminComponent",
@@ -2064,7 +2064,7 @@
         {
             "name": "ButtonComponent",
             "id": "component-ButtonComponent-4ef205c97a334c309aa4001c8ab4a6d9571dcae18d0e85aaf0d367467ab5d3a9f13ab3573726f1fcb409bc9b49894dadfb80b1bbe1b6ba7041455ad9d4922004",
-            "file": "src/stories/button.component.ts",
+            "file": "src/stories/buttons/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -2186,9 +2186,359 @@
             }
         },
         {
+            "name": "CardComponent",
+            "id": "component-CardComponent-dcf322dd94eef73b54838a7f9da412a84b118556846a50d658cb875b1e29daeadc3d087cb462c23f12c826e6069251b33be3fc629b26602f458ac3649fcfcf88",
+            "file": "src/stories/cards/card.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-card",
+            "styleUrls": [
+                "./card.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./card.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nWhat background color to use\n",
+                    "description": "<p>What background color to use</p>\n",
+                    "line": 149,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Button'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 5055,
+                            "end": 5069,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 325,
+                            "tagName": {
+                                "pos": 5056,
+                                "end": 5064,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "required"
+                            },
+                            "comment": ""
+                        }
+                    ],
+                    "rawdescription": "\n\nButton contents\n\n",
+                    "description": "<p>Button contents</p>\n",
+                    "line": 163,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "primary",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nIs this the principal call to action on the page?\n",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 143,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nHow large should the button be?\n",
+                    "description": "<p>How large should the button be?</p>\n",
+                    "line": 155,
+                    "type": "\"small\" | \"medium\" | \"large\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nOptional click handler\n",
+                    "description": "<p>Optional click handler</p>\n",
+                    "line": 169,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "form",
+                    "defaultValue": "{\r\n    username: null, //new FormControl('ea2', Validators.min(2)),\r\n    password: null  //new FormControl('zaqwsx', Validators.min(2))\r\n  }",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 21
+                },
+                {
+                    "name": "isLoggedIn",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 25,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "isLoginFailed",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 26
+                },
+                {
+                    "name": "loginErrorMessage",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 27
+                },
+                {
+                    "name": "registerFormRef",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "MdbModalRef<RegisterFormComponent> | null",
+                    "optional": false,
+                    "description": "",
+                    "line": 19
+                },
+                {
+                    "name": "replacePassFormRef",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "MdbModalRef<ReplacePassFormComponent> | null",
+                    "optional": false,
+                    "description": "",
+                    "line": 20
+                },
+                {
+                    "name": "roles",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 28
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 36,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onSubmit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 83,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "openRegisterForm",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 66,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "openReplacePassword",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 79,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "reloadPage",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 130,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "test",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 43,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';\r\nimport { AuthService } from '../../app/_services/auth.service';\r\nimport { TokenStorageService } from '../../app/_services/token-storage.service';\r\nimport {  Router } from '@angular/router';\r\nimport { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';\r\nimport {FormControl, Validators} from \"@angular/forms\";\r\nimport { RegisterFormComponent } from '../../app/login/register-form/register-form.component';\r\nimport {ReplacePassFormComponent} from \"../../app/login/replace-pass-form/replace-pass-form.component\";\r\nimport {Observable} from \"rxjs\";\r\nimport ButtonComponent from \"../buttons/button.component\";\r\n//import {  Router } from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'storybook-card',\r\n  templateUrl: './card.component.html',\r\n  styleUrls: ['./card.css']\r\n})\r\nexport default class CardComponent implements OnInit {\r\n  registerFormRef: MdbModalRef<RegisterFormComponent> | null = null;\r\n  replacePassFormRef: MdbModalRef<ReplacePassFormComponent> | null = null;\r\n  form: any = {\r\n    username: null, //new FormControl('ea2', Validators.min(2)),\r\n    password: null  //new FormControl('zaqwsx', Validators.min(2))\r\n  };\r\n  public isLoggedIn = false;\r\n  isLoginFailed = false;\r\n  loginErrorMessage = '';\r\n  roles: string[] = [];\r\n\r\n  constructor(private authService: AuthService,\r\n              private tokenStorage: TokenStorageService,\r\n              private router: Router,\r\n              private registerFormService: MdbModalService,\r\n              private replacePassFormService: MdbModalService) { }\r\n\r\n  ngOnInit(): void {\r\n    if (this.tokenStorage.getToken()) {\r\n      this.isLoggedIn = true;\r\n      this.roles = this.tokenStorage.getUser().roles;\r\n    }\r\n  }\r\n\r\n  test() {\r\n    console.log(\"test start\");\r\n    /*this.openRegisterForm().then(() => {\r\n      this.openReplacePassword();\r\n      console.log(\"test end\");});*/\r\n\r\n    this.openRegisterForm().then(\r\n      (val) => {\r\n        console.log(val);\r\n        switch (val) {\r\n          case \"xbutton\":\r\n            break;\r\n          case undefined:\r\n            this.openReplacePassword();\r\n            break;\r\n          default:\r\n\r\n        }\r\n        return 'done2';\r\n      },\r\n      (err) => console.error(err));\r\n  }\r\n\r\n  openRegisterForm() {\r\n    return this.registerFormService.open(RegisterFormComponent).onClose.toPromise();\r\n    /*var promise = new Promise<void>((resolve, reject)  => {\r\n      let newRegisterFormService = this.registerFormService.open(RegisterFormComponent);\r\n      setTimeout(() => {\r\n        console.log(\"Async Work Complete\");\r\n        newRegisterFormService.close();\r\n        resolve();//() => {resolve();}\r\n      }, 5000);\r\n    });\r\n    return promise;*/\r\n  }\r\n\r\n  openReplacePassword() {\r\n    this.replacePassFormService.open(ReplacePassFormComponent);\r\n  }\r\n\r\n  onSubmit(): void {\r\n    const { username, password } = this.form;\r\n\r\n    this.authService.login(username, password).subscribe(\r\n      data => {\r\n        this.tokenStorage.saveToken(data.accessToken);\r\n        this.tokenStorage.saveRefreshToken(data.refreshToken);\r\n        this.tokenStorage.saveUser(data);\r\n\r\n        this.isLoginFailed = false;\r\n        this.isLoggedIn = true;\r\n        this.roles = this.tokenStorage.getUser().roles;\r\n        this.reloadPage();\r\n      },\r\n      err => {\r\n        switch (err.error.message) {\r\n          case \"Error: A registry process should be made!\":\r\n            //this.openRegisterForm().then(() => {this.openReplacePassword()});\r\n            //toPromise((data) => {this.openReplacePassword()});\r\n            this.openRegisterForm().then(\r\n              (val) => {\r\n                console.log(val);\r\n                switch (val) {\r\n                  case \"xbutton\":\r\n                    break;\r\n                  case \"Registration Complete\":\r\n                    this.openReplacePassword();\r\n                    break;\r\n                  case undefined:\r\n                    this.openReplacePassword();\r\n                    break;\r\n                  default:\r\n                }\r\n                return 'done2';\r\n              },\r\n              (err) => console.error(err));\r\n            break;\r\n          default:\r\n            this.loginErrorMessage = err.error.message;\r\n        }\r\n\r\n\r\n        this.isLoginFailed = true;\r\n      }\r\n    );\r\n  }\r\n\r\n  reloadPage(): void {\r\n    //window.location.reload();\r\n    this.router.navigate(['/profile']).then(() => {window.location.reload()});\r\n    //var URL = window.location.host+\"/profile\"; //'http://localhost:4200/user';\r\n    ///window.open(URL);\r\n    //this.router.navigate([]).then(result => {  window.open(window.location.toString(), 'user'); });\r\n  }\r\n\r\n\r\n  /**\r\n   * Is this the principal call to action on the page?\r\n   */\r\n  @Input()\r\n  primary = false;\r\n\r\n  /**\r\n   * What background color to use\r\n   */\r\n  @Input()\r\n  backgroundColor?: string;\r\n\r\n  /**\r\n   * How large should the button be?\r\n   */\r\n  @Input()\r\n  size: 'small' | 'medium' | 'large' = 'medium';\r\n\r\n  /**\r\n   * Button contents\r\n   *\r\n   * @required\r\n   */\r\n  @Input()\r\n  label = 'Button';\r\n\r\n  /**\r\n   * Optional click handler\r\n   */\r\n  @Output()\r\n  onClick = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    const mode = this.primary ? 'storybook-card--primary' : 'storybook-card--secondary';\r\n\r\n    return ['storybook-card', `storybook-card--${this.size}`, mode];\r\n  }\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "label {\r\n  display: block;\r\n  margin-top: 10px;\r\n}\r\n\r\n.card-container.card {\r\n  max-width: 400px !important;\r\n  padding: 10px 10px;\r\n\r\n}\r\n\r\n.card {\r\n  background-color: #f7f7f7;\r\n  padding: 20px 25px 30px;\r\n  margin: 0 auto 25px;\r\n  margin-top: 50px;\r\n  -moz-border-radius: 2px;\r\n  -webkit-border-radius: 2px;\r\n  border-radius: 2px;\r\n  -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);\r\n  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);\r\n  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);\r\n}\r\n\r\n.profile-img-card {\r\n  width: 96px;\r\n  height: 96px;\r\n  margin: 0 auto 10px;\r\n  display: block;\r\n  -moz-border-radius: 50%;\r\n  -webkit-border-radius: 50%;\r\n  border-radius: 50%;\r\n}\r\n\r\n._1Q9if, ._2Hij5 {\r\n  word-wrap: break-word;\r\n  overflow-wrap: break-word;\r\n  text-align: start;\r\n  pointer-events: none;\r\n}\r\n\r\n._3SQN-, ._3wnIc {\r\n  position: absolute;\r\n  top: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n}\r\n\r\n.multi-bg-example {\r\n  width: 980px;\r\n  height: 289px;\r\n  object-fit: cover;\r\n  object-position: 50% 50%;\r\n}\r\n\r\n.font_0 {\r\n  font-size:44px;\r\n  text-align:left;\r\n  color:#FFFFFF;\r\n}\r\n\r\n.alert, .alert-success {\r\n  width: 50%;\r\n}\r\n\r\n\r\n.background {\r\n  background-size: cover;\r\n  background-origin: border-box;\r\n  background-image: url(../../app/_services/assets/images/Background.webp);\r\n  /*linear-gradient(to right, rgba(30, 75, 115, 1), rgba(255, 255, 255, 0));*/\r\n  background-repeat: no-repeat;\r\n  background-position: top left;\r\n\r\n}\r\n\r\n.card-footer {\r\n  padding-top: 0.1rem;\r\n  padding-right: 0.1rem;\r\n  padding-bottom: 0.1rem;\r\n  padding-left: 0.1rem;\r\n\r\n  border-top: 0.1rem solid rgba(0, 0, 0, 0.125);\r\n\r\n  border-bottom: 0.1rem;\r\n  background-color: rgba(0, 0, 0, 0.03);\r\n\r\n}\r\n\r\n.footer ul.footer-menu li.bold a {\r\n  font-weight: 700;\r\n}\r\n\r\n\r\n\r\n\r\n.storybook-card {\r\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  font-weight: 700;\r\n  border: 0;\r\n  border-radius: 3em;\r\n  cursor: pointer;\r\n  display: inline-block;\r\n  line-height: 1;\r\n}\r\n.storybook-card--primary {\r\n  color: white;\r\n  background-color: #1ea7fd;\r\n}\r\n.storybook-card--secondary {\r\n  color: #333;\r\n  background-color: transparent;\r\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\r\n}\r\n.storybook-card--small {\r\n  font-size: 12px;\r\n  padding: 10px 16px;\r\n}\r\n.storybook-card--medium {\r\n  font-size: 14px;\r\n  padding: 11px 20px;\r\n}\r\n.storybook-card--large {\r\n  font-size: 16px;\r\n  padding: 12px 24px;\r\n}\r\n",
+                    "styleUrl": "./card.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "authService",
+                        "type": "AuthService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "tokenStorage",
+                        "type": "TokenStorageService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "registerFormService",
+                        "type": "MdbModalService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "replacePassFormService",
+                        "type": "MdbModalService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 28,
+                "jsdoctags": [
+                    {
+                        "name": "authService",
+                        "type": "AuthService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "tokenStorage",
+                        "type": "TokenStorageService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "registerFormService",
+                        "type": "MdbModalService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "replacePassFormService",
+                        "type": "MdbModalService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 171
+                    }
+                }
+            },
+            "templateData": "<div class=\"col-md-12\">\r\n  <div id=\"main-login-card\" class=\"card card-container\">\r\n\r\n    <img id=\"profile-img\" src=\"//ssl.gstatic.com/accounts/ui/avatar_2x.png\"\r\n         class=\"profile-img-card\" />\r\n    <form *ngIf=\"!isLoggedIn\" name=\"form\" (ngSubmit)=\"f.form.valid && onSubmit()\" #f=\"ngForm\" novalidate>\r\n      <div class=\"form-group\">\r\n        <label for=\"username\">Username</label>\r\n        <input type=\"text\" class=\"form-control\" name=\"username\" [(ngModel)]=\"form.username\"\r\n               placeholder=\"ea2\" required #username=\"ngModel\"/>\r\n        <div class=\"alert alert-danger\" role=\"alert\" *ngIf=\"username.errors && f.submitted\">\r\n          Username is required!\r\n        </div>\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"password\">Password</label>\r\n        <input type=\"password\" class=\"form-control\" name=\"password\"\r\n               [(ngModel)]=\"form.password\" placeholder=\"e1996\" required minlength=\"1\" #password=\"ngModel\"/>\r\n        <div\r\n          class=\"alert alert-danger\"\r\n          role=\"alert\"\r\n          *ngIf=\"password.errors && f.submitted\">\r\n          <div *ngIf=\"password.errors.required\">Password is required</div>\r\n          <div *ngIf=\"password.errors.minlength\">\r\n            Password must be at least 1 characters\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <button class=\"btn btn-primary btn-block\">Login</button>\r\n\r\n\r\n\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <div class=\"alert alert-danger\" role=\"alert\" *ngIf=\"f.submitted && isLoginFailed\">\r\n          Login failed: {{ loginErrorMessage }}\r\n        </div>\r\n      </div>\r\n    </form>\r\n\r\n    <div class=\"alert alert-success\" *ngIf=\"isLoggedIn\">\r\n      Logged in as {{ roles }}.\r\n    </div>\r\n\r\n      <label class=\"form-check-label white-text\"\r\n             style=\"margin-bottom: 1px; padding: 1px\">R&D test:\r\n        <a (click)=\"openRegisterForm()\" href=\"#/login\" class=\"green-text font-weight-bold\">RegistrationForm</a>\r\n        <b> ,</b>\r\n        <a (click)=\"openReplacePassword()\" href=\"#/login\" class=\"green-text font-weight-bold pl-2\">ReplacePassForm</a>\r\n        <b> ,</b>\r\n        <a (click)=\"test()\" href=\"#/login\" class=\"green-text font-weight-bold pl-2\">test</a>\r\n      </label>\r\n\r\n  </div>\r\n\r\n\r\n\r\n</div>\r\n\r\n"
+        },
+        {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-a557eec14f72c438a8033301f4d6ce023e0a1844a3b06ec2b38794a612acc31735ae78a5ee10071b230c8c20d699eb914554e69d07ade54adb371da8efb464cc",
-            "file": "src/stories/header.component.ts",
+            "id": "component-HeaderComponent-9553c8f5d6fb1def1c3df4b7d5bfc9224e125cd4e77df72201ff42c98c015a6c3a38b1bb9159d1c7ebe9276e3e0763cdc8d5684c9e135cb4594ec134b1488f59",
+            "file": "src/stories/headers/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -2199,7 +2549,7 @@
                 "./header.css"
             ],
             "styles": [],
-            "template": "<header>    <div class=\"wrapper\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <storybook-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></storybook-button>\n        </div>\n        <div *ngIf=\"!user\">\n          <storybook-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></storybook-button>\n          <storybook-button\n            *ngIf=\"!user\"\n            primary\n            size=\"small\"\n            primary=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></storybook-button>\n        </div>\n      </div>\n    </div>\n  </header>",
+            "template": "<header>    <div class=\"wrapper\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <storybook-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></storybook-button>\n          <storybook-card\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></storybook-card>\n        </div>\n        <div *ngIf=\"!user\">\n          <storybook-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></storybook-button>\n          <storybook-button\n            *ngIf=\"!user\"\n            primary\n            size=\"small\"\n            primary=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></storybook-button>\n        </div>\n      </div>\n    </div>\n  </header>",
             "templateUrl": [],
             "viewProviders": [],
             "inputsClass": [
@@ -2208,7 +2558,7 @@
                     "defaultValue": "null",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 65,
+                    "line": 71,
                     "type": "User | null",
                     "decorators": []
                 }
@@ -2219,7 +2569,7 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 74,
+                    "line": 80,
                     "type": "EventEmitter"
                 },
                 {
@@ -2227,7 +2577,7 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 68,
+                    "line": 74,
                     "type": "EventEmitter"
                 },
                 {
@@ -2235,7 +2585,7 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 71,
+                    "line": 77,
                     "type": "EventEmitter"
                 }
             ],
@@ -2248,7 +2598,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { User } from './User';\n\n@Component({\n  selector: 'storybook-header',\n  template: `<header>\n    <div class=\"wrapper\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <storybook-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></storybook-button>\n        </div>\n        <div *ngIf=\"!user\">\n          <storybook-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></storybook-button>\n          <storybook-button\n            *ngIf=\"!user\"\n            primary\n            size=\"small\"\n            primary=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></storybook-button>\n        </div>\n      </div>\n    </div>\n  </header>`,\n  styleUrls: ['./header.css'],\n})\nexport default class HeaderComponent {\n  @Input()\n  user: User | null = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { User } from '../User';\n\n@Component({\n  selector: 'storybook-header',\n  template: `<header>\n    <div class=\"wrapper\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <storybook-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></storybook-button>\n          <storybook-card\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></storybook-card>\n        </div>\n        <div *ngIf=\"!user\">\n          <storybook-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></storybook-button>\n          <storybook-button\n            *ngIf=\"!user\"\n            primary\n            size=\"small\"\n            primary=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></storybook-button>\n        </div>\n      </div>\n    </div>\n  </header>`,\n  styleUrls: ['./header.css'],\n})\nexport default class HeaderComponent {\n  @Input()\n  user: User | null = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2505,154 +2855,6 @@
                     }
                 }
             },
-            "templateData": "<div class=\"Vector\">\n<img (click)=\"onClick.emit($event)\" [ngClass]=\"classes\" [ngStyle]=\"{ 'background-color': backgroundColor }\"\n   src=\"/assets/images/language-desktop-icon.png\"\n       srcset=\"/assets/images/language-desktop-icon@2x.png 2x,\n             /assets/images/language-desktop-icon@3x.png 3x\"\n       class=\"Language-Desktop-Icon\"  alt=\"language-desktop-icon\"/>\n\n</div>\n"
-        },
-        {
-            "name": "LanguageIconComponent",
-            "id": "component-LanguageIconComponent-2416ae558fd33326e3c78dd2378b286603a86d6ba7a53f453d5ee9c0b5824613adaaf3aeb2b1addf6e8cdb7d044b41c317367c3dd9cdbfaf9cdf080aae142cb9-1",
-            "file": "src/app/page/language-icon2/language-icon.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "storybook-language-icon",
-            "styleUrls": [
-                "./language-icon.component.css"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./language-icon.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [
-                {
-                    "name": "backgroundColor",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nWhat background color to use\n",
-                    "description": "<p>What background color to use</p>\n",
-                    "line": 19,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "label",
-                    "defaultValue": "'accGateButton2'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "pos": 592,
-                            "end": 605,
-                            "flags": 4227072,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 325,
-                            "tagName": {
-                                "pos": 593,
-                                "end": 601,
-                                "flags": 4227072,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 79,
-                                "escapedText": "required"
-                            },
-                            "comment": ""
-                        }
-                    ],
-                    "rawdescription": "\n\nButton contents\n\n",
-                    "description": "<p>Button contents</p>\n",
-                    "line": 33,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "primary",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nIs this the principal call to action on the page?\n",
-                    "description": "<p>Is this the principal call to action on the page?</p>\n",
-                    "line": 13,
-                    "type": "boolean",
-                    "decorators": []
-                },
-                {
-                    "name": "size",
-                    "defaultValue": "'medium'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nHow large should the button be?\n",
-                    "description": "<p>How large should the button be?</p>\n",
-                    "line": 25,
-                    "type": "\"small\" | \"medium\" | \"large\"",
-                    "decorators": []
-                }
-            ],
-            "outputsClass": [
-                {
-                    "name": "onClick",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nOptional click handler\n",
-                    "description": "<p>Optional click handler</p>\n",
-                    "line": 39,
-                    "type": "EventEmitter"
-                }
-            ],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 50,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-language-icon',\n  templateUrl: './language-icon.component.html',\n  styleUrls: ['./language-icon.component.css']\n})\nexport class LanguageIconComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'accGateButton2';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-language-icon--primary' : 'storybook-language-icon--secondary';\n\n    return ['storybook-language-icon', `storybook-language-icon--${this.size}`, mode];\n  }\n\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": ".Vector {\r\n  position: absolute;\r\n  top: 54px;\r\n  right: 68px;\r\n  width: 26px;\r\n  height: 26px;\r\n}\r\n\r\nimg.Language-Desktop-Icon {\r\n  position: absolute;\r\n  top: 1px;\r\n  right: 1px;\r\n  width: 26px;\r\n  height: 26px;\r\n  object-fit: contain;\r\n  box-shadow: 0 1px 1px 0 rgba(61, 142, 207, 0.15);\r\n}\r\n",
-                    "styleUrl": "./language-icon.component.css"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 45
-            },
-            "accessors": {
-                "classes": {
-                    "name": "classes",
-                    "getSignature": {
-                        "name": "classes",
-                        "type": "[]",
-                        "returnType": "string[]",
-                        "line": 41
-                    }
-                }
-            },
-            "isDuplicate": true,
-            "duplicateId": 1,
-            "duplicateName": "LanguageIconComponent-1",
             "templateData": "<div class=\"Vector\">\n<img (click)=\"onClick.emit($event)\" [ngClass]=\"classes\" [ngStyle]=\"{ 'background-color': backgroundColor }\"\n   src=\"/assets/images/language-desktop-icon.png\"\n       srcset=\"/assets/images/language-desktop-icon@2x.png 2x,\n             /assets/images/language-desktop-icon@3x.png 3x\"\n       class=\"Language-Desktop-Icon\"  alt=\"language-desktop-icon\"/>\n\n</div>\n"
         },
         {
@@ -2921,7 +3123,7 @@
         },
         {
             "name": "Page2Component",
-            "id": "component-Page2Component-babd58923db06021b5cf56f47ecd32d823ba13a0a1dbc7ec6af5e6f23cd08573f735bd0e1db2efd1b85d837090d3768f77dbd82260dfb7680a0781058adff474",
+            "id": "component-Page2Component-294b720a8df4853d2b9eb68f1aa1ef27a0697f76b30f343f593cd0d7652bc6d0c217d08cc30c85590bd04eeb2c6c28fd9231b03ee27fae0297d898415f4a79aa",
             "file": "src/app/page/page.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2939,6 +3141,16 @@
             "viewProviders": [],
             "inputsClass": [
                 {
+                    "name": "background",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nWhat background color to use\n",
+                    "description": "<p>What background color to use</p>\n",
+                    "line": 30,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
                     "name": "backgroundColor",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -2949,8 +3161,39 @@
                     "decorators": []
                 },
                 {
+                    "name": "label",
+                    "defaultValue": "'Page2Component'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 545,
+                            "end": 558,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 325,
+                            "tagName": {
+                                "pos": 546,
+                                "end": 554,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "required"
+                            },
+                            "comment": ""
+                        }
+                    ],
+                    "rawdescription": "\n\nButton contents\n\n",
+                    "description": "<p>Button contents</p>\n",
+                    "line": 38,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
                     "name": "primary",
-                    "defaultValue": "false",
+                    "defaultValue": "true",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "rawdescription": "\n\nIs this the principal call to action on the page?\n",
@@ -2962,7 +3205,18 @@
             ],
             "outputsClass": [],
             "propertiesClass": [],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 63,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -2970,15 +3224,26 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\n\n\n\n@Component({\n  selector: 'storybook-page2',\n  templateUrl: './page.component.html',\n  styleUrls: ['./page.component.scss']\n})\nexport default class Page2Component {\n\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n\n  /*user: User | null = null;\n\n  doLogout() {\n    this.user = null;\n  }\n\n  doLogin() {\n    this.user = { name: 'Jane Doe' };\n  }\n\n  doCreateAccount() {\n    this.user = { name: 'Jane Doe' };\n\n  }*/\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-page2--primary' : 'storybook-page2--secondary';\n\n    return ['storybook-page2', mode];\n  }\n}\n\n",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\n\n\n\n@Component({\n  selector: 'storybook-page2',\n  templateUrl: './page.component.html',\n  styleUrls: ['./page.component.scss']\n})\nexport default class Page2Component implements OnInit {\n\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = true;\n\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  background?: string;\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Page2Component';\n\n  /*user: User | null = null;\n\n  doLogout() {\n    this.user = null;\n  }\n\n  doLogin() {\n    this.user = { name: 'Jane Doe' };\n  }\n\n  doCreateAccount() {\n    this.user = { name: 'Jane Doe' };\n\n  }*/\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-page2--primary' : 'storybook-page2--secondary';\n\n    return ['storybook-page2', mode];\n  }\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "\r\n.Desktop-1Login-1 {\r\n  width: inherit;\r\n  height: inherit;\r\n  background: linear-gradient(228.37deg, #EFF8FF 22.25%, #B0DCFF 88.18%);\r\n}\r\ndiv.relative {\r\n  position: relative;\r\n  width: inherit;\r\n  height: inherit;\r\n}\r\n\r\ndiv.absolute {\r\n  position: absolute;\r\n  bottom: 0;\r\n  right: 0;\r\n  width: 200px;\r\n  height: 100px;\r\n\r\n}\r\n\r\n\r\n.Frame-1 {\r\n  width: 1920px;\r\n  height: 1080px;\r\n  flex-grow: 0;\r\n}\r\n\r\n.fa-pull-left {float:left}\r\n\r\n.fa-pull-right {float:right}\r\n\r\nimg.icon-1 {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  width: 305.7px;\r\n  height: 309px;\r\n  transform: rotate(0deg);\r\n  background-position: bottom;\r\n}\r\n\r\nimg.icon-2 {\r\n  position: absolute;\r\n  bottom: 0;\r\n  right: 0;\r\n  width: 372px;\r\n  height: 343px;\r\n  flex-grow: 0;\r\n}\r\n\r\n\r\n\r\n",
+                    "data": "\r\n.storybook-page2 {\r\n  position: absolute;\r\n  width: inherit;\r\n  height: inherit;\r\n}\r\n\r\n.Desktop-1Login-1 {\r\n  width: 100%;\r\n  height: 100%;\r\n  flex-grow: 0\r\n}\r\n\r\n/*background-image: linear-gradient(228.37deg, #EFF8FF 22.25%, #B0DCFF 88.18%)*/\r\n\r\n/*.Desktop-1Login-1 {\r\n  width: 1920px;\r\n  height: 1080px;\r\n  flex-grow: 0;\r\n  background-image: linear-gradient(228.37deg, #EFF8FF 22.25%, #B0DCFF 88.18%);\r\n}*/\r\n\r\ndiv.relative {\r\n  position: relative;\r\n  width: inherit;\r\n  height: inherit;\r\n}\r\n\r\n\r\n\r\n\r\n.Frame-1 {\r\n  width: 1920px;\r\n  height: 1080px;\r\n  flex-grow: 0;\r\n}\r\n\r\n.fa-pull-left {float:left}\r\n\r\n.fa-pull-right {float:right}\r\n\r\nimg.icon-1 {\r\n  position: absolute;\r\n  width: 305.7px;\r\n  height: 309px;\r\n  transform: rotate(0deg);\r\n  background-position: bottom;\r\n}\r\n\r\nimg.icon-2 {\r\n  position: absolute;\r\n  bottom: 0;\r\n  right: 0;\r\n  width: 372px;\r\n  height: 343px;\r\n  flex-grow: 0;\r\n}\r\n\r\n\r\n.storybook-page2--primary {\r\n\r\n  background: linear-gradient(228.37deg, #EFF8FF 22.25%, #B0DCFF 88.18%);\r\n}\r\n",
                     "styleUrl": "./page.component.scss"
                 }
             ],
             "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 59
+            },
+            "implements": [
+                "OnInit"
+            ],
             "accessors": {
                 "classes": {
                     "name": "classes",
@@ -2986,16 +3251,16 @@
                         "name": "classes",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 41
+                        "line": 55
                     }
                 }
             },
-            "templateData": "\n<html>\n<head>\n  <style>\n\n  </style>\n  <title></title>\n</head>\n<body>\n<!--article>\n<section class=\"relative \" Style=\"{ 'background': backgroundColor }\"-->\n  <div class=\"Frame-1 relative\">\n    <div class=\"Desktop-1Login-1\">\n    <img src=\"assets/images/icon-1.webp\" srcset=\"/assets/images/icon-1@2x.webp 2x, /assets/images/icon-1@3x.webp 3x\"\n         class=\"icon-1\" alt=\"icon-1\" />\n\n    <img src=\"assets/images/icon-2.webp\" srcset=\"/assets/images/icon-2@2x.webp 2x, /assets/images/icon-2@3x.webp 3x\"\n         class=\"icon-2  \" alt=\"icon-2fdf\" />\n    </div>\n    <storybook-language-icon size=\"large\"></storybook-language-icon>\n\n  </div>\n\n<!--/section>\n</article-->\n\n</body>\n</html>\n\n  <title></title>\n"
+            "templateData": "\n<!--html>\n<head>\n  <style>\n\n  </style>\n  <title></title>\n</head>\n<body>\n\n<article><div class=\"Frame-1 relative\">\n<section class=\"relative \" Style=\"{ 'background': backgroundColor }\"-->\n\n    <figure class=\"Desktop-1Login-1\"  [ngClass]=\"classes\" [ngStyle]=\"{ 'background-color': background }\" >\n      <!--div [ngStyle]=\"{ 'background-color': background }\" ></div-->\n    <img src=\"assets/images/icon-1.webp\" srcset=\"/assets/images/icon-1@2x.webp 2x, /assets/images/icon-1@3x.webp 3x\"\n          alt=\"icon-1\" />\n\n    <img src=\"assets/images/icon-2.webp\" srcset=\"/assets/images/icon-2@2x.webp 2x, /assets/images/icon-2@3x.webp 3x\"\n         class=\"icon-2  \" alt=\"icon-2fdf\" />\n\n      <storybook-button ></storybook-button>\n      <storybook-card ></storybook-card>\n</figure>\n\n<storybook-language-icon size=\"large\"></storybook-language-icon>\n<storybook-tadiran-icon></storybook-tadiran-icon>\n\n\n\n<!--/section></div>\n</article>\n\n</body>\n</html-->\n\n\n"
         },
         {
             "name": "PageComponent",
-            "id": "component-PageComponent-7126d8c2607c946741c651482413b43feb72b2d63cac9d3ac173fde206a5e635eb4cdbf7ca7ac9327c7d4d05cf7ef619144c34c11609ad677081d0ee4e855064",
-            "file": "src/stories/page.component.ts",
+            "id": "component-PageComponent-9a50c6874a53e7e60b4197d65ae1ca198fe598a2e6809aa5909dad27c43453c6017eaaaacda8f9ab221261ef7bff2294200f7e8db1b02cd86fb6ea48d36b11fc",
+            "file": "src/stories/pages/page.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -3006,8 +3271,9 @@
                 "./page.css"
             ],
             "styles": [],
-            "template": "<article>    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"doLogout()\"\n      (onLogin)=\"doLogin()\"\n      (onCreateAccount)=\"doCreateAccount()\"\n    ></storybook-header>\n    <section>\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Storybook tutorials\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>",
-            "templateUrl": [],
+            "templateUrl": [
+                "./page.component.html"
+            ],
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
@@ -3020,7 +3286,7 @@
                     "type": "User | null",
                     "optional": false,
                     "description": "",
-                    "line": 64
+                    "line": 10
                 }
             ],
             "methodsClass": [
@@ -3030,7 +3296,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 74,
+                    "line": 20,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -3040,7 +3306,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 70,
+                    "line": 16,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -3050,7 +3316,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 66,
+                    "line": 12,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -3062,7 +3328,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { User } from './User';\n\n@Component({\n  selector: 'storybook-page',\n  template: `<article>\n    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"doLogout()\"\n      (onLogin)=\"doLogin()\"\n      (onCreateAccount)=\"doCreateAccount()\"\n    ></storybook-header>\n    <section>\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Storybook tutorials\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>`,\n  styleUrls: ['./page.css'],\n})\nexport default class PageComponent {\n  user: User | null = null;\n\n  doLogout() {\n    this.user = null;\n  }\n\n  doLogin() {\n    this.user = { name: 'Jane Doe' };\n  }\n\n  doCreateAccount() {\n    this.user = { name: 'Jane Doe' };\n  }\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { User } from '../User';\n\n@Component({\n  selector: 'storybook-page',\n  templateUrl: './page.component.html',\n  styleUrls: ['./page.css'],\n})\nexport default class PageComponent {\n  user: User | null = null;\n\n  doLogout() {\n    this.user = null;\n  }\n\n  doLogin() {\n    this.user = { name: 'Jane Doe' };\n  }\n\n  doCreateAccount() {\n    this.user = { name: 'Jane Doe' };\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3070,7 +3336,8 @@
                     "styleUrl": "./page.css"
                 }
             ],
-            "stylesData": ""
+            "stylesData": "",
+            "templateData": "<article>\n  <storybook-header\n    [user]=\"user\"\n    (onLogout)=\"doLogout()\"\n    (onLogin)=\"doLogin()\"\n    (onCreateAccount)=\"doCreateAccount()\"\n  ></storybook-header>\n  <section>\n    <h2>Pages in Storybook</h2>\n    <p>\n      We recommend building UIs with a\n      <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n        <strong>component-driven</strong>\n      </a>\n      process starting with atomic components and ending with pages.\n    </p>\n    <p>\n      Render pages with mock data. This makes it easy to build and review page states without\n      needing to navigate to them in your app. Here are some handy patterns for managing page data\n      in Storybook:\n    </p>\n    <ul>\n      <li>\n        Use a higher-level connected component. Storybook helps you compose such data from the\n        \"args\" of child component stories\n      </li>\n      <li>\n        Assemble data in the page component from your services. You can mock these services out\n        using Storybook.\n      </li>\n    </ul>\n    <p>\n      Get a guided tutorial on component-driven development at\n      <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n        Storybook tutorials\n      </a>\n      . Read more in the\n      <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n      .\n    </p>\n    <div class=\"tip-wrapper\">\n      <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n      <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n        <g fill=\"none\" fillRule=\"evenodd\">\n          <path\n            d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n            id=\"a\"\n            fill=\"#999\"\n          />\n        </g>\n      </svg>\n      Viewports addon in the toolbar\n    </div>\n  </section>\n</article>\n"
         },
         {
             "name": "ProfileComponent",
@@ -3930,7 +4197,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "\r\n\r\n.fa,.fab,.fad,.fal,.far,.fas {\r\n  -moz-osx-font-smoothing:grayscale;\r\n  -webkit-font-smoothing:antialiased;\r\n  display:inline-block;\r\n  font-style:normal;\r\n  font-variant:normal;\r\n  text-rendering:auto;line-height:1\r\n}\r\n\r\n.fa-lg {\r\n  font-size:1.33333em;\r\n  line-height:.75em;\r\n  vertical-align:-.0667em\r\n}\r\n/**/\r\n.fa-xs {font-size:.75em}\r\n\r\n.fa-sm {font-size:.875em}\r\n\r\n.fa-1x {font-size:1em}\r\n\r\n.fa-2x {font-size:2em}\r\n\r\n.fa-3x {font-size:3em}\r\n\r\n.fa-4x {font-size:4em}\r\n\r\n.fa-5x {font-size:5em}\r\n\r\n.fa-6x {font-size:6em}\r\n\r\n.fa-7x {font-size:7em}\r\n\r\n.fa-8x {font-size:8em}\r\n\r\n.fa-9x {font-size:9em}\r\n\r\n.fa-10x {font-size:10em}\r\n\r\n.fa-fw {text-align:center;width:1.25em}\r\n\r\n.fa-ul {list-style-type:none;margin-left:2.5em;padding-left:0}\r\n\r\n.fa-ul>li {position:relative}\r\n\r\n.fa-li {left:-2em;position:absolute;text-align:center;width:2em;line-height:inherit}\r\n\r\n.fa-border {border:.08em solid #eee;border-radius:.1em;padding:.2em .25em .15em}\r\n\r\n.fa-pull-left {float:left}\r\n\r\n.fa-pull-right {float:right}\r\n\r\n.fa.fa-pull-left,.fab.fa-pull-left,.fal.fa-pull-left,.far.fa-pull-left,.fas.fa-pull-left {\r\n  margin-right:.3em\r\n}\r\n\r\n.input-with-pre-icon label {left:36px;right:initial}\r\n\r\n\r\n.fa.fa-pull-right,.fab.fa-pull-right,.fal.fa-pull-right,.far.fa-pull-right,.fas.fa-pull-right {\r\n  margin-left:.3em\r\n}\r\n\r\n.fa-spin {\r\n  -webkit-animation:fa-spin 2s linear infinite;\r\n  animation:fa-spin 2s linear infinite\r\n}\r\n\r\n\r\n\r\n.fa,.far,.fas {\r\n  font-family: \"Font Awesome 5 Free\", serif\r\n}\r\n\r\n.fa,.fas {\r\n  font-weight:900\r\n}\r\n\r\n\r\n.v-btn__content {\r\n  align-items: center;\r\n  color: inherit;\r\n  display: flex;\r\n  flex: 1 0 auto;\r\n  justify-content: inherit;\r\n  line-height: normal;\r\n  position: relative;\r\n  transition: inherit;\r\n}\r\n\r\n\r\n.v-btn__content {\r\n  letter-spacing: normal;\r\n}\r\n\r\n\r\n/*\r\n@use 'mdb-angular-ui-kit/assets/scss/free/forms/_form-control';\r\n\r\nmdb-form-control {\r\n  display: block;\r\n}\r\n\r\n\r\n\r\n.form-control {\r\n  min-height: auto;\r\n  padding-top: 4px;\r\n  padding-bottom: 3.28px;\r\n  transition: all 0.1s linear;\r\n\r\n  &:focus {\r\n    transition: all 0.1s linear;\r\n    border-color: #1266f1;\r\n    box-shadow: inset 0 0 0 1px #1266f1;\r\n  }\r\n  &.form-control-sm {\r\n    font-size: 0.775rem;\r\n    line-height: 1.5;\r\n  }\r\n  &.form-control-lg {\r\n    line-height: 2.15;\r\n    border-radius: 0.25rem;\r\n  }\r\n}\r\n\r\n.select {\r\n  ~ .form-label {\r\n    position: absolute;\r\n    top: 0;\r\n    left: $form-label-left;\r\n    padding-top: $form-label-padding-top;\r\n    pointer-events: none;\r\n    transform-origin: 0 0;\r\n    transition: $form-label-transition;\r\n    color: $form-label-color;\r\n    margin-bottom: 0;\r\n  }\r\n  ~ .form-notch {\r\n    display: flex;\r\n    position: absolute;\r\n    left: 0;\r\n    top: 0;\r\n    width: 100%;\r\n    max-width: 100%;\r\n    height: 100%;\r\n    text-align: left;\r\n    pointer-events: none;\r\n    div {\r\n      pointer-events: none;\r\n      border: $border-width solid;\r\n      border-color: $form-notch-div-border-color;\r\n      box-sizing: border-box;\r\n      background: transparent;\r\n    }\r\n    .form-notch-leading {\r\n      left: 0;\r\n      top: 0;\r\n      height: 100%;\r\n      width: $form-notch-leading-width;\r\n      border-right: none;\r\n      border-radius: $form-notch-leading-border-radius 0 0 $form-notch-leading-border-radius;\r\n    }\r\n    .form-notch-middle {\r\n      flex: 0 0 auto;\r\n      width: auto;\r\n      max-width: calc(100% - #{$form-notch-middle-max-width});\r\n      height: 100%;\r\n      border-right: none;\r\n      border-left: none;\r\n    }\r\n    .form-notch-trailing {\r\n      flex-grow: 1;\r\n      height: 100%;\r\n      border-left: none;\r\n      border-radius: 0 $form-notch-trailing-border-radius $form-notch-trailing-border-radius 0;\r\n    }\r\n  }\r\n  &.form-control:not(.placeholder-active)::placeholder {\r\n    opacity: 0;\r\n  }\r\n  & .form-control:focus,\r\n  &.active {\r\n    &::placeholder {\r\n      opacity: 1;\r\n    }\r\n  }\r\n  & .form-control:focus {\r\n    box-shadow: none !important;\r\n  }\r\n  // &:focus ~ .form-label,\r\n  &.active ~ .form-label {\r\n    transform: $input-focus-active-label-transform;\r\n  }\r\n  & .form-control:focus ~ .form-label {\r\n    color: $input-focus-label-color;\r\n  }\r\n  & .form-control:focus ~ .form-notch .form-notch-middle,\r\n  & .form-control.active ~ .form-notch .form-notch-middle {\r\n    border-top: none;\r\n    border-right: none;\r\n    border-left: none;\r\n    transition: $input-transition;\r\n  }\r\n  &:focus ~ .form-notch .form-notch-middle {\r\n    border-bottom: $input-focus-border-width solid;\r\n    border-color: $input-focus-border-color;\r\n  }\r\n  &:focus ~ .form-notch .form-notch-leading,\r\n  &.active ~ .form-notch .form-notch-leading {\r\n    border-right: none;\r\n    transition: $input-transition;\r\n  }\r\n  &:focus ~ .form-notch .form-notch-leading {\r\n    border-top: $input-focus-border-width solid $input-focus-border-color;\r\n    border-bottom: $input-focus-border-width solid $input-focus-border-color;\r\n    border-left: $input-focus-border-width solid $input-focus-border-color;\r\n  }\r\n  &:focus ~ .form-notch .form-notch-trailing,\r\n  &.active ~ .form-notch .form-notch-trailing {\r\n    border-left: none;\r\n    transition: $input-transition;\r\n  }\r\n  &:focus ~ .form-notch .form-notch-trailing {\r\n    border-top: $input-focus-border-width solid;\r\n    border-bottom: $input-focus-border-width solid;\r\n    border-right: $input-focus-border-width solid;\r\n    border-color: $input-focus-border-color;\r\n  }\r\n  &:disabled,\r\n  &.disabled,\r\n  &[readonly] {\r\n    background-color: $input-disabled-background-color;\r\n  }\r\n  &.form-control-lg {\r\n    font-size: $input-font-size-lg;\r\n    line-height: $input-line-height-lg;\r\n    padding-left: $input-padding-left-lg;\r\n    padding-right: $input-padding-right-lg;\r\n    ~ .form-label {\r\n      padding-top: $form-label-padding-top-lg;\r\n    }\r\n    &:focus ~ .form-label,\r\n    &.active ~ .form-label {\r\n      transform: $input-focus-active-label-transform-lg;\r\n    }\r\n  }\r\n  &.form-control-sm {\r\n    padding-left: $input-padding-left-sm;\r\n    padding-right: $input-padding-right-sm;\r\n    padding-top: $input-padding-top-sm;\r\n    padding-bottom: $input-padding-bottom-sm;\r\n    font-size: $input-font-size-sm;\r\n    line-height: $input-line-height-sm;\r\n    ~ .form-label {\r\n      padding-top: $form-label-padding-top-sm;\r\n      font-size: $form-label-font-size-sm;\r\n    }\r\n    &:focus ~ .form-label,\r\n    &.active ~ .form-label {\r\n      transform: $input-focus-active-label-transform-sm;\r\n    }\r\n  }\r\n}\r\n\r\n$form-label-left: 1.75rem;\r\n\r\n\r\n.form-outline {\r\n  position: relative;\r\n\r\n  .form-helper {\r\n    width: 100%;\r\n    position: absolute;\r\n    font-size: 0.875em;\r\n    color: #757575;\r\n    .form-counter {\r\n      text-align: right;\r\n    }\r\n  }\r\n\r\n  .trailing {\r\n    position: absolute;\r\n    right: 10px;\r\n    left: initial;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    pointer-events: none;\r\n  }\r\n\r\n  .form-icon-trailing {\r\n    padding-right: 2rem !important;\r\n  }\r\n\r\n  .form-control {\r\n    min-height: auto;\r\n    padding-top: $input-padding-top;\r\n    padding-bottom: $input-padding-bottom;\r\n    padding-left: $input-padding-left;\r\n    padding-right: $input-padding-right;\r\n    border: 0;\r\n    background: transparent;\r\n    transition: $input-transition;\r\n    ~ .form-label {\r\n      position: absolute;\r\n      top: 0;\r\n      max-width: 90%;\r\n      white-space: nowrap;\r\n      overflow: hidden;\r\n      text-overflow: ellipsis;\r\n      left: $form-label-left;\r\n      padding-top: $form-label-padding-top;\r\n      pointer-events: none;\r\n      transform-origin: 0 0;\r\n      transition: $form-label-transition;\r\n      color: $form-label-color;\r\n      margin-bottom: 0;\r\n    }\r\n    ~ .form-notch {\r\n      display: flex;\r\n      position: absolute;\r\n      left: 0;\r\n      top: 0;\r\n      width: 100%;\r\n      max-width: 100%;\r\n      height: 100%;\r\n      text-align: left;\r\n      pointer-events: none;\r\n      div {\r\n        pointer-events: none;\r\n        border: $border-width solid;\r\n        border-color: $form-notch-div-border-color;\r\n        box-sizing: border-box;\r\n        background: transparent;\r\n      }\r\n      .form-notch-leading {\r\n        left: 0;\r\n        top: 0;\r\n        height: 100%;\r\n        width: $form-notch-leading-width;\r\n        border-right: none;\r\n        border-radius: $form-notch-leading-border-radius 0 0 $form-notch-leading-border-radius;\r\n      }\r\n      .form-notch-middle {\r\n        flex: 0 0 auto;\r\n        width: auto;\r\n        max-width: calc(100% - #{$form-notch-middle-max-width});\r\n        height: 100%;\r\n        border-right: none;\r\n        border-left: none;\r\n      }\r\n      .form-notch-trailing {\r\n        flex-grow: 1;\r\n        height: 100%;\r\n        border-left: none;\r\n        border-radius: 0 $form-notch-trailing-border-radius $form-notch-trailing-border-radius 0;\r\n      }\r\n    }\r\n    &:not(.placeholder-active)::placeholder {\r\n      opacity: 0;\r\n    }\r\n    &:focus,\r\n    &.active {\r\n      &::placeholder {\r\n        opacity: 1;\r\n      }\r\n    }\r\n    &:focus {\r\n      box-shadow: none !important;\r\n    }\r\n    &:focus ~ .form-label,\r\n    &.active ~ .form-label {\r\n      transform: $input-focus-active-label-transform;\r\n    }\r\n    &:focus ~ .form-label {\r\n      color: $input-focus-label-color;\r\n    }\r\n    &:focus ~ .form-notch .form-notch-middle,\r\n    &.active ~ .form-notch .form-notch-middle {\r\n      border-top: none;\r\n      border-right: none;\r\n      border-left: none;\r\n      transition: $input-transition;\r\n    }\r\n    &:focus ~ .form-notch .form-notch-middle {\r\n      border-bottom: $input-focus-border-width solid;\r\n      border-color: $input-focus-border-color;\r\n    }\r\n    &:focus ~ .form-notch .form-notch-leading,\r\n    &.active ~ .form-notch .form-notch-leading {\r\n      border-right: none;\r\n      transition: $input-transition;\r\n    }\r\n    &:focus ~ .form-notch .form-notch-leading {\r\n      border-top: $input-focus-border-width solid $input-focus-border-color;\r\n      border-bottom: $input-focus-border-width solid $input-focus-border-color;\r\n      border-left: $input-focus-border-width solid $input-focus-border-color;\r\n    }\r\n    &:focus ~ .form-notch .form-notch-trailing,\r\n    &.active ~ .form-notch .form-notch-trailing {\r\n      border-left: none;\r\n      transition: $input-transition;\r\n    }\r\n    &:focus ~ .form-notch .form-notch-trailing {\r\n      border-top: $input-focus-border-width solid $input-focus-border-color;\r\n      border-bottom: $input-focus-border-width solid $input-focus-border-color;\r\n      border-right: $input-focus-border-width solid $input-focus-border-color;\r\n    }\r\n    :disabled,\r\n    &.disabled,\r\n    &[readonly] {\r\n      background-color: $input-disabled-background-color;\r\n    }\r\n    &.form-control-lg {\r\n      font-size: $input-font-size-lg;\r\n      line-height: $input-line-height-lg;\r\n      padding-left: $input-padding-left-lg;\r\n      padding-right: $input-padding-right-lg;\r\n      ~ .form-label {\r\n        padding-top: $form-label-padding-top-lg;\r\n      }\r\n      &:focus ~ .form-label,\r\n      &.active ~ .form-label {\r\n        transform: $input-focus-active-label-transform-lg;\r\n      }\r\n    }\r\n    &.form-control-sm {\r\n      padding-left: $input-padding-left-sm;\r\n      padding-right: $input-padding-right-sm;\r\n      padding-top: $input-padding-top-sm;\r\n      padding-bottom: $input-padding-bottom-sm;\r\n      font-size: $input-font-size-sm;\r\n      line-height: $input-line-height-sm;\r\n      ~ .form-label {\r\n        padding-top: $form-label-padding-top-sm;\r\n        font-size: $form-label-font-size-sm;\r\n      }\r\n      :focus ~ .form-label,\r\n      &.active ~ .form-label {\r\n        transform: $input-focus-active-label-transform-sm;\r\n      }\r\n    }\r\n  }\r\n\r\n  &.form-white {\r\n    .form-control {\r\n      color: $form-white-input-color;\r\n      ~ .form-label {\r\n        color: $form-white-label-color;\r\n      }\r\n      ~ .form-notch {\r\n        div {\r\n          border-color: $form-white-notch-div-border-color;\r\n        }\r\n      }\r\n      &:focus ~ .form-label {\r\n        color: $form-white-input-focus-label-color;\r\n      }\r\n      &:focus ~ .form-notch .form-notch-middle {\r\n        border-color: $form-white-input-focus-border-color;\r\n      }\r\n      &:focus ~ .form-notch .form-notch-leading {\r\n        border-top: $input-focus-border-width solid $form-white-input-focus-border-color;\r\n        border-bottom: $input-focus-border-width solid $form-white-input-focus-border-color;\r\n        border-left: $input-focus-border-width solid $form-white-input-focus-border-color;\r\n      }\r\n      &:focus ~ .form-notch .form-notch-trailing {\r\n        border-color: $form-white-input-focus-border-color;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n*/\r\n",
+                    "data": "\r\n\r\n.fa,.fab,.fad,.fal,.far,.fas {\r\n  -moz-osx-font-smoothing:grayscale;\r\n  -webkit-font-smoothing:antialiased;\r\n  display:inline-block;\r\n  font-style:normal;\r\n  font-variant:normal;\r\n  text-rendering:auto;line-height:1\r\n}\r\n\r\n.fa-lg {\r\n  font-size:1.33333em;\r\n  line-height:.75em;\r\n  vertical-align:-.0667em\r\n}\r\n/**/\r\n.fa-xs {font-size:.75em}\r\n\r\n.fa-sm {font-size:.875em}\r\n\r\n.fa-1x {font-size:1em}\r\n\r\n.fa-2x {font-size:2em}\r\n\r\n.fa-3x {font-size:3em}\r\n\r\n.fa-4x {font-size:4em}\r\n\r\n.fa-5x {font-size:5em}\r\n\r\n.fa-6x {font-size:6em}\r\n\r\n.fa-7x {font-size:7em}\r\n\r\n.fa-8x {font-size:8em}\r\n\r\n.fa-9x {font-size:9em}\r\n\r\n.fa-10x {font-size:10em}\r\n\r\n.fa-fw {text-align:center;width:1.25em}\r\n\r\n.fa-ul {list-style-type:none;margin-left:2.5em;padding-left:0}\r\n\r\n.fa-ul>li {position:relative}\r\n\r\n.fa-li {left:-2em;position:absolute;text-align:center;width:2em;line-height:inherit}\r\n\r\n.fa-border {border:.08em solid #eee;border-radius:.1em;padding:.2em .25em .15em}\r\n\r\n.fa-pull-left {float:left}\r\n\r\n.fa-pull-right {float:right}\r\n\r\n.fa.fa-pull-left,.fab.fa-pull-left,.fal.fa-pull-left,.far.fa-pull-left,.fas.fa-pull-left {\r\n  margin-right:.3em\r\n}\r\n\r\n.input-with-pre-icon label {left:36px;right:initial}\r\n\r\n\r\n.fa.fa-pull-right,.fab.fa-pull-right,.fal.fa-pull-right,.far.fa-pull-right,.fas.fa-pull-right {\r\n  margin-left:.3em\r\n}\r\n\r\n.fa-spin {\r\n  -webkit-animation:fa-spin 2s linear infinite;\r\n  animation:fa-spin 2s linear infinite\r\n}\r\n\r\n\r\n\r\n.fa,.far,.fas {\r\n  font-family: \"Font Awesome 5 Free\", serif\r\n}\r\n\r\n.fa,.fas {\r\n  font-weight:900\r\n}\r\n\r\n\r\n.v-btn__content {\r\n  align-items: center;\r\n  color: inherit;\r\n  display: flex;\r\n  flex: 1 0 auto;\r\n  justify-content: inherit;\r\n  line-height: normal;\r\n  position: relative;\r\n  transition: inherit;\r\n}\r\n\r\n\r\n.v-btn__content {\r\n  letter-spacing: normal;\r\n}\r\n\r\n\r\n/*\r\n@use 'mdb-angular-ui-kit/assets/scss/free/cards/_form-control';\r\n\r\nmdb-form-control {\r\n  display: block;\r\n}\r\n\r\n\r\n\r\n.form-control {\r\n  min-height: auto;\r\n  padding-top: 4px;\r\n  padding-bottom: 3.28px;\r\n  transition: all 0.1s linear;\r\n\r\n  &:focus {\r\n    transition: all 0.1s linear;\r\n    border-color: #1266f1;\r\n    box-shadow: inset 0 0 0 1px #1266f1;\r\n  }\r\n  &.form-control-sm {\r\n    font-size: 0.775rem;\r\n    line-height: 1.5;\r\n  }\r\n  &.form-control-lg {\r\n    line-height: 2.15;\r\n    border-radius: 0.25rem;\r\n  }\r\n}\r\n\r\n.select {\r\n  ~ .form-label {\r\n    position: absolute;\r\n    top: 0;\r\n    left: $form-label-left;\r\n    padding-top: $form-label-padding-top;\r\n    pointer-events: none;\r\n    transform-origin: 0 0;\r\n    transition: $form-label-transition;\r\n    color: $form-label-color;\r\n    margin-bottom: 0;\r\n  }\r\n  ~ .form-notch {\r\n    display: flex;\r\n    position: absolute;\r\n    left: 0;\r\n    top: 0;\r\n    width: 100%;\r\n    max-width: 100%;\r\n    height: 100%;\r\n    text-align: left;\r\n    pointer-events: none;\r\n    div {\r\n      pointer-events: none;\r\n      border: $border-width solid;\r\n      border-color: $form-notch-div-border-color;\r\n      box-sizing: border-box;\r\n      background: transparent;\r\n    }\r\n    .form-notch-leading {\r\n      left: 0;\r\n      top: 0;\r\n      height: 100%;\r\n      width: $form-notch-leading-width;\r\n      border-right: none;\r\n      border-radius: $form-notch-leading-border-radius 0 0 $form-notch-leading-border-radius;\r\n    }\r\n    .form-notch-middle {\r\n      flex: 0 0 auto;\r\n      width: auto;\r\n      max-width: calc(100% - #{$form-notch-middle-max-width});\r\n      height: 100%;\r\n      border-right: none;\r\n      border-left: none;\r\n    }\r\n    .form-notch-trailing {\r\n      flex-grow: 1;\r\n      height: 100%;\r\n      border-left: none;\r\n      border-radius: 0 $form-notch-trailing-border-radius $form-notch-trailing-border-radius 0;\r\n    }\r\n  }\r\n  &.form-control:not(.placeholder-active)::placeholder {\r\n    opacity: 0;\r\n  }\r\n  & .form-control:focus,\r\n  &.active {\r\n    &::placeholder {\r\n      opacity: 1;\r\n    }\r\n  }\r\n  & .form-control:focus {\r\n    box-shadow: none !important;\r\n  }\r\n  // &:focus ~ .form-label,\r\n  &.active ~ .form-label {\r\n    transform: $input-focus-active-label-transform;\r\n  }\r\n  & .form-control:focus ~ .form-label {\r\n    color: $input-focus-label-color;\r\n  }\r\n  & .form-control:focus ~ .form-notch .form-notch-middle,\r\n  & .form-control.active ~ .form-notch .form-notch-middle {\r\n    border-top: none;\r\n    border-right: none;\r\n    border-left: none;\r\n    transition: $input-transition;\r\n  }\r\n  &:focus ~ .form-notch .form-notch-middle {\r\n    border-bottom: $input-focus-border-width solid;\r\n    border-color: $input-focus-border-color;\r\n  }\r\n  &:focus ~ .form-notch .form-notch-leading,\r\n  &.active ~ .form-notch .form-notch-leading {\r\n    border-right: none;\r\n    transition: $input-transition;\r\n  }\r\n  &:focus ~ .form-notch .form-notch-leading {\r\n    border-top: $input-focus-border-width solid $input-focus-border-color;\r\n    border-bottom: $input-focus-border-width solid $input-focus-border-color;\r\n    border-left: $input-focus-border-width solid $input-focus-border-color;\r\n  }\r\n  &:focus ~ .form-notch .form-notch-trailing,\r\n  &.active ~ .form-notch .form-notch-trailing {\r\n    border-left: none;\r\n    transition: $input-transition;\r\n  }\r\n  &:focus ~ .form-notch .form-notch-trailing {\r\n    border-top: $input-focus-border-width solid;\r\n    border-bottom: $input-focus-border-width solid;\r\n    border-right: $input-focus-border-width solid;\r\n    border-color: $input-focus-border-color;\r\n  }\r\n  &:disabled,\r\n  &.disabled,\r\n  &[readonly] {\r\n    background-color: $input-disabled-background-color;\r\n  }\r\n  &.form-control-lg {\r\n    font-size: $input-font-size-lg;\r\n    line-height: $input-line-height-lg;\r\n    padding-left: $input-padding-left-lg;\r\n    padding-right: $input-padding-right-lg;\r\n    ~ .form-label {\r\n      padding-top: $form-label-padding-top-lg;\r\n    }\r\n    &:focus ~ .form-label,\r\n    &.active ~ .form-label {\r\n      transform: $input-focus-active-label-transform-lg;\r\n    }\r\n  }\r\n  &.form-control-sm {\r\n    padding-left: $input-padding-left-sm;\r\n    padding-right: $input-padding-right-sm;\r\n    padding-top: $input-padding-top-sm;\r\n    padding-bottom: $input-padding-bottom-sm;\r\n    font-size: $input-font-size-sm;\r\n    line-height: $input-line-height-sm;\r\n    ~ .form-label {\r\n      padding-top: $form-label-padding-top-sm;\r\n      font-size: $form-label-font-size-sm;\r\n    }\r\n    &:focus ~ .form-label,\r\n    &.active ~ .form-label {\r\n      transform: $input-focus-active-label-transform-sm;\r\n    }\r\n  }\r\n}\r\n\r\n$form-label-left: 1.75rem;\r\n\r\n\r\n.form-outline {\r\n  position: relative;\r\n\r\n  .form-helper {\r\n    width: 100%;\r\n    position: absolute;\r\n    font-size: 0.875em;\r\n    color: #757575;\r\n    .form-counter {\r\n      text-align: right;\r\n    }\r\n  }\r\n\r\n  .trailing {\r\n    position: absolute;\r\n    right: 10px;\r\n    left: initial;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    pointer-events: none;\r\n  }\r\n\r\n  .form-icon-trailing {\r\n    padding-right: 2rem !important;\r\n  }\r\n\r\n  .form-control {\r\n    min-height: auto;\r\n    padding-top: $input-padding-top;\r\n    padding-bottom: $input-padding-bottom;\r\n    padding-left: $input-padding-left;\r\n    padding-right: $input-padding-right;\r\n    border: 0;\r\n    background: transparent;\r\n    transition: $input-transition;\r\n    ~ .form-label {\r\n      position: absolute;\r\n      top: 0;\r\n      max-width: 90%;\r\n      white-space: nowrap;\r\n      overflow: hidden;\r\n      text-overflow: ellipsis;\r\n      left: $form-label-left;\r\n      padding-top: $form-label-padding-top;\r\n      pointer-events: none;\r\n      transform-origin: 0 0;\r\n      transition: $form-label-transition;\r\n      color: $form-label-color;\r\n      margin-bottom: 0;\r\n    }\r\n    ~ .form-notch {\r\n      display: flex;\r\n      position: absolute;\r\n      left: 0;\r\n      top: 0;\r\n      width: 100%;\r\n      max-width: 100%;\r\n      height: 100%;\r\n      text-align: left;\r\n      pointer-events: none;\r\n      div {\r\n        pointer-events: none;\r\n        border: $border-width solid;\r\n        border-color: $form-notch-div-border-color;\r\n        box-sizing: border-box;\r\n        background: transparent;\r\n      }\r\n      .form-notch-leading {\r\n        left: 0;\r\n        top: 0;\r\n        height: 100%;\r\n        width: $form-notch-leading-width;\r\n        border-right: none;\r\n        border-radius: $form-notch-leading-border-radius 0 0 $form-notch-leading-border-radius;\r\n      }\r\n      .form-notch-middle {\r\n        flex: 0 0 auto;\r\n        width: auto;\r\n        max-width: calc(100% - #{$form-notch-middle-max-width});\r\n        height: 100%;\r\n        border-right: none;\r\n        border-left: none;\r\n      }\r\n      .form-notch-trailing {\r\n        flex-grow: 1;\r\n        height: 100%;\r\n        border-left: none;\r\n        border-radius: 0 $form-notch-trailing-border-radius $form-notch-trailing-border-radius 0;\r\n      }\r\n    }\r\n    &:not(.placeholder-active)::placeholder {\r\n      opacity: 0;\r\n    }\r\n    &:focus,\r\n    &.active {\r\n      &::placeholder {\r\n        opacity: 1;\r\n      }\r\n    }\r\n    &:focus {\r\n      box-shadow: none !important;\r\n    }\r\n    &:focus ~ .form-label,\r\n    &.active ~ .form-label {\r\n      transform: $input-focus-active-label-transform;\r\n    }\r\n    &:focus ~ .form-label {\r\n      color: $input-focus-label-color;\r\n    }\r\n    &:focus ~ .form-notch .form-notch-middle,\r\n    &.active ~ .form-notch .form-notch-middle {\r\n      border-top: none;\r\n      border-right: none;\r\n      border-left: none;\r\n      transition: $input-transition;\r\n    }\r\n    &:focus ~ .form-notch .form-notch-middle {\r\n      border-bottom: $input-focus-border-width solid;\r\n      border-color: $input-focus-border-color;\r\n    }\r\n    &:focus ~ .form-notch .form-notch-leading,\r\n    &.active ~ .form-notch .form-notch-leading {\r\n      border-right: none;\r\n      transition: $input-transition;\r\n    }\r\n    &:focus ~ .form-notch .form-notch-leading {\r\n      border-top: $input-focus-border-width solid $input-focus-border-color;\r\n      border-bottom: $input-focus-border-width solid $input-focus-border-color;\r\n      border-left: $input-focus-border-width solid $input-focus-border-color;\r\n    }\r\n    &:focus ~ .form-notch .form-notch-trailing,\r\n    &.active ~ .form-notch .form-notch-trailing {\r\n      border-left: none;\r\n      transition: $input-transition;\r\n    }\r\n    &:focus ~ .form-notch .form-notch-trailing {\r\n      border-top: $input-focus-border-width solid $input-focus-border-color;\r\n      border-bottom: $input-focus-border-width solid $input-focus-border-color;\r\n      border-right: $input-focus-border-width solid $input-focus-border-color;\r\n    }\r\n    :disabled,\r\n    &.disabled,\r\n    &[readonly] {\r\n      background-color: $input-disabled-background-color;\r\n    }\r\n    &.form-control-lg {\r\n      font-size: $input-font-size-lg;\r\n      line-height: $input-line-height-lg;\r\n      padding-left: $input-padding-left-lg;\r\n      padding-right: $input-padding-right-lg;\r\n      ~ .form-label {\r\n        padding-top: $form-label-padding-top-lg;\r\n      }\r\n      &:focus ~ .form-label,\r\n      &.active ~ .form-label {\r\n        transform: $input-focus-active-label-transform-lg;\r\n      }\r\n    }\r\n    &.form-control-sm {\r\n      padding-left: $input-padding-left-sm;\r\n      padding-right: $input-padding-right-sm;\r\n      padding-top: $input-padding-top-sm;\r\n      padding-bottom: $input-padding-bottom-sm;\r\n      font-size: $input-font-size-sm;\r\n      line-height: $input-line-height-sm;\r\n      ~ .form-label {\r\n        padding-top: $form-label-padding-top-sm;\r\n        font-size: $form-label-font-size-sm;\r\n      }\r\n      :focus ~ .form-label,\r\n      &.active ~ .form-label {\r\n        transform: $input-focus-active-label-transform-sm;\r\n      }\r\n    }\r\n  }\r\n\r\n  &.form-white {\r\n    .form-control {\r\n      color: $form-white-input-color;\r\n      ~ .form-label {\r\n        color: $form-white-label-color;\r\n      }\r\n      ~ .form-notch {\r\n        div {\r\n          border-color: $form-white-notch-div-border-color;\r\n        }\r\n      }\r\n      &:focus ~ .form-label {\r\n        color: $form-white-input-focus-label-color;\r\n      }\r\n      &:focus ~ .form-notch .form-notch-middle {\r\n        border-color: $form-white-input-focus-border-color;\r\n      }\r\n      &:focus ~ .form-notch .form-notch-leading {\r\n        border-top: $input-focus-border-width solid $form-white-input-focus-border-color;\r\n        border-bottom: $input-focus-border-width solid $form-white-input-focus-border-color;\r\n        border-left: $input-focus-border-width solid $form-white-input-focus-border-color;\r\n      }\r\n      &:focus ~ .form-notch .form-notch-trailing {\r\n        border-color: $form-white-input-focus-border-color;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n*/\r\n",
                     "styleUrl": "./replace-pass-form.component.css"
                 }
             ],
@@ -4015,18 +4282,163 @@
                 }
             },
             "templateData": "<div class=\"modal-header\">\r\n  <!--div class=\"text-center\"-->\r\n    <label class=\"white-text mb-2 mt-2 font-weight-bold fas\">\r\n      <strong>REPLACE PASSWORD</strong>\r\n      <a class=\"green-text font-weight-bold\">\r\n        <strong> FORM</strong>\r\n      </a>\r\n    </label>\r\n\r\n  <!--/div-->\r\n  <button type=\"button\" class=\"btn btn-close white-text \" aria-label=\"Close\" (click)='modalRef.close(\"xbutton\")'></button>\r\n\r\n  <!--h5 class=\"modal-title\" id=\"exampleModalLabel\">REGISTRATION</h5-->\r\n\r\n</div>\r\n<div class=\"modal-body py-4 text-center expansionCard\">\r\n  <figure class=\"figure\">\r\n  <img aria-setsize=\"20\"  id=\"profile-img\" src=\"../../../AccGate/assets/images/T.png\"\r\n       class=\"profile-img-card img-fluid rounded \"  alt=\"\"/>\r\n    <figcaption class=\"figure-caption text-center text-capitalize\">Tadiran Telecom</figcaption>\r\n  </figure>\r\n  <div class=\"text-white rgba-stylish-strong py-4 px-5 z-depth-2\" style=\"border-bottom: 2rem\">\r\n  <!--div class=\"form-outline\">\r\n    <input type=\"text\" id=\"typeText\" class=\"form-control\" />\r\n    <label  class=\"form-label\" for=\"typeText\">Your UserName</label>\r\n  </div-->\r\n\r\n  <form *ngIf=\"!isSuccessful\" [formGroup]=\"replacePassForm\">\r\n\r\n  <!--###################### Username input field ###################### -->\r\n  <div class=\"form-outline\">\r\n    <mdb-form-control  class=\"form-outline\">\r\n      <input [mdbValidate]=\"true\" mdbInput type=\"text\" id=\"typeText\"\r\n             class=\"form-control\"  formControlName=\"userName\" required />\r\n      <label class=\"form-label \" for=\"typeText\" >Username input</label>\r\n      <mdb-error *ngIf=\"userName?.invalid && (userName?.dirty || userName?.touched)\">\r\n        Username is required\r\n      </mdb-error>\r\n      <mdb-success *ngIf=\"userName?.valid && (userName?.dirty || userName?.touched)\">\r\n        Looks good!\r\n      </mdb-success>\r\n    </mdb-form-control>\r\n  </div>\r\n    <br>\r\n  <!--###################### Old Password input field ###################### -->\r\n  <div class=\"form-outline\">\r\n    <mdb-form-control  class=\"form-outline\">\r\n    <input [mdbValidate]=\"true\" mdbInput type=\"password\" id=\"typeOldPassword\"\r\n           class=\"form-control\" formControlName=\"oldPassword\" required minlength=\"1\" />\r\n    <label class=\"form-label\" for=\"typeOldPassword\">Current Password</label>\r\n      <mdb-error *ngIf=\"oldPassword?.invalid && (oldPassword?.dirty || oldPassword?.touched)\">\r\n        Current password is required\r\n      </mdb-error>\r\n      <mdb-success *ngIf=\"oldPassword?.valid && (oldPassword?.dirty || oldPassword?.touched)\">\r\n        Looks good!\r\n      </mdb-success>\r\n    </mdb-form-control>\r\n    <span class=\"text-danger error-input\" *ngIf=\"submitted && errorFieldSubmitted['oldPassword']\"\r\n          style=\"white-space: pre-line;  font-size: 14px;\">\r\n          {{errorFieldSubmitted['oldPassword'] | loginErrorMessage}}\r\n      <br><br>\r\n    </span>\r\n  </div>\r\n\r\n    <br>\r\n    <hr class=\"my-1 text-black-50\">\r\n    <br>\r\n\r\n  <!--###################### New Password input field ###################### -->\r\n  <div class=\"form-outline text-black-50\">\r\n    <mdb-form-control  class=\"form-outline\">\r\n    <input [mdbValidate]=\"true\" mdbInput type=\"password\" id=\"typePassword\"\r\n           class=\"form-control\" formControlName=\"password\" required minlength=\"3\" />\r\n    <label mdbLabel class=\"form-label form-white\" for=\"typePassword\">New Password</label>\r\n    <mdb-error *ngIf=\"password?.invalid && (password?.dirty || password?.touched)\">\r\n      Password is required\r\n    </mdb-error>\r\n    <mdb-success *ngIf=\"password?.valid && (password?.dirty || password?.touched)\">\r\n      Looks good!\r\n    </mdb-success>\r\n    </mdb-form-control>\r\n    <span class=\"text-danger error-input\" *ngIf=\"submitted && errorFieldSubmitted['password']\"\r\n          style=\"white-space: pre-line;  font-size: 14px;\">\r\n          {{errorFieldSubmitted['password'] | apiErrorMessage}}\r\n      <br><br>\r\n    </span>\r\n  </div>\r\n  <br>\r\n\r\n  <!--###################### Confirm Password input field ###################### -->\r\n  <div class=\"form-outline\">\r\n    <mdb-form-control  class=\"form-outline\">\r\n    <input [mdbValidate]=\"true\" mdbInput type=\"password\" id=\"typeConfirmPassword\"\r\n           class=\"form-control\" formControlName=\"confirmPassword\" required minlength=\"3\" />\r\n    <label mdbLabel class=\"form-label form-white\" for=\"typeConfirmPassword\">Confirm Password</label>\r\n      <mdb-error *ngIf=\"confirmPassword?.invalid && (confirmPassword?.dirty || confirmPassword?.touched)\">\r\n        Retype password is required\r\n      </mdb-error>\r\n      <mdb-success *ngIf=\"confirmPassword?.valid && (confirmPassword?.dirty || confirmPassword?.touched)\">\r\n        Looks good!\r\n      </mdb-success>\r\n    </mdb-form-control>\r\n    <span class=\"text-danger error-input\" *ngIf=\"submitted && errorFieldSubmitted['confirmPassword']\"\r\n          style=\"white-space: pre-line;  font-size: 14px;\">\r\n          {{errorFieldSubmitted['confirmPassword'] | apiErrorMessage}}\r\n      <br><br>\r\n    </span>\r\n  </div>\r\n  </form>\r\n  </div>\r\n\r\n\r\n  <!--Grid row-->\r\n  <div  *ngIf=\"!isSuccessful\" class=\"row d-flex align-items-lg-center border-bottom-0 \">\r\n    <!--Grid column-->\r\n    <div class=\"text-center mb-2  col-md-12 border-bottom-0\">\r\n      <button type=\"button\" (click)=\"onSubmit()\" class=\"btn btn-success btn-block btn-rounded z-depth-1 waves-effect waves-light border-bottom-0\"\r\n      style=\"margin-bottom: 0;\">Replace Password</button>\r\n    </div>\r\n  </div>\r\n  <div hidden class=\"list-group-horizontal mb-4 col-md-12\">\r\n    <button type=\"button\" class=\" fa-pull-left btn btn-primary\">Save changes</button>\r\n    <button type=\"button\" class=\"fa-pull-right btn btn-secondary\" (click)=\"modalRef.close()\">Close</button>\r\n  </div>\r\n\r\n</div>\r\n\r\n\r\n\r\n<div class=\"modal-content \">\r\n    <div class=\"modal-footer fal\">\r\n      <input type=\"checkbox\" class=\" form-check-input\" id=\"checkbox7\">\r\n      <label for=\"checkbox7\" class=\"form-check-label white-text\">Subscribe to our <a href=\"#\" class=\"green-text font-weight-bold\"> newsletter?</a></label>\r\n  </div>\r\n</div>\r\n\r\n\r\n"
+        },
+        {
+            "name": "TadiranIconComponent",
+            "id": "component-TadiranIconComponent-fc838fffc07b1830f8edbc027bddf05ca46505037904d8acdde698cfd1a555249fda0f641e404ff59ad788aa1469d4f8a420da19c1aa5d3135ab89c93d9ef1d0",
+            "file": "src/app/page/tadiran-icon/tadiran-icon.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-tadiran-icon",
+            "styleUrls": [
+                "./tadiran-icon.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./tadiran-icon.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nWhat background color to use\n",
+                    "description": "<p>What background color to use</p>\n",
+                    "line": 19,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'accGateButton2'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 588,
+                            "end": 601,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 325,
+                            "tagName": {
+                                "pos": 589,
+                                "end": 597,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "required"
+                            },
+                            "comment": ""
+                        }
+                    ],
+                    "rawdescription": "\n\nButton contents\n\n",
+                    "description": "<p>Button contents</p>\n",
+                    "line": 33,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "primary",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nIs this the principal call to action on the page?\n",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 13,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nHow large should the button be?\n",
+                    "description": "<p>How large should the button be?</p>\n",
+                    "line": 25,
+                    "type": "\"small\" | \"medium\" | \"large\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nOptional click handler\n",
+                    "description": "<p>Optional click handler</p>\n",
+                    "line": 39,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 50,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-tadiran-icon',\n  templateUrl: './tadiran-icon.component.html',\n  styleUrls: ['./tadiran-icon.component.css']\n})\nexport class TadiranIconComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'accGateButton2';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-tadiran-icon--primary' : 'storybook-tadiran-icon--secondary';\n\n    return ['storybook-tadiran-icon', `storybook-tadiran-icon--${this.size}`, mode];\n  }\n\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".Vector {\r\n  position: absolute;\r\n  bottom: 50px;\r\n  left: 30px;\r\n  width: 151px;\r\n  height: 39px;\r\n}\r\n\r\nimg.Language-Desktop-Icon {\r\n  position: absolute;\r\n  top: 1px;\r\n  right: 1px;\r\n  width: 151px;\r\n  height: 39px;\r\n  object-fit: contain;\r\n  box-shadow: 0 1px 1px 0 rgba(61, 142, 207, 0.15);\r\n}\r\n",
+                    "styleUrl": "./tadiran-icon.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 45
+            },
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 41
+                    }
+                }
+            },
+            "templateData": "<div class=\"Vector\">\n<img (click)=\"onClick.emit($event)\" [ngClass]=\"classes\" [ngStyle]=\"{ 'background-color': backgroundColor }\"\n   src=\"/assets/images/aeonix_logo_150.png\"\n       srcset=\"/assets/images/aeonix_logo_150.png 2x,\n             /assets/images/language-desktop-icon@3x.png 3x\"\n       class=\"Language-Desktop-Icon\"  alt=\"language-desktop-icon\"/>\n\n</div>\n"
         }
     ],
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-692b226bb44456ab5e0c86087e19d5b609e70909be58c9760d2d706e625c567789297cb1bfeee6a6c930d88d23b18a9df9411f756ce9087de17d16271f1d640a",
+            "id": "module-AppModule-b8c9848e34c79300d2b6fc3201949c64b8c041eb1b9a16c5bf1e81ce2f5b5b09aa0252a4f348996a98d58ba8cb96f46d6e9a4df3d416e2c805ff4d07df6c1c6e",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport {FormsModule, ReactiveFormsModule} from '@angular/forms';\r\nimport { HttpClientModule } from '@angular/common/http';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { LoginComponent } from './login/login.component';\r\nimport { RegisterComponent } from './register/register.component';\r\nimport { HomeComponent } from './home/home.component';\r\nimport { ProfileComponent } from './profile/profile.component';\r\nimport { BoardAdminComponent } from './board-admin/board-admin.component';\r\nimport { BoardModeratorComponent } from './board-moderator/board-moderator.component';\r\nimport { BoardUserComponent } from './board-user/board-user.component';\r\n\r\nimport { authInterceptorProviders, AuthInterceptor } from './_helpers/auth.interceptor';\r\nimport {NgbDatepickerModule} from \"@ng-bootstrap/ng-bootstrap\";\r\nimport { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';\r\nimport { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';\r\nimport { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';\r\nimport { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';\r\nimport { MdbDropdownModule } from 'mdb-angular-ui-kit/dropdown';\r\nimport { MdbFormsModule } from 'mdb-angular-ui-kit/forms';\r\nimport { MdbModalModule } from 'mdb-angular-ui-kit/modal';\r\nimport { MdbPopoverModule } from 'mdb-angular-ui-kit/popover';\r\nimport { MdbRadioModule } from 'mdb-angular-ui-kit/radio';\r\nimport { MdbRangeModule } from 'mdb-angular-ui-kit/range';\r\nimport { MdbRippleModule } from 'mdb-angular-ui-kit/ripple';\r\nimport { MdbScrollspyModule } from 'mdb-angular-ui-kit/scrollspy';\r\nimport { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';\r\nimport { MdbModalRef } from 'mdb-angular-ui-kit/modal';\r\nimport { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';\r\nimport { MdbValidationModule, MdbErrorDirective, MdbSuccessDirective } from 'mdb-angular-ui-kit/validation';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { MdbInputDirective  } from 'mdb-angular-ui-kit/forms';\r\nimport { ModalModule, TooltipModule, PopoverModule, ButtonsModule, MDBBootstrapModule } from 'angular-bootstrap-md';\r\nimport { RegisterFormComponent } from './login/register-form/register-form.component';\r\nimport {ReplacePassFormComponent} from \"./login/replace-pass-form/replace-pass-form.component\";\r\nimport {ApiErrorMessagePipe} from \"./pipes/api-error-message.pipe\";\r\nimport {LoginErrorMessagePipe} from \"./pipes/login-error-message.pipe\";\r\nimport  Page2Component  from './page/page.component';\r\nimport { LanguageIconComponent } from './page/language-icon/language-icon.component';\r\n\r\n@NgModule({\r\n    declarations: [\r\n        AppComponent,\r\n        LoginComponent,\r\n        RegisterComponent,\r\n        HomeComponent,\r\n        ProfileComponent,\r\n        BoardAdminComponent,\r\n        BoardModeratorComponent,\r\n        BoardUserComponent,\r\n        RegisterFormComponent,\r\n        ReplacePassFormComponent,\r\n        ApiErrorMessagePipe,\r\n        LoginErrorMessagePipe,\r\n        Page2Component,\r\n        LanguageIconComponent\r\n    ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    FormsModule,\r\n    HttpClientModule,\r\n    NgbDatepickerModule,\r\n    MdbAccordionModule,\r\n    MdbCarouselModule,\r\n    MdbCheckboxModule,\r\n    MdbCollapseModule,\r\n    MdbDropdownModule,\r\n    MdbFormsModule,\r\n    MdbModalModule,\r\n    MdbPopoverModule,\r\n    MdbRadioModule,\r\n    MdbRangeModule,\r\n    MdbRippleModule,\r\n    MdbScrollspyModule,\r\n    MdbTabsModule,\r\n    MdbTooltipModule,\r\n    //MdbValidationModule,\r\n    BrowserAnimationsModule,\r\n    ReactiveFormsModule,\r\n    ModalModule,\r\n    ButtonsModule,\r\n    MDBBootstrapModule.forRoot(),\r\n  ],\r\n  providers: [authInterceptorProviders],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport {FormsModule, ReactiveFormsModule} from '@angular/forms';\r\nimport { HttpClientModule } from '@angular/common/http';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { LoginComponent } from './login/login.component';\r\nimport { RegisterComponent } from './register/register.component';\r\nimport { HomeComponent } from './home/home.component';\r\nimport { ProfileComponent } from './profile/profile.component';\r\nimport { BoardAdminComponent } from './board-admin/board-admin.component';\r\nimport { BoardModeratorComponent } from './board-moderator/board-moderator.component';\r\nimport { BoardUserComponent } from './board-user/board-user.component';\r\n\r\nimport { authInterceptorProviders, AuthInterceptor } from './_helpers/auth.interceptor';\r\nimport {NgbDatepickerModule} from \"@ng-bootstrap/ng-bootstrap\";\r\nimport { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';\r\nimport { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';\r\nimport { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';\r\nimport { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';\r\nimport { MdbDropdownModule } from 'mdb-angular-ui-kit/dropdown';\r\nimport { MdbFormsModule } from 'mdb-angular-ui-kit/forms';\r\nimport { MdbModalModule } from 'mdb-angular-ui-kit/modal';\r\nimport { MdbPopoverModule } from 'mdb-angular-ui-kit/popover';\r\nimport { MdbRadioModule } from 'mdb-angular-ui-kit/radio';\r\nimport { MdbRangeModule } from 'mdb-angular-ui-kit/range';\r\nimport { MdbRippleModule } from 'mdb-angular-ui-kit/ripple';\r\nimport { MdbScrollspyModule } from 'mdb-angular-ui-kit/scrollspy';\r\nimport { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';\r\nimport { MdbModalRef } from 'mdb-angular-ui-kit/modal';\r\nimport { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';\r\nimport { MdbValidationModule, MdbErrorDirective, MdbSuccessDirective } from 'mdb-angular-ui-kit/validation';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { MdbInputDirective  } from 'mdb-angular-ui-kit/forms';\r\nimport { ModalModule, TooltipModule, PopoverModule, ButtonsModule, MDBBootstrapModule } from 'angular-bootstrap-md';\r\nimport { RegisterFormComponent } from './login/register-form/register-form.component';\r\nimport {ReplacePassFormComponent} from \"./login/replace-pass-form/replace-pass-form.component\";\r\nimport {ApiErrorMessagePipe} from \"./pipes/api-error-message.pipe\";\r\nimport {LoginErrorMessagePipe} from \"./pipes/login-error-message.pipe\";\r\nimport  Page2Component  from './page/page.component';\r\nimport { LanguageIconComponent } from './page/language-icon/language-icon.component';\r\nimport { TadiranIconComponent } from './page/tadiran-icon/tadiran-icon.component';\r\nimport Button from '../stories/buttons/button.component'\r\nimport Card from '../stories/cards/card.component'\r\n\r\n@NgModule({\r\n    declarations: [\r\n        AppComponent,\r\n        LoginComponent,\r\n        RegisterComponent,\r\n        HomeComponent,\r\n        ProfileComponent,\r\n        BoardAdminComponent,\r\n        BoardModeratorComponent,\r\n        BoardUserComponent,\r\n        RegisterFormComponent,\r\n        ReplacePassFormComponent,\r\n        ApiErrorMessagePipe,\r\n        LoginErrorMessagePipe,\r\n        Page2Component,\r\n        LanguageIconComponent,\r\n        TadiranIconComponent,\r\n        Button,\r\n        Card,\r\n\r\n    ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    FormsModule,\r\n    HttpClientModule,\r\n    NgbDatepickerModule,\r\n    MdbAccordionModule,\r\n    MdbCarouselModule,\r\n    MdbCheckboxModule,\r\n    MdbCollapseModule,\r\n    MdbDropdownModule,\r\n    MdbFormsModule,\r\n    MdbModalModule,\r\n    MdbPopoverModule,\r\n    MdbRadioModule,\r\n    MdbRangeModule,\r\n    MdbRippleModule,\r\n    MdbScrollspyModule,\r\n    MdbTabsModule,\r\n    MdbTooltipModule,\r\n    //MdbValidationModule,\r\n    BrowserAnimationsModule,\r\n    ReactiveFormsModule,\r\n    ModalModule,\r\n    ButtonsModule,\r\n    MDBBootstrapModule.forRoot(),\r\n  ],\r\n  providers: [authInterceptorProviders],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -4049,6 +4461,12 @@
                         },
                         {
                             "name": "BoardUserComponent"
+                        },
+                        {
+                            "name": "Button"
+                        },
+                        {
+                            "name": "Card"
                         },
                         {
                             "name": "HomeComponent"
@@ -4076,6 +4494,9 @@
                         },
                         {
                             "name": "ReplacePassFormComponent"
+                        },
+                        {
+                            "name": "TadiranIconComponent"
                         }
                     ]
                 },
@@ -4248,7 +4669,17 @@
                 "name": "Large",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Button.stories.ts",
+                "file": "src/stories/cards/Card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Large",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/buttons/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4268,27 +4699,7 @@
                 "name": "Large",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/page/language-icon2/language-icon.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "LoggedIn",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/Header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "LoggedIn",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/Page.stories.ts",
+                "file": "src/app/page/tadiran-icon/tadiran-icon.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4305,20 +4716,20 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "LoggedOut",
+                "name": "LoggedIn",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Header.stories.ts",
+                "file": "src/stories/headers/Header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "LoggedOut",
+                "name": "LoggedIn",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Page.stories.ts",
+                "file": "src/stories/pages/Page.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4329,6 +4740,26 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/page/page.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "LoggedOut",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/headers/Header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "LoggedOut",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/pages/Page.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4358,7 +4789,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Button.stories.ts",
+                "file": "src/app/page/page.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4368,7 +4799,17 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/page/page.stories.ts",
+                "file": "src/stories/cards/Card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/buttons/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4388,7 +4829,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/page/language-icon2/language-icon.stories.ts",
+                "file": "src/app/page/tadiran-icon/tadiran-icon.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4427,16 +4868,6 @@
                 "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Secondary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/page/page.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -4447,6 +4878,26 @@
                 "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/cards/Card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Secondary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/buttons/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Secondary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/page/language-icon/language-icon.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -4457,7 +4908,7 @@
                 "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/page/language-icon2/language-icon.stories.ts",
+                "file": "src/app/page/tadiran-icon/tadiran-icon.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4467,7 +4918,17 @@
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Button.stories.ts",
+                "file": "src/stories/cards/Card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Small",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/buttons/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4487,7 +4948,7 @@
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/page/language-icon2/language-icon.stories.ts",
+                "file": "src/app/page/tadiran-icon/tadiran-icon.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4497,17 +4958,27 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Button.stories.ts",
+                "file": "src/app/page/page.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<Button>",
-                "defaultValue": "(args: Button) => ({\n  props: args,\n})"
+                "type": "Story<Page2Component>",
+                "defaultValue": "(args: Page2Component) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Header.stories.ts",
+                "file": "src/stories/cards/Card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Card>",
+                "defaultValue": "(args: Card) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/headers/Header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<Header>",
@@ -4517,21 +4988,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Page.stories.ts",
+                "file": "src/stories/buttons/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<Page>",
-                "defaultValue": "(args: Page) => ({\n  props: args,\n})"
+                "type": "Story<Button>",
+                "defaultValue": "(args: Button) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/page/page.stories.ts",
+                "file": "src/stories/pages/Page.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "(args) => ({\n  props: args,\n})"
+                "type": "Story<Page>",
+                "defaultValue": "(args: Page) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -4547,11 +5018,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/page/language-icon2/language-icon.stories.ts",
+                "file": "src/app/page/tadiran-icon/tadiran-icon.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<LanguageIconComponent>",
-                "defaultValue": "(args: LanguageIconComponent) => ({\n  props: args,\n})"
+                "type": "Story<TadiranIconComponent>",
+                "defaultValue": "(args: TadiranIconComponent) => ({\n  props: args,\n})"
             },
             {
                 "name": "TOKEN_HEADER_KEY",
@@ -4771,12 +5242,12 @@
                     "defaultValue": "{\r\n  production: false\r\n}"
                 }
             ],
-            "src/stories/Button.stories.ts": [
+            "src/stories/cards/Card.stories.ts": [
                 {
                     "name": "Large",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/Button.stories.ts",
+                    "file": "src/stories/cards/Card.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -4786,7 +5257,7 @@
                     "name": "Primary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/Button.stories.ts",
+                    "file": "src/stories/cards/Card.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -4796,7 +5267,7 @@
                     "name": "Secondary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/Button.stories.ts",
+                    "file": "src/stories/cards/Card.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -4806,7 +5277,7 @@
                     "name": "Small",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/Button.stories.ts",
+                    "file": "src/stories/cards/Card.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -4816,7 +5287,59 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/Button.stories.ts",
+                    "file": "src/stories/cards/Card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<Card>",
+                    "defaultValue": "(args: Card) => ({\n  props: args,\n})"
+                }
+            ],
+            "src/stories/buttons/Button.stories.ts": [
+                {
+                    "name": "Large",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/buttons/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/buttons/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/buttons/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Small",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/buttons/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/buttons/Button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<Button>",
@@ -4875,12 +5398,12 @@
                     "defaultValue": "(args: LanguageIconComponent) => ({\n  props: args,\n})"
                 }
             ],
-            "src/app/page/language-icon2/language-icon.stories.ts": [
+            "src/app/page/tadiran-icon/tadiran-icon.stories.ts": [
                 {
                     "name": "Large",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/page/language-icon2/language-icon.stories.ts",
+                    "file": "src/app/page/tadiran-icon/tadiran-icon.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -4890,7 +5413,7 @@
                     "name": "Primary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/page/language-icon2/language-icon.stories.ts",
+                    "file": "src/app/page/tadiran-icon/tadiran-icon.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -4900,7 +5423,7 @@
                     "name": "Secondary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/page/language-icon2/language-icon.stories.ts",
+                    "file": "src/app/page/tadiran-icon/tadiran-icon.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -4910,7 +5433,7 @@
                     "name": "Small",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/page/language-icon2/language-icon.stories.ts",
+                    "file": "src/app/page/tadiran-icon/tadiran-icon.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -4920,75 +5443,11 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/page/language-icon2/language-icon.stories.ts",
+                    "file": "src/app/page/tadiran-icon/tadiran-icon.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story<LanguageIconComponent>",
-                    "defaultValue": "(args: LanguageIconComponent) => ({\n  props: args,\n})"
-                }
-            ],
-            "src/stories/Header.stories.ts": [
-                {
-                    "name": "LoggedIn",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "LoggedOut",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<Header>",
-                    "defaultValue": "(args: Header) => ({\n  props: args,\n})"
-                }
-            ],
-            "src/stories/Page.stories.ts": [
-                {
-                    "name": "LoggedIn",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Page.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "LoggedOut",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Page.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Page.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<Page>",
-                    "defaultValue": "(args: Page) => ({\n  props: args,\n})"
+                    "type": "Story<TadiranIconComponent>",
+                    "defaultValue": "(args: TadiranIconComponent) => ({\n  props: args,\n})"
                 }
             ],
             "src/app/page/page.stories.ts": [
@@ -5039,8 +5498,72 @@
                     "file": "src/app/page/page.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "(args) => ({\n  props: args,\n})"
+                    "type": "Story<Page2Component>",
+                    "defaultValue": "(args: Page2Component) => ({\n  props: args,\n})"
+                }
+            ],
+            "src/stories/headers/Header.stories.ts": [
+                {
+                    "name": "LoggedIn",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/headers/Header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "LoggedOut",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/headers/Header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/headers/Header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<Header>",
+                    "defaultValue": "(args: Header) => ({\n  props: args,\n})"
+                }
+            ],
+            "src/stories/pages/Page.stories.ts": [
+                {
+                    "name": "LoggedIn",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/pages/Page.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "LoggedOut",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/pages/Page.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/pages/Page.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<Page>",
+                    "defaultValue": "(args: Page) => ({\n  props: args,\n})"
                 }
             ],
             "src/app/_services/token-storage.service.ts": [
@@ -5496,71 +6019,12 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/page/language-icon2/language-icon.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "LanguageIconComponent",
-                "coveragePercent": 62,
-                "coverageCount": "5/8",
-                "status": "good"
-            },
-            {
-                "filePath": "src/app/page/language-icon2/language-icon.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Large",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/page/language-icon2/language-icon.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Primary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/page/language-icon2/language-icon.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Secondary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/page/language-icon2/language-icon.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Small",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/page/language-icon2/language-icon.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
                 "filePath": "src/app/page/page.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "Page2Component",
-                "coveragePercent": 66,
-                "coverageCount": "2/3",
+                "coveragePercent": 57,
+                "coverageCount": "4/7",
                 "status": "good"
             },
             {
@@ -5605,6 +6069,65 @@
             },
             {
                 "filePath": "src/app/page/page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/page/tadiran-icon/tadiran-icon.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TadiranIconComponent",
+                "coveragePercent": 62,
+                "coverageCount": "5/8",
+                "status": "good"
+            },
+            {
+                "filePath": "src/app/page/tadiran-icon/tadiran-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Large",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/page/tadiran-icon/tadiran-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/page/tadiran-icon/tadiran-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Secondary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/page/tadiran-icon/tadiran-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Small",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/page/tadiran-icon/tadiran-icon.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -5670,116 +6193,6 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Large",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Primary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Secondary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Small",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Header.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedIn",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Header.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedOut",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Header.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedIn",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedOut",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
                 "filePath": "src/stories/User.ts",
                 "type": "interface",
                 "linktype": "interface",
@@ -5789,7 +6202,57 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/button.component.ts",
+                "filePath": "src/stories/buttons/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Large",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/buttons/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/buttons/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Secondary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/buttons/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Small",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/buttons/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/buttons/button.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "ButtonComponent",
@@ -5798,7 +6261,96 @@
                 "status": "very-good"
             },
             {
-                "filePath": "src/stories/header.component.ts",
+                "filePath": "src/stories/cards/Card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Large",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/cards/Card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/cards/Card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Secondary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/cards/Card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Small",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/cards/Card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/cards/card.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CardComponent",
+                "coveragePercent": 25,
+                "coverageCount": "5/20",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/headers/Header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedIn",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/headers/Header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedOut",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/headers/Header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/headers/header.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "HeaderComponent",
@@ -5807,7 +6359,37 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/page.component.ts",
+                "filePath": "src/stories/pages/Page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedIn",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/pages/Page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedOut",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/pages/Page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/pages/page.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "PageComponent",
