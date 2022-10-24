@@ -40,7 +40,7 @@ import {ApiErrorMessagePipe} from "./pipes/api-error-message.pipe";
 import {LoginErrorMessagePipe} from "./pipes/login-error-message.pipe";
 import  Page2Component  from './page/page.component';
 import { TaskComponent } from '../stories/task/task.component';
-import { LanguageIconComponent } from '../stories/buttons/language-icon/language-icon.component';
+import { ButtonLanguageComponent } from '../stories/buttons/button-language/button-language.component';
 import { ButtonTadiranComponent } from '../stories/buttons/button-tadiran/button-tadiran.component';
 import Button from '../stories/buttons/button-example/button.component'
 import { ButtonGlobeComponent } from '../stories/buttons/button-globe/button-globe.component'
@@ -64,7 +64,7 @@ import {TaskListComponent} from '../stories/task-list/task-list.component'
         ApiErrorMessagePipe,
         LoginErrorMessagePipe,
         Page2Component,
-        LanguageIconComponent,
+        ButtonLanguageComponent,
         ButtonTadiranComponent,
         Button,
         Card,

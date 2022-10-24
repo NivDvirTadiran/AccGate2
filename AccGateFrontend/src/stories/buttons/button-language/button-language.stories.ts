@@ -1,13 +1,13 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { Story, Meta } from '@storybook/angular/types-6-0';
-import { LanguageIconComponent } from './language-icon.component';
+import { ButtonLanguageComponent } from './button-language.component';
 import {moduleMetadata} from "@storybook/angular";
 import {CommonModule} from "@angular/common";
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
   title: 'Example/LanguageIcon',
-  component: LanguageIconComponent,
+  component: ButtonLanguageComponent,
   decorators: [
     moduleMetadata({
       declarations: [],
@@ -18,7 +18,7 @@ export default {
 } as Meta;
 
 // More on component templates: https://storybook.js.org/docs/angular/writing-stories/introduction#using-args
-const Template: Story<LanguageIconComponent> = (args: LanguageIconComponent) => ({
+const Template: Story<ButtonLanguageComponent> = (args: ButtonLanguageComponent) => ({
   props: args,
 });
 

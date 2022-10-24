@@ -592,7 +592,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pipes_login_error_message_pipe__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./pipes/login-error-message.pipe */ 74164);
 /* harmony import */ var _page_page_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./page/page.component */ 61527);
 /* harmony import */ var _stories_task_task_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../stories/task/task.component */ 48262);
-/* harmony import */ var _page_language_icon_language_icon_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./page/language-icon/language-icon.component */ 18007);
+/* harmony import */ var _page_language_icon_language_icon_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./page/button-language/button-language.component */ 18007);
 /* harmony import */ var _page_tadiran_icon_tadiran_icon_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./page/button-tadiran/button-tadiran.component */ 48365);
 /* harmony import */ var _stories_buttons_button_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../stories/buttons/button.component */ 2439);
 /* harmony import */ var _stories_cards_card_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../stories/cards/card.component */ 56970);
@@ -2077,7 +2077,7 @@ ReplacePassFormComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_M
 
 /***/ 18007:
 /*!***************************************************************!*\
-  !*** ./src/app/page/language-icon/language-icon.component.ts ***!
+  !*** ./src/app/page/button-language/button-language.component.ts ***!
   \***************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
@@ -2114,14 +2114,14 @@ class LanguageIconComponent {
         this.onClick = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.EventEmitter();
     }
     get classes() {
-        const mode = this.primary ? 'storybook-language-icon--primary' : 'storybook-language-icon--secondary';
-        return ['storybook-language-icon', `storybook-language-icon--${this.size}`, mode];
+        const mode = this.primary ? 'storybook-button-language--primary' : 'storybook-button-language--secondary';
+        return ['storybook-button-language', `storybook-language-icon--${this.size}`, mode];
     }
     ngOnInit() {
     }
 }
 LanguageIconComponent.ɵfac = function LanguageIconComponent_Factory(t) { return new (t || LanguageIconComponent)(); };
-LanguageIconComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: LanguageIconComponent, selectors: [["storybook-language-icon"]], inputs: { primary: "primary", backgroundColor: "backgroundColor", size: "size", label: "label" }, outputs: { onClick: "onClick" }, decls: 2, vars: 4, consts: [[1, "Vector"], ["src", "/assets/images/language-desktop-icon.png", "srcset", "/assets/images/language-desktop-icon@2x.png 2x,\n             /assets/images/language-desktop-icon@3x.png 3x", "alt", "language-desktop-icon", 1, "Language-Desktop-Icon", 3, "ngClass", "ngStyle", "click"]], template: function LanguageIconComponent_Template(rf, ctx) { if (rf & 1) {
+LanguageIconComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: LanguageIconComponent, selectors: [["storybook-button-language"]], inputs: { primary: "primary", backgroundColor: "backgroundColor", size: "size", label: "label" }, outputs: { onClick: "onClick" }, decls: 2, vars: 4, consts: [[1, "Vector"], ["src", "/assets/images/language-desktop-icon.png", "srcset", "/assets/images/language-desktop-icon@2x.png 2x,\n             /assets/images/language-desktop-icon@3x.png 3x", "alt", "language-desktop-icon", 1, "Language-Desktop-Icon", 3, "ngClass", "ngStyle", "click"]], template: function LanguageIconComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "img", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LanguageIconComponent_Template_img_click_1_listener($event) { return ctx.onClick.emit($event); });
@@ -2148,7 +2148,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 37716);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ 38583);
-/* harmony import */ var _language_icon_language_icon_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./language-icon/language-icon.component */ 18007);
+/* harmony import */ var _language_icon_language_icon_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./button-language/button-language.component */ 18007);
 /* harmony import */ var _tadiran_icon_tadiran_icon_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./button-tadiran/button-tadiran.component */ 48365);
 /* harmony import */ var _stories_forms_form_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../stories/forms/form.component */ 98776);
 /* harmony import */ var _stories_task_task_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../stories/task/task.component */ 48262);
@@ -2204,7 +2204,7 @@ Page2Component.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_7__[
         _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](1, "img", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](2, "img", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](3, "storybook-language-icon", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](3, "storybook-button-language", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](4, "storybook-button-tadiran");
         _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](5, "storybook-form");
         _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](6, "storybook-task");

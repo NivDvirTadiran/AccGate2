@@ -1350,7 +1350,7 @@
 
 
       var _page_language_icon_language_icon_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
-      /*! ./page/language-icon/language-icon.component */
+      /*! ./page/button-language/button-language.component */
       18007);
       /* harmony import */
 
@@ -4244,7 +4244,7 @@
     /***/
     18007:
     /*!***************************************************************!*\
-      !*** ./src/app/page/language-icon/language-icon.component.ts ***!
+      !*** ./src/app/page/button-language/button-language.component.ts ***!
       \***************************************************************/
 
     /***/
@@ -4315,8 +4315,8 @@
         _createClass(_LanguageIconComponent, [{
           key: "classes",
           get: function get() {
-            var mode = this.primary ? 'storybook-language-icon--primary' : 'storybook-language-icon--secondary';
-            return ['storybook-language-icon', "storybook-language-icon--".concat(this.size), mode];
+            var mode = this.primary ? 'storybook-button-language--primary' : 'storybook-button-language--secondary';
+            return ['storybook-button-language', "storybook-button-language--".concat(this.size), mode];
           }
         }, {
           key: "ngOnInit",
@@ -4332,7 +4332,7 @@
 
       _LanguageIconComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: _LanguageIconComponent,
-        selectors: [["storybook-language-icon"]],
+        selectors: [["storybook-button-language"]],
         inputs: {
           primary: "primary",
           backgroundColor: "backgroundColor",
@@ -4413,7 +4413,7 @@
 
 
       var _language_icon_language_icon_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! ./language-icon/language-icon.component */
+      /*! ./button-language/button-language.component */
       18007);
       /* harmony import */
 
@@ -4526,7 +4526,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](3, "storybook-language-icon", 3);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](3, "storybook-button-language", 3);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](4, "storybook-button-tadiran");
 

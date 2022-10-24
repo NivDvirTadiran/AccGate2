@@ -183,10 +183,10 @@ Operating system : Windows 10
 [19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\login\replace-pass-form\replace-pass-form.component.css
 [19:48:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\login\replace-pass-form\replace-pass-form.component.spec.ts
 [19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\login\replace-pass-form\replace-pass-form.component.ts
-[19:48:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\page\language-icon\language-icon.component.spec.ts
+[19:48:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\page\language-icon\button-language.component.spec.ts
 [19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\page\language-icon\language-icon.component.css
-[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\page\language-icon\language-icon.component.ts
-[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\page\language-icon\language-icon.stories.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\page\language-icon\button-language.component.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\page\language-icon\button-language.stories.ts
 [19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\login\register-form\register-form.component.css
 [19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\page\language-icon\language-icon.component.html
 [19:48:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\login\register-form\register-form.component.spec.ts
@@ -293,7 +293,7 @@ Operating system : Windows 10
 [19:48:26]                : 	- ApiErrorMessagePipe
 [19:48:26]                : 	- LoginErrorMessagePipe
 [19:48:26]                : 	- Page2Component
-[19:48:26]                : 	- LanguageIconComponent
+[19:48:26]                : 	- ButtonLanguageComponent
 [19:48:26]                : 	- ButtonGlobeComponent
 [19:48:26]                : 	- Button
 [19:48:26]                : 	- Card
@@ -383,9 +383,9 @@ Operating system : Windows 10
 [19:48:26] found          : LoggedIn
 [19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/login/replace-pass-form/replace-pass-form.component.ts
 [19:48:26] found          : ReplacePassFormComponent
-[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/page/language-icon/language-icon.component.ts
-[19:48:26] found          : LanguageIconComponent
-[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/page/language-icon/language-icon.stories.ts
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/page/language-icon/button-language.component.ts
+[19:48:26] found          : ButtonLanguageComponent
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/page/language-icon/button-language.stories.ts
 [19:48:26] found          : Template
 [19:48:26] found          : Primary
 [19:48:26] found          : Secondary
@@ -429,8 +429,8 @@ Operating system : Windows 10
 [19:48:26]  HeaderComponent has styleUrls, include them
 [19:48:26]  HomeComponent has a templateUrl, include it
 [19:48:26]  HomeComponent has styleUrls, include them
-[19:48:26]  LanguageIconComponent has a templateUrl, include it
-[19:48:26]  LanguageIconComponent has styleUrls, include them
+[19:48:26]  ButtonLanguageComponent has a templateUrl, include it
+[19:48:26]  ButtonLanguageComponent has styleUrls, include them
 [19:48:26]  LoginComponent has a templateUrl, include it
 [19:48:26]  LoginComponent has styleUrls, include them
 [19:48:26]  Page2Component has a templateUrl, include it
