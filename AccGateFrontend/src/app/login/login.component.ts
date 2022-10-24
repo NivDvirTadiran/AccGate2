@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { AuthService } from '../_services/auth.service';
 import { TokenStorageService } from '../_services/token-storage.service';
 import {  Router } from '@angular/router';
-import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
+//import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
 import {FormControl, Validators} from "@angular/forms";
-import { RegisterFormComponent } from './register-form/register-form.component';
-import {ReplacePassFormComponent} from "./replace-pass-form/replace-pass-form.component";
+import { RegisterFormComponent } from '../register-form/register-form.component';
+import {ReplacePassFormComponent} from "../replace-pass-form/replace-pass-form.component";
 import {Observable} from "rxjs";
 //import {  Router } from '@angular/router';
 
@@ -15,8 +15,8 @@ import {Observable} from "rxjs";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  registerFormRef: MdbModalRef<RegisterFormComponent> | null = null;
-  replacePassFormRef: MdbModalRef<ReplacePassFormComponent> | null = null;
+  //registerFormRef: MdbModalRef<RegisterFormComponent> | null = null;
+  //replacePassFormRef: MdbModalRef<ReplacePassFormComponent> | null = null;
   form: any = {
     username: null, //new FormControl('ea2', Validators.min(2)),
     password: null  //new FormControl('zaqwsx', Validators.min(2))
@@ -29,8 +29,8 @@ export class LoginComponent implements OnInit {
   constructor(private authService: AuthService,
               private tokenStorage: TokenStorageService,
               private router: Router,
-              private registerFormService: MdbModalService,
-              private replacePassFormService: MdbModalService) { }
+              /*private registerFormService: MdbModalService,
+              private replacePassFormService: MdbModalService*/) { }
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
       this.openReplacePassword();
       console.log("test end");});*/
 
-    this.openRegisterForm().then(
+    /*this.openRegisterForm().then(
     (val) => {
       console.log(val);
       switch (val) {
@@ -59,11 +59,11 @@ export class LoginComponent implements OnInit {
       }
       return 'done2';
     },
-      (err) => console.error(err));
+      (err) => console.error(err));*/
   }
 
   openRegisterForm() {
-    return this.registerFormService.open(RegisterFormComponent).onClose.toPromise();
+    //return this.registerFormService.open(RegisterFormComponent).onClose.toPromise();
     /*var promise = new Promise<void>((resolve, reject)  => {
       let newRegisterFormService = this.registerFormService.open(RegisterFormComponent);
       setTimeout(() => {
@@ -76,7 +76,7 @@ export class LoginComponent implements OnInit {
   }
 
   openReplacePassword() {
-    this.replacePassFormService.open(ReplacePassFormComponent);
+    //this.replacePassFormService.open(ReplacePassFormComponent);
   }
 
   onSubmit(): void {
@@ -98,7 +98,7 @@ export class LoginComponent implements OnInit {
           case "Error: A registry process should be made!":
             //this.openRegisterForm().then(() => {this.openReplacePassword()});
             //toPromise((data) => {this.openReplacePassword()});
-            this.openRegisterForm().then(
+            /*this.openRegisterForm().then(
               (val) => {
                 console.log(val);
                 switch (val) {
@@ -114,7 +114,7 @@ export class LoginComponent implements OnInit {
                 }
                 return 'done2';
               },
-              (err) => console.error(err));
+              (err) => console.error(err));*/
               break;
           default:
             this.loginErrorMessage = err.error.message;
@@ -133,4 +133,11 @@ export class LoginComponent implements OnInit {
     ///window.open(URL);
     //this.router.navigate([]).then(result => {  window.open(window.location.toString(), 'user'); });
   }
+
+  /**
+   * Is this the principal call to action on the page?
+   */
+  @Input()
+  primary = true;
+
 }

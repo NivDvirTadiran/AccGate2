@@ -1,0 +1,34 @@
+
+
+
+
+<form class="Vector">
+
+  <div class="list-items">
+    <storybook-card></storybook-card>
+
+  <div *ngIf="loading">loading</div>
+  <div *ngIf="!loading && storyInputsInOrder.length === 0">empty</div>
+  <storybook-input
+    *ngFor="let storyInput of storyInputsInOrder"
+    [storyInput]="storyInput"
+    (onArchiveInput)="onArchiveInput.emit($event)"
+    (onPinInput)="onPinInput.emit($event)">
+  </storybook-input>
+  <div *ngIf="storyInputsInOrder.length === 0 && !loading" class="wrapper-message">
+    <span class="icon-check"></span>
+    <p class="title-message">You have no tasks</p>
+    <p class="subtitle-message">Sit back and relax</p>
+  </div>
+  <div *ngIf="loading">
+    <div *ngFor="let i of [1, 2, 3, 4, 5, 6]" class="loading-item">
+      <span class="glow-checkbox"></span>
+      <span class="glow-text">
+           <span>Loading</span> <span>cool</span> <span>state</span>
+         </span>
+    </div>
+  </div>
+
+  </div>
+
+</form>

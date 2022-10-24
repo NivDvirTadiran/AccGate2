@@ -34,15 +34,20 @@ import { MdbValidationModule, MdbErrorDirective, MdbSuccessDirective } from 'mdb
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdbInputDirective  } from 'mdb-angular-ui-kit/forms';
 import { ModalModule, TooltipModule, PopoverModule, ButtonsModule, MDBBootstrapModule } from 'angular-bootstrap-md';
-import { RegisterFormComponent } from './login/register-form/register-form.component';
-import {ReplacePassFormComponent} from "./login/replace-pass-form/replace-pass-form.component";
+import { RegisterFormComponent } from './register-form/register-form.component';
+import {ReplacePassFormComponent} from "./replace-pass-form/replace-pass-form.component";
 import {ApiErrorMessagePipe} from "./pipes/api-error-message.pipe";
 import {LoginErrorMessagePipe} from "./pipes/login-error-message.pipe";
 import  Page2Component  from './page/page.component';
-import { LanguageIconComponent } from './page/language-icon/language-icon.component';
-import { TadiranIconComponent } from './page/tadiran-icon/tadiran-icon.component';
-import Button from '../stories/buttons/button.component'
+import { TaskComponent } from '../stories/task/task.component';
+import { LanguageIconComponent } from '../stories/buttons/language-icon/language-icon.component';
+import { ButtonTadiranComponent } from '../stories/buttons/button-tadiran/button-tadiran.component';
+import Button from '../stories/buttons/button-example/button.component'
+import { ButtonGlobeComponent } from '../stories/buttons/button-globe/button-globe.component'
 import Card from '../stories/cards/card.component'
+import {StoryInputComponent} from '../stories/inputs/story-input.component'
+import {FormComponent} from '../stories/forms/form.component'
+import {TaskListComponent} from '../stories/task-list/task-list.component'
 
 @NgModule({
     declarations: [
@@ -60,9 +65,14 @@ import Card from '../stories/cards/card.component'
         LoginErrorMessagePipe,
         Page2Component,
         LanguageIconComponent,
-        TadiranIconComponent,
+        ButtonTadiranComponent,
         Button,
         Card,
+        StoryInputComponent,
+        FormComponent,
+        TaskComponent,
+        TaskListComponent,
+        ButtonGlobeComponent
 
     ],
   imports: [

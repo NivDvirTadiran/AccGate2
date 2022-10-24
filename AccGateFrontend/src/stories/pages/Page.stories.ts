@@ -2,7 +2,7 @@ import { moduleMetadata, Story, Meta } from '@storybook/angular';
 import { within, userEvent } from '@storybook/testing-library';
 import { CommonModule } from '@angular/common';
 
-import Button from '../buttons/button.component';
+import Button from '../buttons/button-example/button.component';
 import Header from '../headers/header.component';
 import Page from './page.component';
 

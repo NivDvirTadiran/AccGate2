@@ -1,11 +1,11 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'storybook-tadiran-icon',
-  templateUrl: './tadiran-icon.component.html',
-  styleUrls: ['./tadiran-icon.component.css']
+  selector: 'storybook-button-globe',
+  templateUrl: './button-globe.component.html',
+  styleUrls: ['./button-globe.component.css']
 })
-export class TadiranIconComponent {
+export class ButtonGlobeComponent {
   /**
    * Is this the principal call to action on the page?
    */
@@ -39,9 +39,9 @@ export class TadiranIconComponent {
   onClick = new EventEmitter<Event>();
 
   public get classes(): string[] {
-    const mode = this.primary ? 'storybook-tadiran-icon--primary' : 'storybook-tadiran-icon--secondary';
+    const mode = this.primary ? 'storybook-button-tadiran--primary' : 'storybook-button-tadiran--secondary';
 
-    return ['storybook-tadiran-icon', `storybook-tadiran-icon--${this.size}`, mode];
+    return ['storybook-button-tadiran', `storybook-tadiran-icon--${this.size}`, mode];
   }
 
 

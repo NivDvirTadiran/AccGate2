@@ -1,0 +1,36 @@
+
+<!--div class="list-item {{ storyInput?.state }}">
+  <label [attr.aria-label]="'archiveInput-' + storyInput.id" for="checked-{{ storyInput?.id }}" class="checkbox">
+    <input
+      type="checkbox"
+      disabled="true"
+      [defaultChecked]="storyInput?.state === 'INPUT_ARCHIVED'"
+      name="checked-{{ storyInput?.id }}"
+      id="checked-{{ storyInput?.id }}"
+    />
+    <span class="checkbox-custom" (click)="onArchive(storyInput.id)"></span>
+  </label>
+  <label [attr.aria-label]="storyInput.title + ''" for="title-{{ storyInput?.id }}" class="title">
+    <input type="text" [value]="storyInput.title" readonly="true" id="title-{{ storyInput?.id }}" name="title-{{ storyInput?.id }}" placeholder="Input title"/>
+  </label>
+  <button *ngIf="storyInput?.state !== 'INPUT_ARCHIVED'" class="pin-button" [attr.aria-label]="'pinTask-' + storyInput.id" (click)="onPin(storyInput.id)">
+    <span class="icon-star"></span>
+  </button>
+</div-->
+
+
+
+<div class="list-item storybook-input Frame-3 {{ storyInput?.state }}">
+  <span class="user-name D-Caps-Regular">User Name</span>
+
+  <br>
+  <label [attr.aria-label]="storyInput.title + ''" for="title-{{ storyInput?.id }}" class="Vector2 ">
+    <input type="text" [value]="storyInput.title" readonly="true" id="title-{{ storyInput?.id }}" name="title-{{ storyInput?.id }}" placeholder="Input title" class="DanK203"/>
+  </label>
+
+</div>
+
+
+
+
+

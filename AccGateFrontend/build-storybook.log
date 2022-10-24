@@ -21,409 +21,447 @@ Node.js version : v16.14.0
 
 Operating system : Windows 10
 
-[17:04:24] No configuration file found, switching to CLI flags.
-[17:04:24] Using tsconfig file : C:\niv\web\AccGate2\AccGateFrontend\tsconfig.json
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\.browserslistrc
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\.editorconfig
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\AccGateFrontend.iml
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\build-storybook.log
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\delet_dist.sh
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\documentation.json
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\angular-12-jwt-authentication-overview.png
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\angular-12-jwt-authentication-flow.png
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\karma.conf.js
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\angular.json
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\loadWebXml.sh
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\package.json
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\package-lock.json
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\tsconfig.app.json
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\tsconfig.json
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\README.md
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\proxy.conf.json
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\tsconfig.spec.json
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\.storybook\main.js
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\.storybook\tsconfig.json
-[17:04:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\.storybook\typings.d.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\favicon.ico
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\index.html
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\main.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\polyfills.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\test.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\.storybook\preview.js
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\styles.scss
-[17:04:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\app-routing.guard.spec.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\app-routing.guard.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\app-routing.module.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\app.component.css
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\app.component.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\app.component.html
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\app.config.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\app.module.ts
-[17:04:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\app.component.spec.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\.gitkeep
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\environments\environment.prod.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\environments\environment.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\button.component.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\button.css
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\Button.stories.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\header.component.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\header.css
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\Header.stories.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\Introduction.stories.mdx
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\page.css
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\page.component.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\Page.stories.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\User.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\board-moderator\board-moderator.component.css
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\board-moderator\board-moderator.component.html
-[17:04:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\board-moderator\board-moderator.component.spec.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\board-moderator\board-moderator.component.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\board-admin\board-admin.component.css
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\board-admin\board-admin.component.html
-[17:04:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\board-admin\board-admin.component.spec.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\board-user\board-user.component.css
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\board-admin\board-admin.component.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\board-user\board-user.component.html
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\board-user\board-user.component.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\board-user\demo_iframe2.htm
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\home\home.component.css
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\home\home.component.html
-[17:04:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\home\home.component.spec.ts
-[17:04:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\board-user\board-user.component.spec.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\home\home.component.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\login\login.component.css
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\login\login.component.html
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\login\login.component.ts
-[17:04:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\login\login.component.spec.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\page\page.component.html
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\page\page.component.scss
-[17:04:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\page\page.component.spec.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\page\page.component.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\page\page.stories.ts
-[17:04:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\pipes\api-error-message.pipe.spec.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\pipes\api-error-message.pipe.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\pipes\login-error-message.pipe.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\profile\profile.component.css
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\profile\profile.component.html
-[17:04:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\profile\profile.component.spec.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\profile\profile.component.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\profile\profile.component.ts.bak
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\register\register.component.html
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\register\register.component.css
-[17:04:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\register\register.component.spec.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\register\register.component.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\auth.service.ts
-[17:04:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\auth.service.spec.ts
-[17:04:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\token-storage.service.spec.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\token-storage.service.ts
-[17:04:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\user.service.spec.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\user.service.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_helpers\auth.interceptor.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_shared\event-bus.service.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_shared\event.class.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\aeonix_.png
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\aeonix_logo_150.png
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\aeonix_logo_150_20.png
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\aeonix_logo_72.png
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\Background.webp
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\contact-center.jpg
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\dashboard.png
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\graph.png
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\icon-1.webp
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\icon-1@2x.webp
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\icon-1@3x.webp
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\icon-2.webp
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\icon-2@3x.webp
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\icon-2@2x.webp
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\image081.png
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\img.png
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\language-desktop-icon.png
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\img_1.png
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\language-desktop-icon@2x.png
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\language-desktop-icon@3x.png
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\management.png
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\T.png
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\TadiranTelecom.jpg
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\TadiranTelecom2.webp
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\assets\code-brackets.svg
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\TotalControl645x300.jpg
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\assets\colors.svg
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\assets\comments.svg
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\assets\direction.svg
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\assets\flow.svg
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\assets\plugin.svg
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\assets\repo.svg
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\assets\stackalt.svg
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\login\register-form\register-form.component.css
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\login\register-form\register-form.component.html
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\login\register-form\register-form.component.ts
-[17:04:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\login\register-form\register-form.component.spec.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\login\replace-pass-form\replace-pass-form.component.css
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\login\replace-pass-form\replace-pass-form.component.html
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\login\replace-pass-form\replace-pass-form.component.ts
-[17:04:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\login\replace-pass-form\replace-pass-form.component.spec.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\page\language-icon\language-icon.component.css
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\page\language-icon\language-icon.component.html
-[17:04:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\page\language-icon\language-icon.component.spec.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\page\language-icon\language-icon.component.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\page\language-icon\language-icon.stories.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\page\language-icon2\language-icon2.component.css
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\page\language-icon2\language-icon2.component.html
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\page\language-icon2\language-icon2.component.ts
-[17:04:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\page\language-icon2\language-icon2.component.spec.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\page\language-icon2\language-icon2.stories.ts
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\assets\.gitkeep
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\assets\images\aeonix_.png
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\assets\images\aeonix_logo_72.png
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\assets\images\aeonix_logo_150.png
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\assets\images\aeonix_logo_150_20.png
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\assets\images\Background.webp
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\assets\images\contact-center.jpg
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\assets\images\dashboard.jpg
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\assets\images\dashboard.png
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\assets\images\graph.png
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\assets\images\image081.png
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\assets\images\img.png
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\assets\images\dashboard.webp
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\assets\images\img_1.png
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\assets\images\management.png
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\assets\images\TadiranTelecom.jpg
-[17:04:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\assets\images\TadiranTelecom2.webp
-[17:04:24] Searching package.json file
-[17:04:24] package.json file found
-[17:04:24] Processing package.json dependencies
-[17:04:24] Searching README.md, CHANGELOG.md, CONTRIBUTING.md, LICENSE.md, TODO.md files
-[17:04:24] README.md file found
-[17:04:24] Error during C:\niv\web\AccGate2\AccGateFrontend\CHANGELOG read
-[17:04:24] Continuing without CHANGELOG.md file
-[17:04:24] Error during C:\niv\web\AccGate2\AccGateFrontend\CONTRIBUTING read
-[17:04:24] Continuing without CONTRIBUTING.md file
-[17:04:24] Error during C:\niv\web\AccGate2\AccGateFrontend\LICENSE read
-[17:04:24] Continuing without LICENSE.md file
-[17:04:24] Error during C:\niv\web\AccGate2\AccGateFrontend\TODO read
-[17:04:24] Continuing without TODO.md file
-[17:04:24] Get dependencies data
-[17:04:24] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/main.ts
-[17:04:24] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/polyfills.ts
-[17:04:24] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/test.ts
-[17:04:24] found          : require
-[17:04:24] found          : context
-[17:04:24] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/app-routing.guard.ts
-[17:04:24] found          : AppRoutingGuard
-[17:04:24] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/app-routing.module.ts
-[17:04:24] Analysing routes definitions and clean them if necessary
-[17:04:24] found          : AppRoutingModule
-[17:04:24]                : - imports:
-[17:04:24]                : 	- RouterModule
-[17:04:24]                : - exports:
-[17:04:24]                : 	- RouterModule
-[17:04:24] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/app.component.ts
-[17:04:24] found          : AppComponent
-[17:04:24] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/app.config.ts
-[17:04:24] found          : parsedUrl
-[17:04:24] found          : url
-[17:04:24] found          : port
-[17:04:24] found          : protocol
-[17:04:24] found          : AUTH_API
-[17:04:24] found          : APP_CONFIG
-[17:04:24] found          : AppConfig
-[17:04:24] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/app.module.ts
-[17:04:24] found          : AppModule
-[17:04:24]                : - imports:
-[17:04:24]                : 	- BrowserModule
-[17:04:24]                : 	- AppRoutingModule
-[17:04:24]                : 	- FormsModule
-[17:04:24]                : 	- HttpClientModule
-[17:04:24]                : 	- NgbDatepickerModule
-[17:04:24]                : 	- MdbAccordionModule
-[17:04:24]                : 	- MdbCarouselModule
-[17:04:24]                : 	- MdbCheckboxModule
-[17:04:24]                : 	- MdbCollapseModule
-[17:04:24]                : 	- MdbDropdownModule
-[17:04:24]                : 	- MdbFormsModule
-[17:04:24]                : 	- MdbModalModule
-[17:04:24]                : 	- MdbPopoverModule
-[17:04:24]                : 	- MdbRadioModule
-[17:04:24]                : 	- MdbRangeModule
-[17:04:24]                : 	- MdbRippleModule
-[17:04:24]                : 	- MdbScrollspyModule
-[17:04:24]                : 	- MdbTabsModule
-[17:04:24]                : 	- MdbTooltipModule
-[17:04:24]                : 	- BrowserAnimationsModule
-[17:04:24]                : 	- ReactiveFormsModule
-[17:04:24]                : 	- ModalModule
-[17:04:24]                : 	- ButtonsModule
-[17:04:24]                : 	- MDBBootstrapModule
-[17:04:24]                : - declarations:
-[17:04:24]                : 	- AppComponent
-[17:04:24]                : 	- LoginComponent
-[17:04:24]                : 	- RegisterComponent
-[17:04:24]                : 	- HomeComponent
-[17:04:24]                : 	- ProfileComponent
-[17:04:24]                : 	- BoardAdminComponent
-[17:04:24]                : 	- BoardModeratorComponent
-[17:04:24]                : 	- BoardUserComponent
-[17:04:24]                : 	- RegisterFormComponent
-[17:04:24]                : 	- ReplacePassFormComponent
-[17:04:24]                : 	- ApiErrorMessagePipe
-[17:04:24]                : 	- LoginErrorMessagePipe
-[17:04:24]                : 	- Page2Component
-[17:04:24]                : 	- LanguageIconComponent
-[17:04:24]                : 	- LanguageIcon2Component
-[17:04:24]                : - providers:
-[17:04:24]                : 	- authInterceptorProviders
-[17:04:24]                : - bootstrap:
-[17:04:24]                : 	- AppComponent
-[17:04:24] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/environments/environment.prod.ts
-[17:04:24] found          : environment
-[17:04:24] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/environments/environment.ts
-[17:04:24] found          : environment
-[17:04:24] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/stories/button.component.ts
-[17:04:24] found          : ButtonComponent
-[17:04:24] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/stories/Button.stories.ts
-[17:04:24] found          : Template
-[17:04:24] found          : Primary
-[17:04:24] found          : Secondary
-[17:04:24] found          : Large
-[17:04:24] found          : Small
-[17:04:24] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/stories/header.component.ts
-[17:04:24] found          : HeaderComponent
-[17:04:24] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/stories/Header.stories.ts
-[17:04:24] found          : Template
-[17:04:24] found          : LoggedIn
-[17:04:24] found          : LoggedOut
-[17:04:24] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/stories/page.component.ts
-[17:04:24] found          : PageComponent
-[17:04:24] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/stories/Page.stories.ts
-[17:04:24] found          : Template
-[17:04:24] found          : LoggedOut
-[17:04:24] found          : LoggedIn
-[17:04:24] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/stories/User.ts
-[17:04:24] found          : User
-[17:04:24] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/board-moderator/board-moderator.component.ts
-[17:04:24] found          : BoardModeratorComponent
-[17:04:24] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/board-admin/board-admin.component.ts
-[17:04:24] found          : BoardAdminComponent
-[17:04:24] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/board-user/board-user.component.ts
-[17:04:24] found          : BoardUserComponent
-[17:04:24] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/home/home.component.ts
-[17:04:24] found          : HomeComponent
-[17:04:24] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/login/login.component.ts
-[17:04:24] found          : LoginComponent
-[17:04:24] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/page/page.component.ts
-[17:04:24] found          : Page2Component
-[17:04:24] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/page/page.stories.ts
-[17:04:24] found          : Template
-[17:04:24] found          : Primary
-[17:04:24] found          : Secondary
-[17:04:24] found          : LoggedOut
-[17:04:24] found          : LoggedIn
-[17:04:24] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/pipes/api-error-message.pipe.ts
-[17:04:24] found          : ApiErrorMessagePipe
-[17:04:24] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/pipes/login-error-message.pipe.ts
-[17:04:24] found          : LoginErrorMessagePipe
-[17:04:24] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/profile/profile.component.ts
-[17:04:24] found          : ProfileComponent
-[17:04:24] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/register/register.component.ts
-[17:04:24] found          : RegisterComponent
-[17:04:24] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/_services/auth.service.ts
-[17:04:24] found          : AUTH_API
-[17:04:24] found          : httpOptions
-[17:04:24] found          : AuthService
-[17:04:24] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/_services/token-storage.service.ts
-[17:04:24] found          : TOKEN_KEY
-[17:04:24] found          : REFRESHTOKEN_KEY
-[17:04:24] found          : USER_KEY
-[17:04:24] found          : TokenStorageService
-[17:04:24] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/_services/user.service.ts
-[17:04:24] found          : API_URL
-[17:04:24] found          : UserService
-[17:04:24] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/_helpers/auth.interceptor.ts
-[17:04:24] found          : TOKEN_HEADER_KEY
-[17:04:24] found          : AuthInterceptor
-[17:04:24] found          : authInterceptorProviders
-[17:04:24] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/_shared/event-bus.service.ts
-[17:04:24] found          : EventBusService
-[17:04:24] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/_shared/event.class.ts
-[17:04:24] found          : EventData
-[17:04:24] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/login/register-form/register-form.component.ts
-[17:04:24] found          : RegisterFormComponent
-[17:04:24] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/login/replace-pass-form/replace-pass-form.component.ts
-[17:04:24] found          : ReplacePassFormComponent
-[17:04:24] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/page/language-icon/language-icon.component.ts
-[17:04:24] found          : LanguageIconComponent
-[17:04:24] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/page/language-icon/language-icon.stories.ts
-[17:04:24] found          : Template
-[17:04:24] found          : Primary
-[17:04:24] found          : Secondary
-[17:04:24] found          : Large
-[17:04:24] found          : Small
-[17:04:24] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/page/language-icon2/language-icon2.component.ts
-[17:04:24] found          : LanguageIcon2Component
-[17:04:24] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/page/language-icon2/language-icon2.stories.ts
-[17:04:24] found          : Template
-[17:04:24] found          : Primary
-[17:04:24] found          : Secondary
-[17:04:24] found          : Large
-[17:04:24] found          : Small
-[17:04:24] -------------------
-[17:04:24] Project statistics 
-[17:04:24] - files      : 147
-[17:04:24] - module     : 2
-[17:04:24] - component  : 16
-[17:04:24] - injectable : 4
-[17:04:24] - injector   : 1
-[17:04:24] - guard      : 1
-[17:04:24] - pipe       : 2
-[17:04:24] - class      : 1
-[17:04:24] - interface  : 1
-[17:04:24] - route      : 11
-[17:04:24] -------------------
-[17:04:24] Prepare components
-[17:04:24]  AppComponent has a templateUrl, include it
-[17:04:24]  AppComponent has styleUrls, include them
-[17:04:24]  BoardAdminComponent has a templateUrl, include it
-[17:04:24]  BoardAdminComponent has styleUrls, include them
-[17:04:24]  BoardModeratorComponent has a templateUrl, include it
-[17:04:24]  BoardModeratorComponent has styleUrls, include them
-[17:04:24]  BoardUserComponent has a templateUrl, include it
-[17:04:24]  BoardUserComponent has styleUrls, include them
-[17:04:24]  ButtonComponent has styleUrls, include them
-[17:04:24]  HeaderComponent has styleUrls, include them
-[17:04:24]  HomeComponent has a templateUrl, include it
-[17:04:24]  HomeComponent has styleUrls, include them
-[17:04:24]  LanguageIcon2Component has a templateUrl, include it
-[17:04:24]  LanguageIcon2Component has styleUrls, include them
-[17:04:24]  LanguageIconComponent has a templateUrl, include it
-[17:04:24]  LanguageIconComponent has styleUrls, include them
-[17:04:24]  LoginComponent has a templateUrl, include it
-[17:04:24]  LoginComponent has styleUrls, include them
-[17:04:24]  Page2Component has a templateUrl, include it
-[17:04:24]  Page2Component has styleUrls, include them
-[17:04:24]  PageComponent has styleUrls, include them
-[17:04:24]  ProfileComponent has a templateUrl, include it
-[17:04:24]  ProfileComponent has styleUrls, include them
-[17:04:24]  RegisterComponent has a templateUrl, include it
-[17:04:24]  RegisterComponent has styleUrls, include them
-[17:04:24]  RegisterFormComponent has a templateUrl, include it
-[17:04:24]  RegisterFormComponent has styleUrls, include them
-[17:04:24]  ReplacePassFormComponent has a templateUrl, include it
-[17:04:24]  ReplacePassFormComponent has styleUrls, include them
-[17:04:24] Prepare modules
-[17:04:24] Prepare injectables
-[17:04:24] Prepare interceptors
-[17:04:24] Prepare guards
-[17:04:24] Process routes
-[17:04:24] Prepare pipes
-[17:04:24] Prepare classes
-[17:04:24] Prepare interfaces
-[17:04:24] Prepare miscellaneous
-[17:04:24] Process documentation coverage report
-[17:04:24] Generating documentation in export format json
-[17:04:24] Documentation generated in ./ in 0.875 seconds
+[19:48:24] No configuration file found, switching to CLI flags.
+[19:48:24] Using tsconfig file : C:\niv\web\AccGate2\AccGateFrontend\tsconfig.json
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\.editorconfig
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\.browserslistrc
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\angular-12-jwt-authentication-flow.png
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\AccGateFrontend.iml
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\angular-12-jwt-authentication-overview.png
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\documentation.json
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\angular.json
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\delet_dist.sh
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\karma.conf.js
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\build-storybook.log
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\loadWebXml.sh
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\package-lock.json
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\package.json
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\proxy.conf.json
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\tsconfig.app.json
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\README.md
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\tsconfig.json
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\tsconfig.spec.json
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\.storybook\main.js
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\.storybook\preview.js
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\.storybook\tsconfig.json
+[19:48:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\.storybook\typings.d.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\favicon.ico
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\index.html
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\main.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\polyfills.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\styles.scss
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\test.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\storybook-static\163.49babb7ab9e44f0e2729.manager.bundle.js
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\storybook-static\163.49babb7ab9e44f0e2729.manager.bundle.js.LICENSE.txt
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\storybook-static\229.6503982175b19d0d36fa.manager.bundle.js
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\storybook-static\295.24b7dd0f801c2c010d49.manager.bundle.js
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\storybook-static\51.9a9fd245d0b3e0d60046.manager.bundle.js
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\storybook-static\51.9a9fd245d0b3e0d60046.manager.bundle.js.LICENSE.txt
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\storybook-static\551.e71ffaae4f1203857a05.manager.bundle.js
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\storybook-static\807.48ac2ff295caffcb4f9b.manager.bundle.js
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\storybook-static\807.48ac2ff295caffcb4f9b.manager.bundle.js.LICENSE.txt
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\storybook-static\897.500cdf060a2a594338fe.manager.bundle.js
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\storybook-static\897.500cdf060a2a594338fe.manager.bundle.js.LICENSE.txt
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\storybook-static\935.520bfa16f66d9001bf3f.manager.bundle.js
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\storybook-static\favicon.ico
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\storybook-static\index.html
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\storybook-static\main.126493d5681713fc2c29.manager.bundle.js
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\storybook-static\project.json
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\storybook-static\runtime~main.27befe5f006d3759e226.manager.bundle.js
+[19:48:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\app-routing.guard.spec.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\app-routing.guard.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\app.component.css
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\app-routing.module.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\app.component.html
+[19:48:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\app.component.spec.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\app.component.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\app.config.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\app.module.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\.gitkeep
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\environments\environment.prod.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\Introduction.stories.mdx
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\User.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\environments\environment.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\board-admin\board-admin.component.css
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\board-admin\board-admin.component.html
+[19:48:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\board-admin\board-admin.component.spec.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\board-admin\board-admin.component.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\board-moderator\board-moderator.component.css
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\board-moderator\board-moderator.component.html
+[19:48:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\board-moderator\board-moderator.component.spec.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\board-moderator\board-moderator.component.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\board-user\board-user.component.css
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\board-user\board-user.component.html
+[19:48:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\board-user\board-user.component.spec.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\board-user\board-user.component.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\board-user\demo_iframe2.htm
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\home\home.component.css
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\home\home.component.html
+[19:48:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\home\home.component.spec.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\home\home.component.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\login\login.component.css
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\login\login.component.html
+[19:48:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\login\login.component.spec.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\login\login.component.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\page\page.component.html
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\page\page.component.scss
+[19:48:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\page\page.component.spec.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\page\page.component.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\page\page.stories.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\pipes\api-error-message.pipe.ts
+[19:48:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\pipes\api-error-message.pipe.spec.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\pipes\login-error-message.pipe.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\profile\profile.component.css
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\profile\profile.component.html
+[19:48:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\profile\profile.component.spec.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\profile\profile.component.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\profile\profile.component.ts.bak
+[19:48:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\register\register.component.spec.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\register\register.component.html
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\register\register.component.css
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\register\register.component.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_helpers\auth.interceptor.ts
+[19:48:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\auth.service.spec.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\auth.service.ts
+[19:48:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\token-storage.service.spec.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\token-storage.service.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\user.service.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_shared\event-bus.service.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_shared\event.class.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\aeonix_.png
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\aeonix_logo_150.png
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\aeonix_logo_150_20.png
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\aeonix_logo_151.png
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\aeonix_logo_72.png
+[19:48:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\user.service.spec.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\Background.webp
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\dashboard.png
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\contact-center.jpg
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\graph.png
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\icon-1.webp
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\icon-1@3x.webp
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\icon-1@2x.webp
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\icon-2.webp
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\icon-2@2x.webp
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\icon-2@3x.webp
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\image081.png
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\img.png
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\img_1.png
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\img_2.png
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\img_3.png
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\language-desktop-icon.png
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\language-desktop-icon@2x.png
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\language-desktop-icon@3x.png
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\management.png
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\T.png
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\TadiranTelecom.jpg
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\TadiranTelecom2.webp
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\assets\images\TotalControl645x300.jpg
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\assets\code-brackets.svg
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\assets\colors.svg
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\assets\comments.svg
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\assets\direction.svg
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\assets\plugin.svg
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\assets\repo.svg
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\assets\stackalt.svg
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\assets\flow.svg
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\buttons\button.component.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\buttons\button.css
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\buttons\Button.stories.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\cards\card.component.html
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\cards\story-input.component.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\cards\card.css
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\cards\story-input.stories.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\headers\header.component.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\headers\header.css
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\headers\Header.stories.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\pages\page.component.html
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\pages\page.component.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\pages\page.css
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\pages\Page.stories.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\login\replace-pass-form\replace-pass-form.component.html
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\login\replace-pass-form\replace-pass-form.component.css
+[19:48:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\login\replace-pass-form\replace-pass-form.component.spec.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\login\replace-pass-form\replace-pass-form.component.ts
+[19:48:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\page\language-icon\language-icon.component.spec.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\page\language-icon\language-icon.component.css
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\page\language-icon\language-icon.component.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\page\language-icon\language-icon.stories.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\login\register-form\register-form.component.css
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\page\language-icon\language-icon.component.html
+[19:48:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\login\register-form\register-form.component.spec.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\login\register-form\register-form.component.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\login\register-form\register-form.component.html
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\page\tadiran-icon\tadiran-icon.component.html
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\page\tadiran-icon\tadiran-icon.component.css
+[19:48:24] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\page\tadiran-icon\button-globe.component.spec.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\page\tadiran-icon\button-globe.component.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\page\tadiran-icon\button-globe.stories.ts
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\assets\.gitkeep
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\assets\images\aeonix_.png
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\assets\images\aeonix_logo_150.png
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\assets\images\aeonix_logo_150_20.png
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\assets\images\aeonix_logo_72.png
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\assets\images\Background.webp
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\assets\images\dashboard.jpg
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\assets\images\contact-center.jpg
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\assets\images\dashboard.webp
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\assets\images\dashboard.png
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\assets\images\graph.png
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\assets\images\image081.png
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\assets\images\img.png
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\assets\images\img_1.png
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\assets\images\management.png
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\assets\images\TadiranTelecom.jpg
+[19:48:24] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\assets\images\TadiranTelecom2.webp
+[19:48:24] Searching package.json file
+[19:48:24] package.json file found
+[19:48:24] Processing package.json dependencies
+[19:48:24] Searching README.md, CHANGELOG.md, CONTRIBUTING.md, LICENSE.md, TODO.md files
+[19:48:24] README.md file found
+[19:48:24] Error during C:\niv\web\AccGate2\AccGateFrontend\CHANGELOG read
+[19:48:24] Continuing without CHANGELOG.md file
+[19:48:24] Error during C:\niv\web\AccGate2\AccGateFrontend\CONTRIBUTING read
+[19:48:24] Continuing without CONTRIBUTING.md file
+[19:48:24] Error during C:\niv\web\AccGate2\AccGateFrontend\LICENSE read
+[19:48:24] Continuing without LICENSE.md file
+[19:48:24] Error during C:\niv\web\AccGate2\AccGateFrontend\TODO read
+[19:48:24] Continuing without TODO.md file
+[19:48:24] Get dependencies data
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/main.ts
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/polyfills.ts
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/test.ts
+[19:48:26] found          : require
+[19:48:26] found          : context
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/app-routing.guard.ts
+[19:48:26] found          : AppRoutingGuard
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/app-routing.module.ts
+[19:48:26] Analysing routes definitions and clean them if necessary
+[19:48:26] found          : AppRoutingModule
+[19:48:26]                : - imports:
+[19:48:26]                : 	- RouterModule
+[19:48:26]                : - exports:
+[19:48:26]                : 	- RouterModule
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/app.component.ts
+[19:48:26] found          : AppComponent
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/app.config.ts
+[19:48:26] found          : parsedUrl
+[19:48:26] found          : url
+[19:48:26] found          : port
+[19:48:26] found          : protocol
+[19:48:26] found          : AUTH_API
+[19:48:26] found          : APP_CONFIG
+[19:48:26] found          : AppConfig
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/app.module.ts
+[19:48:26] found          : AppModule
+[19:48:26]                : - imports:
+[19:48:26]                : 	- BrowserModule
+[19:48:26]                : 	- AppRoutingModule
+[19:48:26]                : 	- FormsModule
+[19:48:26]                : 	- HttpClientModule
+[19:48:26]                : 	- NgbDatepickerModule
+[19:48:26]                : 	- MdbAccordionModule
+[19:48:26]                : 	- MdbCarouselModule
+[19:48:26]                : 	- MdbCheckboxModule
+[19:48:26]                : 	- MdbCollapseModule
+[19:48:26]                : 	- MdbDropdownModule
+[19:48:26]                : 	- MdbFormsModule
+[19:48:26]                : 	- MdbModalModule
+[19:48:26]                : 	- MdbPopoverModule
+[19:48:26]                : 	- MdbRadioModule
+[19:48:26]                : 	- MdbRangeModule
+[19:48:26]                : 	- MdbRippleModule
+[19:48:26]                : 	- MdbScrollspyModule
+[19:48:26]                : 	- MdbTabsModule
+[19:48:26]                : 	- MdbTooltipModule
+[19:48:26]                : 	- BrowserAnimationsModule
+[19:48:26]                : 	- ReactiveFormsModule
+[19:48:26]                : 	- ModalModule
+[19:48:26]                : 	- ButtonsModule
+[19:48:26]                : 	- MDBBootstrapModule
+[19:48:26]                : - declarations:
+[19:48:26]                : 	- AppComponent
+[19:48:26]                : 	- LoginComponent
+[19:48:26]                : 	- RegisterComponent
+[19:48:26]                : 	- HomeComponent
+[19:48:26]                : 	- ProfileComponent
+[19:48:26]                : 	- BoardAdminComponent
+[19:48:26]                : 	- BoardModeratorComponent
+[19:48:26]                : 	- BoardUserComponent
+[19:48:26]                : 	- RegisterFormComponent
+[19:48:26]                : 	- ReplacePassFormComponent
+[19:48:26]                : 	- ApiErrorMessagePipe
+[19:48:26]                : 	- LoginErrorMessagePipe
+[19:48:26]                : 	- Page2Component
+[19:48:26]                : 	- LanguageIconComponent
+[19:48:26]                : 	- ButtonGlobeComponent
+[19:48:26]                : 	- Button
+[19:48:26]                : 	- Card
+[19:48:26]                : - providers:
+[19:48:26]                : 	- authInterceptorProviders
+[19:48:26]                : - bootstrap:
+[19:48:26]                : 	- AppComponent
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/environments/environment.prod.ts
+[19:48:26] found          : environment
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/stories/User.ts
+[19:48:26] found          : User
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/environments/environment.ts
+[19:48:26] found          : environment
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/board-admin/board-admin.component.ts
+[19:48:26] found          : BoardAdminComponent
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/board-moderator/board-moderator.component.ts
+[19:48:26] found          : BoardModeratorComponent
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/board-user/board-user.component.ts
+[19:48:26] found          : BoardUserComponent
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/home/home.component.ts
+[19:48:26] found          : HomeComponent
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/login/login.component.ts
+[19:48:26] found          : LoginComponent
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/page/page.component.ts
+[19:48:26] found          : Page2Component
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/page/page.stories.ts
+[19:48:26] found          : Template
+[19:48:26] found          : Primary
+[19:48:26] found          : Secondary
+[19:48:26] found          : LoggedOut
+[19:48:26] found          : LoggedIn
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/pipes/api-error-message.pipe.ts
+[19:48:26] found          : ApiErrorMessagePipe
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/pipes/login-error-message.pipe.ts
+[19:48:26] found          : LoginErrorMessagePipe
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/profile/profile.component.ts
+[19:48:26] found          : ProfileComponent
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/register/register.component.ts
+[19:48:26] found          : RegisterComponent
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/_helpers/auth.interceptor.ts
+[19:48:26] found          : TOKEN_HEADER_KEY
+[19:48:26] found          : AuthInterceptor
+[19:48:26] found          : authInterceptorProviders
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/_services/auth.service.ts
+[19:48:26] found          : AUTH_API
+[19:48:26] found          : httpOptions
+[19:48:26] found          : AuthService
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/_services/token-storage.service.ts
+[19:48:26] found          : TOKEN_KEY
+[19:48:26] found          : REFRESHTOKEN_KEY
+[19:48:26] found          : USER_KEY
+[19:48:26] found          : TokenStorageService
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/_services/user.service.ts
+[19:48:26] found          : API_URL
+[19:48:26] found          : UserService
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/_shared/event-bus.service.ts
+[19:48:26] found          : EventBusService
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/_shared/event.class.ts
+[19:48:26] found          : EventData
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/stories/buttons/button.component.ts
+[19:48:26] found          : ButtonComponent
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/stories/buttons/Button.stories.ts
+[19:48:26] found          : Template
+[19:48:26] found          : Primary
+[19:48:26] found          : Secondary
+[19:48:26] found          : Large
+[19:48:26] found          : Small
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/stories/cards/story-input.component.ts
+[19:48:26] found          : StoryInputComponent
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/stories/cards/story-input.stories.ts
+[19:48:26] found          : Template
+[19:48:26] found          : Primary
+[19:48:26] found          : Secondary
+[19:48:26] found          : Large
+[19:48:26] found          : Small
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/stories/headers/header.component.ts
+[19:48:26] found          : HeaderComponent
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/stories/headers/Header.stories.ts
+[19:48:26] found          : Template
+[19:48:26] found          : LoggedIn
+[19:48:26] found          : LoggedOut
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/stories/pages/page.component.ts
+[19:48:26] found          : PageComponent
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/stories/pages/Page.stories.ts
+[19:48:26] found          : Template
+[19:48:26] found          : LoggedOut
+[19:48:26] found          : LoggedIn
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/login/replace-pass-form/replace-pass-form.component.ts
+[19:48:26] found          : ReplacePassFormComponent
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/page/language-icon/language-icon.component.ts
+[19:48:26] found          : LanguageIconComponent
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/page/language-icon/language-icon.stories.ts
+[19:48:26] found          : Template
+[19:48:26] found          : Primary
+[19:48:26] found          : Secondary
+[19:48:26] found          : Large
+[19:48:26] found          : Small
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/login/register-form/register-form.component.ts
+[19:48:26] found          : RegisterFormComponent
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/page/tadiran-icon/button-globe.component.ts
+[19:48:26] found          : ButtonGlobeComponent
+[19:48:26] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/page/tadiran-icon/button-globe.stories.ts
+[19:48:26] found          : Template
+[19:48:26] found          : Primary
+[19:48:26] found          : Secondary
+[19:48:26] found          : Large
+[19:48:26] found          : Small
+[19:48:26] -------------------
+[19:48:26] Project statistics
+[19:48:26] - files      : 172
+[19:48:26] - module     : 2
+[19:48:26] - component  : 17
+[19:48:26] - injectable : 4
+[19:48:26] - injector   : 1
+[19:48:26] - guard      : 1
+[19:48:26] - pipe       : 2
+[19:48:26] - class      : 1
+[19:48:26] - interface  : 1
+[19:48:26] - route      : 11
+[19:48:26] -------------------
+[19:48:26] Prepare components
+[19:48:26]  AppComponent has a templateUrl, include it
+[19:48:26]  AppComponent has styleUrls, include them
+[19:48:26]  BoardAdminComponent has a templateUrl, include it
+[19:48:26]  BoardAdminComponent has styleUrls, include them
+[19:48:26]  BoardModeratorComponent has a templateUrl, include it
+[19:48:26]  BoardModeratorComponent has styleUrls, include them
+[19:48:26]  BoardUserComponent has a templateUrl, include it
+[19:48:26]  BoardUserComponent has styleUrls, include them
+[19:48:26]  ButtonComponent has styleUrls, include them
+[19:48:26]  StoryInputComponent has a templateUrl, include it
+[19:48:26]  StoryInputComponent has styleUrls, include them
+[19:48:26]  HeaderComponent has styleUrls, include them
+[19:48:26]  HomeComponent has a templateUrl, include it
+[19:48:26]  HomeComponent has styleUrls, include them
+[19:48:26]  LanguageIconComponent has a templateUrl, include it
+[19:48:26]  LanguageIconComponent has styleUrls, include them
+[19:48:26]  LoginComponent has a templateUrl, include it
+[19:48:26]  LoginComponent has styleUrls, include them
+[19:48:26]  Page2Component has a templateUrl, include it
+[19:48:26]  Page2Component has styleUrls, include them
+[19:48:26]  PageComponent has a templateUrl, include it
+[19:48:26]  PageComponent has styleUrls, include them
+[19:48:26]  ProfileComponent has a templateUrl, include it
+[19:48:26]  ProfileComponent has styleUrls, include them
+[19:48:26]  RegisterComponent has a templateUrl, include it
+[19:48:26]  RegisterComponent has styleUrls, include them
+[19:48:26]  RegisterFormComponent has a templateUrl, include it
+[19:48:26]  RegisterFormComponent has styleUrls, include them
+[19:48:26]  ReplacePassFormComponent has a templateUrl, include it
+[19:48:26]  ReplacePassFormComponent has styleUrls, include them
+[19:48:26]  ButtonGlobeComponent has a templateUrl, include it
+[19:48:26]  ButtonGlobeComponent has styleUrls, include them
+[19:48:26] Prepare modules
+[19:48:26] Prepare injectables
+[19:48:26] Prepare interceptors
+[19:48:26] Prepare guards
+[19:48:26] Process routes
+[19:48:26] Prepare pipes
+[19:48:26] Prepare classes
+[19:48:26] Prepare interfaces
+[19:48:26] Prepare miscellaneous
+[19:48:26] Process documentation coverage report
+[19:48:26] Generating documentation in export format json
+[19:48:26] Documentation generated in ./ in 2.144 seconds
 info @storybook/angular v6.5.12
-info 
-info => Cleaning outputDir: C:\\Users\\a180136\\AppData\\Local\\Temp\\chromatic--428-x7z6qTh1nbsC
+info
+info => Cleaning outputDir: C:\\Users\\a180136\\AppData\\Local\\Temp\\chromatic--13632-lNQ9nd19hv0w
 info => Loading presets
 info => Compiling manager..
 info => Compiling preview..
@@ -434,7 +472,7 @@ info => Loading angular-cli config for angular lower than 12.2.0
 info => Using angular project "accGate:build" for configuring Storybook
 info => Using angular-cli webpack config
 info => Using default Webpack5 setup
-<s> [webpack.Progress] 0% 
+<s> [webpack.Progress] 0%
 
 <s> [webpack.Progress] 1% setup initialize
 <s> [webpack.Progress] 1% setup initialize HtmlWebpackPlugin
@@ -567,44 +605,45 @@ Starting type checking service...
 <s> [webpack.Progress] 10% building 0/19 entries 14/37 dependencies 0/13 modules
 <s> [webpack.Progress] 10% building 0/19 entries 40/64 dependencies 0/34 modules
 <s> [webpack.Progress] 10% building import loader ./node_modules/@storybook/mdx1-csf/loader.js
-<s> [webpack.Progress] 10% building 0/19 entries 61/96 dependencies 1/51 modules
-<s> [webpack.Progress] 12% building 1/19 entries 64/97 dependencies 6/53 modules
-<s> [webpack.Progress] 15% building 2/19 entries 64/97 dependencies 7/53 modules
-<s> [webpack.Progress] 18% building 3/19 entries 64/97 dependencies 8/53 modules
+<s> [webpack.Progress] 10% building 0/19 entries 62/88 dependencies 1/52 modules
+<s> [webpack.Progress] 12% building 1/19 entries 66/98 dependencies 6/55 modules
+<s> [webpack.Progress] 15% building 2/19 entries 66/98 dependencies 7/55 modules
+<s> [webpack.Progress] 18% building 3/19 entries 66/98 dependencies 8/55 modules
 <s> [webpack.Progress] 18% building import loader ./node_modules/ts-loader/index.js
 <s> [webpack.Progress] 18% building import loader ./node_modules/@storybook/angular/dist/ts3.9/server/ngx-template-loader/index.js
 <s> [webpack.Progress] 18% building import loader ./node_modules/@storybook/source-loader/dist/cjs/index.js
-<s> [webpack.Progress] 18% building 3/19 entries 87/125 dependencies 9/65 modules
-<s> [webpack.Progress] 18% building 3/19 entries 104/173 dependencies 11/76 modules
-<s> [webpack.Progress] 18% building 3/19 entries 201/334 dependencies 14/130 modules
-<s> [webpack.Progress] 21% building 4/19 entries 225/493 dependencies 26/131 modules
+<s> [webpack.Progress] 18% building 3/19 entries 85/128 dependencies 9/63 modules
+<s> [webpack.Progress] 18% building 3/19 entries 100/143 dependencies 9/74 modules
+<s> [webpack.Progress] 18% building 3/19 entries 218/300 dependencies 14/135 modules
+<s> [webpack.Progress] 21% building 4/19 entries 220/388 dependencies 19/135 modules
 <s> [webpack.Progress] 21% building import loader ./node_modules/raw-loader/dist/cjs.js
-<s> [webpack.Progress] 21% building 4/19 entries 450/493 dependencies 27/265 modules
-<s> [webpack.Progress] 21% building 4/19 entries 753/900 dependencies 39/299 modules
-<s> [webpack.Progress] 21% building 4/19 entries 1151/1185 dependencies 87/400 modules
-<s> [webpack.Progress] 21% building 4/19 entries 1300/1575 dependencies 108/422 modules
-<s> [webpack.Progress] 21% building 4/19 entries 1589/1619 dependencies 146/500 modules
-<s> [webpack.Progress] 24% building 5/19 entries 2080/2148 dependencies 254/603 modules
-<s> [webpack.Progress] 24% building 5/19 entries 2700/2741 dependencies 370/730 modules
-<s> [webpack.Progress] 24% building 5/19 entries 2929/3300 dependencies 492/756 modules
-<s> [webpack.Progress] 24% building 5/19 entries 3630/3700 dependencies 678/911 modules
-<s> [webpack.Progress] 24% building 5/19 entries 4151/4200 dependencies 872/1078 modules
-<s> [webpack.Progress] 24% building 5/19 entries 4500/4586 dependencies 962/1276 modules
-<s> [webpack.Progress] 27% building 6/19 entries 4784/4811 dependencies 1200/1336 modules
-<s> [webpack.Progress] 30% building 7/19 entries 4784/4811 dependencies 1200/1336 modules
-<s> [webpack.Progress] 33% building 8/19 entries 4784/4811 dependencies 1200/1336 modules
-<s> [webpack.Progress] 36% building 9/19 entries 4784/4811 dependencies 1200/1336 modules
-<s> [webpack.Progress] 38% building 10/19 entries 4784/4811 dependencies 1200/1336 modules
-<s> [webpack.Progress] 41% building 11/19 entries 4784/4811 dependencies 1200/1336 modules
-<s> [webpack.Progress] 44% building 12/19 entries 4784/4811 dependencies 1200/1336 modules
-<s> [webpack.Progress] 47% building 13/19 entries 4784/4811 dependencies 1200/1336 modules
-<s> [webpack.Progress] 47% building 13/19 entries 5087/5100 dependencies 1310/1389 modules
-<s> [webpack.Progress] 50% building 14/19 entries 5123/5131 dependencies 1339/1389 modules
-<s> [webpack.Progress] 53% building 15/19 entries 5123/5131 dependencies 1344/1389 modules
-<s> [webpack.Progress] 56% building 16/19 entries 5205/5209 dependencies 1393/1410 modules
-<s> [webpack.Progress] 59% building 17/19 entries 5205/5209 dependencies 1393/1410 modules
-<s> [webpack.Progress] 62% building 18/19 entries 5215/5215 dependencies 1412/1414 modules
-<s> [webpack.Progress] 65% building 19/19 entries 5216/5216 dependencies 1414/1414 modules
+<s> [webpack.Progress] 21% building 4/19 entries 439/477 dependencies 28/264 modules
+<s> [webpack.Progress] 21% building 4/19 entries 633/866 dependencies 36/300 modules
+<s> [webpack.Progress] 21% building 4/19 entries 1000/1133 dependencies 67/370 modules
+<s> [webpack.Progress] 21% building 4/19 entries 1211/1400 dependencies 97/424 modules
+<s> [webpack.Progress] 21% building 4/19 entries 1450/1500 dependencies 122/493 modules
+<s> [webpack.Progress] 24% building 5/19 entries 1932/1997 dependencies 229/526 modules
+<s> [webpack.Progress] 24% building 5/19 entries 2418/2600 dependencies 329/709 modules
+<s> [webpack.Progress] 24% building 5/19 entries 2600/2617 dependencies 358/740 modules
+<s> [webpack.Progress] 24% building 5/19 entries 2800/3193 dependencies 456/758 modules
+<s> [webpack.Progress] 24% building 5/19 entries 3635/3700 dependencies 665/915 modules
+<s> [webpack.Progress] 24% building 5/19 entries 4100/4196 dependencies 849/1064 modules
+<s> [webpack.Progress] 24% building 5/19 entries 4776/4800 dependencies 1142/1339 modules
+<s> [webpack.Progress] 27% building 6/19 entries 4848/4884 dependencies 1239/1347 modules
+<s> [webpack.Progress] 30% building 7/19 entries 4848/4884 dependencies 1239/1347 modules
+<s> [webpack.Progress] 33% building 8/19 entries 4848/4884 dependencies 1239/1347 modules
+<s> [webpack.Progress] 36% building 9/19 entries 4848/4884 dependencies 1239/1347 modules
+<s> [webpack.Progress] 38% building 10/19 entries 4848/4884 dependencies 1239/1347 modules
+<s> [webpack.Progress] 41% building 11/19 entries 4848/4884 dependencies 1239/1347 modules
+<s> [webpack.Progress] 44% building 12/19 entries 4848/4884 dependencies 1239/1347 modules
+<s> [webpack.Progress] 47% building 13/19 entries 4848/4884 dependencies 1239/1347 modules
+<s> [webpack.Progress] 47% building 13/19 entries 5140/5147 dependencies 1322/1400 modules
+<s> [webpack.Progress] 50% building 14/19 entries 5141/5148 dependencies 1333/1400 modules
+<s> [webpack.Progress] 53% building 15/19 entries 5141/5148 dependencies 1338/1400 modules
+<s> [webpack.Progress] 56% building 16/19 entries 5216/5219 dependencies 1399/1416 modules
+<s> [webpack.Progress] 59% building 17/19 entries 5216/5219 dependencies 1399/1416 modules
+<s> [webpack.Progress] 62% building 18/19 entries 5224/5224 dependencies 1417/1419 modules
+<s> [webpack.Progress] 65% building 19/19 entries 5225/5225 dependencies 1419/1419 modules
 <s> [webpack.Progress] 65% building
 <s> [webpack.Progress] 69% building finish
 <s> [webpack.Progress] 69% building finish
@@ -705,11 +744,11 @@ Starting type checking service...
 <s> [webpack.Progress] 92% sealing asset processing copy-webpack-plugin
 <s> [webpack.Progress] 92% sealing asset processing PersistentChildCompilerSingletonPlugin
 <s> [webpack.Progress] 92% sealing asset processing TerserPlugin
-info => Manager built (29 s)
+info => Manager built (31 s)
 <s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin
 <s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin
-<s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin main.da7a0664.iframe.bundle.js generate SourceMap
-<s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin main.da7a0664.iframe.bundle.js generated SourceMap
+<s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin main.9a1c9ceb.iframe.bundle.js generate SourceMap
+<s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin main.9a1c9ceb.iframe.bundle.js generated SourceMap
 <s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin runtime~main.e3dacf28.iframe.bundle.js generate SourceMap
 <s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin runtime~main.e3dacf28.iframe.bundle.js generated SourceMap
 <s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin 701.902712cb.iframe.bundle.js generate SourceMap
@@ -733,8 +772,8 @@ info => Manager built (29 s)
 <s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin scripts.js generate SourceMap
 <s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin scripts.js generated SourceMap
 <s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin resolve sources
-<s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin main.da7a0664.iframe.bundle.js attach SourceMap
-<s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin main.da7a0664.iframe.bundle.js attached SourceMap
+<s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin main.9a1c9ceb.iframe.bundle.js attach SourceMap
+<s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin main.9a1c9ceb.iframe.bundle.js attached SourceMap
 <s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin runtime~main.e3dacf28.iframe.bundle.js attach SourceMap
 <s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin runtime~main.e3dacf28.iframe.bundle.js attached SourceMap
 <s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin 701.902712cb.iframe.bundle.js attach SourceMap
@@ -786,38 +825,39 @@ info => Manager built (29 s)
 <s> [webpack.Progress] 99% done plugins fork-ts-checker-webpack-plugin
 <s> [webpack.Progress] 99% done plugins fork-ts-checker-webpack-plugin
 <s> [webpack.Progress] 99% done plugins
-<s> [webpack.Progress] 99% 
+<s> [webpack.Progress] 99%
 
 <s> [webpack.Progress] 99% cache store build dependencies
 <s> [webpack.Progress] 99% cache store build dependencies
 <s> [webpack.Progress] 99% cache begin idle
 <s> [webpack.Progress] 99% cache begin idle
-<s> [webpack.Progress] 100% 
+<s> [webpack.Progress] 100%
 
-info => Preview built (38 s)
+info => Preview built (41 s)
 WARN System.import() is deprecated and will be removed soon. Use import() instead.
 WARN For more info visit https://webpack.js.org/guides/code-splitting/
 WARN System.import() is deprecated and will be removed soon. Use import() instead.
 WARN For more info visit https://webpack.js.org/guides/code-splitting/
 WARN asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
 WARN This can impact web performance.
-WARN Assets: 
+WARN Assets:
 WARN   fa-solid-900.ttf (379 KiB)
 WARN   scripts.js (462 KiB)
-WARN   main.5a7d6afa.iframe.bundle.js (1.08 MiB)
+WARN   assets/images/aeonix_logo_151.png (3.77 MiB)
+WARN   main.c8c69fae.iframe.bundle.js (1.1 MiB)
 WARN   807.02fc4b66.iframe.bundle.js (785 KiB)
 WARN   683.522329ad.iframe.bundle.js (4.4 MiB)
 WARN entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.
 WARN Entrypoints:
-WARN   main (5.49 MiB)
+WARN   main (5.51 MiB)
 WARN       runtime~main.80c00874.iframe.bundle.js
 WARN       683.522329ad.iframe.bundle.js
-WARN       main.5a7d6afa.iframe.bundle.js
+WARN       main.c8c69fae.iframe.bundle.js
 WARN   scripts (462 KiB)
 WARN       scripts.js
-WARN 
+WARN
 <s> [webpack.Progress] 99% cache shutdown
 <s> [webpack.Progress] 99% cache shutdown
-<s> [webpack.Progress] 100% 
+<s> [webpack.Progress] 100%
 
-info => Output directory: C:\\Users\\a180136\\AppData\\Local\\Temp\\chromatic--428-x7z6qTh1nbsC
+info => Output directory: C:\\Users\\a180136\\AppData\\Local\\Temp\\chromatic--13632-lNQ9nd19hv0w

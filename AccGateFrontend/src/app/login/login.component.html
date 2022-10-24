@@ -1,40 +1,71 @@
-<div class="col-md-12">
-  <div id="main-login-card" class="card card-container">
 
-    <img id="profile-img" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-      class="profile-img-card" />
+<div id="main-login-card" class="col-md-12">
+  <storybook-card  class="card-container"></storybook-card>
+  <div  class="card  h-100 d-flex align-items-center justify-content-center">
+
+    <div class="Aeonix-App-Center">
+    <a>Aeonix App Center</a>
+    </div>
+    <!--img id="profile-img" class="user-image" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+      class="profile-img-card" /-->
+
+    <br>
+
     <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" class="form-control" name="username" [(ngModel)]="form.username"
-               placeholder="ea2" required #username="ngModel"/>
+
+      <div class="list-item storybook-input Frame-3 ">
+        <a class="user-name D-Caps-Regular">USER NAME</a>
+
+        <br>
+        <label [attr.aria-label]="'username'" for="username" class="Vector2 ">
+
+          <img src="../../assets/images/User2ldpi.png" class="icon-input-username" alt="icon input username" />
+
+          <input type="text" [value]="'DanK203'" id="username" name="username"  class="DanK203"
+                 [(ngModel)]="form.username" placeholder="Ex. Saul Ramirez" required #username="ngModel"/>
+        </label>
+
         <div class="alert alert-danger" role="alert" *ngIf="username.errors && f.submitted">
           Username is required!
         </div>
       </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" class="form-control" name="password"
-          [(ngModel)]="form.password" placeholder="e1996" required minlength="1" #password="ngModel"/>
-        <div
-          class="alert alert-danger"
-          role="alert"
-          *ngIf="password.errors && f.submitted">
+
+      <br>
+
+      <div class="storybook-input Frame-3 ">
+        <span class="user-name D-Caps-Regular">PASSWORD</span>
+
+
+        <br>
+        <label [attr.aria-label]="'password'" for="password" class="Vector2 ">
+          <img src="../../assets/images/LockIcon2ldpi.png" class="icon-input-password" alt="icon input password" />
+          <input type="text" [value]="'DanK203'" id="password" name="password"  class="DanK203"
+                 [(ngModel)]="form.password" placeholder="e1996" required #password="ngModel"/>
+        </label>
+
+        <div class="alert alert-danger" role="alert" *ngIf="password.errors && f.submitted">
           <div *ngIf="password.errors.required">Password is required</div>
-          <div *ngIf="password.errors.minlength">
-            Password must be at least 1 characters
-          </div>
+          <div *ngIf="password.errors.minlength">Password must be at least 1 characters</div>
         </div>
       </div>
+
+      <br>
+      <div class="thematic-break"></div>
+
       <div class="form-group">
-        <button class="btn btn-primary btn-block">Login</button>
 
         <div>
-          <a (mouseover)="popover.show()" (mouseleave)="popover.hide()" (click)="openReplacePassword()"
+          <!--a (mouseover)="popover.show()" (mouseleave)="popover.hide()" (click)="openReplacePassword()"
              class="form-check-label white-text"  href="#/login" mdbPopoverTitle="Account recovery" #popover="mdbPopover"
              mdbPopover="To help keep your account safe, we will make sure that it’s really you trying to sign in">
             Forgot password?
+          </a-->
+          <a (click)="openReplacePassword()"
+             class="forgot-password"  href="#/login" >
+            Forgot password?
           </a>
+
+          <button class="login-button">Continue</button>
         </div>
 
       </div>
@@ -45,10 +76,13 @@
       </div>
     </form>
 
+
+
     <div class="alert alert-success" *ngIf="isLoggedIn">
       Logged in as {{ roles }}.
     </div>
-    <mdb-card-footer class="form-check-label white-text border-bottom-0" id="tests">
+
+    <!--mdb-card-footer class="form-check-label white-text border-bottom-0" id="tests">
       <label for="tests" class="form-check-label white-text"
               style="margin-bottom: 1px; padding: 1px">R&D test:
         <a (click)="openRegisterForm()" href="#/login" class="green-text font-weight-bold">RegistrationForm</a>
@@ -57,8 +91,8 @@
         <b> ,</b>
         <a (click)="test()" href="#/login" class="green-text font-weight-bold pl-2">test</a>
       </label>
-    </mdb-card-footer>
-  </div>
+    </mdb-card-footer-->
+
 
 
 

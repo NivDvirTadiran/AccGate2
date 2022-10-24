@@ -107,6 +107,14 @@
             ],
             "scripts": []
           }
+        },
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "browserTarget": "accGate:build",
+            "styles": [".storybook/custom-styles.scss"]
+          }
+
         }
       }
     }

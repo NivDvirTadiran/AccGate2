@@ -1,3 +1,172 @@
+
+
+
+.storybook-input {
+  position: relative;
+  width: 445px;
+  height: 102px;
+  left: calc(50% - 445px/2 - 0.5px);
+  top: calc(50% - 101.16px/2 - 171.58px);
+  padding: 0.8px 0 0;
+  background-color: #FFFFFF;
+}
+
+.storybook-input .Frame-3 {
+  width: 445px;
+  height: 102px;
+  left: calc(50% - 445px/2 - 0.5px);
+  top: calc(50% - 101.16px/2 - 171.58px);
+  padding: 0.8px 0 0;
+  background-color: #fff;
+}
+
+.user-name {
+  position: absolute;
+  width: 82px;
+  height: 35px;
+  left: 0%;
+  right: 82.7%;
+  top: 10%;
+  bottom: 68.37%;
+  /* identical to box height, or 223% */
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.011em;
+  text-transform: uppercase;
+
+  color: #000000;
+}
+
+
+
+/* D Caps Regular */
+.D-Caps-Regular {
+  font-family: NotoSans, ui-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 31px;
+}
+
+img.icon-input-username {
+  position: absolute;
+  width: 22.72px;
+  height: 26.74px;
+  left: 25px;
+  bottom: 8px;
+  transform: rotate(0deg);
+  background-position: bottom;
+}
+
+img.icon-input-password {
+  position: absolute;
+  width: 22.72px;
+  height: 26.74px;
+  left: 25px;
+  bottom: 8px;
+  transform: rotate(0deg);
+  background-position: bottom;
+}
+
+.DanK203 {
+  position: relative;
+  height: 25px;
+  width: 228px;
+  left: 35px;
+  bottom: -6.5px;
+  margin: 4.2px 1px 2.8px 20.3px;
+
+  /* D Example Italic */
+  object-fit: contain;
+  font-family: NotoSans, ui-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 48%;
+  /* or 65% */
+
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.19px;
+
+  border-color: rgba(255, 255, 255, 0);
+  color: #C8C8C8;
+
+
+}
+
+
+
+input[type=text]:focus {
+  background: #99999900;
+  box-shadow: 0 0 5px #99999900;
+  border-top-color: #99999900;
+  border-left-color: #99999900;
+  border-right-color: #99999900;
+}
+
+
+
+.Vector2 {
+  box-sizing: border-box;
+  position: absolute;
+
+
+  left: 0.2%;
+  right: 0.03%;
+  top: 42.66%;
+  bottom: 0;
+
+  /* White */
+  background: #FFFFFF;
+  /* Blue */
+  border: 2px solid #3D8ECF;
+  border-radius: 10px;
+}
+
+.login-button {
+
+
+  width: 446px;
+  height: 63px;
+  margin: 26px 0 0 1px;
+  padding: 17px 136px 17px 139px;
+  border-radius: 7px;
+  background-image: linear-gradient(180deg, #3D8ECF 0%, #58A6E4 100%);
+
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 11px;
+}
+
+.thematic-break {
+  margin: 45px 2px 71px 2.5px;
+  background-color: #3d8ecf;
+  border: 1px solid #3D8ECF;
+}
+
+.forgot-password {
+  /* D UnderLine Regular */
+
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 31px;
+  /* identical to box height, or 183% */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.011em;
+  text-decoration-line: underline;
+
+  color: #000000;
+}
+
 label {
   display: block;
   margin-top: 10px;
@@ -8,28 +177,46 @@ label {
   padding: 10px 10px;
 
 }
+.col-md-12{
+  position: center;
+  width: 637.5px;
+  height: 819px;
+  left: calc(50% - 637.5px/2 - 0.25px);
+  top: calc(50% - 819px/2 - 20.5px);
 
-.card {
-  background-color: #f7f7f7;
-  padding: 20px 25px 30px;
-  margin: 0 auto 25px;
-  margin-top: 50px;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
-  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
-.profile-img-card {
-  width: 96px;
-  height: 96px;
-  margin: 0 auto 10px;
-  display: block;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
+
+.card {
+  position: absolute;
+  left: 5.18%;
+  right: 4.78%;
+  top: 0;
+  bottom: 0;
+  border-radius: 14px;
+  box-shadow: -4px 4px 10px 0 rgba(88, 166, 228, 0.3);
+  background-color: #fff;
+}
+
+
+.Aeonix-App-Center {
+  position: absolute;
+  top: 12.94%;
+  bottom: 77.05%;
+
+  width: 447px;
+  height: 82px;
+  flex-grow: 0;
+  margin: 0 0 19.8px;
+  font-family: NotoSans;
+  font-size: 40px;
+  font-weight: 800;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 45px;
+  letter-spacing: -0.011px;
+  text-align: left;
+  color: #000000;
 }
 
 ._1Q9if, ._2Hij5 {

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
-import {AuthService} from "../../_services/auth.service";
+import {AuthService} from "../_services/auth.service";
 import {AbstractControl, FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({

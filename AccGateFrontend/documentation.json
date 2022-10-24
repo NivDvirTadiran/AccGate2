@@ -123,6 +123,88 @@
     ],
     "interfaces": [
         {
+            "name": "StoryInput",
+            "id": "interface-StoryInput-75687beb7e61df81e9f6f239e01f3c346b70d334c6ee29cf512f93d05beca4d6bf274deb49d9af839cb0af72751dbe659880e788b7717348a61182fc51397424",
+            "file": "src/stories/inputs/story-input.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface StoryInput {\r\n  id: string;\r\n  title: string;\r\n  state: string;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "id",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "state",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "title",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        },
+        {
+            "name": "Task",
+            "id": "interface-Task-d4d37e919bf153b85cd73cf76b3d81234228b20ae5a9a500ccf0118c584fdae333a8448d8becdbaa20c0fdaf47fd111516c76691ee76980e2a62f442b656bd75",
+            "file": "src/stories/task/task.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface Task {\r\n  id: string;\r\n  title: string;\r\n  state: string;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "id",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "state",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "title",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        },
+        {
             "name": "User",
             "id": "interface-User-9c7e5f1bbbab702cb032307d130876cb68969b0cd4eedef32a0c8cad8081a54e5f8f577ed6ad4539c1b99a1d246cb34031d198c2ea8eba440e64e91b14f01fdc",
             "file": "src/stories/User.ts",
@@ -2187,7 +2269,7 @@
         },
         {
             "name": "CardComponent",
-            "id": "component-CardComponent-dcf322dd94eef73b54838a7f9da412a84b118556846a50d658cb875b1e29daeadc3d087cb462c23f12c826e6069251b33be3fc629b26602f458ac3649fcfcf88",
+            "id": "component-CardComponent-d8888d7a8ce2217ab4fdb8818ea58fb9e6f004eedc5b4b7a7f4f935fa5f269beec7e4069a1e4e200643fd2139b8d6b36a2b590e5e013f3b2e2caa9bcd5f9b1cd",
             "file": "src/stories/cards/card.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2210,7 +2292,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nWhat background color to use\n",
                     "description": "<p>What background color to use</p>\n",
-                    "line": 149,
+                    "line": 23,
                     "type": "string",
                     "decorators": []
                 },
@@ -2221,15 +2303,15 @@
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
-                            "pos": 5055,
-                            "end": 5069,
+                            "pos": 591,
+                            "end": 605,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 325,
                             "tagName": {
-                                "pos": 5056,
-                                "end": 5064,
+                                "pos": 592,
+                                "end": 600,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -2241,7 +2323,7 @@
                     ],
                     "rawdescription": "\n\nButton contents\n\n",
                     "description": "<p>Button contents</p>\n",
-                    "line": 163,
+                    "line": 37,
                     "type": "string",
                     "decorators": []
                 },
@@ -2252,7 +2334,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nIs this the principal call to action on the page?\n",
                     "description": "<p>Is this the principal call to action on the page?</p>\n",
-                    "line": 143,
+                    "line": 17,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -2263,7 +2345,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nHow large should the button be?\n",
                     "description": "<p>How large should the button be?</p>\n",
-                    "line": 155,
+                    "line": 29,
                     "type": "\"small\" | \"medium\" | \"large\"",
                     "decorators": []
                 }
@@ -2276,316 +2358,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nOptional click handler\n",
                     "description": "<p>Optional click handler</p>\n",
-                    "line": 169,
-                    "type": "EventEmitter"
-                }
-            ],
-            "propertiesClass": [
-                {
-                    "name": "form",
-                    "defaultValue": "{\r\n    username: null, //new FormControl('ea2', Validators.min(2)),\r\n    password: null  //new FormControl('zaqwsx', Validators.min(2))\r\n  }",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "any",
-                    "optional": false,
-                    "description": "",
-                    "line": 21
-                },
-                {
-                    "name": "isLoggedIn",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 25,
-                    "modifierKind": [
-                        123
-                    ]
-                },
-                {
-                    "name": "isLoginFailed",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 26
-                },
-                {
-                    "name": "loginErrorMessage",
-                    "defaultValue": "''",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 27
-                },
-                {
-                    "name": "registerFormRef",
-                    "defaultValue": "null",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "MdbModalRef<RegisterFormComponent> | null",
-                    "optional": false,
-                    "description": "",
-                    "line": 19
-                },
-                {
-                    "name": "replacePassFormRef",
-                    "defaultValue": "null",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "MdbModalRef<ReplacePassFormComponent> | null",
-                    "optional": false,
-                    "description": "",
-                    "line": 20
-                },
-                {
-                    "name": "roles",
-                    "defaultValue": "[]",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string[]",
-                    "optional": false,
-                    "description": "",
-                    "line": 28
-                }
-            ],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 36,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "onSubmit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 83,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "openRegisterForm",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "any",
-                    "typeParameters": [],
-                    "line": 66,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "openReplacePassword",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 79,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "reloadPage",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 130,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "test",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
                     "line": 43,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';\r\nimport { AuthService } from '../../app/_services/auth.service';\r\nimport { TokenStorageService } from '../../app/_services/token-storage.service';\r\nimport {  Router } from '@angular/router';\r\nimport { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';\r\nimport {FormControl, Validators} from \"@angular/forms\";\r\nimport { RegisterFormComponent } from '../../app/login/register-form/register-form.component';\r\nimport {ReplacePassFormComponent} from \"../../app/login/replace-pass-form/replace-pass-form.component\";\r\nimport {Observable} from \"rxjs\";\r\nimport ButtonComponent from \"../buttons/button.component\";\r\n//import {  Router } from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'storybook-card',\r\n  templateUrl: './card.component.html',\r\n  styleUrls: ['./card.css']\r\n})\r\nexport default class CardComponent implements OnInit {\r\n  registerFormRef: MdbModalRef<RegisterFormComponent> | null = null;\r\n  replacePassFormRef: MdbModalRef<ReplacePassFormComponent> | null = null;\r\n  form: any = {\r\n    username: null, //new FormControl('ea2', Validators.min(2)),\r\n    password: null  //new FormControl('zaqwsx', Validators.min(2))\r\n  };\r\n  public isLoggedIn = false;\r\n  isLoginFailed = false;\r\n  loginErrorMessage = '';\r\n  roles: string[] = [];\r\n\r\n  constructor(private authService: AuthService,\r\n              private tokenStorage: TokenStorageService,\r\n              private router: Router,\r\n              private registerFormService: MdbModalService,\r\n              private replacePassFormService: MdbModalService) { }\r\n\r\n  ngOnInit(): void {\r\n    if (this.tokenStorage.getToken()) {\r\n      this.isLoggedIn = true;\r\n      this.roles = this.tokenStorage.getUser().roles;\r\n    }\r\n  }\r\n\r\n  test() {\r\n    console.log(\"test start\");\r\n    /*this.openRegisterForm().then(() => {\r\n      this.openReplacePassword();\r\n      console.log(\"test end\");});*/\r\n\r\n    this.openRegisterForm().then(\r\n      (val) => {\r\n        console.log(val);\r\n        switch (val) {\r\n          case \"xbutton\":\r\n            break;\r\n          case undefined:\r\n            this.openReplacePassword();\r\n            break;\r\n          default:\r\n\r\n        }\r\n        return 'done2';\r\n      },\r\n      (err) => console.error(err));\r\n  }\r\n\r\n  openRegisterForm() {\r\n    return this.registerFormService.open(RegisterFormComponent).onClose.toPromise();\r\n    /*var promise = new Promise<void>((resolve, reject)  => {\r\n      let newRegisterFormService = this.registerFormService.open(RegisterFormComponent);\r\n      setTimeout(() => {\r\n        console.log(\"Async Work Complete\");\r\n        newRegisterFormService.close();\r\n        resolve();//() => {resolve();}\r\n      }, 5000);\r\n    });\r\n    return promise;*/\r\n  }\r\n\r\n  openReplacePassword() {\r\n    this.replacePassFormService.open(ReplacePassFormComponent);\r\n  }\r\n\r\n  onSubmit(): void {\r\n    const { username, password } = this.form;\r\n\r\n    this.authService.login(username, password).subscribe(\r\n      data => {\r\n        this.tokenStorage.saveToken(data.accessToken);\r\n        this.tokenStorage.saveRefreshToken(data.refreshToken);\r\n        this.tokenStorage.saveUser(data);\r\n\r\n        this.isLoginFailed = false;\r\n        this.isLoggedIn = true;\r\n        this.roles = this.tokenStorage.getUser().roles;\r\n        this.reloadPage();\r\n      },\r\n      err => {\r\n        switch (err.error.message) {\r\n          case \"Error: A registry process should be made!\":\r\n            //this.openRegisterForm().then(() => {this.openReplacePassword()});\r\n            //toPromise((data) => {this.openReplacePassword()});\r\n            this.openRegisterForm().then(\r\n              (val) => {\r\n                console.log(val);\r\n                switch (val) {\r\n                  case \"xbutton\":\r\n                    break;\r\n                  case \"Registration Complete\":\r\n                    this.openReplacePassword();\r\n                    break;\r\n                  case undefined:\r\n                    this.openReplacePassword();\r\n                    break;\r\n                  default:\r\n                }\r\n                return 'done2';\r\n              },\r\n              (err) => console.error(err));\r\n            break;\r\n          default:\r\n            this.loginErrorMessage = err.error.message;\r\n        }\r\n\r\n\r\n        this.isLoginFailed = true;\r\n      }\r\n    );\r\n  }\r\n\r\n  reloadPage(): void {\r\n    //window.location.reload();\r\n    this.router.navigate(['/profile']).then(() => {window.location.reload()});\r\n    //var URL = window.location.host+\"/profile\"; //'http://localhost:4200/user';\r\n    ///window.open(URL);\r\n    //this.router.navigate([]).then(result => {  window.open(window.location.toString(), 'user'); });\r\n  }\r\n\r\n\r\n  /**\r\n   * Is this the principal call to action on the page?\r\n   */\r\n  @Input()\r\n  primary = false;\r\n\r\n  /**\r\n   * What background color to use\r\n   */\r\n  @Input()\r\n  backgroundColor?: string;\r\n\r\n  /**\r\n   * How large should the button be?\r\n   */\r\n  @Input()\r\n  size: 'small' | 'medium' | 'large' = 'medium';\r\n\r\n  /**\r\n   * Button contents\r\n   *\r\n   * @required\r\n   */\r\n  @Input()\r\n  label = 'Button';\r\n\r\n  /**\r\n   * Optional click handler\r\n   */\r\n  @Output()\r\n  onClick = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    const mode = this.primary ? 'storybook-card--primary' : 'storybook-card--secondary';\r\n\r\n    return ['storybook-card', `storybook-card--${this.size}`, mode];\r\n  }\r\n\r\n}\r\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "label {\r\n  display: block;\r\n  margin-top: 10px;\r\n}\r\n\r\n.card-container.card {\r\n  max-width: 400px !important;\r\n  padding: 10px 10px;\r\n\r\n}\r\n\r\n.card {\r\n  background-color: #f7f7f7;\r\n  padding: 20px 25px 30px;\r\n  margin: 0 auto 25px;\r\n  margin-top: 50px;\r\n  -moz-border-radius: 2px;\r\n  -webkit-border-radius: 2px;\r\n  border-radius: 2px;\r\n  -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);\r\n  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);\r\n  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);\r\n}\r\n\r\n.profile-img-card {\r\n  width: 96px;\r\n  height: 96px;\r\n  margin: 0 auto 10px;\r\n  display: block;\r\n  -moz-border-radius: 50%;\r\n  -webkit-border-radius: 50%;\r\n  border-radius: 50%;\r\n}\r\n\r\n._1Q9if, ._2Hij5 {\r\n  word-wrap: break-word;\r\n  overflow-wrap: break-word;\r\n  text-align: start;\r\n  pointer-events: none;\r\n}\r\n\r\n._3SQN-, ._3wnIc {\r\n  position: absolute;\r\n  top: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n}\r\n\r\n.multi-bg-example {\r\n  width: 980px;\r\n  height: 289px;\r\n  object-fit: cover;\r\n  object-position: 50% 50%;\r\n}\r\n\r\n.font_0 {\r\n  font-size:44px;\r\n  text-align:left;\r\n  color:#FFFFFF;\r\n}\r\n\r\n.alert, .alert-success {\r\n  width: 50%;\r\n}\r\n\r\n\r\n.background {\r\n  background-size: cover;\r\n  background-origin: border-box;\r\n  background-image: url(../../app/_services/assets/images/Background.webp);\r\n  /*linear-gradient(to right, rgba(30, 75, 115, 1), rgba(255, 255, 255, 0));*/\r\n  background-repeat: no-repeat;\r\n  background-position: top left;\r\n\r\n}\r\n\r\n.card-footer {\r\n  padding-top: 0.1rem;\r\n  padding-right: 0.1rem;\r\n  padding-bottom: 0.1rem;\r\n  padding-left: 0.1rem;\r\n\r\n  border-top: 0.1rem solid rgba(0, 0, 0, 0.125);\r\n\r\n  border-bottom: 0.1rem;\r\n  background-color: rgba(0, 0, 0, 0.03);\r\n\r\n}\r\n\r\n.footer ul.footer-menu li.bold a {\r\n  font-weight: 700;\r\n}\r\n\r\n\r\n\r\n\r\n.storybook-card {\r\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  font-weight: 700;\r\n  border: 0;\r\n  border-radius: 3em;\r\n  cursor: pointer;\r\n  display: inline-block;\r\n  line-height: 1;\r\n}\r\n.storybook-card--primary {\r\n  color: white;\r\n  background-color: #1ea7fd;\r\n}\r\n.storybook-card--secondary {\r\n  color: #333;\r\n  background-color: transparent;\r\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\r\n}\r\n.storybook-card--small {\r\n  font-size: 12px;\r\n  padding: 10px 16px;\r\n}\r\n.storybook-card--medium {\r\n  font-size: 14px;\r\n  padding: 11px 20px;\r\n}\r\n.storybook-card--large {\r\n  font-size: 16px;\r\n  padding: 12px 24px;\r\n}\r\n",
-                    "styleUrl": "./card.css"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [
-                    {
-                        "name": "authService",
-                        "type": "AuthService",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "tokenStorage",
-                        "type": "TokenStorageService",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "router",
-                        "type": "Router",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "registerFormService",
-                        "type": "MdbModalService",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "replacePassFormService",
-                        "type": "MdbModalService",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    }
-                ],
-                "line": 28,
-                "jsdoctags": [
-                    {
-                        "name": "authService",
-                        "type": "AuthService",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    },
-                    {
-                        "name": "tokenStorage",
-                        "type": "TokenStorageService",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    },
-                    {
-                        "name": "router",
-                        "type": "Router",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    },
-                    {
-                        "name": "registerFormService",
-                        "type": "MdbModalService",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    },
-                    {
-                        "name": "replacePassFormService",
-                        "type": "MdbModalService",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    }
-                ]
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "accessors": {
-                "classes": {
-                    "name": "classes",
-                    "getSignature": {
-                        "name": "classes",
-                        "type": "[]",
-                        "returnType": "string[]",
-                        "line": 171
-                    }
-                }
-            },
-            "templateData": "<div class=\"col-md-12\">\r\n  <div id=\"main-login-card\" class=\"card card-container\">\r\n\r\n    <img id=\"profile-img\" src=\"//ssl.gstatic.com/accounts/ui/avatar_2x.png\"\r\n         class=\"profile-img-card\" />\r\n    <form *ngIf=\"!isLoggedIn\" name=\"form\" (ngSubmit)=\"f.form.valid && onSubmit()\" #f=\"ngForm\" novalidate>\r\n      <div class=\"form-group\">\r\n        <label for=\"username\">Username</label>\r\n        <input type=\"text\" class=\"form-control\" name=\"username\" [(ngModel)]=\"form.username\"\r\n               placeholder=\"ea2\" required #username=\"ngModel\"/>\r\n        <div class=\"alert alert-danger\" role=\"alert\" *ngIf=\"username.errors && f.submitted\">\r\n          Username is required!\r\n        </div>\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"password\">Password</label>\r\n        <input type=\"password\" class=\"form-control\" name=\"password\"\r\n               [(ngModel)]=\"form.password\" placeholder=\"e1996\" required minlength=\"1\" #password=\"ngModel\"/>\r\n        <div\r\n          class=\"alert alert-danger\"\r\n          role=\"alert\"\r\n          *ngIf=\"password.errors && f.submitted\">\r\n          <div *ngIf=\"password.errors.required\">Password is required</div>\r\n          <div *ngIf=\"password.errors.minlength\">\r\n            Password must be at least 1 characters\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <button class=\"btn btn-primary btn-block\">Login</button>\r\n\r\n\r\n\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <div class=\"alert alert-danger\" role=\"alert\" *ngIf=\"f.submitted && isLoginFailed\">\r\n          Login failed: {{ loginErrorMessage }}\r\n        </div>\r\n      </div>\r\n    </form>\r\n\r\n    <div class=\"alert alert-success\" *ngIf=\"isLoggedIn\">\r\n      Logged in as {{ roles }}.\r\n    </div>\r\n\r\n      <label class=\"form-check-label white-text\"\r\n             style=\"margin-bottom: 1px; padding: 1px\">R&D test:\r\n        <a (click)=\"openRegisterForm()\" href=\"#/login\" class=\"green-text font-weight-bold\">RegistrationForm</a>\r\n        <b> ,</b>\r\n        <a (click)=\"openReplacePassword()\" href=\"#/login\" class=\"green-text font-weight-bold pl-2\">ReplacePassForm</a>\r\n        <b> ,</b>\r\n        <a (click)=\"test()\" href=\"#/login\" class=\"green-text font-weight-bold pl-2\">test</a>\r\n      </label>\r\n\r\n  </div>\r\n\r\n\r\n\r\n</div>\r\n\r\n"
-        },
-        {
-            "name": "HeaderComponent",
-            "id": "component-HeaderComponent-9553c8f5d6fb1def1c3df4b7d5bfc9224e125cd4e77df72201ff42c98c015a6c3a38b1bb9159d1c7ebe9276e3e0763cdc8d5684c9e135cb4594ec134b1488f59",
-            "file": "src/stories/headers/header.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "storybook-header",
-            "styleUrls": [
-                "./header.css"
-            ],
-            "styles": [],
-            "template": "<header>    <div class=\"wrapper\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <storybook-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></storybook-button>\n          <storybook-card\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></storybook-card>\n        </div>\n        <div *ngIf=\"!user\">\n          <storybook-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></storybook-button>\n          <storybook-button\n            *ngIf=\"!user\"\n            primary\n            size=\"small\"\n            primary=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></storybook-button>\n        </div>\n      </div>\n    </div>\n  </header>",
-            "templateUrl": [],
-            "viewProviders": [],
-            "inputsClass": [
-                {
-                    "name": "user",
-                    "defaultValue": "null",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 71,
-                    "type": "User | null",
-                    "decorators": []
-                }
-            ],
-            "outputsClass": [
-                {
-                    "name": "onCreateAccount",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 80,
-                    "type": "EventEmitter"
-                },
-                {
-                    "name": "onLogin",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 74,
-                    "type": "EventEmitter"
-                },
-                {
-                    "name": "onLogout",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 77,
                     "type": "EventEmitter"
                 }
             ],
@@ -2598,7 +2371,199 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { User } from '../User';\n\n@Component({\n  selector: 'storybook-header',\n  template: `<header>\n    <div class=\"wrapper\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <storybook-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></storybook-button>\n          <storybook-card\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></storybook-card>\n        </div>\n        <div *ngIf=\"!user\">\n          <storybook-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></storybook-button>\n          <storybook-button\n            *ngIf=\"!user\"\n            primary\n            size=\"small\"\n            primary=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></storybook-button>\n        </div>\n      </div>\n    </div>\n  </header>`,\n  styleUrls: ['./header.css'],\n})\nexport default class HeaderComponent {\n  @Input()\n  user: User | null = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
+            "sourceCode": "import {Component, EventEmitter, Input, Output} from '@angular/core';\r\n\r\n\r\n@Component({\r\n  selector: 'storybook-card',\r\n  templateUrl: './card.component.html',\r\n  styleUrls: ['./card.css']\r\n})\r\nexport default class CardComponent  {\r\n\r\n\r\n\r\n  /**\r\n   * Is this the principal call to action on the page?\r\n   */\r\n  @Input()\r\n  primary = false;\r\n\r\n  /**\r\n   * What background color to use\r\n   */\r\n  @Input()\r\n  backgroundColor?: string;\r\n\r\n  /**\r\n   * How large should the button be?\r\n   */\r\n  @Input()\r\n  size: 'small' | 'medium' | 'large' = 'medium';\r\n\r\n  /**\r\n   * Button contents\r\n   *\r\n   * @required\r\n   */\r\n  @Input()\r\n  label = 'Button';\r\n\r\n  /**\r\n   * Optional click handler\r\n   */\r\n  @Output()\r\n  onClick = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    const mode = this.primary ? 'storybook-card--primary' : 'storybook-card--secondary';\r\n\r\n    return ['storybook-card', `storybook-card--${this.size}`, mode];\r\n  }\r\n\r\n\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".Vector {\r\n  position: absolute;\r\n  width: 637.5px;\r\n  height: 819px;\r\n  left: calc(50% - 637.5px/2 - 1.25px);\r\n  top: calc(50% - 819px/2 - 0.5px);\r\n}\r\n\r\n.card {\r\n  position: absolute;\r\n  left: 5.18%;\r\n  right: 4.78%;\r\n  top: 0;\r\n  bottom: 0;\r\n  border-radius: 14px;\r\n  box-shadow: -4px 4px 10px 0 rgba(88, 166, 228, 0.3);\r\n  background-color: #fff;\r\n}\r\n\r\n\r\n\r\n\r\n.storybook-card {\r\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  font-weight: 700;\r\n  border: 0;\r\n  border-radius: 3em;\r\n  cursor: pointer;\r\n  display: inline-block;\r\n  line-height: 1;\r\n}\r\n.storybook-card--primary {\r\n  color: white;\r\n  background-color: #1ea7fd;\r\n}\r\n.storybook-card--secondary {\r\n  color: #333;\r\n  background-color: transparent;\r\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\r\n}\r\n.storybook-card--small {\r\n  font-size: 12px;\r\n  padding: 10px 16px;\r\n}\r\n.storybook-card--medium {\r\n  font-size: 14px;\r\n  padding: 11px 20px;\r\n}\r\n.storybook-card--large {\r\n  font-size: 16px;\r\n  padding: 12px 24px;\r\n}\r\n",
+                    "styleUrl": "./card.css"
+                }
+            ],
+            "stylesData": "",
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 45
+                    }
+                }
+            },
+            "templateData": "\r\n  <div class=\"card\">\r\n\r\n  </div>\r\n\r\n\r\n"
+        },
+        {
+            "name": "FormComponent",
+            "id": "component-FormComponent-531aa8ecc37f7f7ea69fdaa7077a9b2a24c9cc768015dc71f3936a791743368a55bf97f2353ba94d47736b3262390e70095175481e5f0f12284abd072dc8ee36",
+            "file": "src/stories/forms/form.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-form",
+            "styleUrls": [
+                "./form.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./form.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "loading",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "storyInputs",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 28,
+                    "type": "StoryInput[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onArchiveInput",
+                    "defaultValue": "new EventEmitter()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
+                    "type": "EventEmitter<any>"
+                },
+                {
+                    "name": "onPinInput",
+                    "defaultValue": "new EventEmitter()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "EventEmitter<any>"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component, EventEmitter, Input, Output} from '@angular/core';\r\n\r\nimport { StoryInput } from \"../inputs/story-input.model\";\r\n\r\n\r\n@Component({\r\n  selector: 'storybook-form',\r\n  templateUrl: './form.component.html',\r\n  styleUrls: ['./form.css'],\r\n})\r\nexport class FormComponent  {\r\n\r\n  /**\r\n   * @ignore\r\n   * Component property to define ordering of tasks\r\n   */\r\n  storyInputsInOrder: StoryInput[] = [];\r\n\r\n  @Input() loading = false;\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output() onPinInput: EventEmitter<any> = new EventEmitter();\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output() onArchiveInput: EventEmitter<any> = new EventEmitter();\r\n\r\n  @Input()\r\n  set storyInputs(arr: StoryInput[]) {\r\n    const initialTasks = [\r\n      ...arr.filter(t => t.state === 'INPUT_PINNED'),\r\n      ...arr.filter(t => t.state !== 'INPUT_PINNED'),\r\n    ];\r\n    const filteredTasks = initialTasks.filter(\r\n      t => t.state === 'INPUT_INBOX' || t.state === 'INPUT_PINNED'\r\n    );\r\n    this.storyInputsInOrder = filteredTasks.filter(\r\n      t => t.state === 'INPUT_INBOX' || t.state === 'INPUT_PINNED'\r\n    );\r\n  }\r\n\r\n}\r\n\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".Vector {\r\n  position: relative;\r\n  width: 637.5px;\r\n  height: 819px;\r\n  left: calc(50% - 637.5px/2 - 1.25px);\r\n  top: calc(50% - 819px/2 - 0.5px);\r\n}\r\n\r\n.form {\r\n  position: absolute;\r\n  left: 3.18%;\r\n  right: 14.78%;\r\n  top: 0;\r\n  bottom: 0;\r\n  border-radius: 14px;\r\n  box-shadow: -4px 4px 10px 0 rgba(88, 166, 228, 0.3);\r\n  background-color: #fff;\r\n}\r\n\r\n\r\n\r\n",
+                    "styleUrl": "./form.css"
+                }
+            ],
+            "stylesData": "",
+            "accessors": {
+                "storyInputs": {
+                    "name": "storyInputs",
+                    "setSignature": {
+                        "name": "storyInputs",
+                        "type": "void",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "args": [
+                            {
+                                "name": "arr",
+                                "type": "StoryInput[]",
+                                "deprecated": false,
+                                "deprecationMessage": ""
+                            }
+                        ],
+                        "returnType": "void",
+                        "line": 28,
+                        "jsdoctags": [
+                            {
+                                "name": "arr",
+                                "type": "StoryInput[]",
+                                "deprecated": false,
+                                "deprecationMessage": "",
+                                "tagName": {
+                                    "text": "param"
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "templateData": "\r\n\r\n\r\n\r\n<form class=\"Vector\">\r\n\r\n  <div class=\"list-items\">\r\n    <storybook-card></storybook-card>\r\n\r\n  <div *ngIf=\"loading\">loading</div>\r\n  <div *ngIf=\"!loading && storyInputsInOrder.length === 0\">empty</div>\r\n  <storybook-input\r\n    *ngFor=\"let storyInput of storyInputsInOrder\"\r\n    [storyInput]=\"storyInput\"\r\n    (onArchiveInput)=\"onArchiveInput.emit($event)\"\r\n    (onPinInput)=\"onPinInput.emit($event)\">\r\n  </storybook-input>\r\n  <div *ngIf=\"storyInputsInOrder.length === 0 && !loading\" class=\"wrapper-message\">\r\n    <span class=\"icon-check\"></span>\r\n    <p class=\"title-message\">You have no tasks</p>\r\n    <p class=\"subtitle-message\">Sit back and relax</p>\r\n  </div>\r\n  <div *ngIf=\"loading\">\r\n    <div *ngFor=\"let i of [1, 2, 3, 4, 5, 6]\" class=\"loading-item\">\r\n      <span class=\"glow-checkbox\"></span>\r\n      <span class=\"glow-text\">\r\n           <span>Loading</span> <span>cool</span> <span>state</span>\r\n         </span>\r\n    </div>\r\n  </div>\r\n\r\n  </div>\r\n\r\n</form>\r\n"
+        },
+        {
+            "name": "HeaderComponent",
+            "id": "component-HeaderComponent-6e4a7dd91969f07e43f9454ed35393fc8883046c91ddf54b9e38a837d4e59e3dcfee5467c2b37d0c678e7d7b5dcecf7e8f866f49aa01eaf142fcbe67a19f6e26",
+            "file": "src/stories/headers/header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-header",
+            "styleUrls": [
+                "./header.css"
+            ],
+            "styles": [],
+            "template": "<header>    <div class=\"wrapper\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\" fill=\"#FFF\" />\n            <path d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\" fill=\"#555AB9\"/>\n            <path d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\" fill=\"#91BAF8\"/>\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b>!\n          </span>\n          <storybook-button *ngIf=\"user\" size=\"small\" (onClick)=\"onLogout.emit($event)\" label=\"Log out\"></storybook-button>\n          <storybook-card *ngIf=\"user\" size=\"small\" (onClick)=\"onLogout.emit($event)\" label=\"Log out\"></storybook-card>\n        </div>\n        <div *ngIf=\"!user\">\n          <storybook-button *ngIf=\"!user\" size=\"small\" class=\"margin-left\" (onClick)=\"onLogin.emit($event)\" label=\"Log in\"></storybook-button>\n          <storybook-button *ngIf=\"!user\" primary size=\"small\" primary=\"true\" class=\"margin-left\" (onClick)=\"onCreateAccount.emit($event)\" label=\"Sign up\"></storybook-button>\n        </div>\n      </div>\n    </div>\n  </header>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "user",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 37,
+                    "type": "User | null",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onCreateAccount",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 46,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogin",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 40,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogout",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 43,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { User } from '../User';\n\n@Component({\n  selector: 'storybook-header',\n  template: `<header>\n    <div class=\"wrapper\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\" fill=\"#FFF\" />\n            <path d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\" fill=\"#555AB9\"/>\n            <path d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\" fill=\"#91BAF8\"/>\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b>!\n          </span>\n          <storybook-button *ngIf=\"user\" size=\"small\" (onClick)=\"onLogout.emit($event)\" label=\"Log out\"></storybook-button>\n          <storybook-card *ngIf=\"user\" size=\"small\" (onClick)=\"onLogout.emit($event)\" label=\"Log out\"></storybook-card>\n        </div>\n        <div *ngIf=\"!user\">\n          <storybook-button *ngIf=\"!user\" size=\"small\" class=\"margin-left\" (onClick)=\"onLogin.emit($event)\" label=\"Log in\"></storybook-button>\n          <storybook-button *ngIf=\"!user\" primary size=\"small\" primary=\"true\" class=\"margin-left\" (onClick)=\"onCreateAccount.emit($event)\" label=\"Sign up\"></storybook-button>\n        </div>\n      </div>\n    </div>\n  </header>`,\n  styleUrls: ['./header.css'],\n})\nexport default class HeaderComponent {\n  @Input()\n  user: User | null = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2859,7 +2824,7 @@
         },
         {
             "name": "LoginComponent",
-            "id": "component-LoginComponent-36bd9058d95c7519ce13f79734698129284c2d762a9c2869ea645eedf342a8ac71a968a85fe85dd75164f85007ed80e7fa09ef47c27293f0a87028de4c09c58c",
+            "id": "component-LoginComponent-712496bc8305c41b4b508f1db6d351c7dca2f7e2743f54ccf9cad17fd423311c8f628d1ad40e2ddefccbbedc924968da07fa5d27f8073935e5126224cd2ea51c",
             "file": "src/app/login/login.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2875,7 +2840,19 @@
                 "./login.component.html"
             ],
             "viewProviders": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "primary",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nIs this the principal call to action on the page?\n",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 141,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [
                 {
@@ -2922,26 +2899,6 @@
                     "line": 26
                 },
                 {
-                    "name": "registerFormRef",
-                    "defaultValue": "null",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "MdbModalRef<RegisterFormComponent> | null",
-                    "optional": false,
-                    "description": "",
-                    "line": 18
-                },
-                {
-                    "name": "replacePassFormRef",
-                    "defaultValue": "null",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "MdbModalRef<ReplacePassFormComponent> | null",
-                    "optional": false,
-                    "description": "",
-                    "line": 19
-                },
-                {
                     "name": "roles",
                     "defaultValue": "[]",
                     "deprecated": false,
@@ -2977,7 +2934,7 @@
                     "name": "openRegisterForm",
                     "args": [],
                     "optional": false,
-                    "returnType": "any",
+                    "returnType": "void",
                     "typeParameters": [],
                     "line": 65,
                     "deprecated": false,
@@ -3021,11 +2978,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { AuthService } from '../_services/auth.service';\r\nimport { TokenStorageService } from '../_services/token-storage.service';\r\nimport {  Router } from '@angular/router';\r\nimport { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';\r\nimport {FormControl, Validators} from \"@angular/forms\";\r\nimport { RegisterFormComponent } from './register-form/register-form.component';\r\nimport {ReplacePassFormComponent} from \"./replace-pass-form/replace-pass-form.component\";\r\nimport {Observable} from \"rxjs\";\r\n//import {  Router } from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'app-login',\r\n  templateUrl: './login.component.html',\r\n  styleUrls: ['./login.component.css']\r\n})\r\nexport class LoginComponent implements OnInit {\r\n  registerFormRef: MdbModalRef<RegisterFormComponent> | null = null;\r\n  replacePassFormRef: MdbModalRef<ReplacePassFormComponent> | null = null;\r\n  form: any = {\r\n    username: null, //new FormControl('ea2', Validators.min(2)),\r\n    password: null  //new FormControl('zaqwsx', Validators.min(2))\r\n  };\r\n  public isLoggedIn = false;\r\n  isLoginFailed = false;\r\n  loginErrorMessage = '';\r\n  roles: string[] = [];\r\n\r\n  constructor(private authService: AuthService,\r\n              private tokenStorage: TokenStorageService,\r\n              private router: Router,\r\n              private registerFormService: MdbModalService,\r\n              private replacePassFormService: MdbModalService) { }\r\n\r\n  ngOnInit(): void {\r\n    if (this.tokenStorage.getToken()) {\r\n      this.isLoggedIn = true;\r\n      this.roles = this.tokenStorage.getUser().roles;\r\n    }\r\n  }\r\n\r\n  test() {\r\n    console.log(\"test start\");\r\n    /*this.openRegisterForm().then(() => {\r\n      this.openReplacePassword();\r\n      console.log(\"test end\");});*/\r\n\r\n    this.openRegisterForm().then(\r\n    (val) => {\r\n      console.log(val);\r\n      switch (val) {\r\n        case \"xbutton\":\r\n          break;\r\n        case undefined:\r\n          this.openReplacePassword();\r\n          break;\r\n        default:\r\n\r\n      }\r\n      return 'done2';\r\n    },\r\n      (err) => console.error(err));\r\n  }\r\n\r\n  openRegisterForm() {\r\n    return this.registerFormService.open(RegisterFormComponent).onClose.toPromise();\r\n    /*var promise = new Promise<void>((resolve, reject)  => {\r\n      let newRegisterFormService = this.registerFormService.open(RegisterFormComponent);\r\n      setTimeout(() => {\r\n        console.log(\"Async Work Complete\");\r\n        newRegisterFormService.close();\r\n        resolve();//() => {resolve();}\r\n      }, 5000);\r\n    });\r\n    return promise;*/\r\n  }\r\n\r\n  openReplacePassword() {\r\n    this.replacePassFormService.open(ReplacePassFormComponent);\r\n  }\r\n\r\n  onSubmit(): void {\r\n    const { username, password } = this.form;\r\n\r\n    this.authService.login(username, password).subscribe(\r\n      data => {\r\n        this.tokenStorage.saveToken(data.accessToken);\r\n        this.tokenStorage.saveRefreshToken(data.refreshToken);\r\n        this.tokenStorage.saveUser(data);\r\n\r\n        this.isLoginFailed = false;\r\n        this.isLoggedIn = true;\r\n        this.roles = this.tokenStorage.getUser().roles;\r\n        this.reloadPage();\r\n      },\r\n      err => {\r\n        switch (err.error.message) {\r\n          case \"Error: A registry process should be made!\":\r\n            //this.openRegisterForm().then(() => {this.openReplacePassword()});\r\n            //toPromise((data) => {this.openReplacePassword()});\r\n            this.openRegisterForm().then(\r\n              (val) => {\r\n                console.log(val);\r\n                switch (val) {\r\n                  case \"xbutton\":\r\n                    break;\r\n                  case \"Registration Complete\":\r\n                    this.openReplacePassword();\r\n                    break;\r\n                  case undefined:\r\n                    this.openReplacePassword();\r\n                    break;\r\n                  default:\r\n                }\r\n                return 'done2';\r\n              },\r\n              (err) => console.error(err));\r\n              break;\r\n          default:\r\n            this.loginErrorMessage = err.error.message;\r\n        }\r\n\r\n\r\n        this.isLoginFailed = true;\r\n      }\r\n    );\r\n  }\r\n\r\n  reloadPage(): void {\r\n    //window.location.reload();\r\n    this.router.navigate(['/profile']).then(() => {window.location.reload()});\r\n    //var URL = window.location.host+\"/profile\"; //'http://localhost:4200/user';\r\n    ///window.open(URL);\r\n    //this.router.navigate([]).then(result => {  window.open(window.location.toString(), 'user'); });\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\r\nimport { AuthService } from '../_services/auth.service';\r\nimport { TokenStorageService } from '../_services/token-storage.service';\r\nimport {  Router } from '@angular/router';\r\n//import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';\r\nimport {FormControl, Validators} from \"@angular/forms\";\r\nimport { RegisterFormComponent } from '../register-form/register-form.component';\r\nimport {ReplacePassFormComponent} from \"../replace-pass-form/replace-pass-form.component\";\r\nimport {Observable} from \"rxjs\";\r\n//import {  Router } from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'app-login',\r\n  templateUrl: './login.component.html',\r\n  styleUrls: ['./login.component.css']\r\n})\r\nexport class LoginComponent implements OnInit {\r\n  //registerFormRef: MdbModalRef<RegisterFormComponent> | null = null;\r\n  //replacePassFormRef: MdbModalRef<ReplacePassFormComponent> | null = null;\r\n  form: any = {\r\n    username: null, //new FormControl('ea2', Validators.min(2)),\r\n    password: null  //new FormControl('zaqwsx', Validators.min(2))\r\n  };\r\n  public isLoggedIn = false;\r\n  isLoginFailed = false;\r\n  loginErrorMessage = '';\r\n  roles: string[] = [];\r\n\r\n  constructor(private authService: AuthService,\r\n              private tokenStorage: TokenStorageService,\r\n              private router: Router,\r\n              /*private registerFormService: MdbModalService,\r\n              private replacePassFormService: MdbModalService*/) { }\r\n\r\n  ngOnInit(): void {\r\n    if (this.tokenStorage.getToken()) {\r\n      this.isLoggedIn = true;\r\n      this.roles = this.tokenStorage.getUser().roles;\r\n    }\r\n  }\r\n\r\n  test() {\r\n    console.log(\"test start\");\r\n    /*this.openRegisterForm().then(() => {\r\n      this.openReplacePassword();\r\n      console.log(\"test end\");});*/\r\n\r\n    /*this.openRegisterForm().then(\r\n    (val) => {\r\n      console.log(val);\r\n      switch (val) {\r\n        case \"xbutton\":\r\n          break;\r\n        case undefined:\r\n          this.openReplacePassword();\r\n          break;\r\n        default:\r\n\r\n      }\r\n      return 'done2';\r\n    },\r\n      (err) => console.error(err));*/\r\n  }\r\n\r\n  openRegisterForm() {\r\n    //return this.registerFormService.open(RegisterFormComponent).onClose.toPromise();\r\n    /*var promise = new Promise<void>((resolve, reject)  => {\r\n      let newRegisterFormService = this.registerFormService.open(RegisterFormComponent);\r\n      setTimeout(() => {\r\n        console.log(\"Async Work Complete\");\r\n        newRegisterFormService.close();\r\n        resolve();//() => {resolve();}\r\n      }, 5000);\r\n    });\r\n    return promise;*/\r\n  }\r\n\r\n  openReplacePassword() {\r\n    //this.replacePassFormService.open(ReplacePassFormComponent);\r\n  }\r\n\r\n  onSubmit(): void {\r\n    const { username, password } = this.form;\r\n\r\n    this.authService.login(username, password).subscribe(\r\n      data => {\r\n        this.tokenStorage.saveToken(data.accessToken);\r\n        this.tokenStorage.saveRefreshToken(data.refreshToken);\r\n        this.tokenStorage.saveUser(data);\r\n\r\n        this.isLoginFailed = false;\r\n        this.isLoggedIn = true;\r\n        this.roles = this.tokenStorage.getUser().roles;\r\n        this.reloadPage();\r\n      },\r\n      err => {\r\n        switch (err.error.message) {\r\n          case \"Error: A registry process should be made!\":\r\n            //this.openRegisterForm().then(() => {this.openReplacePassword()});\r\n            //toPromise((data) => {this.openReplacePassword()});\r\n            /*this.openRegisterForm().then(\r\n              (val) => {\r\n                console.log(val);\r\n                switch (val) {\r\n                  case \"xbutton\":\r\n                    break;\r\n                  case \"Registration Complete\":\r\n                    this.openReplacePassword();\r\n                    break;\r\n                  case undefined:\r\n                    this.openReplacePassword();\r\n                    break;\r\n                  default:\r\n                }\r\n                return 'done2';\r\n              },\r\n              (err) => console.error(err));*/\r\n              break;\r\n          default:\r\n            this.loginErrorMessage = err.error.message;\r\n        }\r\n\r\n\r\n        this.isLoginFailed = true;\r\n      }\r\n    );\r\n  }\r\n\r\n  reloadPage(): void {\r\n    //window.location.reload();\r\n    this.router.navigate(['/profile']).then(() => {window.location.reload()});\r\n    //var URL = window.location.host+\"/profile\"; //'http://localhost:4200/user';\r\n    ///window.open(URL);\r\n    //this.router.navigate([]).then(result => {  window.open(window.location.toString(), 'user'); });\r\n  }\r\n\r\n  /**\r\n   * Is this the principal call to action on the page?\r\n   */\r\n  @Input()\r\n  primary = true;\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "label {\r\n  display: block;\r\n  margin-top: 10px;\r\n}\r\n\r\n.card-container.card {\r\n  max-width: 400px !important;\r\n  padding: 10px 10px;\r\n\r\n}\r\n\r\n.card {\r\n  background-color: #f7f7f7;\r\n  padding: 20px 25px 30px;\r\n  margin: 0 auto 25px;\r\n  margin-top: 50px;\r\n  -moz-border-radius: 2px;\r\n  -webkit-border-radius: 2px;\r\n  border-radius: 2px;\r\n  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);\r\n  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);\r\n  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);\r\n}\r\n\r\n.profile-img-card {\r\n  width: 96px;\r\n  height: 96px;\r\n  margin: 0 auto 10px;\r\n  display: block;\r\n  -moz-border-radius: 50%;\r\n  -webkit-border-radius: 50%;\r\n  border-radius: 50%;\r\n}\r\n\r\n._1Q9if, ._2Hij5 {\r\n  word-wrap: break-word;\r\n  overflow-wrap: break-word;\r\n  text-align: start;\r\n  pointer-events: none;\r\n}\r\n\r\n._3SQN-, ._3wnIc {\r\n  position: absolute;\r\n  top: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n}\r\n\r\n.multi-bg-example {\r\n  width: 980px;\r\n  height: 289px;\r\n  object-fit: cover;\r\n  object-position: 50% 50%;\r\n}\r\n\r\n.font_0 {\r\n  font-size:44px;\r\n  text-align:left;\r\n  color:#FFFFFF;\r\n}\r\n\r\n.alert, .alert-success {\r\n  width: 50%;\r\n}\r\n\r\n\r\n.background {\r\n  background-size: cover;\r\n  background-origin: border-box;\r\n  background-image: url(../_services/assets/images/Background.webp);\r\n  /*linear-gradient(to right, rgba(30, 75, 115, 1), rgba(255, 255, 255, 0));*/\r\n  background-repeat: no-repeat;\r\n  background-position: top left;\r\n\r\n}\r\n\r\n.card-footer {\r\n  padding-top: 0.1rem;\r\n  padding-right: 0.1rem;\r\n  padding-bottom: 0.1rem;\r\n  padding-left: 0.1rem;\r\n\r\n  border-top: 0.1rem solid rgba(0, 0, 0, 0.125);\r\n\r\n  border-bottom: 0.1rem;\r\n  background-color: rgba(0, 0, 0, 0.03);\r\n\r\n}\r\n\r\n.footer ul.footer-menu li.bold a {\r\n  font-weight: 700;\r\n}\r\n",
+                    "data": "label {\r\n  display: block;\r\n  margin-top: 10px;\r\n}\r\n\r\n.card-container.card {\r\n  max-width: 400px !important;\r\n  padding: 10px 10px;\r\n\r\n}\r\n.col-md-12{\r\n  position: center;\r\n  width: 637.5px;\r\n  height: 819px;\r\n  left: calc(50% - 637.5px/2 - 0.25px);\r\n  top: calc(50% - 819px/2 - 20.5px);\r\n\r\n}\r\n\r\n.card {\r\n  padding: 20px 25px 30px;\r\n  margin: 0 auto 25px;\r\n  -moz-border-radius: 2px;\r\n  -webkit-border-radius: 2px;\r\n  border-radius: 2px;\r\n  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);\r\n  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);\r\n  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);\r\n}\r\n.Aeonix-App-Center {\r\n  width: 447px;\r\n  height: 82px;\r\n  flex-grow: 0;\r\n  margin: 0 0 19.8px;\r\n  font-family: NotoSans;\r\n  font-size: 40px;\r\n  font-weight: 800;\r\n  font-stretch: normal;\r\n  font-style: normal;\r\n  line-height: 1.13;\r\n  letter-spacing: -0.44px;\r\n  text-align: left;\r\n  color: #000;\r\n}\r\n\r\n._1Q9if, ._2Hij5 {\r\n  word-wrap: break-word;\r\n  overflow-wrap: break-word;\r\n  text-align: start;\r\n  pointer-events: none;\r\n}\r\n\r\n._3SQN-, ._3wnIc {\r\n  position: absolute;\r\n  top: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n}\r\n\r\n.multi-bg-example {\r\n  width: 980px;\r\n  height: 289px;\r\n  object-fit: cover;\r\n  object-position: 50% 50%;\r\n}\r\n\r\n.font_0 {\r\n  font-size:44px;\r\n  text-align:left;\r\n  color:#FFFFFF;\r\n}\r\n\r\n.alert, .alert-success {\r\n  width: 50%;\r\n}\r\n\r\n\r\n.background {\r\n  background-size: cover;\r\n  background-origin: border-box;\r\n  background-image: url(../_services/assets/images/Background.webp);\r\n  /*linear-gradient(to right, rgba(30, 75, 115, 1), rgba(255, 255, 255, 0));*/\r\n  background-repeat: no-repeat;\r\n  background-position: top left;\r\n\r\n}\r\n\r\n.card-footer {\r\n  padding-top: 0.1rem;\r\n  padding-right: 0.1rem;\r\n  padding-bottom: 0.1rem;\r\n  padding-left: 0.1rem;\r\n\r\n  border-top: 0.1rem solid rgba(0, 0, 0, 0.125);\r\n\r\n  border-bottom: 0.1rem;\r\n  background-color: rgba(0, 0, 0, 0.03);\r\n\r\n}\r\n\r\n.footer ul.footer-menu li.bold a {\r\n  font-weight: 700;\r\n}\r\n",
                     "styleUrl": "./login.component.css"
                 }
             ],
@@ -3051,18 +3008,6 @@
                     {
                         "name": "router",
                         "type": "Router",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "registerFormService",
-                        "type": "MdbModalService",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "replacePassFormService",
-                        "type": "MdbModalService",
                         "deprecated": false,
                         "deprecationMessage": ""
                     }
@@ -3095,35 +3040,17 @@
                         "tagName": {
                             "text": "param"
                         }
-                    },
-                    {
-                        "name": "registerFormService",
-                        "type": "MdbModalService",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    },
-                    {
-                        "name": "replacePassFormService",
-                        "type": "MdbModalService",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
                     }
                 ]
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"col-md-12\">\r\n  <div id=\"main-login-card\" class=\"card card-container\">\r\n\r\n    <img id=\"profile-img\" src=\"//ssl.gstatic.com/accounts/ui/avatar_2x.png\"\r\n      class=\"profile-img-card\" />\r\n    <form *ngIf=\"!isLoggedIn\" name=\"form\" (ngSubmit)=\"f.form.valid && onSubmit()\" #f=\"ngForm\" novalidate>\r\n      <div class=\"form-group\">\r\n        <label for=\"username\">Username</label>\r\n        <input type=\"text\" class=\"form-control\" name=\"username\" [(ngModel)]=\"form.username\"\r\n               placeholder=\"ea2\" required #username=\"ngModel\"/>\r\n        <div class=\"alert alert-danger\" role=\"alert\" *ngIf=\"username.errors && f.submitted\">\r\n          Username is required!\r\n        </div>\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"password\">Password</label>\r\n        <input type=\"password\" class=\"form-control\" name=\"password\"\r\n          [(ngModel)]=\"form.password\" placeholder=\"e1996\" required minlength=\"1\" #password=\"ngModel\"/>\r\n        <div\r\n          class=\"alert alert-danger\"\r\n          role=\"alert\"\r\n          *ngIf=\"password.errors && f.submitted\">\r\n          <div *ngIf=\"password.errors.required\">Password is required</div>\r\n          <div *ngIf=\"password.errors.minlength\">\r\n            Password must be at least 1 characters\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <button class=\"btn btn-primary btn-block\">Login</button>\r\n\r\n        <div>\r\n          <a (mouseover)=\"popover.show()\" (mouseleave)=\"popover.hide()\" (click)=\"openReplacePassword()\"\r\n             class=\"form-check-label white-text\"  href=\"#/login\" mdbPopoverTitle=\"Account recovery\" #popover=\"mdbPopover\"\r\n             mdbPopover=\"To help keep your account safe, we will make sure that it’s really you trying to sign in\">\r\n            Forgot password?\r\n          </a>\r\n        </div>\r\n\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <div class=\"alert alert-danger\" role=\"alert\" *ngIf=\"f.submitted && isLoginFailed\">\r\n          Login failed: {{ loginErrorMessage }}\r\n        </div>\r\n      </div>\r\n    </form>\r\n\r\n    <div class=\"alert alert-success\" *ngIf=\"isLoggedIn\">\r\n      Logged in as {{ roles }}.\r\n    </div>\r\n    <mdb-card-footer class=\"form-check-label white-text border-bottom-0\" id=\"tests\">\r\n      <label for=\"tests\" class=\"form-check-label white-text\"\r\n              style=\"margin-bottom: 1px; padding: 1px\">R&D test:\r\n        <a (click)=\"openRegisterForm()\" href=\"#/login\" class=\"green-text font-weight-bold\">RegistrationForm</a>\r\n        <b> ,</b>\r\n        <a (click)=\"openReplacePassword()\" href=\"#/login\" class=\"green-text font-weight-bold pl-2\">ReplacePassForm</a>\r\n        <b> ,</b>\r\n        <a (click)=\"test()\" href=\"#/login\" class=\"green-text font-weight-bold pl-2\">test</a>\r\n      </label>\r\n    </mdb-card-footer>\r\n  </div>\r\n\r\n\r\n\r\n</div>\r\n\r\n"
+            "templateData": "\r\n<div id=\"main-login-card\" class=\"col-md-12\">\r\n  <storybook-card  class=\"card-container\"></storybook-card>\r\n  <div class=\"card-container\">\r\n\r\n    <span class=\"Aeonix-App-Center\">\r\n  Aeonix App Center\r\n</span>\r\n    <!--img id=\"profile-img\" class=\"user-image\" src=\"//ssl.gstatic.com/accounts/ui/avatar_2x.png\"\r\n      class=\"profile-img-card\" /-->\r\n\r\n    <form *ngIf=\"!isLoggedIn\" name=\"form\" (ngSubmit)=\"f.form.valid && onSubmit()\" #f=\"ngForm\" novalidate>\r\n\r\n\r\n      <div class=\"form-group\">\r\n        <label for=\"username\">Username</label>\r\n\r\n        <input type=\"text\" class=\"form-control\" name=\"username\" [(ngModel)]=\"form.username\"\r\n               placeholder=\"ea2\" required #username=\"ngModel\"/>\r\n\r\n        <div class=\"alert alert-danger\" role=\"alert\" *ngIf=\"username.errors && f.submitted\">\r\n          Username is required!\r\n        </div>\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"password\">Password</label>\r\n        <input type=\"password\" class=\"form-control\" name=\"password\"\r\n          [(ngModel)]=\"form.password\" placeholder=\"e1996\" required minlength=\"1\" #password=\"ngModel\"/>\r\n        <div\r\n          class=\"alert alert-danger\"\r\n          role=\"alert\"\r\n          *ngIf=\"password.errors && f.submitted\">\r\n          <div *ngIf=\"password.errors.required\">Password is required</div>\r\n          <div *ngIf=\"password.errors.minlength\">\r\n            Password must be at least 1 characters\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <button class=\"btn btn-primary btn-block\">Login</button>\r\n\r\n        <div>\r\n          <a (mouseover)=\"popover.show()\" (mouseleave)=\"popover.hide()\" (click)=\"openReplacePassword()\"\r\n             class=\"form-check-label white-text\"  href=\"#/login\" mdbPopoverTitle=\"Account recovery\" #popover=\"mdbPopover\"\r\n             mdbPopover=\"To help keep your account safe, we will make sure that it’s really you trying to sign in\">\r\n            Forgot password?\r\n          </a>\r\n        </div>\r\n\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <div class=\"alert alert-danger\" role=\"alert\" *ngIf=\"f.submitted && isLoginFailed\">\r\n          Login failed: {{ loginErrorMessage }}\r\n        </div>\r\n      </div>\r\n    </form>\r\n\r\n\r\n\r\n    <div class=\"alert alert-success\" *ngIf=\"isLoggedIn\">\r\n      Logged in as {{ roles }}.\r\n    </div>\r\n\r\n    <mdb-card-footer class=\"form-check-label white-text border-bottom-0\" id=\"tests\">\r\n      <label for=\"tests\" class=\"form-check-label white-text\"\r\n              style=\"margin-bottom: 1px; padding: 1px\">R&D test:\r\n        <a (click)=\"openRegisterForm()\" href=\"#/login\" class=\"green-text font-weight-bold\">RegistrationForm</a>\r\n        <b> ,</b>\r\n        <a (click)=\"openReplacePassword()\" href=\"#/login\" class=\"green-text font-weight-bold pl-2\">ReplacePassForm</a>\r\n        <b> ,</b>\r\n        <a (click)=\"test()\" href=\"#/login\" class=\"green-text font-weight-bold pl-2\">test</a>\r\n      </label>\r\n    </mdb-card-footer>\r\n\r\n\r\n\r\n\r\n</div>\r\n\r\n"
         },
         {
             "name": "Page2Component",
-            "id": "component-Page2Component-294b720a8df4853d2b9eb68f1aa1ef27a0697f76b30f343f593cd0d7652bc6d0c217d08cc30c85590bd04eeb2c6c28fd9231b03ee27fae0297d898415f4a79aa",
+            "id": "component-Page2Component-8957d77c926e7fce023285255c2402ce9e778ce55275236bb3cd510b739f26b3fab857ca9f4ae39d8ec2b2a4efb24871b4fae6d8acceb29098deafc522adea5c",
             "file": "src/app/page/page.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3146,7 +3073,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nWhat background color to use\n",
                     "description": "<p>What background color to use</p>\n",
-                    "line": 30,
+                    "line": 40,
                     "type": "string",
                     "decorators": []
                 },
@@ -3156,7 +3083,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nWhat background color to use\n",
                     "description": "<p>What background color to use</p>\n",
-                    "line": 23,
+                    "line": 33,
                     "type": "string",
                     "decorators": []
                 },
@@ -3167,15 +3094,15 @@
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
-                            "pos": 545,
-                            "end": 558,
+                            "pos": 1050,
+                            "end": 1063,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 325,
                             "tagName": {
-                                "pos": 546,
-                                "end": 554,
+                                "pos": 1051,
+                                "end": 1059,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -3187,7 +3114,7 @@
                     ],
                     "rawdescription": "\n\nButton contents\n\n",
                     "description": "<p>Button contents</p>\n",
-                    "line": 38,
+                    "line": 48,
                     "type": "string",
                     "decorators": []
                 },
@@ -3198,13 +3125,25 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nIs this the principal call to action on the page?\n",
                     "description": "<p>Is this the principal call to action on the page?</p>\n",
-                    "line": 16,
+                    "line": 27,
                     "type": "boolean",
                     "decorators": []
                 }
             ],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "storyInputsInOrder",
+                    "defaultValue": "[\n    { id: '1', title: 'Something', state: 'INPUT_PINNED' },\n    { id: '2', title: 'Something more', state: 'INPUT_PINNED' },\n    { id: '3', title: 'Something else', state: 'INPUT_PINNED' },\n    { id: '4', title: 'Something again', state: 'INPUT_INBOX' },\n    { id: '6', title: 'StoryInput 6 (pinned)', state: 'INPUT_PINNED'}\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryInput[]",
+                    "optional": false,
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 15,
+                    "rawdescription": "\n\nIs this the principal call to action on the page?\n"
+                }
+            ],
             "methodsClass": [
                 {
                     "name": "ngOnInit",
@@ -3212,7 +3151,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 63,
+                    "line": 73,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -3224,11 +3163,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\n\n\n\n@Component({\n  selector: 'storybook-page2',\n  templateUrl: './page.component.html',\n  styleUrls: ['./page.component.scss']\n})\nexport default class Page2Component implements OnInit {\n\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = true;\n\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  background?: string;\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Page2Component';\n\n  /*user: User | null = null;\n\n  doLogout() {\n    this.user = null;\n  }\n\n  doLogin() {\n    this.user = { name: 'Jane Doe' };\n  }\n\n  doCreateAccount() {\n    this.user = { name: 'Jane Doe' };\n\n  }*/\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-page2--primary' : 'storybook-page2--secondary';\n\n    return ['storybook-page2', mode];\n  }\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n\n",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\nimport { StoryInput } from \"../../stories/inputs/story-input.model\";\n\n\n@Component({\n  selector: 'storybook-page2',\n  templateUrl: './page.component.html',\n  styleUrls: ['./page.component.scss']\n})\nexport default class Page2Component implements OnInit {\n\n  /**\n   * Is this the principal call to action on the page?\n   */\n  storyInputsInOrder: StoryInput[]  = [\n    { id: '1', title: 'Something', state: 'INPUT_PINNED' },\n    { id: '2', title: 'Something more', state: 'INPUT_PINNED' },\n    { id: '3', title: 'Something else', state: 'INPUT_PINNED' },\n    { id: '4', title: 'Something again', state: 'INPUT_INBOX' },\n    { id: '6', title: 'StoryInput 6 (pinned)', state: 'INPUT_PINNED'}\n  ];\n\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = true;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  background?: string;\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Page2Component';\n\n  /*user: User | null = null;\n\n  doLogout() {\n    this.user = null;\n  }\n\n  doLogin() {\n    this.user = { name: 'Jane Doe' };\n  }\n\n  doCreateAccount() {\n    this.user = { name: 'Jane Doe' };\n\n  }*/\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-page2--primary' : 'storybook-page2--secondary';\n\n    return ['storybook-page2', mode];\n  }\n\n  constructor() {}\n\n  ngOnInit(): void {};\n\n}\n\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "\r\n.storybook-page2 {\r\n  position: absolute;\r\n  width: inherit;\r\n  height: inherit;\r\n}\r\n\r\n.Desktop-1Login-1 {\r\n  width: 100%;\r\n  height: 100%;\r\n  flex-grow: 0\r\n}\r\n\r\n/*background-image: linear-gradient(228.37deg, #EFF8FF 22.25%, #B0DCFF 88.18%)*/\r\n\r\n/*.Desktop-1Login-1 {\r\n  width: 1920px;\r\n  height: 1080px;\r\n  flex-grow: 0;\r\n  background-image: linear-gradient(228.37deg, #EFF8FF 22.25%, #B0DCFF 88.18%);\r\n}*/\r\n\r\ndiv.relative {\r\n  position: relative;\r\n  width: inherit;\r\n  height: inherit;\r\n}\r\n\r\n\r\n\r\n\r\n.Frame-1 {\r\n  width: 1920px;\r\n  height: 1080px;\r\n  flex-grow: 0;\r\n}\r\n\r\n.fa-pull-left {float:left}\r\n\r\n.fa-pull-right {float:right}\r\n\r\nimg.icon-1 {\r\n  position: absolute;\r\n  width: 305.7px;\r\n  height: 309px;\r\n  transform: rotate(0deg);\r\n  background-position: bottom;\r\n}\r\n\r\nimg.icon-2 {\r\n  position: absolute;\r\n  bottom: 0;\r\n  right: 0;\r\n  width: 372px;\r\n  height: 343px;\r\n  flex-grow: 0;\r\n}\r\n\r\n\r\n.storybook-page2--primary {\r\n\r\n  background: linear-gradient(228.37deg, #EFF8FF 22.25%, #B0DCFF 88.18%);\r\n}\r\n",
+                    "data": "\r\n.storybook-page2 {\r\n  position: absolute;\r\n  width: inherit;\r\n  height: inherit;\r\n}\r\n\r\n.Desktop-1Login-1 {\r\n  width: 100%;\r\n  height: 100%;\r\n  flex-grow: 0;\r\n}\r\n\r\n/*background-image: linear-gradient(228.37deg, #EFF8FF 22.25%, #B0DCFF 88.18%)*/\r\n\r\n/*.Desktop-1Login-1 {\r\n  width: 1920px;\r\n  height: 1080px;\r\n  flex-grow: 0;\r\n  background-image: linear-gradient(228.37deg, #EFF8FF 22.25%, #B0DCFF 88.18%);\r\n}*/\r\n\r\ndiv.relative {\r\n  position: relative;\r\n  width: inherit;\r\n  height: inherit;\r\n}\r\n\r\n\r\n\r\n\r\n.Frame-1 {\r\n  width: 1920px;\r\n  height: 1080px;\r\n  flex-grow: 0;\r\n}\r\n\r\n.fa-pull-left {float:left}\r\n\r\n.fa-pull-right {float:right}\r\n\r\nimg.icon-1 {\r\n  position: absolute;\r\n  width: 305.7px;\r\n  height: 309px;\r\n  transform: rotate(0deg);\r\n  background-position: bottom;\r\n}\r\n\r\nimg.icon-2 {\r\n  position: absolute;\r\n  bottom: 0;\r\n  right: 0;\r\n  width: 372px;\r\n  height: 343px;\r\n  flex-grow: 0;\r\n}\r\n\r\n\r\n.storybook-page2--primary {\r\n\r\n  background: linear-gradient(228.37deg, #EFF8FF 22.25%, #B0DCFF 88.18%);\r\n}\r\n",
                     "styleUrl": "./page.component.scss"
                 }
             ],
@@ -3239,7 +3178,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 59
+                "line": 69
             },
             "implements": [
                 "OnInit"
@@ -3251,11 +3190,11 @@
                         "name": "classes",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 55
+                        "line": 65
                     }
                 }
             },
-            "templateData": "\n<!--html>\n<head>\n  <style>\n\n  </style>\n  <title></title>\n</head>\n<body>\n\n<article><div class=\"Frame-1 relative\">\n<section class=\"relative \" Style=\"{ 'background': backgroundColor }\"-->\n\n    <figure class=\"Desktop-1Login-1\"  [ngClass]=\"classes\" [ngStyle]=\"{ 'background-color': background }\" >\n      <!--div [ngStyle]=\"{ 'background-color': background }\" ></div-->\n    <img src=\"assets/images/icon-1.webp\" srcset=\"/assets/images/icon-1@2x.webp 2x, /assets/images/icon-1@3x.webp 3x\"\n          alt=\"icon-1\" />\n\n    <img src=\"assets/images/icon-2.webp\" srcset=\"/assets/images/icon-2@2x.webp 2x, /assets/images/icon-2@3x.webp 3x\"\n         class=\"icon-2  \" alt=\"icon-2fdf\" />\n\n      <storybook-button ></storybook-button>\n      <storybook-card ></storybook-card>\n</figure>\n\n<storybook-language-icon size=\"large\"></storybook-language-icon>\n<storybook-tadiran-icon></storybook-tadiran-icon>\n\n\n\n<!--/section></div>\n</article>\n\n</body>\n</html-->\n\n\n"
+            "templateData": "\n<!--html>\n<head>\n  <style>\n\n  </style>\n  <title></title>\n</head>\n<body>\n\n<article><div class=\"Frame-1 relative\">\n<section class=\"relative \" Style=\"{ 'background': backgroundColor }\"-->\n\n<figure class=\"Desktop-1Login-1\"  [ngClass]=\"classes\" [ngStyle]=\"{ 'background-color': background }\" >\n      <!--div [ngStyle]=\"{ 'background-color': background }\" ></div-->\n    <img src=\"assets/images/icon-1.webp\" srcset=\"/assets/images/icon-1@2x.webp 2x, /assets/images/icon-1@3x.webp 3x\"\n          alt=\"icon-1\" />\n\n    <img src=\"assets/images/icon-2.webp\" srcset=\"/assets/images/icon-2@2x.webp 2x, /assets/images/icon-2@3x.webp 3x\"\n         class=\"icon-2  \" alt=\"icon-2fdf\" />\n\n\n</figure>\n\n<storybook-language-icon size=\"large\"></storybook-language-icon>\n<storybook-tadiran-icon></storybook-tadiran-icon>\n\n\n<app-login></app-login>\n\n<!--storybook-form\n  [loading]=\"false\"\n  [storyInputs]=\"storyInputsInOrder\"\n></storybook-form-->\n\n\n<!--/section></div>\n</article>\n\n</body>\n</html-->\n\n\n"
         },
         {
             "name": "PageComponent",
@@ -3801,8 +3740,8 @@
         },
         {
             "name": "RegisterFormComponent",
-            "id": "component-RegisterFormComponent-b686b262aa19a8067c182a66bee67402ed1cdca54fc5c24cb711d5ee695646b7d8d86631542c9676addb32b85750c66afa38542e4120d70f2d62174dd55fb2d7",
-            "file": "src/app/login/register-form/register-form.component.ts",
+            "id": "component-RegisterFormComponent-9099ad2622593e9ebac643269ec78ad85705ad7e5c17a821de6f97152addda86a7b67af46fd5399b794c594a19a2b3b10a70f5773b62638e49e99d70866f18e6",
+            "file": "src/app/register-form/register-form.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -3951,7 +3890,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { MdbModalRef } from 'mdb-angular-ui-kit/modal';\r\nimport { AuthService } from '../../_services/auth.service';\r\nimport { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'app-modal',\r\n  templateUrl: './register-form.component.html',\r\n  styleUrls: ['./register-form.component.css']\r\n})\r\nexport class RegisterFormComponent {\r\n  validationForm: FormGroup;\r\n  isSuccessful = false;\r\n  isSignUpFailed = false;\r\n  submitted = false;\r\n  errorMessage = '';\r\n  empList: Array<String> = [];\r\n  apiResponse = { message: '', error: false };\r\n  errorFieldSubmitted: any = {};\r\n  closeResult = '';\r\n\r\n  constructor(public modalRef: MdbModalRef<RegisterFormComponent>,\r\n              private authService: AuthService) {\r\n    this.validationForm = new FormGroup({\r\n      userName: new FormControl(null, Validators.required),\r\n      email: new FormControl(null, Validators.email),\r\n      password: new FormControl('', Validators.minLength(1)),\r\n      phone: new FormControl(null, Validators.pattern(new RegExp(\"[0-9 ]{12}\")))\r\n    });\r\n    this.empList.push(\"admin\");\r\n  }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n  onSubmit(): void {\r\n    this.submitted = true;\r\n    const { userName, email, password, phone } = this.validationForm.value;\r\n    this.authService.registerForm(userName, email, password, phone).subscribe(\r\n      data => {\r\n        console.log(data);\r\n        this.isSuccessful = true;\r\n        this.isSignUpFailed = false;\r\n        this.errorFieldSubmitted = {};\r\n        this.apiResponse.error = false;\r\n        this.apiResponse.message = 'Successful registration';\r\n      },\r\n      error => {\r\n        const errorResponse = JSON.parse(error.error);\r\n        this.apiResponse.error = true;\r\n        this.apiResponse.message = 'Registration error';\r\n        this.errorMessage = error.error.message;\r\n        this.isSignUpFailed = true;\r\n        if (errorResponse.error && errorResponse.message === 'VALIDATION_FAILED') {\r\n          this.errorFieldSubmitted = errorResponse.data;\r\n        }\r\n      }, () => {console.log(\"Registration Complete\");\r\n                        this.modalRef.close(\"Registration Complete\");}\r\n    );\r\n  }\r\n\r\n  get userName(): AbstractControl {\r\n    return this.validationForm.get('userName')!;\r\n  }\r\n\r\n  get email(): AbstractControl {\r\n    return this.validationForm.get('email')!;\r\n  }\r\n\r\n  get password(): AbstractControl {\r\n    return this.validationForm.get('password')!;\r\n  }\r\n\r\n  get phone(): AbstractControl {\r\n    return this.validationForm.get('phone')!;\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { MdbModalRef } from 'mdb-angular-ui-kit/modal';\r\nimport { AuthService } from '../_services/auth.service';\r\nimport { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'app-modal',\r\n  templateUrl: './register-form.component.html',\r\n  styleUrls: ['./register-form.component.css']\r\n})\r\nexport class RegisterFormComponent {\r\n  validationForm: FormGroup;\r\n  isSuccessful = false;\r\n  isSignUpFailed = false;\r\n  submitted = false;\r\n  errorMessage = '';\r\n  empList: Array<String> = [];\r\n  apiResponse = { message: '', error: false };\r\n  errorFieldSubmitted: any = {};\r\n  closeResult = '';\r\n\r\n  constructor(public modalRef: MdbModalRef<RegisterFormComponent>,\r\n              private authService: AuthService) {\r\n    this.validationForm = new FormGroup({\r\n      userName: new FormControl(null, Validators.required),\r\n      email: new FormControl(null, Validators.email),\r\n      password: new FormControl('', Validators.minLength(1)),\r\n      phone: new FormControl(null, Validators.pattern(new RegExp(\"[0-9 ]{12}\")))\r\n    });\r\n    this.empList.push(\"admin\");\r\n  }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n  onSubmit(): void {\r\n    this.submitted = true;\r\n    const { userName, email, password, phone } = this.validationForm.value;\r\n    this.authService.registerForm(userName, email, password, phone).subscribe(\r\n      data => {\r\n        console.log(data);\r\n        this.isSuccessful = true;\r\n        this.isSignUpFailed = false;\r\n        this.errorFieldSubmitted = {};\r\n        this.apiResponse.error = false;\r\n        this.apiResponse.message = 'Successful registration';\r\n      },\r\n      error => {\r\n        const errorResponse = JSON.parse(error.error);\r\n        this.apiResponse.error = true;\r\n        this.apiResponse.message = 'Registration error';\r\n        this.errorMessage = error.error.message;\r\n        this.isSignUpFailed = true;\r\n        if (errorResponse.error && errorResponse.message === 'VALIDATION_FAILED') {\r\n          this.errorFieldSubmitted = errorResponse.data;\r\n        }\r\n      }, () => {console.log(\"Registration Complete\");\r\n                        this.modalRef.close(\"Registration Complete\");}\r\n    );\r\n  }\r\n\r\n  get userName(): AbstractControl {\r\n    return this.validationForm.get('userName')!;\r\n  }\r\n\r\n  get email(): AbstractControl {\r\n    return this.validationForm.get('email')!;\r\n  }\r\n\r\n  get password(): AbstractControl {\r\n    return this.validationForm.get('password')!;\r\n  }\r\n\r\n  get phone(): AbstractControl {\r\n    return this.validationForm.get('phone')!;\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -4043,8 +3982,8 @@
         },
         {
             "name": "ReplacePassFormComponent",
-            "id": "component-ReplacePassFormComponent-eeb68c4c96451d735197c334c7fa2a46a70ada2d88c27ede8f77816e723fb3a419688c2d20fa2677d290d51b3735403ed3d9f28792c3980a2a018085515729e2",
-            "file": "src/app/login/replace-pass-form/replace-pass-form.component.ts",
+            "id": "component-ReplacePassFormComponent-d63468daf8bb53f07bdd3c946d73ac66ee3d8d5c41d02ebbe3a461fad51aa309de7fa514becb645719a1215b744f96435eb6553fece8cd38603a9b782fb6f463",
+            "file": "src/app/replace-pass-form/replace-pass-form.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -4193,7 +4132,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { MdbModalRef } from 'mdb-angular-ui-kit/modal';\r\nimport {AuthService} from \"../../_services/auth.service\";\r\nimport {AbstractControl, FormControl, FormGroup, Validators} from \"@angular/forms\";\r\n\r\n@Component({\r\n  selector: 'app-modal',\r\n  templateUrl: './replace-pass-form.component.html',\r\n  styleUrls: ['./replace-pass-form.component.css']\r\n})\r\nexport class ReplacePassFormComponent {\r\n  replacePassForm: FormGroup;\r\n  isSuccessful = false;\r\n  isSignUpFailed = false;\r\n  submitted = false;\r\n  errorMessage = '';\r\n  empList: Array<String> = [];\r\n  apiResponse = { message: '', error: false };\r\n  errorFieldSubmitted: any = {};\r\n  closeResult = '';\r\n\r\n  constructor(public modalRef: MdbModalRef<ReplacePassFormComponent>,\r\n              private authService: AuthService) {\r\n    this.replacePassForm = new FormGroup({\r\n      userName: new FormControl(null, Validators.required),\r\n      oldPassword: new FormControl(null, Validators.minLength(1)),\r\n      password: new FormControl('', Validators.minLength(3)),\r\n      confirmPassword: new FormControl(null, Validators.minLength(3))\r\n    });\r\n  }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n  onSubmit(): void {\r\n    this.submitted = true;\r\n    const { userName, oldPassword, password, confirmPassword } = this.replacePassForm.value;\r\n    this.authService.replacePassForm(userName, oldPassword, password, confirmPassword).subscribe(\r\n      data => {\r\n        console.log(data);\r\n        this.isSuccessful = true;\r\n        this.isSignUpFailed = false;\r\n        this.errorFieldSubmitted = {};\r\n        this.apiResponse.error = false;\r\n        this.apiResponse.message = 'Successful registration';\r\n      },\r\n      error => {\r\n        const errorResponse = JSON.parse(error.error);\r\n        this.apiResponse.error = true;\r\n        this.apiResponse.message = 'Registration error';\r\n        this.errorMessage = error.error.message;\r\n        this.isSignUpFailed = true;\r\n        if (errorResponse.error && errorResponse.message === 'VALIDATION_FAILED') {\r\n          this.errorFieldSubmitted = errorResponse.data;\r\n        }\r\n      }, () => {this.modalRef.close()}\r\n    );\r\n  }\r\n\r\n\r\n\r\n  get userName(): AbstractControl {\r\n    return this.replacePassForm.get('userName')!;\r\n  }\r\n\r\n  get oldPassword(): AbstractControl {\r\n    return this.replacePassForm.get('oldPassword')!;\r\n  }\r\n\r\n  get password(): AbstractControl {\r\n    return this.replacePassForm.get('password')!;\r\n  }\r\n\r\n  get confirmPassword(): AbstractControl {\r\n    return this.replacePassForm.get('confirmPassword')!;\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { MdbModalRef } from 'mdb-angular-ui-kit/modal';\r\nimport {AuthService} from \"../_services/auth.service\";\r\nimport {AbstractControl, FormControl, FormGroup, Validators} from \"@angular/forms\";\r\n\r\n@Component({\r\n  selector: 'app-modal',\r\n  templateUrl: './replace-pass-form.component.html',\r\n  styleUrls: ['./replace-pass-form.component.css']\r\n})\r\nexport class ReplacePassFormComponent {\r\n  replacePassForm: FormGroup;\r\n  isSuccessful = false;\r\n  isSignUpFailed = false;\r\n  submitted = false;\r\n  errorMessage = '';\r\n  empList: Array<String> = [];\r\n  apiResponse = { message: '', error: false };\r\n  errorFieldSubmitted: any = {};\r\n  closeResult = '';\r\n\r\n  constructor(public modalRef: MdbModalRef<ReplacePassFormComponent>,\r\n              private authService: AuthService) {\r\n    this.replacePassForm = new FormGroup({\r\n      userName: new FormControl(null, Validators.required),\r\n      oldPassword: new FormControl(null, Validators.minLength(1)),\r\n      password: new FormControl('', Validators.minLength(3)),\r\n      confirmPassword: new FormControl(null, Validators.minLength(3))\r\n    });\r\n  }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n  onSubmit(): void {\r\n    this.submitted = true;\r\n    const { userName, oldPassword, password, confirmPassword } = this.replacePassForm.value;\r\n    this.authService.replacePassForm(userName, oldPassword, password, confirmPassword).subscribe(\r\n      data => {\r\n        console.log(data);\r\n        this.isSuccessful = true;\r\n        this.isSignUpFailed = false;\r\n        this.errorFieldSubmitted = {};\r\n        this.apiResponse.error = false;\r\n        this.apiResponse.message = 'Successful registration';\r\n      },\r\n      error => {\r\n        const errorResponse = JSON.parse(error.error);\r\n        this.apiResponse.error = true;\r\n        this.apiResponse.message = 'Registration error';\r\n        this.errorMessage = error.error.message;\r\n        this.isSignUpFailed = true;\r\n        if (errorResponse.error && errorResponse.message === 'VALIDATION_FAILED') {\r\n          this.errorFieldSubmitted = errorResponse.data;\r\n        }\r\n      }, () => {this.modalRef.close()}\r\n    );\r\n  }\r\n\r\n\r\n\r\n  get userName(): AbstractControl {\r\n    return this.replacePassForm.get('userName')!;\r\n  }\r\n\r\n  get oldPassword(): AbstractControl {\r\n    return this.replacePassForm.get('oldPassword')!;\r\n  }\r\n\r\n  get password(): AbstractControl {\r\n    return this.replacePassForm.get('password')!;\r\n  }\r\n\r\n  get confirmPassword(): AbstractControl {\r\n    return this.replacePassForm.get('confirmPassword')!;\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -4282,6 +4221,163 @@
                 }
             },
             "templateData": "<div class=\"modal-header\">\r\n  <!--div class=\"text-center\"-->\r\n    <label class=\"white-text mb-2 mt-2 font-weight-bold fas\">\r\n      <strong>REPLACE PASSWORD</strong>\r\n      <a class=\"green-text font-weight-bold\">\r\n        <strong> FORM</strong>\r\n      </a>\r\n    </label>\r\n\r\n  <!--/div-->\r\n  <button type=\"button\" class=\"btn btn-close white-text \" aria-label=\"Close\" (click)='modalRef.close(\"xbutton\")'></button>\r\n\r\n  <!--h5 class=\"modal-title\" id=\"exampleModalLabel\">REGISTRATION</h5-->\r\n\r\n</div>\r\n<div class=\"modal-body py-4 text-center expansionCard\">\r\n  <figure class=\"figure\">\r\n  <img aria-setsize=\"20\"  id=\"profile-img\" src=\"../../../AccGate/assets/images/T.png\"\r\n       class=\"profile-img-card img-fluid rounded \"  alt=\"\"/>\r\n    <figcaption class=\"figure-caption text-center text-capitalize\">Tadiran Telecom</figcaption>\r\n  </figure>\r\n  <div class=\"text-white rgba-stylish-strong py-4 px-5 z-depth-2\" style=\"border-bottom: 2rem\">\r\n  <!--div class=\"form-outline\">\r\n    <input type=\"text\" id=\"typeText\" class=\"form-control\" />\r\n    <label  class=\"form-label\" for=\"typeText\">Your UserName</label>\r\n  </div-->\r\n\r\n  <form *ngIf=\"!isSuccessful\" [formGroup]=\"replacePassForm\">\r\n\r\n  <!--###################### Username input field ###################### -->\r\n  <div class=\"form-outline\">\r\n    <mdb-form-control  class=\"form-outline\">\r\n      <input [mdbValidate]=\"true\" mdbInput type=\"text\" id=\"typeText\"\r\n             class=\"form-control\"  formControlName=\"userName\" required />\r\n      <label class=\"form-label \" for=\"typeText\" >Username input</label>\r\n      <mdb-error *ngIf=\"userName?.invalid && (userName?.dirty || userName?.touched)\">\r\n        Username is required\r\n      </mdb-error>\r\n      <mdb-success *ngIf=\"userName?.valid && (userName?.dirty || userName?.touched)\">\r\n        Looks good!\r\n      </mdb-success>\r\n    </mdb-form-control>\r\n  </div>\r\n    <br>\r\n  <!--###################### Old Password input field ###################### -->\r\n  <div class=\"form-outline\">\r\n    <mdb-form-control  class=\"form-outline\">\r\n    <input [mdbValidate]=\"true\" mdbInput type=\"password\" id=\"typeOldPassword\"\r\n           class=\"form-control\" formControlName=\"oldPassword\" required minlength=\"1\" />\r\n    <label class=\"form-label\" for=\"typeOldPassword\">Current Password</label>\r\n      <mdb-error *ngIf=\"oldPassword?.invalid && (oldPassword?.dirty || oldPassword?.touched)\">\r\n        Current password is required\r\n      </mdb-error>\r\n      <mdb-success *ngIf=\"oldPassword?.valid && (oldPassword?.dirty || oldPassword?.touched)\">\r\n        Looks good!\r\n      </mdb-success>\r\n    </mdb-form-control>\r\n    <span class=\"text-danger error-input\" *ngIf=\"submitted && errorFieldSubmitted['oldPassword']\"\r\n          style=\"white-space: pre-line;  font-size: 14px;\">\r\n          {{errorFieldSubmitted['oldPassword'] | loginErrorMessage}}\r\n      <br><br>\r\n    </span>\r\n  </div>\r\n\r\n    <br>\r\n    <hr class=\"my-1 text-black-50\">\r\n    <br>\r\n\r\n  <!--###################### New Password input field ###################### -->\r\n  <div class=\"form-outline text-black-50\">\r\n    <mdb-form-control  class=\"form-outline\">\r\n    <input [mdbValidate]=\"true\" mdbInput type=\"password\" id=\"typePassword\"\r\n           class=\"form-control\" formControlName=\"password\" required minlength=\"3\" />\r\n    <label mdbLabel class=\"form-label form-white\" for=\"typePassword\">New Password</label>\r\n    <mdb-error *ngIf=\"password?.invalid && (password?.dirty || password?.touched)\">\r\n      Password is required\r\n    </mdb-error>\r\n    <mdb-success *ngIf=\"password?.valid && (password?.dirty || password?.touched)\">\r\n      Looks good!\r\n    </mdb-success>\r\n    </mdb-form-control>\r\n    <span class=\"text-danger error-input\" *ngIf=\"submitted && errorFieldSubmitted['password']\"\r\n          style=\"white-space: pre-line;  font-size: 14px;\">\r\n          {{errorFieldSubmitted['password'] | apiErrorMessage}}\r\n      <br><br>\r\n    </span>\r\n  </div>\r\n  <br>\r\n\r\n  <!--###################### Confirm Password input field ###################### -->\r\n  <div class=\"form-outline\">\r\n    <mdb-form-control  class=\"form-outline\">\r\n    <input [mdbValidate]=\"true\" mdbInput type=\"password\" id=\"typeConfirmPassword\"\r\n           class=\"form-control\" formControlName=\"confirmPassword\" required minlength=\"3\" />\r\n    <label mdbLabel class=\"form-label form-white\" for=\"typeConfirmPassword\">Confirm Password</label>\r\n      <mdb-error *ngIf=\"confirmPassword?.invalid && (confirmPassword?.dirty || confirmPassword?.touched)\">\r\n        Retype password is required\r\n      </mdb-error>\r\n      <mdb-success *ngIf=\"confirmPassword?.valid && (confirmPassword?.dirty || confirmPassword?.touched)\">\r\n        Looks good!\r\n      </mdb-success>\r\n    </mdb-form-control>\r\n    <span class=\"text-danger error-input\" *ngIf=\"submitted && errorFieldSubmitted['confirmPassword']\"\r\n          style=\"white-space: pre-line;  font-size: 14px;\">\r\n          {{errorFieldSubmitted['confirmPassword'] | apiErrorMessage}}\r\n      <br><br>\r\n    </span>\r\n  </div>\r\n  </form>\r\n  </div>\r\n\r\n\r\n  <!--Grid row-->\r\n  <div  *ngIf=\"!isSuccessful\" class=\"row d-flex align-items-lg-center border-bottom-0 \">\r\n    <!--Grid column-->\r\n    <div class=\"text-center mb-2  col-md-12 border-bottom-0\">\r\n      <button type=\"button\" (click)=\"onSubmit()\" class=\"btn btn-success btn-block btn-rounded z-depth-1 waves-effect waves-light border-bottom-0\"\r\n      style=\"margin-bottom: 0;\">Replace Password</button>\r\n    </div>\r\n  </div>\r\n  <div hidden class=\"list-group-horizontal mb-4 col-md-12\">\r\n    <button type=\"button\" class=\" fa-pull-left btn btn-primary\">Save changes</button>\r\n    <button type=\"button\" class=\"fa-pull-right btn btn-secondary\" (click)=\"modalRef.close()\">Close</button>\r\n  </div>\r\n\r\n</div>\r\n\r\n\r\n\r\n<div class=\"modal-content \">\r\n    <div class=\"modal-footer fal\">\r\n      <input type=\"checkbox\" class=\" form-check-input\" id=\"checkbox7\">\r\n      <label for=\"checkbox7\" class=\"form-check-label white-text\">Subscribe to our <a href=\"#\" class=\"green-text font-weight-bold\"> newsletter?</a></label>\r\n  </div>\r\n</div>\r\n\r\n\r\n"
+        },
+        {
+            "name": "StoryInputComponent",
+            "id": "component-StoryInputComponent-f5a838c6cce71066b2a844fb97289b11c9885bca230a6cf50c377ed102f224370702ddfc0138642e54d62bc42a33e8fe57eb95f374260982e63eadff620f4a95",
+            "file": "src/stories/inputs/story-input.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-input",
+            "styleUrls": [
+                "./story-input.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./story-input.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "storyInput",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "StoryInput",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onArchiveInput",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onPinInput",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "onArchive",
+                    "args": [
+                        {
+                            "name": "id",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 35,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nComponent method to trigger the onArchive event\n",
+                    "description": "<p>Component method to trigger the onArchive event</p>\n",
+                    "jsdoctags": [
+                        {
+                            "name": {
+                                "pos": 780,
+                                "end": 782,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "id"
+                            },
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "pos": 774,
+                                "end": 779,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "param"
+                            },
+                            "comment": "<p>string</p>\n"
+                        }
+                    ]
+                },
+                {
+                    "name": "onPin",
+                    "args": [
+                        {
+                            "name": "id",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 28,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nComponent method to trigger the onPin event\n",
+                    "description": "<p>Component method to trigger the onPin event</p>\n",
+                    "jsdoctags": [
+                        {
+                            "name": {
+                                "pos": 633,
+                                "end": 635,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "id"
+                            },
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "pos": 627,
+                                "end": 632,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "param"
+                            },
+                            "comment": "<p>string</p>\n"
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component, EventEmitter, Input, Output} from '@angular/core';\r\nimport { StoryInput } from './story-input.model'\r\n\r\n\r\n@Component({\r\n  selector: 'storybook-input',\r\n  templateUrl: './story-input.component.html',\r\n  styleUrls: ['./story-input.css']\r\n})\r\nexport class StoryInputComponent {\r\n\r\n  @Input() storyInput!: StoryInput;\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output()\r\n  onPinInput = new EventEmitter<Event>();\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output()\r\n  onArchiveInput = new EventEmitter<Event>();\r\n\r\n\r\n\r\n  /**\r\n   * Component method to trigger the onPin event\r\n   * @param id string\r\n   */\r\n  onPin(id: any) {\r\n    this.onPinInput.emit(id);\r\n  }\r\n  /**\r\n   * Component method to trigger the onArchive event\r\n   * @param id string\r\n   */\r\n  onArchive(id: any) {\r\n    this.onArchiveInput.emit(id);\r\n  }\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "\r\n\r\n.storybook-input {\r\n  position: relative;\r\n  width: 445px;\r\n  height: 102px;\r\n  left: calc(50% - 445px/2 - 0.5px);\r\n  top: calc(50% - 101.16px/2 - 171.58px);\r\n  padding: 0.8px 0 0;\r\n  background-color: #FFFFFF;\r\n}\r\n\r\n.storybook-input .Frame-3 {\r\n  width: 445px;\r\n  height: 102px;\r\n  left: calc(50% - 445px/2 - 0.5px);\r\n  top: calc(50% - 101.16px/2 - 171.58px);\r\n  padding: 0.8px 0 0;\r\n  background-color: #fff;\r\n}\r\n\r\n.user-name {\r\n  position: absolute;\r\n  width: 82px;\r\n  height: 35px;\r\n  left: 0%;\r\n  right: 82.7%;\r\n  top: 0%;\r\n  bottom: 68.37%;\r\n  /* identical to box height, or 223% */\r\n  display: flex;\r\n  align-items: center;\r\n  letter-spacing: -0.011em;\r\n  text-transform: uppercase;\r\n\r\n  color: #000000;\r\n}\r\n\r\n\r\n\r\n/* D Caps Regular */\r\n.D-Caps-Regular {\r\n  font-family: NotoSans, ui-serif;\r\n  font-style: normal;\r\n  font-weight: 400;\r\n  font-size: 14px;\r\n  line-height: 31px;\r\n}\r\n\r\n\r\n.DanK203 {\r\n  position: absolute;\r\n  width: 228px;\r\n  height: 25px;\r\n\r\n  bottom: 17px;\r\n  left: 68px;\r\n  margin: 1.2px 86px 0 20.3px;\r\n  /* D Example Italic */\r\n\r\n  font-family: 'Noto Sans';\r\n  font-style: normal;\r\n  font-weight: 400;\r\n  font-size: 17px;\r\n  line-height: 11px;\r\n  /* or 65% */\r\n\r\n  display: flex;\r\n  align-items: center;\r\n  letter-spacing: -0.011em;\r\n\r\n  color: #C8C8C8;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n.Vector2 {\r\n  box-sizing: border-box;\r\n  position: absolute;\r\n\r\n\r\n  left: 0.2%;\r\n  right: 0.03%;\r\n  top: 42.66%;\r\n  bottom: 0%;\r\n\r\n  /* White */\r\n  background: #FFFFFF;\r\n  /* Blue */\r\n  border: 2px solid #3D8ECF;\r\n  border-radius: 10px;\r\n}\r\n\r\n\r\n\r\n\r\n",
+                    "styleUrl": "./story-input.css"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "\r\n<!--div class=\"list-item {{ storyInput?.state }}\">\r\n  <label [attr.aria-label]=\"'archiveInput-' + storyInput.id\" for=\"checked-{{ storyInput?.id }}\" class=\"checkbox\">\r\n    <input\r\n      type=\"checkbox\"\r\n      disabled=\"true\"\r\n      [defaultChecked]=\"storyInput?.state === 'INPUT_ARCHIVED'\"\r\n      name=\"checked-{{ storyInput?.id }}\"\r\n      id=\"checked-{{ storyInput?.id }}\"\r\n    />\r\n    <span class=\"checkbox-custom\" (click)=\"onArchive(storyInput.id)\"></span>\r\n  </label>\r\n  <label [attr.aria-label]=\"storyInput.title + ''\" for=\"title-{{ storyInput?.id }}\" class=\"title\">\r\n    <input type=\"text\" [value]=\"storyInput.title\" readonly=\"true\" id=\"title-{{ storyInput?.id }}\" name=\"title-{{ storyInput?.id }}\" placeholder=\"Input title\"/>\r\n  </label>\r\n  <button *ngIf=\"storyInput?.state !== 'INPUT_ARCHIVED'\" class=\"pin-button\" [attr.aria-label]=\"'pinTask-' + storyInput.id\" (click)=\"onPin(storyInput.id)\">\r\n    <span class=\"icon-star\"></span>\r\n  </button>\r\n</div-->\r\n\r\n\r\n\r\n<div class=\"list-item storybook-input Frame-3 {{ storyInput?.state }}\">\r\n  <span class=\"user-name D-Caps-Regular\">User Name</span>\r\n\r\n  <br>\r\n  <label [attr.aria-label]=\"storyInput.title + ''\" for=\"title-{{ storyInput?.id }}\" class=\"Vector2 \">\r\n    <input type=\"text\" [value]=\"storyInput.title\" readonly=\"true\" id=\"title-{{ storyInput?.id }}\" name=\"title-{{ storyInput?.id }}\" placeholder=\"Input title\" class=\"DanK203\"/>\r\n  </label>\r\n\r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n"
         },
         {
             "name": "TadiranIconComponent",
@@ -4427,18 +4523,275 @@
                 }
             },
             "templateData": "<div class=\"Vector\">\n<img (click)=\"onClick.emit($event)\" [ngClass]=\"classes\" [ngStyle]=\"{ 'background-color': backgroundColor }\"\n   src=\"/assets/images/aeonix_logo_150.png\"\n       srcset=\"/assets/images/aeonix_logo_150.png 2x,\n             /assets/images/language-desktop-icon@3x.png 3x\"\n       class=\"Language-Desktop-Icon\"  alt=\"language-desktop-icon\"/>\n\n</div>\n"
+        },
+        {
+            "name": "TaskComponent",
+            "id": "component-TaskComponent-1ead2db9b777f31d4e265a94c313111c50b28b1190eb4cadd8b7860a535428433fc7374d17aabfa5415ddf2602fb06d5bd00259e94f53839250fc950726dd118",
+            "file": "src/stories/task/task.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-task",
+            "styleUrls": [
+                "./task.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./task.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "task",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "Task",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onArchiveTask",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onPinTask",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "onArchive",
+                    "args": [
+                        {
+                            "name": "id",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 34,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nComponent method to trigger the onArchive event\n",
+                    "description": "<p>Component method to trigger the onArchive event</p>\n",
+                    "jsdoctags": [
+                        {
+                            "name": {
+                                "pos": 732,
+                                "end": 734,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "id"
+                            },
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "pos": 726,
+                                "end": 731,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "param"
+                            },
+                            "comment": "<p>string</p>\n"
+                        }
+                    ]
+                },
+                {
+                    "name": "onPin",
+                    "args": [
+                        {
+                            "name": "id",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 27,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nComponent method to trigger the onPin event\n",
+                    "description": "<p>Component method to trigger the onPin event</p>\n",
+                    "jsdoctags": [
+                        {
+                            "name": {
+                                "pos": 586,
+                                "end": 588,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "id"
+                            },
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "pos": 580,
+                                "end": 585,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "param"
+                            },
+                            "comment": "<p>string</p>\n"
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\nimport { Task } from './task.model';\r\n\r\n\r\n\r\n@Component({\r\n  selector: 'storybook-task',\r\n  templateUrl: './task.component.html',\r\n  styleUrls: ['./task.css']\r\n})\r\nexport class TaskComponent {\r\n  @Input() task!: Task;\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output()\r\n  onPinTask = new EventEmitter<Event>();\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output()\r\n  onArchiveTask = new EventEmitter<Event>();\r\n\r\n  /**\r\n   * Component method to trigger the onPin event\r\n   * @param id string\r\n   */\r\n  onPin(id: any) {\r\n    this.onPinTask.emit(id);\r\n  }\r\n  /**\r\n   * Component method to trigger the onArchive event\r\n   * @param id string\r\n   */\r\n  onArchive(id: any) {\r\n    this.onArchiveTask.emit(id);\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".list-item.TASK_ARCHIVED input[type=\"text\"] {\r\n  color: #4a5568;\r\n  text-decoration: line-through;\r\n}\r\n",
+                    "styleUrl": "./task.css"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"list-item {{ task?.state }}\">\r\n  <label [attr.aria-label]=\"'archiveTask-' + task.id\" for=\"checked-{{ task?.id }}\" class=\"checkbox\">\r\n    <input\r\n      type=\"checkbox\"\r\n      disabled=\"true\"\r\n      [defaultChecked]=\"task?.state === 'TASK_ARCHIVED'\"\r\n      name=\"checked-{{ task?.id }}\"\r\n      id=\"checked-{{ task?.id }}\"\r\n    />\r\n    <span class=\"checkbox-custom\" (click)=\"onArchive(task.id)\"></span>\r\n  </label>\r\n  <label [attr.aria-label]=\"task.title + ''\" for=\"title-{{ task?.id }}\" class=\"title\">\r\n    <input type=\"text\" [value]=\"task.title\" readonly=\"true\" id=\"title-{{ task?.id }}\" name=\"title-{{ task?.id }}\" placeholder=\"Input title\"/>\r\n  </label>\r\n  <button *ngIf=\"task?.state !== 'TASK_ARCHIVED'\" class=\"pin-button\" [attr.aria-label]=\"'pinTask-' + task.id\" (click)=\"onPin(task.id)\">\r\n    <span class=\"icon-star\"></span>\r\n  </button>\r\n</div>\r\n\r\n\r\n<div class=\"list-item {{ task?.state }}\">\r\n  <label [attr.aria-label]=\"'archiveTask-' + task.id\" for=\"checked-{{ task?.id }}\" class=\"checkbox\">\r\n    <input\r\n      type=\"checkbox\"\r\n      disabled=\"true\"\r\n      [defaultChecked]=\"task?.state === 'TASK_ARCHIVED'\"\r\n      name=\"checked-{{ task?.id }}\"\r\n      id=\"checked-{{ task?.id }}\"\r\n    />\r\n    <span class=\"checkbox-custom\" (click)=\"onArchive(task.id)\"></span>\r\n  </label>\r\n  <label [attr.aria-label]=\"task.title + ''\" for=\"title-{{ task?.id }}\" class=\"title\">\r\n    <input type=\"text\" [value]=\"task.title\" readonly=\"true\" id=\"title-{{ task?.id }}\" name=\"title-{{ task?.id }}\" placeholder=\"Input title\"/>\r\n  </label>\r\n  <button *ngIf=\"task?.state !== 'TASK_ARCHIVED'\" class=\"pin-button\" [attr.aria-label]=\"'pinTask-' + task.id\" (click)=\"onPin(task.id)\">\r\n    <span class=\"icon-star\"></span>\r\n  </button>\r\n</div>\r\n"
+        },
+        {
+            "name": "TaskListComponent",
+            "id": "component-TaskListComponent-3d6933e1cf16c3daa1c511c190b1cb17b48665287b3c1311423de3e13e3a1a3f7f16416906c2e2f9bda7650400f77edd9065ea7f2b69c3796a3996984dc829d1",
+            "file": "src/stories/task-list/task-list.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-task-list",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./task-list.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "loading",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "tasks",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 26,
+                    "type": "Task[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onArchiveTask",
+                    "defaultValue": "new EventEmitter()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "EventEmitter<any>"
+                },
+                {
+                    "name": "onPinTask",
+                    "defaultValue": "new EventEmitter()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "EventEmitter<any>"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { Task } from '../task/task.model';\r\n\r\n@Component({\r\n  selector: 'app-task-list',\r\n  templateUrl: './task-list.component.html',\r\n})\r\nexport class TaskListComponent {\r\n\r\n  /**\r\n   * @ignore\r\n   * Component property to define ordering of tasks\r\n   */\r\n  tasksInOrder: Task[] = [];\r\n\r\n  @Input() loading = false;\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output() onPinTask: EventEmitter<any> = new EventEmitter();\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output() onArchiveTask: EventEmitter<any> = new EventEmitter();\r\n\r\n  @Input()\r\n  set tasks(arr: Task[]) {\r\n    const initialTasks = [\r\n      ...arr.filter(t => t.state === 'TASK_PINNED'),\r\n      ...arr.filter(t => t.state !== 'TASK_PINNED'),\r\n    ];\r\n    const filteredTasks = initialTasks.filter(\r\n      t => t.state === 'TASK_INBOX' || t.state === 'TASK_PINNED'\r\n    );\r\n    this.tasksInOrder = filteredTasks.filter(\r\n      t => t.state === 'TASK_INBOX' || t.state === 'TASK_PINNED'\r\n    );\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "accessors": {
+                "tasks": {
+                    "name": "tasks",
+                    "setSignature": {
+                        "name": "tasks",
+                        "type": "void",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "args": [
+                            {
+                                "name": "arr",
+                                "type": "Task[]",
+                                "deprecated": false,
+                                "deprecationMessage": ""
+                            }
+                        ],
+                        "returnType": "void",
+                        "line": 26,
+                        "jsdoctags": [
+                            {
+                                "name": "arr",
+                                "type": "Task[]",
+                                "deprecated": false,
+                                "deprecationMessage": "",
+                                "tagName": {
+                                    "text": "param"
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "templateData": "<div class=\"list-items\">\r\n  <storybook-task\r\n    *ngFor=\"let task of tasksInOrder\"\r\n    [task]=\"task\"\r\n    (onArchiveTask)=\"onArchiveTask.emit($event)\"\r\n    (onPinTask)=\"onPinTask.emit($event)\">\r\n  </storybook-task>\r\n  <div *ngIf=\"tasksInOrder.length === 0 && !loading\" class=\"wrapper-message\">\r\n    <span class=\"icon-check\"></span>\r\n    <p class=\"title-message\">You have no tasks</p>\r\n    <p class=\"subtitle-message\">Sit back and relax</p>\r\n  </div>\r\n  <div *ngIf=\"loading\">\r\n    <div *ngFor=\"let i of [1, 2, 3, 4, 5, 6]\" class=\"loading-item\">\r\n      <span class=\"glow-checkbox\"></span>\r\n      <span class=\"glow-text\">\r\n           <span>Loading</span> <span>cool</span> <span>state</span>\r\n         </span>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
         }
     ],
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-b8c9848e34c79300d2b6fc3201949c64b8c041eb1b9a16c5bf1e81ce2f5b5b09aa0252a4f348996a98d58ba8cb96f46d6e9a4df3d416e2c805ff4d07df6c1c6e",
+            "id": "module-AppModule-085435cb6a1bcd7b6236a18ac76605e7c28e608c9c3c2e89bb0dc645aee5ec56bcd6d7f553cbe2364ea0e1a29a9b6b4e65a2ed88c2234e572f92f6297b117d92",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport {FormsModule, ReactiveFormsModule} from '@angular/forms';\r\nimport { HttpClientModule } from '@angular/common/http';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { LoginComponent } from './login/login.component';\r\nimport { RegisterComponent } from './register/register.component';\r\nimport { HomeComponent } from './home/home.component';\r\nimport { ProfileComponent } from './profile/profile.component';\r\nimport { BoardAdminComponent } from './board-admin/board-admin.component';\r\nimport { BoardModeratorComponent } from './board-moderator/board-moderator.component';\r\nimport { BoardUserComponent } from './board-user/board-user.component';\r\n\r\nimport { authInterceptorProviders, AuthInterceptor } from './_helpers/auth.interceptor';\r\nimport {NgbDatepickerModule} from \"@ng-bootstrap/ng-bootstrap\";\r\nimport { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';\r\nimport { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';\r\nimport { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';\r\nimport { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';\r\nimport { MdbDropdownModule } from 'mdb-angular-ui-kit/dropdown';\r\nimport { MdbFormsModule } from 'mdb-angular-ui-kit/forms';\r\nimport { MdbModalModule } from 'mdb-angular-ui-kit/modal';\r\nimport { MdbPopoverModule } from 'mdb-angular-ui-kit/popover';\r\nimport { MdbRadioModule } from 'mdb-angular-ui-kit/radio';\r\nimport { MdbRangeModule } from 'mdb-angular-ui-kit/range';\r\nimport { MdbRippleModule } from 'mdb-angular-ui-kit/ripple';\r\nimport { MdbScrollspyModule } from 'mdb-angular-ui-kit/scrollspy';\r\nimport { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';\r\nimport { MdbModalRef } from 'mdb-angular-ui-kit/modal';\r\nimport { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';\r\nimport { MdbValidationModule, MdbErrorDirective, MdbSuccessDirective } from 'mdb-angular-ui-kit/validation';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { MdbInputDirective  } from 'mdb-angular-ui-kit/forms';\r\nimport { ModalModule, TooltipModule, PopoverModule, ButtonsModule, MDBBootstrapModule } from 'angular-bootstrap-md';\r\nimport { RegisterFormComponent } from './login/register-form/register-form.component';\r\nimport {ReplacePassFormComponent} from \"./login/replace-pass-form/replace-pass-form.component\";\r\nimport {ApiErrorMessagePipe} from \"./pipes/api-error-message.pipe\";\r\nimport {LoginErrorMessagePipe} from \"./pipes/login-error-message.pipe\";\r\nimport  Page2Component  from './page/page.component';\r\nimport { LanguageIconComponent } from './page/language-icon/language-icon.component';\r\nimport { TadiranIconComponent } from './page/tadiran-icon/tadiran-icon.component';\r\nimport Button from '../stories/buttons/button.component'\r\nimport Card from '../stories/cards/card.component'\r\n\r\n@NgModule({\r\n    declarations: [\r\n        AppComponent,\r\n        LoginComponent,\r\n        RegisterComponent,\r\n        HomeComponent,\r\n        ProfileComponent,\r\n        BoardAdminComponent,\r\n        BoardModeratorComponent,\r\n        BoardUserComponent,\r\n        RegisterFormComponent,\r\n        ReplacePassFormComponent,\r\n        ApiErrorMessagePipe,\r\n        LoginErrorMessagePipe,\r\n        Page2Component,\r\n        LanguageIconComponent,\r\n        TadiranIconComponent,\r\n        Button,\r\n        Card,\r\n\r\n    ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    FormsModule,\r\n    HttpClientModule,\r\n    NgbDatepickerModule,\r\n    MdbAccordionModule,\r\n    MdbCarouselModule,\r\n    MdbCheckboxModule,\r\n    MdbCollapseModule,\r\n    MdbDropdownModule,\r\n    MdbFormsModule,\r\n    MdbModalModule,\r\n    MdbPopoverModule,\r\n    MdbRadioModule,\r\n    MdbRangeModule,\r\n    MdbRippleModule,\r\n    MdbScrollspyModule,\r\n    MdbTabsModule,\r\n    MdbTooltipModule,\r\n    //MdbValidationModule,\r\n    BrowserAnimationsModule,\r\n    ReactiveFormsModule,\r\n    ModalModule,\r\n    ButtonsModule,\r\n    MDBBootstrapModule.forRoot(),\r\n  ],\r\n  providers: [authInterceptorProviders],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport {FormsModule, ReactiveFormsModule} from '@angular/forms';\r\nimport { HttpClientModule } from '@angular/common/http';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { LoginComponent } from './login/login.component';\r\nimport { RegisterComponent } from './register/register.component';\r\nimport { HomeComponent } from './home/home.component';\r\nimport { ProfileComponent } from './profile/profile.component';\r\nimport { BoardAdminComponent } from './board-admin/board-admin.component';\r\nimport { BoardModeratorComponent } from './board-moderator/board-moderator.component';\r\nimport { BoardUserComponent } from './board-user/board-user.component';\r\n\r\nimport { authInterceptorProviders, AuthInterceptor } from './_helpers/auth.interceptor';\r\nimport {NgbDatepickerModule} from \"@ng-bootstrap/ng-bootstrap\";\r\nimport { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';\r\nimport { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';\r\nimport { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';\r\nimport { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';\r\nimport { MdbDropdownModule } from 'mdb-angular-ui-kit/dropdown';\r\nimport { MdbFormsModule } from 'mdb-angular-ui-kit/forms';\r\nimport { MdbModalModule } from 'mdb-angular-ui-kit/modal';\r\nimport { MdbPopoverModule } from 'mdb-angular-ui-kit/popover';\r\nimport { MdbRadioModule } from 'mdb-angular-ui-kit/radio';\r\nimport { MdbRangeModule } from 'mdb-angular-ui-kit/range';\r\nimport { MdbRippleModule } from 'mdb-angular-ui-kit/ripple';\r\nimport { MdbScrollspyModule } from 'mdb-angular-ui-kit/scrollspy';\r\nimport { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';\r\nimport { MdbModalRef } from 'mdb-angular-ui-kit/modal';\r\nimport { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';\r\nimport { MdbValidationModule, MdbErrorDirective, MdbSuccessDirective } from 'mdb-angular-ui-kit/validation';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { MdbInputDirective  } from 'mdb-angular-ui-kit/forms';\r\nimport { ModalModule, TooltipModule, PopoverModule, ButtonsModule, MDBBootstrapModule } from 'angular-bootstrap-md';\r\nimport { RegisterFormComponent } from './register-form/register-form.component';\r\nimport {ReplacePassFormComponent} from \"./replace-pass-form/replace-pass-form.component\";\r\nimport {ApiErrorMessagePipe} from \"./pipes/api-error-message.pipe\";\r\nimport {LoginErrorMessagePipe} from \"./pipes/login-error-message.pipe\";\r\nimport  Page2Component  from './page/page.component';\r\nimport { TaskComponent } from '../stories/task/task.component';\r\nimport { LanguageIconComponent } from './page/language-icon/language-icon.component';\r\nimport { TadiranIconComponent } from './page/tadiran-icon/tadiran-icon.component';\r\nimport Button from '../stories/buttons/button.component'\r\nimport Card from '../stories/cards/card.component'\r\nimport {StoryInputComponent} from '../stories/inputs/story-input.component'\r\nimport {FormComponent} from '../stories/forms/form.component'\r\nimport {TaskListComponent} from '../stories/task-list/task-list.component'\r\n\r\n@NgModule({\r\n    declarations: [\r\n        AppComponent,\r\n        LoginComponent,\r\n        RegisterComponent,\r\n        HomeComponent,\r\n        ProfileComponent,\r\n        BoardAdminComponent,\r\n        BoardModeratorComponent,\r\n        BoardUserComponent,\r\n        RegisterFormComponent,\r\n        ReplacePassFormComponent,\r\n        ApiErrorMessagePipe,\r\n        LoginErrorMessagePipe,\r\n        Page2Component,\r\n        LanguageIconComponent,\r\n        TadiranIconComponent,\r\n        Button,\r\n        Card,\r\n        StoryInputComponent,\r\n        FormComponent,\r\n        TaskComponent,\r\n        TaskListComponent\r\n\r\n    ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    FormsModule,\r\n    HttpClientModule,\r\n    NgbDatepickerModule,\r\n    MdbAccordionModule,\r\n    MdbCarouselModule,\r\n    MdbCheckboxModule,\r\n    MdbCollapseModule,\r\n    MdbDropdownModule,\r\n    MdbFormsModule,\r\n    MdbModalModule,\r\n    MdbPopoverModule,\r\n    MdbRadioModule,\r\n    MdbRangeModule,\r\n    MdbRippleModule,\r\n    MdbScrollspyModule,\r\n    MdbTabsModule,\r\n    MdbTooltipModule,\r\n    //MdbValidationModule,\r\n    BrowserAnimationsModule,\r\n    ReactiveFormsModule,\r\n    ModalModule,\r\n    ButtonsModule,\r\n    MDBBootstrapModule.forRoot(),\r\n  ],\r\n  providers: [authInterceptorProviders],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -4469,6 +4822,9 @@
                             "name": "Card"
                         },
                         {
+                            "name": "FormComponent"
+                        },
+                        {
                             "name": "HomeComponent"
                         },
                         {
@@ -4496,7 +4852,16 @@
                             "name": "ReplacePassFormComponent"
                         },
                         {
+                            "name": "StoryInputComponent"
+                        },
+                        {
                             "name": "TadiranIconComponent"
+                        },
+                        {
+                            "name": "TaskComponent"
+                        },
+                        {
+                            "name": "TaskListComponent"
                         }
                     ]
                 },
@@ -4566,6 +4931,26 @@
     "miscellaneous": {
         "variables": [
             {
+                "name": "actionsData",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/inputs/story-input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  onPinInput: action('onPinInput'),\n  onArchiveInput: action('onArchiveInput'),\n}"
+            },
+            {
+                "name": "actionsData",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/task/task.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  onPinTask: action('onPinTask'),\r\n  onArchiveTask: action('onArchiveTask'),\r\n}"
+            },
+            {
                 "name": "API_URL",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -4594,6 +4979,26 @@
                 "deprecationMessage": "",
                 "type": "object",
                 "defaultValue": "{\r\n  accServer: {\r\n    ACCWEBServers: AUTH_API //'https://172.28.8.245:8445'\r\n  },\r\n  endpoints: {\r\n\r\n    TOKEN_KEY: 'token',\r\n    REFRESHTOKEN_KEY: 'auth-refreshtoken',\r\n    USER_KEY: 'user'\r\n  }\r\n}"
+            },
+            {
+                "name": "Archived",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/inputs/story-input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Archived",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/task/task.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "AUTH_API",
@@ -4636,6 +5041,66 @@
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
             {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/forms/form.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/inputs/story-input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/task/task.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/task-list/task-list.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Empty",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/forms/form.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Empty",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/task-list/task-list.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -4669,7 +5134,7 @@
                 "name": "Large",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/cards/Card.stories.ts",
+                "file": "src/stories/buttons/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4679,7 +5144,7 @@
                 "name": "Large",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/buttons/Button.stories.ts",
+                "file": "src/stories/cards/Card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4700,6 +5165,26 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/page/tadiran-icon/tadiran-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Loading",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/forms/form.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Loading",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/task-list/task-list.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4740,6 +5225,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/page/page.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "LoggedOut",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/login/login.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4776,6 +5271,26 @@
                 "defaultValue": "new URL(window.location.href)"
             },
             {
+                "name": "Pinned",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/inputs/story-input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Pinned",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/task/task.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "port",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -4799,7 +5314,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/cards/Card.stories.ts",
+                "file": "src/app/login/login.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4810,6 +5325,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/buttons/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/cards/Card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4878,7 +5403,7 @@
                 "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/cards/Card.stories.ts",
+                "file": "src/stories/buttons/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4888,7 +5413,7 @@
                 "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/buttons/Button.stories.ts",
+                "file": "src/stories/cards/Card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4918,7 +5443,7 @@
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/cards/Card.stories.ts",
+                "file": "src/stories/buttons/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4928,7 +5453,7 @@
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/buttons/Button.stories.ts",
+                "file": "src/stories/cards/Card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4968,21 +5493,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/cards/Card.stories.ts",
+                "file": "src/app/login/login.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<Card>",
-                "defaultValue": "(args: Card) => ({\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/headers/Header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<Header>",
-                "defaultValue": "(args: Header) => ({\n  props: args,\n})"
+                "type": "Story<LoginComponent>",
+                "defaultValue": "(args: LoginComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -4998,11 +5513,71 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/forms/form.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "args => ({\n  props: {\n      ...args,\n      onPinTask: StoryInput.actionsData.onPinInput,\n      onArchiveTask: StoryInput.actionsData.onArchiveInput,\n    },\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/headers/Header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Header>",
+                "defaultValue": "(args: Header) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/cards/Card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Card>",
+                "defaultValue": "(args: Card) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/inputs/story-input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "args => ({\n  props: {\n    ...args,\n    onPinInput: actionsData.onPinInput,\n    onArchiveInput: actionsData.onArchiveInput,\n  },\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/pages/Page.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<Page>",
                 "defaultValue": "(args: Page) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/task/task.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "args => ({\r\n  props: {\r\n    ...args,\r\n    onPinTask: actionsData.onPinTask,\r\n    onArchiveTask: actionsData.onArchiveTask,\r\n  },\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/task-list/task-list.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "args => ({\r\n  props: {\r\n    ...args,\r\n    onPinTask: TaskStories.actionsData.onPinTask,\r\n    onArchiveTask: TaskStories.actionsData.onArchiveTask,\r\n  },\r\n})"
             },
             {
                 "name": "Template",
@@ -5063,12 +5638,136 @@
                 "deprecationMessage": "",
                 "type": "string",
                 "defaultValue": "'user'"
+            },
+            {
+                "name": "WithPinnedTasks",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/forms/form.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "WithPinnedTasks",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/task-list/task-list.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             }
         ],
         "functions": [],
         "typealiases": [],
         "enumerations": [],
         "groupedVariables": {
+            "src/stories/inputs/story-input.stories.ts": [
+                {
+                    "name": "actionsData",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/inputs/story-input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  onPinInput: action('onPinInput'),\n  onArchiveInput: action('onArchiveInput'),\n}"
+                },
+                {
+                    "name": "Archived",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/inputs/story-input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/inputs/story-input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Pinned",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/inputs/story-input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/inputs/story-input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "args => ({\n  props: {\n    ...args,\n    onPinInput: actionsData.onPinInput,\n    onArchiveInput: actionsData.onArchiveInput,\n  },\n})"
+                }
+            ],
+            "src/stories/task/task.stories.ts": [
+                {
+                    "name": "actionsData",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/task/task.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  onPinTask: action('onPinTask'),\r\n  onArchiveTask: action('onArchiveTask'),\r\n}"
+                },
+                {
+                    "name": "Archived",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/task/task.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/task/task.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Pinned",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/task/task.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/task/task.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "args => ({\r\n  props: {\r\n    ...args,\r\n    onPinTask: actionsData.onPinTask,\r\n    onArchiveTask: actionsData.onArchiveTask,\r\n  },\r\n})"
+                }
+            ],
             "src/app/_services/user.service.ts": [
                 {
                     "name": "API_URL",
@@ -5218,6 +5917,110 @@
                     "type": "literal type"
                 }
             ],
+            "src/stories/forms/form.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/forms/form.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Empty",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/forms/form.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Loading",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/forms/form.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/forms/form.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "args => ({\n  props: {\n      ...args,\n      onPinTask: StoryInput.actionsData.onPinInput,\n      onArchiveTask: StoryInput.actionsData.onArchiveInput,\n    },\n})"
+                },
+                {
+                    "name": "WithPinnedTasks",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/forms/form.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                }
+            ],
+            "src/stories/task-list/task-list.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/task-list/task-list.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Empty",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/task-list/task-list.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Loading",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/task-list/task-list.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/task-list/task-list.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "args => ({\r\n  props: {\r\n    ...args,\r\n    onPinTask: TaskStories.actionsData.onPinTask,\r\n    onArchiveTask: TaskStories.actionsData.onArchiveTask,\r\n  },\r\n})"
+                },
+                {
+                    "name": "WithPinnedTasks",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/task-list/task-list.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                }
+            ],
             "src/environments/environment.prod.ts": [
                 {
                     "name": "environment",
@@ -5240,58 +6043,6 @@
                     "deprecationMessage": "",
                     "type": "object",
                     "defaultValue": "{\r\n  production: false\r\n}"
-                }
-            ],
-            "src/stories/cards/Card.stories.ts": [
-                {
-                    "name": "Large",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/cards/Card.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/cards/Card.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Secondary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/cards/Card.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Small",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/cards/Card.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/cards/Card.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<Card>",
-                    "defaultValue": "(args: Card) => ({\n  props: args,\n})"
                 }
             ],
             "src/stories/buttons/Button.stories.ts": [
@@ -5344,6 +6095,58 @@
                     "deprecationMessage": "",
                     "type": "Story<Button>",
                     "defaultValue": "(args: Button) => ({\n  props: args,\n})"
+                }
+            ],
+            "src/stories/cards/Card.stories.ts": [
+                {
+                    "name": "Large",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/cards/Card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/cards/Card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/cards/Card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Small",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/cards/Card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/cards/Card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<Card>",
+                    "defaultValue": "(args: Card) => ({\n  props: args,\n})"
                 }
             ],
             "src/app/page/language-icon/language-icon.stories.ts": [
@@ -5566,6 +6369,38 @@
                     "defaultValue": "(args: Page) => ({\n  props: args,\n})"
                 }
             ],
+            "src/app/login/login.stories.ts": [
+                {
+                    "name": "LoggedOut",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/login/login.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/login/login.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/login/login.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<LoginComponent>",
+                    "defaultValue": "(args: LoginComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
             "src/app/_services/token-storage.service.ts": [
                 {
                     "name": "REFRESHTOKEN_KEY",
@@ -5671,7 +6506,7 @@
         ]
     },
     "coverage": {
-        "count": 3,
+        "count": 4,
         "status": "low",
         "files": [
             {
@@ -5937,26 +6772,38 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "LoginComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/15",
+                "coveragePercent": 7,
+                "coverageCount": "1/14",
                 "status": "low"
             },
             {
-                "filePath": "src/app/login/register-form/register-form.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "RegisterFormComponent",
+                "filePath": "src/app/login/login.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedOut",
                 "coveragePercent": 0,
-                "coverageCount": "0/14",
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "src/app/login/replace-pass-form/replace-pass-form.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "ReplacePassFormComponent",
+                "filePath": "src/app/login/login.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
                 "coveragePercent": 0,
-                "coverageCount": "0/14",
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/login/login.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -6023,8 +6870,8 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "Page2Component",
-                "coveragePercent": 57,
-                "coverageCount": "4/7",
+                "coveragePercent": 62,
+                "coverageCount": "5/8",
                 "status": "good"
             },
             {
@@ -6164,12 +7011,30 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/register-form/register-form.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "RegisterFormComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/14",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/register/register.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "RegisterComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/10",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/replace-pass-form/replace-pass-form.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ReplacePassFormComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/14",
                 "status": "low"
             },
             {
@@ -6315,8 +7180,67 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "CardComponent",
-                "coveragePercent": 25,
-                "coverageCount": "5/20",
+                "coveragePercent": 83,
+                "coverageCount": "5/6",
+                "status": "very-good"
+            },
+            {
+                "filePath": "src/stories/forms/form.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FormComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/forms/form.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/forms/form.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Empty",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/forms/form.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Loading",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/forms/form.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/forms/form.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithPinnedTasks",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -6359,6 +7283,74 @@
                 "status": "low"
             },
             {
+                "filePath": "src/stories/inputs/story-input.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "StoryInputComponent",
+                "coveragePercent": 33,
+                "coverageCount": "2/6",
+                "status": "medium"
+            },
+            {
+                "filePath": "src/stories/inputs/story-input.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "StoryInput",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/inputs/story-input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "actionsData",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/inputs/story-input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Archived",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/inputs/story-input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/inputs/story-input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Pinned",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/inputs/story-input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/stories/pages/Page.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -6395,6 +7387,133 @@
                 "name": "PageComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/task-list/task-list.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TaskListComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/task-list/task-list.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/task-list/task-list.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Empty",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/task-list/task-list.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Loading",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/task-list/task-list.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/task-list/task-list.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithPinnedTasks",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/task/task.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TaskComponent",
+                "coveragePercent": 33,
+                "coverageCount": "2/6",
+                "status": "medium"
+            },
+            {
+                "filePath": "src/stories/task/task.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Task",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/task/task.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "actionsData",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/task/task.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Archived",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/task/task.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/task/task.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Pinned",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/task/task.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {

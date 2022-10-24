@@ -1,6 +1,7 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { Story, Meta } from '@storybook/angular/types-6-0';
 import Card from './card.component';
+import { StoryInputComponent } from "../inputs/story-input.component";
 import {moduleMetadata} from "@storybook/angular";
 import {CommonModule} from "@angular/common";
 
@@ -10,7 +11,7 @@ export default {
   component: Card,
   decorators: [
     moduleMetadata({
-      declarations: [],
+      declarations: [ StoryInputComponent ],
       imports: [CommonModule],
     }),
   ],

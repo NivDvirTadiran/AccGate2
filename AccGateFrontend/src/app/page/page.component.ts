@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-
+import { StoryInput } from "../../stories/inputs/story-input.model";
 
 
 @Component({
@@ -12,9 +12,19 @@ export default class Page2Component implements OnInit {
   /**
    * Is this the principal call to action on the page?
    */
+  storyInputsInOrder: StoryInput[]  = [
+    { id: '1', title: 'Something', state: 'INPUT_PINNED' },
+    { id: '2', title: 'Something more', state: 'INPUT_PINNED' },
+    { id: '3', title: 'Something else', state: 'INPUT_PINNED' },
+    { id: '4', title: 'Something again', state: 'INPUT_INBOX' },
+    { id: '6', title: 'StoryInput 6 (pinned)', state: 'INPUT_PINNED'}
+  ];
+
+  /**
+   * Is this the principal call to action on the page?
+   */
   @Input()
   primary = true;
-
 
   /**
    * What background color to use
@@ -60,6 +70,7 @@ export default class Page2Component implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {};
+
 }
 

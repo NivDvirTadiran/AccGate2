@@ -1,0 +1,98 @@
+
+
+.storybook-input {
+  position: relative;
+  width: 445px;
+  height: 102px;
+  left: calc(50% - 445px/2 - 0.5px);
+  top: calc(50% - 101.16px/2 - 171.58px);
+  padding: 0.8px 0 0;
+  background-color: #FFFFFF;
+}
+
+.storybook-input .Frame-3 {
+  width: 445px;
+  height: 102px;
+  left: calc(50% - 445px/2 - 0.5px);
+  top: calc(50% - 101.16px/2 - 171.58px);
+  padding: 0.8px 0 0;
+  background-color: #fff;
+}
+
+.user-name {
+  position: absolute;
+  width: 82px;
+  height: 35px;
+  left: 0%;
+  right: 82.7%;
+  top: 0%;
+  bottom: 68.37%;
+  /* identical to box height, or 223% */
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.011em;
+  text-transform: uppercase;
+
+  color: #000000;
+}
+
+
+
+/* D Caps Regular */
+.D-Caps-Regular {
+  font-family: NotoSans, ui-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 31px;
+}
+
+
+.DanK203 {
+  position: absolute;
+  width: 228px;
+  height: 25px;
+
+  bottom: 17px;
+  left: 68px;
+  margin: 1.2px 86px 0 20.3px;
+  /* D Example Italic */
+
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 11px;
+  /* or 65% */
+
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.011em;
+
+  color: #C8C8C8;
+}
+
+
+
+
+
+.Vector2 {
+  box-sizing: border-box;
+  position: absolute;
+
+
+  left: 0.2%;
+  right: 0.03%;
+  top: 42.66%;
+  bottom: 0%;
+
+  /* White */
+  background: #FFFFFF;
+  /* Blue */
+  border: 2px solid #3D8ECF;
+  border-radius: 10px;
+}
+
+
+
+

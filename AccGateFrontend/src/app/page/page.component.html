@@ -11,7 +11,7 @@
 <article><div class="Frame-1 relative">
 <section class="relative " Style="{ 'background': backgroundColor }"-->
 
-    <figure class="Desktop-1Login-1"  [ngClass]="classes" [ngStyle]="{ 'background-color': background }" >
+<figure class="Desktop-1Login-1"  [ngClass]="classes" [ngStyle]="{ 'background-color': background }" >
       <!--div [ngStyle]="{ 'background-color': background }" ></div-->
     <img src="assets/images/icon-1.webp" srcset="/assets/images/icon-1@2x.webp 2x, /assets/images/icon-1@3x.webp 3x"
           alt="icon-1" />
@@ -23,8 +23,15 @@
 </figure>
 
 <storybook-language-icon size="large"></storybook-language-icon>
-<storybook-tadiran-icon></storybook-tadiran-icon>
-<storybook-card ></storybook-card>
+<storybook-button-tadiran></storybook-button-tadiran>
+<storybook-button-globe></storybook-button-globe>
+
+<app-login></app-login>
+
+<!--storybook-form
+  [loading]="false"
+  [storyInputs]="storyInputsInOrder"
+></storybook-form-->
 
 
 <!--/section></div>

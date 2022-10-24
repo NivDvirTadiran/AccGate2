@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TadiranIconComponent } from './tadiran-icon.component';
+import { ButtonGlobeComponent } from './button-globe.component';
 
 describe('LanguageIconComponent', () => {
-  let component: TadiranIconComponent;
-  let fixture: ComponentFixture<TadiranIconComponent>;
+  let component: ButtonGlobeComponent;
+  let fixture: ComponentFixture<ButtonGlobeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TadiranIconComponent ]
+      declarations: [ ButtonGlobeComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TadiranIconComponent);
+    fixture = TestBed.createComponent(ButtonGlobeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
