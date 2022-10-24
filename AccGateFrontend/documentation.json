@@ -2146,7 +2146,7 @@
         {
             "name": "ButtonComponent",
             "id": "component-ButtonComponent-4ef205c97a334c309aa4001c8ab4a6d9571dcae18d0e85aaf0d367467ab5d3a9f13ab3573726f1fcb409bc9b49894dadfb80b1bbe1b6ba7041455ad9d4922004",
-            "file": "src/stories/buttons/button.component.ts",
+            "file": "src/stories/buttons/button-example/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -2266,6 +2266,441 @@
                     }
                 }
             }
+        },
+        {
+            "name": "ButtonGlobeComponent",
+            "id": "component-ButtonGlobeComponent-0f1df5626302ff822263d7fe9b74719b1d918affc09409c1fbbf83d094dc9259618a4207999d3b96dbbfc09f749b552745e35efc96f2f4dde702c87e5abc06ff",
+            "file": "src/stories/buttons/button-globe/button-globe.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-button-globe",
+            "styleUrls": [
+                "./button-globe.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./button-globe.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nWhat background color to use\n",
+                    "description": "<p>What background color to use</p>\n",
+                    "line": 19,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'accGateButton2'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 588,
+                            "end": 601,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 325,
+                            "tagName": {
+                                "pos": 589,
+                                "end": 597,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "required"
+                            },
+                            "comment": ""
+                        }
+                    ],
+                    "rawdescription": "\n\nButton contents\n\n",
+                    "description": "<p>Button contents</p>\n",
+                    "line": 33,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "primary",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nIs this the principal call to action on the page?\n",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 13,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nHow large should the button be?\n",
+                    "description": "<p>How large should the button be?</p>\n",
+                    "line": 25,
+                    "type": "\"small\" | \"medium\" | \"large\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nOptional click handler\n",
+                    "description": "<p>Optional click handler</p>\n",
+                    "line": 39,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 50,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button-globe',\n  templateUrl: './button-globe.component.html',\n  styleUrls: ['./button-globe.component.css']\n})\nexport class ButtonGlobeComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'accGateButton2';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button-tadiran--primary' : 'storybook-button-tadiran--secondary';\n\n    return ['storybook-button-tadiran', `storybook-tadiran-icon--${this.size}`, mode];\n  }\n\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".Vector {\r\n  position: absolute;\r\n  bottom: 49px;\r\n  left: 247px;\r\n  width: 123px;\r\n  height: 45px;\r\n}\r\n\r\nimg.Language-Desktop-Icon {\r\n  position: absolute;\r\n  bottom: 1px;\r\n  left: 1px;\r\n  width: 123px;\r\n  height: 45px;\r\n  object-fit: contain;\r\n  /*box-shadow: 0 1px 1px 0 rgba(61, 142, 207, 0.15);*/\r\n}\r\n",
+                    "styleUrl": "./button-globe.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 45
+            },
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 41
+                    }
+                }
+            },
+            "templateData": "<div class=\"Vector\">\n<img (click)=\"onClick.emit($event)\" [ngClass]=\"classes\" [ngStyle]=\"{ 'background-color': backgroundColor }\"\n   src=\"/assets/images/GlobeIcon.png\" class=\"Language-Desktop-Icon\"  alt=\"language-desktop-icon\"/>\n</div>\n"
+        },
+        {
+            "name": "ButtonLanguageComponent",
+            "id": "component-ButtonLanguageComponent-9be1c7045479bef1c346c080a3a3bfa502007372e55ce166a276a57fe31a36339040c2860c7555a0d08a54c8c02beb2c61d0955555e055511a5ee70d3568c8cb",
+            "file": "src/stories/buttons/button-language/button-language.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-button-language",
+            "styleUrls": [
+                "./button-language.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./button-language.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nWhat background color to use\n",
+                    "description": "<p>What background color to use</p>\n",
+                    "line": 19,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'accGateButton2'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 600,
+                            "end": 613,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 325,
+                            "tagName": {
+                                "pos": 601,
+                                "end": 609,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "required"
+                            },
+                            "comment": ""
+                        }
+                    ],
+                    "rawdescription": "\n\nButton contents\n\n",
+                    "description": "<p>Button contents</p>\n",
+                    "line": 33,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "primary",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nIs this the principal call to action on the page?\n",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 13,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nHow large should the button be?\n",
+                    "description": "<p>How large should the button be?</p>\n",
+                    "line": 25,
+                    "type": "\"small\" | \"medium\" | \"large\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nOptional click handler\n",
+                    "description": "<p>Optional click handler</p>\n",
+                    "line": 39,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 50,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button-language',\n  templateUrl: './button-language.component.html',\n  styleUrls: ['./button-language.component.css']\n})\nexport class ButtonLanguageComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'accGateButton2';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button-language--primary' : 'storybook-button-language--secondary';\n\n    return ['storybook-button-language', `storybook-language-icon--${this.size}`, mode];\n  }\n\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".Vector {\r\n  position: absolute;\r\n  top: 54px;\r\n  right: 68px;\r\n  width: 26px;\r\n  height: 26px;\r\n}\r\n\r\nimg.Language-Desktop-Icon {\r\n  position: absolute;\r\n  top: 1px;\r\n  right: 1px;\r\n  width: 26px;\r\n  height: 26px;\r\n  object-fit: contain;\r\n  box-shadow: 0 1px 1px 0 rgba(61, 142, 207, 0.15);\r\n}\r\n",
+                    "styleUrl": "./button-language.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 45
+            },
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 41
+                    }
+                }
+            },
+            "templateData": "<div class=\"Vector\">\n<img (click)=\"onClick.emit($event)\" [ngClass]=\"classes\" [ngStyle]=\"{ 'background-color': backgroundColor }\"\n   src=\"/assets/images/language-desktop-icon.png\"\n       srcset=\"/assets/images/language-desktop-icon@2x.png 2x,\n             /assets/images/language-desktop-icon@3x.png 3x\"\n       class=\"Language-Desktop-Icon\"  alt=\"language-desktop-icon\"/>\n\n</div>\n"
+        },
+        {
+            "name": "ButtonTadiranComponent",
+            "id": "component-ButtonTadiranComponent-922d69e514a3b6c5551c8aa36b99e93539083c990f039e1cec0df5f27578abc8fdf3081963684a6ced72508ee9a57550d65a3432b7aee43b263a1e79bc9b7cdd",
+            "file": "src/stories/buttons/button-tadiran/button-tadiran.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-button-tadiran",
+            "styleUrls": [
+                "./button-tadiran.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./button-tadiran.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nWhat background color to use\n",
+                    "description": "<p>What background color to use</p>\n",
+                    "line": 19,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'accGateButton2'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 596,
+                            "end": 609,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 325,
+                            "tagName": {
+                                "pos": 597,
+                                "end": 605,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "required"
+                            },
+                            "comment": ""
+                        }
+                    ],
+                    "rawdescription": "\n\nButton contents\n\n",
+                    "description": "<p>Button contents</p>\n",
+                    "line": 33,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "primary",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nIs this the principal call to action on the page?\n",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 13,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nHow large should the button be?\n",
+                    "description": "<p>How large should the button be?</p>\n",
+                    "line": 25,
+                    "type": "\"small\" | \"medium\" | \"large\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nOptional click handler\n",
+                    "description": "<p>Optional click handler</p>\n",
+                    "line": 39,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 50,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button-tadiran',\n  templateUrl: './button-tadiran.component.html',\n  styleUrls: ['./button-tadiran.component.css']\n})\nexport class ButtonTadiranComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'accGateButton2';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button-tadiran--primary' : 'storybook-button-tadiran--secondary';\n\n    return ['storybook-button-tadiran', `storybook-tadiran-icon--${this.size}`, mode];\n  }\n\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".Vector {\r\n  position: absolute;\r\n  bottom: 50px;\r\n  left: 30px;\r\n  width: 151px;\r\n  height: 39px;\r\n}\r\n\r\nimg.Language-Desktop-Icon {\r\n  position: absolute;\r\n  bottom: 1px;\r\n  left: 1px;\r\n  width: 151px;\r\n  height: 39px;\r\n  object-fit: contain;\r\n  /*box-shadow: 0 1px 1px 0 rgba(61, 142, 207, 0.15);*/\r\n}\r\n",
+                    "styleUrl": "./button-tadiran.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 45
+            },
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 41
+                    }
+                }
+            },
+            "templateData": "<div class=\"Vector\">\n<img (click)=\"onClick.emit($event)\" [ngClass]=\"classes\" [ngStyle]=\"{ 'background-color': backgroundColor }\"\n   src=\"/assets/images/img_2.png\" class=\"Language-Desktop-Icon\"  alt=\"language-desktop-icon\"/>\n</div>\n"
         },
         {
             "name": "CardComponent",
@@ -2678,151 +3113,6 @@
             "templateData": "<div class=\"container \">\r\n  <br>\r\n  <header class=\"background jumbotron  \">\r\n    <h1 class=\"font_0\">\r\n      <span class=\"\" style=\"font-size:44px;\">\r\n        <dl>\r\n          <dt><span>{{ content }}</span></dt>\r\n          <dd><span>{{ ACC_VERSION }}</span></dd>\r\n        </dl>\r\n      </span>\r\n    </h1>\r\n  </header>\r\n\r\n  <aside>\r\n    <!-- Card -->\r\n    <div class=\"fa-pull-right bg-image card shadow-1-strong card-img\">\r\n      <div class=\"card-body text-white\">\r\n        <h5 class=\"card-title\">Card title</h5>\r\n        <p class=\"card-text\">\r\n          Some quick example text to build on the card title and make up the bulk of the\r\n          card's content.\r\n        </p>\r\n        <a href=\"#!\" class=\"btn btn-outline-light\">Button</a>\r\n      </div>\r\n    </div>\r\n    <!-- Card -->\r\n  </aside>\r\n\r\n  <div class=\"alert alert-success  \" role=\"alert\">\r\n    <h4 class=\"alert-heading \">Well done!</h4>\r\n    <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>\r\n    <hr>\r\n    <p class=\"mb-0\">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>\r\n  </div>\r\n\r\n</div>\r\n"
         },
         {
-            "name": "LanguageIconComponent",
-            "id": "component-LanguageIconComponent-2416ae558fd33326e3c78dd2378b286603a86d6ba7a53f453d5ee9c0b5824613adaaf3aeb2b1addf6e8cdb7d044b41c317367c3dd9cdbfaf9cdf080aae142cb9",
-            "file": "src/app/page/language-icon/language-icon.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "storybook-language-icon",
-            "styleUrls": [
-                "./language-icon.component.css"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./language-icon.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [
-                {
-                    "name": "backgroundColor",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nWhat background color to use\n",
-                    "description": "<p>What background color to use</p>\n",
-                    "line": 19,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "label",
-                    "defaultValue": "'accGateButton2'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "pos": 592,
-                            "end": 605,
-                            "flags": 4227072,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 325,
-                            "tagName": {
-                                "pos": 593,
-                                "end": 601,
-                                "flags": 4227072,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 79,
-                                "escapedText": "required"
-                            },
-                            "comment": ""
-                        }
-                    ],
-                    "rawdescription": "\n\nButton contents\n\n",
-                    "description": "<p>Button contents</p>\n",
-                    "line": 33,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "primary",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nIs this the principal call to action on the page?\n",
-                    "description": "<p>Is this the principal call to action on the page?</p>\n",
-                    "line": 13,
-                    "type": "boolean",
-                    "decorators": []
-                },
-                {
-                    "name": "size",
-                    "defaultValue": "'medium'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nHow large should the button be?\n",
-                    "description": "<p>How large should the button be?</p>\n",
-                    "line": 25,
-                    "type": "\"small\" | \"medium\" | \"large\"",
-                    "decorators": []
-                }
-            ],
-            "outputsClass": [
-                {
-                    "name": "onClick",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nOptional click handler\n",
-                    "description": "<p>Optional click handler</p>\n",
-                    "line": 39,
-                    "type": "EventEmitter"
-                }
-            ],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 50,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-language-icon',\n  templateUrl: './language-icon.component.html',\n  styleUrls: ['./language-icon.component.css']\n})\nexport class LanguageIconComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'accGateButton2';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-language-icon--primary' : 'storybook-language-icon--secondary';\n\n    return ['storybook-language-icon', `storybook-language-icon--${this.size}`, mode];\n  }\n\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": ".Vector {\r\n  position: absolute;\r\n  top: 54px;\r\n  right: 68px;\r\n  width: 26px;\r\n  height: 26px;\r\n}\r\n\r\nimg.Language-Desktop-Icon {\r\n  position: absolute;\r\n  top: 1px;\r\n  right: 1px;\r\n  width: 26px;\r\n  height: 26px;\r\n  object-fit: contain;\r\n  box-shadow: 0 1px 1px 0 rgba(61, 142, 207, 0.15);\r\n}\r\n",
-                    "styleUrl": "./language-icon.component.css"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 45
-            },
-            "accessors": {
-                "classes": {
-                    "name": "classes",
-                    "getSignature": {
-                        "name": "classes",
-                        "type": "[]",
-                        "returnType": "string[]",
-                        "line": 41
-                    }
-                }
-            },
-            "templateData": "<div class=\"Vector\">\n<img (click)=\"onClick.emit($event)\" [ngClass]=\"classes\" [ngStyle]=\"{ 'background-color': backgroundColor }\"\n   src=\"/assets/images/language-desktop-icon.png\"\n       srcset=\"/assets/images/language-desktop-icon@2x.png 2x,\n             /assets/images/language-desktop-icon@3x.png 3x\"\n       class=\"Language-Desktop-Icon\"  alt=\"language-desktop-icon\"/>\n\n</div>\n"
-        },
-        {
             "name": "LoginComponent",
             "id": "component-LoginComponent-712496bc8305c41b4b508f1db6d351c7dca2f7e2743f54ccf9cad17fd423311c8f628d1ad40e2ddefccbbedc924968da07fa5d27f8073935e5126224cd2ea51c",
             "file": "src/app/login/login.component.ts",
@@ -2982,7 +3272,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "label {\r\n  display: block;\r\n  margin-top: 10px;\r\n}\r\n\r\n.card-container.card {\r\n  max-width: 400px !important;\r\n  padding: 10px 10px;\r\n\r\n}\r\n.col-md-12{\r\n  position: center;\r\n  width: 637.5px;\r\n  height: 819px;\r\n  left: calc(50% - 637.5px/2 - 0.25px);\r\n  top: calc(50% - 819px/2 - 20.5px);\r\n\r\n}\r\n\r\n.card {\r\n  padding: 20px 25px 30px;\r\n  margin: 0 auto 25px;\r\n  -moz-border-radius: 2px;\r\n  -webkit-border-radius: 2px;\r\n  border-radius: 2px;\r\n  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);\r\n  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);\r\n  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);\r\n}\r\n.Aeonix-App-Center {\r\n  width: 447px;\r\n  height: 82px;\r\n  flex-grow: 0;\r\n  margin: 0 0 19.8px;\r\n  font-family: NotoSans;\r\n  font-size: 40px;\r\n  font-weight: 800;\r\n  font-stretch: normal;\r\n  font-style: normal;\r\n  line-height: 1.13;\r\n  letter-spacing: -0.44px;\r\n  text-align: left;\r\n  color: #000;\r\n}\r\n\r\n._1Q9if, ._2Hij5 {\r\n  word-wrap: break-word;\r\n  overflow-wrap: break-word;\r\n  text-align: start;\r\n  pointer-events: none;\r\n}\r\n\r\n._3SQN-, ._3wnIc {\r\n  position: absolute;\r\n  top: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n}\r\n\r\n.multi-bg-example {\r\n  width: 980px;\r\n  height: 289px;\r\n  object-fit: cover;\r\n  object-position: 50% 50%;\r\n}\r\n\r\n.font_0 {\r\n  font-size:44px;\r\n  text-align:left;\r\n  color:#FFFFFF;\r\n}\r\n\r\n.alert, .alert-success {\r\n  width: 50%;\r\n}\r\n\r\n\r\n.background {\r\n  background-size: cover;\r\n  background-origin: border-box;\r\n  background-image: url(../_services/assets/images/Background.webp);\r\n  /*linear-gradient(to right, rgba(30, 75, 115, 1), rgba(255, 255, 255, 0));*/\r\n  background-repeat: no-repeat;\r\n  background-position: top left;\r\n\r\n}\r\n\r\n.card-footer {\r\n  padding-top: 0.1rem;\r\n  padding-right: 0.1rem;\r\n  padding-bottom: 0.1rem;\r\n  padding-left: 0.1rem;\r\n\r\n  border-top: 0.1rem solid rgba(0, 0, 0, 0.125);\r\n\r\n  border-bottom: 0.1rem;\r\n  background-color: rgba(0, 0, 0, 0.03);\r\n\r\n}\r\n\r\n.footer ul.footer-menu li.bold a {\r\n  font-weight: 700;\r\n}\r\n",
+                    "data": "\r\n\r\n\r\n.storybook-input {\r\n  position: relative;\r\n  width: 445px;\r\n  height: 102px;\r\n  left: calc(50% - 445px/2 - 0.5px);\r\n  top: calc(50% - 101.16px/2 - 171.58px);\r\n  padding: 0.8px 0 0;\r\n  background-color: #FFFFFF;\r\n}\r\n\r\n.storybook-input .Frame-3 {\r\n  width: 445px;\r\n  height: 102px;\r\n  left: calc(50% - 445px/2 - 0.5px);\r\n  top: calc(50% - 101.16px/2 - 171.58px);\r\n  padding: 0.8px 0 0;\r\n  background-color: #fff;\r\n}\r\n\r\n.user-name {\r\n  position: absolute;\r\n  width: 82px;\r\n  height: 35px;\r\n  left: 0%;\r\n  right: 82.7%;\r\n  top: 10%;\r\n  bottom: 68.37%;\r\n  /* identical to box height, or 223% */\r\n  display: flex;\r\n  align-items: center;\r\n  letter-spacing: -0.011em;\r\n  text-transform: uppercase;\r\n\r\n  color: #000000;\r\n}\r\n\r\n\r\n\r\n/* D Caps Regular */\r\n.D-Caps-Regular {\r\n  font-family: NotoSans, ui-serif;\r\n  font-style: normal;\r\n  font-weight: 400;\r\n  font-size: 14px;\r\n  line-height: 31px;\r\n}\r\n\r\nimg.icon-input-username {\r\n  position: absolute;\r\n  width: 22.72px;\r\n  height: 26.74px;\r\n  left: 25px;\r\n  bottom: 8px;\r\n  transform: rotate(0deg);\r\n  background-position: bottom;\r\n}\r\n\r\nimg.icon-input-password {\r\n  position: absolute;\r\n  width: 22.72px;\r\n  height: 26.74px;\r\n  left: 25px;\r\n  bottom: 8px;\r\n  transform: rotate(0deg);\r\n  background-position: bottom;\r\n}\r\n\r\n.DanK203 {\r\n  position: relative;\r\n  height: 25px;\r\n  width: 228px;\r\n  left: 35px;\r\n  bottom: -6.5px;\r\n  margin: 4.2px 1px 2.8px 20.3px;\r\n\r\n  /* D Example Italic */\r\n  object-fit: contain;\r\n  font-family: NotoSans, ui-serif;\r\n  font-style: normal;\r\n  font-weight: 400;\r\n  font-size: 17px;\r\n  line-height: 48%;\r\n  /* or 65% */\r\n\r\n  box-shadow: none;\r\n  display: flex;\r\n  align-items: center;\r\n  letter-spacing: -0.19px;\r\n\r\n  border-color: rgba(255, 255, 255, 0);\r\n  color: #C8C8C8;\r\n\r\n\r\n}\r\n\r\n\r\n\r\ninput[type=text]:focus {\r\n  background: #99999900;\r\n  box-shadow: 0 0 5px #99999900;\r\n  border-top-color: #99999900;\r\n  border-left-color: #99999900;\r\n  border-right-color: #99999900;\r\n}\r\n\r\n\r\n\r\n.Vector2 {\r\n  box-sizing: border-box;\r\n  position: absolute;\r\n\r\n\r\n  left: 0.2%;\r\n  right: 0.03%;\r\n  top: 42.66%;\r\n  bottom: 0;\r\n\r\n  /* White */\r\n  background: #FFFFFF;\r\n  /* Blue */\r\n  border: 2px solid #3D8ECF;\r\n  border-radius: 10px;\r\n}\r\n\r\n.login-button {\r\n\r\n\r\n  width: 446px;\r\n  height: 63px;\r\n  margin: 26px 0 0 1px;\r\n  padding: 17px 136px 17px 139px;\r\n  border-radius: 7px;\r\n  background-image: linear-gradient(180deg, #3D8ECF 0%, #58A6E4 100%);\r\n\r\n  font-family: 'Noto Sans';\r\n  font-style: normal;\r\n  font-weight: 700;\r\n  font-size: 21px;\r\n  line-height: 11px;\r\n}\r\n\r\n.thematic-break {\r\n  margin: 45px 2px 71px 2.5px;\r\n  background-color: #3d8ecf;\r\n  border: 1px solid #3D8ECF;\r\n}\r\n\r\n.forgot-password {\r\n  /* D UnderLine Regular */\r\n\r\n  font-family: 'Noto Sans';\r\n  font-style: normal;\r\n  font-weight: 400;\r\n  font-size: 17px;\r\n  line-height: 31px;\r\n  /* identical to box height, or 183% */\r\n\r\n  display: flex;\r\n  align-items: center;\r\n  text-align: center;\r\n  letter-spacing: -0.011em;\r\n  text-decoration-line: underline;\r\n\r\n  color: #000000;\r\n}\r\n\r\nlabel {\r\n  display: block;\r\n  margin-top: 10px;\r\n}\r\n\r\n.card-container.card {\r\n  max-width: 400px !important;\r\n  padding: 10px 10px;\r\n\r\n}\r\n.col-md-12{\r\n  position: center;\r\n  width: 637.5px;\r\n  height: 819px;\r\n  left: calc(50% - 637.5px/2 - 0.25px);\r\n  top: calc(50% - 819px/2 - 20.5px);\r\n\r\n}\r\n\r\n\r\n.card {\r\n  position: absolute;\r\n  left: 5.18%;\r\n  right: 4.78%;\r\n  top: 0;\r\n  bottom: 0;\r\n  border-radius: 14px;\r\n  box-shadow: -4px 4px 10px 0 rgba(88, 166, 228, 0.3);\r\n  background-color: #fff;\r\n}\r\n\r\n\r\n.Aeonix-App-Center {\r\n  position: absolute;\r\n  top: 12.94%;\r\n  bottom: 77.05%;\r\n\r\n  width: 447px;\r\n  height: 82px;\r\n  flex-grow: 0;\r\n  margin: 0 0 19.8px;\r\n  font-family: NotoSans;\r\n  font-size: 40px;\r\n  font-weight: 800;\r\n  font-stretch: normal;\r\n  font-style: normal;\r\n  line-height: 45px;\r\n  letter-spacing: -0.011px;\r\n  text-align: left;\r\n  color: #000000;\r\n}\r\n\r\n._1Q9if, ._2Hij5 {\r\n  word-wrap: break-word;\r\n  overflow-wrap: break-word;\r\n  text-align: start;\r\n  pointer-events: none;\r\n}\r\n\r\n._3SQN-, ._3wnIc {\r\n  position: absolute;\r\n  top: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n}\r\n\r\n.multi-bg-example {\r\n  width: 980px;\r\n  height: 289px;\r\n  object-fit: cover;\r\n  object-position: 50% 50%;\r\n}\r\n\r\n.font_0 {\r\n  font-size:44px;\r\n  text-align:left;\r\n  color:#FFFFFF;\r\n}\r\n\r\n.alert, .alert-success {\r\n  width: 50%;\r\n}\r\n\r\n\r\n.background {\r\n  background-size: cover;\r\n  background-origin: border-box;\r\n  background-image: url(../_services/assets/images/Background.webp);\r\n  /*linear-gradient(to right, rgba(30, 75, 115, 1), rgba(255, 255, 255, 0));*/\r\n  background-repeat: no-repeat;\r\n  background-position: top left;\r\n\r\n}\r\n\r\n.card-footer {\r\n  padding-top: 0.1rem;\r\n  padding-right: 0.1rem;\r\n  padding-bottom: 0.1rem;\r\n  padding-left: 0.1rem;\r\n\r\n  border-top: 0.1rem solid rgba(0, 0, 0, 0.125);\r\n\r\n  border-bottom: 0.1rem;\r\n  background-color: rgba(0, 0, 0, 0.03);\r\n\r\n}\r\n\r\n.footer ul.footer-menu li.bold a {\r\n  font-weight: 700;\r\n}\r\n",
                     "styleUrl": "./login.component.css"
                 }
             ],
@@ -3046,7 +3336,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "\r\n<div id=\"main-login-card\" class=\"col-md-12\">\r\n  <storybook-card  class=\"card-container\"></storybook-card>\r\n  <div class=\"card-container\">\r\n\r\n    <span class=\"Aeonix-App-Center\">\r\n  Aeonix App Center\r\n</span>\r\n    <!--img id=\"profile-img\" class=\"user-image\" src=\"//ssl.gstatic.com/accounts/ui/avatar_2x.png\"\r\n      class=\"profile-img-card\" /-->\r\n\r\n    <form *ngIf=\"!isLoggedIn\" name=\"form\" (ngSubmit)=\"f.form.valid && onSubmit()\" #f=\"ngForm\" novalidate>\r\n\r\n\r\n      <div class=\"form-group\">\r\n        <label for=\"username\">Username</label>\r\n\r\n        <input type=\"text\" class=\"form-control\" name=\"username\" [(ngModel)]=\"form.username\"\r\n               placeholder=\"ea2\" required #username=\"ngModel\"/>\r\n\r\n        <div class=\"alert alert-danger\" role=\"alert\" *ngIf=\"username.errors && f.submitted\">\r\n          Username is required!\r\n        </div>\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"password\">Password</label>\r\n        <input type=\"password\" class=\"form-control\" name=\"password\"\r\n          [(ngModel)]=\"form.password\" placeholder=\"e1996\" required minlength=\"1\" #password=\"ngModel\"/>\r\n        <div\r\n          class=\"alert alert-danger\"\r\n          role=\"alert\"\r\n          *ngIf=\"password.errors && f.submitted\">\r\n          <div *ngIf=\"password.errors.required\">Password is required</div>\r\n          <div *ngIf=\"password.errors.minlength\">\r\n            Password must be at least 1 characters\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <button class=\"btn btn-primary btn-block\">Login</button>\r\n\r\n        <div>\r\n          <a (mouseover)=\"popover.show()\" (mouseleave)=\"popover.hide()\" (click)=\"openReplacePassword()\"\r\n             class=\"form-check-label white-text\"  href=\"#/login\" mdbPopoverTitle=\"Account recovery\" #popover=\"mdbPopover\"\r\n             mdbPopover=\"To help keep your account safe, we will make sure that it’s really you trying to sign in\">\r\n            Forgot password?\r\n          </a>\r\n        </div>\r\n\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <div class=\"alert alert-danger\" role=\"alert\" *ngIf=\"f.submitted && isLoginFailed\">\r\n          Login failed: {{ loginErrorMessage }}\r\n        </div>\r\n      </div>\r\n    </form>\r\n\r\n\r\n\r\n    <div class=\"alert alert-success\" *ngIf=\"isLoggedIn\">\r\n      Logged in as {{ roles }}.\r\n    </div>\r\n\r\n    <mdb-card-footer class=\"form-check-label white-text border-bottom-0\" id=\"tests\">\r\n      <label for=\"tests\" class=\"form-check-label white-text\"\r\n              style=\"margin-bottom: 1px; padding: 1px\">R&D test:\r\n        <a (click)=\"openRegisterForm()\" href=\"#/login\" class=\"green-text font-weight-bold\">RegistrationForm</a>\r\n        <b> ,</b>\r\n        <a (click)=\"openReplacePassword()\" href=\"#/login\" class=\"green-text font-weight-bold pl-2\">ReplacePassForm</a>\r\n        <b> ,</b>\r\n        <a (click)=\"test()\" href=\"#/login\" class=\"green-text font-weight-bold pl-2\">test</a>\r\n      </label>\r\n    </mdb-card-footer>\r\n\r\n\r\n\r\n\r\n</div>\r\n\r\n"
+            "templateData": "\r\n<div id=\"main-login-card\" class=\"col-md-12\">\r\n  <storybook-card  class=\"card-container\"></storybook-card>\r\n  <div  class=\"card  h-100 d-flex align-items-center justify-content-center\">\r\n\r\n    <div class=\"Aeonix-App-Center\">\r\n    <a>Aeonix App Center</a>\r\n    </div>\r\n    <!--img id=\"profile-img\" class=\"user-image\" src=\"//ssl.gstatic.com/accounts/ui/avatar_2x.png\"\r\n      class=\"profile-img-card\" /-->\r\n\r\n    <br>\r\n\r\n    <form *ngIf=\"!isLoggedIn\" name=\"form\" (ngSubmit)=\"f.form.valid && onSubmit()\" #f=\"ngForm\" novalidate>\r\n\r\n      <div class=\"list-item storybook-input Frame-3 \">\r\n        <a class=\"user-name D-Caps-Regular\">USER NAME</a>\r\n\r\n        <br>\r\n        <label [attr.aria-label]=\"'username'\" for=\"username\" class=\"Vector2 \">\r\n\r\n          <img src=\"../../assets/images/User2ldpi.png\" class=\"icon-input-username\" alt=\"icon input username\" />\r\n\r\n          <input type=\"text\" [value]=\"'DanK203'\" id=\"username\" name=\"username\"  class=\"DanK203\"\r\n                 [(ngModel)]=\"form.username\" placeholder=\"Ex. Saul Ramirez\" required #username=\"ngModel\"/>\r\n        </label>\r\n\r\n        <div class=\"alert alert-danger\" role=\"alert\" *ngIf=\"username.errors && f.submitted\">\r\n          Username is required!\r\n        </div>\r\n      </div>\r\n\r\n      <br>\r\n\r\n      <div class=\"storybook-input Frame-3 \">\r\n        <span class=\"user-name D-Caps-Regular\">PASSWORD</span>\r\n\r\n\r\n        <br>\r\n        <label [attr.aria-label]=\"'password'\" for=\"password\" class=\"Vector2 \">\r\n          <img src=\"../../assets/images/LockIcon2ldpi.png\" class=\"icon-input-password\" alt=\"icon input password\" />\r\n          <input type=\"text\" [value]=\"'DanK203'\" id=\"password\" name=\"password\"  class=\"DanK203\"\r\n                 [(ngModel)]=\"form.password\" placeholder=\"e1996\" required #password=\"ngModel\"/>\r\n        </label>\r\n\r\n        <div class=\"alert alert-danger\" role=\"alert\" *ngIf=\"password.errors && f.submitted\">\r\n          <div *ngIf=\"password.errors.required\">Password is required</div>\r\n          <div *ngIf=\"password.errors.minlength\">Password must be at least 1 characters</div>\r\n        </div>\r\n      </div>\r\n\r\n      <br>\r\n      <div class=\"thematic-break\"></div>\r\n\r\n      <div class=\"form-group\">\r\n\r\n        <div>\r\n          <!--a (mouseover)=\"popover.show()\" (mouseleave)=\"popover.hide()\" (click)=\"openReplacePassword()\"\r\n             class=\"form-check-label white-text\"  href=\"#/login\" mdbPopoverTitle=\"Account recovery\" #popover=\"mdbPopover\"\r\n             mdbPopover=\"To help keep your account safe, we will make sure that it’s really you trying to sign in\">\r\n            Forgot password?\r\n          </a-->\r\n          <a (click)=\"openReplacePassword()\"\r\n             class=\"forgot-password\"  href=\"#/login\" >\r\n            Forgot password?\r\n          </a>\r\n\r\n          <button class=\"login-button\">Continue</button>\r\n        </div>\r\n\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <div class=\"alert alert-danger\" role=\"alert\" *ngIf=\"f.submitted && isLoginFailed\">\r\n          Login failed: {{ loginErrorMessage }}\r\n        </div>\r\n      </div>\r\n    </form>\r\n\r\n\r\n\r\n    <div class=\"alert alert-success\" *ngIf=\"isLoggedIn\">\r\n      Logged in as {{ roles }}.\r\n    </div>\r\n\r\n    <!--mdb-card-footer class=\"form-check-label white-text border-bottom-0\" id=\"tests\">\r\n      <label for=\"tests\" class=\"form-check-label white-text\"\r\n              style=\"margin-bottom: 1px; padding: 1px\">R&D test:\r\n        <a (click)=\"openRegisterForm()\" href=\"#/login\" class=\"green-text font-weight-bold\">RegistrationForm</a>\r\n        <b> ,</b>\r\n        <a (click)=\"openReplacePassword()\" href=\"#/login\" class=\"green-text font-weight-bold pl-2\">ReplacePassForm</a>\r\n        <b> ,</b>\r\n        <a (click)=\"test()\" href=\"#/login\" class=\"green-text font-weight-bold pl-2\">test</a>\r\n      </label>\r\n    </mdb-card-footer-->\r\n\r\n\r\n\r\n\r\n</div>\r\n\r\n"
         },
         {
             "name": "Page2Component",
@@ -3167,7 +3457,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "\r\n.storybook-page2 {\r\n  position: absolute;\r\n  width: inherit;\r\n  height: inherit;\r\n}\r\n\r\n.Desktop-1Login-1 {\r\n  width: 100%;\r\n  height: 100%;\r\n  flex-grow: 0;\r\n}\r\n\r\n/*background-image: linear-gradient(228.37deg, #EFF8FF 22.25%, #B0DCFF 88.18%)*/\r\n\r\n/*.Desktop-1Login-1 {\r\n  width: 1920px;\r\n  height: 1080px;\r\n  flex-grow: 0;\r\n  background-image: linear-gradient(228.37deg, #EFF8FF 22.25%, #B0DCFF 88.18%);\r\n}*/\r\n\r\ndiv.relative {\r\n  position: relative;\r\n  width: inherit;\r\n  height: inherit;\r\n}\r\n\r\n\r\n\r\n\r\n.Frame-1 {\r\n  width: 1920px;\r\n  height: 1080px;\r\n  flex-grow: 0;\r\n}\r\n\r\n.fa-pull-left {float:left}\r\n\r\n.fa-pull-right {float:right}\r\n\r\nimg.icon-1 {\r\n  position: absolute;\r\n  width: 305.7px;\r\n  height: 309px;\r\n  transform: rotate(0deg);\r\n  background-position: bottom;\r\n}\r\n\r\nimg.icon-2 {\r\n  position: absolute;\r\n  bottom: 0;\r\n  right: 0;\r\n  width: 372px;\r\n  height: 343px;\r\n  flex-grow: 0;\r\n}\r\n\r\n\r\n.storybook-page2--primary {\r\n\r\n  background: linear-gradient(228.37deg, #EFF8FF 22.25%, #B0DCFF 88.18%);\r\n}\r\n",
+                    "data": "\r\n.storybook-page2 {\r\n  position: absolute;\r\n  width: inherit;\r\n  height: inherit;\r\n}\r\n\r\n.Desktop-1Login-1 {\r\n  width: 100%;\r\n  height: 100%;\r\n  flex-grow: 0;\r\n}\r\n\r\n\r\n\r\n/*background-image: linear-gradient(228.37deg, #EFF8FF 22.25%, #B0DCFF 88.18%)*/\r\n\r\n/*.Desktop-1Login-1 {\r\n  width: 1920px;\r\n  height: 1080px;\r\n  flex-grow: 0;\r\n  background-image: linear-gradient(228.37deg, #EFF8FF 22.25%, #B0DCFF 88.18%);\r\n}*/\r\n\r\ndiv.relative {\r\n  position: relative;\r\n  width: inherit;\r\n  height: inherit;\r\n}\r\n\r\n\r\n\r\n\r\n.Frame-1 {\r\n  width: 1920px;\r\n  height: 1080px;\r\n  flex-grow: 0;\r\n}\r\n\r\n.fa-pull-left {float:left}\r\n\r\n.fa-pull-right {float:right}\r\n\r\nimg.icon-1 {\r\n  position: absolute;\r\n  width: 305.7px;\r\n  height: 309px;\r\n  transform: rotate(0deg);\r\n  background-position: bottom;\r\n}\r\n\r\nimg.icon-2 {\r\n  position: absolute;\r\n  bottom: 0;\r\n  right: 0;\r\n  width: 372px;\r\n  height: 343px;\r\n  flex-grow: 0;\r\n}\r\n\r\n\r\n.storybook-page2--primary {\r\n\r\n  background: linear-gradient(228.37deg, #EFF8FF 22.25%, #B0DCFF 88.18%);\r\n}\r\n",
                     "styleUrl": "./page.component.scss"
                 }
             ],
@@ -3194,7 +3484,7 @@
                     }
                 }
             },
-            "templateData": "\n<!--html>\n<head>\n  <style>\n\n  </style>\n  <title></title>\n</head>\n<body>\n\n<article><div class=\"Frame-1 relative\">\n<section class=\"relative \" Style=\"{ 'background': backgroundColor }\"-->\n\n<figure class=\"Desktop-1Login-1\"  [ngClass]=\"classes\" [ngStyle]=\"{ 'background-color': background }\" >\n      <!--div [ngStyle]=\"{ 'background-color': background }\" ></div-->\n    <img src=\"assets/images/icon-1.webp\" srcset=\"/assets/images/icon-1@2x.webp 2x, /assets/images/icon-1@3x.webp 3x\"\n          alt=\"icon-1\" />\n\n    <img src=\"assets/images/icon-2.webp\" srcset=\"/assets/images/icon-2@2x.webp 2x, /assets/images/icon-2@3x.webp 3x\"\n         class=\"icon-2  \" alt=\"icon-2fdf\" />\n\n\n</figure>\n\n<storybook-language-icon size=\"large\"></storybook-language-icon>\n<storybook-tadiran-icon></storybook-tadiran-icon>\n\n\n<app-login></app-login>\n\n<!--storybook-form\n  [loading]=\"false\"\n  [storyInputs]=\"storyInputsInOrder\"\n></storybook-form-->\n\n\n<!--/section></div>\n</article>\n\n</body>\n</html-->\n\n\n"
+            "templateData": "\n<!--html>\n<head>\n  <style>\n\n  </style>\n  <title></title>\n</head>\n<body>\n\n<article><div class=\"Frame-1 relative\">\n<section class=\"relative \" Style=\"{ 'background': backgroundColor }\"-->\n\n<figure class=\"Desktop-1Login-1\"  [ngClass]=\"classes\" [ngStyle]=\"{ 'background-color': background }\" >\n      <!--div [ngStyle]=\"{ 'background-color': background }\" ></div-->\n    <img src=\"assets/images/icon-1.webp\" srcset=\"/assets/images/icon-1@2x.webp 2x, /assets/images/icon-1@3x.webp 3x\"\n          alt=\"icon-1\" />\n\n    <img src=\"assets/images/icon-2.webp\" srcset=\"/assets/images/icon-2@2x.webp 2x, /assets/images/icon-2@3x.webp 3x\"\n         class=\"icon-2  \" alt=\"icon-2fdf\" />\n\n\n</figure>\n\n<storybook-button-language size=\"large\"></storybook-button-language>\n<storybook-button-tadiran></storybook-button-tadiran>\n<storybook-button-globe></storybook-button-globe>\n\n<app-login></app-login>\n\n<!--storybook-form\n  [loading]=\"false\"\n  [storyInputs]=\"storyInputsInOrder\"\n></storybook-form-->\n\n\n<!--/section></div>\n</article>\n\n</body>\n</html-->\n\n\n"
         },
         {
             "name": "PageComponent",
@@ -4380,151 +4670,6 @@
             "templateData": "\r\n<!--div class=\"list-item {{ storyInput?.state }}\">\r\n  <label [attr.aria-label]=\"'archiveInput-' + storyInput.id\" for=\"checked-{{ storyInput?.id }}\" class=\"checkbox\">\r\n    <input\r\n      type=\"checkbox\"\r\n      disabled=\"true\"\r\n      [defaultChecked]=\"storyInput?.state === 'INPUT_ARCHIVED'\"\r\n      name=\"checked-{{ storyInput?.id }}\"\r\n      id=\"checked-{{ storyInput?.id }}\"\r\n    />\r\n    <span class=\"checkbox-custom\" (click)=\"onArchive(storyInput.id)\"></span>\r\n  </label>\r\n  <label [attr.aria-label]=\"storyInput.title + ''\" for=\"title-{{ storyInput?.id }}\" class=\"title\">\r\n    <input type=\"text\" [value]=\"storyInput.title\" readonly=\"true\" id=\"title-{{ storyInput?.id }}\" name=\"title-{{ storyInput?.id }}\" placeholder=\"Input title\"/>\r\n  </label>\r\n  <button *ngIf=\"storyInput?.state !== 'INPUT_ARCHIVED'\" class=\"pin-button\" [attr.aria-label]=\"'pinTask-' + storyInput.id\" (click)=\"onPin(storyInput.id)\">\r\n    <span class=\"icon-star\"></span>\r\n  </button>\r\n</div-->\r\n\r\n\r\n\r\n<div class=\"list-item storybook-input Frame-3 {{ storyInput?.state }}\">\r\n  <span class=\"user-name D-Caps-Regular\">User Name</span>\r\n\r\n  <br>\r\n  <label [attr.aria-label]=\"storyInput.title + ''\" for=\"title-{{ storyInput?.id }}\" class=\"Vector2 \">\r\n    <input type=\"text\" [value]=\"storyInput.title\" readonly=\"true\" id=\"title-{{ storyInput?.id }}\" name=\"title-{{ storyInput?.id }}\" placeholder=\"Input title\" class=\"DanK203\"/>\r\n  </label>\r\n\r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n"
         },
         {
-            "name": "TadiranIconComponent",
-            "id": "component-TadiranIconComponent-fc838fffc07b1830f8edbc027bddf05ca46505037904d8acdde698cfd1a555249fda0f641e404ff59ad788aa1469d4f8a420da19c1aa5d3135ab89c93d9ef1d0",
-            "file": "src/app/page/tadiran-icon/tadiran-icon.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "storybook-tadiran-icon",
-            "styleUrls": [
-                "./tadiran-icon.component.css"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./tadiran-icon.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [
-                {
-                    "name": "backgroundColor",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nWhat background color to use\n",
-                    "description": "<p>What background color to use</p>\n",
-                    "line": 19,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "label",
-                    "defaultValue": "'accGateButton2'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "pos": 588,
-                            "end": 601,
-                            "flags": 4227072,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 325,
-                            "tagName": {
-                                "pos": 589,
-                                "end": 597,
-                                "flags": 4227072,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 79,
-                                "escapedText": "required"
-                            },
-                            "comment": ""
-                        }
-                    ],
-                    "rawdescription": "\n\nButton contents\n\n",
-                    "description": "<p>Button contents</p>\n",
-                    "line": 33,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "primary",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nIs this the principal call to action on the page?\n",
-                    "description": "<p>Is this the principal call to action on the page?</p>\n",
-                    "line": 13,
-                    "type": "boolean",
-                    "decorators": []
-                },
-                {
-                    "name": "size",
-                    "defaultValue": "'medium'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nHow large should the button be?\n",
-                    "description": "<p>How large should the button be?</p>\n",
-                    "line": 25,
-                    "type": "\"small\" | \"medium\" | \"large\"",
-                    "decorators": []
-                }
-            ],
-            "outputsClass": [
-                {
-                    "name": "onClick",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nOptional click handler\n",
-                    "description": "<p>Optional click handler</p>\n",
-                    "line": 39,
-                    "type": "EventEmitter"
-                }
-            ],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 50,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-tadiran-icon',\n  templateUrl: './tadiran-icon.component.html',\n  styleUrls: ['./tadiran-icon.component.css']\n})\nexport class TadiranIconComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'accGateButton2';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-tadiran-icon--primary' : 'storybook-tadiran-icon--secondary';\n\n    return ['storybook-tadiran-icon', `storybook-tadiran-icon--${this.size}`, mode];\n  }\n\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": ".Vector {\r\n  position: absolute;\r\n  bottom: 50px;\r\n  left: 30px;\r\n  width: 151px;\r\n  height: 39px;\r\n}\r\n\r\nimg.Language-Desktop-Icon {\r\n  position: absolute;\r\n  top: 1px;\r\n  right: 1px;\r\n  width: 151px;\r\n  height: 39px;\r\n  object-fit: contain;\r\n  box-shadow: 0 1px 1px 0 rgba(61, 142, 207, 0.15);\r\n}\r\n",
-                    "styleUrl": "./tadiran-icon.component.css"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 45
-            },
-            "accessors": {
-                "classes": {
-                    "name": "classes",
-                    "getSignature": {
-                        "name": "classes",
-                        "type": "[]",
-                        "returnType": "string[]",
-                        "line": 41
-                    }
-                }
-            },
-            "templateData": "<div class=\"Vector\">\n<img (click)=\"onClick.emit($event)\" [ngClass]=\"classes\" [ngStyle]=\"{ 'background-color': backgroundColor }\"\n   src=\"/assets/images/aeonix_logo_150.png\"\n       srcset=\"/assets/images/aeonix_logo_150.png 2x,\n             /assets/images/language-desktop-icon@3x.png 3x\"\n       class=\"Language-Desktop-Icon\"  alt=\"language-desktop-icon\"/>\n\n</div>\n"
-        },
-        {
             "name": "TaskComponent",
             "id": "component-TaskComponent-1ead2db9b777f31d4e265a94c313111c50b28b1190eb4cadd8b7860a535428433fc7374d17aabfa5415ddf2602fb06d5bd00259e94f53839250fc950726dd118",
             "file": "src/stories/task/task.component.ts",
@@ -4785,13 +4930,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-085435cb6a1bcd7b6236a18ac76605e7c28e608c9c3c2e89bb0dc645aee5ec56bcd6d7f553cbe2364ea0e1a29a9b6b4e65a2ed88c2234e572f92f6297b117d92",
+            "id": "module-AppModule-d9cd8ea635c019e176f74d45a6a8b5b611acda6ff3c7eff25596b0ddabccfa0318b92b6d480a6c789ce3c240bb7b9d5abe229195d91bfeec28d2ab4f7e5d7e52",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport {FormsModule, ReactiveFormsModule} from '@angular/forms';\r\nimport { HttpClientModule } from '@angular/common/http';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { LoginComponent } from './login/login.component';\r\nimport { RegisterComponent } from './register/register.component';\r\nimport { HomeComponent } from './home/home.component';\r\nimport { ProfileComponent } from './profile/profile.component';\r\nimport { BoardAdminComponent } from './board-admin/board-admin.component';\r\nimport { BoardModeratorComponent } from './board-moderator/board-moderator.component';\r\nimport { BoardUserComponent } from './board-user/board-user.component';\r\n\r\nimport { authInterceptorProviders, AuthInterceptor } from './_helpers/auth.interceptor';\r\nimport {NgbDatepickerModule} from \"@ng-bootstrap/ng-bootstrap\";\r\nimport { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';\r\nimport { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';\r\nimport { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';\r\nimport { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';\r\nimport { MdbDropdownModule } from 'mdb-angular-ui-kit/dropdown';\r\nimport { MdbFormsModule } from 'mdb-angular-ui-kit/forms';\r\nimport { MdbModalModule } from 'mdb-angular-ui-kit/modal';\r\nimport { MdbPopoverModule } from 'mdb-angular-ui-kit/popover';\r\nimport { MdbRadioModule } from 'mdb-angular-ui-kit/radio';\r\nimport { MdbRangeModule } from 'mdb-angular-ui-kit/range';\r\nimport { MdbRippleModule } from 'mdb-angular-ui-kit/ripple';\r\nimport { MdbScrollspyModule } from 'mdb-angular-ui-kit/scrollspy';\r\nimport { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';\r\nimport { MdbModalRef } from 'mdb-angular-ui-kit/modal';\r\nimport { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';\r\nimport { MdbValidationModule, MdbErrorDirective, MdbSuccessDirective } from 'mdb-angular-ui-kit/validation';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { MdbInputDirective  } from 'mdb-angular-ui-kit/forms';\r\nimport { ModalModule, TooltipModule, PopoverModule, ButtonsModule, MDBBootstrapModule } from 'angular-bootstrap-md';\r\nimport { RegisterFormComponent } from './register-form/register-form.component';\r\nimport {ReplacePassFormComponent} from \"./replace-pass-form/replace-pass-form.component\";\r\nimport {ApiErrorMessagePipe} from \"./pipes/api-error-message.pipe\";\r\nimport {LoginErrorMessagePipe} from \"./pipes/login-error-message.pipe\";\r\nimport  Page2Component  from './page/page.component';\r\nimport { TaskComponent } from '../stories/task/task.component';\r\nimport { LanguageIconComponent } from './page/language-icon/language-icon.component';\r\nimport { TadiranIconComponent } from './page/tadiran-icon/tadiran-icon.component';\r\nimport Button from '../stories/buttons/button.component'\r\nimport Card from '../stories/cards/card.component'\r\nimport {StoryInputComponent} from '../stories/inputs/story-input.component'\r\nimport {FormComponent} from '../stories/forms/form.component'\r\nimport {TaskListComponent} from '../stories/task-list/task-list.component'\r\n\r\n@NgModule({\r\n    declarations: [\r\n        AppComponent,\r\n        LoginComponent,\r\n        RegisterComponent,\r\n        HomeComponent,\r\n        ProfileComponent,\r\n        BoardAdminComponent,\r\n        BoardModeratorComponent,\r\n        BoardUserComponent,\r\n        RegisterFormComponent,\r\n        ReplacePassFormComponent,\r\n        ApiErrorMessagePipe,\r\n        LoginErrorMessagePipe,\r\n        Page2Component,\r\n        LanguageIconComponent,\r\n        TadiranIconComponent,\r\n        Button,\r\n        Card,\r\n        StoryInputComponent,\r\n        FormComponent,\r\n        TaskComponent,\r\n        TaskListComponent\r\n\r\n    ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    FormsModule,\r\n    HttpClientModule,\r\n    NgbDatepickerModule,\r\n    MdbAccordionModule,\r\n    MdbCarouselModule,\r\n    MdbCheckboxModule,\r\n    MdbCollapseModule,\r\n    MdbDropdownModule,\r\n    MdbFormsModule,\r\n    MdbModalModule,\r\n    MdbPopoverModule,\r\n    MdbRadioModule,\r\n    MdbRangeModule,\r\n    MdbRippleModule,\r\n    MdbScrollspyModule,\r\n    MdbTabsModule,\r\n    MdbTooltipModule,\r\n    //MdbValidationModule,\r\n    BrowserAnimationsModule,\r\n    ReactiveFormsModule,\r\n    ModalModule,\r\n    ButtonsModule,\r\n    MDBBootstrapModule.forRoot(),\r\n  ],\r\n  providers: [authInterceptorProviders],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport {FormsModule, ReactiveFormsModule} from '@angular/forms';\r\nimport { HttpClientModule } from '@angular/common/http';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { LoginComponent } from './login/login.component';\r\nimport { RegisterComponent } from './register/register.component';\r\nimport { HomeComponent } from './home/home.component';\r\nimport { ProfileComponent } from './profile/profile.component';\r\nimport { BoardAdminComponent } from './board-admin/board-admin.component';\r\nimport { BoardModeratorComponent } from './board-moderator/board-moderator.component';\r\nimport { BoardUserComponent } from './board-user/board-user.component';\r\n\r\nimport { authInterceptorProviders, AuthInterceptor } from './_helpers/auth.interceptor';\r\nimport {NgbDatepickerModule} from \"@ng-bootstrap/ng-bootstrap\";\r\nimport { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';\r\nimport { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';\r\nimport { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';\r\nimport { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';\r\nimport { MdbDropdownModule } from 'mdb-angular-ui-kit/dropdown';\r\nimport { MdbFormsModule } from 'mdb-angular-ui-kit/forms';\r\nimport { MdbModalModule } from 'mdb-angular-ui-kit/modal';\r\nimport { MdbPopoverModule } from 'mdb-angular-ui-kit/popover';\r\nimport { MdbRadioModule } from 'mdb-angular-ui-kit/radio';\r\nimport { MdbRangeModule } from 'mdb-angular-ui-kit/range';\r\nimport { MdbRippleModule } from 'mdb-angular-ui-kit/ripple';\r\nimport { MdbScrollspyModule } from 'mdb-angular-ui-kit/scrollspy';\r\nimport { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';\r\nimport { MdbModalRef } from 'mdb-angular-ui-kit/modal';\r\nimport { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';\r\nimport { MdbValidationModule, MdbErrorDirective, MdbSuccessDirective } from 'mdb-angular-ui-kit/validation';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { MdbInputDirective  } from 'mdb-angular-ui-kit/forms';\r\nimport { ModalModule, TooltipModule, PopoverModule, ButtonsModule, MDBBootstrapModule } from 'angular-bootstrap-md';\r\nimport { RegisterFormComponent } from './register-form/register-form.component';\r\nimport {ReplacePassFormComponent} from \"./replace-pass-form/replace-pass-form.component\";\r\nimport {ApiErrorMessagePipe} from \"./pipes/api-error-message.pipe\";\r\nimport {LoginErrorMessagePipe} from \"./pipes/login-error-message.pipe\";\r\nimport  Page2Component  from './page/page.component';\r\nimport { TaskComponent } from '../stories/task/task.component';\r\nimport { ButtonLanguageComponent } from '../stories/buttons/button-language/button-language.component';\r\nimport { ButtonTadiranComponent } from '../stories/buttons/button-tadiran/button-tadiran.component';\r\nimport Button from '../stories/buttons/button-example/button.component'\r\nimport { ButtonGlobeComponent } from '../stories/buttons/button-globe/button-globe.component'\r\nimport Card from '../stories/cards/card.component'\r\nimport {StoryInputComponent} from '../stories/inputs/story-input.component'\r\nimport {FormComponent} from '../stories/forms/form.component'\r\nimport {TaskListComponent} from '../stories/task-list/task-list.component'\r\n\r\n@NgModule({\r\n    declarations: [\r\n        AppComponent,\r\n        LoginComponent,\r\n        RegisterComponent,\r\n        HomeComponent,\r\n        ProfileComponent,\r\n        BoardAdminComponent,\r\n        BoardModeratorComponent,\r\n        BoardUserComponent,\r\n        RegisterFormComponent,\r\n        ReplacePassFormComponent,\r\n        ApiErrorMessagePipe,\r\n        LoginErrorMessagePipe,\r\n        Page2Component,\r\n        ButtonLanguageComponent,\r\n        ButtonTadiranComponent,\r\n        Button,\r\n        Card,\r\n        StoryInputComponent,\r\n        FormComponent,\r\n        TaskComponent,\r\n        TaskListComponent,\r\n        ButtonGlobeComponent\r\n\r\n    ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    FormsModule,\r\n    HttpClientModule,\r\n    NgbDatepickerModule,\r\n    MdbAccordionModule,\r\n    MdbCarouselModule,\r\n    MdbCheckboxModule,\r\n    MdbCollapseModule,\r\n    MdbDropdownModule,\r\n    MdbFormsModule,\r\n    MdbModalModule,\r\n    MdbPopoverModule,\r\n    MdbRadioModule,\r\n    MdbRangeModule,\r\n    MdbRippleModule,\r\n    MdbScrollspyModule,\r\n    MdbTabsModule,\r\n    MdbTooltipModule,\r\n    //MdbValidationModule,\r\n    BrowserAnimationsModule,\r\n    ReactiveFormsModule,\r\n    ModalModule,\r\n    ButtonsModule,\r\n    MDBBootstrapModule.forRoot(),\r\n  ],\r\n  providers: [authInterceptorProviders],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -4819,6 +4964,15 @@
                             "name": "Button"
                         },
                         {
+                            "name": "ButtonGlobeComponent"
+                        },
+                        {
+                            "name": "ButtonLanguageComponent"
+                        },
+                        {
+                            "name": "ButtonTadiranComponent"
+                        },
+                        {
                             "name": "Card"
                         },
                         {
@@ -4826,9 +4980,6 @@
                         },
                         {
                             "name": "HomeComponent"
-                        },
-                        {
-                            "name": "LanguageIconComponent"
                         },
                         {
                             "name": "LoginComponent"
@@ -4853,9 +5004,6 @@
                         },
                         {
                             "name": "StoryInputComponent"
-                        },
-                        {
-                            "name": "TadiranIconComponent"
                         },
                         {
                             "name": "TaskComponent"
@@ -5134,16 +5282,6 @@
                 "name": "Large",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/buttons/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Large",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/cards/Card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -5154,7 +5292,7 @@
                 "name": "Large",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/page/language-icon/language-icon.stories.ts",
+                "file": "src/stories/buttons/button-example/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -5164,7 +5302,27 @@
                 "name": "Large",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/page/tadiran-icon/tadiran-icon.stories.ts",
+                "file": "src/stories/buttons/button-globe/button-globe.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Large",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/buttons/button-language/button-language.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Large",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/buttons/button-tadiran/button-tadiran.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -5224,7 +5382,7 @@
                 "name": "LoggedOut",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/page/page.stories.ts",
+                "file": "src/app/login/login.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -5234,7 +5392,7 @@
                 "name": "LoggedOut",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/login/login.stories.ts",
+                "file": "src/app/page/page.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -5304,16 +5462,6 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/page/page.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/login/login.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -5324,7 +5472,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/buttons/Button.stories.ts",
+                "file": "src/app/page/page.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -5344,7 +5492,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/page/language-icon/language-icon.stories.ts",
+                "file": "src/stories/buttons/button-example/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -5354,7 +5502,27 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/page/tadiran-icon/tadiran-icon.stories.ts",
+                "file": "src/stories/buttons/button-globe/button-globe.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/buttons/button-language/button-language.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/buttons/button-tadiran/button-tadiran.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -5403,16 +5571,6 @@
                 "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/buttons/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Secondary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/cards/Card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -5423,7 +5581,7 @@
                 "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/page/language-icon/language-icon.stories.ts",
+                "file": "src/stories/buttons/button-example/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -5433,17 +5591,27 @@
                 "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/page/tadiran-icon/tadiran-icon.stories.ts",
+                "file": "src/stories/buttons/button-globe/button-globe.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "Small",
+                "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/buttons/Button.stories.ts",
+                "file": "src/stories/buttons/button-language/button-language.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Secondary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/buttons/button-tadiran/button-tadiran.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -5463,7 +5631,7 @@
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/page/language-icon/language-icon.stories.ts",
+                "file": "src/stories/buttons/button-example/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -5473,21 +5641,31 @@
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/page/tadiran-icon/tadiran-icon.stories.ts",
+                "file": "src/stories/buttons/button-globe/button-globe.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "Template",
+                "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/page/page.stories.ts",
+                "file": "src/stories/buttons/button-language/button-language.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<Page2Component>",
-                "defaultValue": "(args: Page2Component) => ({\n  props: args,\n})"
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Small",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/buttons/button-tadiran/button-tadiran.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Template",
@@ -5503,31 +5681,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/buttons/Button.stories.ts",
+                "file": "src/app/page/page.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<Button>",
-                "defaultValue": "(args: Button) => ({\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/forms/form.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "args => ({\n  props: {\n      ...args,\n      onPinTask: StoryInput.actionsData.onPinInput,\n      onArchiveTask: StoryInput.actionsData.onArchiveInput,\n    },\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/headers/Header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<Header>",
-                "defaultValue": "(args: Header) => ({\n  props: args,\n})"
+                "type": "Story<Page2Component>",
+                "defaultValue": "(args: Page2Component) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -5543,21 +5701,31 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/inputs/story-input.stories.ts",
+                "file": "src/stories/headers/Header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "args => ({\n  props: {\n    ...args,\n    onPinInput: actionsData.onPinInput,\n    onArchiveInput: actionsData.onArchiveInput,\n  },\n})"
+                "type": "Story<Header>",
+                "defaultValue": "(args: Header) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/pages/Page.stories.ts",
+                "file": "src/stories/forms/form.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<Page>",
-                "defaultValue": "(args: Page) => ({\n  props: args,\n})"
+                "type": "Story",
+                "defaultValue": "args => ({\n  props: {\n      ...args,\n      onPinTask: StoryInput.actionsData.onPinInput,\n      onArchiveTask: StoryInput.actionsData.onArchiveInput,\n    },\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/inputs/story-input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "args => ({\n  props: {\n    ...args,\n    onPinInput: actionsData.onPinInput,\n    onArchiveInput: actionsData.onArchiveInput,\n  },\n})"
             },
             {
                 "name": "Template",
@@ -5573,6 +5741,16 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/pages/Page.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Page>",
+                "defaultValue": "(args: Page) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/task-list/task-list.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -5583,21 +5761,41 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/page/language-icon/language-icon.stories.ts",
+                "file": "src/stories/buttons/button-example/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<LanguageIconComponent>",
-                "defaultValue": "(args: LanguageIconComponent) => ({\n  props: args,\n})"
+                "type": "Story<Button>",
+                "defaultValue": "(args: Button) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/page/tadiran-icon/tadiran-icon.stories.ts",
+                "file": "src/stories/buttons/button-globe/button-globe.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<TadiranIconComponent>",
-                "defaultValue": "(args: TadiranIconComponent) => ({\n  props: args,\n})"
+                "type": "Story<ButtonGlobeComponent>",
+                "defaultValue": "(args: ButtonGlobeComponent) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/buttons/button-language/button-language.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ButtonLanguageComponent>",
+                "defaultValue": "(args: ButtonLanguageComponent) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/buttons/button-tadiran/button-tadiran.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ButtonTadiranComponent>",
+                "defaultValue": "(args: ButtonTadiranComponent) => ({\n  props: args,\n})"
             },
             {
                 "name": "TOKEN_HEADER_KEY",
@@ -6045,58 +6243,6 @@
                     "defaultValue": "{\r\n  production: false\r\n}"
                 }
             ],
-            "src/stories/buttons/Button.stories.ts": [
-                {
-                    "name": "Large",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/buttons/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/buttons/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Secondary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/buttons/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Small",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/buttons/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/buttons/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<Button>",
-                    "defaultValue": "(args: Button) => ({\n  props: args,\n})"
-                }
-            ],
             "src/stories/cards/Card.stories.ts": [
                 {
                     "name": "Large",
@@ -6149,12 +6295,12 @@
                     "defaultValue": "(args: Card) => ({\n  props: args,\n})"
                 }
             ],
-            "src/app/page/language-icon/language-icon.stories.ts": [
+            "src/stories/buttons/button-example/Button.stories.ts": [
                 {
                     "name": "Large",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/page/language-icon/language-icon.stories.ts",
+                    "file": "src/stories/buttons/button-example/Button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -6164,7 +6310,7 @@
                     "name": "Primary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/page/language-icon/language-icon.stories.ts",
+                    "file": "src/stories/buttons/button-example/Button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -6174,7 +6320,7 @@
                     "name": "Secondary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/page/language-icon/language-icon.stories.ts",
+                    "file": "src/stories/buttons/button-example/Button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -6184,7 +6330,7 @@
                     "name": "Small",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/page/language-icon/language-icon.stories.ts",
+                    "file": "src/stories/buttons/button-example/Button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -6194,19 +6340,19 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/page/language-icon/language-icon.stories.ts",
+                    "file": "src/stories/buttons/button-example/Button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story<LanguageIconComponent>",
-                    "defaultValue": "(args: LanguageIconComponent) => ({\n  props: args,\n})"
+                    "type": "Story<Button>",
+                    "defaultValue": "(args: Button) => ({\n  props: args,\n})"
                 }
             ],
-            "src/app/page/tadiran-icon/tadiran-icon.stories.ts": [
+            "src/stories/buttons/button-globe/button-globe.stories.ts": [
                 {
                     "name": "Large",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/page/tadiran-icon/tadiran-icon.stories.ts",
+                    "file": "src/stories/buttons/button-globe/button-globe.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -6216,7 +6362,7 @@
                     "name": "Primary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/page/tadiran-icon/tadiran-icon.stories.ts",
+                    "file": "src/stories/buttons/button-globe/button-globe.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -6226,7 +6372,7 @@
                     "name": "Secondary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/page/tadiran-icon/tadiran-icon.stories.ts",
+                    "file": "src/stories/buttons/button-globe/button-globe.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -6236,7 +6382,7 @@
                     "name": "Small",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/page/tadiran-icon/tadiran-icon.stories.ts",
+                    "file": "src/stories/buttons/button-globe/button-globe.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -6246,11 +6392,115 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/page/tadiran-icon/tadiran-icon.stories.ts",
+                    "file": "src/stories/buttons/button-globe/button-globe.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story<TadiranIconComponent>",
-                    "defaultValue": "(args: TadiranIconComponent) => ({\n  props: args,\n})"
+                    "type": "Story<ButtonGlobeComponent>",
+                    "defaultValue": "(args: ButtonGlobeComponent) => ({\n  props: args,\n})"
+                }
+            ],
+            "src/stories/buttons/button-language/button-language.stories.ts": [
+                {
+                    "name": "Large",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/buttons/button-language/button-language.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/buttons/button-language/button-language.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/buttons/button-language/button-language.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Small",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/buttons/button-language/button-language.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/buttons/button-language/button-language.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ButtonLanguageComponent>",
+                    "defaultValue": "(args: ButtonLanguageComponent) => ({\n  props: args,\n})"
+                }
+            ],
+            "src/stories/buttons/button-tadiran/button-tadiran.stories.ts": [
+                {
+                    "name": "Large",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/buttons/button-tadiran/button-tadiran.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/buttons/button-tadiran/button-tadiran.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/buttons/button-tadiran/button-tadiran.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Small",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/buttons/button-tadiran/button-tadiran.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/buttons/button-tadiran/button-tadiran.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ButtonTadiranComponent>",
+                    "defaultValue": "(args: ButtonTadiranComponent) => ({\n  props: args,\n})"
                 }
             ],
             "src/app/page/page.stories.ts": [
@@ -6807,65 +7057,6 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/page/language-icon/language-icon.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "LanguageIconComponent",
-                "coveragePercent": 62,
-                "coverageCount": "5/8",
-                "status": "good"
-            },
-            {
-                "filePath": "src/app/page/language-icon/language-icon.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Large",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/page/language-icon/language-icon.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Primary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/page/language-icon/language-icon.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Secondary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/page/language-icon/language-icon.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Small",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/page/language-icon/language-icon.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
                 "filePath": "src/app/page/page.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -6916,65 +7107,6 @@
             },
             {
                 "filePath": "src/app/page/page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/page/tadiran-icon/tadiran-icon.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "TadiranIconComponent",
-                "coveragePercent": 62,
-                "coverageCount": "5/8",
-                "status": "good"
-            },
-            {
-                "filePath": "src/app/page/tadiran-icon/tadiran-icon.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Large",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/page/tadiran-icon/tadiran-icon.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Primary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/page/tadiran-icon/tadiran-icon.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Secondary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/page/tadiran-icon/tadiran-icon.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Small",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/page/tadiran-icon/tadiran-icon.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -7067,7 +7199,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/buttons/Button.stories.ts",
+                "filePath": "src/stories/buttons/button-example/Button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -7077,7 +7209,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/buttons/Button.stories.ts",
+                "filePath": "src/stories/buttons/button-example/Button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -7087,7 +7219,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/buttons/Button.stories.ts",
+                "filePath": "src/stories/buttons/button-example/Button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -7097,7 +7229,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/buttons/Button.stories.ts",
+                "filePath": "src/stories/buttons/button-example/Button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -7107,7 +7239,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/buttons/Button.stories.ts",
+                "filePath": "src/stories/buttons/button-example/Button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -7117,13 +7249,190 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/buttons/button.component.ts",
+                "filePath": "src/stories/buttons/button-example/button.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "ButtonComponent",
                 "coveragePercent": 83,
                 "coverageCount": "5/6",
                 "status": "very-good"
+            },
+            {
+                "filePath": "src/stories/buttons/button-globe/button-globe.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonGlobeComponent",
+                "coveragePercent": 62,
+                "coverageCount": "5/8",
+                "status": "good"
+            },
+            {
+                "filePath": "src/stories/buttons/button-globe/button-globe.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Large",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/buttons/button-globe/button-globe.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/buttons/button-globe/button-globe.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Secondary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/buttons/button-globe/button-globe.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Small",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/buttons/button-globe/button-globe.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/buttons/button-language/button-language.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonLanguageComponent",
+                "coveragePercent": 62,
+                "coverageCount": "5/8",
+                "status": "good"
+            },
+            {
+                "filePath": "src/stories/buttons/button-language/button-language.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Large",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/buttons/button-language/button-language.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/buttons/button-language/button-language.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Secondary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/buttons/button-language/button-language.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Small",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/buttons/button-language/button-language.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/buttons/button-tadiran/button-tadiran.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonTadiranComponent",
+                "coveragePercent": 62,
+                "coverageCount": "5/8",
+                "status": "good"
+            },
+            {
+                "filePath": "src/stories/buttons/button-tadiran/button-tadiran.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Large",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/buttons/button-tadiran/button-tadiran.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/buttons/button-tadiran/button-tadiran.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Secondary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/buttons/button-tadiran/button-tadiran.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Small",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/buttons/button-tadiran/button-tadiran.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
             },
             {
                 "filePath": "src/stories/cards/Card.stories.ts",
