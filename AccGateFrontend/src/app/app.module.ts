@@ -42,9 +42,10 @@ import  Page2Component  from './page/page.component';
 import { TaskComponent } from '../stories/task/task.component';
 import { ButtonLanguageComponent } from '../stories/buttons/button-language/button-language.component';
 import { ButtonTadiranComponent } from '../stories/buttons/button-tadiran/button-tadiran.component';
+import { ButtonContinueComponent } from '../stories/buttons/button-continue/button-continue.component';
 import Button from '../stories/buttons/button-example/button.component'
 import { ButtonGlobeComponent } from '../stories/buttons/button-globe/button-globe.component'
-import Card from '../stories/cards/card.component'
+import CardComponent from '../stories/cards/card.component'
 import {StoryInputComponent} from '../stories/inputs/story-input.component'
 import {FormComponent} from '../stories/forms/form.component'
 import {TaskListComponent} from '../stories/task-list/task-list.component'
@@ -67,12 +68,13 @@ import {TaskListComponent} from '../stories/task-list/task-list.component'
         ButtonLanguageComponent,
         ButtonTadiranComponent,
         Button,
-        Card,
+        CardComponent,
         StoryInputComponent,
         FormComponent,
         TaskComponent,
         TaskListComponent,
-        ButtonGlobeComponent
+        ButtonGlobeComponent,
+        ButtonContinueComponent
 
     ],
   imports: [

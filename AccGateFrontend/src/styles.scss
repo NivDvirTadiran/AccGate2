@@ -6,6 +6,13 @@
 @import '~@fortawesome/fontawesome-free/scss/brands.scss';
 
 @import '~mdb-angular-ui-kit/assets/scss/mdb.scss';
+/*@import '.storybook/custom-styles.scss';*/
+@import "notosans-fontface/scss/notosans-fontface";
+
+@include notosans-fontface("Regular", 400, normal);
+@include notosans-fontface("Italic", 400, italic);
+@include notosans-fontface("Bold", 700, normal);
+@include notosans-fontface("BoldItalic", 700, italic);
 
 .expansionCard.is-active[data-v-5f907c3e] {
   border-color: var(--v-secondary-base)!important
@@ -4399,7 +4406,7 @@ blockquote p {
 /*
  * Print styles.
  *
- * Inlined to avoid required HTTP connection: www.phpied.com/delay-loading-your-print-css/
+ * Inlined to avoid required HTTP connection: www.phpied.com/delay-isLoggedIn-your-print-css/
  * Credit to Paul Irish and HTML5 Boilerplate (html5boilerplate.com)
 */
 .print-only {

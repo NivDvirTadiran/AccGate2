@@ -1,4 +1,13 @@
+$notosans-fontface-path: "fonts/Noto/";
+@import "notosans-fontface/scss/notosans-fontface";
 
+
+@include notosans-fontface("Regular", 400, normal);
+@include notosans-fontface("Italic", 400, italic);
+@include notosans-fontface("Bold", 700, normal);
+@include notosans-fontface("BoldItalic", 700, italic);
+
+/*
 @font-face {
   font-family: Inter;
   src: local(Inter-Regular),
@@ -38,7 +47,7 @@
   font-weight: 800;
   font-style: normal;
   font-stretch: normal;
-}
+}*/
 
 .D-Big-Title {
   font-family: NotoSans;
@@ -50,7 +59,7 @@
   letter-spacing: -0.44px;
 }
 .D-Small-Title {
-  font-family: NotoSans;
+  font-family: "Noto Sans", ui-serif;
   font-size: 35px;
   font-weight: 800;
   font-stretch: normal;
@@ -59,7 +68,7 @@
   letter-spacing: -0.39px;
 }
 .D-UnderLine-Regular {
-  font-family: NotoSans;
+  font-family: "Noto Sans", ui-serif;
   font-size: 17px;
   font-weight: normal;
   font-stretch: normal;

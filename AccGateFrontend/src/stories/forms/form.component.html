@@ -1,34 +1,55 @@
 
 
 
-
-<form class="Vector">
-
-  <div class="list-items">
-    <storybook-card></storybook-card>
-
-  <div *ngIf="loading">loading</div>
-  <div *ngIf="!loading && storyInputsInOrder.length === 0">empty</div>
-  <storybook-input
-    *ngFor="let storyInput of storyInputsInOrder"
-    [storyInput]="storyInput"
-    (onArchiveInput)="onArchiveInput.emit($event)"
-    (onPinInput)="onPinInput.emit($event)">
-  </storybook-input>
-  <div *ngIf="storyInputsInOrder.length === 0 && !loading" class="wrapper-message">
-    <span class="icon-check"></span>
-    <p class="title-message">You have no tasks</p>
-    <p class="subtitle-message">Sit back and relax</p>
-  </div>
-  <div *ngIf="loading">
-    <div *ngFor="let i of [1, 2, 3, 4, 5, 6]" class="loading-item">
-      <span class="glow-checkbox"></span>
-      <span class="glow-text">
-           <span>Loading</span> <span>cool</span> <span>state</span>
-         </span>
+<div id="main-login-card" class="col-md-12">
+  <storybook-card class="card-container"></storybook-card>
+  <div  class="h-100 d-flex align-items-center justify-content-center">
+    <div class="Aeonix-App-Center">
+      <a>Aeonix App Center</a>
     </div>
-  </div>
 
-  </div>
+    <br>
+    <form name="form"  (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate> <!---->
+      <div  *ngIf="!isLoggedIn" class="Vector">
 
-</form>
+
+
+            <div *ngIf="isLoggedIn">isLoggedIn</div>
+            <div *ngIf="!isLoggedIn && storyInputsInOrder.length === 0">empty</div>
+            <storybook-input
+              *ngFor="let storyInput of storyInputsInOrder"
+              [storyInput]="storyInput"
+              (onArchiveInput)="onArchiveInput.emit($event)"
+              (onPinInput)="onPinInput.emit($event)">
+            </storybook-input>
+
+
+        <div class="login-button">
+          <!--/div>
+          <div class="Vector"-->
+            <br>
+            <div class="thematic-break"></div>
+
+
+
+              <a (click)="openReplacePassword()"
+                 class="forgot-password"  href="#/login" >
+                Forgot password?
+              </a>
+            <!-- (click)="" openReplacePassword()-->
+
+              <storybook-button-continue size="medium" label="Continue" ></storybook-button-continue>
+            </div>
+
+
+
+          </div>
+          <div class="form-group">
+              <div class="alert alert-danger" role="alert" *ngIf="f.submitted && isLoginFailed">
+                Login failed: {{ loginErrorMessage }}
+              </div>
+          </div>
+    </form>
+  </div>
+</div>
+

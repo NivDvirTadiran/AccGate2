@@ -1,0 +1,41 @@
+.storybook-button-continue {
+    width: 446px;
+    height: 63px;
+    margin: 26px 0 0 1px;
+    padding: 17px 136px 17px 139px;
+    border-radius: 7px;
+    background-image: linear-gradient(180deg, #3D8ECF 0%, #58A6E4 100%);
+
+    font-family: 'Noto Sans', ui-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 11px;
+}
+
+/*
+.storybook-button-continue--primary {
+  top: 50px;
+  bottom: unset;
+  left: 30px;
+}
+
+.storybook-button-continue--secondary {
+  top: unset;
+  bottom: 50px;
+  left: 30px;
+}
+*/
+
+.storybook-button-continue--small {
+  font-size: 16px;
+  padding: 10px 16px;
+}
+.storybook-button-continue--medium {
+  font-size: 21px;
+  padding: 17px 136px 17px 139px;
+}
+.storybook-button-continue--large {
+  font-size: 28px;
+  padding: 17px 136px;
+}

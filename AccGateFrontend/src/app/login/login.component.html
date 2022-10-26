@@ -13,6 +13,8 @@
 
     <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
 
+
+
       <div class="list-item storybook-input Frame-3 ">
         <a class="user-name D-Caps-Regular">USER NAME</a>
 
@@ -39,8 +41,11 @@
         <br>
         <label [attr.aria-label]="'password'" for="password" class="Vector2 ">
           <img src="../../assets/images/LockIcon2ldpi.png" class="icon-input-password" alt="icon input password" />
-          <input type="text" [value]="'DanK203'" id="password" name="password"  class="DanK203"
-                 [(ngModel)]="form.password" placeholder="e1996" required #password="ngModel"/>
+          <input type={{this.showPass}} [value]="'DanK203'" id="password" name="password"  class="DanK203"
+                 [(ngModel)]="form.password" placeholder="password" required #password="ngModel"/>
+          <button class="icon-input-showpass" type="button" (click)="showPassChange()">
+          <img src="../../assets/images/EyeIcon.png" class="icon-input-showpass" alt="icon input type" />
+          </button>
         </label>
 
         <div class="alert alert-danger" role="alert" *ngIf="password.errors && f.submitted">
@@ -92,9 +97,8 @@
         <a (click)="test()" href="#/login" class="green-text font-weight-bold pl-2">test</a>
       </label>
     </mdb-card-footer-->
-
+  </div>
 
 
 
 </div>
-

@@ -1,20 +1,23 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { componentWrapperDecorator, moduleMetadata, Meta, Story  } from '@storybook/angular';
-import {FormComponent } from './form.component';
+import { FormComponent } from './form.component';
+import CardComponent from '../cards/card.component'
 import { StoryInputComponent } from "../inputs/story-input.component";
 
 import {CommonModule} from "@angular/common";
 
 import * as StoryInput from "../inputs/story-input.stories";
 import StoryInputStories from "../inputs/story-input.stories";
+import {FormsModule} from "@angular/forms";
+import {ButtonContinueComponent} from "../buttons/button-continue/button-continue.component";
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
   component: FormComponent,
   decorators: [
     moduleMetadata({
-      declarations: [ FormComponent, StoryInputComponent ],
-      imports: [CommonModule],
+      declarations: [ FormComponent, CardComponent, StoryInputComponent, ButtonContinueComponent ],
+      imports: [CommonModule, FormsModule],
     }),
     componentWrapperDecorator(story => `<div style="margin: 3em">${story}</div>`),
   ],
@@ -33,12 +36,8 @@ const Template: Story = args => ({
 export const Default = Template.bind({});
 Default.args = {
   storyInputs: [
-    { ...StoryInput.Default.args?.['storyInput'], id: '1', title: 'StoryInput 1' },
-    { ...StoryInput.Default.args?.['storyInput'], id: '2', title: 'StoryInput 2' },
-    { ...StoryInput.Default.args?.['storyInput'], id: '3', title: 'StoryInput 3' },
-    { ...StoryInput.Default.args?.['storyInput'], id: '4', title: 'StoryInput 4' },
-    { ...StoryInput.Default.args?.['storyInput'], id: '5', title: 'StoryInput 5' },
-    { ...StoryInput.Default.args?.['storyInput'], id: '6', title: 'StoryInput 6' },
+    { ...StoryInput.Default.args?.['storyInput'], id: '1', title: 'username', state: 'USER NAME' },
+    { ...StoryInput.Default.args?.['storyInput'], id: '2', title: 'password', state: 'PASSWORD' },
   ],
 };
 
@@ -47,15 +46,15 @@ WithPinnedTasks.args = {
   // Shaping the stories through args composition.
   // Inherited data coming from the Default story.
   storyInputs: [
-    ...Default.args['storyInputs'].slice(0, 5),
-    { id: '6', title: 'StoryInput 6 (pinned)', state: 'INPUT_PINNED' },
+    ...Default.args['storyInputs'].slice(0, 2),
+    { id: '3', title: 'StoryInput 6 (pinned)', state: 'INPUT_PINNED' },
   ],
 };
 
 export const Loading = Template.bind({});
 Loading.args = {
   storyinputs: [],
-  loading: true,
+  isLoggedIn: true,
 };
 
 export const Empty = Template.bind({});
@@ -63,7 +62,7 @@ Empty.args = {
   // Shaping the stories through args composition.
   // Inherited data coming from the Loading story.
   ...Loading.args,
-  loading: false,
+  isLoggedIn: false,
 };
 
 

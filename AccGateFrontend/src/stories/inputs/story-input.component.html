@@ -21,13 +21,21 @@
 
 
 <div class="list-item storybook-input Frame-3 {{ storyInput?.state }}">
-  <span class="user-name D-Caps-Regular">User Name</span>
+  <a class="user-name D-Caps-Regular">{{storyInput?.state}}</a>
 
   <br>
-  <label [attr.aria-label]="storyInput.title + ''" for="title-{{ storyInput?.id }}" class="Vector2 ">
-    <input type="text" [value]="storyInput.title" readonly="true" id="title-{{ storyInput?.id }}" name="title-{{ storyInput?.id }}" placeholder="Input title" class="DanK203"/>
+  <label [attr.aria-label]="storyInput?.id + ''" for="{{ storyInput?.title }}" class="Vector2 ">
+    <img src="{{ storyInput?.icon }}" class="icon-input" alt="icon input username" />
+    <input type="{{storyInput?.type}}" [value]="storyInput?.title" id="{{ storyInput?.title }}"  name="title-{{ storyInput?.title }}" class="DanK203"
+            placeholder="Ex. Saul Ramirez" required />
+    <button *ngIf="storyInput?.state === 'PASSWORD'" class="icon-input-showpass" type="button" (click)="showPassChange()">
+      <img src="../../assets/images/EyeIcon.png" class="icon-input-showpass" alt="icon input type" />
+    </button>
   </label>
 
+  <div class="alert alert-danger" role="alert" *ngIf=false >
+    Username is required!
+  </div>
 </div>
 
 

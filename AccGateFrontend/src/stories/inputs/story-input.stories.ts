@@ -30,22 +30,52 @@ Default.args = {
   storyInput: {
     id: '1',
     title: 'Ex.Saul Ramirez',
-    state: 'INPUT_INBOX',
+    state: 'USER NAME',
+    icon: '../../assets/images/User2ldpi.png',
+    type: 'text',
   },
 };
 
-export const Pinned = Template.bind({});
-Pinned.args = {
+export const Username = Template.bind({});
+Username.args = {
   storyInput: {
-    ...Default.args['storyInput'],
-    state: 'INPUT_PINNED',
+    id: '2',
+    title: 'Ex.Saul Ramirez',
+    state: 'USER NAME',
+    icon: '../../assets/images/User2ldpi.png',
+    type: 'text',
   },
 };
 
-export const Archived = Template.bind({});
-Archived.args = {
+export const Password = Template.bind({});
+Password.args = {
   storyInput: {
-    ...Default.args['storyInput'],
-    state: 'INPUT_ARCHIVED',
+    id: '3',
+    title: 'password',
+    state: 'PASSWORD',
+    icon: '../../assets/images/LockIcon2ldpi.png',
+    type: 'password',
   },
 };
+
+export const Email = Template.bind({});
+Email.args = {
+  storyInput: {
+    id: '4',
+    title: 'Ex: abc@example.com',
+    state: 'EMAIL',
+    icon: '../../assets/images/AtSign3ldpi.png',
+    type: 'email',
+  },
+};
+export const Phone = Template.bind({});
+Phone.args = {
+  storyInput: {
+    id: '4',
+    title: 'Ex: +972547762084',
+    state: 'PHONE NUMBER FOR AUTHENTICATION',
+    icon: '../../assets/images/Phone3ldpi.png',
+    type: 'phone',
+  },
+};
+

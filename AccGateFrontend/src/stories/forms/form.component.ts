@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 import { StoryInput } from "../inputs/story-input.model";
 
@@ -8,7 +8,21 @@ import { StoryInput } from "../inputs/story-input.model";
   templateUrl: './form.component.html',
   styleUrls: ['./form.css'],
 })
-export class FormComponent  {
+export class FormComponent implements OnInit {
+
+  form: any = {
+    username: null, //new FormControl('ea2', Validators.min(2)),
+    password: null  //new FormControl('zaqwsx', Validators.min(2))
+  };
+
+  isLoginFailed = false;
+  loginErrorMessage = '';
+
+  openReplacePassword() {
+    //this.replacePassFormService.open(ReplacePassFormComponent);
+  }
+
+
 
   /**
    * @ignore
@@ -16,7 +30,7 @@ export class FormComponent  {
    */
   storyInputsInOrder: StoryInput[] = [];
 
-  @Input() loading = false;
+  @Input() isLoggedIn = false;
 
   // tslint:disable-next-line: no-output-on-prefix
   @Output() onPinInput: EventEmitter<any> = new EventEmitter();
@@ -27,15 +41,22 @@ export class FormComponent  {
   @Input()
   set storyInputs(arr: StoryInput[]) {
     const initialTasks = [
-      ...arr.filter(t => t.state === 'INPUT_PINNED'),
-      ...arr.filter(t => t.state !== 'INPUT_PINNED'),
+      ...arr.filter(t => t.state === 'USER NAME'),
+      ...arr.filter(t => t.state !== 'USER NAME'),
     ];
     const filteredTasks = initialTasks.filter(
-      t => t.state === 'INPUT_INBOX' || t.state === 'INPUT_PINNED'
+      t => t.state === 'PASSWORD' || t.state === 'USER NAME'
     );
     this.storyInputsInOrder = filteredTasks.filter(
-      t => t.state === 'INPUT_INBOX' || t.state === 'INPUT_PINNED'
+      t => t.state === 'PASSWORD' || t.state === 'USER NAME'
     );
+  }
+
+  onSubmit(): void {
+    console.warn('Login Request!');
+  }
+
+  ngOnInit(): void {
   }
 
 }

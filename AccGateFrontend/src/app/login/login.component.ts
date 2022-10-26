@@ -12,7 +12,7 @@ import {Observable} from "rxjs";
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
   //registerFormRef: MdbModalRef<RegisterFormComponent> | null = null;
@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
   isLoginFailed = false;
   loginErrorMessage = '';
   roles: string[] = [];
+  showPass: 'text' | 'password' = 'password';
 
   constructor(private authService: AuthService,
               private tokenStorage: TokenStorageService,
@@ -37,6 +38,10 @@ export class LoginComponent implements OnInit {
       this.isLoggedIn = true;
       this.roles = this.tokenStorage.getUser().roles;
     }
+  }
+
+  showPassChange(): void {
+    this.showPass = (this.showPass == 'password' ? 'text' : 'password')
   }
 
   test() {

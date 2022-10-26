@@ -5,7 +5,7 @@ import { StoryInput } from './story-input.model'
 @Component({
   selector: 'storybook-input',
   templateUrl: './story-input.component.html',
-  styleUrls: ['./story-input.css']
+  styleUrls: ['./story-input.scss']
 })
 export class StoryInputComponent {
 
@@ -20,6 +20,9 @@ export class StoryInputComponent {
   onArchiveInput = new EventEmitter<Event>();
 
 
+  showPassChange(): void {
+    this.storyInput.type = (this.storyInput?.type == 'password' ? 'text' : 'password')
+  }
 
   /**
    * Component method to trigger the onPin event

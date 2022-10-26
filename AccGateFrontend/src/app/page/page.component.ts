@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { StoryInput } from "../../stories/inputs/story-input.model";
+//import {Default} from "../../stories/inputs/story-input.stories";
 
 
 @Component({
@@ -13,11 +14,8 @@ export default class Page2Component implements OnInit {
    * Is this the principal call to action on the page?
    */
   storyInputsInOrder: StoryInput[]  = [
-    { id: '1', title: 'Something', state: 'INPUT_PINNED' },
-    { id: '2', title: 'Something more', state: 'INPUT_PINNED' },
-    { id: '3', title: 'Something else', state: 'INPUT_PINNED' },
-    { id: '4', title: 'Something again', state: 'INPUT_INBOX' },
-    { id: '6', title: 'StoryInput 6 (pinned)', state: 'INPUT_PINNED'}
+    { /*...Default.args?.['storyInput'],*/ id: '1', title: 'Ex.Saul Ramirez', state: 'USER NAME', icon: '../../assets/images/User2ldpi.png', type: 'text' },
+    { /*...Default.args?.['storyInput'],*/ id: '2', title: 'password', state: 'PASSWORD', icon: '../../assets/images/LockIcon2ldpi.png', type: 'password'  },
   ];
 
   /**
