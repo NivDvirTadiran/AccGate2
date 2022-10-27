@@ -20,7 +20,7 @@
 .mr-2 {
   width: 64px;
   height: 64px;
-  /*background-image: url(../../assets/images/management.png);*/
+  /*background-image: url('./assets/images/management.png);*/
   background-repeat: round;
   background-position: top left;
   /*background-origin: padding-box, content-box;*/

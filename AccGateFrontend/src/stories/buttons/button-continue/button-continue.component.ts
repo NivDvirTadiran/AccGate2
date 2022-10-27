@@ -5,7 +5,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   templateUrl: './button-continue.component.html',
   /*template: `<div class="storybook-button-continue">
     <img (click)="onClick.emit($event)" [ngClass]="classes" [ngStyle]="{ 'background-color': backgroundColor }"
-         src="/assets/images/img_2.png" class="Language-Desktop-Icon"  alt="language-desktop-icon"/>
+         src="./assets/images/img_2.png" class="Language-Desktop-Icon"  alt="language-desktop-icon"/>
   </div>`,*/
   styleUrls: ['./button-continue.component.scss'],
 })

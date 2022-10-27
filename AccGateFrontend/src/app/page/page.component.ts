@@ -14,8 +14,8 @@ export default class Page2Component implements OnInit {
    * Is this the principal call to action on the page?
    */
   storyInputsInOrder: StoryInput[]  = [
-    { /*...Default.args?.['storyInput'],*/ id: '1', title: 'Ex.Saul Ramirez', state: 'USER NAME', icon: '../../assets/images/User2ldpi.png', type: 'text' },
-    { /*...Default.args?.['storyInput'],*/ id: '2', title: 'password', state: 'PASSWORD', icon: '../../assets/images/LockIcon2ldpi.png', type: 'password'  },
+    { /*...Default.args?.['storyInput'],*/ id: '1', title: 'Ex.Saul Ramirez', state: 'USER NAME', icon: './assets/images/User2ldpi.png', type: 'text' },
+    { /*...Default.args?.['storyInput'],*/ id: '2', title: 'password', state: 'PASSWORD', icon: './assets/images/LockIcon2ldpi.png', type: 'password'  },
   ];
 
   /**

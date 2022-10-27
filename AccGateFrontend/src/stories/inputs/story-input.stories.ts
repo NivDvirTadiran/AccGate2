@@ -31,7 +31,7 @@ Default.args = {
     id: '1',
     title: 'Ex.Saul Ramirez',
     state: 'USER NAME',
-    icon: '../../assets/images/User2ldpi.png',
+    icon: './assets/images/User2ldpi.png',
     type: 'text',
   },
 };
@@ -42,7 +42,7 @@ Username.args = {
     id: '2',
     title: 'Ex.Saul Ramirez',
     state: 'USER NAME',
-    icon: '../../assets/images/User2ldpi.png',
+    icon: './assets/images/User2ldpi.png',
     type: 'text',
   },
 };
@@ -53,7 +53,7 @@ Password.args = {
     id: '3',
     title: 'password',
     state: 'PASSWORD',
-    icon: '../../assets/images/LockIcon2ldpi.png',
+    icon: './assets/images/LockIcon2ldpi.png',
     type: 'password',
   },
 };
@@ -64,7 +64,7 @@ Email.args = {
     id: '4',
     title: 'Ex: abc@example.com',
     state: 'EMAIL',
-    icon: '../../assets/images/AtSign3ldpi.png',
+    icon: './assets/images/AtSign3ldpi.png',
     type: 'email',
   },
 };
@@ -74,7 +74,7 @@ Phone.args = {
     id: '4',
     title: 'Ex: +972547762084',
     state: 'PHONE NUMBER FOR AUTHENTICATION',
-    icon: '../../assets/images/Phone3ldpi.png',
+    icon: './assets/images/Phone3ldpi.png',
     type: 'phone',
   },
 };
