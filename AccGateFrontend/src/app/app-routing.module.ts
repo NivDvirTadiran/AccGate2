@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'user', component: BoardUserComponent },
   { path: 'mod', component: BoardModeratorComponent },
   { path: 'admin', component: BoardAdminComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'login2', pathMatch: 'full' },
   { path: 'home', loadChildren: () => import('./app.module').then(m => m.AppModule),},
   { path: '**', redirectTo: 'home', },
 ];

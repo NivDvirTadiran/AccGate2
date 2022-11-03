@@ -909,7 +909,7 @@
         component: _board_admin_board_admin_component__WEBPACK_IMPORTED_MODULE_6__.BoardAdminComponent
       }, {
         path: '',
-        redirectTo: 'home',
+        redirectTo: 'login2',
         pathMatch: 'full'
       }, {
         path: 'home',
@@ -7655,7 +7655,7 @@
         if (rf & 1) {
           var _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 8);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 9);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function StoryInputComponent_button_8_Template_button_click_0_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r4);
@@ -7665,13 +7665,13 @@
             return ctx_r3.showPassChange();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "img", 9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "img", 10);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
       }
 
-      function StoryInputComponent_div_10_span_1_Template(rf, ctx) {
+      function StoryInputComponent_span_10_span_1_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span");
 
@@ -7689,7 +7689,7 @@
         }
       }
 
-      function StoryInputComponent_div_10_span_2_Template(rf, ctx) {
+      function StoryInputComponent_span_10_span_2_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span");
 
@@ -7707,7 +7707,7 @@
         }
       }
 
-      function StoryInputComponent_div_10_span_3_Template(rf, ctx) {
+      function StoryInputComponent_span_10_span_3_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span");
 
@@ -7725,7 +7725,7 @@
         }
       }
 
-      function StoryInputComponent_div_10_span_4_Template(rf, ctx) {
+      function StoryInputComponent_span_10_span_4_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span");
 
@@ -7743,17 +7743,17 @@
         }
       }
 
-      function StoryInputComponent_div_10_Template(rf, ctx) {
+      function StoryInputComponent_span_10_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 10);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span", 11);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, StoryInputComponent_div_10_span_1_Template, 2, 1, "span", 11);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, StoryInputComponent_span_10_span_1_Template, 2, 1, "span", 12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, StoryInputComponent_div_10_span_2_Template, 2, 1, "span", 11);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, StoryInputComponent_span_10_span_2_Template, 2, 1, "span", 12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, StoryInputComponent_div_10_span_3_Template, 2, 1, "span", 11);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, StoryInputComponent_span_10_span_3_Template, 2, 1, "span", 12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, StoryInputComponent_div_10_span_4_Template, 2, 1, "span", 11);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, StoryInputComponent_span_10_span_4_Template, 2, 1, "span", 12);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
@@ -7819,15 +7819,15 @@
 
       function StoryInputComponent_div_11_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 10);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, StoryInputComponent_div_11_div_1_Template, 2, 0, "div", 11);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, StoryInputComponent_div_11_div_1_Template, 2, 0, "div", 12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, StoryInputComponent_div_11_div_2_Template, 2, 0, "div", 11);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, StoryInputComponent_div_11_div_2_Template, 2, 0, "div", 12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, StoryInputComponent_div_11_div_3_Template, 2, 0, "div", 11);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, StoryInputComponent_div_11_div_3_Template, 2, 0, "div", 12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, StoryInputComponent_div_11_div_4_Template, 2, 0, "div", 11);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, StoryInputComponent_div_11_div_4_Template, 2, 0, "div", 12);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
@@ -7951,9 +7951,9 @@
           onPinInput: "onPinInput",
           onArchiveInput: "onArchiveInput"
         },
-        decls: 13,
-        vars: 18,
-        consts: [[3, "formGroup"], [1, "user-name", "D-Caps-Regular"], [1, "Vector2", 3, "for"], ["alt", "icon input username", 1, "icon-input", 3, "src", "name"], ["required", "", 1, "DanK203", 3, "type", "id", "name", "formControlName"], ["class", "icon-input-showpass", "type", "button", 3, "click", 4, "ngIf"], [3, "ngSwitch"], ["class", "alert alert-danger", 4, "ngIf"], ["type", "button", 1, "icon-input-showpass", 3, "click"], ["src", "./assets/images/EyeIcon.png", "alt", "icon input type", 1, "icon-input-showpass"], [1, "alert", "alert-danger"], [4, "ngSwitchCase"]],
+        decls: 12,
+        vars: 17,
+        consts: [[3, "formGroup"], [1, "user-name", "D-Caps-Regular"], [1, "Vector2", 3, "for"], ["alt", "icon input username", 1, "icon-input", 3, "src", "name"], ["required", "", 1, "DanK203", 3, "type", "id", "name", "formControlName"], ["class", "icon-input-showpass", "type", "button", 3, "click", 4, "ngIf"], [3, "ngSwitch"], ["class", " alert-danger alert", 4, "ngIf"], ["class", "alert alert-danger ", 4, "ngIf"], ["type", "button", 1, "icon-input-showpass", 3, "click"], ["src", "./assets/images/EyeIcon.png", "alt", "icon input type", 1, "icon-input-showpass"], [1, "alert-danger", "alert"], [4, "ngSwitchCase"], [1, "alert", "alert-danger"]],
         template: function StoryInputComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -7980,15 +7980,13 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 6);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "span", 6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](10, StoryInputComponent_div_10_Template, 5, 4, "div", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](10, StoryInputComponent_span_10_Template, 5, 4, "span", 7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](11, StoryInputComponent_div_11_Template, 5, 4, "div", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](11, StoryInputComponent_div_11_Template, 5, 4, "div", 8);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainer"](12, 6);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
           }
@@ -8039,10 +8037,6 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (ctx.formControler == null ? null : ctx.formControler.valid) && ((ctx.formControler == null ? null : ctx.formControler.dirty) || (ctx.formControler == null ? null : ctx.formControler.touched)));
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngSwitch", ctx.storyInput == null ? null : ctx.storyInput.title);
           }
         },
         directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.RequiredValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormControlName, _angular_common__WEBPACK_IMPORTED_MODULE_2__.NgIf, _angular_common__WEBPACK_IMPORTED_MODULE_2__.NgSwitch, _angular_common__WEBPACK_IMPORTED_MODULE_2__.NgSwitchCase],

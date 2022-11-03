@@ -45,18 +45,18 @@ Agent.parameters = {
 export const WebRT = Template.bind({});
 WebRT.args = {
   application: 'WebRT',
-  label: 'button2',
+  label: 'WebRT',
 };
 
 
 export const Admin = Template.bind({});
 Admin.args = {
   application: 'Admin',
-  label: 'button3',
+  label: 'Admin',
 };
 
 export const GCCS = Template.bind({});
 GCCS.args = {
   application: 'GCCS',
-  label: 'button4',
+  label: 'GCCS',
 };

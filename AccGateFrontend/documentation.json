@@ -2807,7 +2807,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".Vector {\r\n  position: relative;\r\n  width: 155.09px;\r\n  height: 155.09px;\r\n}\r\n\r\nimg.Apps-Button-Icon {\r\n  position: absolute;\r\n  bottom: 1px;\r\n  left: 1px;\r\n  width: 154.09px;\r\n  height: 154.09px;\r\n  object-fit: contain;\r\n  /*box-shadow: 0 1px 1px 0 rgba(61, 142, 207, 0.15);*/\r\n}\r\n\r\n\r\n.storybook-button-apps--Agent {\r\n  width: 154.09px;\r\n  height: 154.09px;\r\n}\r\n.storybook-button-apps--WebRT {\r\n  width: 152.94px;\r\n  height: 197px;\r\n}\r\n.storybook-button-apps--Admin {\r\n  width: 154.09px;\r\n  height: 154.09px;\r\n}\r\n.storybook-button-apps--GCCS {\r\n  width: 154.09px;\r\n  height: 152.94px;\r\n}\r\n",
+                    "data": ":root {\r\n  --label_width: 30px;\r\n  --white: #ffffff;\r\n}\r\n\r\n#button-apps {\r\n  max-width: 155.09px;\r\n}\r\n\r\n.container {\r\n  position: relative;\r\n  max-width: 155.09px;\r\n  height: 189.09px;\r\n  float: left;\r\n  padding: 0;\r\n}\r\n\r\nimg.Apps-Button-Icon {\r\n  position: absolute;\r\n  width: 65.54px;\r\n  height: 82.79px;\r\n  left: calc(50% - 65.54px/2);\r\n  top: calc(50% - 82.79px/2);\r\n  object-fit: contain;\r\n  /*box-shadow: 0 1px 1px 0 rgba(61, 142, 207, 0.15);*/\r\n}\r\n\r\n.circle {\r\n  position: relative;\r\n  height: 155.09px;\r\n  width: 155.09px;\r\n  background: linear-gradient(151.78deg, #74C1FF 13.27%, #3D8ECF 83.89%);\r\n  border-radius: 50%;\r\n}\r\n\r\n.center {\r\n  margin: auto;\r\n\r\n  text-align: center;\r\n\r\n\r\n}\r\n\r\n.mfont {\r\n  /*width: 447px;*/\r\n  font-family: \"Noto Sans\", ui-serif;\r\n  font-style: normal;\r\n  font-weight: 400;\r\n  font-size: 17px;\r\n  line-height: 31px;\r\n  letter-spacing: -0.011em;\r\n  color: #000000;\r\n}\r\n\r\n.Button-App-Label {\r\n  position: relative;\r\n  width: 100%;\r\n  height: 33px;\r\n  horiz-align: center;\r\n\r\n}\r\n.a {\r\n  position: relative;\r\n  width: 129px;\r\n  height: 33px;\r\n  /*width: 447px;*/\r\n  font-family: \"Noto Sans\", ui-serif;\r\n  font-style: normal;\r\n  font-weight: 400;\r\n  font-size: 17px;\r\n  line-height: 31px;\r\n  display: flex;\r\n  align-items: center;\r\n  text-align: center;\r\n  letter-spacing: -0.011em;\r\n  color: #000000;\r\n}\r\n\r\n.storybook-button-apps--Agent {\r\n  width: 154.09px;\r\n  height: 154.09px;\r\n}\r\n.storybook-button-apps--WebRT {\r\n  width: 152.94px;\r\n  height: 197px;\r\n}\r\n.storybook-button-apps--Admin {\r\n  width: 154.09px;\r\n  height: 154.09px;\r\n}\r\n.storybook-button-apps--GCCS {\r\n  width: 154.09px;\r\n  height: 152.94px;\r\n}\r\n",
                     "styleUrl": "./button-apps.component.css"
                 }
             ],
@@ -2831,7 +2831,7 @@
                     }
                 }
             },
-            "templateData": "<div class=\"Vector\">\n<img (click)=\"onClick.emit($event)\" [ngClass]=\"classes\" [ngStyle]=\"{ 'background-color': backgroundColor }\"\n   src=\"./assets/images/{{application?.toString()}}.png\" class=\"Apps-Button-Icon\"  alt=\"apps-button-icon\"/>\n\n</div>\n{{ label }}\n"
+            "templateData": "<div id=\"button-apps\" class=\"container\">\n<div class=\"circle\">\n\n<img (click)=\"onClick.emit($event)\" [ngClass]=\"classes\" [ngStyle]=\"{ 'background-color': backgroundColor }\"\n   src=\"./assets/images/{{application?.toString()}}.png\" class=\"Apps-Button-Icon center\"  alt=\"apps-button-icon\"/>\n</div>\n\n<div class=\"Button-App-Label \">\n  <div class=\"center mfont\">\n\n    {{ application.toString() }}\n\n  </div>\n</div>\n\n</div>\n"
         },
         {
             "name": "ButtonComponent",
@@ -6105,7 +6105,7 @@
                     }
                 }
             },
-            "templateData": "\r\n<!--div class=\"list-item {{ storyInput?.state }}\">\r\n  <label [attr.aria-label]=\"'archiveInput-' + storyInput.id\" for=\"checked-{{ storyInput?.id }}\" class=\"checkbox\">\r\n    <input\r\n      type=\"checkbox\"\r\n      disabled=\"true\"\r\n      [defaultChecked]=\"storyInput?.state === 'INPUT_ARCHIVED'\"\r\n      name=\"checked-{{ storyInput?.id }}\"\r\n      id=\"checked-{{ storyInput?.id }}\"\r\n    />\r\n    <span class=\"checkbox-custom\" (click)=\"onArchive(storyInput.id)\"></span>\r\n  </label>\r\n  <label [attr.aria-label]=\"storyInput.title + ''\" for=\"title-{{ storyInput?.id }}\" class=\"title\">\r\n    <input type=\"text\" [value]=\"storyInput.title\" readonly=\"true\" id=\"title-{{ storyInput?.id }}\" name=\"title-{{ storyInput?.id }}\" placeholder=\"Input title\"/>\r\n  </label>\r\n  <button *ngIf=\"storyInput?.state !== 'INPUT_ARCHIVED'\" class=\"pin-button\" [attr.aria-label]=\"'pinTask-' + storyInput.id\" (click)=\"onPin(storyInput.id)\">\r\n    <span class=\"icon-star\"></span>\r\n  </button>\r\n</div-->\r\n\r\n\r\n\r\n<div class=\"list-item storybook-input Frame-3 {{ storyInput?.state }}\" [formGroup]=\"this.currentForm\">\r\n  <a class=\"user-name D-Caps-Regular\">{{storyInput?.state}}</a>\r\n\r\n  <br>\r\n  <label [attr.aria-label]=\"storyInput?.id + ''\" for=\"{{ storyInput?.title }}\" class=\"Vector2 \">\r\n    <img src=\"{{ storyInput?.icon }}\" class=\"icon-input\" alt=\"icon input username\"  name=\"{{ storyInput?.title }}\" />\r\n    <div>\r\n    <input type=\"{{storyInput?.type}}\" id=\"{{ storyInput?.id }}\" class=\"DanK203\"\r\n            name=\"{{storyInput?.title}}\" formControlName=\"{{storyInput?.title}}\" required  />\r\n    </div>\r\n<!-- [value]=\"storyInput?.title\"  placeholder=\"{{storyInput?.placeholder}}\"  -->\r\n    <button *ngIf=\"storyInput?.state === 'PASSWORD'\" class=\"icon-input-showpass\" type=\"button\" (click)=\"showPassChange()\">\r\n      <img src=\"./assets/images/EyeIcon.png\" class=\"icon-input-showpass\" alt=\"icon input type\" />\r\n    </button>\r\n\r\n  </label>\r\n\r\n\r\n\r\n  <!--storyInput?.title+'.invalid' alert alert-danger  && ([storyInput?.title+'.dirty'] || [storyInput?.title+'.touched'].valueOf()) -->\r\n  <div [ngSwitch]=\"storyInput?.title\">\r\n      <div class=\"alert alert-danger\"   *ngIf=\"formControler?.invalid && (formControler?.dirty || formControler?.touched)\"  >\r\n          <span *ngSwitchCase=\"'username'\">{{storyInput?.state}} is required!</span>\r\n          <span *ngSwitchCase=\"'password'\">{{storyInput?.state}} is required!</span>\r\n          <span *ngSwitchCase=\"'email'\"   >{{storyInput?.state}} is required!</span>\r\n          <span *ngSwitchCase=\"'phone'\"   >{{storyInput?.state}} is required!</span>\r\n      </div>\r\n      <div class=\"alert alert-danger\"  *ngIf=\"formControler?.valid && (formControler?.dirty || formControler?.touched)\">\r\n        <div *ngSwitchCase=\"'username'\">ok!</div>\r\n        <div *ngSwitchCase=\"'password'\">ok!</div>\r\n        <div *ngSwitchCase=\"'email'\"   >ok!</div>\r\n        <div *ngSwitchCase=\"'phone'\"   >ok!</div>\r\n      </div>\r\n </div>\r\n\r\n\r\n\r\n\r\n\r\n  <ng-container [ngSwitch]=\"this.storyInput?.title\"></ng-container>\r\n\r\n    <!--div *ngSwitchCase=\"'password'\">\r\n      <span class=\"alert alert-danger\"   *ngIf=\"username?.invalid && (username?.dirty || username?.touched)\"  >\r\n        {{storyInput?.state}} is required!\r\n      </span>\r\n      <span class=\"alert alert-danger\"  *ngIf=\"username?.valid && (username?.dirty || username?.touched)\">\r\n        ok!\r\n      </span>\r\n    </div-->\r\n\r\n\r\n\r\n\r\n  <!--                   -->\r\n\r\n\r\n  <!--div class=\"alert alert-danger\" role=\"alert\" *ngIf=false >\r\n    Username is required!\r\n  </div-->\r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n"
+            "templateData": "\r\n<div class=\"list-item storybook-input Frame-3 {{ storyInput?.state }}\" [formGroup]=\"this.currentForm\">\r\n  <a class=\"user-name D-Caps-Regular\">{{storyInput?.state}}</a>\r\n\r\n  <br>\r\n  <label [attr.aria-label]=\"storyInput?.id + ''\" for=\"{{ storyInput?.title }}\" class=\"Vector2 \">\r\n    <img src=\"{{ storyInput?.icon }}\" class=\"icon-input\" alt=\"icon input username\"  name=\"{{ storyInput?.title }}\" />\r\n    <div>\r\n    <input type=\"{{storyInput?.type}}\" id=\"{{ storyInput?.id }}\" class=\"DanK203\"\r\n            name=\"{{storyInput?.title}}\" formControlName=\"{{storyInput?.title}}\" required  />\r\n    </div>\r\n<!-- [value]=\"storyInput?.title\"  placeholder=\"{{storyInput?.placeholder}}\"  -->\r\n    <button *ngIf=\"storyInput?.state === 'PASSWORD'\" class=\"icon-input-showpass\" type=\"button\" (click)=\"showPassChange()\">\r\n      <img src=\"./assets/images/EyeIcon.png\" class=\"icon-input-showpass\" alt=\"icon input type\" />\r\n\r\n    </button>\r\n\r\n  </label>\r\n\r\n\r\n\r\n  <!--storyInput?.title+'.invalid' alert alert-danger  && ([storyInput?.title+'.dirty'] || [storyInput?.title+'.touched'].valueOf()) -->\r\n  <span [ngSwitch]=\"storyInput?.title\">\r\n      <span class=\" alert-danger alert\"   *ngIf=\"formControler?.invalid && (formControler?.dirty || formControler?.touched)\"  >\r\n          <span *ngSwitchCase=\"'username'\">{{storyInput?.state}} is required!</span>\r\n          <span *ngSwitchCase=\"'password'\">{{storyInput?.state}} is required!</span>\r\n          <span *ngSwitchCase=\"'email'\"   >{{storyInput?.state}} is required!</span>\r\n          <span *ngSwitchCase=\"'phone'\"   >{{storyInput?.state}} is required!</span>\r\n      </span>\r\n      <div class=\"alert alert-danger \"  *ngIf=\"formControler?.valid && (formControler?.dirty || formControler?.touched)\">\r\n        <div *ngSwitchCase=\"'username'\">ok!</div>\r\n        <div *ngSwitchCase=\"'password'\">ok!</div>\r\n        <div *ngSwitchCase=\"'email'\"   >ok!</div>\r\n        <div *ngSwitchCase=\"'phone'\"   >ok!</div>\r\n      </div>\r\n </span>\r\n\r\n\r\n\r\n\r\n\r\n  <!--ng-container [ngSwitch]=\"this.storyInput?.title\"></ng-container-->\r\n\r\n    <!--div *ngSwitchCase=\"'password'\">\r\n      <span class=\"alert alert-danger\"   *ngIf=\"username?.invalid && (username?.dirty || username?.touched)\"  >\r\n        {{storyInput?.state}} is required!\r\n      </span>\r\n      <span class=\"alert alert-danger\"  *ngIf=\"username?.valid && (username?.dirty || username?.touched)\">\r\n        ok!\r\n      </span>\r\n    </div-->\r\n\r\n\r\n\r\n\r\n  <!--                   -->\r\n\r\n\r\n  <!--div class=\"alert alert-danger\" role=\"alert\" *ngIf=false >\r\n    Username is required!\r\n  </div-->\r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n"
         },
         {
             "name": "TaskComponent",
@@ -6494,13 +6494,13 @@
         },
         {
             "name": "AppRoutingModule",
-            "id": "module-AppRoutingModule-381b8dbe0145c8eb5455db8354c07c677c5829470764abb3e1bf1536d2a60d1b4944c3934a9982d79df5d17f42c602acda8ff60c5e45878b46ae468f6a706c38",
+            "id": "module-AppRoutingModule-ce9e4ab626437821aadc6ad047a9b217c655498a3a14d9bf306ed2a3cc6fb9f5901fc3a735938eac077e6f0c28a03a6f96821e78ced2072020a31b534445491c",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app-routing.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { RouterModule, Routes } from '@angular/router';\r\n\r\nimport { RegisterComponent } from './register/register.component';\r\nimport { LoginComponent } from './login/login.component';\r\nimport { HomeComponent } from './home/home.component';\r\nimport { ProfileComponent } from './profile/profile.component';\r\nimport { BoardUserComponent } from './board-user/board-user.component';\r\nimport { BoardModeratorComponent } from './board-moderator/board-moderator.component';\r\nimport { BoardAdminComponent } from './board-admin/board-admin.component';\r\nimport { AppRoutingGuard } from './app-routing.guard';\r\nimport Login2Component from \"./login2/login2.component\";\r\nimport Profile2Component from \"./profile2/profile2.component\";\r\n\r\nconst routes: Routes = [\r\n  { path: 'home', component: HomeComponent },\r\n  { path: 'login', component: LoginComponent },\r\n  { path: 'login2', component: Login2Component },\r\n  { path: 'register', component: RegisterComponent },\r\n  { path: 'profile', component: ProfileComponent/*, canActivate: [AppRoutingGuard] */},\r\n  { path: 'profile2', component: Profile2Component/*, canActivate: [AppRoutingGuard] */},\r\n  { path: 'user', component: BoardUserComponent },\r\n  { path: 'mod', component: BoardModeratorComponent },\r\n  { path: 'admin', component: BoardAdminComponent },\r\n  { path: '', redirectTo: 'home', pathMatch: 'full' },\r\n  { path: 'home', loadChildren: () => \"import('./app.module').then(m => m.AppModule)\",},\r\n  { path: '**', redirectTo: 'home', },\r\n];\r\n\r\n@NgModule({\r\n  imports: [RouterModule.forRoot(routes, {useHash: true})],\r\n  exports: [RouterModule]\r\n})\r\nexport class AppRoutingModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { RouterModule, Routes } from '@angular/router';\r\n\r\nimport { RegisterComponent } from './register/register.component';\r\nimport { LoginComponent } from './login/login.component';\r\nimport { HomeComponent } from './home/home.component';\r\nimport { ProfileComponent } from './profile/profile.component';\r\nimport { BoardUserComponent } from './board-user/board-user.component';\r\nimport { BoardModeratorComponent } from './board-moderator/board-moderator.component';\r\nimport { BoardAdminComponent } from './board-admin/board-admin.component';\r\nimport { AppRoutingGuard } from './app-routing.guard';\r\nimport Login2Component from \"./login2/login2.component\";\r\nimport Profile2Component from \"./profile2/profile2.component\";\r\n\r\nconst routes: Routes = [\r\n  { path: 'home', component: HomeComponent },\r\n  { path: 'login', component: LoginComponent },\r\n  { path: 'login2', component: Login2Component },\r\n  { path: 'register', component: RegisterComponent },\r\n  { path: 'profile', component: ProfileComponent/*, canActivate: [AppRoutingGuard] */},\r\n  { path: 'profile2', component: Profile2Component/*, canActivate: [AppRoutingGuard] */},\r\n  { path: 'user', component: BoardUserComponent },\r\n  { path: 'mod', component: BoardModeratorComponent },\r\n  { path: 'admin', component: BoardAdminComponent },\r\n  { path: '', redirectTo: 'login2', pathMatch: 'full' },\r\n  { path: 'home', loadChildren: () => \"import('./app.module').then(m => m.AppModule)\",},\r\n  { path: '**', redirectTo: 'home', },\r\n];\r\n\r\n@NgModule({\r\n  imports: [RouterModule.forRoot(routes, {useHash: true})],\r\n  exports: [RouterModule]\r\n})\r\nexport class AppRoutingModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -6665,7 +6665,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/forms/form.stories.ts",
+                "file": "src/stories/inputs/story-input.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -6675,7 +6675,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/inputs/story-input.stories.ts",
+                "file": "src/stories/forms/form.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -6716,16 +6716,6 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/app-menu/app-menu.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Empty",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/forms/form.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -6815,16 +6805,6 @@
                 "name": "Large",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/buttons/button-example/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Large",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/buttons/button-globe/button-globe.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -6835,7 +6815,7 @@
                 "name": "Large",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/buttons/button-language/button-language.stories.ts",
+                "file": "src/stories/buttons/button-example/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -6846,6 +6826,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/buttons/button-tadiran/button-tadiran.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Large",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/buttons/button-language/button-language.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -6885,16 +6875,6 @@
                 "name": "LoggedIn",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/login2/login2.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "LoggedIn",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/headers/Header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -6925,16 +6905,6 @@
                 "name": "LoggedOut",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/login2/login2.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "LoggedOut",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/headers/Header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -6956,6 +6926,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/pages/background1/background1.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "MainLoignForm",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/forms/form.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -7015,16 +6995,6 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/login2/login2.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/cards/card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -7045,16 +7015,6 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/buttons/button-example/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/buttons/button-globe/button-globe.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -7065,7 +7025,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/buttons/button-language/button-language.stories.ts",
+                "file": "src/stories/buttons/button-example/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -7076,6 +7036,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/buttons/button-tadiran/button-tadiran.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/buttons/button-language/button-language.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -7144,16 +7114,6 @@
                 "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/login2/login2.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Secondary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/cards/card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -7174,16 +7134,6 @@
                 "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/buttons/button-example/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Secondary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/buttons/button-globe/button-globe.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -7194,7 +7144,7 @@
                 "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/buttons/button-language/button-language.stories.ts",
+                "file": "src/stories/buttons/button-example/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -7205,6 +7155,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/buttons/button-tadiran/button-tadiran.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Secondary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/buttons/button-language/button-language.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -7234,16 +7194,6 @@
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/buttons/button-example/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Small",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/buttons/button-globe/button-globe.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -7254,7 +7204,7 @@
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/buttons/button-language/button-language.stories.ts",
+                "file": "src/stories/buttons/button-example/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -7271,14 +7221,14 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "Template",
+                "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/login2/login2.stories.ts",
+                "file": "src/stories/buttons/button-language/button-language.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<Login2Component>",
-                "defaultValue": "(args: Login2Component) => ({\n  props: args,\n})"
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Template",
@@ -7304,16 +7254,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/forms/form.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "args => ({\n  props: {\n      ...args,\n      onPinTask: StoryInput.actionsData.onPinInput,\n      onArchiveTask: StoryInput.actionsData.onArchiveInput,\n    },\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/headers/Header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -7334,11 +7274,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/pages/Page.stories.ts",
+                "file": "src/stories/forms/form.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<Page>",
-                "defaultValue": "(args: Page) => ({\n  props: args,\n})"
+                "type": "Story",
+                "defaultValue": "args => ({\n  props: {\n      ...args,\n      onPinTask: StoryInput.actionsData.onPinInput,\n      onArchiveTask: StoryInput.actionsData.onArchiveInput,\n    },\n})"
             },
             {
                 "name": "Template",
@@ -7354,21 +7294,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/task-list/task-list.stories.ts",
+                "file": "src/stories/pages/Page.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "args => ({\r\n  props: {\r\n    ...args,\r\n    onPinTask: TaskStories.actionsData.onPinTask,\r\n    onArchiveTask: TaskStories.actionsData.onArchiveTask,\r\n  },\r\n})"
+                "type": "Story<Page>",
+                "defaultValue": "(args: Page) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/buttons/button-apps/button-apps.stories.ts",
+                "file": "src/stories/task-list/task-list.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<ButtonAppsComponent>",
-                "defaultValue": "(args: ButtonAppsComponent) => ({\n  props: args,\n})"
+                "type": "Story",
+                "defaultValue": "args => ({\r\n  props: {\r\n    ...args,\r\n    onPinTask: TaskStories.actionsData.onPinTask,\r\n    onArchiveTask: TaskStories.actionsData.onArchiveTask,\r\n  },\r\n})"
             },
             {
                 "name": "Template",
@@ -7384,11 +7324,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/buttons/button-example/Button.stories.ts",
+                "file": "src/stories/buttons/button-apps/button-apps.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<Button>",
-                "defaultValue": "(args: Button) => ({\n  props: args,\n})"
+                "type": "Story<ButtonAppsComponent>",
+                "defaultValue": "(args: ButtonAppsComponent) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -7404,11 +7344,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/buttons/button-language/button-language.stories.ts",
+                "file": "src/stories/buttons/button-example/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<ButtonLanguageComponent>",
-                "defaultValue": "(args: ButtonLanguageComponent) => ({\n  props: args,\n})"
+                "type": "Story<Button>",
+                "defaultValue": "(args: Button) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -7419,6 +7359,16 @@
                 "deprecationMessage": "",
                 "type": "Story<ButtonTadiranComponent>",
                 "defaultValue": "(args: ButtonTadiranComponent) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/buttons/button-language/button-language.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ButtonLanguageComponent>",
+                "defaultValue": "(args: ButtonLanguageComponent) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -7515,16 +7465,6 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/app-menu/app-menu.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "WithPinnedTasks",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/forms/form.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -7934,7 +7874,7 @@
                     "defaultValue": "Template.bind({})"
                 },
                 {
-                    "name": "Empty",
+                    "name": "Loading",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/forms/form.stories.ts",
@@ -7944,7 +7884,7 @@
                     "defaultValue": "Template.bind({})"
                 },
                 {
-                    "name": "Loading",
+                    "name": "MainLoignForm",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/forms/form.stories.ts",
@@ -7962,16 +7902,6 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "args => ({\n  props: {\n      ...args,\n      onPinTask: StoryInput.actionsData.onPinInput,\n      onArchiveTask: StoryInput.actionsData.onArchiveInput,\n    },\n})"
-                },
-                {
-                    "name": "WithPinnedTasks",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/forms/form.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
                 }
             ],
             "src/stories/task-list/task-list.stories.ts": [
@@ -8214,58 +8144,6 @@
                     "defaultValue": "(args: ButtonTadiranComponent) => ({\n  props: args,\n  /*template: '<storybook-button-tadiran ></storybook-button-tadiran>',*/\n\n})"
                 }
             ],
-            "src/stories/buttons/button-example/Button.stories.ts": [
-                {
-                    "name": "Large",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/buttons/button-example/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/buttons/button-example/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Secondary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/buttons/button-example/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Small",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/buttons/button-example/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/buttons/button-example/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<Button>",
-                    "defaultValue": "(args: Button) => ({\n  props: args,\n})"
-                }
-            ],
             "src/stories/buttons/button-globe/button-globe.stories.ts": [
                 {
                     "name": "Large",
@@ -8318,6 +8196,58 @@
                     "defaultValue": "(args: ButtonGlobeComponent) => ({\n  props: args,\n})"
                 }
             ],
+            "src/stories/buttons/button-example/Button.stories.ts": [
+                {
+                    "name": "Large",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/buttons/button-example/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/buttons/button-example/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/buttons/button-example/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Small",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/buttons/button-example/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/buttons/button-example/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<Button>",
+                    "defaultValue": "(args: Button) => ({\n  props: args,\n})"
+                }
+            ],
             "src/stories/buttons/button-language/button-language.stories.ts": [
                 {
                     "name": "Large",
@@ -8368,58 +8298,6 @@
                     "deprecationMessage": "",
                     "type": "Story<ButtonLanguageComponent>",
                     "defaultValue": "(args: ButtonLanguageComponent) => ({\n  props: args,\n})"
-                }
-            ],
-            "src/app/login2/login2.stories.ts": [
-                {
-                    "name": "LoggedIn",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/login2/login2.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "LoggedOut",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/login2/login2.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/login2/login2.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Secondary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/login2/login2.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/login2/login2.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<Login2Component>",
-                    "defaultValue": "(args: Login2Component) => ({\n  props: args,\n})"
                 }
             ],
             "src/stories/headers/Header.stories.ts": [
@@ -8655,7 +8533,7 @@
                     },
                     {
                         "path": "",
-                        "redirectTo": "home",
+                        "redirectTo": "login2",
                         "pathMatch": "full"
                     },
                     {
@@ -8957,56 +8835,6 @@
                 "coveragePercent": 33,
                 "coverageCount": "5/15",
                 "status": "medium"
-            },
-            {
-                "filePath": "src/app/login2/login2.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedIn",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/login2/login2.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedOut",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/login2/login2.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Primary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/login2/login2.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Secondary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/login2/login2.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
             },
             {
                 "filePath": "src/app/pipes/api-error-message.pipe.ts",
@@ -9654,16 +9482,6 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Empty",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/forms/form.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
                 "name": "Loading",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
@@ -9674,7 +9492,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Template",
+                "name": "MainLoignForm",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -9684,7 +9502,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "WithPinnedTasks",
+                "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

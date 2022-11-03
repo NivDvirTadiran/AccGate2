@@ -1,6 +1,16 @@
-<div class="Vector">
+<div id="button-apps" class="container">
+<div class="circle">
+
 <img (click)="onClick.emit($event)" [ngClass]="classes" [ngStyle]="{ 'background-color': backgroundColor }"
-   src="./assets/images/{{application?.toString()}}.png" class="Apps-Button-Icon"  alt="apps-button-icon"/>
+   src="./assets/images/{{application?.toString()}}.png" class="Apps-Button-Icon center"  alt="apps-button-icon"/>
+</div>
+
+<div class="Button-App-Label ">
+  <div class="center mfont">
+
+    {{ application.toString() }}
+
+  </div>
+</div>
 
 </div>
-{{ label }}

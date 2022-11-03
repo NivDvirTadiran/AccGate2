@@ -1,19 +1,80 @@
-.Vector {
+:root {
+  --label_width: 30px;
+  --white: #ffffff;
+}
+
+#button-apps {
+  max-width: 155.09px;
+}
+
+.container {
   position: relative;
-  width: 155.09px;
-  height: 155.09px;
+  max-width: 155.09px;
+  height: 189.09px;
+  float: left;
+  padding: 0;
 }
 
 img.Apps-Button-Icon {
   position: absolute;
-  bottom: 1px;
-  left: 1px;
-  width: 154.09px;
-  height: 154.09px;
+  width: 65.54px;
+  height: 82.79px;
+  left: calc(50% - 65.54px/2);
+  top: calc(50% - 82.79px/2);
   object-fit: contain;
   /*box-shadow: 0 1px 1px 0 rgba(61, 142, 207, 0.15);*/
 }
 
+.circle {
+  position: relative;
+  height: 155.09px;
+  width: 155.09px;
+  background: linear-gradient(151.78deg, #74C1FF 13.27%, #3D8ECF 83.89%);
+  border-radius: 50%;
+}
+
+.center {
+  margin: auto;
+
+  text-align: center;
+
+
+}
+
+.mfont {
+  /*width: 447px;*/
+  font-family: "Noto Sans", ui-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 31px;
+  letter-spacing: -0.011em;
+  color: #000000;
+}
+
+.Button-App-Label {
+  position: relative;
+  width: 100%;
+  height: 33px;
+  horiz-align: center;
+
+}
+.a {
+  position: relative;
+  width: 129px;
+  height: 33px;
+  /*width: 447px;*/
+  font-family: "Noto Sans", ui-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 31px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.011em;
+  color: #000000;
+}
 
 .storybook-button-apps--Agent {
   width: 154.09px;

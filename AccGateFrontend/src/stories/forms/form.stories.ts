@@ -13,6 +13,7 @@ import {ButtonContinueComponent} from "../buttons/button-continue/button-continu
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
+  title: 'LoginForm',
   component: FormComponent,
   decorators: [
     moduleMetadata({
@@ -21,7 +22,6 @@ export default {
     }),
     componentWrapperDecorator(story => `<div style="margin: 3em">${story}</div>`),
   ],
-  title: 'FormList',
 } as Meta;
 
 // More on component templates: https://storybook.js.org/docs/angular/writing-stories/introduction#using-args
@@ -47,8 +47,8 @@ Default.args = {
 
 
 
-export const WithPinnedTasks = Template.bind({});
-WithPinnedTasks.args = {
+export const MainLoignForm = Template.bind({});
+MainLoignForm.args = {
   // Shaping the stories through args composition.
   // Inherited data coming from the Default story.
   storyInputs: [
@@ -62,13 +62,4 @@ Loading.args = {
   storyinputs: [],
   isLoggedIn: true,
 };
-
-export const Empty = Template.bind({});
-Empty.args = {
-  // Shaping the stories through args composition.
-  // Inherited data coming from the Loading story.
-  ...Loading.args,
-  isLoggedIn: false,
-};
-
 

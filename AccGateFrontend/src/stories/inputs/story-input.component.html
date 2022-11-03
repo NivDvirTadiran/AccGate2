@@ -1,25 +1,4 @@
 
-<!--div class="list-item {{ storyInput?.state }}">
-  <label [attr.aria-label]="'archiveInput-' + storyInput.id" for="checked-{{ storyInput?.id }}" class="checkbox">
-    <input
-      type="checkbox"
-      disabled="true"
-      [defaultChecked]="storyInput?.state === 'INPUT_ARCHIVED'"
-      name="checked-{{ storyInput?.id }}"
-      id="checked-{{ storyInput?.id }}"
-    />
-    <span class="checkbox-custom" (click)="onArchive(storyInput.id)"></span>
-  </label>
-  <label [attr.aria-label]="storyInput.title + ''" for="title-{{ storyInput?.id }}" class="title">
-    <input type="text" [value]="storyInput.title" readonly="true" id="title-{{ storyInput?.id }}" name="title-{{ storyInput?.id }}" placeholder="Input title"/>
-  </label>
-  <button *ngIf="storyInput?.state !== 'INPUT_ARCHIVED'" class="pin-button" [attr.aria-label]="'pinTask-' + storyInput.id" (click)="onPin(storyInput.id)">
-    <span class="icon-star"></span>
-  </button>
-</div-->
-
-
-
 <div class="list-item storybook-input Frame-3 {{ storyInput?.state }}" [formGroup]="this.currentForm">
   <a class="user-name D-Caps-Regular">{{storyInput?.state}}</a>
 
@@ -33,6 +12,7 @@
 <!-- [value]="storyInput?.title"  placeholder="{{storyInput?.placeholder}}"  -->
     <button *ngIf="storyInput?.state === 'PASSWORD'" class="icon-input-showpass" type="button" (click)="showPassChange()">
       <img src="./assets/images/EyeIcon.png" class="icon-input-showpass" alt="icon input type" />
+
     </button>
 
   </label>
@@ -40,26 +20,26 @@
 
 
   <!--storyInput?.title+'.invalid' alert alert-danger  && ([storyInput?.title+'.dirty'] || [storyInput?.title+'.touched'].valueOf()) -->
-  <div [ngSwitch]="storyInput?.title">
-      <div class="alert alert-danger"   *ngIf="formControler?.invalid && (formControler?.dirty || formControler?.touched)"  >
+  <span [ngSwitch]="storyInput?.title">
+      <span class=" alert-danger alert"   *ngIf="formControler?.invalid && (formControler?.dirty || formControler?.touched)"  >
           <span *ngSwitchCase="'username'">{{storyInput?.state}} is required!</span>
           <span *ngSwitchCase="'password'">{{storyInput?.state}} is required!</span>
           <span *ngSwitchCase="'email'"   >{{storyInput?.state}} is required!</span>
           <span *ngSwitchCase="'phone'"   >{{storyInput?.state}} is required!</span>
-      </div>
-      <div class="alert alert-danger"  *ngIf="formControler?.valid && (formControler?.dirty || formControler?.touched)">
+      </span>
+      <div class="alert alert-danger "  *ngIf="formControler?.valid && (formControler?.dirty || formControler?.touched)">
         <div *ngSwitchCase="'username'">ok!</div>
         <div *ngSwitchCase="'password'">ok!</div>
         <div *ngSwitchCase="'email'"   >ok!</div>
         <div *ngSwitchCase="'phone'"   >ok!</div>
       </div>
- </div>
+ </span>
 
 
 
 
 
-  <ng-container [ngSwitch]="this.storyInput?.title"></ng-container>
+  <!--ng-container [ngSwitch]="this.storyInput?.title"></ng-container-->
 
     <!--div *ngSwitchCase="'password'">
       <span class="alert alert-danger"   *ngIf="username?.invalid && (username?.dirty || username?.touched)"  >
