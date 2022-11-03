@@ -124,12 +124,12 @@
     "interfaces": [
         {
             "name": "AeonixAppCenterForm",
-            "id": "interface-AeonixAppCenterForm-f35874b1bfbbbad71ac591050a4c21ea7f0c914e1c76b70c023a92ef8092f37f609bb859f6fd514576311daef574a3e6e3068cf41747d212f9ffc63350c9bdec",
+            "id": "interface-AeonixAppCenterForm-fd8463538816549aee8c78c5c57feb278f214e70fe5b64dd96cb50bbbedc08fcc42882e5f220b3804354c557485a1f749e4bd4d62872b4c75313008cdcd8f49a",
             "file": "src/stories/app-menu/app-menu.component.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';\r\nimport { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';\r\nimport { StoryInput } from \"../inputs/story-input.model\";\r\nimport { AuthService } from '../../app/_services/auth.service';\r\nimport {MdbModalRef} from \"mdb-angular-ui-kit/modal\";\r\n\r\n\r\nexport interface AeonixAppCenterForm {\r\n  username: null, //new FormControl('ea2', Validators.min(2)),\r\n  password: null  //new FormControl('zaqwsx', Validators.min(2))\r\n}\r\n\r\n\r\n@Component({\r\n  selector: 'storybook-app-menu',\r\n  templateUrl: './app-menu.component.html',\r\n  styleUrls: ['./app-menu.css'],\r\n})\r\nexport class AppMenuComponent implements OnInit {\r\n\r\n  /*form: AeonixAppCenterForm = {\r\n    username: null,     //new FormControl('ea2', Validators.min(2)),\r\n    password: null      //new FormControl('zaqwsx', Validators.min(2))\r\n  };*/\r\n\r\n\r\n\r\n  @Input() formService!: AuthService;\r\n\r\n  credentials: any = {\r\n    username: null,\r\n    password: null\r\n  };\r\n\r\n  isLoginFailed = false;\r\n  loginErrorMessage = '';\r\n\r\n  openReplacePassword() {\r\n    //this.replacePassFormService.open(ReplacePassFormComponent);\r\n  }\r\n\r\n  constructor() {\r\n    this.validationForm = new FormGroup({\r\n      username: new FormControl('Telecom2', Validators.minLength(2)),\r\n      //email: new FormControl(null, Validators.email),\r\n      password: new FormControl('T@diran2022', Validators.minLength(2)),\r\n      //phone: new FormControl(null, Validators.pattern(new RegExp(\"[0-9 ]{12}\")))\r\n    });\r\n  }\r\n\r\n  /**\r\n   * @ignore\r\n   * Component property to define ordering of tasks\r\n   */\r\n  storyInputsInOrder: StoryInput[] = [];\r\n\r\n  validationForm: FormGroup;\r\n\r\n  @Input() isLoggedIn = false;\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output() onPinInput: EventEmitter<any> = new EventEmitter();\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output() onArchiveInput: EventEmitter<any> = new EventEmitter();\r\n\r\n  @Output() newItemEvent = new EventEmitter<any>();\r\n\r\n\r\n  @Input()\r\n  set storyInputs(arr: StoryInput[]) {\r\n    const initialTasks = [\r\n      ...arr.filter(t => t.state === 'USER NAME'),\r\n      ...arr.filter(t => t.state !== 'USER NAME'),\r\n    ];\r\n    const filteredTasks = initialTasks.filter(\r\n      t => t.state === 'PASSWORD' || t.state === 'USER NAME'\r\n    );\r\n    this.storyInputsInOrder = filteredTasks.filter(\r\n      t => t.state === 'PASSWORD' || t.state === 'USER NAME'\r\n    );\r\n  }\r\n\r\n  onSubmit(): void {\r\n    console.warn('Login Request!');\r\n    this.credentials.username=this.validationForm.get('username')?.value;\r\n    this.credentials.password=this.validationForm.get('password')?.value;\r\n\r\n    this.newItemEvent.emit(this.credentials);\r\n  }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n\r\n  get userName(): AbstractControl {\r\n    return this.validationForm.get('username')!;\r\n  }\r\n\r\n  get email(): AbstractControl {\r\n    return this.validationForm.get('email')!;\r\n  }\r\n\r\n  get password(): AbstractControl {\r\n    return this.validationForm.get('password')!;\r\n  }\r\n\r\n  get phone(): AbstractControl {\r\n    return this.validationForm.get('phone')!;\r\n  }\r\n\r\n\r\n}\r\n\r\n",
+            "sourceCode": "import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';\r\nimport { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';\r\nimport { StoryInput } from \"../inputs/story-input.model\";\r\nimport { AuthService } from '../../app/_services/auth.service';\r\nimport {MdbModalRef} from \"mdb-angular-ui-kit/modal\";\r\n\r\n\r\nexport interface AeonixAppCenterForm {\r\n  username: null, //new FormControl('ea2', Validators.min(2)),\r\n  password: null  //new FormControl('zaqwsx', Validators.min(2))\r\n}\r\n\r\n\r\n@Component({\r\n  selector: 'storybook-app-menu',\r\n  templateUrl: './app-menu.component.html',\r\n  styleUrls: ['./app-menu.css'],\r\n})\r\nexport class AppMenuComponent implements OnInit {\r\n\r\n  /*form: AeonixAppCenterForm = {\r\n    username: null,     //new FormControl('ea2', Validators.min(2)),\r\n    password: null      //new FormControl('zaqwsx', Validators.min(2))\r\n  };*/\r\n\r\n\r\n\r\n  @Input() formService!: AuthService;\r\n\r\n  credentials: any = {\r\n    username: null,\r\n    password: null\r\n  };\r\n\r\n  isLoginFailed = false;\r\n  loginErrorMessage = '';\r\n\r\n  openReplacePassword() {\r\n    //this.replacePassFormService.open(ReplacePassFormComponent);\r\n  }\r\n\r\n  constructor() {\r\n    this.validationForm = new FormGroup({\r\n      username: new FormControl('Telecom2', Validators.minLength(2)),\r\n      //email: new FormControl(null, Validators.email),\r\n      password: new FormControl('T@diran2022', Validators.minLength(2)),\r\n      //phone: new FormControl(null, Validators.pattern(new RegExp(\"[0-9 ]{12}\")))\r\n    });\r\n  }\r\n\r\n  /**\r\n   * @ignore\r\n   * Component property to define ordering of tasks\r\n   */\r\n  storyInputsInOrder: StoryInput[] = [];\r\n\r\n  validationForm: FormGroup;\r\n\r\n  @Input() isLoggedIn = false;\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output() onPinInput: EventEmitter<any> = new EventEmitter();\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output() onArchiveInput: EventEmitter<any> = new EventEmitter();\r\n\r\n  @Output() openNewWinForApp = new EventEmitter<any>();\r\n\r\n  @Output() openNewTabForApp = new EventEmitter<any>();\r\n\r\n\r\n  @Input()\r\n  set storyInputs(arr: StoryInput[]) {\r\n    const initialTasks = [\r\n      ...arr.filter(t => t.state === 'USER NAME'),\r\n      ...arr.filter(t => t.state !== 'USER NAME'),\r\n    ];\r\n    const filteredTasks = initialTasks.filter(\r\n      t => t.state === 'PASSWORD' || t.state === 'USER NAME'\r\n    );\r\n    this.storyInputsInOrder = filteredTasks.filter(\r\n      t => t.state === 'PASSWORD' || t.state === 'USER NAME'\r\n    );\r\n  }\r\n\r\n  onSubmit(): void {\r\n    console.warn('Login Request!');\r\n    this.credentials.username=this.validationForm.get('username')?.value;\r\n    this.credentials.password=this.validationForm.get('password')?.value;\r\n\r\n    this.openNewWinForApp.emit(this.credentials);\r\n  }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n\r\n  get userName(): AbstractControl {\r\n    return this.validationForm.get('username')!;\r\n  }\r\n\r\n  get email(): AbstractControl {\r\n    return this.validationForm.get('email')!;\r\n  }\r\n\r\n  get password(): AbstractControl {\r\n    return this.validationForm.get('password')!;\r\n  }\r\n\r\n  get phone(): AbstractControl {\r\n    return this.validationForm.get('phone')!;\r\n  }\r\n\r\n\r\n}\r\n\r\n",
             "properties": [
                 {
                     "name": "password",
@@ -1934,7 +1934,7 @@
         },
         {
             "name": "AppMenuComponent",
-            "id": "component-AppMenuComponent-f35874b1bfbbbad71ac591050a4c21ea7f0c914e1c76b70c023a92ef8092f37f609bb859f6fd514576311daef574a3e6e3068cf41747d212f9ffc63350c9bdec",
+            "id": "component-AppMenuComponent-fd8463538816549aee8c78c5c57feb278f214e70fe5b64dd96cb50bbbedc08fcc42882e5f220b3804354c557485a1f749e4bd4d62872b4c75313008cdcd8f49a",
             "file": "src/stories/app-menu/app-menu.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1972,20 +1972,12 @@
                     "name": "storyInputs",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 71,
+                    "line": 73,
                     "type": "StoryInput[]",
                     "decorators": []
                 }
             ],
             "outputsClass": [
-                {
-                    "name": "newItemEvent",
-                    "defaultValue": "new EventEmitter<any>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 67,
-                    "type": "EventEmitter"
-                },
                 {
                     "name": "onArchiveInput",
                     "defaultValue": "new EventEmitter()",
@@ -2001,6 +1993,22 @@
                     "deprecationMessage": "",
                     "line": 62,
                     "type": "EventEmitter<any>"
+                },
+                {
+                    "name": "openNewTabForApp",
+                    "defaultValue": "new EventEmitter<any>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 69,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "openNewWinForApp",
+                    "defaultValue": "new EventEmitter<any>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 67,
+                    "type": "EventEmitter"
                 }
             ],
             "propertiesClass": [
@@ -2051,7 +2059,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 92,
+                    "line": 94,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -2061,7 +2069,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 84,
+                    "line": 86,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -2083,11 +2091,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';\r\nimport { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';\r\nimport { StoryInput } from \"../inputs/story-input.model\";\r\nimport { AuthService } from '../../app/_services/auth.service';\r\nimport {MdbModalRef} from \"mdb-angular-ui-kit/modal\";\r\n\r\n\r\nexport interface AeonixAppCenterForm {\r\n  username: null, //new FormControl('ea2', Validators.min(2)),\r\n  password: null  //new FormControl('zaqwsx', Validators.min(2))\r\n}\r\n\r\n\r\n@Component({\r\n  selector: 'storybook-app-menu',\r\n  templateUrl: './app-menu.component.html',\r\n  styleUrls: ['./app-menu.css'],\r\n})\r\nexport class AppMenuComponent implements OnInit {\r\n\r\n  /*form: AeonixAppCenterForm = {\r\n    username: null,     //new FormControl('ea2', Validators.min(2)),\r\n    password: null      //new FormControl('zaqwsx', Validators.min(2))\r\n  };*/\r\n\r\n\r\n\r\n  @Input() formService!: AuthService;\r\n\r\n  credentials: any = {\r\n    username: null,\r\n    password: null\r\n  };\r\n\r\n  isLoginFailed = false;\r\n  loginErrorMessage = '';\r\n\r\n  openReplacePassword() {\r\n    //this.replacePassFormService.open(ReplacePassFormComponent);\r\n  }\r\n\r\n  constructor() {\r\n    this.validationForm = new FormGroup({\r\n      username: new FormControl('Telecom2', Validators.minLength(2)),\r\n      //email: new FormControl(null, Validators.email),\r\n      password: new FormControl('T@diran2022', Validators.minLength(2)),\r\n      //phone: new FormControl(null, Validators.pattern(new RegExp(\"[0-9 ]{12}\")))\r\n    });\r\n  }\r\n\r\n  /**\r\n   * @ignore\r\n   * Component property to define ordering of tasks\r\n   */\r\n  storyInputsInOrder: StoryInput[] = [];\r\n\r\n  validationForm: FormGroup;\r\n\r\n  @Input() isLoggedIn = false;\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output() onPinInput: EventEmitter<any> = new EventEmitter();\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output() onArchiveInput: EventEmitter<any> = new EventEmitter();\r\n\r\n  @Output() newItemEvent = new EventEmitter<any>();\r\n\r\n\r\n  @Input()\r\n  set storyInputs(arr: StoryInput[]) {\r\n    const initialTasks = [\r\n      ...arr.filter(t => t.state === 'USER NAME'),\r\n      ...arr.filter(t => t.state !== 'USER NAME'),\r\n    ];\r\n    const filteredTasks = initialTasks.filter(\r\n      t => t.state === 'PASSWORD' || t.state === 'USER NAME'\r\n    );\r\n    this.storyInputsInOrder = filteredTasks.filter(\r\n      t => t.state === 'PASSWORD' || t.state === 'USER NAME'\r\n    );\r\n  }\r\n\r\n  onSubmit(): void {\r\n    console.warn('Login Request!');\r\n    this.credentials.username=this.validationForm.get('username')?.value;\r\n    this.credentials.password=this.validationForm.get('password')?.value;\r\n\r\n    this.newItemEvent.emit(this.credentials);\r\n  }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n\r\n  get userName(): AbstractControl {\r\n    return this.validationForm.get('username')!;\r\n  }\r\n\r\n  get email(): AbstractControl {\r\n    return this.validationForm.get('email')!;\r\n  }\r\n\r\n  get password(): AbstractControl {\r\n    return this.validationForm.get('password')!;\r\n  }\r\n\r\n  get phone(): AbstractControl {\r\n    return this.validationForm.get('phone')!;\r\n  }\r\n\r\n\r\n}\r\n\r\n",
+            "sourceCode": "import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';\r\nimport { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';\r\nimport { StoryInput } from \"../inputs/story-input.model\";\r\nimport { AuthService } from '../../app/_services/auth.service';\r\nimport {MdbModalRef} from \"mdb-angular-ui-kit/modal\";\r\n\r\n\r\nexport interface AeonixAppCenterForm {\r\n  username: null, //new FormControl('ea2', Validators.min(2)),\r\n  password: null  //new FormControl('zaqwsx', Validators.min(2))\r\n}\r\n\r\n\r\n@Component({\r\n  selector: 'storybook-app-menu',\r\n  templateUrl: './app-menu.component.html',\r\n  styleUrls: ['./app-menu.css'],\r\n})\r\nexport class AppMenuComponent implements OnInit {\r\n\r\n  /*form: AeonixAppCenterForm = {\r\n    username: null,     //new FormControl('ea2', Validators.min(2)),\r\n    password: null      //new FormControl('zaqwsx', Validators.min(2))\r\n  };*/\r\n\r\n\r\n\r\n  @Input() formService!: AuthService;\r\n\r\n  credentials: any = {\r\n    username: null,\r\n    password: null\r\n  };\r\n\r\n  isLoginFailed = false;\r\n  loginErrorMessage = '';\r\n\r\n  openReplacePassword() {\r\n    //this.replacePassFormService.open(ReplacePassFormComponent);\r\n  }\r\n\r\n  constructor() {\r\n    this.validationForm = new FormGroup({\r\n      username: new FormControl('Telecom2', Validators.minLength(2)),\r\n      //email: new FormControl(null, Validators.email),\r\n      password: new FormControl('T@diran2022', Validators.minLength(2)),\r\n      //phone: new FormControl(null, Validators.pattern(new RegExp(\"[0-9 ]{12}\")))\r\n    });\r\n  }\r\n\r\n  /**\r\n   * @ignore\r\n   * Component property to define ordering of tasks\r\n   */\r\n  storyInputsInOrder: StoryInput[] = [];\r\n\r\n  validationForm: FormGroup;\r\n\r\n  @Input() isLoggedIn = false;\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output() onPinInput: EventEmitter<any> = new EventEmitter();\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output() onArchiveInput: EventEmitter<any> = new EventEmitter();\r\n\r\n  @Output() openNewWinForApp = new EventEmitter<any>();\r\n\r\n  @Output() openNewTabForApp = new EventEmitter<any>();\r\n\r\n\r\n  @Input()\r\n  set storyInputs(arr: StoryInput[]) {\r\n    const initialTasks = [\r\n      ...arr.filter(t => t.state === 'USER NAME'),\r\n      ...arr.filter(t => t.state !== 'USER NAME'),\r\n    ];\r\n    const filteredTasks = initialTasks.filter(\r\n      t => t.state === 'PASSWORD' || t.state === 'USER NAME'\r\n    );\r\n    this.storyInputsInOrder = filteredTasks.filter(\r\n      t => t.state === 'PASSWORD' || t.state === 'USER NAME'\r\n    );\r\n  }\r\n\r\n  onSubmit(): void {\r\n    console.warn('Login Request!');\r\n    this.credentials.username=this.validationForm.get('username')?.value;\r\n    this.credentials.password=this.validationForm.get('password')?.value;\r\n\r\n    this.openNewWinForApp.emit(this.credentials);\r\n  }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n\r\n  get userName(): AbstractControl {\r\n    return this.validationForm.get('username')!;\r\n  }\r\n\r\n  get email(): AbstractControl {\r\n    return this.validationForm.get('email')!;\r\n  }\r\n\r\n  get password(): AbstractControl {\r\n    return this.validationForm.get('password')!;\r\n  }\r\n\r\n  get phone(): AbstractControl {\r\n    return this.validationForm.get('phone')!;\r\n  }\r\n\r\n\r\n}\r\n\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "\r\n/*\r\n.form {\r\n  position: absolute;\r\n  left: 3.18%;\r\n  right: 14.78%;\r\n  top: 0;\r\n  bottom: 0;\r\n  border-radius: 14px;\r\n  box-shadow: -4px 4px 10px 0 rgba(88, 166, 228, 0.3);\r\n  background-color: #fff;\r\n}\r\n\r\n*/\r\n\r\n.card-container.card {\r\n  max-width: 1000px !important;\r\n  padding: 10px 10px;\r\n  /*top: 5.18%;\r\n  bottom: 4.78%;*/\r\n\r\n}\r\n/*\r\n.col-md-12{\r\n  position: center;\r\n  width: 42.65%;\r\n  height: 89.35%;\r\n  left: calc(50% - 42.65%/2 - 0px);\r\n  top: calc(50% - 89.35%/2 - 0px);\r\n}\r\n*/\r\n\r\n.col-md-12{\r\n  position: center;\r\n  width: 965px;\r\n  height: 819px;\r\n  left: calc(50% - 965px/2 - 0.25px);\r\n  top: calc(50% - 819px/2 - 0.5px);\r\n  border-radius: 32px;\r\n\r\n}\r\n\r\n.Aeonix-App-Center {\r\n  position: absolute;\r\n  top: 12.94%;\r\n  bottom: 77.05%;\r\n\r\n  /*width: 447px;*/\r\n  height: 82px;\r\n  flex-grow: 0;\r\n  margin: 0 0 19.8px;\r\n  font-family: \"Noto Sans\", ui-serif;\r\n  font-size: 40px;\r\n  font-weight: bolder;\r\n  font-style: normal;\r\n  font-stretch: normal;\r\n  line-height: 45px;\r\n  letter-spacing: -0.011px;\r\n  text-align: left;\r\n  color: #000000;\r\n}\r\n\r\n",
+                    "data": "\r\n/*\r\n.form {\r\n  position: absolute;\r\n  left: 3.18%;\r\n  right: 14.78%;\r\n  top: 0;\r\n  bottom: 0;\r\n  border-radius: 14px;\r\n  box-shadow: -4px 4px 10px 0 rgba(88, 166, 228, 0.3);\r\n  background-color: #fff;\r\n}\r\n\r\n*/\r\n\r\n.card-container.card {\r\n  max-width: 1000px !important;\r\n  padding: 10px 10px;\r\n  /*top: 5.18%;\r\n  bottom: 4.78%;*/\r\n\r\n}\r\n\r\n\r\n\r\n.grid-container {\r\n  display: grid;\r\n  justify-content: center;\r\n  grid-template-columns: auto auto auto auto auto auto;\r\n  gap: 10%;\r\n  background-color: #2196F3;\r\n  padding: 0px;\r\n}\r\n\r\n.grid-container > div {\r\n  background-color: rgba(255, 255, 255, 0.8);\r\n  text-align: center;\r\n  padding: 0 0;\r\n  font-size: 30px;\r\n}\r\n\r\n.item1 {\r\n  grid-area: 1 / 1 / span 1 / span 2;\r\n}\r\n.item2 {\r\n  grid-area: 1 / 3 / span 1 / span 2;\r\n}\r\n.item3 {\r\n  grid-area: 1 / 5 / span 1 / span 2;\r\n}\r\n\r\n.item4 {\r\n  grid-area: 2 / 2 / span 1 / span 2;\r\n}\r\n.item5 {\r\n  grid-area: 2 / 4 / span 1 / span 2;\r\n}\r\n/*\r\n.col-md-12{\r\n  position: center;\r\n  width: 42.65%;\r\n  height: 89.35%;\r\n  left: calc(50% - 42.65%/2 - 0px);\r\n  top: calc(50% - 89.35%/2 - 0px);\r\n}\r\n*/\r\n\r\n.col-md-12{\r\n  position: center;\r\n  width: 965px;\r\n  height: 819px;\r\n  left: calc(50% - 965px/2 - 0.25px);\r\n  top: calc(50% - 819px/2 - 0.5px);\r\n  border-radius: 32px;\r\n\r\n}\r\n\r\n.Aeonix-App-Center {\r\n  position: absolute;\r\n  top: 12.94%;\r\n  bottom: 77.05%;\r\n\r\n  /*width: 447px;*/\r\n  height: 82px;\r\n  flex-grow: 0;\r\n  margin: 0 0 19.8px;\r\n  font-family: \"Noto Sans\", ui-serif;\r\n  font-size: 40px;\r\n  font-weight: bolder;\r\n  font-style: normal;\r\n  font-stretch: normal;\r\n  line-height: 45px;\r\n  letter-spacing: -0.011px;\r\n  text-align: left;\r\n  color: #000000;\r\n}\r\n\r\n",
                     "styleUrl": "./app-menu.css"
                 }
             ],
@@ -2120,7 +2128,7 @@
                             }
                         ],
                         "returnType": "void",
-                        "line": 71,
+                        "line": 73,
                         "jsdoctags": [
                             {
                                 "name": "arr",
@@ -2140,7 +2148,7 @@
                         "name": "userName",
                         "type": "",
                         "returnType": "AbstractControl",
-                        "line": 96
+                        "line": 98
                     }
                 },
                 "email": {
@@ -2149,7 +2157,7 @@
                         "name": "email",
                         "type": "",
                         "returnType": "AbstractControl",
-                        "line": 100
+                        "line": 102
                     }
                 },
                 "password": {
@@ -2158,7 +2166,7 @@
                         "name": "password",
                         "type": "",
                         "returnType": "AbstractControl",
-                        "line": 104
+                        "line": 106
                     }
                 },
                 "phone": {
@@ -2167,11 +2175,11 @@
                         "name": "phone",
                         "type": "",
                         "returnType": "AbstractControl",
-                        "line": 108
+                        "line": 110
                     }
                 }
             },
-            "templateData": "\r\n\r\n\r\n<div id=\"main-login-card\" class=\"col-md-12\">\r\n  <storybook-card class=\"\" ></storybook-card>\r\n  <div  class=\"h-100 d-flex align-items-center justify-content-center\">\r\n    <div class=\"Aeonix-App-Center\">\r\n      <a>Aeonix App Center</a>\r\n    </div>\r\n\r\n    <br>\r\n    <!--form name=\"form\"  (ngSubmit)=\"f.form.valid && onSubmit()\" #f=\"ngForm\" novalidate --> <!-- *ngIf=\"!isLoggedIn\"-->\r\n\r\n  </div>\r\n</div>\r\n\r\n"
+            "templateData": "\r\n\r\n\r\n<div id=\"main-login-card\" class=\"col-md-12\">\r\n  <storybook-card class=\"card-container\" ></storybook-card>\r\n  <div  class=\"h-100 d-flex align-items-center justify-content-center\">\r\n    <div class=\"Aeonix-App-Center\">\r\n      <a>Aeonix App Center</a>\r\n    </div>\r\n\r\n    <div class=\"grid-container\">\r\n      <div class=\"item1\"><storybook-button-apps application=\"Agent\" label=\"Continue\" type=\"button\"\r\n        id=\"openNewAgentTab\" (click)='this.openNewWinForApp.emit([\"AGENT\",\"/accAgent/\"])' ></storybook-button-apps></div>\r\n      <div class=\"item2\"><storybook-button-apps application=\"WebRT\" label=\"Continue\" type=\"button\"\r\n        id=\"openNewWebRTTab\" (click)='this.openNewTabForApp.emit([\"ACCREALTIME\",\"/accRealTime/\"])' ></storybook-button-apps></div>\r\n      <div class=\"item3\"><storybook-button-apps application=\"GCCS\" label=\"Continue\" type=\"button\"\r\n        id=\"openNewGccsTab\" (click)='this.openNewTabForApp.emit([\"GCCS\",\"/accGCCS/\"])' ></storybook-button-apps></div>\r\n      <div class=\"item4\"><storybook-button-apps application=\"Admin\" label=\"Continue\" type=\"button\"\r\n        ></storybook-button-apps></div>\r\n      <div class=\"item5\"><storybook-button-apps application=\"GCCS\" label=\"Continue\" type=\"button\"\r\n        id=\"openNewGccsTab2\" (click)='this.openNewTabForApp.emit([\"GCCS\",\"/accGCCS/\"])'></storybook-button-apps></div>\r\n    </div>\r\n\r\n\r\n\r\n  </div>\r\n</div>\r\n\r\n"
         },
         {
             "name": "Background1Component",
@@ -2671,14 +2679,14 @@
         },
         {
             "name": "ButtonAppsComponent",
-            "id": "component-ButtonAppsComponent-9f2175f43417ed0b6a327c19f5738e24690abcdbd60a37e0695465a2155a9a2c207e4f31045a28dbe13d4bf721626d0cdb290f0a2f161734025ba90336471f04",
+            "id": "component-ButtonAppsComponent-12338f9df91e9db95ecdee3da446515938c90aa0ddbbc51150916adf88d9475b4175dec05a8f71a8105074304327fc35821117af6ddf7267752ed4d89fc5dc40",
             "file": "src/stories/buttons/button-apps/button-apps.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "storybook-button-globe",
+            "selector": "storybook-button-apps",
             "styleUrls": [
                 "./button-apps.component.css"
             ],
@@ -2688,6 +2696,17 @@
             ],
             "viewProviders": [],
             "inputsClass": [
+                {
+                    "name": "application",
+                    "defaultValue": "'Admin'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nWhat application should the button linked to?\n",
+                    "description": "<p>What application should the button linked to?</p>\n",
+                    "line": 31,
+                    "type": "\"Agent\" | \"WebRT\" | \"GCCS\" | \"Admin\"",
+                    "decorators": []
+                },
                 {
                     "name": "backgroundColor",
                     "deprecated": false,
@@ -2705,15 +2724,15 @@
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
-                            "pos": 587,
-                            "end": 600,
+                            "pos": 724,
+                            "end": 737,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 325,
                             "tagName": {
-                                "pos": 588,
-                                "end": 596,
+                                "pos": 725,
+                                "end": 733,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -2725,7 +2744,7 @@
                     ],
                     "rawdescription": "\n\nButton contents\n\n",
                     "description": "<p>Button contents</p>\n",
-                    "line": 33,
+                    "line": 39,
                     "type": "string",
                     "decorators": []
                 },
@@ -2760,7 +2779,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nOptional click handler\n",
                     "description": "<p>Optional click handler</p>\n",
-                    "line": 39,
+                    "line": 45,
                     "type": "EventEmitter"
                 }
             ],
@@ -2772,7 +2791,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 50,
+                    "line": 56,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -2784,11 +2803,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button-globe',\n  templateUrl: './button-apps.component.html',\n  styleUrls: ['./button-apps.component.css']\n})\nexport class ButtonAppsComponent {\n  /**\n   * Is this the principal call to action on the login2?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'accGateButton2';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button-tadiran--primary' : 'storybook-button-tadiran--secondary';\n\n    return ['storybook-button-tadiran', `storybook-tadiran-icon--${this.size}`, mode];\n  }\n\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button-apps',\n  templateUrl: './button-apps.component.html',\n  styleUrls: ['./button-apps.component.css']\n})\nexport class ButtonAppsComponent {\n  /**\n   * Is this the principal call to action on the login2?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * What application should the button linked to?\n   */\n  @Input()\n  application: 'Agent' | 'WebRT' | 'GCCS' | 'Admin' = 'Admin';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'accGateButton2';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button-apps--primary' : 'storybook-button-apps--secondary';\n\n    return ['storybook-button-apps', `storybook-button-apps--${this.application}`, mode];\n  }\n\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".Vector {\r\n  position: absolute;\r\n  bottom: 49px;\r\n  left: 247px;\r\n  width: 123px;\r\n  height: 45px;\r\n}\r\n\r\nimg.Language-Desktop-Icon {\r\n  position: absolute;\r\n  bottom: 1px;\r\n  left: 1px;\r\n  width: 123px;\r\n  height: 45px;\r\n  object-fit: contain;\r\n  /*box-shadow: 0 1px 1px 0 rgba(61, 142, 207, 0.15);*/\r\n}\r\n",
+                    "data": ".Vector {\r\n  position: relative;\r\n  width: 155.09px;\r\n  height: 155.09px;\r\n}\r\n\r\nimg.Apps-Button-Icon {\r\n  position: absolute;\r\n  bottom: 1px;\r\n  left: 1px;\r\n  width: 154.09px;\r\n  height: 154.09px;\r\n  object-fit: contain;\r\n  /*box-shadow: 0 1px 1px 0 rgba(61, 142, 207, 0.15);*/\r\n}\r\n\r\n\r\n.storybook-button-apps--Agent {\r\n  width: 154.09px;\r\n  height: 154.09px;\r\n}\r\n.storybook-button-apps--WebRT {\r\n  width: 152.94px;\r\n  height: 197px;\r\n}\r\n.storybook-button-apps--Admin {\r\n  width: 154.09px;\r\n  height: 154.09px;\r\n}\r\n.storybook-button-apps--GCCS {\r\n  width: 154.09px;\r\n  height: 152.94px;\r\n}\r\n",
                     "styleUrl": "./button-apps.component.css"
                 }
             ],
@@ -2799,7 +2818,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 45
+                "line": 51
             },
             "accessors": {
                 "classes": {
@@ -2808,11 +2827,11 @@
                         "name": "classes",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 41
+                        "line": 47
                     }
                 }
             },
-            "templateData": "<div class=\"Vector\">\n<img (click)=\"onClick.emit($event)\" [ngClass]=\"classes\" [ngStyle]=\"{ 'background-color': backgroundColor }\"\n   src=\"./assets/images/GlobeIcon.png\" class=\"Language-Desktop-Icon\"  alt=\"language-desktop-icon\"/>\n</div>\n"
+            "templateData": "<div class=\"Vector\">\n<img (click)=\"onClick.emit($event)\" [ngClass]=\"classes\" [ngStyle]=\"{ 'background-color': backgroundColor }\"\n   src=\"./assets/images/{{application?.toString()}}.png\" class=\"Apps-Button-Icon\"  alt=\"apps-button-icon\"/>\n\n</div>\n{{ label }}\n"
         },
         {
             "name": "ButtonComponent",
@@ -4046,7 +4065,7 @@
         },
         {
             "name": "Login2Component",
-            "id": "component-Login2Component-d470a156b36145e36938f28a8a752faeabc348bb7c71ab719462631c6e8acd8dd272a7823a52ba4f7a77cc8ae4fac9e90eac37d8b76a2a94bd6bbc83cf40a1a6",
+            "id": "component-Login2Component-9184e2f6e32d8c4750f64f9372902032d41d6f08a5c06ada2e82d1ad871afdfd8120e31794ac753b549a474f0c0e0c9914efe45cb103e04b7a4500e50c734ad6",
             "file": "src/app/login2/login2.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -4252,7 +4271,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\nimport { StoryInput } from \"../../stories/inputs/story-input.model\";\nimport {AuthService} from \"../_services/auth.service\";\nimport {FormGroup} from \"@angular/forms\";\nimport {TokenStorageService} from \"../_services/token-storage.service\";\nimport {Router} from \"@angular/router\";\n//import {Default} from \"../../stories/inputs/story-input.stories\";\n\n\n@Component({\n  selector: 'storybook-login2',\n  templateUrl: './login2.component.html',\n  styleUrls: ['./login2.component.scss']\n})\nexport default class Login2Component implements OnInit {\n\n  public isLoggedIn = false;\n  isLoginFailed = false;\n  loginErrorMessage = '';\n  roles: string[] = [];\n\n\n\n\n  /**\n   * Is this the principal call to action on the login2?\n   */\n  storyInputsInOrder: StoryInput[]  = [\n    { /*...Default.args?.['storyInput'],*/ id: '1', title: 'username', state: 'USER NAME', icon: './assets/images/User2ldpi.png', type: 'text', placeholder: 'Ex.Saul Ramirez' },\n    { /*...Default.args?.['storyInput'],*/ id: '2', title: 'password', state: 'PASSWORD', icon: './assets/images/LockIcon2ldpi.png', type: 'password', placeholder: 'your_password'  },\n  ];\n\n  /**\n   * Is this the principal call to action on the login2?\n   */\n  @Input()\n  primary = true;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  background?: string;\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Login2Component';\n\n  /*user: User | null = null;\n\n  doLogout() {\n    this.user = null;\n  }\n\n  doLogin() {\n    this.user = { name: 'Jane Doe' };\n  }\n\n  doCreateAccount() {\n    this.user = { name: 'Jane Doe' };\n\n  }*/\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-page2--primary' : 'storybook-page2--secondary';\n\n    return ['storybook-page2', mode];\n  }\n\n  constructor(public authService: AuthService,\n              private tokenStorage: TokenStorageService,\n              private router: Router,) {}\n\n  ngOnInit(): void {};\n\n\n  onSubmit(credentials: any): void {\n    console.warn('Login Request from login2!');\n    const { username, password } = credentials;\n\n    this.authService.login(username, password).subscribe(\n      data => {\n        this.tokenStorage.saveToken(data.accessToken);\n        this.tokenStorage.saveRefreshToken(data.refreshToken);\n        this.tokenStorage.saveUser(data);\n\n        this.isLoginFailed = false;\n        this.isLoggedIn = true;\n        this.roles = this.tokenStorage.getUser().roles;\n        this.reloadPage();\n      },\n      err => {\n        switch (err.error.message) {\n          case \"Error: A registry process should be made!\":\n            //this.openRegisterForm().then(() => {this.openReplacePassword()});\n            //toPromise((data) => {this.openReplacePassword()});\n            /*this.openRegisterForm().then(\n              (val) => {\n                console.log(val);\n                switch (val) {\n                  case \"xbutton\":\n                    break;\n                  case \"Registration Complete\":\n                    this.openReplacePassword();\n                    break;\n                  case undefined:\n                    this.openReplacePassword();\n                    break;\n                  default:\n                }\n                return 'done2';\n              },\n              (err) => console.error(err));*/\n            break;\n          default:\n            this.loginErrorMessage = err.error.message;\n        }\n\n\n        this.isLoginFailed = true;\n      }\n    );\n  }\n\n\n  reloadPage(): void {\n    this.router.navigate(['/login2']).then(() => {window.location.reload()});\n  }\n\n}\n\n",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\nimport { StoryInput } from \"../../stories/inputs/story-input.model\";\nimport {AuthService} from \"../_services/auth.service\";\nimport {FormGroup} from \"@angular/forms\";\nimport {TokenStorageService} from \"../_services/token-storage.service\";\nimport {Router} from \"@angular/router\";\n//import {Default} from \"../../stories/inputs/story-input.stories\";\n\n\n@Component({\n  selector: 'storybook-login2',\n  templateUrl: './login2.component.html',\n  styleUrls: ['./login2.component.scss']\n})\nexport default class Login2Component implements OnInit {\n\n  public isLoggedIn = false;\n  isLoginFailed = false;\n  loginErrorMessage = '';\n  roles: string[] = [];\n\n\n\n\n  /**\n   * Is this the principal call to action on the login2?\n   */\n  storyInputsInOrder: StoryInput[]  = [\n    { /*...Default.args?.['storyInput'],*/ id: '1', title: 'username', state: 'USER NAME', icon: './assets/images/User2ldpi.png', type: 'text', placeholder: 'Ex.Saul Ramirez' },\n    { /*...Default.args?.['storyInput'],*/ id: '2', title: 'password', state: 'PASSWORD', icon: './assets/images/LockIcon2ldpi.png', type: 'password', placeholder: 'your_password'  },\n  ];\n\n  /**\n   * Is this the principal call to action on the login2?\n   */\n  @Input()\n  primary = true;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  background?: string;\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Login2Component';\n\n  /*user: User | null = null;\n\n  doLogout() {\n    this.user = null;\n  }\n\n  doLogin() {\n    this.user = { name: 'Jane Doe' };\n  }\n\n  doCreateAccount() {\n    this.user = { name: 'Jane Doe' };\n\n  }*/\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-page2--primary' : 'storybook-page2--secondary';\n\n    return ['storybook-page2', mode];\n  }\n\n  constructor(public authService: AuthService,\n              private tokenStorage: TokenStorageService,\n              private router: Router,) {}\n\n  ngOnInit(): void {};\n\n\n  onSubmit(credentials: any): void {\n    console.warn('Login Request from login2!');\n    const { username, password } = credentials;\n\n    this.authService.login(username, password).subscribe(\n      data => {\n        this.tokenStorage.saveToken(data.accessToken);\n        this.tokenStorage.saveRefreshToken(data.refreshToken);\n        this.tokenStorage.saveUser(data);\n\n        this.isLoginFailed = false;\n        this.isLoggedIn = true;\n        this.roles = this.tokenStorage.getUser().roles;\n        this.reloadPage();\n      },\n      err => {\n        switch (err.error.message) {\n          case \"Error: A registry process should be made!\":\n            //this.openRegisterForm().then(() => {this.openReplacePassword()});\n            //toPromise((data) => {this.openReplacePassword()});\n            /*this.openRegisterForm().then(\n              (val) => {\n                console.log(val);\n                switch (val) {\n                  case \"xbutton\":\n                    break;\n                  case \"Registration Complete\":\n                    this.openReplacePassword();\n                    break;\n                  case undefined:\n                    this.openReplacePassword();\n                    break;\n                  default:\n                }\n                return 'done2';\n              },\n              (err) => console.error(err));*/\n            break;\n          default:\n            this.loginErrorMessage = err.error.message;\n        }\n\n\n        this.isLoginFailed = true;\n      }\n    );\n  }\n\n\n  reloadPage(): void {\n    this.router.navigate(['/profile2']).then(() => {window.location.reload()});\n  }\n\n}\n\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -4663,7 +4682,7 @@
         },
         {
             "name": "Profile2Component",
-            "id": "component-Profile2Component-e923c9a728108ee82bf970266cabda7ec085496921d24e8529af698490773c38baab86bab5e1a7eb679f113eb73115de1c08b596d8648e000ca04fba88576de7",
+            "id": "component-Profile2Component-95567c4c13974836a21a7853b9d1cec812dfcdfa4c7b197c0065ef5a5807e57d2280533dbd49ccde3494dbeea2d1ced1c116eb238684cf88fa82b87e840a073b",
             "file": "src/app/profile2/profile2.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -4679,156 +4698,133 @@
                 "./profile2.component.html"
             ],
             "viewProviders": [],
-            "inputsClass": [
-                {
-                    "name": "background",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nWhat background color to use\n",
-                    "description": "<p>What background color to use</p>\n",
-                    "line": 50,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "backgroundColor",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nWhat background color to use\n",
-                    "description": "<p>What background color to use</p>\n",
-                    "line": 43,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "label",
-                    "defaultValue": "'Page2Component'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "pos": 1480,
-                            "end": 1493,
-                            "flags": 4227072,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 325,
-                            "tagName": {
-                                "pos": 1481,
-                                "end": 1489,
-                                "flags": 4227072,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 79,
-                                "escapedText": "required"
-                            },
-                            "comment": ""
-                        }
-                    ],
-                    "rawdescription": "\n\nButton contents\n\n",
-                    "description": "<p>Button contents</p>\n",
-                    "line": 58,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "primary",
-                    "defaultValue": "true",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nIs this the principal call to action on the login2?\n",
-                    "description": "<p>Is this the principal call to action on the login2?</p>\n",
-                    "line": 37,
-                    "type": "boolean",
-                    "decorators": []
-                }
-            ],
+            "inputsClass": [],
             "outputsClass": [],
             "propertiesClass": [
                 {
-                    "name": "authService",
+                    "name": "accessToken",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "AuthService",
-                    "optional": false,
-                    "description": "",
-                    "line": 81,
-                    "modifierKind": [
-                        123
-                    ]
-                },
-                {
-                    "name": "isLoggedIn",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 17,
-                    "modifierKind": [
-                        123
-                    ]
-                },
-                {
-                    "name": "isLoginFailed",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 18
-                },
-                {
-                    "name": "loginErrorMessage",
-                    "defaultValue": "''",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 19
-                },
-                {
-                    "name": "roles",
-                    "defaultValue": "[]",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string[]",
+                    "type": "any",
                     "optional": false,
                     "description": "",
                     "line": 20
                 },
                 {
-                    "name": "storyInputsInOrder",
-                    "defaultValue": "[\n    { /*...Default.args?.['storyInput'],*/ id: '1', title: 'username', state: 'USER NAME', icon: './assets/images/User2ldpi.png', type: 'text', placeholder: 'Ex.Saul Ramirez' },\n    { /*...Default.args?.['storyInput'],*/ id: '2', title: 'password', state: 'PASSWORD', icon: './assets/images/LockIcon2ldpi.png', type: 'password', placeholder: 'your_password'  },\n  ]",
+                    "name": "appConfig",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "StoryInput[]",
+                    "type": "any",
                     "optional": false,
-                    "description": "<p>Is this the principal call to action on the login2?</p>\n",
-                    "line": 28,
-                    "rawdescription": "\n\nIs this the principal call to action on the login2?\n"
+                    "description": "",
+                    "line": 25,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "currentUser",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 19
+                },
+                {
+                    "name": "isRefreshing",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 24,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "refreshToken",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 21
+                },
+                {
+                    "name": "refreshTokenSubject",
+                    "defaultValue": "new BehaviorSubject<any>(null)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "BehaviorSubject<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 23
+                },
+                {
+                    "name": "TOKEN_KEY",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 26,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "windowObjectReference",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 22
                 }
             ],
             "methodsClass": [
+                {
+                    "name": "forseRefreshToken",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 54,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
                 {
                     "name": "ngOnInit",
                     "args": [],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 85,
+                    "line": 35,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
                 {
-                    "name": "onSubmit",
+                    "name": "openapp",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 43,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "openNewTabForApp",
                     "args": [
                         {
-                            "name": "credentials",
-                            "type": "any",
+                            "name": "appRequest",
+                            "type": "string[]",
                             "deprecated": false,
                             "deprecationMessage": ""
                         }
@@ -4836,13 +4832,16 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 88,
+                    "line": 79,
                     "deprecated": false,
                     "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
                     "jsdoctags": [
                         {
-                            "name": "credentials",
-                            "type": "any",
+                            "name": "appRequest",
+                            "type": "string[]",
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
@@ -4852,14 +4851,35 @@
                     ]
                 },
                 {
-                    "name": "reloadPage",
-                    "args": [],
+                    "name": "openNewWinForApp",
+                    "args": [
+                        {
+                            "name": "appRequest",
+                            "type": "string[]",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 137,
+                    "line": 108,
                     "deprecated": false,
-                    "deprecationMessage": ""
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "appRequest",
+                            "type": "string[]",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
                 }
             ],
             "deprecated": false,
@@ -4869,7 +4889,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\nimport { StoryInput } from \"../../stories/inputs/story-input.model\";\nimport {AuthService} from \"../_services/auth.service\";\nimport {FormGroup} from \"@angular/forms\";\nimport {TokenStorageService} from \"../_services/token-storage.service\";\nimport {Router} from \"@angular/router\";\n//import {Default} from \"../../stories/inputs/story-input.stories\";\n\n\n@Component({\n  selector: 'profile2',\n  templateUrl: './profile2.component.html',\n  styleUrls: ['./profile2.component.scss']\n})\nexport default class Profile2Component implements OnInit {\n\n  public isLoggedIn = false;\n  isLoginFailed = false;\n  loginErrorMessage = '';\n  roles: string[] = [];\n\n\n\n\n  /**\n   * Is this the principal call to action on the login2?\n   */\n  storyInputsInOrder: StoryInput[]  = [\n    { /*...Default.args?.['storyInput'],*/ id: '1', title: 'username', state: 'USER NAME', icon: './assets/images/User2ldpi.png', type: 'text', placeholder: 'Ex.Saul Ramirez' },\n    { /*...Default.args?.['storyInput'],*/ id: '2', title: 'password', state: 'PASSWORD', icon: './assets/images/LockIcon2ldpi.png', type: 'password', placeholder: 'your_password'  },\n  ];\n\n  /**\n   * Is this the principal call to action on the login2?\n   */\n  @Input()\n  primary = true;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  background?: string;\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Page2Component';\n\n  /*user: User | null = null;\n\n  doLogout() {\n    this.user = null;\n  }\n\n  doLogin() {\n    this.user = { name: 'Jane Doe' };\n  }\n\n  doCreateAccount() {\n    this.user = { name: 'Jane Doe' };\n\n  }*/\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-page2--primary' : 'storybook-page2--secondary';\n\n    return ['storybook-page2', mode];\n  }\n\n  constructor(public authService: AuthService,\n              private tokenStorage: TokenStorageService,\n              private router: Router,) {}\n\n  ngOnInit(): void {};\n\n\n  onSubmit(credentials: any): void {\n    console.warn('Login Request from login2!');\n    const { username, password } = credentials;\n\n    this.authService.login(username, password).subscribe(\n      data => {\n        this.tokenStorage.saveToken(data.accessToken);\n        this.tokenStorage.saveRefreshToken(data.refreshToken);\n        this.tokenStorage.saveUser(data);\n\n        this.isLoginFailed = false;\n        this.isLoggedIn = true;\n        this.roles = this.tokenStorage.getUser().roles;\n        this.reloadPage();\n      },\n      err => {\n        switch (err.error.message) {\n          case \"Error: A registry process should be made!\":\n            //this.openRegisterForm().then(() => {this.openReplacePassword()});\n            //toPromise((data) => {this.openReplacePassword()});\n            /*this.openRegisterForm().then(\n              (val) => {\n                console.log(val);\n                switch (val) {\n                  case \"xbutton\":\n                    break;\n                  case \"Registration Complete\":\n                    this.openReplacePassword();\n                    break;\n                  case undefined:\n                    this.openReplacePassword();\n                    break;\n                  default:\n                }\n                return 'done2';\n              },\n              (err) => console.error(err));*/\n            break;\n          default:\n            this.loginErrorMessage = err.error.message;\n        }\n\n\n        this.isLoginFailed = true;\n      }\n    );\n  }\n\n\n  reloadPage(): void {\n    this.router.navigate(['/profile']).then(() => {window.location.reload()});\n  }\n\n}\n\n",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\nimport { StoryInput } from \"../../stories/inputs/story-input.model\";\nimport {AuthService} from \"../_services/auth.service\";\nimport {FormGroup} from \"@angular/forms\";\nimport {TokenStorageService} from \"../_services/token-storage.service\";\nimport {Router} from \"@angular/router\";\nimport {AppConfig} from \"../app.config\";\nimport {BehaviorSubject, throwError} from \"rxjs\";\n\n\n\n@Component({\n  selector: 'profile2',\n  templateUrl: './profile2.component.html',\n  styleUrls: ['./profile2.component.scss']\n})\nexport default class Profile2Component implements OnInit {\n\n  currentUser: any;\n  accessToken: any;\n  refreshToken: any;\n  windowObjectReference: any;\n  refreshTokenSubject: BehaviorSubject<any> = new BehaviorSubject<any>(null);\n  private isRefreshing = false;\n  public appConfig: any;\n  private TOKEN_KEY: string;\n\n\n  constructor(private authService: AuthService,\n              private token: TokenStorageService,\n              private router: Router,) {\n    this.TOKEN_KEY = AppConfig.endpoints.TOKEN_KEY;\n  }\n\n  ngOnInit(): void {\n    this.currentUser = this.token.getUser();\n    this.accessToken = this.currentUser.accessToken;\n    this.refreshToken = this.currentUser.refreshToken;\n  }\n\n\n\n  openapp(): void {\n    console.log('window.location.origin.toString():  '+window.location.origin.toString());\n\n    this.router.navigate([]).then(result => { this.windowObjectReference = window.open(AppConfig.accServer.ACCWEBServers+'/accGCCS/'/*window.location.origin.toString()+\"/profile\"*/); });\n    console.log('window.location.origin.toString():  '+ this.windowObjectReference.window.document.getElementById(\"profile_title\").innerHTML);\n    var promise = new Promise((resolve, reject) => {this.windowObjectReference.window.document.getElementById(\"profile_title\").innerHTML = \"new title\";});\n\n    console.log('window.location.origin.toString():  '+ this.windowObjectReference.window.document.getElementById(\"profile_title\").innerHTML);\n\n  }\n\n  public forseRefreshToken(): void {\n\n    if (!this.isRefreshing) {\n      const token = this.token.getRefreshToken();\n      if (token)\n        this.authService.refreshToken(token).subscribe(\n          data => {\n            this.isRefreshing = false;\n            this.token.saveToken(data.accessToken);\n            this.token.saveRefreshToken(data.refreshToken);\n            this.refreshTokenSubject.next(data.accessToken);\n            this.currentUser = this.token.getUser();\n            this.accessToken = this.token.getToken();\n            this.refreshToken = this.token.getRefreshToken();\n          },\n          (err) => {\n            this.isRefreshing = false;\n\n            this.token.signOut();\n            return throwError(err);\n          }\n        );\n    }\n  }\n\n  public openNewTabForApp(appRequest: string[]): void {\n    const [ webapp, webappURLPrefix ] = appRequest.values();\n    var newAccessToken = \"\";\n    var newRefreshToken = \"\";\n    var newCurrentUser = \"\";\n\n    if (!this.isRefreshing) {\n      const token = this.token.getRefreshToken();\n      if (token)\n        this.authService.webapptab(token, webapp)\n          .then(\n            data => {\n              this.isRefreshing = false;\n              newAccessToken = (data.accessToken);\n              newRefreshToken = (data.refreshToken);\n              newCurrentUser = (data);\n            },\n            (reject) => {return throwError(reject.error);})\n          .then(() => {this.router.navigate([])\n            .then(result => { this.windowObjectReference = window.open(AppConfig.accServer.ACCWEBServers+webappURLPrefix);})\n            .then(result => { this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.TOKEN_KEY, newAccessToken);\n                this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.REFRESHTOKEN_KEY, newRefreshToken);\n                this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.USER_KEY, JSON.stringify(newCurrentUser));},\n              (err) => { this.isRefreshing = false;\n                return throwError(err);})});\n    }\n  }\n\n\n  public openNewWinForApp(appRequest: string[]): void {\n    /*webapp: string, webappURLPrefix: string*/\n    const [ webapp, webappURLPrefix ] = appRequest.values();\n    var newAccessToken = \"\";\n    var newRefreshToken = \"\";\n    var newCurrentUser = \"\";\n\n    if (!this.isRefreshing) {\n      const token = this.token.getRefreshToken();\n      if (token)\n        this.authService.webapptab(token, webapp)\n          .then(\n            data => {\n              this.isRefreshing = false;\n              newAccessToken = (data.accessToken);\n              newRefreshToken = (data.refreshToken);\n              newCurrentUser = (data);\n            },\n            (reject) => {return throwError(reject.error);})\n          .then(result => { this.windowObjectReference = window.open(AppConfig.accServer.ACCWEBServers+webappURLPrefix+'start.html',\n            'C-Sharpcorner', 'scrollbars=no');})\n          .then(result => { this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.TOKEN_KEY, newAccessToken);\n              this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.REFRESHTOKEN_KEY, newRefreshToken);\n              this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.USER_KEY, JSON.stringify(newCurrentUser));},\n            (err) => { this.isRefreshing = false;\n              return throwError(err);})\n    }\n  }\n\n}\n\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -4891,7 +4911,7 @@
                         "deprecationMessage": ""
                     },
                     {
-                        "name": "tokenStorage",
+                        "name": "token",
                         "type": "TokenStorageService",
                         "deprecated": false,
                         "deprecationMessage": ""
@@ -4903,7 +4923,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 79,
+                "line": 26,
                 "jsdoctags": [
                     {
                         "name": "authService",
@@ -4915,7 +4935,7 @@
                         }
                     },
                     {
-                        "name": "tokenStorage",
+                        "name": "token",
                         "type": "TokenStorageService",
                         "deprecated": false,
                         "deprecationMessage": "",
@@ -4937,18 +4957,7 @@
             "implements": [
                 "OnInit"
             ],
-            "accessors": {
-                "classes": {
-                    "name": "classes",
-                    "getSignature": {
-                        "name": "classes",
-                        "type": "[]",
-                        "returnType": "string[]",
-                        "line": 75
-                    }
-                }
-            },
-            "templateData": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n  <meta charset=\"UTF-8\">\r\n  <title>Title</title>\r\n</head>\r\n<body>\r\n<storybook-background1></storybook-background1>\r\n\r\n<storybook-app-menu\r\n  [isLoggedIn]=\"false\"\r\n  [storyInputs]=\"storyInputsInOrder\"\r\n  (newItemEvent)=\"onSubmit($event)\"\r\n  ></storybook-app-menu>\r\n\r\n</body>\r\n</html>\r\n"
+            "templateData": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n  <meta charset=\"UTF-8\">\r\n  <title>Title</title>\r\n</head>\r\n<body>\r\n<storybook-background1></storybook-background1>\r\n\r\n<storybook-app-menu\r\n  (openNewWinForApp)=\"openNewWinForApp($event)\"\r\n  (openNewTabForApp)=\"openNewTabForApp($event)\">\r\n</storybook-app-menu>\r\n\r\n</body>\r\n</html>\r\n"
         },
         {
             "name": "ProfileComponent",
@@ -6359,13 +6368,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-e5225939ff2b60a092da0c263e0c1d002a6e4ba4901e0e1b144abeae82d4d3d14c6e7c8baeb274534817ae17b56f1ec04a6d85fbdc5e1877e7f8c06373e8fd69",
+            "id": "module-AppModule-4bee859e486bc6c95443ea90813879508af53a07b3d70b328382a8efb2396d1841daf290d6e05ed4cded9165fa6f821e2643b6d73b3c650f6fc4e7983fe1d25b",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport {FormsModule, ReactiveFormsModule} from '@angular/forms';\r\nimport { HttpClientModule } from '@angular/common/http';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { LoginComponent } from './login/login.component';\r\nimport { RegisterComponent } from './register/register.component';\r\nimport { HomeComponent } from './home/home.component';\r\nimport { ProfileComponent } from './profile/profile.component';\r\nimport Profile2Component from './profile2/profile2.component';\r\nimport { BoardAdminComponent } from './board-admin/board-admin.component';\r\nimport { BoardModeratorComponent } from './board-moderator/board-moderator.component';\r\nimport { BoardUserComponent } from './board-user/board-user.component';\r\n\r\nimport { authInterceptorProviders, AuthInterceptor } from './_helpers/auth.interceptor';\r\nimport {NgbDatepickerModule} from \"@ng-bootstrap/ng-bootstrap\";\r\nimport { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';\r\nimport { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';\r\nimport { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';\r\nimport { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';\r\nimport { MdbDropdownModule } from 'mdb-angular-ui-kit/dropdown';\r\nimport { MdbFormsModule } from 'mdb-angular-ui-kit/forms';\r\nimport { MdbModalModule } from 'mdb-angular-ui-kit/modal';\r\nimport { MdbPopoverModule } from 'mdb-angular-ui-kit/popover';\r\nimport { MdbRadioModule } from 'mdb-angular-ui-kit/radio';\r\nimport { MdbRangeModule } from 'mdb-angular-ui-kit/range';\r\nimport { MdbRippleModule } from 'mdb-angular-ui-kit/ripple';\r\nimport { MdbScrollspyModule } from 'mdb-angular-ui-kit/scrollspy';\r\nimport { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';\r\nimport { MdbModalRef } from 'mdb-angular-ui-kit/modal';\r\nimport { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';\r\nimport { MdbValidationModule, MdbErrorDirective, MdbSuccessDirective } from 'mdb-angular-ui-kit/validation';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { MdbInputDirective  } from 'mdb-angular-ui-kit/forms';\r\nimport { ModalModule, TooltipModule, PopoverModule, ButtonsModule, MDBBootstrapModule } from 'angular-bootstrap-md';\r\nimport { RegisterFormComponent } from './register-form/register-form.component';\r\nimport {ReplacePassFormComponent} from \"./replace-pass-form/replace-pass-form.component\";\r\nimport {ApiErrorMessagePipe} from \"./pipes/api-error-message.pipe\";\r\nimport {LoginErrorMessagePipe} from \"./pipes/login-error-message.pipe\";\r\nimport  Login2Component  from './login2/login2.component';\r\nimport { TaskComponent } from '../stories/task/task.component';\r\nimport { ButtonLanguageComponent } from '../stories/buttons/button-language/button-language.component';\r\nimport { ButtonTadiranComponent } from '../stories/buttons/button-tadiran/button-tadiran.component';\r\nimport { ButtonContinueComponent } from '../stories/buttons/button-continue/button-continue.component';\r\nimport Button from '../stories/buttons/button-example/button.component'\r\nimport { ButtonGlobeComponent } from '../stories/buttons/button-globe/button-globe.component'\r\nimport CardComponent from '../stories/cards/card.component'\r\nimport {StoryInputComponent} from '../stories/inputs/story-input.component'\r\nimport {FormComponent} from '../stories/forms/form.component'\r\nimport {TaskListComponent} from '../stories/task-list/task-list.component'\r\nimport Background1Component from '../stories/pages/background1/background1Component'\r\nimport { AppMenuComponent } from '../stories/app-menu/app-menu.component'\r\n\r\n@NgModule({\r\n    declarations: [\r\n        AppComponent,\r\n        LoginComponent,\r\n        RegisterComponent,\r\n        HomeComponent,\r\n        ProfileComponent,\r\n        Profile2Component,\r\n        BoardAdminComponent,\r\n        BoardModeratorComponent,\r\n        BoardUserComponent,\r\n        RegisterFormComponent,\r\n        ReplacePassFormComponent,\r\n        ApiErrorMessagePipe,\r\n        LoginErrorMessagePipe,\r\n        Login2Component,\r\n        ButtonLanguageComponent,\r\n        ButtonTadiranComponent,\r\n        Button,\r\n        CardComponent,\r\n        StoryInputComponent,\r\n        FormComponent,\r\n        TaskComponent,\r\n        TaskListComponent,\r\n        ButtonGlobeComponent,\r\n        ButtonContinueComponent,\r\n        Background1Component,\r\n        AppMenuComponent,\r\n\r\n    ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    FormsModule,\r\n    HttpClientModule,\r\n    NgbDatepickerModule,\r\n    MdbAccordionModule,\r\n    MdbCarouselModule,\r\n    MdbCheckboxModule,\r\n    MdbCollapseModule,\r\n    MdbDropdownModule,\r\n    MdbFormsModule,\r\n    MdbModalModule,\r\n    MdbPopoverModule,\r\n    MdbRadioModule,\r\n    MdbRangeModule,\r\n    MdbRippleModule,\r\n    MdbScrollspyModule,\r\n    MdbTabsModule,\r\n    MdbTooltipModule,\r\n    //MdbValidationModule,\r\n    BrowserAnimationsModule,\r\n    ReactiveFormsModule,\r\n    ModalModule,\r\n    ButtonsModule,\r\n    MDBBootstrapModule.forRoot(),\r\n  ],\r\n  providers: [authInterceptorProviders],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport {FormsModule, ReactiveFormsModule} from '@angular/forms';\r\nimport { HttpClientModule } from '@angular/common/http';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { LoginComponent } from './login/login.component';\r\nimport { RegisterComponent } from './register/register.component';\r\nimport { HomeComponent } from './home/home.component';\r\nimport { ProfileComponent } from './profile/profile.component';\r\nimport Profile2Component from './profile2/profile2.component';\r\nimport { BoardAdminComponent } from './board-admin/board-admin.component';\r\nimport { BoardModeratorComponent } from './board-moderator/board-moderator.component';\r\nimport { BoardUserComponent } from './board-user/board-user.component';\r\n\r\nimport { authInterceptorProviders, AuthInterceptor } from './_helpers/auth.interceptor';\r\nimport {NgbDatepickerModule} from \"@ng-bootstrap/ng-bootstrap\";\r\nimport { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';\r\nimport { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';\r\nimport { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';\r\nimport { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';\r\nimport { MdbDropdownModule } from 'mdb-angular-ui-kit/dropdown';\r\nimport { MdbFormsModule } from 'mdb-angular-ui-kit/forms';\r\nimport { MdbModalModule } from 'mdb-angular-ui-kit/modal';\r\nimport { MdbPopoverModule } from 'mdb-angular-ui-kit/popover';\r\nimport { MdbRadioModule } from 'mdb-angular-ui-kit/radio';\r\nimport { MdbRangeModule } from 'mdb-angular-ui-kit/range';\r\nimport { MdbRippleModule } from 'mdb-angular-ui-kit/ripple';\r\nimport { MdbScrollspyModule } from 'mdb-angular-ui-kit/scrollspy';\r\nimport { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';\r\nimport { MdbModalRef } from 'mdb-angular-ui-kit/modal';\r\nimport { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';\r\nimport { MdbValidationModule, MdbErrorDirective, MdbSuccessDirective } from 'mdb-angular-ui-kit/validation';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { MdbInputDirective  } from 'mdb-angular-ui-kit/forms';\r\nimport { ModalModule, TooltipModule, PopoverModule, ButtonsModule, MDBBootstrapModule } from 'angular-bootstrap-md';\r\nimport { RegisterFormComponent } from './register-form/register-form.component';\r\nimport {ReplacePassFormComponent} from \"./replace-pass-form/replace-pass-form.component\";\r\nimport {ApiErrorMessagePipe} from \"./pipes/api-error-message.pipe\";\r\nimport {LoginErrorMessagePipe} from \"./pipes/login-error-message.pipe\";\r\nimport  Login2Component  from './login2/login2.component';\r\nimport { TaskComponent } from '../stories/task/task.component';\r\nimport { ButtonLanguageComponent } from '../stories/buttons/button-language/button-language.component';\r\nimport { ButtonTadiranComponent } from '../stories/buttons/button-tadiran/button-tadiran.component';\r\nimport { ButtonContinueComponent } from '../stories/buttons/button-continue/button-continue.component';\r\nimport Button from '../stories/buttons/button-example/button.component'\r\nimport { ButtonGlobeComponent } from '../stories/buttons/button-globe/button-globe.component'\r\nimport CardComponent from '../stories/cards/card.component'\r\nimport {StoryInputComponent} from '../stories/inputs/story-input.component'\r\nimport {FormComponent} from '../stories/forms/form.component'\r\nimport {TaskListComponent} from '../stories/task-list/task-list.component'\r\nimport Background1Component from '../stories/pages/background1/background1Component'\r\nimport { AppMenuComponent } from '../stories/app-menu/app-menu.component'\r\nimport {ButtonAppsComponent} from \"../stories/buttons/button-apps/button-apps.component\";\r\n\r\n@NgModule({\r\n    declarations: [\r\n        AppComponent,\r\n        LoginComponent,\r\n        RegisterComponent,\r\n        HomeComponent,\r\n        ProfileComponent,\r\n        Profile2Component,\r\n        BoardAdminComponent,\r\n        BoardModeratorComponent,\r\n        BoardUserComponent,\r\n        RegisterFormComponent,\r\n        ReplacePassFormComponent,\r\n        ApiErrorMessagePipe,\r\n        LoginErrorMessagePipe,\r\n        Login2Component,\r\n        ButtonLanguageComponent,\r\n        ButtonTadiranComponent,\r\n        Button,\r\n        CardComponent,\r\n        StoryInputComponent,\r\n        FormComponent,\r\n        TaskComponent,\r\n        TaskListComponent,\r\n        ButtonGlobeComponent,\r\n        ButtonContinueComponent,\r\n        Background1Component,\r\n        AppMenuComponent,\r\n        ButtonAppsComponent,\r\n\r\n    ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    FormsModule,\r\n    HttpClientModule,\r\n    NgbDatepickerModule,\r\n    MdbAccordionModule,\r\n    MdbCarouselModule,\r\n    MdbCheckboxModule,\r\n    MdbCollapseModule,\r\n    MdbDropdownModule,\r\n    MdbFormsModule,\r\n    MdbModalModule,\r\n    MdbPopoverModule,\r\n    MdbRadioModule,\r\n    MdbRangeModule,\r\n    MdbRippleModule,\r\n    MdbScrollspyModule,\r\n    MdbTabsModule,\r\n    MdbTooltipModule,\r\n    //MdbValidationModule,\r\n    BrowserAnimationsModule,\r\n    ReactiveFormsModule,\r\n    ModalModule,\r\n    ButtonsModule,\r\n    MDBBootstrapModule.forRoot(),\r\n  ],\r\n  providers: [authInterceptorProviders],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -6397,6 +6406,9 @@
                         },
                         {
                             "name": "Button"
+                        },
+                        {
+                            "name": "ButtonAppsComponent"
                         },
                         {
                             "name": "ButtonContinueComponent"
@@ -6523,6 +6535,16 @@
                 "name": "actionsData",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/inputs/story-input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  onPinInput: action('onPinInput'),\n  onArchiveInput: action('onArchiveInput'),\n}"
+            },
+            {
+                "name": "actionsData",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/task/task.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -6530,14 +6552,24 @@
                 "defaultValue": "{\r\n  onPinTask: action('onPinTask'),\r\n  onArchiveTask: action('onArchiveTask'),\r\n}"
             },
             {
-                "name": "actionsData",
+                "name": "Admin",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/inputs/story-input.stories.ts",
+                "file": "src/stories/buttons/button-apps/button-apps.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "object",
-                "defaultValue": "{\n  onPinInput: action('onPinInput'),\n  onArchiveInput: action('onArchiveInput'),\n}"
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Agent",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/buttons/button-apps/button-apps.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "API_URL",
@@ -6643,7 +6675,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/task/task.stories.ts",
+                "file": "src/stories/inputs/story-input.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -6653,7 +6685,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/inputs/story-input.stories.ts",
+                "file": "src/stories/task/task.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -6713,21 +6745,21 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "object",
-                "defaultValue": "{\r\n  production: false\r\n}"
-            },
-            {
-                "name": "environment",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/environments/environment.prod.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "object",
                 "defaultValue": "{\r\n  production: true\r\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  production: false\r\n}"
             },
             {
                 "name": "Gallery",
@@ -6750,6 +6782,16 @@
                 "defaultValue": "Template2.bind({})"
             },
             {
+                "name": "GCCS",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/buttons/button-apps/button-apps.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "httpOptions",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -6763,7 +6805,7 @@
                 "name": "Large",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/buttons/button-apps/button-apps.stories.ts",
+                "file": "src/stories/buttons/button-continue/button-continue.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -6774,16 +6816,6 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/buttons/button-example/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Large",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/buttons/button-continue/button-continue.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -6863,16 +6895,6 @@
                 "name": "LoggedIn",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/profile2/profile2.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "LoggedIn",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/headers/Header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -6904,16 +6926,6 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/login2/login2.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "LoggedOut",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/profile2/profile2.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -7013,16 +7025,6 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/profile2/profile2.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/cards/card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -7033,7 +7035,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/buttons/button-apps/button-apps.stories.ts",
+                "file": "src/stories/buttons/button-continue/button-continue.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -7044,16 +7046,6 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/buttons/button-example/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/buttons/button-continue/button-continue.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -7083,7 +7075,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/pages/background1/background1.stories.ts",
+                "file": "src/stories/buttons/button-tadiran/button-tadiran.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -7093,7 +7085,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/buttons/button-tadiran/button-tadiran.stories.ts",
+                "file": "src/stories/pages/background1/background1.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -7162,16 +7154,6 @@
                 "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/profile2/profile2.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Secondary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/cards/card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -7182,7 +7164,7 @@
                 "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/buttons/button-apps/button-apps.stories.ts",
+                "file": "src/stories/buttons/button-continue/button-continue.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -7193,16 +7175,6 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/buttons/button-example/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Secondary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/buttons/button-continue/button-continue.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -7232,7 +7204,7 @@
                 "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/pages/background1/background1.stories.ts",
+                "file": "src/stories/buttons/button-tadiran/button-tadiran.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -7242,27 +7214,7 @@
                 "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/buttons/button-tadiran/button-tadiran.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Small",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/buttons/button-apps/button-apps.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Small",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/buttons/button-example/Button.stories.ts",
+                "file": "src/stories/pages/background1/background1.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -7273,6 +7225,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/buttons/button-continue/button-continue.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Small",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/buttons/button-example/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -7322,16 +7284,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/profile2/profile2.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<Profile2Component>",
-                "defaultValue": "(args: Profile2Component) => ({\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/app-menu/app-menu.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -7372,16 +7324,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/task/task.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "args => ({\r\n  props: {\r\n    ...args,\r\n    onPinTask: actionsData.onPinTask,\r\n    onArchiveTask: actionsData.onArchiveTask,\r\n  },\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/inputs/story-input.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -7397,6 +7339,16 @@
                 "deprecationMessage": "",
                 "type": "Story<Page>",
                 "defaultValue": "(args: Page) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/task/task.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "args => ({\r\n  props: {\r\n    ...args,\r\n    onPinTask: actionsData.onPinTask,\r\n    onArchiveTask: actionsData.onArchiveTask,\r\n  },\r\n})"
             },
             {
                 "name": "Template",
@@ -7422,21 +7374,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/buttons/button-example/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<Button>",
-                "defaultValue": "(args: Button) => ({\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/buttons/button-continue/button-continue.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<ButtonContinueComponent>",
                 "defaultValue": "(args: ButtonContinueComponent) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/buttons/button-example/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Button>",
+                "defaultValue": "(args: Button) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -7462,21 +7414,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/pages/background1/background1.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<Background1Component>",
-                "defaultValue": "(args: Background1Component) => ({\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/buttons/button-tadiran/button-tadiran.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<ButtonTadiranComponent>",
                 "defaultValue": "(args: ButtonTadiranComponent) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/pages/background1/background1.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Background1Component>",
+                "defaultValue": "(args: Background1Component) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template2",
@@ -7549,6 +7501,16 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "WebRT",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/buttons/button-apps/button-apps.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "WithPinnedTasks",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -7583,58 +7545,6 @@
         "typealiases": [],
         "enumerations": [],
         "groupedVariables": {
-            "src/stories/task/task.stories.ts": [
-                {
-                    "name": "actionsData",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/task/task.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "object",
-                    "defaultValue": "{\r\n  onPinTask: action('onPinTask'),\r\n  onArchiveTask: action('onArchiveTask'),\r\n}"
-                },
-                {
-                    "name": "Archived",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/task/task.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/task/task.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Pinned",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/task/task.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/task/task.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "args => ({\r\n  props: {\r\n    ...args,\r\n    onPinTask: actionsData.onPinTask,\r\n    onArchiveTask: actionsData.onArchiveTask,\r\n  },\r\n})"
-                }
-            ],
             "src/stories/inputs/story-input.stories.ts": [
                 {
                     "name": "actionsData",
@@ -7701,6 +7611,110 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/inputs/story-input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                }
+            ],
+            "src/stories/task/task.stories.ts": [
+                {
+                    "name": "actionsData",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/task/task.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  onPinTask: action('onPinTask'),\r\n  onArchiveTask: action('onArchiveTask'),\r\n}"
+                },
+                {
+                    "name": "Archived",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/task/task.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/task/task.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Pinned",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/task/task.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/task/task.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "args => ({\r\n  props: {\r\n    ...args,\r\n    onPinTask: actionsData.onPinTask,\r\n    onArchiveTask: actionsData.onArchiveTask,\r\n  },\r\n})"
+                }
+            ],
+            "src/stories/buttons/button-apps/button-apps.stories.ts": [
+                {
+                    "name": "Admin",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/buttons/button-apps/button-apps.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Agent",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/buttons/button-apps/button-apps.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "GCCS",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/buttons/button-apps/button-apps.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/buttons/button-apps/button-apps.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ButtonAppsComponent>",
+                    "defaultValue": "(args: ButtonAppsComponent) => ({\n  props: args,\n})"
+                },
+                {
+                    "name": "WebRT",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/buttons/button-apps/button-apps.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -8012,18 +8026,6 @@
                     "defaultValue": "Template.bind({})"
                 }
             ],
-            "src/environments/environment.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "object",
-                    "defaultValue": "{\r\n  production: false\r\n}"
-                }
-            ],
             "src/environments/environment.prod.ts": [
                 {
                     "name": "environment",
@@ -8034,6 +8036,18 @@
                     "deprecationMessage": "",
                     "type": "object",
                     "defaultValue": "{\r\n  production: true\r\n}"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: false\r\n}"
                 }
             ],
             "src/stories/buttons/button-continue/button-continue.stories.ts": [
@@ -8198,58 +8212,6 @@
                     "deprecationMessage": "",
                     "type": "Story<ButtonTadiranComponent>",
                     "defaultValue": "(args: ButtonTadiranComponent) => ({\n  props: args,\n  /*template: '<storybook-button-tadiran ></storybook-button-tadiran>',*/\n\n})"
-                }
-            ],
-            "src/stories/buttons/button-apps/button-apps.stories.ts": [
-                {
-                    "name": "Large",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/buttons/button-apps/button-apps.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/buttons/button-apps/button-apps.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Secondary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/buttons/button-apps/button-apps.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Small",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/buttons/button-apps/button-apps.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/buttons/button-apps/button-apps.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<ButtonAppsComponent>",
-                    "defaultValue": "(args: ButtonAppsComponent) => ({\n  props: args,\n})"
                 }
             ],
             "src/stories/buttons/button-example/Button.stories.ts": [
@@ -8458,58 +8420,6 @@
                     "deprecationMessage": "",
                     "type": "Story<Login2Component>",
                     "defaultValue": "(args: Login2Component) => ({\n  props: args,\n})"
-                }
-            ],
-            "src/app/profile2/profile2.stories.ts": [
-                {
-                    "name": "LoggedIn",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/profile2/profile2.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "LoggedOut",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/profile2/profile2.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/profile2/profile2.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Secondary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/profile2/profile2.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/profile2/profile2.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<Profile2Component>",
-                    "defaultValue": "(args: Profile2Component) => ({\n  props: args,\n})"
                 }
             ],
             "src/stories/headers/Header.stories.ts": [
@@ -9130,58 +9040,8 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "Profile2Component",
-                "coveragePercent": 33,
-                "coverageCount": "5/15",
-                "status": "medium"
-            },
-            {
-                "filePath": "src/app/profile2/profile2.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedIn",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/profile2/profile2.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedOut",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/profile2/profile2.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Primary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/profile2/profile2.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Secondary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/profile2/profile2.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/15",
                 "status": "low"
             },
             {
@@ -9246,7 +9106,7 @@
                 "linktype": "component",
                 "name": "AppMenuComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/15",
+                "coverageCount": "0/16",
                 "status": "low"
             },
             {
@@ -9313,8 +9173,8 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "ButtonAppsComponent",
-                "coveragePercent": 62,
-                "coverageCount": "5/8",
+                "coveragePercent": 66,
+                "coverageCount": "6/9",
                 "status": "good"
             },
             {
@@ -9322,7 +9182,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Large",
+                "name": "Admin",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -9332,7 +9192,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Primary",
+                "name": "Agent",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -9342,17 +9202,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Secondary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/buttons/button-apps/button-apps.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Small",
+                "name": "GCCS",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -9363,6 +9213,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/buttons/button-apps/button-apps.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WebRT",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
