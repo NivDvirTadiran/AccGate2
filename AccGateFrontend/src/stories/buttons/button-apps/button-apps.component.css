@@ -1,0 +1,33 @@
+.Vector {
+  position: relative;
+  width: 155.09px;
+  height: 155.09px;
+}
+
+img.Apps-Button-Icon {
+  position: absolute;
+  bottom: 1px;
+  left: 1px;
+  width: 154.09px;
+  height: 154.09px;
+  object-fit: contain;
+  /*box-shadow: 0 1px 1px 0 rgba(61, 142, 207, 0.15);*/
+}
+
+
+.storybook-button-apps--Agent {
+  width: 154.09px;
+  height: 154.09px;
+}
+.storybook-button-apps--WebRT {
+  width: 152.94px;
+  height: 197px;
+}
+.storybook-button-apps--Admin {
+  width: 154.09px;
+  height: 154.09px;
+}
+.storybook-button-apps--GCCS {
+  width: 154.09px;
+  height: 152.94px;
+}

@@ -8,15 +8,18 @@
 
 .card {
   position: absolute;
-  left: 5.18%;
-  right: 4.78%;
   top: 0;
   bottom: 0;
+  left: 0;
+  right: 0;
+  /* Width: 42.65625%;
+  left: 28.671875%;
+   right: 28.671875%;
+   Width: 42.65625%;*/
   border-radius: 14px;
   box-shadow: -4px 4px 10px 0 rgba(88, 166, 228, 0.3);
-  background-color: #fff;
+  background-color: #FFFFFF;/**/
 }
-
 
 
 

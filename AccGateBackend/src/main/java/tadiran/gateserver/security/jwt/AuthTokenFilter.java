@@ -41,7 +41,7 @@ public class AuthTokenFilter extends OncePerRequestFilter {
     ((HttpServletResponse) response).addHeader("Access-Control-Allow-Methods","GET, OPTIONS, HEAD, PUT, POST");
 
 
-    if(request.getRequestURI().startsWith("/accGate") ||
+    if(request.getRequestURI().startsWith("/AccGate") ||
             request.getRequestURI().endsWith("/styles.scss") ||
             request.getRequestURI().startsWith("/assets/images") ||
             request.getRequestURI().endsWith("/auth/signin") ||

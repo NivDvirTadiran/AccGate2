@@ -1,12 +1,12 @@
 import { moduleMetadata, Story, Meta } from '@storybook/angular';
-import  Page2Component from './page.component';
+import  Login2Component from './login2.component';
 import {AppModule} from "../app.module";
 import {CommonModule} from "@angular/common";
 
 
 export default {
-  title: 'Example/Page2',
-  component: Page2Component,
+  title: 'Example/Login2',
+  component: Login2Component,
   /*parameters: {
     // More on Story layout: https://storybook.js.org/docs/angular/configure/story-layout
     layout: 'fullscreen',
@@ -24,16 +24,16 @@ export default {
 } as Meta;
 
 /*
-export const Primary = Template.bind({});
+export const Agent = Template.bind({});
 // More on args: https://storybook.js.org/docs/angular/writing-stories/args
-Primary.args = {
+Agent.args = {
   primary: true,
   label: 'Button',
 };*/
 
 
 
-const Template: Story<Page2Component> = (args: Page2Component) => ({
+const Template: Story<Login2Component> = (args: Login2Component) => ({
   props: args,
 });
 

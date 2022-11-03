@@ -4,5 +4,6 @@ export interface StoryInput {
   state: string;
   icon:  string;
   type:  'text' | 'password' | 'phone' | 'email';
+  placeholder: string;
 
 }

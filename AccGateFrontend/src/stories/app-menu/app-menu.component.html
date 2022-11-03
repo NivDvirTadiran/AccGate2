@@ -1,0 +1,28 @@
+
+
+
+<div id="main-login-card" class="col-md-12">
+  <storybook-card class="card-container" ></storybook-card>
+  <div  class="h-100 d-flex align-items-center justify-content-center">
+    <div class="Aeonix-App-Center">
+      <a>Aeonix App Center</a>
+    </div>
+
+    <div class="grid-container">
+      <div class="item1"><storybook-button-apps application="Agent" label="Continue" type="button"
+        id="openNewAgentTab" (click)='this.openNewWinForApp.emit(["AGENT","/accAgent/"])' ></storybook-button-apps></div>
+      <div class="item2"><storybook-button-apps application="WebRT" label="Continue" type="button"
+        id="openNewWebRTTab" (click)='this.openNewTabForApp.emit(["ACCREALTIME","/accRealTime/"])' ></storybook-button-apps></div>
+      <div class="item3"><storybook-button-apps application="GCCS" label="Continue" type="button"
+        id="openNewGccsTab" (click)='this.openNewTabForApp.emit(["GCCS","/accGCCS/"])' ></storybook-button-apps></div>
+      <div class="item4"><storybook-button-apps application="Admin" label="Continue" type="button"
+        ></storybook-button-apps></div>
+      <div class="item5"><storybook-button-apps application="GCCS" label="Continue" type="button"
+        id="openNewGccsTab2" (click)='this.openNewTabForApp.emit(["GCCS","/accGCCS/"])'></storybook-button-apps></div>
+    </div>
+
+
+
+  </div>
+</div>
+

@@ -14,7 +14,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export default class ButtonComponent {
   /**
-   * Is this the principal call to action on the page?
+   * Is this the principal call to action on the login2?
    */
   @Input()
   primary = false;

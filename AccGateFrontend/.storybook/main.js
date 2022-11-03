@@ -2,7 +2,7 @@ module.exports = {
   "stories": [
     "../src/**/*.stories.mdx",
     "../src/**/*.stories.@(js|jsx|ts|tsx)",
-    "../src/app/page/**/*.stories.ts"
+    "../src/app/login2/**/*.stories.ts"
   ],
   addons: [
     '@storybook/addon-links',

@@ -9,7 +9,8 @@
     </div>
 
     <br>
-    <form name="form"  (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate> <!---->
+    <!--form name="form"  (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate --> <!-- *ngIf="!isLoggedIn"-->
+      <form name="currentForm"   [formGroup]="validationForm">
       <div  *ngIf="!isLoggedIn" class="Vector">
 
 
@@ -20,7 +21,8 @@
               *ngFor="let storyInput of storyInputsInOrder"
               [storyInput]="storyInput"
               (onArchiveInput)="onArchiveInput.emit($event)"
-              (onPinInput)="onPinInput.emit($event)">
+              (onPinInput)="onPinInput.emit($event)"
+              [currentForm]="validationForm">
             </storybook-input>
 
 
@@ -38,14 +40,14 @@
               </a>
             <!-- (click)="" openReplacePassword()-->
 
-              <storybook-button-continue size="medium" label="Continue" ></storybook-button-continue>
+              <storybook-button-continue size="medium" label="Continue" type="button" (click)="onSubmit()" ></storybook-button-continue>
             </div>
 
 
 
           </div>
           <div class="form-group">
-              <div class="alert alert-danger" role="alert" *ngIf="f.submitted && isLoginFailed">
+              <div class="alert alert-danger" role="alert" *ngIf="isLoginFailed">
                 Login failed: {{ loginErrorMessage }}
               </div>
           </div>

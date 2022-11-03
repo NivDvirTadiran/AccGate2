@@ -140,7 +140,7 @@ export class LoginComponent implements OnInit {
   }
 
   /**
-   * Is this the principal call to action on the page?
+   * Is this the principal call to action on the login2?
    */
   @Input()
   primary = true;

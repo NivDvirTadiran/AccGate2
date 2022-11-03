@@ -1,8 +1,8 @@
 #!/bin/bash
 
 pwd;
-ls 'accGateBackend/src/main/webapp/';
-sed -e "s/%ACC_VERSION%/7.4.008/g" -i  accGateBackend/src/main/webapp/main*
+ls 'AccGateBackend/src/main/webapp/';
+sed -e "s/%ACC_VERSION%/7.4.008/g" -i  AccGateBackend/src/main/webapp/main*
 
 
 sleep 1;

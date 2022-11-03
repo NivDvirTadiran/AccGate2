@@ -21,7 +21,7 @@
         <br>
         <label [attr.aria-label]="'username'" for="username" class="Vector2 ">
 
-          <img src="'./assets/images/User2ldpi.png" class="icon-input-username" alt="icon input username" />
+          <img src="./assets/images/User2ldpi.png" class="icon-input-username" alt="icon input username" />
 
           <input type="text" [value]="'DanK203'" id="username" name="username"  class="DanK203"
                  [(ngModel)]="form.username" placeholder="Ex. Saul Ramirez" required #username="ngModel"/>
@@ -40,11 +40,11 @@
 
         <br>
         <label [attr.aria-label]="'password'" for="password" class="Vector2 ">
-          <img src="'./assets/images/LockIcon2ldpi.png" class="icon-input-password" alt="icon input password" />
+          <img src="./assets/images/LockIcon2ldpi.png" class="icon-input-password" alt="icon input password" />
           <input type={{this.showPass}} [value]="'DanK203'" id="password" name="password"  class="DanK203"
                  [(ngModel)]="form.password" placeholder="password" required #password="ngModel"/>
           <button class="icon-input-showpass" type="button" (click)="showPassChange()">
-          <img src="'./assets/images/EyeIcon.png" class="icon-input-showpass" alt="icon input type" />
+          <img src="./assets/images/EyeIcon.png" class="icon-input-showpass" alt="icon input type" />
           </button>
         </label>
 

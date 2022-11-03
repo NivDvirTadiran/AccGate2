@@ -11,7 +11,7 @@ export default class CardComponent  {
 
 
   /**
-   * Is this the principal call to action on the page?
+   * Is this the principal call to action on the login2?
    */
   @Input()
   primary = false;
@@ -26,7 +26,7 @@ export default class CardComponent  {
    * How large should the button be?
    */
   @Input()
-  size: 'small' | 'medium' | 'large' = 'medium';
+  size: 'small' | 'medium' | 'large'  = 'medium';
 
   /**
    * Button contents

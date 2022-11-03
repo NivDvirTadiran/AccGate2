@@ -8,7 +8,7 @@ import {CommonModule} from "@angular/common";
 
 import * as StoryInput from "../inputs/story-input.stories";
 import StoryInputStories from "../inputs/story-input.stories";
-import {FormsModule} from "@angular/forms";
+import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {ButtonContinueComponent} from "../buttons/button-continue/button-continue.component";
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
@@ -17,7 +17,7 @@ export default {
   decorators: [
     moduleMetadata({
       declarations: [ FormComponent, CardComponent, StoryInputComponent, ButtonContinueComponent ],
-      imports: [CommonModule, FormsModule],
+      imports: [ReactiveFormsModule],
     }),
     componentWrapperDecorator(story => `<div style="margin: 3em">${story}</div>`),
   ],
@@ -39,7 +39,13 @@ Default.args = {
     { ...StoryInput.Default.args?.['storyInput'], id: '1', title: 'username', state: 'USER NAME' },
     { ...StoryInput.Default.args?.['storyInput'], id: '2', title: 'password', state: 'PASSWORD' },
   ],
+ /* currentForm: [
+    { ...StoryInput.Default.args?.['currentForm'], username: new FormControl('ea5', Validators.minLength(2)), },
+    { ...StoryInput.Default.args?.['currentForm'], password: new FormControl('ea5', Validators.minLength(2)), },
+  ],*/
 };
+
+
 
 export const WithPinnedTasks = Template.bind({});
 WithPinnedTasks.args = {

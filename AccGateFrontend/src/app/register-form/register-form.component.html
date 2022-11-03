@@ -25,7 +25,7 @@
   <div class="form-outline">
     <mdb-form-control  class="form-outline">
     <input [mdbValidate]="true" mdbInput type="text" id="typeText"
-           class="form-control"  formControlName="userName" required />
+           class="form-control"  formControlName="username" required />
     <label class="form-label " for="typeText" >UserName input</label>
     <mdb-error *ngIf="userName?.invalid && (userName?.dirty || userName?.touched)">
       First name is required

@@ -18,7 +18,7 @@ export class ButtonTadiranComponent {
   gallery = false;
 
   /**
-   * Is this the principal call to action on the page?
+   * Is this the principal call to action on the login2?
    */
   @Input()
   primary = false;

@@ -8,7 +8,7 @@
     "ng": "ng  ",
     "start": "ng serve  --proxy-config proxy.conf.json --port 4200",
     "build2": "ng build  --configuration development --base-href ./",
-    "build": "ng build  --configuration development --output-path=../AccGateBackend/src/main/webapp --base-href=../AccGate/",
+    "build": "ng build  --configuration development --output-path=../AccGateBackend/src/main/webapp --base-href=../accGate/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",

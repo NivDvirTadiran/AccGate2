@@ -2,7 +2,7 @@
 import { Story, Meta } from '@storybook/angular/types-6-0';
 import Card from './card.component';
 import { StoryInputComponent } from "../inputs/story-input.component";
-import {moduleMetadata} from "@storybook/angular";
+import {componentWrapperDecorator, moduleMetadata} from "@storybook/angular";
 import {CommonModule} from "@angular/common";
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
@@ -14,10 +14,12 @@ export default {
       declarations: [ StoryInputComponent ],
       imports: [CommonModule],
     }),
+    componentWrapperDecorator(story => `<div id="main-login-card" class="col-md-12">${story}</div>`),
   ],
   // More on argTypes: https://storybook.js.org/docs/angular/api/argtypes
   argTypes: {
     backgroundColor: { control: 'color' },
+    size: { control: 'select' },
   },
 } as Meta;
 
@@ -35,17 +37,8 @@ Primary.args = {
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  label: 'Button',
-};
-
-export const Large = Template.bind({});
-Large.args = {
   size: 'large',
   label: 'Button',
 };
 
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Button',
-};
+

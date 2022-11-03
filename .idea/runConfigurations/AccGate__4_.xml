@@ -16,11 +16,11 @@
       <option name="DEPLOY_TOMCAT_APPS" value="true" />
       <option name="HTTPS_PORT" value="8445" />
     </server-settings>
-    <log_file alias="Tomcat Manager Log" path="$USER_HOME$/AppData/Local/JetBrains/IntelliJIdea2021.3/tomcat/55001373-061f-4384-b14c-376b94748f04/logs/manager.*" />
-    <log_file alias="Tomcat Host Manager Log" path="$USER_HOME$/AppData/Local/JetBrains/IntelliJIdea2021.3/tomcat/55001373-061f-4384-b14c-376b94748f04/logs/host-manager.*" />
-    <log_file alias="Tomcat Localhost Access Log" path="$USER_HOME$/AppData/Local/JetBrains/IntelliJIdea2021.3/tomcat/55001373-061f-4384-b14c-376b94748f04/logs/localhost_access_log.*" />
-    <predefined_log_file enabled="true" id="Tomcat" />
-    <predefined_log_file enabled="true" id="Tomcat Catalina" />
+    <log_file alias="Tomcat Manager Log" path="$USER_HOME$/AppData/Local/JetBrains/IntelliJIdea2021.3/tomcat/55001373-061f-4384-b14c-376b94748f04/logs/manager.*" skipped="false" />
+    <log_file alias="Tomcat Host Manager Log" path="$USER_HOME$/AppData/Local/JetBrains/IntelliJIdea2021.3/tomcat/55001373-061f-4384-b14c-376b94748f04/logs/host-manager.*" skipped="false" />
+    <log_file alias="Tomcat Localhost Access Log" path="$USER_HOME$/AppData/Local/JetBrains/IntelliJIdea2021.3/tomcat/55001373-061f-4384-b14c-376b94748f04/logs/localhost_access_log.*" skipped="false" />
+    <log_file alias="Tomcat Localhost Log" path="%IDEA_RUN:CATALINA_BASE%/logs/localhost.*" skipped="false" />
+    <log_file alias="Tomcat Catalina Log" path="%IDEA_RUN:CATALINA_BASE%/logs/catalina.*" skipped="false" />
     <RunnerSettings RunnerId="Debug">
       <option name="DEBUG_PORT" value="64611" />
     </RunnerSettings>
