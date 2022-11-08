@@ -34,7 +34,7 @@ export class AppRoutingGuard implements CanActivate, CanActivateChild, CanDeacti
   }
 
   private isApproved(): boolean {
-    console.log('isLoggedIn?   '+this.app.isLoggedIn);
+    console.log('isRegSuccess?   '+this.app.isLoggedIn);
     if (!this.app.isLoggedIn) {
       console.log(!this.app.isLoggedIn);
       //this.router.navigateByUrl("/login");

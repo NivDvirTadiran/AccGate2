@@ -1,0 +1,53 @@
+
+
+
+<div id="main-login-card" class="col-md-12">
+  <storybook-card class="card-container"></storybook-card>
+  <div  class="h-100 d-flex align-items-center justify-content-center">
+    <storybook-button-ex></storybook-button-ex>
+    <div class="form-header">
+      <a class="main-form-header" #formHeader>Complete Registration</a>
+      <br>
+      <a *ngIf="!isRegSuccess" class="sub-form-header">complete the registration by filling the missing info:</a>
+
+
+
+    <br>
+    <!--form name="form"  (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate --> <!-- *ngIf="!isRegSuccess"-->
+      <form name="currentForm"   [formGroup]="mForm">
+      <div class="Vector">
+
+            <div *ngIf="!isRegSuccess && storyInputsInOrder.length === 0">empty</div>
+            <div *ngIf="!isRegSuccess">
+              <storybook-input
+                *ngFor="let storyInput of storyInputsInOrder"
+                [storyInput]="storyInput"
+                (onArchiveInput)="onArchiveInput.emit($event)"
+                (onPinInput)="onPinInput.emit($event)"
+                [currentForm]="mForm">
+              </storybook-input>
+            </div>
+
+            <div *ngIf="isRegSuccess" style="margin-top: 50px">
+              <storybook-button-successfully id="button-successfully" style="position: relative; margin-top: 50px;"></storybook-button-successfully>
+            </div>
+
+            <div class="login-button">
+
+              <div *ngIf="!isRegSuccess" class="thematic-break"></div>
+              <storybook-button-continue size="medium" label="Continue" type="button" (click)="onSubmit()" ></storybook-button-continue>
+            </div>
+
+
+
+          </div>
+          <div class="form-group">
+              <div class="alert alert-danger" role="alert" *ngIf="isLoginFailed">
+                Login failed: {{ loginErrorMessage }}
+              </div>
+          </div>
+    </form>
+  </div>
+  </div>
+</div>
+

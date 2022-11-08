@@ -4,7 +4,7 @@
 
   <br>
   <label [attr.aria-label]="storyInput?.id + ''" for="{{ storyInput?.title }}" class="Vector2 ">
-    <img src="{{ storyInput?.icon }}" class="icon-input" alt="icon input username"  name="{{ storyInput?.title }}" />
+    <img src="{{ storyInput?.icon }}" class="icon-input" alt="icon input userName"  name="{{ storyInput?.title }}" />
     <div>
     <input type="{{storyInput?.type}}" id="{{ storyInput?.id }}" class="DanK203"
             name="{{storyInput?.title}}" formControlName="{{storyInput?.title}}" required  />
@@ -22,13 +22,13 @@
   <!--storyInput?.title+'.invalid' alert alert-danger  && ([storyInput?.title+'.dirty'] || [storyInput?.title+'.touched'].valueOf()) -->
   <span [ngSwitch]="storyInput?.title">
       <span class=" alert-danger alert"   *ngIf="formControler?.invalid && (formControler?.dirty || formControler?.touched)"  >
-          <span *ngSwitchCase="'username'">{{storyInput?.state}} is required!</span>
+          <span *ngSwitchCase="'userName'">{{storyInput?.state}} is required!</span>
           <span *ngSwitchCase="'password'">{{storyInput?.state}} is required!</span>
           <span *ngSwitchCase="'email'"   >{{storyInput?.state}} is required!</span>
           <span *ngSwitchCase="'phone'"   >{{storyInput?.state}} is required!</span>
       </span>
       <div class="alert alert-danger "  *ngIf="formControler?.valid && (formControler?.dirty || formControler?.touched)">
-        <div *ngSwitchCase="'username'">ok!</div>
+        <div *ngSwitchCase="'userName'">ok!</div>
         <div *ngSwitchCase="'password'">ok!</div>
         <div *ngSwitchCase="'email'"   >ok!</div>
         <div *ngSwitchCase="'phone'"   >ok!</div>
@@ -42,10 +42,10 @@
   <!--ng-container [ngSwitch]="this.storyInput?.title"></ng-container-->
 
     <!--div *ngSwitchCase="'password'">
-      <span class="alert alert-danger"   *ngIf="username?.invalid && (username?.dirty || username?.touched)"  >
+      <span class="alert alert-danger"   *ngIf="userName?.invalid && (userName?.dirty || userName?.touched)"  >
         {{storyInput?.state}} is required!
       </span>
-      <span class="alert alert-danger"  *ngIf="username?.valid && (username?.dirty || username?.touched)">
+      <span class="alert alert-danger"  *ngIf="userName?.valid && (userName?.dirty || userName?.touched)">
         ok!
       </span>
     </div-->

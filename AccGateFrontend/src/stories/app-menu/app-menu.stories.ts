@@ -10,14 +10,15 @@ import * as StoryInput from "../inputs/story-input.stories";
 import StoryInputStories from "../inputs/story-input.stories";
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {ButtonContinueComponent} from "../buttons/button-continue/button-continue.component";
+import {ButtonAppsComponent} from "../buttons/button-apps/button-apps.component";
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
-  title: 'Example/AppMenu',
+  title: 'Design System/Atoms/AppMenu',
   component: AppMenuComponent,
   decorators: [
     moduleMetadata({
-      declarations: [ AppMenuComponent, CardComponent, StoryInputComponent, ButtonContinueComponent ],
+      declarations: [ AppMenuComponent, CardComponent, StoryInputComponent, ButtonContinueComponent, ButtonAppsComponent ],
       imports: [ReactiveFormsModule],
     }),
     componentWrapperDecorator(story => `<div style="margin: 3em">${story}</div>`),

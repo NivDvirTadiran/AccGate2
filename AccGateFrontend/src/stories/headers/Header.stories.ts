@@ -7,7 +7,7 @@ import Card from '../cards/card.component';
 import Header from './header.component';
 
 export default {
-  title: 'Example/Header',
+  title: 'Design System/Atoms/Header',
   component: Header,
   decorators: [
     moduleMetadata({

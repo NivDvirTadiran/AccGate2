@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -11,12 +10,20 @@ import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { AppRoutingGuard } from './app-routing.guard';
 import Login2Component from "./login2/login2.component";
 import Profile2Component from "./profile2/profile2.component";
+import { RegisterComponent } from "./register/register.component";
+import { Register2Component } from "./register2/register2.component";
+import { RegisterFormComponent } from "./register-form/register-form.component";
+import RegisterForm2Component from "./register-form2/register-form2.component";
+
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'login2', component: Login2Component },
   { path: 'register', component: RegisterComponent },
+  { path: 'register2', component: Register2Component },
+  { path: 'registeform', component: RegisterFormComponent },
+  { path: 'registerform2', component: RegisterForm2Component },
   { path: 'profile', component: ProfileComponent/*, canActivate: [AppRoutingGuard] */},
   { path: 'profile2', component: Profile2Component/*, canActivate: [AppRoutingGuard] */},
   { path: 'user', component: BoardUserComponent },

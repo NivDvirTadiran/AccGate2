@@ -6,7 +6,7 @@ import {CommonModule} from "@angular/common";
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
-  title: 'Example/ContinueButton',
+  title: 'Design System/Atoms/Buttons/ContinueButton',
   component: ButtonContinueComponent,
   decorators: [
     moduleMetadata({

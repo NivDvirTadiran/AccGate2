@@ -7,7 +7,7 @@ import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
-  title: 'StoryInput',
+  title: 'Design System/Atoms/Inputs/StoryInput',
   component: StoryInputComponent,
   decorators: [
     moduleMetadata({
@@ -17,7 +17,7 @@ export default {
     //componentWrapperDecorator(story => `<div style="margin: 3em">${story}</div>`),
   ],
   /*argTypes: {
-    validationForm: new FormGroup({
+    registerForm: new FormGroup({
       username: new FormControl('', Validators.minLength(2)),
       password: new FormControl('zaqwsx', Validators.minLength(2))
     }),
@@ -99,7 +99,7 @@ Email.args = {
 export const Phone = Template.bind({});
 Phone.args = {
   storyInput: {
-    id: '4',
+    id: '5',
     title: 'phone',
     state: 'PHONE NUMBER FOR AUTHENTICATION',
     icon: './assets/images/Phone3ldpi.png',

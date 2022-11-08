@@ -37,7 +37,7 @@ export class StoryInputComponent {
 
   @Input() currentForm!: FormGroup;
 
-  /*validationForm = new FormGroup({
+  /*registerForm = new FormGroup({
     username: new FormControl('', Validators.minLength(2)),
     password: new FormControl('zaqwsx', Validators.minLength(2))
   });
@@ -66,7 +66,6 @@ export class StoryInputComponent {
       case "password":
         return this.currentForm.get('password')!;
       default:
-        console.log('N');
         break;
     }
     return this.currentForm.get('username')!;

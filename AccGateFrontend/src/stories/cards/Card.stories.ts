@@ -7,7 +7,7 @@ import {CommonModule} from "@angular/common";
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
-  title: 'Example/Card',
+  title: 'Design System/Atoms/Card',
   component: Card,
   decorators: [
     moduleMetadata({

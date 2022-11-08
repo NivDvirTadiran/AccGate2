@@ -15,11 +15,12 @@
 
 <!--app-login></app-login-->
 
-<storybook-form
+<storybook-login-form
   [isLoggedIn]="false"
+  [mForm]="loginForm"
   [storyInputs]="storyInputsInOrder"
   (newItemEvent)="onSubmit($event)"
-></storybook-form>
+></storybook-login-form>
 
 
 <!--/section></div>

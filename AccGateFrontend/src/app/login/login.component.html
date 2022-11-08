@@ -19,15 +19,15 @@
         <a class="user-name D-Caps-Regular">USER NAME</a>
 
         <br>
-        <label [attr.aria-label]="'username'" for="username" class="Vector2 ">
+        <label [attr.aria-label]="'userName'" for="userName" class="Vector2 ">
 
-          <img src="./assets/images/User2ldpi.png" class="icon-input-username" alt="icon input username" />
+          <img src="./assets/images/User2ldpi.png" class="icon-input-userName" alt="icon input userName" />
 
-          <input type="text" [value]="'DanK203'" id="username" name="username"  class="DanK203"
-                 [(ngModel)]="form.username" placeholder="Ex. Saul Ramirez" required #username="ngModel"/>
+          <input type="text" [value]="'DanK203'" id="userName" name="userName"  class="DanK203"
+                 [(ngModel)]="form.userName" placeholder="Ex. Saul Ramirez" required #userName="ngModel"/>
         </label>
 
-        <div class="alert alert-danger" role="alert" *ngIf="username.errors && f.submitted">
+        <div class="alert alert-danger" role="alert" *ngIf="userName.errors && f.submitted">
           Username is required!
         </div>
       </div>

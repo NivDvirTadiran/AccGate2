@@ -6,7 +6,7 @@ spring.mvc.view.suffix=.html
 spring.mvc.servlet.load-on-startup=1
 spring.datasource.url= jdbc:mysql://localhost:3308/ecc?useSSL=true
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-spring.datasource.username= ecc
+spring.datasource.userName= ecc
 spring.datasource.password= !A_C_C-c0d8
 
 spring.jpa.properties.hibernate.dialect= org.hibernate.dialect.MySQL5InnoDBDialect

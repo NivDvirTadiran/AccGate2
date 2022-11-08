@@ -49,8 +49,8 @@ export class ProfileComponent implements OnInit {
     //this.windowObjectReference.window.document.getElementById("profile_title").innerHTML = "new title";
     //this.windowObjectReference.window.document.done.
     console.log('window.location.origin.toString():  '+ this.windowObjectReference.window.document.getElementById("profile_title").innerHTML);
-    //let { username, password } = this.loginForm.value;
-    //username = this.loginForm.get(['username'])?.value.toString();
+    //let { userName, password } = this.loginForm.value;
+    //userName = this.loginForm.get(['userName'])?.value.toString();
     //let password = this.loginForm.get(['password'])?.value.toString();
     //this.authenticationService.logout();
   }

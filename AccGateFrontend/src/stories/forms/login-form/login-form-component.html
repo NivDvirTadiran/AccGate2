@@ -4,25 +4,25 @@
 <div id="main-login-card" class="col-md-12">
   <storybook-card class="card-container"></storybook-card>
   <div  class="h-100 d-flex align-items-center justify-content-center">
-    <div class="Aeonix-App-Center">
+    <div class="form-header">
       <a>Aeonix App Center</a>
     </div>
 
     <br>
-    <!--form name="form"  (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate --> <!-- *ngIf="!isLoggedIn"-->
-      <form name="currentForm"   [formGroup]="validationForm">
+    <!--form name="form"  (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate --> <!-- *ngIf="!isRegSuccess"-->
+      <form name="currentForm"   [formGroup]="mForm">
       <div  *ngIf="!isLoggedIn" class="Vector">
 
 
 
-            <div *ngIf="isLoggedIn">isLoggedIn</div>
+            <div *ngIf="isLoggedIn">isRegSuccess</div>
             <div *ngIf="!isLoggedIn && storyInputsInOrder.length === 0">empty</div>
             <storybook-input
               *ngFor="let storyInput of storyInputsInOrder"
               [storyInput]="storyInput"
               (onArchiveInput)="onArchiveInput.emit($event)"
               (onPinInput)="onPinInput.emit($event)"
-              [currentForm]="validationForm">
+              [currentForm]="mForm">
             </storybook-input>
 
 

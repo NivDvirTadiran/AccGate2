@@ -9,7 +9,7 @@ import {ButtonTadiranComponent} from "../../buttons/button-tadiran/button-tadira
 
 
 export default {
-  title: 'Example/Background1',
+  title: 'Design System/Atoms/Background1',
   component: Background1Component,
   parameters: {
     // More on Story layout: https://storybook.js.org/docs/angular/configure/story-layout
@@ -28,9 +28,9 @@ export default {
 } as Meta;
 
 /*
-export const Agent = Template.bind({});
+export const Vee = Template.bind({});
 // More on args: https://storybook.js.org/docs/angular/writing-stories/args
-Agent.args = {
+Vee.args = {
   primary: true,
   label: 'Button',
 };*/

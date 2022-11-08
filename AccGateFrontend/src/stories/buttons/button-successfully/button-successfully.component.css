@@ -1,0 +1,49 @@
+:root {
+  --label_width: 30px;
+  --white: #ffffff;
+}
+
+#button-successfully {
+  max-width: 155.09px;
+}
+
+.container {
+  position: relative;
+  max-width: 155.09px;
+  height: 189.09px;
+  float: left;
+  padding: 0;
+}
+
+img.Vee-Icon {
+  position: absolute;
+  width: 83.98px;
+  height: 62.42px;
+  left: calc(50% - 83.98px/2);
+  top: calc(50% - 62.42px/2);
+  object-fit: contain;
+  /*box-shadow: 0 1px 1px 0 rgba(61, 142, 207, 0.15);*/
+}
+
+.circle {
+  position: relative;
+  height: 142px;
+  width: 142px;
+  background: linear-gradient(180deg, #63EAA1 41.15%, #53CE8C 100%);
+  border-radius: 50%;
+}
+
+.center {
+  margin: auto;
+
+  text-align: center;
+
+
+}
+
+
+
+.storybook-button-successfully--medium {
+  width: 154.09px;
+  height: 154.09px;
+}

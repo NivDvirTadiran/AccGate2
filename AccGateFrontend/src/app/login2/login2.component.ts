@@ -1,14 +1,14 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { StoryInput } from "../../stories/inputs/story-input.model";
 import {AuthService} from "../_services/auth.service";
-import {FormGroup} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {TokenStorageService} from "../_services/token-storage.service";
 import {Router} from "@angular/router";
 //import {Default} from "../../stories/inputs/story-input.stories";
 
 
 @Component({
-  selector: 'storybook-login2',
+  selector: 'register2',
   templateUrl: './login2.component.html',
   styleUrls: ['./login2.component.scss']
 })
@@ -72,6 +72,8 @@ export default class Login2Component implements OnInit {
 
   }*/
 
+  loginForm: FormGroup;
+
   public get classes(): string[] {
     const mode = this.primary ? 'storybook-page2--primary' : 'storybook-page2--secondary';
 
@@ -80,7 +82,12 @@ export default class Login2Component implements OnInit {
 
   constructor(public authService: AuthService,
               private tokenStorage: TokenStorageService,
-              private router: Router,) {}
+              private router: Router,) {
+    this.loginForm = new FormGroup({
+      username: new FormControl('Telecom2', Validators.minLength(2)),
+      password: new FormControl('T@diran2022', Validators.minLength(2)),
+    });
+  }
 
   ngOnInit(): void {};
 

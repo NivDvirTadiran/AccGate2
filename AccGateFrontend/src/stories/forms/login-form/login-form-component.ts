@@ -1,27 +1,18 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, OnInit, Output, Renderer2, ViewChild} from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
-import { StoryInput } from "../inputs/story-input.model";
-import { AuthService } from '../../app/_services/auth.service';
-import {MdbModalRef} from "mdb-angular-ui-kit/modal";
+import { StoryInput } from "../../inputs/story-input.model";
+import { AuthService } from '../../../app/_services/auth.service';
 
 
-export interface AeonixAppCenterForm {
-  username: null, //new FormControl('ea2', Validators.min(2)),
-  password: null  //new FormControl('zaqwsx', Validators.min(2))
-}
 
 
 @Component({
-  selector: 'storybook-form',
-  templateUrl: './form.component.html',
-  styleUrls: ['./form.css'],
+  selector: 'storybook-login-form',
+  templateUrl: './login-form-component.html',
+  styleUrls: ['./login-form.css'],
 })
-export class FormComponent implements OnInit {
+export default class LoginFormComponent implements OnInit {
 
-  /*form: AeonixAppCenterForm = {
-    username: null,     //new FormControl('ea2', Validators.min(2)),
-    password: null      //new FormControl('zaqwsx', Validators.min(2))
-  };*/
 
 
 
@@ -32,6 +23,7 @@ export class FormComponent implements OnInit {
     password: null
   };
 
+
   isLoginFailed = false;
   loginErrorMessage = '';
 
@@ -40,13 +32,10 @@ export class FormComponent implements OnInit {
   }
 
   constructor() {
-    this.validationForm = new FormGroup({
-      username: new FormControl('Telecom2', Validators.minLength(2)),
-      //email: new FormControl(null, Validators.email),
-      password: new FormControl('T@diran2022', Validators.minLength(2)),
-      //phone: new FormControl(null, Validators.pattern(new RegExp("[0-9 ]{12}")))
-    });
+
   }
+
+
 
   /**
    * @ignore
@@ -54,7 +43,17 @@ export class FormComponent implements OnInit {
    */
   storyInputsInOrder: StoryInput[] = [];
 
-  validationForm: FormGroup;
+  @Input() mForm: FormGroup = new FormGroup({}); /* = new FormGroup({
+  username: new FormControl('Telecom4', Validators.minLength(2)),
+  password: new FormControl('T@diran2022', Validators.minLength(2)),
+});*/
+
+/*
+  validationFormInOrder: { [p: string]: AbstractControl } =[];
+  @Input()
+  set registerForm(arr: FormGroup) {
+    this.validationFormInOrder = arr.controls
+  }*/
 
   @Input() isLoggedIn = false;
 
@@ -83,8 +82,8 @@ export class FormComponent implements OnInit {
 
   onSubmit(): void {
     console.warn('Login Request!');
-    this.credentials.username=this.validationForm.get('username')?.value;
-    this.credentials.password=this.validationForm.get('password')?.value;
+    this.credentials.username=this.mForm?.get('username')?.value;
+    this.credentials.password=this.mForm?.get('password')?.value;
 
     this.newItemEvent.emit(this.credentials);
   }
@@ -94,19 +93,19 @@ export class FormComponent implements OnInit {
 
 
   get userName(): AbstractControl {
-    return this.validationForm.get('username')!;
+    return this.mForm?.get('username')!;
   }
 
   get email(): AbstractControl {
-    return this.validationForm.get('email')!;
+    return this.mForm?.get('email')!;
   }
 
   get password(): AbstractControl {
-    return this.validationForm.get('password')!;
+    return this.mForm?.get('password')!;
   }
 
   get phone(): AbstractControl {
-    return this.validationForm.get('phone')!;
+    return this.mForm?.get('phone')!;
   }
 
 

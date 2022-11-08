@@ -6,7 +6,7 @@ import {CommonModule} from "@angular/common";
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
-  title: 'Example/TadiranIcon',
+  title: 'Design System/Atoms/Buttons/TadiranIcon',
   component: ButtonTadiranComponent,
   decorators: [
     moduleMetadata({

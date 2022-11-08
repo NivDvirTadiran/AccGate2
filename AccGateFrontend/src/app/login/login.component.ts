@@ -15,7 +15,7 @@ import {Observable} from "rxjs";
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  //registerFormRef: MdbModalRef<RegisterFormComponent> | null = null;
+  //registerFormRef: MdbModalRef<RegisterForm2Component> | null = null;
   //replacePassFormRef: MdbModalRef<ReplacePassFormComponent> | null = null;
   form: any = {
     username: null, //new FormControl('ea2', Validators.min(2)),
@@ -68,9 +68,9 @@ export class LoginComponent implements OnInit {
   }
 
   openRegisterForm() {
-    //return this.registerFormService.open(RegisterFormComponent).onClose.toPromise();
+    //return this.registerFormService.open(RegisterForm2Component).onClose.toPromise();
     /*var promise = new Promise<void>((resolve, reject)  => {
-      let newRegisterFormService = this.registerFormService.open(RegisterFormComponent);
+      let newRegisterFormService = this.registerFormService.open(RegisterForm2Component);
       setTimeout(() => {
         console.log("Async Work Complete");
         newRegisterFormService.close();
@@ -134,7 +134,7 @@ export class LoginComponent implements OnInit {
   reloadPage(): void {
     //window.location.reload();
     this.router.navigate(['/profile']).then(() => {window.location.reload()});
-    //var URL = window.location.host+"/profile"; //'http://localhost:4200/user';
+    //var URL = window.location.mainHeader+"/profile"; //'http://localhost:4200/user';
     ///window.open(URL);
     //this.router.navigate([]).then(result => {  window.open(window.location.toString(), 'user'); });
   }
