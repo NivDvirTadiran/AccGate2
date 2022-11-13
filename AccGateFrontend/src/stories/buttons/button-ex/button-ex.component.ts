@@ -7,7 +7,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class ButtonExComponent {
   /**
-   * Is this the principal call to action on the login2?
+   * Is this the principal call to action on the login-main?
    */
   @Input()
   primary = false;
@@ -39,9 +39,9 @@ export class ButtonExComponent {
   onClick = new EventEmitter<Event>();
 
   public get classes(): string[] {
-    const mode = this.primary ? 'storybook-button-language--primary' : 'storybook-button-language--secondary';
+    const mode = this.primary ? 'storybook-button-ex--primary' : 'storybook-button-ex--secondary';
 
-    return ['storybook-button-language', `storybook-language-icon--${this.size}`, mode];
+    return ['storybook-button-ex', `storybook-button-ex--${this.size}`, mode];
   }
 
 

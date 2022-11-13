@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { User } from '../User';
 
 @Component({
-  selector: 'storybook-login2',
+  selector: 'storybook-login-main',
   templateUrl: './page.component.html',
   styleUrls: ['./page.css'],
 })

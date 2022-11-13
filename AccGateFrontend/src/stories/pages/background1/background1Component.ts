@@ -7,11 +7,11 @@ import {Component, Input, OnInit} from '@angular/core';
   templateUrl: './background1Component.html',
   styleUrls: ['./background1Component.scss']
 })
-export default class Background1Component implements OnInit {
+export default class Background1Component {
 
 
   /**
-   * Is this the principal call to action on the login2?
+   * Is this the principal call to action on the login-main?
    */
   @Input()
   primary = true;
@@ -60,7 +60,7 @@ export default class Background1Component implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {};
+
 
 
 }

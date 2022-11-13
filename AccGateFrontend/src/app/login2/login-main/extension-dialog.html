@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<h1 mat-dialog-title>Hi {{extensionData.name}}</h1>
+<div mat-dialog-content>
+    <p>What's your Requested Extension?</p>
+    <form >
+        <label>Extension</label>
+        <input  [(ngModel)]="extensionData.extension">
+    </form>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-button [mat-dialog-close]="extensionData.extension" cdkFocusInitial>Logon</button>
+</div>

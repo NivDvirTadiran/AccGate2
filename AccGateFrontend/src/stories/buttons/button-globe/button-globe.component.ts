@@ -7,7 +7,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class ButtonGlobeComponent {
   /**
-   * Is this the principal call to action on the login2?
+   * Is this the principal call to action on the login-main?
    */
   @Input()
   primary = false;

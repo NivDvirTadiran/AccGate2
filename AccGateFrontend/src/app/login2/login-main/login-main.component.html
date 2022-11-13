@@ -1,0 +1,37 @@
+
+<html>
+<head>
+  <style>
+
+  </style>
+  <title></title>
+</head>
+<body>
+
+<!--article><div class="Frame-1 relative">
+<section class="relative " Style="{ 'background': backgroundColor }"-->
+
+<!--storybook-button-globe></storybook-button-globe-->
+
+<storybook-background1></storybook-background1>
+
+<!--button  (click)="openDialog()">Pick one</button-->
+<button mat-raised-button (click)="openRegisterForm()">Pick one</button>
+<button mat-raised-button (click)="profile2()">profile2</button>
+
+
+<storybook-login-form
+  [isLoggedIn]="false"
+  [mForm]="loginForm"
+  [storyInputs]="storyInputsInOrder"
+  (newItemEvent)="onSubmit($event)"
+></storybook-login-form>
+
+
+<!--/section></div>
+</article-->
+
+</body>
+</html>
+
+

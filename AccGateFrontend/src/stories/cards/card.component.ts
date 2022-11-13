@@ -11,7 +11,7 @@ export default class CardComponent  {
 
 
   /**
-   * Is this the principal call to action on the login2?
+   * Is this the principal call to action on the login-main?
    */
   @Input()
   primary = false;

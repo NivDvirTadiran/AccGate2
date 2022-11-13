@@ -11,8 +11,8 @@ import {
   ViewChildren
 } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
-import { StoryInput } from "../../inputs/story-input.model";
-import { AuthService } from '../../../app/_services/auth.service';
+import { StoryInput } from "src/stories/inputs/story-input.model";
+import { AuthService } from 'src/app/_services/auth.service';
 import {BehaviorSubject} from "rxjs";
 
 
@@ -83,6 +83,8 @@ export default class RegistryFormComponent implements OnInit, AfterViewChecked, 
   @Output() onArchiveInput: EventEmitter<any> = new EventEmitter();
 
   @Output() sendRegReq: EventEmitter<void> = new EventEmitter();
+
+  @Output() clickXButton: EventEmitter<void> = new EventEmitter();
 
 
   @Input()
