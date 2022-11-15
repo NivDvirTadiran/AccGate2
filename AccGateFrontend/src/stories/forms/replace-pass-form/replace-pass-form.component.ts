@@ -23,11 +23,11 @@ export class StoryInput {
 }
 */
 @Component({
-  selector: 'storybook-registry-form',
-  templateUrl: './registry-form.component.html',
-  styleUrls: ['./registry-form.css'],
+  selector: 'storybook-replace-pass-form',
+  templateUrl: './replace-pass-form.component.html',
+  styleUrls: ['./replace-pass-form.css'],
 })
-export default class RegistryFormComponent implements OnInit, AfterViewChecked, OnChanges {
+export default class ReplacePassFormComponent implements OnInit, AfterViewChecked, OnChanges {
 
 /*
   @ViewChild('storybook-input')
@@ -91,7 +91,7 @@ export default class RegistryFormComponent implements OnInit, AfterViewChecked, 
 
 
 
-  @Input() isRegSuccess = false;
+  @Input() isRepSuccess = false;
 
   // tslint:disable-next-line: no-output-on-prefix
   @Output() onPinInput: EventEmitter<any> = new EventEmitter();

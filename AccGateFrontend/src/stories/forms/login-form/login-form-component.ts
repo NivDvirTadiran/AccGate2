@@ -28,7 +28,7 @@ export default class LoginFormComponent implements OnInit {
   loginErrorMessage = '';
 
   openReplacePassword() {
-    //this.replacePassFormService.open(ReplacePassFormComponent);
+    //this.replacePassFormService.open(ReplacePassForm2Component);
   }
 
   constructor() {
@@ -73,10 +73,10 @@ export default class LoginFormComponent implements OnInit {
       ...arr.filter(t => t.state !== 'USER NAME'),
     ];
     const filteredTasks = initialTasks.filter(
-      t => t.state === 'PASSWORD' || t.state === 'USER NAME'
+      t => t.type === 'password' || t.state === 'USER NAME'
     );
     this.storyInputsInOrder = filteredTasks.filter(
-      t => t.state === 'PASSWORD' || t.state === 'USER NAME'
+      t => t.type === 'password' || t.state === 'USER NAME'
     );
   }
 

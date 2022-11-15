@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, HostBinding, Input, OnInit, Output} from '@angular/core';
 import { StoryInput } from './story-input.model'
 import {AbstractControl, FormControl, FormGroup, Validators} from "@angular/forms";
 
@@ -19,6 +19,7 @@ export interface ValidationForm {
 })
 export class StoryInputComponent {
 
+
   @Input() storyInput!: StoryInput;
 
   // tslint:disable-next-line: no-output-on-prefix
@@ -30,12 +31,17 @@ export class StoryInputComponent {
   onArchiveInput = new EventEmitter<Event>();
 
 
+  @Input()
+  hideInput = false;
 
   showPassChange(): void {
     this.storyInput.type = (this.storyInput?.type == 'password' ? 'text' : 'password')
   }
 
   @Input() currentForm!: FormGroup;
+
+  private isStrength: string = (this.storyInput?.state === 'NEW PASSWORD') ? 'storybook-input--addStrength' : 'storybook-input--clearStrength';
+
 
   /*registerForm = new FormGroup({
     username: new FormControl('', Validators.minLength(2)),
@@ -88,4 +94,9 @@ export class StoryInputComponent {
     this.onArchiveInput.emit(id);
   }
 
+  public get classes(): string[] {
+    this.isStrength = (this.storyInput?.state === 'NEW PASSWORD') ? 'storybook-input--addStrength' : 'storybook-input--clearStrength';
+
+    return ['storybook-input-strength',  this.isStrength];
+  }
 }

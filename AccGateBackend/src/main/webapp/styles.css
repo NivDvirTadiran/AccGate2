@@ -31417,9 +31417,8 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
 }
 .mat-dialog-container {
   box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
-  background: rgba(255, 255, 255, 0);
-  background-color: blue;
-  /*color: rgba(0, 0, 0, 0.87);*/
+  background: white;
+  color: rgba(0, 0, 0, 0.87);
 }
 .mat-divider {
   border-top-color: rgba(0, 0, 0, 0.12);
@@ -48630,6 +48629,14 @@ mdb-form-control {
   src: local("Noto Sans BoldItalic"), local("NotoSans-BoldItalic"), url('NotoSans-BoldItalic.eot?#iefix') format("embedded-opentype"), url('NotoSans-BoldItalic.woff2') format("woff2"), url('NotoSans-BoldItalic.woff') format("woff"), url('NotoSans-BoldItalic.ttf') format("truetype"), url('NotoSans-BoldItalic.svg#NotoSans-BoldItalic') format("svg");
   font-weight: 700;
   font-style: italic;
+}
+.mat-dialog-container {
+  box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
+  background-color: rgba(255, 255, 255, 0);
+  color: rgba(0, 0, 0, 0.87);
+}
+.mat-dialog-container .circle {
+  border-radius: 50%;
 }
 .expansionCard.is-active[data-v-5f907c3e] {
   border-color: #007aff !important;

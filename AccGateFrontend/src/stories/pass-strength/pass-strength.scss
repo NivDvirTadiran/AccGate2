@@ -1,0 +1,94 @@
+
+
+
+.storybook-pass-strength {
+  position: absolute;
+  width: 100%;
+
+
+  height: 28px;
+
+/**/ margin-bottom: 20px;
+
+  /**/horiz-align: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+   /*rgb(191, 191, 191);*/
+   text-align: center;
+    background: linear-gradient(to right, rgb(255, 47, 0), rgb(255, 159, 0)) rgb(255, 47, 0);
+}
+
+.center {
+  position: absolute;
+  width: 20%;
+  /*margin: auto;*/
+
+  text-align: center;
+
+  height: 24px;
+  /*top: calc(50% - 24px/2);*/
+  left: calc(50% - 20%/2);
+}
+
+.mfont {
+  position: absolute;
+  top: 5px;
+  /**/
+  text-align: center;
+  /*  D Strong Password */
+   font-family: 'Noto Sans', ui-serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;   /* identical to box height, or 240%*/
+
+   /**/display: flex ;
+    align-items: center;
+    letter-spacing: -0.011em;
+    text-transform: capitalize;
+
+   color: #000000;
+}
+$strength0:  linear-gradient(to right, rgb(255, 47, 0), rgb(255, 159, 0)) rgb(255, 47, 0);
+$strength30: linear-gradient(to right, rgb(255, 95, 0),  rgb(255, 239, 0)) rgb(255, 95, 0);
+$strength40: linear-gradient(to right, rgb(255, 143, 0), rgb(207, 231, 0)) rgb(255, 143, 0);
+$strength50: linear-gradient(to right, rgb(255, 255, 0), rgb(175, 215, 0)) rgb(255, 255, 0);
+$strength60: linear-gradient(to right, rgb(223, 239, 0), rgb(143, 199, 0)) rgb(223, 239, 0);
+$strength70: linear-gradient(to right, rgb(191, 223, 0), rgb(111, 191, 0)) rgb(191, 223, 0);
+$strength90: linear-gradient(to right, rgb(127, 191, 0), rgb(47, 151, 0))  rgb(127, 191, 0);
+$strength100: linear-gradient(to right, rgb(95, 191, 0),  rgb(0, 128, 0))   rgb(95, 191, 0);
+/*
+$vehicleSeating: $strength0;
+
+$strength: 35;
+
+
+@if ($strength < 30) { $vehicleSeating: $strength0;}
+@else if ($strength < 40) {$vehicleSeating: $strength30;}
+@else if ($strength < 50) {$vehicleSeating: $strength40;}
+@else if ($strength < 60) {$vehicleSeating: $strength50;}
+@else if ($strength < 70) {$vehicleSeating: $strength60;}
+@else if ($strength < 90) {$vehicleSeating: $strength70;}
+@else if ($strength < 99) {$vehicleSeating: $strength90;}
+@else {$vehicleSeating: $strength100;}
+
+
+$vehicleSeating: map-get((
+  3: $strength60,
+  bus : 20,
+), $strength);
+*/
+.storybook-pass-strength--primary {
+
+  background: $strength50;
+
+}
+
+.storybook-pass-strength--10{ background: $strength0; }
+.storybook-pass-strength--10{ background: $strength30; }
+.storybook-pass-strength--40{ background: $strength40; }
+.storybook-pass-strength--50{ background: $strength50; }
+.storybook-pass-strength--60{ background: $strength60; }
+.storybook-pass-strength--70{ background: $strength70; }
+.storybook-pass-strength--90{ background: $strength90; }
+.storybook-pass-strength--100{ background: $strength100; }
+

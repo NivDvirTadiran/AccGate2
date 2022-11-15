@@ -2,7 +2,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'storybook-button-fortest',
-  template: ` <button
+  template: ` <p >Highlight Directive</p>
+    <button highlight="blue" colorName="blue"
     type="button"
     (click)="onClick.emit($event)"
     [ngClass]="classes"

@@ -5,10 +5,14 @@ import { ButtonFortestComponent } from './button-fortest.component';
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
   title: 'Design System/Atoms/Buttons/FortestButton',
-  component: ButtonFortestComponent,
+  /*component: ButtonFortestComponent,
   // More on argTypes: https://storybook.js.org/docs/angular/api/argtypes
   argTypes: {
     backgroundColor: { control: 'color' },
+  },*/
+  design: {
+    type: "figma",
+    url: "https://www.figma.com/file/LKQ4FJ4bTnCSjedbRpk931/Sample-File",
   },
 } as Meta;
 
@@ -22,6 +26,7 @@ export const Primary = Template.bind({});
 Primary.args = {
   primary: true,
   label: 'Button',
+
 };
 
 export const Secondary = Template.bind({});

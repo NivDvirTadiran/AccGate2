@@ -1,5 +1,7 @@
-
-<div class="list-item storybook-input Frame-3 {{ storyInput?.state }}" [formGroup]="this.currentForm">
+<div id="parent3"  [hidden]="storyInput?.hide" [ngClass]="classes">
+<div id="parent1" >
+  <div class="main"  [formGroup]="this.currentForm">
+  <div>
   <a class="user-name D-Caps-Regular">{{storyInput?.state}}</a>
 
   <br>
@@ -7,20 +9,19 @@
     <img src="{{ storyInput?.icon }}" class="icon-input" alt="icon input userName"  name="{{ storyInput?.title }}" />
     <div>
     <input type="{{storyInput?.type}}" id="{{ storyInput?.id }}" class="DanK203"
-            name="{{storyInput?.title}}" formControlName="{{storyInput?.title}}" required  />
+            name="{{storyInput?.title}}" formControlName="{{storyInput?.title}}"  required  />
     </div>
-<!-- [value]="storyInput?.title"  placeholder="{{storyInput?.placeholder}}"  -->
-    <button *ngIf="storyInput?.state === 'PASSWORD'" class="icon-input-showpass" type="button" (click)="showPassChange()">
+
+    <button *ngIf="storyInput?.title === 'password'" class="icon-input-showpass" type="button" (click)="showPassChange()">
       <img src="./assets/images/EyeIcon.png" class="icon-input-showpass" alt="icon input type" />
 
     </button>
 
 
 
-
   <br>
 
-  <span [ngSwitch]="storyInput?.title" class="D-Caps-Regular"  style="line-height: 0" >
+  <span hidden [ngSwitch]="storyInput?.title" class="D-Caps-Regular"  style="line-height: 0" >
       <span  class="position-absolute"  *ngIf="formControler?.invalid && (formControler?.dirty || formControler?.touched)"  >
           <span *ngSwitchCase="'username'"><br>{{storyInput?.state}} is required!</span>
           <span *ngSwitchCase="'password'"><br>{{storyInput?.state}} is required!</span>
@@ -34,13 +35,21 @@
         <div *ngSwitchCase="'email'"   >ok!</div>
         <div *ngSwitchCase="'phone'"   >ok!</div>
       </div>
+
  </span>
 
   </label>
 
+
+
+  </div>
+  </div>
 </div>
 
+<div id="parent2"  *ngIf="storyInput?.state === 'NEW PASSWORD'">
+  <div class="absolute">
+    <storybook-pass-strength id="pass-strength" [strength]="10"></storybook-pass-strength>
+  </div>
+</div>
 
-
-
-
+</div>

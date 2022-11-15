@@ -1,20 +1,21 @@
-import {Component, Inject, Input, OnInit} from '@angular/core';
+import {Component, ElementRef, Inject, Input, OnInit, Renderer2, ViewChild} from '@angular/core';
 import { StoryInput } from "src/stories/inputs/story-input.model";
 import {AuthService} from "src/app/_services/auth.service";
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {AbstractControl, FormControl, FormGroup, Validators} from "@angular/forms";
 import {TokenStorageService} from "src/app/_services/token-storage.service";
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {Router} from "@angular/router";
 import RegisterForm2Component from "./register-form2/register-form2.component";
+//import * as mStoryInput from "../../../stories/inputs/story-input.stories";
 import {RegisterFormComponent} from "../../login/register-form/register-form.component";
 import {ReplacePassFormComponent} from "../../login/replace-pass-form/replace-pass-form.component";
+import {ReplacePassForm2Component} from "./replace-pass-form2/replace-pass-form2.component";
 
 export interface DialogData {
-  animal: string;
-  name: string;
+  username: string;
+  password: string;
 }
 
-//import {Default} from "src/stories/inputs/story-input.stories";
 
 
 @Component({
@@ -36,8 +37,8 @@ export class LoginMainComponent implements OnInit {
    * Is this the principal call to action on the login-main?
    */
   storyInputsInOrder: StoryInput[]  = [
-    { /*...Default.args?.['storyInput'],*/ id: '1', title: 'username', state: 'USER NAME', icon: './assets/images/User2ldpi.png', type: 'text', placeholder: 'Ex.Saul Ramirez' },
-    { /*...Default.args?.['storyInput'],*/ id: '2', title: 'password', state: 'PASSWORD', icon: './assets/images/LockIcon2ldpi.png', type: 'password', placeholder: 'your_password'  },
+    { /*...mStoryInput.Default.args?.['storyInput'],*/ id: '2', title: 'username', state: 'USER NAME', icon: './assets/images/User2ldpi.png', type: 'text', placeholder: 'Ex.Saul Ramirez' , hide: false },
+    { /*...mStoryInput.Default.args?.['storyInput'],*/ id: '3', title: 'password', state: 'PASSWORD', icon: './assets/images/LockIcon2ldpi.png', type: 'password', placeholder: 'your_password', hide: false   },
   ];
 
   /**
@@ -90,7 +91,13 @@ export class LoginMainComponent implements OnInit {
     return ['storybook-page2', mode];
   }
 
-  constructor(public registerFormDialog: MatDialog, public authService: AuthService,
+  @ViewChild('formHeader', { static: false }) mainHeader?: ElementRef;
+
+
+  constructor(private renderer: Renderer2,
+              public registerFormDialog: MatDialog,
+              public replacePassFormDialog: MatDialog,
+              public authService: AuthService,
               private tokenStorage: TokenStorageService,
               private router: Router,) {
     this.loginForm = new FormGroup({
@@ -99,34 +106,46 @@ export class LoginMainComponent implements OnInit {
     });
   }
 
-  animal: string | undefined;
-  name: string | undefined;
-  /*data: {name: this.name, animal: this.animal},*/
+
   openRegisterForm() {
     const registerFormDialogRef = this.registerFormDialog.open(RegisterForm2Component, {
-      //width: '250px',
-      data: {name: this.name, animal: this.animal},
-      id: 'registerFormDialogContainer',
-      backdropClass: 'popupBackdropClass',
-      //panelClass: 'custom-dialog-container',
-
-     //enterAnimationDuration: enterAnimationDuration,
-     // exitAnimationDuration,
+      data: {username: this.userName , password: this.password},
     });
-
-    //registerFormDialogRef._containerInstance._config.data()
-
 
     registerFormDialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      this.animal = result;
+      this.password.reset();
     });
 
     return registerFormDialogRef.afterClosed().toPromise();
   }
 
 
+  openReplacePassForm() {
+    const replacePassFormDialogRef = this.replacePassFormDialog.open(ReplacePassForm2Component, {
+      data: {username: this.userName , password: this.password},
+    });
+
+    replacePassFormDialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.password.reset();
+    });
+
+    return replacePassFormDialogRef.afterClosed().toPromise();
+  }
+
   ngOnInit(): void {};
+
+
+
+  get userName(): AbstractControl {
+    return this.loginForm.get('username')?.value;
+  }
+
+  get password(): AbstractControl {
+    return this.loginForm.get('password')?.value;
+  }
+
 
 /*
   openRegisterForm() {
@@ -134,7 +153,7 @@ export class LoginMainComponent implements OnInit {
   }
 
   openReplacePassword() {
-    this.replacePassFormService.open(ReplacePassFormComponent);
+    this.replacePassFormService.open(ReplacePassForm2Component);
   }
 */
 
@@ -197,7 +216,7 @@ export class LoginMainComponent implements OnInit {
 
 }
 
-
+/*
 @Component({
   selector: 'dialog-overview-example-dialog',
   templateUrl: 'dialog-overview-example-dialog.html',
@@ -212,17 +231,17 @@ export class DialogOverviewExampleDialog {
     this.dialogRef.close();
   }
 }
-
+*/
 
 /*
 @Component({
-  selector: 'extension-dialog',
-  templateUrl: './extension-dialog.html',
+  selector: 'password-dialog',
+  templateUrl: './password-dialog.html',
 })
 export class ExtentionDialog {
   constructor(
     public dialogRef: MatDialogRef<ExtentionDialog>,
-    @Inject(MAT_DIALOG_DATA) public extensionData: {name: string, extension: string;},
+    @Inject(MAT_DIALOG_DATA) public extensionData: {name: string, password: string;},
   ) {}
 
   onNoClick(): void {

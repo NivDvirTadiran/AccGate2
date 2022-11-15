@@ -197,11 +197,11 @@ Operating system : Windows 10
 [14:34:28] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\register-form\register-form.component.css
 [14:34:28] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\register2\register2.component.ts
 [14:34:28] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\register2\register2.component.spec.ts
-[14:34:28] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\replace-pass-form\replace-pass-form.component.html
-[14:34:28] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\replace-pass-form\replace-pass-form.component.spec.ts
-[14:34:28] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\replace-pass-form\replace-pass-form.component.ts
+[14:34:28] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\replace-pass-form\replace-pass-form2.component.html
+[14:34:28] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\replace-pass-form\replace-pass-form2.component.spec.ts
+[14:34:28] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\replace-pass-form\replace-pass-form2.component.ts
 [14:34:28] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_helpers\auth.interceptor.ts
-[14:34:28] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\replace-pass-form\replace-pass-form.component.css
+[14:34:28] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\replace-pass-form\replace-pass-form2.component.css
 [14:34:28] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\auth.service.spec.ts
 [14:34:28] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\auth.service.ts
 [14:34:28] Ignoring       : C:\niv\web\AccGate2\AccGateFrontend\src\app\_services\token-storage.service.spec.ts
@@ -375,9 +375,9 @@ Operating system : Windows 10
 [14:34:28] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\forms\login-form\login-form.css
 [14:34:28] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\forms\registry-form\registry-form.component.html
 [14:34:28] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\forms\login-form\login-form.stories.ts
-[14:34:28] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\forms\registry-form\registry-form.component.ts
+[14:34:28] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\forms\registry-form\replace-pass-form2.component.ts
 [14:34:28] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\forms\registry-form\registry-form.css
-[14:34:28] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\forms\registry-form\registry-form.stories.ts
+[14:34:28] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\forms\registry-form\replace-pass-form.storiests
 [14:34:28] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\pages\background1\background1.stories.ts
 [14:34:28] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\pages\background1\background1Component.ts
 [14:34:28] Including      : C:\niv\web\AccGate2\AccGateFrontend\src\stories\buttons\button-apps\button-apps.component.css
@@ -481,7 +481,7 @@ Operating system : Windows 10
 [14:34:32]                : 	- BoardUserComponent
 [14:34:32]                : 	- RegisterFormComponent
 [14:34:32]                : 	- RegisterForm2Component
-[14:34:32]                : 	- ReplacePassFormComponent
+[14:34:32]                : 	- ReplacePassForm2Component
 [14:34:32]                : 	- ApiErrorMessagePipe
 [14:34:32]                : 	- LoginErrorMessagePipe
 [14:34:32]                : 	- Login2Component
@@ -489,7 +489,7 @@ Operating system : Windows 10
 [14:34:32]                : 	- StoryInputComponent
 [14:34:32]                : 	- LoginFormComponent
 [14:34:32]                : 	- LoginFormComponent
-[14:34:32]                : 	- RegistryFormComponent
+[14:34:32]                : 	- ReplacePassForm2Component
 [14:34:32]                : 	- TaskComponent
 [14:34:32]                : 	- TaskListComponent
 [14:34:32]                : 	- ButtonLanguageComponent
@@ -540,8 +540,8 @@ Operating system : Windows 10
 [14:34:32] found          : RegisterFormComponent
 [14:34:32] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/register2/register2.component.ts
 [14:34:32] found          : Register2Component
-[14:34:32] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/replace-pass-form/replace-pass-form.component.ts
-[14:34:32] found          : ReplacePassFormComponent
+[14:34:32] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/replace-pass-form/replace-pass-form2.component.ts
+[14:34:32] found          : ReplacePassForm2Component
 [14:34:32] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/app/_helpers/auth.interceptor.ts
 [14:34:32] found          : TOKEN_HEADER_KEY
 [14:34:32] found          : AuthInterceptor
@@ -689,9 +689,9 @@ Operating system : Windows 10
 [14:34:32] found          : LoginForm
 [14:34:32] found          : MainLoignForm
 [14:34:32] found          : Loading
-[14:34:32] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/stories/forms/registry-form/registry-form.component.ts
-[14:34:32] found          : RegistryFormComponent
-[14:34:32] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/stories/forms/registry-form/registry-form.stories.ts
+[14:34:32] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/stories/forms/registry-form/replace-pass-form2.component.ts
+[14:34:32] found          : ReplacePassForm2Component
+[14:34:32] parsing        : C:/niv/web/AccGate2/AccGateFrontend/src/stories/forms/registry-form/replace-pass-form.storiests
 [14:34:32] found          : storyForm
 [14:34:32] found          : Template
 [14:34:32] found          : Default
@@ -779,10 +779,10 @@ Operating system : Windows 10
 [14:34:32]  RegisterForm2Component has styleUrls, include them
 [14:34:32]  RegisterFormComponent has a templateUrl, include it
 [14:34:32]  RegisterFormComponent has styleUrls, include them
-[14:34:32]  RegistryFormComponent has a templateUrl, include it
-[14:34:32]  RegistryFormComponent has styleUrls, include them
-[14:34:32]  ReplacePassFormComponent has a templateUrl, include it
-[14:34:32]  ReplacePassFormComponent has styleUrls, include them
+[14:34:32]  ReplacePassForm2Component has a templateUrl, include it
+[14:34:32]  ReplacePassForm2Component has styleUrls, include them
+[14:34:32]  ReplacePassForm2Component has a templateUrl, include it
+[14:34:32]  ReplacePassForm2Component has styleUrls, include them
 [14:34:32]  StoryInputComponent has a templateUrl, include it
 [14:34:32]  StoryInputComponent has styleUrls, include them
 [14:34:32]  TaskComponent has a templateUrl, include it

@@ -6,37 +6,49 @@
   <div  class="h-100 d-flex align-items-center justify-content-center">
     <storybook-button-ex id="button-ex" (click)="this.clickXButton.emit()" ></storybook-button-ex>
     <div class="form-header">
-      <a class="main-form-header" #formHeader>Complete Registration</a>
+      <a class="main-form-header" #formHeader>Change Password</a>
       <br>
-      <a *ngIf="!isRegSuccess" class="sub-form-header">complete the registration by filling the missing info:</a>
+
+
 
     <br>
     <!--form name="form"  (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate --> <!-- *ngIf="!isRegSuccess"-->
       <form name="currentForm"   [formGroup]="mForm">
       <div class="Vector">
-
-
         <div class="login-button">
-
-            <div *ngIf="!isRegSuccess && storyInputsInOrder.length === 0">empty</div>
-            <div *ngIf="!isRegSuccess">
+            <div *ngIf="!isRepSuccess && storyInputsInOrder.length === 0">empty</div>
+            <div *ngIf="!isRepSuccess">
               <storybook-input
-                *ngFor="let storyInput of storyInputsInOrder"
-                [storyInput]="storyInput"
+                [storyInput]="storyInputsInOrder[0]"
+                (onArchiveInput)="onArchiveInput.emit($event)"
+                (onPinInput)="onPinInput.emit($event)"
+                [currentForm]="mForm">
+              </storybook-input>
+
+              <div *ngIf="!isRepSuccess" class="thematic-break"></div>
+
+              <storybook-input
+                [storyInput]="storyInputsInOrder[1]"
+                (onArchiveInput)="onArchiveInput.emit($event)"
+                (onPinInput)="onPinInput.emit($event)"
+                [currentForm]="mForm">
+              </storybook-input>
+              <storybook-input
+                [storyInput]="storyInputsInOrder[2]"
                 (onArchiveInput)="onArchiveInput.emit($event)"
                 (onPinInput)="onPinInput.emit($event)"
                 [currentForm]="mForm">
               </storybook-input>
             </div>
 
-            <div *ngIf="isRegSuccess" style="margin-top: 50px">
+            <div *ngIf="isRepSuccess" style="margin-top: 50px">
               <storybook-button-successfully id="button-successfully" style="position: relative; margin-top: 50px;"></storybook-button-successfully>
             </div>
 
 
 
-              <div *ngIf="!isRegSuccess" class="thematic-break"></div>
-              <storybook-button-continue size="medium" label="Continue" type="button" (click)="onSubmit()" ></storybook-button-continue>
+              <br><br>
+              <storybook-button-continue [label]="'Complete Rgistration'" size="small" label="Continue" type="button" (click)="onSubmit()" ></storybook-button-continue>
             </div>
 
 

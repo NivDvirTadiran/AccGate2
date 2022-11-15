@@ -41,7 +41,7 @@ public class AuthTokenFilter extends OncePerRequestFilter {
     ((HttpServletResponse) response).addHeader("Access-Control-Allow-Methods","GET, OPTIONS, HEAD, PUT, POST");
 
 
-    if(request.getRequestURI().startsWith("/accGate") ||
+    if(/*request.getRequestURI().startsWith("/accGate") ||*/
             request.getRequestURI().endsWith("/styles.scss") ||
             request.getRequestURI().startsWith("/assets/images") ||
             request.getRequestURI().endsWith("/auth/signin") ||
@@ -52,7 +52,7 @@ public class AuthTokenFilter extends OncePerRequestFilter {
             request.getRequestURI().endsWith("/index.html") ||
             request.getRequestURI().endsWith("/styles.css") ||
             request.getRequestURI().endsWith("/styles.scss") ||
-            request.getRequestURI().endsWith("/profile2") ||
+            //request.getRequestURI().endsWith("/profile2") ||
             request.getRequestURI().endsWith("/login-main") ||
             request.getRequestURI().endsWith("/login")){
       //LOGGER.info("JWT token permited by url" + username);

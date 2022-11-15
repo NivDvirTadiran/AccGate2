@@ -5,7 +5,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 import {ButtonLanguageComponent} from "../../stories/buttons/button-language/button-language.component";
-import {ButtonFortestComponent} from '../login2/login-main/button-fortest/button-fortest.component';
+import {ButtonFortestComponent} from '../../stories/buttons/button-fortest/button-fortest.component';
 import {ButtonGlobeComponent} from "../../stories/buttons/button-globe/button-globe.component";
 import Background1Component from "../../stories/pages/background1/background1Component";
 import {ButtonTadiranComponent} from "../../stories/buttons/button-tadiran/button-tadiran.component";
@@ -19,6 +19,9 @@ import {ButtonSuccessfullyComponent} from "../../stories/buttons/button-successf
 import Button from "../../stories/buttons/button-example/button.component";
 import {AppMenuComponent} from "../../stories/app-menu/app-menu.component";
 import {StoryInputComponent} from "../../stories/inputs/story-input.component";
+import {HighlightDirective} from "src/stories/buttons/button-fortest/custom-directive/Highlight.directive";
+import ReplacePassFormComponent from "../../stories/forms/replace-pass-form/replace-pass-form.component";
+import PassStrengthComponent from "../../stories/pass-strength/pass-strength.component";
 
 
 
@@ -31,11 +34,14 @@ import {StoryInputComponent} from "../../stories/inputs/story-input.component";
     ButtonContinueComponent, ButtonExComponent, ButtonAppsComponent, ButtonSuccessfullyComponent, Button,
     AppMenuComponent,
     StoryInputComponent,
+    HighlightDirective,
+    ReplacePassFormComponent,
+    PassStrengthComponent,
   ],
-  imports: [
-    CommonModule,
-    FormsModule, ReactiveFormsModule,
-  ],
+    imports: [
+        CommonModule,
+        FormsModule, ReactiveFormsModule,
+    ],
   exports: [
     ButtonGlobeComponent, Background1Component, ButtonTadiranComponent, ButtonLanguageComponent,
     ButtonFortestComponent,
@@ -46,6 +52,9 @@ import {StoryInputComponent} from "../../stories/inputs/story-input.component";
     StoryInputComponent,
     CommonModule,
     FormsModule, ReactiveFormsModule,
+    HighlightDirective,
+    ReplacePassFormComponent,
+    PassStrengthComponent,
   ],
 })
 export class StorybookModule { }

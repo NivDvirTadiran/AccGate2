@@ -1,6 +1,6 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { componentWrapperDecorator, moduleMetadata, Meta, Story  } from '@storybook/angular';
-import RegistryFormComponent from './registry-form.component';
+import ReplacePassFormComponent from './replace-pass-form.component';
 import CardComponent from '../../cards/card.component'
 import { StoryInputComponent } from "../../inputs/story-input.component";
 
@@ -11,15 +11,17 @@ import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} fr
 import {ButtonContinueComponent} from "../../buttons/button-continue/button-continue.component";
 import {ButtonExComponent} from "../../buttons/button-ex/button-ex.component";
 import {ButtonSuccessfullyComponent} from "../../buttons/button-successfully/button-successfully.component";
+import {Password} from "../../inputs/story-input.stories";
+import PassStrengthComponent from "../../pass-strength/pass-strength.component";
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
-  title: 'Design System/Atoms/Forms/RegistryForm',
-  component: RegistryFormComponent,
+  title: 'Design System/Atoms/Forms/ReplacePassForm',
+  component: ReplacePassFormComponent,
   decorators: [
     moduleMetadata({
-      declarations: [ RegistryFormComponent, CardComponent, StoryInputComponent, ButtonContinueComponent,
-                      ButtonExComponent, ButtonSuccessfullyComponent],
+      declarations: [ ReplacePassFormComponent, CardComponent, StoryInputComponent, ButtonContinueComponent,
+                      ButtonExComponent, ButtonSuccessfullyComponent, PassStrengthComponent],
       imports: [CommonModule, FormsModule, ReactiveFormsModule],
     }),
     componentWrapperDecorator(story => `<div style="margin: 3em">${story}</div>`),
@@ -49,12 +51,12 @@ const Template: Story = args => ({
 export const Default = Template.bind({});
 Default.args = {
   storyInputs: [
-    { ...StoryInput.Default.args?.['storyInput'], id: '1', title: 'username', state: 'USER NAME', icon: './assets/images/User2ldpi.png', type: 'text', placeholder: 'Ex.Saul Ramirez' },
-    { ...StoryInput.Default.args?.['storyInput'], id: '2', title: 'password', state: 'PASSWORD', icon: './assets/images/LockIcon2ldpi.png', type: 'password', placeholder: 'your_password'   },
-    { ...StoryInput.Default.args?.['storyInput'], id: '4', title: 'email', state: 'EMAIL', icon: './assets/images/AtSign3ldpi.png', type: 'email', placeholder: 'Ex: abc@example.com' },
-    { ...StoryInput.Default.args?.['storyInput'], id: '5', title: 'phone', state: 'PHONE NUMBER FOR AUTHENTICATION', icon: './assets/images/Phone3ldpi.png', type: 'phone', placeholder: 'Ex: +972547762084' }
+    { ...StoryInput.Password.args?.['storyInput'], id: '1', state: 'NEW PASSWORD' },
+    { ...StoryInput.Password.args?.['storyInput'], id: '2', state: 'PASSWORD' },
   ],
 };
+
+
 
 export const MainRegistryForm = Template.bind({});
 MainRegistryForm.args = {
