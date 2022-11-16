@@ -15,9 +15,11 @@
       <form name="currentForm"   [formGroup]="mForm">
       <div class="Vector">
 
+        <div *ngIf="isRegSuccess" style="margin-top: 50px">
+          <storybook-button-successfully id="button-successfully" style="position: relative; margin-top: 50px;"></storybook-button-successfully>
+        </div>
 
         <div class="login-button">
-
             <div *ngIf="!isRegSuccess && storyInputsInOrder.length === 0">empty</div>
             <div *ngIf="!isRegSuccess">
               <storybook-input
@@ -29,24 +31,18 @@
               </storybook-input>
             </div>
 
-            <div *ngIf="isRegSuccess" style="margin-top: 50px">
-              <storybook-button-successfully id="button-successfully" style="position: relative; margin-top: 50px;"></storybook-button-successfully>
+            <div *ngIf="!isRegSuccess" class="thematic-break"></div>
+              <storybook-button-continue [label]="isRegSuccess ? 'Continue' :'Complete Rgistration'"  size="small"
+                                         label="Continue" type="button" (click)="onSubmit()" >
+              </storybook-button-continue>
             </div>
+        </div>
 
-
-
-              <div *ngIf="!isRegSuccess" class="thematic-break"></div>
-              <storybook-button-continue size="medium" label="Continue" type="button" (click)="onSubmit()" ></storybook-button-continue>
+        <div class="form-group">
+            <div class="alert alert-danger" role="alert" *ngIf="isLoginFailed">
+              Login failed: {{ loginErrorMessage }}
             </div>
-
-
-
-          </div>
-          <div class="form-group">
-              <div class="alert alert-danger" role="alert" *ngIf="isLoginFailed">
-                Login failed: {{ loginErrorMessage }}
-              </div>
-          </div>
+        </div>
     </form>
   </div>
   </div>

@@ -18,11 +18,6 @@ export default class LoginFormComponent implements OnInit {
 
   @Input() formService!: AuthService;
 
-  credentials: any = {
-    username: null,
-    password: null
-  };
-
 
   isLoginFailed = false;
   loginErrorMessage = '';
@@ -63,7 +58,7 @@ export default class LoginFormComponent implements OnInit {
   // tslint:disable-next-line: no-output-on-prefix
   @Output() onArchiveInput: EventEmitter<any> = new EventEmitter();
 
-  @Output() newItemEvent = new EventEmitter<any>();
+  @Output() sendLoginReq = new EventEmitter();
 
 
   @Input()
@@ -82,10 +77,8 @@ export default class LoginFormComponent implements OnInit {
 
   onSubmit(): void {
     console.warn('Login Request!');
-    this.credentials.username=this.mForm?.get('username')?.value;
-    this.credentials.password=this.mForm?.get('password')?.value;
 
-    this.newItemEvent.emit(this.credentials);
+    this.sendLoginReq.emit();
   }
 
   ngOnInit(): void {

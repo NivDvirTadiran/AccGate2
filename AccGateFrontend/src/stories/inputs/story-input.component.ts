@@ -17,7 +17,7 @@ export interface ValidationForm {
   templateUrl: './story-input.component.html',
   styleUrls: ['./story-input.scss']
 })
-export class StoryInputComponent {
+export class StoryInputComponent implements OnInit{
 
 
   @Input() storyInput!: StoryInput;
@@ -42,6 +42,8 @@ export class StoryInputComponent {
 
   private isStrength: string = (this.storyInput?.state === 'NEW PASSWORD') ? 'storybook-input--addStrength' : 'storybook-input--clearStrength';
 
+  public isPasswordTextHide: boolean = false;
+
 
   /*registerForm = new FormGroup({
     username: new FormControl('', Validators.minLength(2)),
@@ -63,7 +65,7 @@ export class StoryInputComponent {
   }
 
   get formControler(): AbstractControl {
-
+/*
     let alertType = this.storyInput?.title.toString();
 
     switch (alertType) {
@@ -71,10 +73,14 @@ export class StoryInputComponent {
         return this.currentForm.get('username')!;
       case "password":
         return this.currentForm.get('password')!;
+      case "username":
+        return this.currentForm.get('username')!;
+      case "password":
+        return this.currentForm.get('password')!;
       default:
         break;
-    }
-    return this.currentForm.get('username')!;
+    }*/
+    return this.currentForm.get(this.storyInput?.title.toString())!;
   }
 /*
 */
@@ -98,5 +104,10 @@ export class StoryInputComponent {
     this.isStrength = (this.storyInput?.state === 'NEW PASSWORD') ? 'storybook-input--addStrength' : 'storybook-input--clearStrength';
 
     return ['storybook-input-strength',  this.isStrength];
+  }
+
+  ngOnInit(): void {
+    this.isPasswordTextHide = this.storyInput?.state.includes('PASSWORD');
+
   }
 }

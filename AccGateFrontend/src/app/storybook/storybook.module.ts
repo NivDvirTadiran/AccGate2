@@ -22,7 +22,7 @@ import {StoryInputComponent} from "../../stories/inputs/story-input.component";
 import {HighlightDirective} from "src/stories/buttons/button-fortest/custom-directive/Highlight.directive";
 import ReplacePassFormComponent from "../../stories/forms/replace-pass-form/replace-pass-form.component";
 import PassStrengthComponent from "../../stories/pass-strength/pass-strength.component";
-
+import {ApiErrorMessagePipe} from "../storybook/pipes/api-error-message.pipe";
 
 
 @NgModule({
@@ -37,6 +37,7 @@ import PassStrengthComponent from "../../stories/pass-strength/pass-strength.com
     HighlightDirective,
     ReplacePassFormComponent,
     PassStrengthComponent,
+    ApiErrorMessagePipe,
   ],
     imports: [
         CommonModule,

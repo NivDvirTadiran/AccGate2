@@ -41,7 +41,7 @@ export default class RegisterForm2Component implements OnInit {
     this.registerForm = new FormGroup({
       username: new FormControl(data.username.toString(), Validators.minLength(2)),
       password: new FormControl(data.password.toString(), Validators.minLength(2)),
-      email: new FormControl([data.username.toString() + '@domain.com'], Validators.email),
+      email: new FormControl(data.username.toString() + '@domain.com', Validators.email),
       phone: new FormControl('123123131321', Validators.pattern(new RegExp("[0-9 ]{12}")))
     });
     this.empList.push("admin");

@@ -31,9 +31,9 @@ export default {
 
 const storyForm = new FormGroup({
   username: new FormControl('Telecom2', Validators.minLength(2)),
-  password: new FormControl('', Validators.minLength(2)),
-  email: new FormControl('Ex: abc@example.com', Validators.email),
-  phone: new FormControl('Ex: +972547762084', Validators.pattern(new RegExp("[0-9 ]{12}"))),/**/
+  oldPassword: new FormControl('old password', Validators.minLength(2)),
+  password: new FormControl('new password', Validators.minLength(2)),
+  confirmPassword: new FormControl('re-enter the new password', Validators.minLength(2)),/**/
 });
 
 
@@ -51,40 +51,27 @@ const Template: Story = args => ({
 export const Default = Template.bind({});
 Default.args = {
   storyInputs: [
-    { ...StoryInput.Password.args?.['storyInput'], id: '1', state: 'NEW PASSWORD' },
-    { ...StoryInput.Password.args?.['storyInput'], id: '2', state: 'PASSWORD' },
+    { ...StoryInput.Password.args?.['storyInput'], id: '1', title: 'oldPassword', state: 'INITIAL PASSWORD' },
+    { ...StoryInput.Password.args?.['storyInput'], id: '2', title: 'password', state: 'NEW PASSWORD' },
+    { ...StoryInput.Password.args?.['storyInput'], id: '3', title: 'confirmPassword', state: 'RE-ENTER NEW PASSWORD' },
   ],
+  status: {
+    isRepSuccess: false,
+    isSignUpFailed: false,
+    submitted: false,
+    errorMessage: '',
+    apiResponse: { message: '', error: false },
+    errorFieldSubmitted: {},
+    closeResult: '',
+  },
 };
 
 
-
-export const MainRegistryForm = Template.bind({});
-MainRegistryForm.args = {
-  // Shaping the stories through args composition.
-  // Inherited data coming from the Default story.
-  storyInputs: [
-    { ...StoryInput.Default.args?.['storyInput'], id: '2', title: 'username', state: 'USER NAME', icon: './assets/images/User2ldpi.png', type: 'text', placeholder: 'Ex.Saul Ramirez', hide: false  },
-    { ...StoryInput.Default.args?.['storyInput'], id: '3', title: 'password', state: 'PASSWORD', icon: './assets/images/LockIcon2ldpi.png', type: 'password', placeholder: 'your_password', hide: false    },
-    { ...StoryInput.Default.args?.['storyInput'], id: '4', title: 'email', state: 'EMAIL', icon: './assets/images/AtSign3ldpi.png', type: 'email', placeholder: 'Ex: abc@example.com', hide: false  },
-    { ...StoryInput.Default.args?.['storyInput'], id: '5', title: 'phone', state: 'PHONE NUMBER FOR AUTHENTICATION', icon: './assets/images/Phone3ldpi.png', type: 'phone', placeholder: 'Ex: +972547762084', hide: false  }
-  // { id: '3', title: 'StoryInput 6 (pinned)', state: 'INPUT_PINNED' },
-],
-};
-
-export const RegistryForm = Template.bind({});
-RegistryForm.args = {
-// Shaping the stories through args composition.
-// Inherited data coming from the Default story.
-storyInputs: [
-  ...Default.args['storyInputs'].slice(0, 4),
- // { id: '3', title: 'StoryInput 6 (pinned)', state: 'INPUT_PINNED' },
-],
-};
 
 export const LoggedIn = Template.bind({});
 LoggedIn.args = {
   storyinputs: [],
-  isRegSuccess: true,
+  isRepSuccess: true,
 
 };
 

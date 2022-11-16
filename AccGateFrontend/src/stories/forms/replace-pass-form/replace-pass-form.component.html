@@ -9,58 +9,56 @@
       <a class="main-form-header" #formHeader>Change Password</a>
       <br>
 
-
-
-    <br>
-    <!--form name="form"  (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate --> <!-- *ngIf="!isRegSuccess"-->
+      <br>
       <form name="currentForm"   [formGroup]="mForm">
-      <div class="Vector">
-        <div class="login-button">
-            <div *ngIf="!isRepSuccess && storyInputsInOrder.length === 0">empty</div>
-            <div *ngIf="!isRepSuccess">
-              <storybook-input
-                [storyInput]="storyInputsInOrder[0]"
-                (onArchiveInput)="onArchiveInput.emit($event)"
-                (onPinInput)="onPinInput.emit($event)"
-                [currentForm]="mForm">
-              </storybook-input>
+        <div class="Vector">
 
-              <div *ngIf="!isRepSuccess" class="thematic-break"></div>
-
-              <storybook-input
-                [storyInput]="storyInputsInOrder[1]"
-                (onArchiveInput)="onArchiveInput.emit($event)"
-                (onPinInput)="onPinInput.emit($event)"
-                [currentForm]="mForm">
-              </storybook-input>
-              <storybook-input
-                [storyInput]="storyInputsInOrder[2]"
-                (onArchiveInput)="onArchiveInput.emit($event)"
-                (onPinInput)="onPinInput.emit($event)"
-                [currentForm]="mForm">
-              </storybook-input>
-            </div>
-
-            <div *ngIf="isRepSuccess" style="margin-top: 50px">
+          <div *ngIf="isRepSuccess" style="margin-top: 50px">
               <storybook-button-successfully id="button-successfully" style="position: relative; margin-top: 50px;"></storybook-button-successfully>
-            </div>
+          </div>
 
-
+          <div class="login-button">
+              <div *ngIf="!isRepSuccess && storyInputsInOrder.length === 0">empty</div>
+              <div *ngIf="!isRepSuccess">
+                <storybook-input
+                  [storyInput]="storyInputsInOrder[0]"
+                  (onArchiveInput)="onArchiveInput.emit($event)"
+                  (onPinInput)="onPinInput.emit($event)"
+                  [currentForm]="mForm">
+                </storybook-input>
+                <div *ngIf="!isRepSuccess" class="thematic-break"></div>
+                <storybook-input
+                  [storyInput]="storyInputsInOrder[1]"
+                  (onArchiveInput)="onArchiveInput.emit($event)"
+                  (onPinInput)="onPinInput.emit($event)"
+                  [currentForm]="mForm">
+                </storybook-input>
+                <span class="text-danger error-input" *ngIf="this.status.submitted && this.status.errorFieldSubmitted['password']"
+                      style="white-space: pre-line;  font-size: 14px;">
+                      {{this.status?.errorFieldSubmitted['password'] | apiErrorMessage}}
+                  <br><br>
+                </span>
+                <storybook-input
+                  [storyInput]="storyInputsInOrder[2]"
+                  (onArchiveInput)="onArchiveInput.emit($event)"
+                  (onPinInput)="onPinInput.emit($event)"
+                  [currentForm]="mForm">
+                </storybook-input>
+              </div>
 
               <br><br>
-              <storybook-button-continue [label]="'Complete Rgistration'" size="small" label="Continue" type="button" (click)="onSubmit()" ></storybook-button-continue>
-            </div>
-
-
-
+              <storybook-button-continue [label]="isRepSuccess ? 'Continue' :'Change Password'" size="small"
+                                         label="Continue" type="button" (click)="onSubmit()" >
+              </storybook-button-continue>
           </div>
+        </div>
           <div class="form-group">
               <div class="alert alert-danger" role="alert" *ngIf="isLoginFailed">
                 Login failed: {{ loginErrorMessage }}
               </div>
           </div>
-    </form>
-  </div>
+      </form>
+    </div>
   </div>
 </div>
 

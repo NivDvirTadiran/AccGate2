@@ -14,6 +14,15 @@ import {StoryInput} from "../../../../stories/inputs/story-input.model";
 })
 export class ReplacePassForm2Component {
   replacePassForm: FormGroup;
+  status = {
+    isRepSuccess: false,
+    isSignUpFailed: false,
+    submitted: false,
+    errorMessage: '',
+    apiResponse: { message: '', error: false },
+    errorFieldSubmitted: {},
+    closeResult: '',
+  };
   isRepSuccess = false;
   isSignUpFailed = false;
   submitted = false;
@@ -24,18 +33,18 @@ export class ReplacePassForm2Component {
   closeResult = '';
 
   storyInputsInOrder: StoryInput[]  = [
-    {/*...mStoryInput.Default.args?.['storyInput'],*/ id: '1', title: 'password', state: 'INITIAL PASSWORD', icon: './assets/images/LockIcon2ldpi.png', type: 'password', placeholder: 'your_password' , hide: false },
+    {/*...mStoryInput.Default.args?.['storyInput'],*/ id: '1', title: 'oldPassword', state: 'INITIAL PASSWORD', icon: './assets/images/LockIcon2ldpi.png', type: 'password', placeholder: 'your_password' , hide: false },
     {/*...mStoryInput.Default.args?.['storyInput'],*/ id: '2', title: 'password', state: 'NEW PASSWORD', icon: './assets/images/LockIcon2ldpi.png', type: 'password', placeholder: 'your_password' , hide: false },
-    {/*...mStoryInput.Default.args?.['storyInput'],*/ id: '3', title: 'password', state: 'RE-ENTER NEW PASSWORD', icon: './assets/images/LockIcon2ldpi.png', type: 'password', placeholder: 'your_password' , hide: false },
+    {/*...mStoryInput.Default.args?.['storyInput'],*/ id: '3', title: 'confirmPassword', state: 'RE-ENTER NEW PASSWORD', icon: './assets/images/LockIcon2ldpi.png', type: 'password', placeholder: 'your_password' , hide: false },
   ];
 
   constructor(private authService: AuthService,
               private renderer: Renderer2,
-              public dialogRef: MatDialogRef<RegisterForm2Component>,
+              public dialogRef: MatDialogRef<ReplacePassForm2Component>,
               @Inject(MAT_DIALOG_DATA) public data: DialogData) {
     this.replacePassForm = new FormGroup({
-      userName: new FormControl(null, Validators.required),
-      oldPassword: new FormControl(null, Validators.minLength(1)),
+      userName: new FormControl(data.username, Validators.required),
+      oldPassword: new FormControl(data.password, Validators.minLength(1)),
       password: new FormControl('', Validators.minLength(3)),
       confirmPassword: new FormControl(null, Validators.minLength(3))
     });
@@ -46,30 +55,33 @@ export class ReplacePassForm2Component {
 
   onSubmit(): void {
     if (this.isRepSuccess) {
-      this.dialogRef.close('Registration Complete');
+      this.dialogRef.close({message: 'Replace Password Complete', data: this.data});
     }
     else {
-      this.submitted = true;
+      this.status.submitted = true;
       const { userName, oldPassword, password, confirmPassword } = this.replacePassForm.value;
       this.authService.replacePassForm(userName, oldPassword, password, confirmPassword).subscribe(
         data => {
           console.log(data);
           this.isRepSuccess = true;
           this.isSignUpFailed = false;
-          this.errorFieldSubmitted = {};
+          this.status.errorFieldSubmitted = {};
           this.apiResponse.error = false;
           this.apiResponse.message = 'Successful registration';
+          this.data.password = password;
         },
         error => {
           const errorResponse = JSON.parse(error.error);
           this.apiResponse.error = true;
-          this.apiResponse.message = 'Registration error';
+          this.apiResponse.message = 'Replace password error';
           this.errorMessage = error.error.message;
           this.isSignUpFailed = true;
           if (errorResponse.error && errorResponse.message === 'VALIDATION_FAILED') {
             this.errorFieldSubmitted = errorResponse.data;
           }
-        }, () => {this.dialogRef.close('Replace Password closed');}
+        },
+        () => {
+          console.log('Replace Password closed');}
       );
     }
   }
@@ -77,7 +89,7 @@ export class ReplacePassForm2Component {
 
 
   get userName(): AbstractControl {
-    return this.replacePassForm.get('userName')!;
+    return this.replacePassForm.get('username')!;
   }
 
   get oldPassword(): AbstractControl {

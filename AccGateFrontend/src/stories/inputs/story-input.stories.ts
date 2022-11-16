@@ -52,10 +52,10 @@ Default.args = {
     placeholder: 'placeholder',
     hide: false
   },
-  currentForm: {
+  /*currentForm: {
     username: new FormControl('ea6', Validators.minLength(2)),
     password: new FormControl('', []),
-  },/**/
+  },*/
   hideInput: false,
 
 };
@@ -93,6 +93,7 @@ Password.args = {
 
 export const NewPassword = Template.bind({});
 NewPassword.args = {
+  ...Default.args,
   storyInput: {
     id: '6',
     title: 'password',

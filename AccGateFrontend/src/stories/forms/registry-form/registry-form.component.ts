@@ -123,7 +123,7 @@ export default class RegistryFormComponent implements OnInit, AfterViewChecked, 
     //this.renderer.setAttribute(this.storybookInput?.nativeElement ,'hidden', 'true');
     //this.renderer.setAttribute(this.mainHeader?.nativeElement ,'hidden', 'true');
     //this.renderer.setProperty(this.mainHeader?.nativeElement ,'innerHTML','You have successfully complete your registeration!');
-    console.log("fghjghjhghjgfhj   "+this.storybookInput?.nativeElement.mHidden.value);
+
 
     //this.renderer.setAttribute(this.storybookInput?.nativeElement ,'innerHTML','true');
     this.sendRegReq.emit();

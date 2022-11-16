@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, OnChanges, Input, SimpleChange} from '@angular/core';
 
 
 @Component({
@@ -6,7 +6,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
   templateUrl: './pass-strength.component.html',
   styleUrls: ['./pass-strength.scss']
 })
-export default class PassStrengthComponent {
+export default class PassStrengthComponent implements OnChanges  {
 
   /**
    * Is this the principal call to action on the login-main?
@@ -24,8 +24,37 @@ export default class PassStrengthComponent {
    */
   @Input() backgroundColor?: string;
 
-  public strengthColor() {
-    let strength=this.strength;
+  /**
+   * The password to measure.
+   */
+  @Input() passwordToCheck?: string;
+
+  private static measureStrength(pass: string) {
+    let score = 0;
+    // award every unique letter until 5 repetitions
+    let letters: any = {};
+    for (let i = 0; i< pass.length; i++) {
+      letters[pass[i]] = (letters[pass[i]] || 0) + 1;
+      score += 5.0 / letters[pass[i]];
+    }
+    // bonus points for mixing it up
+    let variations: any = {
+      digits: /\d/.test(pass),
+      lower: /[a-z]/.test(pass),
+      upper: /[A-Z]/.test(pass),
+      nonWords: /\W/.test(pass),
+    };
+
+    let variationCount = 0;
+    for (let check in variations) {
+      variationCount += (variations[check]) ? 1 : 0;
+    }
+    score += (variationCount - 1) * 10;
+    return Math.trunc(score);
+  }
+
+  public strengthColor(strength: number) {
+    //let strength=this.strength;
 
     if (strength < 30) return 0;
     if (strength < 40) return 30;
@@ -37,10 +66,18 @@ export default class PassStrengthComponent {
     return 100;
   }
 
+  ngOnChanges(changes: {[propName: string]: SimpleChange}): void {
+    var password = changes['passwordToCheck'].currentValue;
+    if (password) {
+      this.strength = this.strengthColor(PassStrengthComponent.measureStrength(password));
+    }
+  }
+
+
   public get classes(): string[] {
     const mode = this.primary ? 'storybook-pass-strength--primary' : 'storybook-pass-strength--secondary';
 
-    return ['storybook-pass-strength', `storybook-pass-strength--${this.strengthColor()}`, mode];
+    return ['storybook-pass-strength', `storybook-pass-strength--${this.strengthColor(this.strength)}`, mode];
   }
 
 }

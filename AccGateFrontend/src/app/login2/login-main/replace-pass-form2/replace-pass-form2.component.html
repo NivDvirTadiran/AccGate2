@@ -1,7 +1,8 @@
 <storybook-replace-pass-form #form
+                         [status]="status"
                          [isRepSuccess]="isRepSuccess"
                          [storyInputs]="storyInputsInOrder"
                          [mForm]="replacePassForm"
                          (sendRegReq)="onSubmit()"
-                         (clickXButton)="this.dialogRef.close('xbutton')"
+                         (clickXButton)="this.dialogRef.close({message: 'xbutton'})"
 ></storybook-replace-pass-form>

@@ -89,7 +89,7 @@ export default class ReplacePassFormComponent implements OnInit, AfterViewChecke
     }
   }
 
-
+  @Input('status') status: any;
 
   @Input() isRepSuccess = false;
 
@@ -123,7 +123,7 @@ export default class ReplacePassFormComponent implements OnInit, AfterViewChecke
     //this.renderer.setAttribute(this.storybookInput?.nativeElement ,'hidden', 'true');
     //this.renderer.setAttribute(this.mainHeader?.nativeElement ,'hidden', 'true');
     //this.renderer.setProperty(this.mainHeader?.nativeElement ,'innerHTML','You have successfully complete your registeration!');
-    console.log("fghjghjhghjgfhj   "+this.storybookInput?.nativeElement.mHidden.value);
+
 
     //this.renderer.setAttribute(this.storybookInput?.nativeElement ,'innerHTML','true');
     this.sendRegReq.emit();
@@ -138,16 +138,16 @@ export default class ReplacePassFormComponent implements OnInit, AfterViewChecke
     return this.mForm?.get('username')!;
   }
 
-  get email(): AbstractControl {
-    return this.mForm?.get('email')!;
+  get oldPassword(): AbstractControl {
+    return this.mForm?.get('oldPassword')!;
   }
 
   get password(): AbstractControl {
     return this.mForm?.get('password')!;
   }
 
-  get phone(): AbstractControl {
-    return this.mForm?.get('phone')!;
+  get confirmPassword(): AbstractControl {
+    return this.mForm?.get('confirmPassword')!;
   }
 
   ngAfterViewChecked(): void {
@@ -155,7 +155,7 @@ export default class ReplacePassFormComponent implements OnInit, AfterViewChecke
   }
 
   loadSuccessfullyLoggedIn(){
-    this.renderer.setProperty(this.mainHeader?.nativeElement ,'innerHTML','You have successfully complete your registeration!');
+    this.renderer.setProperty(this.mainHeader?.nativeElement ,'innerHTML','You have successfully changed your password!');
 
 
   }

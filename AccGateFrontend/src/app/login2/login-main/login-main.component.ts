@@ -101,20 +101,19 @@ export class LoginMainComponent implements OnInit {
               private tokenStorage: TokenStorageService,
               private router: Router,) {
     this.loginForm = new FormGroup({
-      username: new FormControl('ea3', Validators.minLength(2)),
-      password: new FormControl('T@diran2022', Validators.minLength(2)),
+      username: new FormControl(null, Validators.minLength(2)),
+      password: new FormControl('123456', Validators.minLength(2)),
     });
   }
 
 
   openRegisterForm() {
     const registerFormDialogRef = this.registerFormDialog.open(RegisterForm2Component, {
-      data: {username: this.userName , password: this.password},
+      data: {username: this.getUsernameCurrentFieldValue , password: this.getPasswordCurrentFieldValue},
     });
 
     registerFormDialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.password.reset();
+      console.log('The register form dialog was closed');
     });
 
     return registerFormDialogRef.afterClosed().toPromise();
@@ -123,12 +122,27 @@ export class LoginMainComponent implements OnInit {
 
   openReplacePassForm() {
     const replacePassFormDialogRef = this.replacePassFormDialog.open(ReplacePassForm2Component, {
-      data: {username: this.userName , password: this.password},
+      data: {username: this.getUsernameCurrentFieldValue , password: this.getPasswordCurrentFieldValue},
     });
 
+    replacePassFormDialogRef.beforeClosed().subscribe(result => {
+      console.log('The replace password form dialog before closed');
+
+    },
+      err => {
+        console.log(err.error.message);
+      });
+
+
     replacePassFormDialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.password.reset();
+      console.log('The replace password form dialog after closed');
+      console.log(`Dialog result: ${result}`);
+      console.log(`Dialog result: ${result.message}`);
+      console.log(`Dialog result: ${result.message.toString()}`);
+      if (result.message === 'Replace Password Complete') {
+        this.setUsernameCurrentFieldValue(result.data.username);
+        this.setPasswordCurrentFieldValue(result.data.password.toString());
+      }
     });
 
     return replacePassFormDialogRef.afterClosed().toPromise();
@@ -138,14 +152,21 @@ export class LoginMainComponent implements OnInit {
 
 
 
-  get userName(): AbstractControl {
+  get getUsernameCurrentFieldValue(): AbstractControl {
     return this.loginForm.get('username')?.value;
   }
 
-  get password(): AbstractControl {
+  private setUsernameCurrentFieldValue(name: string) {
+    this.loginForm.get('username')?.setValue(name);
+  }
+
+  get getPasswordCurrentFieldValue(): AbstractControl {
     return this.loginForm.get('password')?.value;
   }
 
+  private setPasswordCurrentFieldValue(pass: string) {
+    this.loginForm.get('password')?.setValue(pass);
+  }
 
 /*
   openRegisterForm() {
@@ -157,9 +178,9 @@ export class LoginMainComponent implements OnInit {
   }
 */
 
-  onSubmit(credentials: any): void {
+  onSubmit(): void {
     console.warn('Login Request from login-main!');
-    const { username, password } = credentials;
+    const { username, password } = this.loginForm.value;
 
     this.authService.login(username, password).subscribe(
       data => {
@@ -184,7 +205,26 @@ export class LoginMainComponent implements OnInit {
                   case "xbutton":
                     break;
                   case "Registration Complete":
+                    this.onSubmit();
+                    break;
+                  case undefined:
                     //this.openReplacePassword();
+                    break;
+                  default:
+                }
+                return 'done2';
+              },
+              (err) => console.error(err));
+            break;
+          case "User credentials have expired":
+            this.openReplacePassForm().then(
+              (val) => {
+                console.log(val);
+                switch (val.message) {
+                  case "xbutton":
+                    break;
+                  case "Replace Password Complete":
+                    this.onSubmit();
                     break;
                   case undefined:
                     //this.openReplacePassword();
