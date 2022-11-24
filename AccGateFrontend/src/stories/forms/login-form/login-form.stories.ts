@@ -1,6 +1,6 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { componentWrapperDecorator, moduleMetadata, Meta, Story  } from '@storybook/angular';
-import LoginFormComponent from './login-form-component';
+import AvatarComponent from './login-form-component';
 import CardComponent from '../../cards/card.component'
 import { StoryInputComponent } from "../../inputs/story-input.component";
 
@@ -13,11 +13,11 @@ import PassStrengthComponent from "../../pass-strength/pass-strength.component";
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
-  title: 'Design System/Atoms/Forms/LoginForm',
-  component: LoginFormComponent,
+  title: 'Design System/Forms/LoginForm',
+  component: AvatarComponent,
   decorators: [
     moduleMetadata({
-      declarations: [ LoginFormComponent, CardComponent, StoryInputComponent, ButtonContinueComponent, PassStrengthComponent],
+      declarations: [ AvatarComponent, CardComponent, StoryInputComponent, ButtonContinueComponent, PassStrengthComponent],
       imports: [CommonModule, FormsModule, ReactiveFormsModule,  ],
     }),
     componentWrapperDecorator(story => `<div style="margin: 3em">${story}</div>`),

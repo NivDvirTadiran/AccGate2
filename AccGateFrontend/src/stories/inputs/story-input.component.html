@@ -1,4 +1,4 @@
-<div id="parent3"  [hidden]="storyInput?.hide" [ngClass]="classes">
+<div id="parent3"  [hidden]="storyInput?.hide" [ngClass]="classes"  >
 <div id="parent1" >
   <div class="main"  [formGroup]="this.currentForm">
   <div>
@@ -48,7 +48,7 @@
 
 <div id="parent2"  *ngIf="storyInput?.state === 'NEW PASSWORD'">
   <div class="absolute">
-    <storybook-pass-strength id="pass-strength" [passwordToCheck]="password?.value" [strength]="10"></storybook-pass-strength>
+    <storybook-pass-strength id="pass-strength" [passwordToCheck]="password?.value" ></storybook-pass-strength>
   </div>
 </div>
 

@@ -42,6 +42,8 @@ import Button from '../stories/buttons/button-example/button.component'
 //import {TaskListComponent} from '../stories/task-list/task-list.component'
 import {Login2Module} from "./login2/login2.module";
 import {StorybookModule} from "./storybook/storybook.module";
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+
 
 
 
@@ -100,3 +102,6 @@ import {StorybookModule} from "./storybook/storybook.module";
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+platformBrowserDynamic().bootstrapModule(AppModule);

@@ -2,6 +2,7 @@ import {Component, EventEmitter, HostBinding, Input, OnInit, Output} from '@angu
 import { StoryInput } from './story-input.model'
 import {AbstractControl, FormControl, FormGroup, Validators} from "@angular/forms";
 
+
 export interface GroupForm {
   username:  FormControl,
   password:  FormControl,
@@ -18,6 +19,7 @@ export interface ValidationForm {
   styleUrls: ['./story-input.scss']
 })
 export class StoryInputComponent implements OnInit{
+
 
 
   @Input() storyInput!: StoryInput;

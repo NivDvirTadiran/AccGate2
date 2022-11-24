@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'login-main', component: LoginMainComponent },
   { path: 'logtest', component: LogtestComponent },
   /*{ path: 'login2', component: Login2Component },*/
-  //{ path: 'storybook-button-fortest', component: ButtonFortestComponent },
+  //{ path: 'storybook-button-fortest', component: AvatarComponent },
   { path: 'register-form2', component: RegisterForm2Component },
   /*{ path: 'register-form2', component: RegisterForm2Component },*/
   { path: 'profile2',loadChildren: () => import('../app.module').then(m => m.AppModule),},

@@ -14,7 +14,7 @@ import {ButtonAppsComponent} from "../buttons/button-apps/button-apps.component"
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
-  title: 'Design System/Atoms/AppMenu',
+  title: 'Design System/AppMenu',
   component: AppMenuComponent,
   decorators: [
     moduleMetadata({

@@ -25,7 +25,7 @@ import {ReplacePassForm2Component} from "./login-main/replace-pass-form2/replace
     LoginMainComponent,
 
 
-    //HighlightDirective,
+    //PopoverDirective,
     //ExtentionDialog,
     //DialogOverviewExampleDialog
 

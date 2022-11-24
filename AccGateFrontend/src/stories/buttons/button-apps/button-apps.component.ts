@@ -3,7 +3,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'storybook-button-apps',
   templateUrl: './button-apps.component.html',
-  styleUrls: ['./button-apps.component.css']
+  styleUrls: ['./button-apps.component.scss']
 })
 export class ButtonAppsComponent {
   /**

@@ -13,15 +13,16 @@ import {ButtonExComponent} from "../../buttons/button-ex/button-ex.component";
 import {ButtonSuccessfullyComponent} from "../../buttons/button-successfully/button-successfully.component";
 import {Password} from "../../inputs/story-input.stories";
 import PassStrengthComponent from "../../pass-strength/pass-strength.component";
+import {ApiErrorMessagePipe} from "../../../app/storybook/pipes/api-error-message.pipe";
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
-  title: 'Design System/Atoms/Forms/ReplacePassForm',
+  title: 'Design System/Forms/ReplacePassForm',
   component: ReplacePassFormComponent,
   decorators: [
     moduleMetadata({
       declarations: [ ReplacePassFormComponent, CardComponent, StoryInputComponent, ButtonContinueComponent,
-                      ButtonExComponent, ButtonSuccessfullyComponent, PassStrengthComponent],
+                      ButtonExComponent, ButtonSuccessfullyComponent, PassStrengthComponent, ApiErrorMessagePipe],
       imports: [CommonModule, FormsModule, ReactiveFormsModule],
     }),
     componentWrapperDecorator(story => `<div style="margin: 3em">${story}</div>`),
@@ -66,7 +67,19 @@ Default.args = {
   },
 };
 
-
+export const SubscribedErrors = Template.bind({});
+SubscribedErrors.args = {
+  ...Default.args,
+  status: {
+    isRepSuccess: false,
+    isSignUpFailed: false,
+    submitted: true,
+    errorMessage: '',
+    apiResponse: { message: '', error: false },
+    errorFieldSubmitted: {oldPassword: 'old password error', password: 'password error', confirmPassword: 'confirm password error'},
+    closeResult: '',
+  },
+};
 
 export const LoggedIn = Template.bind({});
 LoggedIn.args = {

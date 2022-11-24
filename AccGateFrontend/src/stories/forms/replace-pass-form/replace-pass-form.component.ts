@@ -13,6 +13,8 @@ import {
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { StoryInput } from "src/stories/inputs/story-input.model";
 import { AuthService } from 'src/app/_services/auth.service';
+import {PopoverOptions} from "../../directive/popover.interface";
+import {ActionInputComponent} from "../../actions/action-input/action-input.component";
 //import {BehaviorSubject} from "rxjs";
 //import {StoryInputComponent} from "../../inputs/story-input.component";
 
@@ -29,20 +31,14 @@ export class StoryInput {
 })
 export default class ReplacePassFormComponent implements OnInit, AfterViewChecked, OnChanges {
 
-/*
-  @ViewChild('storybook-input')
-  set mStoryInput(v: StoryInput) {
-    setTimeout(() => {
-      this.selectedPane = v.id;
-      console.log('this.selectedPane'+this.selectedPane.toString())
-    }, 30);
-  }
-  selectedPane: string = '';
-  shouldShow = true;
-  toggle() {
-    this.shouldShow = !this.shouldShow;
-  }
-*/
+
+
+
+  popover: PopoverOptions = {
+    content: ActionInputComponent
+  };
+
+
 
   @Input() formService!: AuthService;
 
@@ -89,9 +85,7 @@ export default class ReplacePassFormComponent implements OnInit, AfterViewChecke
     }
   }
 
-  @Input('status') status: any;
-
-  @Input() isRepSuccess = false;
+  @Input() status?: any;
 
   // tslint:disable-next-line: no-output-on-prefix
   @Output() onPinInput: EventEmitter<any> = new EventEmitter();
@@ -156,8 +150,6 @@ export default class ReplacePassFormComponent implements OnInit, AfterViewChecke
 
   loadSuccessfullyLoggedIn(){
     this.renderer.setProperty(this.mainHeader?.nativeElement ,'innerHTML','You have successfully changed your password!');
-
-
   }
 
 }

@@ -1,0 +1,81 @@
+:root {
+  --label_width: 30px;
+  --white: #ffffff;
+}
+
+$height: 142px !default;
+$width: 142px !default;
+
+.container {
+  position: absolute;
+  //border: 2px solid #4CAF50;
+  width: calc(var(--veriable-width));
+  height: calc(var(--veriable-height));
+  float: left;
+  padding: 0;
+}
+
+img.Exclamation-Mark-Icon {
+  position: absolute;
+  width: 83.98px;
+  height: 62.42px;
+  left: calc(50% - 83.98px/2);
+  top: calc(50% - 62.42px/2);
+  object-fit: contain;
+  /*box-shadow: 0 1px 1px 0 rgba(61, 142, 207, 0.15);*/
+}
+
+.circle {
+  position: relative;
+  height: 142px;
+  width: 142px;
+  background: linear-gradient(180deg, #FA4F4F 47.92%, #DD3333 100%);
+  border-radius: 50%;
+}
+
+.center {
+  margin: auto;
+
+  text-align: center;
+
+
+}
+
+.storybook-button-exclamation-mark--small {
+
+  /* .img {*/
+  $height: 35px;
+  $width: 35px;
+  height: 35px;
+  width: 35px;
+  // }
+  > img {
+    //$hight: 35.68px;
+    height: 30.27px;
+    width: 5.27px;
+    left: calc(50% - 5.27px/2);
+    //top: calc(50% - var(--veriable-height/2));
+    top: 5.25%;
+    bottom: 8.26%;
+
+  }
+}
+
+
+.storybook-button-exclamation-mark--medium {
+
+  $height: 142px;
+  $width: 142px;
+  height: 142px;
+  width: 142px;
+
+  > img {
+    width: 83.98px;
+    height: 62.42px;
+
+    top: 5.25%;
+    bottom: 8.26%;
+  }
+
+}
+

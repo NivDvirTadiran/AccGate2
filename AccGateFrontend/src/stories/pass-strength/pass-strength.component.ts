@@ -17,7 +17,7 @@ export default class PassStrengthComponent implements OnChanges  {
   /**
    * The password strength in percentage.
    */
-  @Input() strength: number = 10;
+  @Input() strength: number = 0;
 
   /**
    * What background color to use
@@ -54,22 +54,24 @@ export default class PassStrengthComponent implements OnChanges  {
   }
 
   public strengthColor(strength: number) {
-    //let strength=this.strength;
 
-    if (strength < 30) return 0;
+    if (strength < 10) return 0;
+    if (strength < 20) return 10;
+    if (strength < 30) return 20;
     if (strength < 40) return 30;
     if (strength < 50) return 40;
     if (strength < 60) return 50;
     if (strength < 70) return 60;
     if (strength < 90) return 70;
     if (strength < 99) return 90;
+
     return 100;
   }
 
   ngOnChanges(changes: {[propName: string]: SimpleChange}): void {
     var password = changes['passwordToCheck'].currentValue;
     if (password) {
-      this.strength = this.strengthColor(PassStrengthComponent.measureStrength(password));
+      this.strength = PassStrengthComponent.measureStrength(password);
     }
   }
 

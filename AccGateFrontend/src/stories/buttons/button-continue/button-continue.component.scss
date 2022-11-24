@@ -1,3 +1,13 @@
+
+
+.button {
+
+
+
+}
+
+
+
 .storybook-button-continue {
     width: 446px;
     height: 63px;
@@ -11,7 +21,21 @@
     font-weight: 700;
     font-size: 21px;
     line-height: 11px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+    &:hover {
+      background-image: linear-gradient(180deg, #275ea8 0%, #58a6f0 100%);
+    }
+
+    &:active {
+      box-shadow: none;
+      background: linear-gradient(116.01deg, #7EC6FF 2.44%, #ADDBFF 93.73%);
+    }
+
 }
+
+
+
 
 /*
 .storybook-button-continue--primary {
@@ -39,3 +63,5 @@
   font-size: 28px;
   padding: 17px 136px;
 }
+
+

@@ -216,7 +216,7 @@ public class AuthController {
 
           final Map<String, Object> body = new HashMap<>();
           body.put("oldPassword", HttpServletResponse.SC_UNAUTHORIZED);
-      return new ResponseEntity<>(new ApiResponse(body, "VALIDATION_FAILED"), HttpStatus.OK);
+      return new ResponseEntity<>(new ApiResponse(body, "VALIDATION_FAILED"), HttpStatus.BAD_REQUEST);
     } catch (AuthenticationException e) {
       e.printStackTrace();
     }

@@ -23,13 +23,13 @@ export class ReplacePassForm2Component {
     errorFieldSubmitted: {},
     closeResult: '',
   };
-  isRepSuccess = false;
-  isSignUpFailed = false;
-  submitted = false;
-  errorMessage = '';
+
+  //isSignUpFailed = false;
+  //submitted = false;
+  //errorMessage = '';
   empList: Array<String> = [];
-  apiResponse = { message: '', error: false };
-  errorFieldSubmitted: any = {};
+  //apiResponse = { message: '', error: false };
+  //errorFieldSubmitted: any = {};
   closeResult = '';
 
   storyInputsInOrder: StoryInput[]  = [
@@ -54,7 +54,7 @@ export class ReplacePassForm2Component {
   }
 
   onSubmit(): void {
-    if (this.isRepSuccess) {
+    if (this.status.isRepSuccess) {
       this.dialogRef.close({message: 'Replace Password Complete', data: this.data});
     }
     else {
@@ -63,21 +63,21 @@ export class ReplacePassForm2Component {
       this.authService.replacePassForm(userName, oldPassword, password, confirmPassword).subscribe(
         data => {
           console.log(data);
-          this.isRepSuccess = true;
-          this.isSignUpFailed = false;
+          this.status.isRepSuccess = true;
+          this.status.isSignUpFailed = false;
           this.status.errorFieldSubmitted = {};
-          this.apiResponse.error = false;
-          this.apiResponse.message = 'Successful registration';
+          this.status.apiResponse.error = false;
+          this.status.apiResponse.message = 'Successful registration';
           this.data.password = password;
         },
         error => {
           const errorResponse = JSON.parse(error.error);
-          this.apiResponse.error = true;
-          this.apiResponse.message = 'Replace password error';
-          this.errorMessage = error.error.message;
-          this.isSignUpFailed = true;
+          this.status.apiResponse.error = true;
+          this.status.apiResponse.message = 'Replace password error';
+          this.status.errorMessage = error.error.message;
+          this.status.isSignUpFailed = true;
           if (errorResponse.error && errorResponse.message === 'VALIDATION_FAILED') {
-            this.errorFieldSubmitted = errorResponse.data;
+            this.status.errorFieldSubmitted = errorResponse.data;
           }
         },
         () => {

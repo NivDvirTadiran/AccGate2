@@ -5,10 +5,11 @@
 
 #button-successfully {
   max-width: 155.09px;
+
 }
 
 .container {
-  position: relative;
+  position: absolute;
   max-width: 155.09px;
   height: 189.09px;
   float: left;
@@ -47,3 +48,4 @@ img.Vee-Icon {
   width: 154.09px;
   height: 154.09px;
 }
+

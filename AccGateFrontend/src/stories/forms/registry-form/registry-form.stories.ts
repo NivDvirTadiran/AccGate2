@@ -14,7 +14,7 @@ import {ButtonSuccessfullyComponent} from "../../buttons/button-successfully/but
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
-  title: 'Design System/Atoms/Forms/RegistryForm',
+  title: 'Design System/Forms/RegistryForm',
   component: RegistryFormComponent,
   decorators: [
     moduleMetadata({

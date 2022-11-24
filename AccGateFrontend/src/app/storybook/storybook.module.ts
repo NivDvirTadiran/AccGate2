@@ -22,7 +22,21 @@ import {StoryInputComponent} from "../../stories/inputs/story-input.component";
 import {HighlightDirective} from "src/stories/buttons/button-fortest/custom-directive/Highlight.directive";
 import ReplacePassFormComponent from "../../stories/forms/replace-pass-form/replace-pass-form.component";
 import PassStrengthComponent from "../../stories/pass-strength/pass-strength.component";
-import {ApiErrorMessagePipe} from "../storybook/pipes/api-error-message.pipe";
+import {ApiErrorMessagePipe} from "./pipes/api-error-message.pipe";
+import {AvatarComponent} from "../../stories/avatars/avatar.component";
+import {AppComponent} from "../app.component";
+import { DynamicCompDirective } from '../../stories/directive/dynamic-comp.directive';
+import {PopoverDirective} from "../../stories/directive/bubble-avatar/popover.directive";
+import { BubbleAvatarComponent } from '../../stories/directive/bubble-avatar/bubble-avatar.component';
+import { ActionAvatarComponent } from '../../stories/actions/action-avatar/action-avatar.component';
+import {PopoverInputDirective} from "../../stories/directive/bubble-input/popover-input.directive";
+import { BubbleInputComponent } from '../../stories/directive/bubble-input/bubble-input.component';
+import { ActionInputComponent } from '../../stories/actions/action-input/action-input.component';
+import {MdbPopoverModule} from "mdb-angular-ui-kit/popover";
+import {MatButtonModule} from "@angular/material/button";
+import {ButtonExclamationMarkComponent} from "../../stories/buttons/button-exclamation-mark/button-exclamation-mark.component"
+
+
 
 
 @NgModule({
@@ -38,11 +52,16 @@ import {ApiErrorMessagePipe} from "../storybook/pipes/api-error-message.pipe";
     ReplacePassFormComponent,
     PassStrengthComponent,
     ApiErrorMessagePipe,
+    AvatarComponent,
+    DynamicCompDirective,
+    ActionAvatarComponent , PopoverDirective, BubbleAvatarComponent,
+    ActionInputComponent, PopoverInputDirective, BubbleInputComponent,
+    ButtonExclamationMarkComponent
   ],
-    imports: [
-        CommonModule,
-        FormsModule, ReactiveFormsModule,
-    ],
+  imports: [
+    CommonModule,
+    FormsModule, ReactiveFormsModule, MdbPopoverModule, MatButtonModule,
+  ],
   exports: [
     ButtonGlobeComponent, Background1Component, ButtonTadiranComponent, ButtonLanguageComponent,
     ButtonFortestComponent,
@@ -56,6 +75,12 @@ import {ApiErrorMessagePipe} from "../storybook/pipes/api-error-message.pipe";
     HighlightDirective,
     ReplacePassFormComponent,
     PassStrengthComponent,
+    AvatarComponent,
+    DynamicCompDirective,
+    ActionAvatarComponent   , PopoverDirective, BubbleAvatarComponent,
+    ActionInputComponent, PopoverInputDirective, BubbleInputComponent,
+    ButtonExclamationMarkComponent
   ],
+  bootstrap: [AvatarComponent]
 })
 export class StorybookModule { }

@@ -1,0 +1,103 @@
+.Vector {
+  position: relative;
+  width: 637.5px;
+  height: 819px;
+  left: calc(50% - 637.5px/2 - 1.25px);
+  top: calc(50% - 819px/2 - 0.5px);
+}
+
+.form {
+  position: absolute;
+  left: 3.18%;
+  right: 14.78%;
+  top: 0;
+  bottom: 0;
+  border-radius: 14px;
+  box-shadow: -4px 4px 10px 0 rgba(88, 166, 228, 0.3);
+  background-color: #fff;
+}
+
+
+
+.card-container.card {
+  max-width: 400px !important;
+  padding: 10px 10px;
+}
+.col-md-12{
+  position: center;
+  width: 637.5px;
+  height: 819px;
+  left: calc(50% - 637.5px/2 - 0.25px);
+  top: calc(50% - 819px/2 - 0.5px);
+}
+
+.card {
+  position: absolute;
+  left: 5.18%;
+  right: 4.78%;
+  top: 0;
+  bottom: 0;
+  border-radius: 14px;
+  box-shadow: -4px 4px 10px 0 rgba(88, 166, 228, 0.3);
+  background-color: #fff;
+}
+
+
+.Aeonix-App-Center {
+  position: absolute;
+  top: 12.94%;
+  bottom: 77.05%;
+
+  width: 447px;
+  height: 82px;
+  flex-grow: 0;
+  margin: 0 0 19.8px;
+  font-family: "Noto Sans", ui-serif;
+  font-size: 40px;
+  font-weight: bolder;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 45px;
+  letter-spacing: -0.011px;
+  text-align: left;
+  color: #000000;
+}
+
+.login-button {
+  position: relative;
+  width: 445px;
+  height: 102px;
+  left: calc(50% - 445px/2 - 0.5px);
+  top: calc(50% - 101.16px/2 - 171.58px);
+}
+
+
+.forgot-password {
+  /* D UnderLine Regular */
+
+  font-family: "Noto Sans", ui-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 31px;
+  /* identical to box height, or 183% */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.011em;
+  text-decoration-line: underline;
+
+  color: #000000;
+}
+
+
+
+.thematic-break {
+  margin: 45px 2px 71px 2.5px;
+  background-color: #3d8ecf;
+  border-top-width: 1px;
+  border-top-color: rgb(61, 142, 207);
+  border-top-style: solid;
+}
+

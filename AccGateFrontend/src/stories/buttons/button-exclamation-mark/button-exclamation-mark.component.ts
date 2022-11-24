@@ -1,0 +1,54 @@
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+
+@Component({
+  selector: 'storybook-button-exclamation-mark',
+  templateUrl: './button-exclamation-mark.component.html',
+  styleUrls: ['./button-exclamation-mark.component.scss']
+})
+export class ButtonExclamationMarkComponent {
+  /**
+   * Is this the principal call to action on the login-main?
+   */
+  @Input()
+  primary = false;
+
+  /**
+   * What background color to use
+   */
+  @Input()
+  backgroundColor?: string;
+
+  /**
+   * How large should the button be?
+   */
+  @Input()
+  size: 'small' | 'medium' | 'large' = 'medium';
+
+
+  /**
+   * Button contents
+   *
+   * @required
+   */
+  @Input()
+  label = 'accGateButton2';
+
+  /**
+   * Optional click handler
+   */
+  @Output()
+  onClick = new EventEmitter<Event>();
+
+  public get classes(): string[] {
+    const mode = this.primary ? 'storybook-button-exclamation-mark--primary' : 'storybook-button-exclamation-mark--secondary';
+
+    return ['storybook-button-exclamation-mark', `storybook-button-exclamation-mark--${this.size}`, mode];
+  }
+
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}

@@ -1,0 +1,34 @@
+.password-must-contain-text {
+
+
+  /* D Regular */
+  font-family: Noto Sans, ui-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 12px;
+  /* or 94% */
+
+  letter-spacing: -0.011em;
+
+  color: #0A0000;
+
+}
+
+.password-condition-text {
+
+
+  /* D Regular */
+  font-family: Noto Sans, ui-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 25px;
+  /* or 94% */
+
+  letter-spacing: -0.011em;
+
+  color: #0A0000;
+
+}
+

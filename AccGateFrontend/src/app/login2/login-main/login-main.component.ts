@@ -127,7 +127,6 @@ export class LoginMainComponent implements OnInit {
 
     replacePassFormDialogRef.beforeClosed().subscribe(result => {
       console.log('The replace password form dialog before closed');
-
     },
       err => {
         console.log(err.error.message);
@@ -136,9 +135,6 @@ export class LoginMainComponent implements OnInit {
 
     replacePassFormDialogRef.afterClosed().subscribe(result => {
       console.log('The replace password form dialog after closed');
-      console.log(`Dialog result: ${result}`);
-      console.log(`Dialog result: ${result.message}`);
-      console.log(`Dialog result: ${result.message.toString()}`);
       if (result.message === 'Replace Password Complete') {
         this.setUsernameCurrentFieldValue(result.data.username);
         this.setPasswordCurrentFieldValue(result.data.password.toString());
