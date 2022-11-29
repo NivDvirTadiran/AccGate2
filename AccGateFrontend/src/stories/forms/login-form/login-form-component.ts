@@ -2,6 +2,8 @@ import {Component, ElementRef, EventEmitter, Input, OnInit, Output, Renderer2, V
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { StoryInput } from "../../inputs/story-input.model";
 import { AuthService } from '../../../app/_services/auth.service';
+//import {ApiErrorMessageService} from "../../../app/storybook/pipes/api-error-message.service";
+//import {ApiErrorMessageService} from "../../../app/storybook/pipes/api-error-message.service";
 
 
 
@@ -14,19 +16,21 @@ import { AuthService } from '../../../app/_services/auth.service';
 export default class LoginFormComponent implements OnInit {
 
 
-
+  param = {language: 'login-main'};
 
   @Input() formService!: AuthService;
 
 
-  isLoginFailed = false;
-  loginErrorMessage = '';
+  @Input() isLoginFailed = false;
+  @Input() loginErrorMessage = '';
+
+
 
   openReplacePassword() {
     //this.replacePassFormService.open(ReplacePassForm2Component);
   }
 
-  constructor() {
+  constructor(/*private apiErrorMessage: ApiErrorMessageService*/) {
 
   }
 

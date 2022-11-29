@@ -10,6 +10,8 @@ import * as StoryInput from "../../inputs/story-input.stories";
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {ButtonContinueComponent} from "../../buttons/button-continue/button-continue.component";
 import PassStrengthComponent from "../../pass-strength/pass-strength.component";
+import {ApiErrorMessagePipe} from "../../../app/storybook/pipes/api-error-message.pipe";
+import {ApiErrorMessageService} from "../../../app/storybook/pipes/api-error-message.service";
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
@@ -17,8 +19,9 @@ export default {
   component: AvatarComponent,
   decorators: [
     moduleMetadata({
-      declarations: [ AvatarComponent, CardComponent, StoryInputComponent, ButtonContinueComponent, PassStrengthComponent],
-      imports: [CommonModule, FormsModule, ReactiveFormsModule,  ],
+      declarations: [ AvatarComponent, CardComponent, StoryInputComponent, ButtonContinueComponent,
+        PassStrengthComponent, ApiErrorMessagePipe, ],
+      imports: [CommonModule, FormsModule, ReactiveFormsModule ],
     }),
     componentWrapperDecorator(story => `<div style="margin: 3em">${story}</div>`),
   ],
@@ -74,15 +77,33 @@ MainLoignForm.args = {
    // { id: '3', title: 'StoryInput 6 (pinned)', state: 'INPUT_PINNED' },
   ],
   validationForm: {
-  username: new FormControl('Telecom2', Validators.minLength(2)),
-  password: new FormControl('T@diran2022', Validators.minLength(2))
-},
+    username: new FormControl('Telecom2', Validators.minLength(2)),
+    password: new FormControl('T@diran2022', Validators.minLength(2))
+  },
+};
+
+export const LoignFailed = Template.bind({});
+LoignFailed.args = {
+  // Shaping the stories through args composition.
+  // Inherited data coming from the Default story.
+  storyInputs: [
+    ...Default.args['storyInputs'].slice(0, 2),
+    // { id: '3', title: 'StoryInput 6 (pinned)', state: 'INPUT_PINNED' },
+  ],
+  validationForm: {
+    username: new FormControl('Telecom2', Validators.minLength(2)),
+    password: new FormControl('T@diran2022', Validators.minLength(2))
+  },
+  isLoginFailed: true,
+  loginErrorMessage: 'Incorrect user name or password'
 };
 
 export const Loading = Template.bind({});
 Loading.args = {
   storyinputs: [],
   isLoggedIn: true,
+  isLoginFailed: false,
+
 
 };
 

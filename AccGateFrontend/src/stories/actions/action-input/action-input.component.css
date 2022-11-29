@@ -1,4 +1,4 @@
-.password-must-contain-text {
+.password-alert-text {
 
 
   /* D Regular */
@@ -7,6 +7,7 @@
   font-weight: 700;
   font-size: 13px;
   line-height: 12px;
+  text-align: start;
   /* or 94% */
 
   letter-spacing: -0.011em;

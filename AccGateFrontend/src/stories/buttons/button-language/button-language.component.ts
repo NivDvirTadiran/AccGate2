@@ -39,9 +39,9 @@ export class ButtonLanguageComponent {
   onClick = new EventEmitter<Event>();
 
   public get classes(): string[] {
-    const mode = this.primary ? 'storybook-button-language--primary' : 'storybook-button-language--secondary';
+    const mode = this.primary ? 'storybook-button-form--primary' : 'storybook-button-form--secondary';
 
-    return ['storybook-button-language', `storybook-language-icon--${this.size}`, mode];
+    return ['storybook-button-form', `storybook-language-icon--${this.size}`, mode];
   }
 
 

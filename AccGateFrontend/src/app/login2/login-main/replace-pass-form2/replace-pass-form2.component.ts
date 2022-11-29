@@ -1,7 +1,7 @@
 import {Component, Inject, Renderer2} from '@angular/core';
 import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
 import {AuthService} from "src/app/_services/auth.service";
-import {AbstractControl, FormControl, FormGroup, Validators} from "@angular/forms";
+import {AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators} from "@angular/forms";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {DialogData} from "../login-main.component";
 import RegisterForm2Component from "../register-form2/register-form2.component";
@@ -16,9 +16,9 @@ export class ReplacePassForm2Component {
   replacePassForm: FormGroup;
   status = {
     isRepSuccess: false,
-    isSignUpFailed: false,
+    isRepFailed: false,
     submitted: false,
-    errorMessage: '',
+    repErrorMessage: {},
     apiResponse: { message: '', error: false },
     errorFieldSubmitted: {},
     closeResult: '',
@@ -38,6 +38,9 @@ export class ReplacePassForm2Component {
     {/*...mStoryInput.Default.args?.['storyInput'],*/ id: '3', title: 'confirmPassword', state: 'RE-ENTER NEW PASSWORD', icon: './assets/images/LockIcon2ldpi.png', type: 'password', placeholder: 'your_password' , hide: false },
   ];
 
+
+
+
   constructor(private authService: AuthService,
               private renderer: Renderer2,
               public dialogRef: MatDialogRef<ReplacePassForm2Component>,
@@ -45,8 +48,20 @@ export class ReplacePassForm2Component {
     this.replacePassForm = new FormGroup({
       userName: new FormControl(data.username, Validators.required),
       oldPassword: new FormControl(data.password, Validators.minLength(1)),
-      password: new FormControl('', Validators.minLength(3)),
-      confirmPassword: new FormControl(null, Validators.minLength(3))
+      password: new FormControl('', Validators.compose([
+        Validators.minLength(8),
+        PasswordValidators.patternValidator(new RegExp("(?=.*[0-9])"), {requiresDigit: true}),
+        PasswordValidators.patternValidator(new RegExp("(?=.[A-Z])"), {requiresUppercase: true}),
+        PasswordValidators.patternValidator(new RegExp("(?=.[a-z])"), {requiresLowercase: true} ),
+        PasswordValidators.patternValidator(new RegExp("(?=.*[$@^!%*?&])"), {requiresSpecialChars: true})
+      ])),
+      confirmPassword: new FormControl(null, [
+        Validators.minLength(8),
+        PasswordValidators.patternValidator(new RegExp("(?=.*[0-9])"), {requiresDigit: true}),
+        PasswordValidators.patternValidator(new RegExp("(?=.[A-Z])"), {requiresUppercase: true}),
+        PasswordValidators.patternValidator(new RegExp("(?=.[a-z])"), {requiresLowercase: true}),
+        PasswordValidators.patternValidator(new RegExp("(?=.*[$@^!%*?&])"), {requiresSpecialChars: true})
+      ])
     });
   }
 
@@ -64,7 +79,7 @@ export class ReplacePassForm2Component {
         data => {
           console.log(data);
           this.status.isRepSuccess = true;
-          this.status.isSignUpFailed = false;
+          this.status.isRepFailed = false;
           this.status.errorFieldSubmitted = {};
           this.status.apiResponse.error = false;
           this.status.apiResponse.message = 'Successful registration';
@@ -74,8 +89,8 @@ export class ReplacePassForm2Component {
           const errorResponse = JSON.parse(error.error);
           this.status.apiResponse.error = true;
           this.status.apiResponse.message = 'Replace password error';
-          this.status.errorMessage = error.error.message;
-          this.status.isSignUpFailed = true;
+          this.status.repErrorMessage = errorResponse;
+          this.status.isRepFailed = true;
           if (errorResponse.error && errorResponse.message === 'VALIDATION_FAILED') {
             this.status.errorFieldSubmitted = errorResponse.data;
           }
@@ -104,4 +119,24 @@ export class ReplacePassForm2Component {
     return this.replacePassForm.get('confirmPassword')!;
   }
 
+}
+
+export class PasswordValidators {
+  constructor() {
+  }
+
+  static patternValidator(regex: RegExp, error: ValidationErrors): ValidatorFn {
+    return (control: AbstractControl): { [key: string]: any } | null => {
+      if (!control.value) {
+        // if the control value is empty return no error.
+        return null;
+      }
+
+      // test the value of the control against the regexp supplied.
+      const valid = regex.test(control.value);
+
+      // if true, return no error, otherwise return the error object passed in the second parameter.
+      return valid ? null : error;
+    };
+  }
 }

@@ -26,5 +26,5 @@ export const Exclamation = Template.bind({});
 // More on args: https://storybook.js.org/docs/angular/writing-stories/args
 Exclamation.args = {
   primary: true,
-  label: 'language button1',
+  label: 'form button1',
 };

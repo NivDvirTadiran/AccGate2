@@ -31,12 +31,13 @@ export class StoryInput {
 })
 export default class ReplacePassFormComponent implements OnInit, AfterViewChecked, OnChanges {
 
-
-
-
   popover: PopoverOptions = {
     content: ActionInputComponent
   };
+
+  param = {language: 'login-main'};
+
+
 
 
 
@@ -47,8 +48,8 @@ export default class ReplacePassFormComponent implements OnInit, AfterViewChecke
     password: null
   };
 
-  isLoginFailed = false;
-  loginErrorMessage = '';
+  @Input() isRepFailed = false;
+  @Input() repErrorMessage = '';
 
   openReplacePassword() {
     //this.replacePassFormService.open(ReplacePassForm2Component);
@@ -143,6 +144,10 @@ export default class ReplacePassFormComponent implements OnInit, AfterViewChecke
   get confirmPassword(): AbstractControl {
     return this.mForm?.get('confirmPassword')!;
   }
+
+
+
+
 
   ngAfterViewChecked(): void {
     //console.log(this.childComp?.length)

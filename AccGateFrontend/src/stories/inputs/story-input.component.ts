@@ -1,6 +1,17 @@
-import {Component, EventEmitter, HostBinding, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, HostBinding, Inject, Injector, Input, OnInit, Output} from '@angular/core';
 import { StoryInput } from './story-input.model'
-import {AbstractControl, FormControl, FormGroup, Validators} from "@angular/forms";
+import {
+  AbstractControl,
+  ControlValueAccessor,
+  FormControl,
+  FormGroup,
+  NG_VALIDATORS,
+  Validator,
+  Validators
+} from "@angular/forms";
+import {PopoverOptions} from "../directive/popover.interface";
+import {ActionInputComponent} from "../actions/action-input/action-input.component";
+import {ActionInput} from "../actions/action-input/action-input.interface";
 
 
 export interface GroupForm {
@@ -21,6 +32,10 @@ export interface ValidationForm {
 export class StoryInputComponent implements OnInit{
 
 
+
+  popover: PopoverOptions = {
+    content: ActionInputComponent
+  };
 
   @Input() storyInput!: StoryInput;
 
@@ -46,7 +61,7 @@ export class StoryInputComponent implements OnInit{
 
   public isPasswordTextHide: boolean = false;
 
-
+  @Input() conditionList: string[] = [];
   /*registerForm = new FormGroup({
     username: new FormControl('', Validators.minLength(2)),
     password: new FormControl('zaqwsx', Validators.minLength(2))
@@ -66,26 +81,134 @@ export class StoryInputComponent implements OnInit{
     return this.currentForm.get('password')!;
   }
 
-  get formControler(): AbstractControl {
-/*
-    let alertType = this.storyInput?.title.toString();
+  public getErrorHeader(controllerType: string): string {
+    let header: string = '';
 
-    switch (alertType) {
-      case "username":
-        return this.currentForm.get('username')!;
-      case "password":
-        return this.currentForm.get('password')!;
-      case "username":
-        return this.currentForm.get('username')!;
-      case "password":
-        return this.currentForm.get('password')!;
-      default:
+    switch (controllerType) {
+      case "phone":
+        header = 'Must contain phone:';
         break;
-    }*/
+
+      case "email":
+        header = 'Must contain email:';
+        break;
+
+      case "oldPassword":
+      case "confirmPassword":
+      case "password":
+        header = 'The password must contain:';
+        break;
+
+      default:
+        header = controllerType;
+    }
+
+    return header;
+  }
+
+  public getErrorList(conditionList: String[]): ActionInput[] {
+
+    let passConditions: string[] = [];
+
+
+    var actionInputs: ActionInput[] = [];
+
+    conditionList.forEach(condition => {
+      switch (condition) {
+        case "minLength":
+          actionInputs.push({
+            "conditionName": "minLengthValid",
+            "presentingMessage": ' A minimum of 8 characters',
+            "isFulfilled": !(this.minLengthValid || !(this.currentForm?.controls["password"].value.length > 0)),
+          })
+          break;
+
+        case "requiresUppercase":
+          actionInputs.push({
+            "conditionName": "requiresUppercaseValid",
+            "presentingMessage": ' At least 1 Uppercase letters',
+            "isFulfilled": !(this.requiresUppercaseValid || !(this.currentForm?.controls["password"].value.length > 0)),
+          })
+          break;
+
+        case "requiresLowercase":
+          actionInputs.push({
+            "conditionName": "requiresLowercaseValid",
+            "presentingMessage": ' At least 1 lowercase letters',
+            "isFulfilled": !(this.requiresLowercaseValid || !(this.currentForm?.controls["password"].value.length > 0)),
+          })
+          break;
+
+        case "requiresDigit":
+          actionInputs.push({
+            "conditionName": "requiresDigitValid",
+            "presentingMessage": ' A number',
+            "isFulfilled": !(this.requiresDigitValid || !(this.currentForm?.controls["password"].value.length > 0))
+          })
+          break;
+
+        case "requiresEmail":
+          actionInputs.push({
+            "conditionName": "requiresEmailValid",
+            "presentingMessage": ' A well-formed email address',
+            "isFulfilled": !(this.requiresEmailValid || !(this.currentForm?.controls["email"].value.length > 0))
+          })
+          break;
+
+        case "requiresPhone":
+          actionInputs.push({
+            "conditionName": "requiresPhoneValid",
+            "presentingMessage": ' A well-formed phone number',
+            "isFulfilled": !(this.requiresPhoneValid || !(this.currentForm?.controls["email"].value.length > 0))
+          })
+          break;
+      }
+    });
+
+
+    return actionInputs;
+  }
+
+  get passwordValid() {
+    return this.formControler.errors === null;
+  }
+
+  get requiredValid() {
+    return this.formControler.hasError("required");
+  }
+
+  get minLengthValid() {
+    return this.formControler.hasError("minlength");
+  }
+
+  get requiresDigitValid() {
+    return this.formControler.hasError("requiresDigit");
+  }
+
+  get requiresUppercaseValid() {
+    return this.formControler.hasError("requiresUppercase");
+  }
+
+  get requiresLowercaseValid() {
+    return this.formControler.hasError("requiresLowercase") ;
+  }
+
+  get requiresSpecialCharsValid() {
+    return this.formControler.hasError("requiresSpecialChars");
+  }
+
+  get requiresEmailValid() {
+    return this.formControler.hasError("email");
+  }
+
+  get requiresPhoneValid() {
+    return this.formControler.hasError("requiresPhoneChars");
+  }
+
+  get formControler(): AbstractControl {
     return this.currentForm.get(this.storyInput?.title.toString())!;
   }
-/*
-*/
+
 
   /**
    * Component method to trigger the onPin event
@@ -108,8 +231,10 @@ export class StoryInputComponent implements OnInit{
     return ['storybook-input-strength',  this.isStrength];
   }
 
+
   ngOnInit(): void {
     this.isPasswordTextHide = this.storyInput?.state.includes('PASSWORD');
 
   }
+
 }

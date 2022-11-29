@@ -1,4 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import {ActionInput} from "./action-input.interface";
+
+
+interface USERS {
+  conditionName: String;
+  presentingMessage: String;
+  isFulfilled: boolean;
+}
 
 @Component({
   selector: 'action-input',
@@ -7,15 +15,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActionInputComponent implements OnInit {
 
-  conditions: string = ""
+  actionInputs?: ActionInput[];
+  actionHeader?: string = "The password must contain:";
 
   constructor() {
+
   }
 
   ngOnInit() {
   }
 
-  public setConditions(conditions: string) {
-    this.conditions = conditions;
+  public setConditions(actionInputs: ActionInput[]) {
+    this.actionInputs = actionInputs;
+  }
+
+  public setHeader(actionHeader: string) {
+    this.actionHeader = actionHeader;
   }
 }

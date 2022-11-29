@@ -30,7 +30,7 @@ export const Agent = Template.bind({});
 Agent.args = {
   primary: true,
   application: 'Agent',
-  label: 'language button1',
+  label: 'form button1',
 };
 Agent.parameters = {
   backgrounds: {

@@ -18,6 +18,11 @@ export  class AvatarComponent {
     content: ActionAvatarComponent
   };
 
+  /**
+   * Is this the principal call to action on the login-main?
+   */
+  @Input()
+  isNotify = false;
 
   /**
    * Is this the principal call to action on the login-main?

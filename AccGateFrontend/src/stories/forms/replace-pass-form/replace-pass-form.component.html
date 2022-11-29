@@ -13,8 +13,8 @@
       <form name="currentForm"   [formGroup]="mForm">
         <div class="Vector">
 
-          <div *ngIf="status.isRepSuccess" style="margin-top: 50px">
-              <storybook-button-successfully id="button-successfully" style="position: relative; margin-top: 50px;"></storybook-button-successfully>
+          <div *ngIf="status.isRepSuccess" id="button-successfully" style="">
+            <storybook-button-successfully   style="position: relative; margin-bottom: 50px;"></storybook-button-successfully>
           </div>
 
           <div class="login-button">
@@ -26,45 +26,40 @@
                   (onPinInput)="onPinInput.emit($event)"
                   [currentForm]="mForm">
                 </storybook-input>
-                <div  *ngIf="this.status?.submitted && this.status?.errorFieldSubmitted['oldPassword']"
-                      style="  font-size: 14px;">
-                  * {{this.status?.errorFieldSubmitted['oldPassword'] | apiErrorMessage}}
-                </div>
+
                 <div *ngIf="!status.isRepSuccess" class="thematic-break"></div>
-                <storybook-input [inputPopover] = "this.popover"
+
+                <storybook-input
                   [storyInput]="storyInputsInOrder[1]"
                   (onArchiveInput)="onArchiveInput.emit($event)"
                   (onPinInput)="onPinInput.emit($event)"
-                  [currentForm]="mForm">
+                  [currentForm]="mForm"
+                  [conditionList]="['minLength','requiresUppercase','requiresLowercase','requiresDigit']">
                 </storybook-input>
-                <div  *ngIf="this.status?.submitted && this.status?.errorFieldSubmitted['password']"
-                      [inputPopover] = "this.popover" style="white-space: pre-line;  font-size: 14px;">
-                  * {{this.status?.errorFieldSubmitted['password'] | apiErrorMessage}}
-                </div>
+
+
                 <div></div>
                 <storybook-input
                   [storyInput]="storyInputsInOrder[2]"
                   (onArchiveInput)="onArchiveInput.emit($event)"
                   (onPinInput)="onPinInput.emit($event)"
-                  [currentForm]="mForm">
-                </storybook-input><!--{{this.status?.errorFieldSubmitted['oldPassword'] | apiErrorMessage}}-->
-                <div  *ngIf="this.status?.submitted && this.status?.errorFieldSubmitted['confirmPassword']"
-                      style="white-space: pre-line;  font-size: 14px;">
-                      * {{this.status?.errorFieldSubmitted['confirmPassword'] | apiErrorMessage}}
-                </div>
+                  [currentForm]="mForm"
+                  [conditionList]="['minLength','requiresUppercase','requiresLowercase','requiresDigit']">
+                </storybook-input>
               </div>
 
-              <br><br>
+              <br>
+                <div class="login-failed-message" role="alert" >
+                  <table *ngIf="this.status?.isRepFailed">
+                    <tr>{{ this.status?.repErrorMessage['message'] | apiErrorMessage: param }}</tr>
+                    <tr  *ngFor="let message of this.status?.repErrorMessage.data?.confirmPassword.split(', ')">{{message.trim() | apiErrorMessage: param }}</tr>
+                  </table>
+                </div>
               <storybook-button-continue [label]="status.isRepSuccess ? 'Continue' :'Change Password'" size="small"
                                          label="Continue" type="button" (click)="onSubmit()" >
               </storybook-button-continue>
           </div>
         </div>
-          <div class="form-group">
-              <div class="alert alert-danger" role="alert" *ngIf="isLoginFailed">
-                Login failed: {{ loginErrorMessage }}
-              </div>
-          </div>
       </form>
     </div>
   </div>

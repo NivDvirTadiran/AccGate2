@@ -7,7 +7,7 @@
   <br>
   <label [attr.aria-label]="storyInput?.id + ''" for="{{ storyInput?.title }}" class="Vector2 ">
     <img src="{{ storyInput?.icon }}" class="icon-input" alt="icon input userName"  name="{{ storyInput?.title }}" />
-    <div>
+    <div [inputPopover] = "this.popover" [data]="this.getErrorList(this.conditionList)" [header]="this.getErrorHeader(storyInput.title)">
     <input type="{{storyInput?.type}}" id="{{ storyInput?.id }}" class="DanK203"
             name="{{storyInput?.title}}" formControlName="{{storyInput?.title}}" placeholder="{{storyInput?.placeholder}}" required  />
     </div>
@@ -24,7 +24,12 @@
   <span hidden [ngSwitch]="storyInput?.title" class="D-Caps-Regular"  style="line-height: 0" >
       <span  class="position-absolute"  *ngIf="formControler?.invalid && (formControler?.dirty || formControler?.touched)"  >
           <span *ngSwitchCase="'username'"><br>{{storyInput?.state}} is required!</span>
-          <span *ngSwitchCase="'password'"><br>{{storyInput?.state}} is required!</span>
+          <span *ngSwitchCase="'password'">
+            <br>
+            {{storyInput?.state}} is required!
+            <!--div *ngIf="password.errors.required">Password is required</div>
+            <div *ngIf="password.errors.minlength">Password must be at least 1 characters</div-->
+          </span>
           <span *ngSwitchCase="'email'"   ><br>{{storyInput?.state}} is required!</span>
           <span *ngSwitchCase="'phone'"   ><br>{{storyInput?.state}} is required!</span>
 

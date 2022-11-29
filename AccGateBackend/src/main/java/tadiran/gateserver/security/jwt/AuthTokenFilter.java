@@ -9,9 +9,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.sun.org.apache.bcel.internal.generic.ExceptionThrower;
+import org.intellij.lang.annotations.RegExp;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -20,6 +22,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import tadiran.gateserver.models.User;
+import tadiran.gateserver.payload.response.MessageResponse;
 import tadiran.gateserver.security.services.UserDetailsServiceImpl;
 
 public class AuthTokenFilter extends OncePerRequestFilter {
@@ -52,9 +55,10 @@ public class AuthTokenFilter extends OncePerRequestFilter {
             request.getRequestURI().endsWith("/index.html") ||
             request.getRequestURI().endsWith("/styles.css") ||
             request.getRequestURI().endsWith("/styles.scss") ||
-            //request.getRequestURI().endsWith("/profile2") ||
+            request.getRequestURI().matches( "(?=.*[A-Za-z0-9])") ||
+            request.getRequestURI().endsWith("/accGate") ||
             request.getRequestURI().endsWith("/login-main") ||
-            request.getRequestURI().endsWith("/login")){
+            request.getRequestURI().startsWith("/accGate/login2")){
       //LOGGER.info("JWT token permited by url" + username);
       filterChain.doFilter(request, response);
     }
@@ -74,15 +78,18 @@ public class AuthTokenFilter extends OncePerRequestFilter {
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
-       /* if (userDetails.isCredentialsNonExpired()) {
-          TException
-        }*/
+        if (userDetails.isCredentialsNonExpired()) {
+/**/
+        }
       }
     } catch (Exception e) {
       logger.error("Cannot set user authentication: {}", e);
     }
-
     filterChain.doFilter(request, response);
+    /*response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+    filterChain.doFilter(request, response);*/
+
+
   }
 
   private String parseJwt(HttpServletRequest request) {

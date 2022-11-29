@@ -104,6 +104,7 @@ export class LoginMainComponent implements OnInit {
       username: new FormControl(null, Validators.minLength(2)),
       password: new FormControl('123456', Validators.minLength(2)),
     });
+
   }
 
 

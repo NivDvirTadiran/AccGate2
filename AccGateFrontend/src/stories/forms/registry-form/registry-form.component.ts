@@ -13,6 +13,7 @@ import {
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { StoryInput } from "src/stories/inputs/story-input.model";
 import { AuthService } from 'src/app/_services/auth.service';
+import {ApiErrorMessageService} from "../../../app/storybook/pipes/api-error-message.service";
 //import {BehaviorSubject} from "rxjs";
 //import {StoryInputComponent} from "../../inputs/story-input.component";
 
@@ -51,8 +52,8 @@ export default class RegistryFormComponent implements OnInit, AfterViewChecked, 
     password: null
   };
 
-  isLoginFailed = false;
-  loginErrorMessage = '';
+  @Input() isRegFailed = false;
+  @Input() regErrorMessage: any = {};
 
   openReplacePassword() {
     //this.replacePassFormService.open(ReplacePassForm2Component);
@@ -62,6 +63,7 @@ export default class RegistryFormComponent implements OnInit, AfterViewChecked, 
   @ViewChild('storybook-input', { static: false }) storybookInput?: ElementRef;
 
 
+  param = {language: 'login-main'};
 
   constructor(private renderer: Renderer2) {
   }
@@ -87,6 +89,9 @@ export default class RegistryFormComponent implements OnInit, AfterViewChecked, 
         this.loadSuccessfullyLoggedIn();
       }
     }
+    /*if (changes.isRegFailed || changes.regErrorMessage) {
+      console.log('isRegFailed' + this.regErrorMessage['message'])
+    }*/
   }
 
 

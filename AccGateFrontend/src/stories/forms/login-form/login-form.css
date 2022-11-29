@@ -94,10 +94,34 @@
 
 
 .thematic-break {
-  margin: 45px 2px 71px 2.5px;
+  margin: 20px 2px 16px 2.5px;
   background-color: #3d8ecf;
   border-top-width: 1px;
   border-top-color: rgb(61, 142, 207);
   border-top-style: solid;
+
+
+
 }
 
+.login-failed-message {
+  position: relative;
+  height: 55px;
+
+
+  /* D Regular */
+  font-family: Noto Sans, ui-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 31px;
+  /* identical to box height, or 183% */
+
+  align-items: start;
+  letter-spacing: -0.011em;
+
+  /* Red */
+
+  color: #FA4F4F;
+
+}

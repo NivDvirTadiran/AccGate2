@@ -71,12 +71,19 @@ MainRegistryForm.args = {
 
 export const RegistryForm = Template.bind({});
 RegistryForm.args = {
-// Shaping the stories through args composition.
-// Inherited data coming from the Default story.
-storyInputs: [
-  ...Default.args['storyInputs'].slice(0, 4),
- // { id: '3', title: 'StoryInput 6 (pinned)', state: 'INPUT_PINNED' },
-],
+  storyInputs: [
+    ...Default.args['storyInputs'].slice(0, 4),
+  ],
+};
+
+export const RegistryFailed = Template.bind({});
+RegistryFailed.args = {
+  storyInputs: [
+    ...Default.args['storyInputs'].slice(0, 4),
+  ],
+  isRegFailed: true,
+  regErrorMessage: JSON.parse('{"message":"Error: A registry process should be made!", "data": {"email": "must be a well-formed email address"}}'),
+
 };
 
 export const LoggedIn = Template.bind({});

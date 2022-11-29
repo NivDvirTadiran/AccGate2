@@ -44,12 +44,14 @@ export const Primary = Template.bind({});
 Primary.args = {
   primary: true,
   label: 'DanK203',
+  isNotify: false,
 
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   label: 'DanK203',
+  isNotify: true,
 };
 
 export const Large = Template.bind({});

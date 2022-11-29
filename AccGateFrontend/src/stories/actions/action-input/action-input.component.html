@@ -1,10 +1,21 @@
-<div class="password-alert-text" >
-<p>The password must contain:</p>
+<div class="password-alert-text" Style="text-indent: 27px; padding-bottom: 15px">
+<tr><strong>{{this.actionHeader}}</strong></tr>
 </div>
-<div>
-  <label class="pl-4">A minimum of 8 characters</label>
-  <label class="pl-4">At least 1 Uppercase letters</label>
-  <label class="pl-4">At least 1 lowercase letters</label>
-  <label class="pl-4">At least 1 lowercase letters</label>
-  <label class="pl-4">{{conditions}}</label>
+<div >
+
+  <table >
+
+    <!--thead>
+
+    </thead-->
+    <tbody>
+      <tr *ngFor="let actionInput of actionInputs">
+        <td  *ngIf="actionInput.isFulfilled" Style="color: green">✔</td>
+        <td  *ngIf="!actionInput.isFulfilled" Style="color: red">X</td>
+        <td Style="text-indent: 7px">{{ actionInput.presentingMessage }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+
 </div>

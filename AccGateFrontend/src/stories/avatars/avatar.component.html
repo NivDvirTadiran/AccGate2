@@ -19,7 +19,7 @@
          class="Avatar-Icon"  alt="apps-button-icon">
 
   </div>
-  <storybook-button-exclamation-mark  class="exclamation-mark" size="small" ></storybook-button-exclamation-mark>
+  <storybook-button-exclamation-mark  *ngIf="this.isNotify" class="exclamation-mark" size="small" ></storybook-button-exclamation-mark>
   <div class="Avatar-Label"><a class="font">{{ label }}</a></div>
 </button>
 

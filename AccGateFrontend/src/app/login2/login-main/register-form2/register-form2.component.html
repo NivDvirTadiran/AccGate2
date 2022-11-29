@@ -1,6 +1,8 @@
 
 <storybook-registry-form #form
   [isRegSuccess]="isRegSuccess"
+  [isRegFailed]="isRegFailed"
+  [regErrorMessage]="regErrorMessage"
   [storyInputs]="storyInputsInOrder"
   [mForm]="registerForm"
   (sendRegReq)="onSubmit()"

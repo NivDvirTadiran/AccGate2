@@ -15,34 +15,60 @@
       <form name="currentForm"   [formGroup]="mForm">
       <div class="Vector">
 
-        <div *ngIf="isRegSuccess" style="margin-top: 50px">
-          <storybook-button-successfully id="button-successfully" style="position: relative; margin-top: 50px;"></storybook-button-successfully>
+
+        <div *ngIf="isRegSuccess" id="button-successfully" style="">
+          <storybook-button-successfully   style="position: relative; margin-bottom: 50px;"></storybook-button-successfully>
         </div>
 
         <div class="login-button">
             <div *ngIf="!isRegSuccess && storyInputsInOrder.length === 0">empty</div>
             <div *ngIf="!isRegSuccess">
               <storybook-input
+                [storyInput]="storyInputsInOrder[0]"
+                (onArchiveInput)="onArchiveInput.emit($event)"
+                (onPinInput)="onPinInput.emit($event)"
+                [currentForm]="mForm">
+              </storybook-input>
+              <storybook-input
+                [storyInput]="storyInputsInOrder[1]"
+                (onArchiveInput)="onArchiveInput.emit($event)"
+                (onPinInput)="onPinInput.emit($event)"
+                [currentForm]="mForm">
+              </storybook-input>
+              <storybook-input
+                [storyInput]="storyInputsInOrder[2]"
+                (onArchiveInput)="onArchiveInput.emit($event)"
+                (onPinInput)="onPinInput.emit($event)"
+                [currentForm]="mForm"
+                [conditionList]="['requiresPhone']">
+              </storybook-input>
+              <storybook-input
+                [storyInput]="storyInputsInOrder[3]"
+                (onArchiveInput)="onArchiveInput.emit($event)"
+                (onPinInput)="onPinInput.emit($event)"
+                [currentForm]="mForm"
+                [conditionList]="['requiresEmail']">
+              </storybook-input>
+              <!--storybook-input
                 *ngFor="let storyInput of storyInputsInOrder"
                 [storyInput]="storyInput"
                 (onArchiveInput)="onArchiveInput.emit($event)"
                 (onPinInput)="onPinInput.emit($event)"
                 [currentForm]="mForm">
-              </storybook-input>
+              </storybook-input-->
             </div>
 
             <div *ngIf="!isRegSuccess" class="thematic-break"></div>
-              <storybook-button-continue [label]="isRegSuccess ? 'Continue' :'Complete Rgistration'"  size="small"
-                                         label="Continue" type="button" (click)="onSubmit()" >
-              </storybook-button-continue>
+            <div class="login-failed-message" role="alert" >
+              <p *ngIf="isRegFailed">*  {{ this.regErrorMessage['message'] | apiErrorMessage: param }}</p>
             </div>
+
+            <storybook-button-continue [label]="isRegSuccess ? 'Continue' :'Complete Rgistration'"  size="small"
+                                       label="Continue" type="button" (click)="onSubmit()" >
+            </storybook-button-continue>
+        </div>
         </div>
 
-        <div class="form-group">
-            <div class="alert alert-danger" role="alert" *ngIf="isLoginFailed">
-              Login failed: {{ loginErrorMessage }}
-            </div>
-        </div>
     </form>
   </div>
   </div>

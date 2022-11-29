@@ -26,7 +26,7 @@ export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/angular/writing-stories/args
 Primary.args = {
   primary: true,
-  label: 'language button1',
+  label: 'form button1',
 };
 Primary.parameters = {
   backgrounds: {

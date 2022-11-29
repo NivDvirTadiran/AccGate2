@@ -9,6 +9,7 @@ import {
 } from '@angular/core';
 import { PopoverOptions } from '../popover.interface';
 import {BubbleInputComponent} from "./bubble-input.component";
+import {ActionInput} from "../../actions/action-input/action-input.interface";
 
 @Directive({
   selector: '[inputPopover]',
@@ -30,19 +31,27 @@ export class PopoverInputDirective {
     this.popoverComponentRef?.instance.showPopup();
   }
 
+  @HostListener('keyup', ['$event']) onDataChange($event: any) {
+    this.popoverComponentRef?.instance.setData(this.data!);
+    this.popoverComponentRef?.instance.showPopup();
+  }
+
+
   constructor(private eleRef: ElementRef,
               private el: ElementRef,
               private viewContainer: ViewContainerRef,
               private componentFactoryResolver: ComponentFactoryResolver) {}
 
   @Input() highlight: any;
-  @Input() colorName: any;
+  @Input() data?: ActionInput[] | undefined;
+  @Input() header?: string = '';
 
 /*
   @HostListener('mouseover') onMouseOver() {
     this.popoverComponentRef?.instance.showPopup();
     this.eleRef.nativeElement.style.color = this.colorName;
   }*/
+
 
 
   ngOnInit(): void {
@@ -52,6 +61,8 @@ export class PopoverInputDirective {
     comp.instance.display = "I test some content";
     comp.instance.popover = this.popover?.content;
     comp.instance.options = this.popover;
+    comp.instance.data = this.data;
+    comp.instance.header = this.header;
 
     this.popoverComponentRef = comp;
     this.el.nativeElement.classList.add("wrapper");

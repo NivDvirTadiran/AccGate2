@@ -35,6 +35,7 @@ import { ActionInputComponent } from '../../stories/actions/action-input/action-
 import {MdbPopoverModule} from "mdb-angular-ui-kit/popover";
 import {MatButtonModule} from "@angular/material/button";
 import {ButtonExclamationMarkComponent} from "../../stories/buttons/button-exclamation-mark/button-exclamation-mark.component"
+import {ApiErrorMessageService} from "./pipes/api-error-message.service";
 
 
 
@@ -56,12 +57,15 @@ import {ButtonExclamationMarkComponent} from "../../stories/buttons/button-excla
     DynamicCompDirective,
     ActionAvatarComponent , PopoverDirective, BubbleAvatarComponent,
     ActionInputComponent, PopoverInputDirective, BubbleInputComponent,
-    ButtonExclamationMarkComponent
+    ButtonExclamationMarkComponent,
+
+
   ],
   imports: [
     CommonModule,
     FormsModule, ReactiveFormsModule, MdbPopoverModule, MatButtonModule,
   ],
+  providers: [ ApiErrorMessageService],
   exports: [
     ButtonGlobeComponent, Background1Component, ButtonTadiranComponent, ButtonLanguageComponent,
     ButtonFortestComponent,
@@ -79,8 +83,11 @@ import {ButtonExclamationMarkComponent} from "../../stories/buttons/button-excla
     DynamicCompDirective,
     ActionAvatarComponent   , PopoverDirective, BubbleAvatarComponent,
     ActionInputComponent, PopoverInputDirective, BubbleInputComponent,
-    ButtonExclamationMarkComponent
+    ButtonExclamationMarkComponent,
+
+
+
   ],
-  bootstrap: [AvatarComponent]
+  bootstrap: [AvatarComponent, ]
 })
 export class StorybookModule { }

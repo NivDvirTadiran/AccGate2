@@ -22,6 +22,8 @@
 
 <storybook-login-form
   [isLoggedIn]="false"
+  [isLoginFailed]="isLoginFailed"
+  [loginErrorMessage]="loginErrorMessage"
   [mForm]="loginForm"
   [storyInputs]="storyInputsInOrder"
   (sendLoginReq)="onSubmit()"
