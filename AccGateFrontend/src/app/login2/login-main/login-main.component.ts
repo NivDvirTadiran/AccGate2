@@ -101,8 +101,8 @@ export class LoginMainComponent implements OnInit {
               private tokenStorage: TokenStorageService,
               private router: Router,) {
     this.loginForm = new FormGroup({
-      username: new FormControl(null, Validators.minLength(2)),
-      password: new FormControl('123456', Validators.minLength(2)),
+      username: new FormControl('Agent7', Validators.minLength(2)),
+      password: new FormControl('T@diran2022', Validators.minLength(2)),
     });
 
   }

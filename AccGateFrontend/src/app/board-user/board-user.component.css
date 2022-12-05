@@ -13,7 +13,7 @@
 .background {
   background-size: cover;
   background-origin: border-box;
-  background-image: url(../_services/assets/images/Background.webp);
+  background-image: url(/assets/images/Background.webp);
   /*linear-gradient(to right, rgba(30, 75, 115, 1), rgba(255, 255, 255, 0));*/
   background-repeat: no-repeat;
   background-position: top left;

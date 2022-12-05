@@ -9,7 +9,7 @@ import {
   ApplicationRef,
   Output,
   EventEmitter,
-  Type
+  Type, ComponentRef
 } from '@angular/core';
 import { DynamicCompDirective } from '../dynamic-comp.directive';
 import { PopoverOptions } from '../popover.interface'
@@ -24,11 +24,15 @@ import {ActionAvatarComponent} from "src/stories/actions/action-avatar/action-av
 export class BubbleAvatarComponent implements OnInit, AfterViewInit{
   @Input() display: any;
   @Input() popover: any;
+  @Input() bubbleOn?: boolean;
+  @Input() header?: string;
   @Input()  options?: PopoverOptions;
   show: boolean = false;
   isDynamic: boolean = false;
   @ViewChild(DynamicCompDirective, {static: true}) content!: DynamicCompDirective;
   @Output() triggerDetectionChange: EventEmitter<void> = new EventEmitter<void> ();
+  @Output() actionButton: EventEmitter<any> = new EventEmitter<any> ();
+  actionAvatarComponentRef?: ComponentRef<any>;
   constructor(private componentFactoryResolver: ComponentFactoryResolver) {
 
   }
@@ -38,20 +42,36 @@ export class BubbleAvatarComponent implements OnInit, AfterViewInit{
       const componentFactory = this.componentFactoryResolver.resolveComponentFactory(<Type<any>>this.options.content);
       const viewContainerRef = this.content.viewContainerRef;
       viewContainerRef.clear();
-      viewContainerRef.createComponent(componentFactory);
+      this.actionAvatarComponentRef = viewContainerRef.createComponent(componentFactory);
+      this.actionAvatarComponentRef.instance.setHeader(this.header);
+      this.actionAvatarComponentRef.instance.setBubbleOn(this.bubbleOn);
+      this.actionAvatarComponentRef.instance.actionButton.subscribe(($event: any) => {
+        this.actionButton.emit($event);
+        console.log("Click: Change it now");
+      });
     }
-
   }
   ngAfterViewInit(): void {}
 
   showPopup() {
-    this.show = true;
-    this.triggerDetectionChange.emit();
+    if (this.bubbleOn) {
+      this.show = true;
+      this.triggerDetectionChange.emit();
+    }
   }
 
   hidePopup() {
     this.show = false;
     this.triggerDetectionChange.emit();
+  }
+
+  setHeader(header: string) {
+    this.header = header;
+    this.actionAvatarComponentRef?.instance.setHeader(this.header);
+  }
+
+  setBubbleOn(bubbleOn: boolean) {
+    this.bubbleOn = bubbleOn;
   }
 
   loadCarComponent(){

@@ -65,11 +65,17 @@ export class AuthService {
     }, httpOptions);
   }
 
-  // login, register
-  webapptab(token: string, webapp: string): Promise<any>  {
+  // open app in a new browser tab
+  webapptab(token: string, webapp: string): Observable<any>  {
     return this.http.post(AUTH_API + 'webapptab', {
       refreshToken: token,
       webApp: webapp
-    }, httpOptions).toPromise();
+    }, httpOptions);
+  }
+
+  getPassExpireDate(token: string): Observable<any> {
+    return this.http.post(AUTH_API + 'passexpdate', {
+      refreshToken: token,
+    }, httpOptions);
   }
 }

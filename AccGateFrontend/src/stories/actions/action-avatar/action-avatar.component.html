@@ -1,6 +1,6 @@
 <div class="password-alert-text">
 <p>
-Your password will expire in 3 Days.
+  {{this.actionHeader}}
 </p>
-<a >Change it now ></a>
+<a [highlight]="'red'" [colorName]="'red'" (click)="this.actionButton.emit()" class="action-text" >Change it now ></a>
 </div>

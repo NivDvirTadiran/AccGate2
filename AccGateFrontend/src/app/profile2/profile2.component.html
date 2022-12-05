@@ -7,8 +7,16 @@
 <body>
 <storybook-background1></storybook-background1>
 
+<!--button mat-raised-button (click)="setPassExpAlertData()">setPassExpAlertData</button-->
 
-<storybook-avatar id="avatar" [label]="'DanK203'" [isNotify]="true"></storybook-avatar>
+<storybook-avatar
+  id="avatar"
+  [label]="this.currentUser.username"
+  [isNotify]="this.isNotify()"
+  header="{{'Your password will expire in ' + this.passExp +' Days.'}}"
+  (actionButton)="openReplacePassForm()"
+  (click)="this.setPassExpAlertData()">
+</storybook-avatar>
 
 
 <storybook-app-menu

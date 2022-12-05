@@ -21,7 +21,7 @@ public class JwtUtils {
   private String jwtSecret;
 
   @Value("${tadiran.gate.jwtExpirationMin}") //@Value("${tadiran.gate.jwtExpirationMs}")
-  private int jwtExpirationMin;
+  private Long jwtExpirationMin;
 
   public String generateJwtToken(Long tokenId, User user, EWebApp webApp) {
     return generateToken(tokenId, user, webApp);

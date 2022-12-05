@@ -1,0 +1,14 @@
+{
+  "properties": [
+    {
+      "name": "tadiran.gate.pass-exp-days",
+      "type": "java.lang.Long",
+      "description": "Number of days before user credentials set as expired."
+    },
+    {
+      "name": "tadiran.gate.PreviousAlertPassExpDays",
+      "type": "java.lang.Integer",
+      "description": "Description for tadiran.gate.PreviousAlertPassExpDays."
+    }
+  ]
+}

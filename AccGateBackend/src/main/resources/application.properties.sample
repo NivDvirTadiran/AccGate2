@@ -20,10 +20,8 @@ tadiran.gate.jwtExpirationMin= 6
 # 8,640,000[Ms] = 144[min] = 2.4[hour]
 tadiran.gate.jwtRefreshExpirationMin= 144
 
-## For test
-# 60,000[Ms] = 1[min]
-# tadiran.gate.jwtExpirationMs= 60000
-# 120,000[Ms] = 2[min] = 0.033[hour]
-# tadiran.gate.jwtRefreshExpirationMs= 240000
+tadiran.gate.PassExpDays= 30
+tadiran.gate.PreviousAlertPassExpDays= 10
 
 server.port=8445
+

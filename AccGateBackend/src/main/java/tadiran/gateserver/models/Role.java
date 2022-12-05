@@ -1,6 +1,7 @@
 package tadiran.gateserver.models;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "roles")
@@ -36,5 +37,9 @@ public class Role {
 
   public void setERole(ERole name) {
     this.eRole = name;
+  }
+
+  public boolean isSatisfied(Set<Role> roles) {
+    return roles.stream().map(Role::getERole).anyMatch(eRole -> eRole == this.eRole);
   }
 }

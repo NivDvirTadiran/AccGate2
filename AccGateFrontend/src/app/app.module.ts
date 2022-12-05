@@ -35,6 +35,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalModule, TooltipModule, PopoverModule, ButtonsModule, MDBBootstrapModule } from 'angular-bootstrap-md';
 import { RegisterFormComponent } from './login/register-form/register-form.component';
 import {ReplacePassFormComponent} from "./login/replace-pass-form/replace-pass-form.component";
+//import {ReplacePassForm2Component} from "./login2/login2.module";
 import {ApiErrorMessagePipe} from "./pipes/api-error-message.pipe";
 import {LoginErrorMessagePipe} from "./pipes/login-error-message.pipe";
 import Button from '../stories/buttons/button-example/button.component'
@@ -43,6 +44,7 @@ import Button from '../stories/buttons/button-example/button.component'
 import {Login2Module} from "./login2/login2.module";
 import {StorybookModule} from "./storybook/storybook.module";
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import {MdbValidationModule} from "mdb-angular-ui-kit/validation";
 
 
 
@@ -62,9 +64,10 @@ import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
         BoardModeratorComponent,
         BoardUserComponent,
         RegisterFormComponent,
-        ReplacePassFormComponent,
         ApiErrorMessagePipe,
         LoginErrorMessagePipe,
+        //ReplacePassForm2Component,
+        ReplacePassFormComponent
 
 
 
@@ -88,7 +91,7 @@ import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
     MdbScrollspyModule,
     MdbTabsModule,
     MdbTooltipModule,
-    //MdbValidationModule,
+    MdbValidationModule,
     BrowserAnimationsModule,
     ModalModule,
     ButtonsModule,

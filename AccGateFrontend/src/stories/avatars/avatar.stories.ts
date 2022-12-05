@@ -12,14 +12,15 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {PopoverDirective} from "../directive/bubble-avatar/popover.directive";
 import {BubbleAvatarComponent} from "../directive/bubble-avatar/bubble-avatar.component";
 import {ButtonExclamationMarkComponent} from "../buttons/button-exclamation-mark/button-exclamation-mark.component";
+import {ActionAvatarComponent} from "../actions/action-avatar/action-avatar.component";
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
-  title: 'Design System/Atoms/Avatars/Avatar',
+  title: 'Design System/Avatars/Avatar',
   component: AvatarComponent,
   decorators: [
     moduleMetadata({
-      declarations: [ PopoverDirective, BubbleAvatarComponent, ButtonExclamationMarkComponent],
+      declarations: [ PopoverDirective, BubbleAvatarComponent, ButtonExclamationMarkComponent, ActionAvatarComponent],
       imports: [CommonModule, FormsModule, ReactiveFormsModule],
     }),
     componentWrapperDecorator(story => `<div style="margin: 3em">${story}</div>`),
@@ -44,7 +45,8 @@ export const Primary = Template.bind({});
 Primary.args = {
   primary: true,
   label: 'DanK203',
-  isNotify: false,
+  isNotify: true,
+  header: 'Your password will expire in 7',
 
 };
 
@@ -52,6 +54,7 @@ export const Secondary = Template.bind({});
 Secondary.args = {
   label: 'DanK203',
   isNotify: true,
+  header: 'Your password will expire in 7',
 };
 
 export const Large = Template.bind({});

@@ -4,18 +4,19 @@ package tadiran.gateserver.controllers;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.util.*;
+import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
+import net.bytebuddy.implementation.bytecode.Throw;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import tadiran.gateserver.models.*;
 import tadiran.gateserver.payload.request.*;
-import tadiran.gateserver.payload.response.ApiResponse;
-import tadiran.gateserver.payload.response.TokenRefreshResponse;
+import tadiran.gateserver.payload.response.*;
 import tadiran.gateserver.repository.AgentRepository;
 import tadiran.gateserver.repository.SupRepository;
 import tadiran.gateserver.security.jwt.exception.TokenRefreshException;
@@ -23,6 +24,7 @@ import tadiran.gateserver.security.services.RefreshTokenService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -32,13 +34,13 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
-import tadiran.gateserver.payload.response.JwtResponse;
-import tadiran.gateserver.payload.response.MessageResponse;
 import tadiran.gateserver.repository.RoleRepository;
 import tadiran.gateserver.repository.UserRepository;
 import tadiran.gateserver.security.jwt.JwtUtils;
 import tadiran.gateserver.security.services.UserDetailsImpl;
 import tadiran.gateserver.security.services.UserDetailsServiceImpl;
+import tadiran.gateserver.models.Role;
+
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -73,6 +75,12 @@ public class AuthController {
   @Autowired
   UserDetailsServiceImpl userDetailsService;
 
+  @Value("${tadiran.gate.pass-exp-days}")
+  private int passExpDays;
+
+  @Value("${tadiran.gate.PreviousAlertPassExpDays}")
+  private int previousAlertPassExpDays;
+
 
   @PostMapping("/signin")
   public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
@@ -91,7 +99,6 @@ public class AuthController {
 
     SecurityContextHolder.getContext().setAuthentication(authentication);
     UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
-
 
     User user = userRepository.findByUsername(userDetails.getUsername())
             .orElseThrow(() -> new UsernameNotFoundException("User Not Found with username: " + userDetails.getUsername()));
@@ -379,6 +386,24 @@ public class AuthController {
     //return isPermitted;
   }
 
+
+  @PostMapping("/passexpdate")
+  public ResponseEntity<?> passExpireDate(@Valid @RequestBody PassExpDateRequest request) {
+
+    String requestAccessToken = request.getAccessToken();
+
+    return userRepository.findByUsername(jwtUtils.getUserNameFromJwtToken(requestAccessToken))
+            .map(User::getPassLastModifiedOn)
+            .map(passDate -> {
+              LocalDate expireDay = passDate.plusDays(passExpDays);
+              LocalDate currentDate = LocalDate.now();
+              return ResponseEntity.ok(new PassExpDateResponse(
+                      currentDate.until(expireDay).getDays(),previousAlertPassExpDays)
+              );})
+            .orElseThrow(() -> new NullPointerException("Access Denied: User unauthorized!"));
+
+  }
+
   @PostMapping("/refreshtoken")
   public ResponseEntity<?> refreshtoken(@Valid @RequestBody TokenRefreshRequest request ) {
 
@@ -411,21 +436,46 @@ public class AuthController {
   public ResponseEntity<?> authenticateWebAppTab(@Valid @RequestBody WebAppTabRequest request ) {
 
     String requestRefreshToken = request.getRefreshToken();
+    EWebApp webApp = request.getWebApp();
+    Set<Role> user_roles = refreshTokenService.findByToken(requestRefreshToken)
+            .map(RefreshToken::getUser)
+            .map(User::getRoles).get();
+
+    /*boolean relvantRole = user_roles.stream().filter(role -> role.isSatisfied(request.getRequiredRoles()))
+            .findAny().isPresent();*/
+
+
+
     return refreshTokenService.findByToken(requestRefreshToken)
             .map(refreshTokenService::verifyExpiration)
             .map(RefreshToken::getUser)
+            //.filter(user -> user.getRoles().stream().anyMatch(role -> role.isSatisfied(request.getRequiredRoles())))
             .map(user -> {
-
+              boolean isPermitted = user.getRoles().stream().anyMatch(role -> role.isSatisfied(request.getRequiredRoles()));
               RefreshToken newRefreshToken = refreshTokenService.createRefreshToken(user.getId(), EWebApp.WA_GATE);
               String newAccessToken = refreshTokenService.generateJwtToken(newRefreshToken);
+              logger.info("authenticateWebAppTab - request.getRequiredRoles():  " + request.getRequiredRoles().toString());
+              logger.info("authenticateWebAppTab - user.getRoles().stream():  " + user.getRoles().stream().toString());
+              logger.info("authenticateWebAppTab - isPermitted:  " + isPermitted);
+
+
+              if (!isPermitted) {
+                return ResponseEntity
+                        .badRequest()
+                        .body(new MessageResponse("Error: The Requested is not permitted for current user"));
+              }
 
               return ResponseEntity.ok(new JwtResponse(newAccessToken,
                       newRefreshToken.getToken(),
                       user.getId(),
                       user.getUsername(),
                       user.getEmail(),
-                      EWebApp.WA_GATE,
+                      webApp,
                       user.getRolesList()));
+
+
+
+
             })
             .orElseThrow(() -> new TokenRefreshException(requestRefreshToken,
                     "Refresh token is not in database!"));

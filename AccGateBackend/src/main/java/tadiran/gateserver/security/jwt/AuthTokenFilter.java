@@ -46,7 +46,7 @@ public class AuthTokenFilter extends OncePerRequestFilter {
 
     if(/*request.getRequestURI().startsWith("/accGate") ||*/
             request.getRequestURI().endsWith("/styles.scss") ||
-            request.getRequestURI().startsWith("/assets/images") ||
+            request.getRequestURI().startsWith("/accGate/assets/") ||
             request.getRequestURI().endsWith("/auth/signin") ||
             request.getRequestURI().endsWith("/auth/signupadmin") ||
             request.getRequestURI().endsWith("/auth/register-form") ||
@@ -55,8 +55,10 @@ public class AuthTokenFilter extends OncePerRequestFilter {
             request.getRequestURI().endsWith("/index.html") ||
             request.getRequestURI().endsWith("/styles.css") ||
             request.getRequestURI().endsWith("/styles.scss") ||
-            request.getRequestURI().matches( "(?=.*[A-Za-z0-9])") ||
-            request.getRequestURI().endsWith("/accGate") ||
+            request.getRequestURI().matches( "/accGate/NotoSans-(?:Bold|Regular)\\.(?:woff|woff2|ttf)$") ||
+            //request.getRequestURI().matches( "/accGate/(?:scripts|polyfills-es2017|vendor-es2017|main-es2017|runtime-es2017|favicon)\\.(?:js|ico)$") ||
+            request.getRequestURI().matches( "/accGate/(?:scripts|(?:polyfills|vendor|main|runtime)-es2017|favicon)\\.(?:js|ico)$") ||
+                    request.getRequestURI().endsWith("/accGate") ||
             request.getRequestURI().endsWith("/login-main") ||
             request.getRequestURI().startsWith("/accGate/login2")){
       //LOGGER.info("JWT token permited by url" + username);
@@ -79,15 +81,15 @@ public class AuthTokenFilter extends OncePerRequestFilter {
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
         if (userDetails.isCredentialsNonExpired()) {
-/**/
+          filterChain.doFilter(request, response);
         }
       }
     } catch (Exception e) {
       logger.error("Cannot set user authentication: {}", e);
     }
+
+    response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
     filterChain.doFilter(request, response);
-    /*response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-    filterChain.doFilter(request, response);*/
 
 
   }

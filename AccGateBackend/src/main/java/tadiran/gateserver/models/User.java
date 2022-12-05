@@ -1,5 +1,6 @@
 package tadiran.gateserver.models;
 
+import lombok.Builder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,11 +15,10 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "users", 
-    uniqueConstraints = { 
-      @UniqueConstraint(columnNames = "username"),
-      @UniqueConstraint(columnNames = "email") 
-    })
+@Table(name = "users", uniqueConstraints = {
+        @UniqueConstraint(columnNames = {"username"}),
+        @UniqueConstraint(columnNames = {"email"})
+})
 public class User {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,7 +36,7 @@ public class User {
   @Size(max = 120)
   private String password;
 
-  private String confirmPassword;
+  private String confirm_password;
 
   private String phone;
 
@@ -55,7 +55,7 @@ public class User {
   private Agent agent;
 
   @Column(nullable = true)
-  private LocalDate passLastModifiedOn;
+  private LocalDate pass_last_modified_on;
 
   private static final Logger logger = LoggerFactory.getLogger(User.class);
 
@@ -163,11 +163,11 @@ public class User {
   }
 
   public LocalDate getPassLastModifiedOn() {
-    return passLastModifiedOn;
+    return pass_last_modified_on;
   }
 
   public void setPassLastModifiedOn(LocalDate passLastModifiedOn) {
-    this.passLastModifiedOn = passLastModifiedOn;
+    this.pass_last_modified_on = passLastModifiedOn;
   }
 
   public Sup getSup() {

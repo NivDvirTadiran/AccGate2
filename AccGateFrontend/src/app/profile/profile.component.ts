@@ -88,26 +88,40 @@ export class ProfileComponent implements OnInit {
     var newRefreshToken = "";
     var newCurrentUser = "";
 
-    if (!this.isRefreshing) {
-      const token = this.token.getRefreshToken();
-      if (token)
-        this.authService.webapptab(token, webapp)
-          .then(
-          data => {
-            this.isRefreshing = false;
-            newAccessToken = (data.accessToken);
-            newRefreshToken = (data.refreshToken);
-            newCurrentUser = (data);
-          },
-          (reject) => {return throwError(reject.error);})
-        .then(() => {this.router.navigate([])
-        .then(result => { this.windowObjectReference = window.open(AppConfig.accServer.ACCWEBServers+webappURLPrefix);})
-        .then(result => { this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.TOKEN_KEY, newAccessToken);
-                          this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.REFRESHTOKEN_KEY, newRefreshToken);
-                          this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.USER_KEY, JSON.stringify(newCurrentUser));},
-             (err) => { this.isRefreshing = false;
-                        return throwError(err);})});
-    }
+    /*   if (!this.isRefreshing) {var token = this.token.getRefreshToken();}
+
+       let promise = new Promise<void>((resolve, reject) => {
+         this.authService.webapptab(token, webapp)
+           .subscribe(data => {
+               this.isRefreshing = false;
+               newAccessToken = (data.accessToken);
+               newRefreshToken = (data.refreshToken);
+               newCurrentUser = (data);
+             },
+             (reject) => {
+               return throwError(reject.error);
+             })
+
+         resolve();
+         setTimeout(() => {
+           console.log("Failed open new window");
+           reject();//() => {resolve();}
+         }, 5000);
+       });
+
+
+       promise
+       .then(() => {this.router.navigate([])
+       .then(result => { this.windowObjectReference = window.open(AppConfig.accServer.ACCWEBServers+webappURLPrefix);})
+       .then(result => { this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.TOKEN_KEY, newAccessToken);
+                         this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.REFRESHTOKEN_KEY, newRefreshToken);
+                         this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.USER_KEY, JSON.stringify(newCurrentUser));},
+            (err) => { this.isRefreshing = false;
+                       return throwError(err);})}
+       );
+   */
+
+
   }
 
 
@@ -115,7 +129,7 @@ export class ProfileComponent implements OnInit {
     var newAccessToken = "";
     var newRefreshToken = "";
     var newCurrentUser = "";
-
+/*
     if (!this.isRefreshing) {
       const token = this.token.getRefreshToken();
       if (token)
@@ -135,7 +149,7 @@ export class ProfileComponent implements OnInit {
                 this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.USER_KEY, JSON.stringify(newCurrentUser));},
               (err) => { this.isRefreshing = false;
                 return throwError(err);})
-    }
+    }*/
   }
   /*
   forseRefreshToken(): void {

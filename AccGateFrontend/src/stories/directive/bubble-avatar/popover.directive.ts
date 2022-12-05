@@ -2,9 +2,9 @@ import {
   ComponentFactoryResolver,
   ComponentRef,
   Directive,
-  ElementRef,
+  ElementRef, EventEmitter,
   HostListener,
-  Input,
+  Input, Output,
   ViewContainerRef
 } from '@angular/core';
 import { PopoverOptions } from '../popover.interface';
@@ -18,6 +18,8 @@ export class PopoverDirective {
 
   popoverComponentRef?: ComponentRef<BubbleAvatarComponent>;
   @HostListener('mouseover', ['$event']) onMouseOver($event: any){
+    this.popoverComponentRef?.instance.setHeader(this.header);
+    this.popoverComponentRef?.instance.setBubbleOn(this.bubbleOn);
     this.popoverComponentRef?.instance.showPopup();
     //this.eleRef.nativeElement.style.color = 'blue';
   }
@@ -27,6 +29,8 @@ export class PopoverDirective {
   }
 
   @HostListener('click', ['$event']) onClick($event: any){
+    this.popoverComponentRef?.instance.setHeader(this.header);
+    this.popoverComponentRef?.instance.setBubbleOn(this.bubbleOn);
     this.popoverComponentRef?.instance.showPopup();
   }
 
@@ -39,7 +43,11 @@ export class PopoverDirective {
               private componentFactoryResolver: ComponentFactoryResolver) {}
 
   @Input() highlight: any;
-  @Input() colorName: any;
+  @Input() header: string = '';
+  @Input() bubbleOn: boolean = false;
+  @Output() actionButton: EventEmitter<any> = new EventEmitter<any> ();
+  @Output() avatarButton: EventEmitter<any> = new EventEmitter<any> ();
+
 
 /*
   @HostListener('mouseover') onMouseOver() {
@@ -55,6 +63,8 @@ export class PopoverDirective {
     comp.instance.display = "I test some content";
     comp.instance.popover = this.popover?.content;
     comp.instance.options = this.popover;
+    comp.instance.header = this.header;
+    comp.instance.bubbleOn = this.bubbleOn;
 
     this.popoverComponentRef = comp;
     this.el.nativeElement.classList.add("wrapper");
@@ -64,6 +74,10 @@ export class PopoverDirective {
 
     comp.instance.triggerDetectionChange.subscribe(() =>  {
       comp.hostView.detectChanges();
+    });
+
+    comp.instance.actionButton.subscribe(($event: any) => {
+      this.actionButton.emit($event);
     });
   }
 

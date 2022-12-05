@@ -38,7 +38,7 @@ import {ReplacePassForm2Component} from "./login-main/replace-pass-form2/replace
     MatButtonModule,
   ],
   exports: [
-
+    ReplacePassForm2Component
   ],
   bootstrap: [Login2Component]
 })

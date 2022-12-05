@@ -53,8 +53,8 @@ export class BubbleInputComponent implements OnInit, AfterViewInit{
   showPopup() {
     if (this.data != undefined && this.data?.length > 0) {
       this.show = true;
+      this.triggerDetectionChange.emit();
     }
-    this.triggerDetectionChange.emit();
   }
 
   hidePopup() {

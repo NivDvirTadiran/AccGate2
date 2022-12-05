@@ -18,11 +18,23 @@ export  class AvatarComponent {
     content: ActionAvatarComponent
   };
 
+
+  @Output() actionButton: EventEmitter<any> = new EventEmitter<any> ();
+
+  /**
+   * Header contents
+   *
+   * @required
+   */
+  @Input()
+  header? = 'header';
+
   /**
    * Is this the principal call to action on the login-main?
    */
   @Input()
-  isNotify = false;
+  isNotify: boolean = false;
+
 
   /**
    * Is this the principal call to action on the login-main?
@@ -59,7 +71,7 @@ export  class AvatarComponent {
   public get classes(): string[] {
     const mode = this.primary ? 'storybook-avatar--primary' : 'storybook-avatar--secondary';
 
-    return ['sstorybook-avatar', `storybook-avatar--${this.size}`, mode];
+    return ['storybook-avatar', `storybook-avatar--${this.size}`, mode];
   }
 
   ngOnInit(): void {
