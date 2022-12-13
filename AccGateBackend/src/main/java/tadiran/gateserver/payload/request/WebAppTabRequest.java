@@ -70,6 +70,8 @@ public class WebAppTabRequest {
                     roles.add(new Role(ERole.SupervisorMonitor));
                     break;
                 case "ACCREALTIME":
+                    roles.add(new Role(ERole.SupervisorAdmin));
+                    roles.add(new Role(ERole.Admin));
                     roles.add(new Role(ERole.SupervisorMonitor));
                     break;
                 case "AGENT":

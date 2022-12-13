@@ -1,13 +1,13 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { Story, Meta } from '@storybook/angular/types-6-0';
-import { ButtonAppsComponent } from './button-apps.component';
+import { Spinner1Component } from './spinner1.component';
 import {moduleMetadata} from "@storybook/angular";
 import {CommonModule} from "@angular/common";
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
-  title: 'Design System/Atoms/Buttons/AppsButton',
-  component: ButtonAppsComponent,
+  title: 'Design System/Atoms/Spinners/Spinner1',
+  component: Spinner1Component,
   decorators: [
     moduleMetadata({
       declarations: [],
@@ -15,43 +15,35 @@ export default {
     }),
   ],
   // More on argTypes: https://storybook.js.org/docs/angular/api/argtypes
-  argTypes: {
-    application: { control: 'select', options: ['Agent', 'WebRT', 'Admin', 'Script-Designer'] },
-    isDisabled: { control: 'boolean' },
-  },
 } as Meta;
 
 // More on component templates: https://storybook.js.org/docs/angular/writing-stories/introduction#using-args
-const Template: Story<ButtonAppsComponent> = (args: ButtonAppsComponent) => ({
+const Template: Story<Spinner1Component> = (args: Spinner1Component) => ({
   props: args,
 });
 
-export const Agent = Template.bind({});
+export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/angular/writing-stories/args
-Agent.args = {
+Primary.args = {
   primary: true,
-  application: 'Agent',
   label: 'form button1',
-  isDisabled: true,
-};
-Agent.parameters = {
-};
-
-export const WebRT = Template.bind({});
-WebRT.args = {
-  application: 'WebRT',
-  label: 'WebRT',
 };
 
 
-export const Admin = Template.bind({});
-Admin.args = {
-  application: 'Admin',
-  label: 'Admin',
+export const Secondary = Template.bind({});
+Secondary.args = {
+  label: 'button2',
 };
 
-export const GCCS = Template.bind({});
-GCCS.args = {
-  application: 'Script-Designer',
-  label: 'GCCS',
+
+export const Large = Template.bind({});
+Large.args = {
+  size: 'large',
+  label: 'button3',
+};
+
+export const Small = Template.bind({});
+Small.args = {
+  size: 'small',
+  label: 'button4',
 };

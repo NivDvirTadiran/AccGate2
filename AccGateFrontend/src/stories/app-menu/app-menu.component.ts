@@ -3,7 +3,15 @@ import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/fo
 import { StoryInput } from "../inputs/story-input.model";
 import { AuthService } from '../../app/_services/auth.service';
 import {MdbModalRef} from "mdb-angular-ui-kit/modal";
+//import {Profile2Expose} from "src/app/profile2/profile2.interface";
 
+export interface Profile2Expose {
+  agent: boolean;
+  realtime: boolean;
+  scriptDesigner: boolean;
+  admin: boolean;
+  aeonixAdmin: boolean;
+}
 
 export interface AeonixAppCenterForm {
   username: null, //new FormControl('ea2', Validators.min(2)),
@@ -67,6 +75,10 @@ export class AppMenuComponent implements OnInit {
   @Output() openNewWinForApp = new EventEmitter<any>();
 
   @Output() openNewTabForApp = new EventEmitter<any>();
+
+  @Input() profileApps?: any;
+
+  @Input() isLoading: boolean = false;
 
 
   @Input()

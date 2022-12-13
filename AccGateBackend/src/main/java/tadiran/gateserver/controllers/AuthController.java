@@ -400,7 +400,33 @@ public class AuthController {
               return ResponseEntity.ok(new PassExpDateResponse(
                       currentDate.until(expireDay).getDays(),previousAlertPassExpDays)
               );})
-            .orElseThrow(() -> new NullPointerException("Access Denied: User unauthorized!"));
+            .orElseThrow(() -> new NullPointerException("Eror: Password expiration details un available!"));
+
+  }
+
+  @PostMapping("/permitwebapplist")
+  public ResponseEntity<?> permittedWebAppList(@Valid @RequestBody PassExpDateRequest request) {
+
+    String requestAccessToken = request.getAccessToken();
+
+
+    WebApp realtime = new WebApp(EWebApp.WA_ACCREALTIME);
+    WebApp scriptDesigner = new WebApp(EWebApp.WA_GCCS);
+    WebApp agent = new WebApp(EWebApp.WA_AGENT);
+    //WebApp aeonixAdmin = new WebApp(EWebApp.WA_AEONIXADMIN);
+    WebApp admin = new WebApp(EWebApp.WA_ADMIN);
+
+    return userRepository.findByUsername(jwtUtils.getUserNameFromJwtToken(requestAccessToken))
+            .map(user -> {
+
+              return ResponseEntity.ok(new PermittedWebAppListResponse(
+                      user.getRoles().stream().anyMatch(role -> role.isSatisfied(realtime.getRequiredRoles())),
+                      user.getRoles().stream().anyMatch(role -> role.isSatisfied(scriptDesigner.getRequiredRoles())),
+                      user.getRoles().stream().anyMatch(role -> role.isSatisfied(agent.getRequiredRoles())),
+                      false, /*user.getRoles().stream().anyMatch(role -> role.isSatisfied(aeonixAdmin.getRequiredRoles())),*/
+                      user.getRoles().stream().anyMatch(role -> role.isSatisfied(admin.getRequiredRoles())))
+              );})
+            .orElseThrow(() -> new NullPointerException("Error: Can not get server data defining permitted web apps for user!"));
 
   }
 

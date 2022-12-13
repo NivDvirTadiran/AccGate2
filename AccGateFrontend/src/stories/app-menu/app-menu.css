@@ -1,17 +1,5 @@
 
-/*
-.form {
-  position: absolute;
-  left: 3.18%;
-  right: 14.78%;
-  top: 0;
-  bottom: 0;
-  border-radius: 14px;
-  box-shadow: -4px 4px 10px 0 rgba(88, 166, 228, 0.3);
-  background-color: #fff;
-}
 
-*/
 
 .card-container.card {
   max-width: 1000px !important;
@@ -21,7 +9,13 @@
 
 }
 
-
+storybook-spinner1 {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  left: calc(50% - 75px/2 - 0.25px);
+  top: calc(50% - 70px/2 - 0.5px);
+}
 
 .grid-container {
   display: grid;
@@ -55,15 +49,7 @@
 .item5 {
   grid-area: 2 / 4 / span 1 / span 2;
 }
-/*
-.col-md-12{
-  position: center;
-  width: 42.65%;
-  height: 89.35%;
-  left: calc(50% - 42.65%/2 - 0px);
-  top: calc(50% - 89.35%/2 - 0px);
-}
-*/
+
 
 .col-md-12{
   position: center;

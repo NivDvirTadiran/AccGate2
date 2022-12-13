@@ -63,4 +63,42 @@ public class WebApp {
     this.roles.forEach((role) -> rolesList.add(role.getERole().name()));
     return rolesList;
   }
+
+
+  public Set<Role> getRequiredRoles() {
+
+    Set<Role> roles = new HashSet<Role>();
+
+
+    if (this.eWebApp != null) {
+      switch (this.eWebApp) {
+        case WA_GCCS:
+          roles.add(new Role(ERole.SupervisorAdmin));
+          roles.add(new Role(ERole.Admin));
+          roles.add(new Role(ERole.SupervisorMonitor));
+          break;
+        case WA_ACCREALTIME:
+          roles.add(new Role(ERole.SupervisorAdmin));
+          roles.add(new Role(ERole.Admin));
+          roles.add(new Role(ERole.SupervisorMonitor));
+          break;
+        case WA_AGENT:
+          roles.add(new Role(ERole.User));
+          break;
+        case WA_ADMIN:
+          roles.add(new Role(ERole.SupervisorAdmin));
+          roles.add(new Role(ERole.Admin));
+          break;
+        default:
+          roles.add(new Role(ERole.User));
+      }
+    }
+    else {
+      roles.add(new Role(ERole.User));
+    }
+
+    return roles;
+
+  }
+
 }

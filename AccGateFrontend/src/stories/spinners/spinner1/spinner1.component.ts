@@ -1,19 +1,11 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'storybook-button-apps',
-  templateUrl: './button-apps.component.html',
-  styleUrls: ['./button-apps.component.scss']
+  selector: 'storybook-spinner1',
+  templateUrl: './spinner1.component.html',
+  styleUrls: ['./spinner1.component.css']
 })
-export class ButtonAppsComponent {
-
-  /**
-   * Is this the principal call to action on the login-main?
-   */
-  @Input()
-  isDisabled: boolean = false;
-
-
+export class Spinner1Component {
   /**
    * Is this the principal call to action on the login-main?
    */
@@ -33,12 +25,6 @@ export class ButtonAppsComponent {
   size: 'small' | 'medium' | 'large' = 'medium';
 
   /**
-   * What application should the button linked to?
-   */
-  @Input()
-  application: 'Agent' | 'WebRT' | 'Script-Designer' | 'Admin' | 'Aeonix-Admin' = 'Admin';
-
-  /**
    * Button contents
    *
    * @required
@@ -53,9 +39,9 @@ export class ButtonAppsComponent {
   onClick = new EventEmitter<Event>();
 
   public get classes(): string[] {
-    const mode = this.primary ? 'storybook-button-apps--primary' : 'storybook-button-apps--secondary';
+    const mode = this.primary ? 'storybook-button-ex--primary' : 'storybook-button-ex--secondary';
 
-    return ['storybook-button-apps', `storybook-button-apps--${this.application}`, mode];
+    return ['storybook-button-ex', `storybook-button-ex--${this.size}`, mode];
   }
 
 

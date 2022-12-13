@@ -15,11 +15,15 @@
   [isNotify]="this.isNotify()"
   header="{{'Your password will expire in ' + this.passExp +' Days.'}}"
   (actionButton)="openReplacePassForm()"
-  (click)="this.setPassExpAlertData()">
+  (click)="this.setPermittedWebAppList()">
 </storybook-avatar>
+
+<!--this.setPassExpAlertData() -->
 
 
 <storybook-app-menu
+  [profileApps]="permittedWebAppList"
+  [isLoading]="isLoading"
   (openNewWinForApp)="openNewWinForApp($event)"
   (openNewTabForApp)="openNewTabForApp($event)">
 </storybook-app-menu>

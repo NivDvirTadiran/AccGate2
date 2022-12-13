@@ -1,5 +1,5 @@
-<div id="button-apps" class="container">
-<div id="circle" class="circle">
+<button id="button-apps" class="container"  [disabled]="isDisabled"  >
+<div id="circle" class="circle"   >
 
 <img (click)="onClick.emit($event)" [ngClass]="classes" [ngStyle]="{ 'background-color': backgroundColor }"
    src="./assets/images/{{application?.toString()}}.png" class="Apps-Button-Icon center"  alt="apps-button-icon"/>
@@ -13,4 +13,4 @@
   </div>
 </div>
 
-</div>
+</button>

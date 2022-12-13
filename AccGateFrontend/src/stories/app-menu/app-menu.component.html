@@ -7,18 +7,19 @@
     <div class="Aeonix-App-Center">
       <a>Aeonix App Center</a>
     </div>
+    <div><storybook-spinner1  *ngIf="isLoading"></storybook-spinner1></div>
 
     <div class="grid-container">
-      <div class="item1"><storybook-button-apps application="Agent" label="Continue" type="button"
-        id="openNewAgentTab" (click)='this.openNewWinForApp.emit(["AGENT","/accAgent/"])' ></storybook-button-apps></div>
-      <div class="item2"><storybook-button-apps application="WebRT" label="Continue" type="button"
+      <div class="item1"><storybook-button-apps application="Agent" label="Continue" type="button" [isDisabled]="!profileApps?.agent"
+        id="openNewAgentTab" (click)='this.openNewWinForApp.emit(["AGENT","/accAgent/"])'  ></storybook-button-apps></div>
+      <div class="item2"><storybook-button-apps application="WebRT" label="Continue" type="button" [isDisabled]="!profileApps?.realtime"
         id="openNewWebRTTab" (click)='this.openNewTabForApp.emit(["ACCREALTIME","/accRealTime/"])' ></storybook-button-apps></div>
-      <div class="item3"><storybook-button-apps application="GCCS" label="Continue" type="button"
+      <div class="item3"><storybook-button-apps application="Script-Designer" label="Continue" type="button" [isDisabled]="!profileApps?.scriptDesigner"
         id="openNewGccsTab" (click)='this.openNewTabForApp.emit(["GCCS","/accGCCS/"])' ></storybook-button-apps></div>
-      <div class="item4"><storybook-button-apps application="Admin" label="Continue" type="button"
+      <div class="item4"><storybook-button-apps application="Admin" label="Continue" type="button" [isDisabled]="!profileApps?.admin"
         ></storybook-button-apps></div>
-      <div class="item5"><storybook-button-apps application="GCCS" label="Continue" type="button"
-        id="openNewGccsTab2" (click)='this.openNewTabForApp.emit(["GCCS","/accGCCS/"])'></storybook-button-apps></div>
+      <div class="item5"><storybook-button-apps application="Aeonix-Admin" label="Continue" type="button" [isDisabled]="!profileApps?.aeonixAdmin"
+        id="openNewGccsTab2" (click)='this.openNewTabForApp.emit(["GCCS","/accGCCS/"])' ></storybook-button-apps></div>
     </div>
 
 

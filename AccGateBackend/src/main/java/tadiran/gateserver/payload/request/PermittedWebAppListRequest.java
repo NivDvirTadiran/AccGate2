@@ -1,7 +1,7 @@
 package tadiran.gateserver.payload.request;
 import javax.validation.constraints.NotBlank;
 
-public class PassExpDateRequest {
+public class PermittedWebAppListRequest {
     @NotBlank
     private String accessToken;
 

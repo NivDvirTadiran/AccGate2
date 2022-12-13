@@ -147,6 +147,14 @@ export class StoryInputComponent implements OnInit{
           })
           break;
 
+        case "requiresSpecialChars":
+          actionInputs.push({
+            "conditionName": "requiresSpecialCharsValid",
+            "presentingMessage": ' At least 1 special character',
+            "isFulfilled": !(this.requiresSpecialCharsValid || !(this.currentForm?.controls["password"].value.length > 0))
+          })
+          break;
+
         case "requiresEmail":
           actionInputs.push({
             "conditionName": "requiresEmailValid",

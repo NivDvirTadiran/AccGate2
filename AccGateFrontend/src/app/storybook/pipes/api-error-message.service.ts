@@ -19,7 +19,8 @@ export class ApiErrorMessageService {
         "VALIDATION_FAILED": "* A registry process un valid!",
         "Bad credentials": "Incorrect user name or password",
         "Password matches one of %1$s previous passwords.": "Try again with a password you haven’t used before",
-        "Passwords do not match!": "* Passwords do not match!"
+        "Passwords do not match!": "* Passwords do not match!",
+        "Error: Email is already in use!": "Email is already in use!",
       },
     },
     eng: {

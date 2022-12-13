@@ -37,32 +37,34 @@ import {MdbPopoverModule} from "mdb-angular-ui-kit/popover";
 import {MatButtonModule} from "@angular/material/button";
 import {ButtonExclamationMarkComponent} from "../../stories/buttons/button-exclamation-mark/button-exclamation-mark.component"
 import {ApiErrorMessageService} from "./pipes/api-error-message.service";
+import {Spinner1Component} from "../../stories/spinners/spinner1/spinner1.component";
 
 
 
 
 
 @NgModule({
-  declarations: [
-    ButtonGlobeComponent, Background1Component, ButtonTadiranComponent, ButtonLanguageComponent,
-    ButtonFortestComponent,
-    CardComponent,
-    LoginFormComponent, LoginFormComponent, RegistryFormComponent,
-    ButtonContinueComponent, ButtonExComponent, ButtonAppsComponent, ButtonSuccessfullyComponent, Button,
-    AppMenuComponent,
-    StoryInputComponent,
-    HighlightDirective,
-    ReplacePassFormComponent,
-    PassStrengthComponent,
-    ApiErrorMessagePipe,
-    AvatarComponent,
-    DynamicCompDirective,
-    ActionAvatarComponent , PopoverDirective, BubbleAvatarComponent,
-    ActionInputComponent, PopoverInputDirective, BubbleInputComponent,
-    ButtonExclamationMarkComponent,
+    declarations: [
+        ButtonGlobeComponent, Background1Component, ButtonTadiranComponent, ButtonLanguageComponent,
+        ButtonFortestComponent,
+        CardComponent,
+        LoginFormComponent, LoginFormComponent, RegistryFormComponent,
+        ButtonContinueComponent, ButtonExComponent, ButtonAppsComponent, ButtonSuccessfullyComponent, Button,
+        AppMenuComponent,
+        StoryInputComponent,
+        HighlightDirective,
+        ReplacePassFormComponent,
+        PassStrengthComponent,
+        ApiErrorMessagePipe,
+        AvatarComponent,
+        DynamicCompDirective,
+        ActionAvatarComponent, PopoverDirective, BubbleAvatarComponent,
+        ActionInputComponent, PopoverInputDirective, BubbleInputComponent,
+        ButtonExclamationMarkComponent,
+        Spinner1Component,
 
 
-  ],
+    ],
   imports: [
     CommonModule,
     FormsModule, ReactiveFormsModule, MdbPopoverModule, MatButtonModule,
@@ -86,6 +88,7 @@ import {ApiErrorMessageService} from "./pipes/api-error-message.service";
     ActionAvatarComponent   , PopoverDirective, BubbleAvatarComponent,
     ActionInputComponent, PopoverInputDirective, BubbleInputComponent,
     ButtonExclamationMarkComponent,
+    Spinner1Component,
 
 
 

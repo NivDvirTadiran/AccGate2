@@ -107,6 +107,10 @@ public class User {
   public Set<Role> getRoles() {
     Set<Role> roles = new HashSet<Role>();
     if (this.getSup() != null) {
+      if (this.getSup().getAgentId() != null) {
+        roles.add(new Role(ERole.User));
+      }
+
       switch (this.getSup().getSupLevel()) {
         case SUPERVISOR_ADMIN:
           roles.add(new Role(ERole.SupervisorAdmin));
@@ -118,7 +122,7 @@ public class User {
           roles.add(new Role(ERole.SupervisorMonitor));
       }
     }
-    else {
+    else if (this.getAgent() != null) {
       roles.add(new Role(ERole.User));
     }
     return roles;

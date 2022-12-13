@@ -51,16 +51,16 @@ export class ReplacePassForm2Component {
       password: new FormControl('', Validators.compose([
         Validators.minLength(8),
         PasswordValidators.patternValidator(new RegExp("(?=.*[0-9])"), {requiresDigit: true}),
-        PasswordValidators.patternValidator(new RegExp("(?=.[A-Z])"), {requiresUppercase: true}),
-        PasswordValidators.patternValidator(new RegExp("(?=.[a-z])"), {requiresLowercase: true} ),
+        PasswordValidators.patternValidator(new RegExp("(?=.*[A-Z])"), {requiresUppercase: true}),
+        PasswordValidators.patternValidator(new RegExp("(?=.*[a-z])"), {requiresLowercase: true} ),
         PasswordValidators.patternValidator(new RegExp("(?=.*[$@^!%*?&])"), {requiresSpecialChars: true})
       ])),
       confirmPassword: new FormControl(null, [
         Validators.minLength(8),
         PasswordValidators.patternValidator(new RegExp("(?=.*[0-9])"), {requiresDigit: true}),
-        PasswordValidators.patternValidator(new RegExp("(?=.[A-Z])"), {requiresUppercase: true}),
-        PasswordValidators.patternValidator(new RegExp("(?=.[a-z])"), {requiresLowercase: true}),
-        PasswordValidators.patternValidator(new RegExp("(?=.*[$@^!%*?&])"), {requiresSpecialChars: true})
+        PasswordValidators.patternValidator(new RegExp("(?=.*[A-Z])"), {requiresUppercase: true}),
+        PasswordValidators.patternValidator(new RegExp("(?=.*[a-z])"), {requiresLowercase: true}),
+        PasswordValidators.patternValidator(new RegExp("(?=.*[$@^!%*?&#><{}()+~])"), {requiresSpecialChars: true})
       ])
     });
   }

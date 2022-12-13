@@ -29,9 +29,16 @@ export default class Profile2Component implements OnInit {
   refreshToken: any;
   windowObjectReference: any;
   refreshTokenSubject: BehaviorSubject<any> = new BehaviorSubject<any>(null);
-  private isRefreshing = false;
+  public isLoading = false;
   public appConfig: any;
   private TOKEN_KEY: string;
+  permittedWebAppList = {
+    realtime: false,
+    scriptDesigner: false,
+    agent: false,
+    aeonixAdmin: false,
+    admin: false
+  };
 
 
   isNotify(): boolean {
@@ -81,6 +88,7 @@ export default class Profile2Component implements OnInit {
     this.accessToken = this.currentUser.accessToken;
     this.refreshToken = this.currentUser.refreshToken;
     this.setPassExpAlertData();
+    this.setPermittedWebAppList();
   }
 
   setPassExpAlertData(): void {
@@ -99,6 +107,21 @@ export default class Profile2Component implements OnInit {
 
   }
 
+
+  setPermittedWebAppList(): void {
+
+    const token = this.token.getToken();
+    if (token)
+      this.authService.getPermittedWebAppList(token).subscribe(permittedWebAppList => {
+        this.permittedWebAppList=(permittedWebAppList);
+        console.log('Permitted web apps list is received from server.');
+      }, (err) => {
+        console.log('Can not get server data defining permitted web apps for user');
+        return throwError(err);
+      });
+
+  }
+
   openapp(): void {
     console.log('window.location.origin.toString():  '+window.location.origin.toString());
 
@@ -112,12 +135,13 @@ export default class Profile2Component implements OnInit {
 
   public forseRefreshToken(): void {
 
-    if (!this.isRefreshing) {
+    if (!this.isLoading) {
+      this.isLoading = true;
       const token = this.token.getRefreshToken();
       if (token)
         this.authService.refreshToken(token).subscribe(
           data => {
-            this.isRefreshing = false;
+            this.isLoading = false;
             this.token.saveToken(data.accessToken);
             this.token.saveRefreshToken(data.refreshToken);
             this.refreshTokenSubject.next(data.accessToken);
@@ -126,7 +150,7 @@ export default class Profile2Component implements OnInit {
             this.refreshToken = this.token.getRefreshToken();
           },
           (err) => {
-            this.isRefreshing = false;
+            this.isLoading = false;
 
             this.token.signOut();
             return throwError(err);
@@ -141,14 +165,15 @@ export default class Profile2Component implements OnInit {
     var newRefreshToken = "";
     var newCurrentUser = "";
 
-    if (!this.isRefreshing) {
+    if (!this.isLoading) {
+      this.isLoading = true;
       const token = this.token.getRefreshToken();
       if (token)
         this.authService.webapptab(token, webapp)
           .subscribe(
             data => {
               let promise = new Promise<void>((resolve, reject) => {
-                this.isRefreshing = false;
+                this.isLoading = false;
                 newAccessToken = (data.accessToken);
                 newRefreshToken = (data.refreshToken);
                 newCurrentUser = (data);
@@ -162,10 +187,13 @@ export default class Profile2Component implements OnInit {
                 .then(result => { this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.TOKEN_KEY, newAccessToken);
                     this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.REFRESHTOKEN_KEY, newRefreshToken);
                     this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.USER_KEY, JSON.stringify(newCurrentUser));},
-                  (err) => { this.isRefreshing = false;
+                  (err) => { this.isLoading = false;
                     return throwError(err);})});
             },
-            (err) => {return throwError(err);})
+            (err) => {
+              this.isLoading = false;
+              return throwError(err);
+            })
     }
   }
 
@@ -177,14 +205,15 @@ export default class Profile2Component implements OnInit {
     var newRefreshToken = "";
     var newCurrentUser = "";
 
-    if (!this.isRefreshing) {
+    if (!this.isLoading) {
+      this.isLoading = true;
       const token = this.token.getRefreshToken();
       if (token)
         this.authService.webapptab(token, webapp)
           .subscribe(
             data => {
               let promise = new Promise<void>((resolve, reject) => {
-                this.isRefreshing = false;
+                this.isLoading = false;
                 newAccessToken = (data.accessToken);
                 newRefreshToken = (data.refreshToken);
                 newCurrentUser = (data);
@@ -198,14 +227,13 @@ export default class Profile2Component implements OnInit {
                 .then(result => { this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.TOKEN_KEY, newAccessToken);
                     this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.REFRESHTOKEN_KEY, newRefreshToken);
                     this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.USER_KEY, JSON.stringify(newCurrentUser));},
-            (err) => { this.isRefreshing = false;
+            (err) => { this.isLoading = false;
               return throwError(err);})
-      /*this.isRefreshing = false;
-      newAccessToken = (data.accessToken);
-      newRefreshToken = (data.refreshToken);
-      newCurrentUser = (data);*/
     },
-    (error) => {return throwError(error.error);})
+    (error) => {
+              this.isLoading = false;
+              return throwError(error.error);
+            })
     }
   }
 

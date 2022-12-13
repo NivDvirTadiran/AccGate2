@@ -75,7 +75,14 @@ export class AuthService {
 
   getPassExpireDate(token: string): Observable<any> {
     return this.http.post(AUTH_API + 'passexpdate', {
-      refreshToken: token,
+      accessToken: token,
+    }, httpOptions);
+  }
+
+
+  getPermittedWebAppList(token: string): Observable<any> {
+    return this.http.post(AUTH_API + 'permitwebapplist', {
+      accessToken: token,
     }, httpOptions);
   }
 }
