@@ -125,6 +125,13 @@ public class AuthController {
                           user.getRolesList()));
   }
 
+  @PostMapping("/signout")
+  public ResponseEntity<?> unAuthenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
+    return ResponseEntity
+            .badRequest()
+            .body(new MessageResponse("Error: A registry process should be made!"));
+  }
+
   //@CrossOrigin(origins = "*", maxAge = 3600)
   //@PreAuthorize("hasRole('ADMIN')")
   @PostMapping("/signupadmin")

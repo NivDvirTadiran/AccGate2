@@ -4,6 +4,8 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import tadiran.gateserver.models.Agent;
 import tadiran.gateserver.models.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,6 +14,7 @@ import org.springframework.stereotype.Component;
 
 import tadiran.gateserver.models.EWebApp;
 import io.jsonwebtoken.*;
+import tadiran.gateserver.repository.AgentRepository;
 
 @Component
 public class JwtUtils {
@@ -23,6 +26,9 @@ public class JwtUtils {
   @Value("${tadiran.gate.jwtExpirationMin}") //@Value("${tadiran.gate.jwtExpirationMs}")
   private Long jwtExpirationMin;
 
+  @Autowired
+  private AgentRepository agentRepository;
+
   public String generateJwtToken(Long tokenId, User user, EWebApp webApp) {
     return generateToken(tokenId, user, webApp);
   }
@@ -32,12 +38,26 @@ public class JwtUtils {
     Instant issuedAt = Instant.now().truncatedTo(ChronoUnit.SECONDS);
     Instant expiration = issuedAt.plus(jwtExpirationMin, ChronoUnit.MINUTES);
 
+    String agentNo = "";
+
+    if (user.getSup() != null && user.getSup().getAgentId() != null ) {
+      int linkedAgentId = user.getSup().getAgentId();
+      if (agentRepository.existsByid(linkedAgentId)) {
+        Agent linkedAgent = agentRepository.findById(linkedAgentId).get();
+        agentNo = linkedAgent.getANumber();
+      }
+    }
+    if (user.getAgent() != null) {
+      agentNo = user.getAgent().getANumber();
+    }
+
     return Jwts.builder()
             .setSubject(user.getUsername())
             .claim("id",user.getId())
             .claim("email",user.getEmail())
             .claim("roles",user.getRolesList())
             .claim("WebApp",webApp)
+            .claim("agentNo",agentNo)
             .setIssuedAt(Date.from(issuedAt))
             .setExpiration(Date.from(expiration))
             .signWith(SignatureAlgorithm.HS512, jwtSecret)

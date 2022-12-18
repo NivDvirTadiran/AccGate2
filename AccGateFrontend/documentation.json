@@ -292,12 +292,12 @@
         },
         {
             "name": "AeonixAppCenterForm",
-            "id": "interface-AeonixAppCenterForm-86ad3744834b069dc62ac77a096702a13e7d62f4721b033273e4d9b0bd8fca06723833e9c04b001b5b27672692da49b861ce472fe119a26a92f9b3beb6ab3a8b",
+            "id": "interface-AeonixAppCenterForm-f6b03d25fc83ca9cf5ad7681f0cdf61a77eedb42e6cbe9fa7fc5eb0d386ec96ff25f6469c963e51cb1c3e1326bf7b0df1349ca78a194d0695152bfe488b36ced",
             "file": "src/stories/app-menu/app-menu.component.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';\r\nimport { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';\r\nimport { StoryInput } from \"../inputs/story-input.model\";\r\nimport { AuthService } from '../../app/_services/auth.service';\r\nimport {MdbModalRef} from \"mdb-angular-ui-kit/modal\";\r\n//import {Profile2Expose} from \"src/app/profile2/profile2.interface\";\r\n\r\nexport interface Profile2Expose {\r\n  agent: boolean;\r\n  realtime: boolean;\r\n  scriptDesigner: boolean;\r\n  admin: boolean;\r\n  aeonixAdmin: boolean;\r\n}\r\n\r\nexport interface AeonixAppCenterForm {\r\n  username: null, //new FormControl('ea2', Validators.min(2)),\r\n  password: null  //new FormControl('zaqwsx', Validators.min(2))\r\n}\r\n\r\n\r\n@Component({\r\n  selector: 'storybook-app-menu',\r\n  templateUrl: './app-menu.component.html',\r\n  styleUrls: ['./app-menu.css'],\r\n})\r\nexport class AppMenuComponent implements OnInit {\r\n\r\n  /*form: AeonixAppCenterForm = {\r\n    username: null,     //new FormControl('ea2', Validators.min(2)),\r\n    password: null      //new FormControl('zaqwsx', Validators.min(2))\r\n  };*/\r\n\r\n\r\n\r\n  @Input() formService!: AuthService;\r\n\r\n  credentials: any = {\r\n    username: null,\r\n    password: null\r\n  };\r\n\r\n  isLoginFailed = false;\r\n  loginErrorMessage = '';\r\n\r\n  openReplacePassword() {\r\n    //this.replacePassFormService.open(ReplacePassForm2Component);\r\n  }\r\n\r\n  constructor() {\r\n    this.validationForm = new FormGroup({\r\n      username: new FormControl('Telecom2', Validators.minLength(2)),\r\n      //email: new FormControl(null, Validators.email),\r\n      password: new FormControl('T@diran2022', Validators.minLength(2)),\r\n      //phone: new FormControl(null, Validators.pattern(new RegExp(\"[0-9 ]{12}\")))\r\n    });\r\n  }\r\n\r\n  /**\r\n   * @ignore\r\n   * Component property to define ordering of tasks\r\n   */\r\n  storyInputsInOrder: StoryInput[] = [];\r\n\r\n  validationForm: FormGroup;\r\n\r\n  @Input() isLoggedIn = false;\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output() onPinInput: EventEmitter<any> = new EventEmitter();\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output() onArchiveInput: EventEmitter<any> = new EventEmitter();\r\n\r\n  @Output() openNewWinForApp = new EventEmitter<any>();\r\n\r\n  @Output() openNewTabForApp = new EventEmitter<any>();\r\n\r\n  @Input() profileApps?: any;\r\n\r\n\r\n  @Input()\r\n  set storyInputs(arr: StoryInput[]) {\r\n    const initialTasks = [\r\n      ...arr.filter(t => t.state === 'USER NAME'),\r\n      ...arr.filter(t => t.state !== 'USER NAME'),\r\n    ];\r\n    const filteredTasks = initialTasks.filter(\r\n      t => t.type === 'password' || t.state === 'USER NAME'\r\n    );\r\n    this.storyInputsInOrder = filteredTasks.filter(\r\n      t => t.type === 'password' || t.state === 'USER NAME'\r\n    );\r\n  }\r\n\r\n  onSubmit(): void {\r\n    console.warn('Login Request!');\r\n    this.credentials.username=this.validationForm.get('username')?.value;\r\n    this.credentials.password=this.validationForm.get('password')?.value;\r\n\r\n    this.openNewWinForApp.emit(this.credentials);\r\n  }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n\r\n  get userName(): AbstractControl {\r\n    return this.validationForm.get('username')!;\r\n  }\r\n\r\n  get email(): AbstractControl {\r\n    return this.validationForm.get('email')!;\r\n  }\r\n\r\n  get password(): AbstractControl {\r\n    return this.validationForm.get('password')!;\r\n  }\r\n\r\n  get phone(): AbstractControl {\r\n    return this.validationForm.get('phone')!;\r\n  }\r\n\r\n\r\n}\r\n\r\n",
+            "sourceCode": "import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';\r\nimport { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';\r\nimport { StoryInput } from \"../inputs/story-input.model\";\r\nimport { AuthService } from '../../app/_services/auth.service';\r\nimport {MdbModalRef} from \"mdb-angular-ui-kit/modal\";\r\n//import {Profile2Expose} from \"src/app/profile2/profile2.interface\";\r\n\r\nexport interface Profile2Expose {\r\n  agent: boolean;\r\n  realtime: boolean;\r\n  scriptDesigner: boolean;\r\n  admin: boolean;\r\n  aeonixAdmin: boolean;\r\n}\r\n\r\nexport interface AeonixAppCenterForm {\r\n  username: null, //new FormControl('ea2', Validators.min(2)),\r\n  password: null  //new FormControl('zaqwsx', Validators.min(2))\r\n}\r\n\r\n\r\n@Component({\r\n  selector: 'storybook-app-menu',\r\n  templateUrl: './app-menu.component.html',\r\n  styleUrls: ['./app-menu.css'],\r\n})\r\nexport class AppMenuComponent implements OnInit {\r\n\r\n  /*form: AeonixAppCenterForm = {\r\n    username: null,     //new FormControl('ea2', Validators.min(2)),\r\n    password: null      //new FormControl('zaqwsx', Validators.min(2))\r\n  };*/\r\n\r\n\r\n\r\n  @Input() formService!: AuthService;\r\n\r\n  credentials: any = {\r\n    username: null,\r\n    password: null\r\n  };\r\n\r\n  isLoginFailed = false;\r\n  loginErrorMessage = '';\r\n\r\n  openReplacePassword() {\r\n    //this.replacePassFormService.open(ReplacePassForm2Component);\r\n  }\r\n\r\n  constructor() {\r\n    this.validationForm = new FormGroup({\r\n      username: new FormControl('Telecom2', Validators.minLength(2)),\r\n      //email: new FormControl(null, Validators.email),\r\n      password: new FormControl('T@diran2022', Validators.minLength(2)),\r\n      //phone: new FormControl(null, Validators.pattern(new RegExp(\"[0-9 ]{12}\")))\r\n    });\r\n  }\r\n\r\n  /**\r\n   * @ignore\r\n   * Component property to define ordering of tasks\r\n   */\r\n  storyInputsInOrder: StoryInput[] = [];\r\n\r\n  validationForm: FormGroup;\r\n\r\n  @Input() isLoggedIn = false;\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output() onPinInput: EventEmitter<any> = new EventEmitter();\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output() onArchiveInput: EventEmitter<any> = new EventEmitter();\r\n\r\n  @Output() openNewWinForApp = new EventEmitter<any>();\r\n\r\n  @Output() openNewTabForApp = new EventEmitter<any>();\r\n\r\n  @Input() profileApps?: any;\r\n\r\n  @Input() isLoading: boolean = false;\r\n\r\n\r\n  @Input()\r\n  set storyInputs(arr: StoryInput[]) {\r\n    const initialTasks = [\r\n      ...arr.filter(t => t.state === 'USER NAME'),\r\n      ...arr.filter(t => t.state !== 'USER NAME'),\r\n    ];\r\n    const filteredTasks = initialTasks.filter(\r\n      t => t.type === 'password' || t.state === 'USER NAME'\r\n    );\r\n    this.storyInputsInOrder = filteredTasks.filter(\r\n      t => t.type === 'password' || t.state === 'USER NAME'\r\n    );\r\n  }\r\n\r\n  onSubmit(): void {\r\n    console.warn('Login Request!');\r\n    this.credentials.username=this.validationForm.get('username')?.value;\r\n    this.credentials.password=this.validationForm.get('password')?.value;\r\n\r\n    this.openNewWinForApp.emit(this.credentials);\r\n  }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n\r\n  get userName(): AbstractControl {\r\n    return this.validationForm.get('username')!;\r\n  }\r\n\r\n  get email(): AbstractControl {\r\n    return this.validationForm.get('email')!;\r\n  }\r\n\r\n  get password(): AbstractControl {\r\n    return this.validationForm.get('password')!;\r\n  }\r\n\r\n  get phone(): AbstractControl {\r\n    return this.validationForm.get('phone')!;\r\n  }\r\n\r\n\r\n}\r\n\r\n",
             "properties": [
                 {
                     "name": "password",
@@ -359,12 +359,12 @@
         },
         {
             "name": "DialogData",
-            "id": "interface-DialogData-f32d8a64ff6c1ffb7a031847154400aa4490d9294e61c90959dea72871f4c64f33b09e07fe921c1beacdef780b87aa177ac144c77284c312e0a8cce6bb24797a",
+            "id": "interface-DialogData-54568c27803b9a286644d571cf9bbd8cd53029681efe646d2f90695765178564b6779f72a7f794a1c97014b9d5c05cec4221a864ac715d60fc9eb297c238590d",
             "file": "src/app/profile2/profile2.component.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\nimport { StoryInput } from \"../../stories/inputs/story-input.model\";\nimport {AuthService} from \"../_services/auth.service\";\nimport {AbstractControl, FormGroup} from \"@angular/forms\";\nimport {TokenStorageService} from \"../_services/token-storage.service\";\nimport {Router} from \"@angular/router\";\nimport {AppConfig} from \"../app.config\";\nimport {BehaviorSubject, throwError} from \"rxjs\";\nimport {UserService} from \"../_services/user.service\";\nimport {MatDialog} from \"@angular/material/dialog\";\nimport {ReplacePassForm2Component} from \"../login2/login-main/replace-pass-form2/replace-pass-form2.component\";\n\n\nexport interface DialogData {\n  username: string;\n  password: string;\n}\n\n\n@Component({\n  selector: 'profile2',\n  templateUrl: './profile2.component.html',\n  styleUrls: ['./profile2.component.scss']\n})\nexport default class Profile2Component implements OnInit {\n\n  currentUser: any;\n  accessToken: any;\n  refreshToken: any;\n  windowObjectReference: any;\n  refreshTokenSubject: BehaviorSubject<any> = new BehaviorSubject<any>(null);\n  private isRefreshing = false;\n  public appConfig: any;\n  private TOKEN_KEY: string;\n  permittedWebAppList = {\n    realtime: false,\n    scriptDesigner: false,\n    agent: false,\n    aeonixAdmin: false,\n    admin: false\n  };\n\n\n  isNotify(): boolean {\n   return (this.passExp < this.previousAlertPassExp);\n  }\n\n\n  constructor(private authService: AuthService,\n              private token: TokenStorageService,\n              private router: Router,\n              public replacePassFormDialog: MatDialog) {\n    this.TOKEN_KEY = AppConfig.endpoints.TOKEN_KEY;\n  }\n\n\n  openReplacePassForm() {\n    const replacePassFormDialogRef = this.replacePassFormDialog.open(ReplacePassForm2Component, {\n      data: {username: this.currentUser , password: ''},\n    });\n\n    replacePassFormDialogRef.beforeClosed().subscribe(result => {\n        console.log('The replace password form dialog before closed');\n      },\n      err => {\n        console.log(err.error.message);\n      });\n\n\n    replacePassFormDialogRef.afterClosed().subscribe(result => {\n      console.log('The replace password form dialog after closed');\n      if (result.message === 'Replace Password Complete') {\n        console.log('Replace Password Complete');\n        this.setPassExpAlertData();\n      }\n    });\n\n    return replacePassFormDialogRef.afterClosed().toPromise();\n  }\n\n\n  public passExp: number = 0; // By Days\n  public previousAlertPassExp: number = 0; // By Days\n\n\n  ngOnInit(): void {\n    this.currentUser = this.token.getUser();\n    this.accessToken = this.currentUser.accessToken;\n    this.refreshToken = this.currentUser.refreshToken;\n    this.setPassExpAlertData();\n    this.setPermittedWebAppList();\n  }\n\n  setPassExpAlertData(): void {\n\n    const token = this.token.getToken();\n    if (token)\n      this.authService.getPassExpireDate(token).subscribe(data => {\n        this.passExp = data.passExp;\n        this.previousAlertPassExp = data.previousAlertPassExp;\n        console.log('Password Expire Date: '+this.passExp);\n        console.log('previous Alert To Password Expire Date: '+this.previousAlertPassExp);\n      }, (err) => {\n        console.log('Password Expire Date: update failed');\n        return throwError(err);\n      });\n\n  }\n\n\n  setPermittedWebAppList(): void {\n\n    console.log('erase me ');\n    const token = this.token.getToken();\n    if (token)\n      this.authService.getPermittedWebAppList(token).subscribe(permittedWebAppList => {\n        this.permittedWebAppList=(permittedWebAppList);\n        console.log('Permitted web apps list is received from server.');\n      }, (err) => {\n        console.log('Can not get server data defining permitted web apps for user');\n        return throwError(err);\n      });\n\n  }\n\n  openapp(): void {\n    console.log('window.location.origin.toString():  '+window.location.origin.toString());\n\n    this.router.navigate([]).then(result => { this.windowObjectReference = window.open(AppConfig.accServer.ACCWEBServers+'/accGCCS/'/*window.location.origin.toString()+\"/profile\"*/); });\n    console.log('window.location.origin.toString():  '+ this.windowObjectReference.window.document.getElementById(\"profile_title\").innerHTML);\n    var promise = new Promise((resolve, reject) => {this.windowObjectReference.window.document.getElementById(\"profile_title\").innerHTML = \"new title\";});\n\n    console.log('window.location.origin.toString():  '+ this.windowObjectReference.window.document.getElementById(\"profile_title\").innerHTML);\n\n  }\n\n  public forseRefreshToken(): void {\n\n    if (!this.isRefreshing) {\n      const token = this.token.getRefreshToken();\n      if (token)\n        this.authService.refreshToken(token).subscribe(\n          data => {\n            this.isRefreshing = false;\n            this.token.saveToken(data.accessToken);\n            this.token.saveRefreshToken(data.refreshToken);\n            this.refreshTokenSubject.next(data.accessToken);\n            this.currentUser = this.token.getUser();\n            this.accessToken = this.token.getToken();\n            this.refreshToken = this.token.getRefreshToken();\n          },\n          (err) => {\n            this.isRefreshing = false;\n\n            this.token.signOut();\n            return throwError(err);\n          }\n        );\n    }\n  }\n\n  public openNewTabForApp(appRequest: string[]): void {\n    const [ webapp, webappURLPrefix ] = appRequest.values();\n    var newAccessToken = \"\";\n    var newRefreshToken = \"\";\n    var newCurrentUser = \"\";\n\n    if (!this.isRefreshing) {\n      const token = this.token.getRefreshToken();\n      if (token)\n        this.authService.webapptab(token, webapp)\n          .subscribe(\n            data => {\n              let promise = new Promise<void>((resolve, reject) => {\n                this.isRefreshing = false;\n                newAccessToken = (data.accessToken);\n                newRefreshToken = (data.refreshToken);\n                newCurrentUser = (data);\n                setTimeout(() => {\n                  console.log(\"Failed open new tab\");\n                  resolve();//() => {resolve();}\n                }, 5000);\n              })\n                .then(() => {this.router.navigate([])\n                .then(result => { this.windowObjectReference = window.open(AppConfig.accServer.ACCWEBServers+webappURLPrefix);})\n                .then(result => { this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.TOKEN_KEY, newAccessToken);\n                    this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.REFRESHTOKEN_KEY, newRefreshToken);\n                    this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.USER_KEY, JSON.stringify(newCurrentUser));},\n                  (err) => { this.isRefreshing = false;\n                    return throwError(err);})});\n            },\n            (err) => {return throwError(err);})\n    }\n  }\n\n\n  public openNewWinForApp(appRequest: string[]): void {\n    /*webapp: string, webappURLPrefix: string*/\n    const [ webapp, webappURLPrefix ] = appRequest.values();\n    var newAccessToken = \"\";\n    var newRefreshToken = \"\";\n    var newCurrentUser = \"\";\n\n    if (!this.isRefreshing) {\n      const token = this.token.getRefreshToken();\n      if (token)\n        this.authService.webapptab(token, webapp)\n          .subscribe(\n            data => {\n              let promise = new Promise<void>((resolve, reject) => {\n                this.isRefreshing = false;\n                newAccessToken = (data.accessToken);\n                newRefreshToken = (data.refreshToken);\n                newCurrentUser = (data);\n                setTimeout(() => {\n                  console.log(\"Failed open new window\");\n                  resolve();//() => {resolve();}\n                }, 5000);\n              })\n              promise.then(result => { this.windowObjectReference = window.open(AppConfig.accServer.ACCWEBServers+webappURLPrefix+'start.html',\n                  'C-Sharpcorner', 'scrollbars=no');})\n                .then(result => { this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.TOKEN_KEY, newAccessToken);\n                    this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.REFRESHTOKEN_KEY, newRefreshToken);\n                    this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.USER_KEY, JSON.stringify(newCurrentUser));},\n            (err) => { this.isRefreshing = false;\n              return throwError(err);})\n      /*this.isRefreshing = false;\n      newAccessToken = (data.accessToken);\n      newRefreshToken = (data.refreshToken);\n      newCurrentUser = (data);*/\n    },\n    (error) => {return throwError(error.error);})\n    }\n  }\n\n}\n\n",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\nimport { StoryInput } from \"../../stories/inputs/story-input.model\";\nimport {AuthService} from \"../_services/auth.service\";\nimport {AbstractControl, FormGroup} from \"@angular/forms\";\nimport {TokenStorageService} from \"../_services/token-storage.service\";\nimport {Router} from \"@angular/router\";\nimport {AppConfig} from \"../app.config\";\nimport {BehaviorSubject, throwError} from \"rxjs\";\nimport {UserService} from \"../_services/user.service\";\nimport {MatDialog} from \"@angular/material/dialog\";\nimport {ReplacePassForm2Component} from \"../login2/login-main/replace-pass-form2/replace-pass-form2.component\";\n\n\nexport interface DialogData {\n  username: string;\n  password: string;\n}\n\n\n@Component({\n  selector: 'profile2',\n  templateUrl: './profile2.component.html',\n  styleUrls: ['./profile2.component.scss']\n})\nexport default class Profile2Component implements OnInit {\n\n  currentUser: any;\n  accessToken: any;\n  refreshToken: any;\n  windowObjectReference: any;\n  refreshTokenSubject: BehaviorSubject<any> = new BehaviorSubject<any>(null);\n  public isLoading = false;\n  public appConfig: any;\n  private TOKEN_KEY: string;\n  permittedWebAppList = {\n    realtime: false,\n    scriptDesigner: false,\n    agent: false,\n    aeonixAdmin: false,\n    admin: false\n  };\n\n\n  isNotify(): boolean {\n   return (this.passExp < this.previousAlertPassExp);\n  }\n\n\n  constructor(private authService: AuthService,\n              private token: TokenStorageService,\n              private router: Router,\n              public replacePassFormDialog: MatDialog) {\n    this.TOKEN_KEY = AppConfig.endpoints.TOKEN_KEY;\n  }\n\n\n  openReplacePassForm() {\n    const replacePassFormDialogRef = this.replacePassFormDialog.open(ReplacePassForm2Component, {\n      data: {username: this.currentUser , password: ''},\n    });\n\n    replacePassFormDialogRef.beforeClosed().subscribe(result => {\n        console.log('The replace password form dialog before closed');\n      },\n      err => {\n        console.log(err.error.message);\n      });\n\n\n    replacePassFormDialogRef.afterClosed().subscribe(result => {\n      console.log('The replace password form dialog after closed');\n      if (result.message === 'Replace Password Complete') {\n        console.log('Replace Password Complete');\n        this.setPassExpAlertData();\n      }\n    });\n\n    return replacePassFormDialogRef.afterClosed().toPromise();\n  }\n\n\n  public passExp: number = 0; // By Days\n  public previousAlertPassExp: number = 0; // By Days\n\n\n  ngOnInit(): void {\n    this.currentUser = this.token.getUser();\n    this.accessToken = this.currentUser.accessToken;\n    this.refreshToken = this.currentUser.refreshToken;\n    this.setPassExpAlertData();\n    this.setPermittedWebAppList();\n  }\n\n  setPassExpAlertData(): void {\n\n    const token = this.token.getToken();\n    if (token)\n      this.authService.getPassExpireDate(token).subscribe(data => {\n        this.passExp = data.passExp;\n        this.previousAlertPassExp = data.previousAlertPassExp;\n        console.log('Password Expire Date: '+this.passExp);\n        console.log('previous Alert To Password Expire Date: '+this.previousAlertPassExp);\n      }, (err) => {\n        console.log('Password Expire Date: update failed');\n        return throwError(err);\n      });\n\n  }\n\n\n  setPermittedWebAppList(): void {\n\n    const token = this.token.getToken();\n    if (token)\n      this.authService.getPermittedWebAppList(token).subscribe(permittedWebAppList => {\n        this.permittedWebAppList=(permittedWebAppList);\n        console.log('Permitted web apps list is received from server.');\n      }, (err) => {\n        console.log('Can not get server data defining permitted web apps for user');\n        return throwError(err);\n      });\n\n  }\n\n  openapp(): void {\n    console.log('window.location.origin.toString():  '+window.location.origin.toString());\n\n    this.router.navigate([]).then(result => { this.windowObjectReference = window.open(AppConfig.accServer.ACCWEBServers+'/accGCCS/'/*window.location.origin.toString()+\"/profile\"*/); });\n    console.log('window.location.origin.toString():  '+ this.windowObjectReference.window.document.getElementById(\"profile_title\").innerHTML);\n    var promise = new Promise((resolve, reject) => {this.windowObjectReference.window.document.getElementById(\"profile_title\").innerHTML = \"new title\";});\n\n    console.log('window.location.origin.toString():  '+ this.windowObjectReference.window.document.getElementById(\"profile_title\").innerHTML);\n\n  }\n\n  public forseRefreshToken(): void {\n\n    if (!this.isLoading) {\n      this.isLoading = true;\n      const token = this.token.getRefreshToken();\n      if (token)\n        this.authService.refreshToken(token).subscribe(\n          data => {\n            this.isLoading = false;\n            this.token.saveToken(data.accessToken);\n            this.token.saveRefreshToken(data.refreshToken);\n            this.refreshTokenSubject.next(data.accessToken);\n            this.currentUser = this.token.getUser();\n            this.accessToken = this.token.getToken();\n            this.refreshToken = this.token.getRefreshToken();\n          },\n          (err) => {\n            this.isLoading = false;\n\n            this.token.signOut();\n            return throwError(err);\n          }\n        );\n    }\n  }\n\n  public openNewTabForApp(appRequest: string[]): void {\n    const [ webapp, webappURLPrefix ] = appRequest.values();\n    var newAccessToken = \"\";\n    var newRefreshToken = \"\";\n    var newCurrentUser = \"\";\n\n    if (!this.isLoading) {\n      this.isLoading = true;\n      const token = this.token.getRefreshToken();\n      if (token)\n        this.authService.webapptab(token, webapp)\n          .subscribe(\n            data => {\n              let promise = new Promise<void>((resolve, reject) => {\n                this.isLoading = false;\n                newAccessToken = (data.accessToken);\n                newRefreshToken = (data.refreshToken);\n                newCurrentUser = (data);\n                setTimeout(() => {\n                  console.log(\"Failed open new tab\");\n                  resolve();//() => {resolve();}\n                }, 5000);\n              })\n                .then(() => {this.router.navigate([])\n                .then(result => { this.windowObjectReference = window.open(AppConfig.accServer.ACCWEBServers+webappURLPrefix);})\n                .then(result => { this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.TOKEN_KEY, newAccessToken);\n                    this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.REFRESHTOKEN_KEY, newRefreshToken);\n                    this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.USER_KEY, JSON.stringify(newCurrentUser));},\n                  (err) => { this.isLoading = false;\n                    return throwError(err);})});\n            },\n            (err) => {\n              this.isLoading = false;\n              return throwError(err);\n            })\n    }\n  }\n\n\n  public openNewWinForApp(appRequest: string[]): void {\n    /*webapp: string, webappURLPrefix: string*/\n    const [ webapp, webappURLPrefix ] = appRequest.values();\n    var newAccessToken = \"\";\n    var newRefreshToken = \"\";\n    var newCurrentUser = \"\";\n\n    if (!this.isLoading) {\n      this.isLoading = true;\n      const token = this.token.getRefreshToken();\n      if (token)\n        this.authService.webapptab(token, webapp)\n          .subscribe(\n            data => {\n              let promise = new Promise<void>((resolve, reject) => {\n                this.isLoading = false;\n                newAccessToken = (data.accessToken);\n                newRefreshToken = (data.refreshToken);\n                newCurrentUser = (data);\n                setTimeout(() => {\n                  console.log(\"Failed open new window\");\n                  resolve();//() => {resolve();}\n                }, 5000);\n              })\n              promise.then(result => { this.windowObjectReference = window.open(AppConfig.accServer.ACCWEBServers+webappURLPrefix+'start.html',\n                  'C-Sharpcorner', 'scrollbars=no');})\n                .then(result => { this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.TOKEN_KEY, newAccessToken);\n                    this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.REFRESHTOKEN_KEY, newRefreshToken);\n                    this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.USER_KEY, JSON.stringify(newCurrentUser));},\n            (err) => { this.isLoading = false;\n              return throwError(err);})\n    },\n    (error) => {\n              this.isLoading = false;\n              return throwError(error.error);\n            })\n    }\n  }\n\n}\n\n",
             "properties": [
                 {
                     "name": "password",
@@ -481,12 +481,12 @@
         },
         {
             "name": "Profile2Expose",
-            "id": "interface-Profile2Expose-86ad3744834b069dc62ac77a096702a13e7d62f4721b033273e4d9b0bd8fca06723833e9c04b001b5b27672692da49b861ce472fe119a26a92f9b3beb6ab3a8b",
+            "id": "interface-Profile2Expose-f6b03d25fc83ca9cf5ad7681f0cdf61a77eedb42e6cbe9fa7fc5eb0d386ec96ff25f6469c963e51cb1c3e1326bf7b0df1349ca78a194d0695152bfe488b36ced",
             "file": "src/stories/app-menu/app-menu.component.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';\r\nimport { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';\r\nimport { StoryInput } from \"../inputs/story-input.model\";\r\nimport { AuthService } from '../../app/_services/auth.service';\r\nimport {MdbModalRef} from \"mdb-angular-ui-kit/modal\";\r\n//import {Profile2Expose} from \"src/app/profile2/profile2.interface\";\r\n\r\nexport interface Profile2Expose {\r\n  agent: boolean;\r\n  realtime: boolean;\r\n  scriptDesigner: boolean;\r\n  admin: boolean;\r\n  aeonixAdmin: boolean;\r\n}\r\n\r\nexport interface AeonixAppCenterForm {\r\n  username: null, //new FormControl('ea2', Validators.min(2)),\r\n  password: null  //new FormControl('zaqwsx', Validators.min(2))\r\n}\r\n\r\n\r\n@Component({\r\n  selector: 'storybook-app-menu',\r\n  templateUrl: './app-menu.component.html',\r\n  styleUrls: ['./app-menu.css'],\r\n})\r\nexport class AppMenuComponent implements OnInit {\r\n\r\n  /*form: AeonixAppCenterForm = {\r\n    username: null,     //new FormControl('ea2', Validators.min(2)),\r\n    password: null      //new FormControl('zaqwsx', Validators.min(2))\r\n  };*/\r\n\r\n\r\n\r\n  @Input() formService!: AuthService;\r\n\r\n  credentials: any = {\r\n    username: null,\r\n    password: null\r\n  };\r\n\r\n  isLoginFailed = false;\r\n  loginErrorMessage = '';\r\n\r\n  openReplacePassword() {\r\n    //this.replacePassFormService.open(ReplacePassForm2Component);\r\n  }\r\n\r\n  constructor() {\r\n    this.validationForm = new FormGroup({\r\n      username: new FormControl('Telecom2', Validators.minLength(2)),\r\n      //email: new FormControl(null, Validators.email),\r\n      password: new FormControl('T@diran2022', Validators.minLength(2)),\r\n      //phone: new FormControl(null, Validators.pattern(new RegExp(\"[0-9 ]{12}\")))\r\n    });\r\n  }\r\n\r\n  /**\r\n   * @ignore\r\n   * Component property to define ordering of tasks\r\n   */\r\n  storyInputsInOrder: StoryInput[] = [];\r\n\r\n  validationForm: FormGroup;\r\n\r\n  @Input() isLoggedIn = false;\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output() onPinInput: EventEmitter<any> = new EventEmitter();\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output() onArchiveInput: EventEmitter<any> = new EventEmitter();\r\n\r\n  @Output() openNewWinForApp = new EventEmitter<any>();\r\n\r\n  @Output() openNewTabForApp = new EventEmitter<any>();\r\n\r\n  @Input() profileApps?: any;\r\n\r\n\r\n  @Input()\r\n  set storyInputs(arr: StoryInput[]) {\r\n    const initialTasks = [\r\n      ...arr.filter(t => t.state === 'USER NAME'),\r\n      ...arr.filter(t => t.state !== 'USER NAME'),\r\n    ];\r\n    const filteredTasks = initialTasks.filter(\r\n      t => t.type === 'password' || t.state === 'USER NAME'\r\n    );\r\n    this.storyInputsInOrder = filteredTasks.filter(\r\n      t => t.type === 'password' || t.state === 'USER NAME'\r\n    );\r\n  }\r\n\r\n  onSubmit(): void {\r\n    console.warn('Login Request!');\r\n    this.credentials.username=this.validationForm.get('username')?.value;\r\n    this.credentials.password=this.validationForm.get('password')?.value;\r\n\r\n    this.openNewWinForApp.emit(this.credentials);\r\n  }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n\r\n  get userName(): AbstractControl {\r\n    return this.validationForm.get('username')!;\r\n  }\r\n\r\n  get email(): AbstractControl {\r\n    return this.validationForm.get('email')!;\r\n  }\r\n\r\n  get password(): AbstractControl {\r\n    return this.validationForm.get('password')!;\r\n  }\r\n\r\n  get phone(): AbstractControl {\r\n    return this.validationForm.get('phone')!;\r\n  }\r\n\r\n\r\n}\r\n\r\n",
+            "sourceCode": "import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';\r\nimport { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';\r\nimport { StoryInput } from \"../inputs/story-input.model\";\r\nimport { AuthService } from '../../app/_services/auth.service';\r\nimport {MdbModalRef} from \"mdb-angular-ui-kit/modal\";\r\n//import {Profile2Expose} from \"src/app/profile2/profile2.interface\";\r\n\r\nexport interface Profile2Expose {\r\n  agent: boolean;\r\n  realtime: boolean;\r\n  scriptDesigner: boolean;\r\n  admin: boolean;\r\n  aeonixAdmin: boolean;\r\n}\r\n\r\nexport interface AeonixAppCenterForm {\r\n  username: null, //new FormControl('ea2', Validators.min(2)),\r\n  password: null  //new FormControl('zaqwsx', Validators.min(2))\r\n}\r\n\r\n\r\n@Component({\r\n  selector: 'storybook-app-menu',\r\n  templateUrl: './app-menu.component.html',\r\n  styleUrls: ['./app-menu.css'],\r\n})\r\nexport class AppMenuComponent implements OnInit {\r\n\r\n  /*form: AeonixAppCenterForm = {\r\n    username: null,     //new FormControl('ea2', Validators.min(2)),\r\n    password: null      //new FormControl('zaqwsx', Validators.min(2))\r\n  };*/\r\n\r\n\r\n\r\n  @Input() formService!: AuthService;\r\n\r\n  credentials: any = {\r\n    username: null,\r\n    password: null\r\n  };\r\n\r\n  isLoginFailed = false;\r\n  loginErrorMessage = '';\r\n\r\n  openReplacePassword() {\r\n    //this.replacePassFormService.open(ReplacePassForm2Component);\r\n  }\r\n\r\n  constructor() {\r\n    this.validationForm = new FormGroup({\r\n      username: new FormControl('Telecom2', Validators.minLength(2)),\r\n      //email: new FormControl(null, Validators.email),\r\n      password: new FormControl('T@diran2022', Validators.minLength(2)),\r\n      //phone: new FormControl(null, Validators.pattern(new RegExp(\"[0-9 ]{12}\")))\r\n    });\r\n  }\r\n\r\n  /**\r\n   * @ignore\r\n   * Component property to define ordering of tasks\r\n   */\r\n  storyInputsInOrder: StoryInput[] = [];\r\n\r\n  validationForm: FormGroup;\r\n\r\n  @Input() isLoggedIn = false;\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output() onPinInput: EventEmitter<any> = new EventEmitter();\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output() onArchiveInput: EventEmitter<any> = new EventEmitter();\r\n\r\n  @Output() openNewWinForApp = new EventEmitter<any>();\r\n\r\n  @Output() openNewTabForApp = new EventEmitter<any>();\r\n\r\n  @Input() profileApps?: any;\r\n\r\n  @Input() isLoading: boolean = false;\r\n\r\n\r\n  @Input()\r\n  set storyInputs(arr: StoryInput[]) {\r\n    const initialTasks = [\r\n      ...arr.filter(t => t.state === 'USER NAME'),\r\n      ...arr.filter(t => t.state !== 'USER NAME'),\r\n    ];\r\n    const filteredTasks = initialTasks.filter(\r\n      t => t.type === 'password' || t.state === 'USER NAME'\r\n    );\r\n    this.storyInputsInOrder = filteredTasks.filter(\r\n      t => t.type === 'password' || t.state === 'USER NAME'\r\n    );\r\n  }\r\n\r\n  onSubmit(): void {\r\n    console.warn('Login Request!');\r\n    this.credentials.username=this.validationForm.get('username')?.value;\r\n    this.credentials.password=this.validationForm.get('password')?.value;\r\n\r\n    this.openNewWinForApp.emit(this.credentials);\r\n  }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n\r\n  get userName(): AbstractControl {\r\n    return this.validationForm.get('username')!;\r\n  }\r\n\r\n  get email(): AbstractControl {\r\n    return this.validationForm.get('email')!;\r\n  }\r\n\r\n  get password(): AbstractControl {\r\n    return this.validationForm.get('password')!;\r\n  }\r\n\r\n  get phone(): AbstractControl {\r\n    return this.validationForm.get('phone')!;\r\n  }\r\n\r\n\r\n}\r\n\r\n",
             "properties": [
                 {
                     "name": "admin",
@@ -3770,7 +3770,7 @@
         },
         {
             "name": "AppMenuComponent",
-            "id": "component-AppMenuComponent-86ad3744834b069dc62ac77a096702a13e7d62f4721b033273e4d9b0bd8fca06723833e9c04b001b5b27672692da49b861ce472fe119a26a92f9b3beb6ab3a8b",
+            "id": "component-AppMenuComponent-f6b03d25fc83ca9cf5ad7681f0cdf61a77eedb42e6cbe9fa7fc5eb0d386ec96ff25f6469c963e51cb1c3e1326bf7b0df1349ca78a194d0695152bfe488b36ced",
             "file": "src/stories/app-menu/app-menu.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3796,6 +3796,15 @@
                     "decorators": []
                 },
                 {
+                    "name": "isLoading",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 81,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
                     "name": "isLoggedIn",
                     "defaultValue": "false",
                     "deprecated": false,
@@ -3816,7 +3825,7 @@
                     "name": "storyInputs",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 83,
+                    "line": 85,
                     "type": "StoryInput[]",
                     "decorators": []
                 }
@@ -3903,7 +3912,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 104,
+                    "line": 106,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -3913,7 +3922,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 96,
+                    "line": 98,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -3935,11 +3944,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';\r\nimport { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';\r\nimport { StoryInput } from \"../inputs/story-input.model\";\r\nimport { AuthService } from '../../app/_services/auth.service';\r\nimport {MdbModalRef} from \"mdb-angular-ui-kit/modal\";\r\n//import {Profile2Expose} from \"src/app/profile2/profile2.interface\";\r\n\r\nexport interface Profile2Expose {\r\n  agent: boolean;\r\n  realtime: boolean;\r\n  scriptDesigner: boolean;\r\n  admin: boolean;\r\n  aeonixAdmin: boolean;\r\n}\r\n\r\nexport interface AeonixAppCenterForm {\r\n  username: null, //new FormControl('ea2', Validators.min(2)),\r\n  password: null  //new FormControl('zaqwsx', Validators.min(2))\r\n}\r\n\r\n\r\n@Component({\r\n  selector: 'storybook-app-menu',\r\n  templateUrl: './app-menu.component.html',\r\n  styleUrls: ['./app-menu.css'],\r\n})\r\nexport class AppMenuComponent implements OnInit {\r\n\r\n  /*form: AeonixAppCenterForm = {\r\n    username: null,     //new FormControl('ea2', Validators.min(2)),\r\n    password: null      //new FormControl('zaqwsx', Validators.min(2))\r\n  };*/\r\n\r\n\r\n\r\n  @Input() formService!: AuthService;\r\n\r\n  credentials: any = {\r\n    username: null,\r\n    password: null\r\n  };\r\n\r\n  isLoginFailed = false;\r\n  loginErrorMessage = '';\r\n\r\n  openReplacePassword() {\r\n    //this.replacePassFormService.open(ReplacePassForm2Component);\r\n  }\r\n\r\n  constructor() {\r\n    this.validationForm = new FormGroup({\r\n      username: new FormControl('Telecom2', Validators.minLength(2)),\r\n      //email: new FormControl(null, Validators.email),\r\n      password: new FormControl('T@diran2022', Validators.minLength(2)),\r\n      //phone: new FormControl(null, Validators.pattern(new RegExp(\"[0-9 ]{12}\")))\r\n    });\r\n  }\r\n\r\n  /**\r\n   * @ignore\r\n   * Component property to define ordering of tasks\r\n   */\r\n  storyInputsInOrder: StoryInput[] = [];\r\n\r\n  validationForm: FormGroup;\r\n\r\n  @Input() isLoggedIn = false;\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output() onPinInput: EventEmitter<any> = new EventEmitter();\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output() onArchiveInput: EventEmitter<any> = new EventEmitter();\r\n\r\n  @Output() openNewWinForApp = new EventEmitter<any>();\r\n\r\n  @Output() openNewTabForApp = new EventEmitter<any>();\r\n\r\n  @Input() profileApps?: any;\r\n\r\n\r\n  @Input()\r\n  set storyInputs(arr: StoryInput[]) {\r\n    const initialTasks = [\r\n      ...arr.filter(t => t.state === 'USER NAME'),\r\n      ...arr.filter(t => t.state !== 'USER NAME'),\r\n    ];\r\n    const filteredTasks = initialTasks.filter(\r\n      t => t.type === 'password' || t.state === 'USER NAME'\r\n    );\r\n    this.storyInputsInOrder = filteredTasks.filter(\r\n      t => t.type === 'password' || t.state === 'USER NAME'\r\n    );\r\n  }\r\n\r\n  onSubmit(): void {\r\n    console.warn('Login Request!');\r\n    this.credentials.username=this.validationForm.get('username')?.value;\r\n    this.credentials.password=this.validationForm.get('password')?.value;\r\n\r\n    this.openNewWinForApp.emit(this.credentials);\r\n  }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n\r\n  get userName(): AbstractControl {\r\n    return this.validationForm.get('username')!;\r\n  }\r\n\r\n  get email(): AbstractControl {\r\n    return this.validationForm.get('email')!;\r\n  }\r\n\r\n  get password(): AbstractControl {\r\n    return this.validationForm.get('password')!;\r\n  }\r\n\r\n  get phone(): AbstractControl {\r\n    return this.validationForm.get('phone')!;\r\n  }\r\n\r\n\r\n}\r\n\r\n",
+            "sourceCode": "import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';\r\nimport { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';\r\nimport { StoryInput } from \"../inputs/story-input.model\";\r\nimport { AuthService } from '../../app/_services/auth.service';\r\nimport {MdbModalRef} from \"mdb-angular-ui-kit/modal\";\r\n//import {Profile2Expose} from \"src/app/profile2/profile2.interface\";\r\n\r\nexport interface Profile2Expose {\r\n  agent: boolean;\r\n  realtime: boolean;\r\n  scriptDesigner: boolean;\r\n  admin: boolean;\r\n  aeonixAdmin: boolean;\r\n}\r\n\r\nexport interface AeonixAppCenterForm {\r\n  username: null, //new FormControl('ea2', Validators.min(2)),\r\n  password: null  //new FormControl('zaqwsx', Validators.min(2))\r\n}\r\n\r\n\r\n@Component({\r\n  selector: 'storybook-app-menu',\r\n  templateUrl: './app-menu.component.html',\r\n  styleUrls: ['./app-menu.css'],\r\n})\r\nexport class AppMenuComponent implements OnInit {\r\n\r\n  /*form: AeonixAppCenterForm = {\r\n    username: null,     //new FormControl('ea2', Validators.min(2)),\r\n    password: null      //new FormControl('zaqwsx', Validators.min(2))\r\n  };*/\r\n\r\n\r\n\r\n  @Input() formService!: AuthService;\r\n\r\n  credentials: any = {\r\n    username: null,\r\n    password: null\r\n  };\r\n\r\n  isLoginFailed = false;\r\n  loginErrorMessage = '';\r\n\r\n  openReplacePassword() {\r\n    //this.replacePassFormService.open(ReplacePassForm2Component);\r\n  }\r\n\r\n  constructor() {\r\n    this.validationForm = new FormGroup({\r\n      username: new FormControl('Telecom2', Validators.minLength(2)),\r\n      //email: new FormControl(null, Validators.email),\r\n      password: new FormControl('T@diran2022', Validators.minLength(2)),\r\n      //phone: new FormControl(null, Validators.pattern(new RegExp(\"[0-9 ]{12}\")))\r\n    });\r\n  }\r\n\r\n  /**\r\n   * @ignore\r\n   * Component property to define ordering of tasks\r\n   */\r\n  storyInputsInOrder: StoryInput[] = [];\r\n\r\n  validationForm: FormGroup;\r\n\r\n  @Input() isLoggedIn = false;\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output() onPinInput: EventEmitter<any> = new EventEmitter();\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output() onArchiveInput: EventEmitter<any> = new EventEmitter();\r\n\r\n  @Output() openNewWinForApp = new EventEmitter<any>();\r\n\r\n  @Output() openNewTabForApp = new EventEmitter<any>();\r\n\r\n  @Input() profileApps?: any;\r\n\r\n  @Input() isLoading: boolean = false;\r\n\r\n\r\n  @Input()\r\n  set storyInputs(arr: StoryInput[]) {\r\n    const initialTasks = [\r\n      ...arr.filter(t => t.state === 'USER NAME'),\r\n      ...arr.filter(t => t.state !== 'USER NAME'),\r\n    ];\r\n    const filteredTasks = initialTasks.filter(\r\n      t => t.type === 'password' || t.state === 'USER NAME'\r\n    );\r\n    this.storyInputsInOrder = filteredTasks.filter(\r\n      t => t.type === 'password' || t.state === 'USER NAME'\r\n    );\r\n  }\r\n\r\n  onSubmit(): void {\r\n    console.warn('Login Request!');\r\n    this.credentials.username=this.validationForm.get('username')?.value;\r\n    this.credentials.password=this.validationForm.get('password')?.value;\r\n\r\n    this.openNewWinForApp.emit(this.credentials);\r\n  }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n\r\n  get userName(): AbstractControl {\r\n    return this.validationForm.get('username')!;\r\n  }\r\n\r\n  get email(): AbstractControl {\r\n    return this.validationForm.get('email')!;\r\n  }\r\n\r\n  get password(): AbstractControl {\r\n    return this.validationForm.get('password')!;\r\n  }\r\n\r\n  get phone(): AbstractControl {\r\n    return this.validationForm.get('phone')!;\r\n  }\r\n\r\n\r\n}\r\n\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "\r\n/*\r\n.form {\r\n  position: absolute;\r\n  left: 3.18%;\r\n  right: 14.78%;\r\n  top: 0;\r\n  bottom: 0;\r\n  border-radius: 14px;\r\n  box-shadow: -4px 4px 10px 0 rgba(88, 166, 228, 0.3);\r\n  background-color: #fff;\r\n}\r\n\r\n*/\r\n\r\n.card-container.card {\r\n  max-width: 1000px !important;\r\n  padding: 10px 10px;\r\n  /*top: 5.18%;\r\n  bottom: 4.78%;*/\r\n\r\n}\r\n\r\n\r\n\r\n.grid-container {\r\n  display: grid;\r\n  justify-content: center;\r\n  grid-template-columns: auto auto auto auto auto auto;\r\n  gap: 10%;\r\n  background-color: #2196F3;\r\n  padding: 0px;\r\n}\r\n\r\n.grid-container > div {\r\n  background-color: rgba(255, 255, 255, 0.8);\r\n  text-align: center;\r\n  padding: 0 0;\r\n  font-size: 30px;\r\n}\r\n\r\n.item1 {\r\n  grid-area: 1 / 1 / span 1 / span 2;\r\n}\r\n.item2 {\r\n  grid-area: 1 / 3 / span 1 / span 2;\r\n}\r\n.item3 {\r\n  grid-area: 1 / 5 / span 1 / span 2;\r\n}\r\n\r\n.item4 {\r\n  grid-area: 2 / 2 / span 1 / span 2;\r\n}\r\n.item5 {\r\n  grid-area: 2 / 4 / span 1 / span 2;\r\n}\r\n/*\r\n.col-md-12{\r\n  position: center;\r\n  width: 42.65%;\r\n  height: 89.35%;\r\n  left: calc(50% - 42.65%/2 - 0px);\r\n  top: calc(50% - 89.35%/2 - 0px);\r\n}\r\n*/\r\n\r\n.col-md-12{\r\n  position: center;\r\n  width: 965px;\r\n  height: 819px;\r\n  left: calc(50% - 965px/2 - 0.25px);\r\n  top: calc(50% - 819px/2 - 0.5px);\r\n  border-radius: 32px;\r\n\r\n}\r\n\r\n.Aeonix-App-Center {\r\n  position: absolute;\r\n  top: 12.94%;\r\n  bottom: 77.05%;\r\n\r\n  /*width: 447px;*/\r\n  height: 82px;\r\n  flex-grow: 0;\r\n  margin: 0 0 19.8px;\r\n  font-family: \"Noto Sans\", ui-serif;\r\n  font-size: 40px;\r\n  font-weight: bolder;\r\n  font-style: normal;\r\n  font-stretch: normal;\r\n  line-height: 45px;\r\n  letter-spacing: -0.011px;\r\n  text-align: left;\r\n  color: #000000;\r\n}\r\n\r\n",
+                    "data": "\r\n\r\n\r\n.card-container.card {\r\n  max-width: 1000px !important;\r\n  padding: 10px 10px;\r\n  /*top: 5.18%;\r\n  bottom: 4.78%;*/\r\n\r\n}\r\n\r\nstorybook-spinner1 {\r\n  position: absolute;\r\n  width: 70px;\r\n  height: 70px;\r\n  left: calc(50% - 75px/2 - 0.25px);\r\n  top: calc(50% - 70px/2 - 0.5px);\r\n}\r\n\r\n.grid-container {\r\n  display: grid;\r\n  justify-content: center;\r\n  grid-template-columns: auto auto auto auto auto auto;\r\n  gap: 10%;\r\n  background-color: #2196F3;\r\n  padding: 0px;\r\n}\r\n\r\n.grid-container > div {\r\n  background-color: rgba(255, 255, 255, 0.8);\r\n  text-align: center;\r\n  padding: 0 0;\r\n  font-size: 30px;\r\n}\r\n\r\n.item1 {\r\n  grid-area: 1 / 1 / span 1 / span 2;\r\n}\r\n.item2 {\r\n  grid-area: 1 / 3 / span 1 / span 2;\r\n}\r\n.item3 {\r\n  grid-area: 1 / 5 / span 1 / span 2;\r\n}\r\n\r\n.item4 {\r\n  grid-area: 2 / 2 / span 1 / span 2;\r\n}\r\n.item5 {\r\n  grid-area: 2 / 4 / span 1 / span 2;\r\n}\r\n\r\n\r\n.col-md-12{\r\n  position: center;\r\n  width: 965px;\r\n  height: 819px;\r\n  left: calc(50% - 965px/2 - 0.25px);\r\n  top: calc(50% - 819px/2 - 0.5px);\r\n  border-radius: 32px;\r\n\r\n}\r\n\r\n.Aeonix-App-Center {\r\n  position: absolute;\r\n  top: 12.94%;\r\n  bottom: 77.05%;\r\n\r\n  /*width: 447px;*/\r\n  height: 82px;\r\n  flex-grow: 0;\r\n  margin: 0 0 19.8px;\r\n  font-family: \"Noto Sans\", ui-serif;\r\n  font-size: 40px;\r\n  font-weight: bolder;\r\n  font-style: normal;\r\n  font-stretch: normal;\r\n  line-height: 45px;\r\n  letter-spacing: -0.011px;\r\n  text-align: left;\r\n  color: #000000;\r\n}\r\n\r\n",
                     "styleUrl": "./app-menu.css"
                 }
             ],
@@ -3972,7 +3981,7 @@
                             }
                         ],
                         "returnType": "void",
-                        "line": 83,
+                        "line": 85,
                         "jsdoctags": [
                             {
                                 "name": "arr",
@@ -3992,7 +4001,7 @@
                         "name": "userName",
                         "type": "",
                         "returnType": "AbstractControl",
-                        "line": 108
+                        "line": 110
                     }
                 },
                 "email": {
@@ -4001,7 +4010,7 @@
                         "name": "email",
                         "type": "",
                         "returnType": "AbstractControl",
-                        "line": 112
+                        "line": 114
                     }
                 },
                 "password": {
@@ -4010,7 +4019,7 @@
                         "name": "password",
                         "type": "",
                         "returnType": "AbstractControl",
-                        "line": 116
+                        "line": 118
                     }
                 },
                 "phone": {
@@ -4019,11 +4028,11 @@
                         "name": "phone",
                         "type": "",
                         "returnType": "AbstractControl",
-                        "line": 120
+                        "line": 122
                     }
                 }
             },
-            "templateData": "\r\n\r\n\r\n<div id=\"main-login-card\" class=\"col-md-12\">\r\n  <storybook-card class=\"card-container\" ></storybook-card>\r\n  <div  class=\"h-100 d-flex align-items-center justify-content-center\">\r\n    <div class=\"Aeonix-App-Center\">\r\n      <a>Aeonix App Center</a>\r\n    </div>\r\n\r\n    <div class=\"grid-container\">\r\n      <div class=\"item1\"><storybook-button-apps application=\"Agent\" label=\"Continue\" type=\"button\" [isDisabled]=\"!profileApps?.agent\"\r\n        id=\"openNewAgentTab\" (click)='this.openNewWinForApp.emit([\"AGENT\",\"/accAgent/\"])'  ></storybook-button-apps></div>\r\n      <div class=\"item2\"><storybook-button-apps application=\"WebRT\" label=\"Continue\" type=\"button\" [isDisabled]=\"!profileApps?.realtime\"\r\n        id=\"openNewWebRTTab\" (click)='this.openNewTabForApp.emit([\"ACCREALTIME\",\"/accRealTime/\"])' ></storybook-button-apps></div>\r\n      <div class=\"item3\"><storybook-button-apps application=\"Script-Designer\" label=\"Continue\" type=\"button\" [isDisabled]=\"!profileApps?.scriptDesigner\"\r\n        id=\"openNewGccsTab\" (click)='this.openNewTabForApp.emit([\"GCCS\",\"/accGCCS/\"])' ></storybook-button-apps></div>\r\n      <div class=\"item4\"><storybook-button-apps application=\"Admin\" label=\"Continue\" type=\"button\" [isDisabled]=\"!profileApps?.admin\"\r\n        ></storybook-button-apps></div>\r\n      <div class=\"item5\"><storybook-button-apps application=\"Aeonix-Admin\" label=\"Continue\" type=\"button\" [isDisabled]=\"!profileApps?.aeonixAdmin\"\r\n        id=\"openNewGccsTab2\" (click)='this.openNewTabForApp.emit([\"GCCS\",\"/accGCCS/\"])' ></storybook-button-apps></div>\r\n    </div>\r\n\r\n\r\n\r\n  </div>\r\n</div>\r\n\r\n"
+            "templateData": "\r\n\r\n\r\n<div id=\"main-login-card\" class=\"col-md-12\">\r\n  <storybook-card class=\"card-container\" ></storybook-card>\r\n  <div  class=\"h-100 d-flex align-items-center justify-content-center\">\r\n    <div class=\"Aeonix-App-Center\">\r\n      <a>Aeonix App Center</a>\r\n    </div>\r\n    <div><storybook-spinner1  *ngIf=\"isLoading\"></storybook-spinner1></div>\r\n\r\n    <div class=\"grid-container\">\r\n      <div class=\"item1\"><storybook-button-apps application=\"Agent\" label=\"Continue\" type=\"button\" [isDisabled]=\"!profileApps?.agent\"\r\n        id=\"openNewAgentTab\" (click)='this.openNewWinForApp.emit([\"AGENT\",\"/accAgent/\"])'  ></storybook-button-apps></div>\r\n      <div class=\"item2\"><storybook-button-apps application=\"WebRT\" label=\"Continue\" type=\"button\" [isDisabled]=\"!profileApps?.realtime\"\r\n        id=\"openNewWebRTTab\" (click)='this.openNewTabForApp.emit([\"ACCREALTIME\",\"/accRealTime/\"])' ></storybook-button-apps></div>\r\n      <div class=\"item3\"><storybook-button-apps application=\"Script-Designer\" label=\"Continue\" type=\"button\" [isDisabled]=\"!profileApps?.scriptDesigner\"\r\n        id=\"openNewGccsTab\" (click)='this.openNewTabForApp.emit([\"GCCS\",\"/accGCCS/\"])' ></storybook-button-apps></div>\r\n      <div class=\"item4\"><storybook-button-apps application=\"Admin\" label=\"Continue\" type=\"button\" [isDisabled]=\"!profileApps?.admin\"\r\n        ></storybook-button-apps></div>\r\n      <div class=\"item5\"><storybook-button-apps application=\"Aeonix-Admin\" label=\"Continue\" type=\"button\" [isDisabled]=\"!profileApps?.aeonixAdmin\"\r\n        id=\"openNewGccsTab2\" (click)='this.openNewTabForApp.emit([\"GCCS\",\"/accGCCS/\"])' ></storybook-button-apps></div>\r\n    </div>\r\n\r\n\r\n\r\n  </div>\r\n</div>\r\n\r\n"
         },
         {
             "name": "AvatarComponent",
@@ -8893,7 +8902,7 @@
         },
         {
             "name": "Profile2Component",
-            "id": "component-Profile2Component-f32d8a64ff6c1ffb7a031847154400aa4490d9294e61c90959dea72871f4c64f33b09e07fe921c1beacdef780b87aa177ac144c77284c312e0a8cce6bb24797a",
+            "id": "component-Profile2Component-54568c27803b9a286644d571cf9bbd8cd53029681efe646d2f90695765178564b6779f72a7f794a1c97014b9d5c05cec4221a864ac715d60fc9eb297c238590d",
             "file": "src/app/profile2/profile2.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -8943,7 +8952,7 @@
                     "line": 27
                 },
                 {
-                    "name": "isRefreshing",
+                    "name": "isLoading",
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -8952,7 +8961,7 @@
                     "description": "",
                     "line": 32,
                     "modifierKind": [
-                        121
+                        123
                     ]
                 },
                 {
@@ -9051,7 +9060,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 137,
+                    "line": 136,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -9084,7 +9093,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 126,
+                    "line": 125,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -9132,7 +9141,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 197,
+                    "line": 201,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -9188,7 +9197,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\nimport { StoryInput } from \"../../stories/inputs/story-input.model\";\nimport {AuthService} from \"../_services/auth.service\";\nimport {AbstractControl, FormGroup} from \"@angular/forms\";\nimport {TokenStorageService} from \"../_services/token-storage.service\";\nimport {Router} from \"@angular/router\";\nimport {AppConfig} from \"../app.config\";\nimport {BehaviorSubject, throwError} from \"rxjs\";\nimport {UserService} from \"../_services/user.service\";\nimport {MatDialog} from \"@angular/material/dialog\";\nimport {ReplacePassForm2Component} from \"../login2/login-main/replace-pass-form2/replace-pass-form2.component\";\n\n\nexport interface DialogData {\n  username: string;\n  password: string;\n}\n\n\n@Component({\n  selector: 'profile2',\n  templateUrl: './profile2.component.html',\n  styleUrls: ['./profile2.component.scss']\n})\nexport default class Profile2Component implements OnInit {\n\n  currentUser: any;\n  accessToken: any;\n  refreshToken: any;\n  windowObjectReference: any;\n  refreshTokenSubject: BehaviorSubject<any> = new BehaviorSubject<any>(null);\n  private isRefreshing = false;\n  public appConfig: any;\n  private TOKEN_KEY: string;\n  permittedWebAppList = {\n    realtime: false,\n    scriptDesigner: false,\n    agent: false,\n    aeonixAdmin: false,\n    admin: false\n  };\n\n\n  isNotify(): boolean {\n   return (this.passExp < this.previousAlertPassExp);\n  }\n\n\n  constructor(private authService: AuthService,\n              private token: TokenStorageService,\n              private router: Router,\n              public replacePassFormDialog: MatDialog) {\n    this.TOKEN_KEY = AppConfig.endpoints.TOKEN_KEY;\n  }\n\n\n  openReplacePassForm() {\n    const replacePassFormDialogRef = this.replacePassFormDialog.open(ReplacePassForm2Component, {\n      data: {username: this.currentUser , password: ''},\n    });\n\n    replacePassFormDialogRef.beforeClosed().subscribe(result => {\n        console.log('The replace password form dialog before closed');\n      },\n      err => {\n        console.log(err.error.message);\n      });\n\n\n    replacePassFormDialogRef.afterClosed().subscribe(result => {\n      console.log('The replace password form dialog after closed');\n      if (result.message === 'Replace Password Complete') {\n        console.log('Replace Password Complete');\n        this.setPassExpAlertData();\n      }\n    });\n\n    return replacePassFormDialogRef.afterClosed().toPromise();\n  }\n\n\n  public passExp: number = 0; // By Days\n  public previousAlertPassExp: number = 0; // By Days\n\n\n  ngOnInit(): void {\n    this.currentUser = this.token.getUser();\n    this.accessToken = this.currentUser.accessToken;\n    this.refreshToken = this.currentUser.refreshToken;\n    this.setPassExpAlertData();\n    this.setPermittedWebAppList();\n  }\n\n  setPassExpAlertData(): void {\n\n    const token = this.token.getToken();\n    if (token)\n      this.authService.getPassExpireDate(token).subscribe(data => {\n        this.passExp = data.passExp;\n        this.previousAlertPassExp = data.previousAlertPassExp;\n        console.log('Password Expire Date: '+this.passExp);\n        console.log('previous Alert To Password Expire Date: '+this.previousAlertPassExp);\n      }, (err) => {\n        console.log('Password Expire Date: update failed');\n        return throwError(err);\n      });\n\n  }\n\n\n  setPermittedWebAppList(): void {\n\n    console.log('erase me ');\n    const token = this.token.getToken();\n    if (token)\n      this.authService.getPermittedWebAppList(token).subscribe(permittedWebAppList => {\n        this.permittedWebAppList=(permittedWebAppList);\n        console.log('Permitted web apps list is received from server.');\n      }, (err) => {\n        console.log('Can not get server data defining permitted web apps for user');\n        return throwError(err);\n      });\n\n  }\n\n  openapp(): void {\n    console.log('window.location.origin.toString():  '+window.location.origin.toString());\n\n    this.router.navigate([]).then(result => { this.windowObjectReference = window.open(AppConfig.accServer.ACCWEBServers+'/accGCCS/'/*window.location.origin.toString()+\"/profile\"*/); });\n    console.log('window.location.origin.toString():  '+ this.windowObjectReference.window.document.getElementById(\"profile_title\").innerHTML);\n    var promise = new Promise((resolve, reject) => {this.windowObjectReference.window.document.getElementById(\"profile_title\").innerHTML = \"new title\";});\n\n    console.log('window.location.origin.toString():  '+ this.windowObjectReference.window.document.getElementById(\"profile_title\").innerHTML);\n\n  }\n\n  public forseRefreshToken(): void {\n\n    if (!this.isRefreshing) {\n      const token = this.token.getRefreshToken();\n      if (token)\n        this.authService.refreshToken(token).subscribe(\n          data => {\n            this.isRefreshing = false;\n            this.token.saveToken(data.accessToken);\n            this.token.saveRefreshToken(data.refreshToken);\n            this.refreshTokenSubject.next(data.accessToken);\n            this.currentUser = this.token.getUser();\n            this.accessToken = this.token.getToken();\n            this.refreshToken = this.token.getRefreshToken();\n          },\n          (err) => {\n            this.isRefreshing = false;\n\n            this.token.signOut();\n            return throwError(err);\n          }\n        );\n    }\n  }\n\n  public openNewTabForApp(appRequest: string[]): void {\n    const [ webapp, webappURLPrefix ] = appRequest.values();\n    var newAccessToken = \"\";\n    var newRefreshToken = \"\";\n    var newCurrentUser = \"\";\n\n    if (!this.isRefreshing) {\n      const token = this.token.getRefreshToken();\n      if (token)\n        this.authService.webapptab(token, webapp)\n          .subscribe(\n            data => {\n              let promise = new Promise<void>((resolve, reject) => {\n                this.isRefreshing = false;\n                newAccessToken = (data.accessToken);\n                newRefreshToken = (data.refreshToken);\n                newCurrentUser = (data);\n                setTimeout(() => {\n                  console.log(\"Failed open new tab\");\n                  resolve();//() => {resolve();}\n                }, 5000);\n              })\n                .then(() => {this.router.navigate([])\n                .then(result => { this.windowObjectReference = window.open(AppConfig.accServer.ACCWEBServers+webappURLPrefix);})\n                .then(result => { this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.TOKEN_KEY, newAccessToken);\n                    this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.REFRESHTOKEN_KEY, newRefreshToken);\n                    this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.USER_KEY, JSON.stringify(newCurrentUser));},\n                  (err) => { this.isRefreshing = false;\n                    return throwError(err);})});\n            },\n            (err) => {return throwError(err);})\n    }\n  }\n\n\n  public openNewWinForApp(appRequest: string[]): void {\n    /*webapp: string, webappURLPrefix: string*/\n    const [ webapp, webappURLPrefix ] = appRequest.values();\n    var newAccessToken = \"\";\n    var newRefreshToken = \"\";\n    var newCurrentUser = \"\";\n\n    if (!this.isRefreshing) {\n      const token = this.token.getRefreshToken();\n      if (token)\n        this.authService.webapptab(token, webapp)\n          .subscribe(\n            data => {\n              let promise = new Promise<void>((resolve, reject) => {\n                this.isRefreshing = false;\n                newAccessToken = (data.accessToken);\n                newRefreshToken = (data.refreshToken);\n                newCurrentUser = (data);\n                setTimeout(() => {\n                  console.log(\"Failed open new window\");\n                  resolve();//() => {resolve();}\n                }, 5000);\n              })\n              promise.then(result => { this.windowObjectReference = window.open(AppConfig.accServer.ACCWEBServers+webappURLPrefix+'start.html',\n                  'C-Sharpcorner', 'scrollbars=no');})\n                .then(result => { this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.TOKEN_KEY, newAccessToken);\n                    this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.REFRESHTOKEN_KEY, newRefreshToken);\n                    this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.USER_KEY, JSON.stringify(newCurrentUser));},\n            (err) => { this.isRefreshing = false;\n              return throwError(err);})\n      /*this.isRefreshing = false;\n      newAccessToken = (data.accessToken);\n      newRefreshToken = (data.refreshToken);\n      newCurrentUser = (data);*/\n    },\n    (error) => {return throwError(error.error);})\n    }\n  }\n\n}\n\n",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\nimport { StoryInput } from \"../../stories/inputs/story-input.model\";\nimport {AuthService} from \"../_services/auth.service\";\nimport {AbstractControl, FormGroup} from \"@angular/forms\";\nimport {TokenStorageService} from \"../_services/token-storage.service\";\nimport {Router} from \"@angular/router\";\nimport {AppConfig} from \"../app.config\";\nimport {BehaviorSubject, throwError} from \"rxjs\";\nimport {UserService} from \"../_services/user.service\";\nimport {MatDialog} from \"@angular/material/dialog\";\nimport {ReplacePassForm2Component} from \"../login2/login-main/replace-pass-form2/replace-pass-form2.component\";\n\n\nexport interface DialogData {\n  username: string;\n  password: string;\n}\n\n\n@Component({\n  selector: 'profile2',\n  templateUrl: './profile2.component.html',\n  styleUrls: ['./profile2.component.scss']\n})\nexport default class Profile2Component implements OnInit {\n\n  currentUser: any;\n  accessToken: any;\n  refreshToken: any;\n  windowObjectReference: any;\n  refreshTokenSubject: BehaviorSubject<any> = new BehaviorSubject<any>(null);\n  public isLoading = false;\n  public appConfig: any;\n  private TOKEN_KEY: string;\n  permittedWebAppList = {\n    realtime: false,\n    scriptDesigner: false,\n    agent: false,\n    aeonixAdmin: false,\n    admin: false\n  };\n\n\n  isNotify(): boolean {\n   return (this.passExp < this.previousAlertPassExp);\n  }\n\n\n  constructor(private authService: AuthService,\n              private token: TokenStorageService,\n              private router: Router,\n              public replacePassFormDialog: MatDialog) {\n    this.TOKEN_KEY = AppConfig.endpoints.TOKEN_KEY;\n  }\n\n\n  openReplacePassForm() {\n    const replacePassFormDialogRef = this.replacePassFormDialog.open(ReplacePassForm2Component, {\n      data: {username: this.currentUser , password: ''},\n    });\n\n    replacePassFormDialogRef.beforeClosed().subscribe(result => {\n        console.log('The replace password form dialog before closed');\n      },\n      err => {\n        console.log(err.error.message);\n      });\n\n\n    replacePassFormDialogRef.afterClosed().subscribe(result => {\n      console.log('The replace password form dialog after closed');\n      if (result.message === 'Replace Password Complete') {\n        console.log('Replace Password Complete');\n        this.setPassExpAlertData();\n      }\n    });\n\n    return replacePassFormDialogRef.afterClosed().toPromise();\n  }\n\n\n  public passExp: number = 0; // By Days\n  public previousAlertPassExp: number = 0; // By Days\n\n\n  ngOnInit(): void {\n    this.currentUser = this.token.getUser();\n    this.accessToken = this.currentUser.accessToken;\n    this.refreshToken = this.currentUser.refreshToken;\n    this.setPassExpAlertData();\n    this.setPermittedWebAppList();\n  }\n\n  setPassExpAlertData(): void {\n\n    const token = this.token.getToken();\n    if (token)\n      this.authService.getPassExpireDate(token).subscribe(data => {\n        this.passExp = data.passExp;\n        this.previousAlertPassExp = data.previousAlertPassExp;\n        console.log('Password Expire Date: '+this.passExp);\n        console.log('previous Alert To Password Expire Date: '+this.previousAlertPassExp);\n      }, (err) => {\n        console.log('Password Expire Date: update failed');\n        return throwError(err);\n      });\n\n  }\n\n\n  setPermittedWebAppList(): void {\n\n    const token = this.token.getToken();\n    if (token)\n      this.authService.getPermittedWebAppList(token).subscribe(permittedWebAppList => {\n        this.permittedWebAppList=(permittedWebAppList);\n        console.log('Permitted web apps list is received from server.');\n      }, (err) => {\n        console.log('Can not get server data defining permitted web apps for user');\n        return throwError(err);\n      });\n\n  }\n\n  openapp(): void {\n    console.log('window.location.origin.toString():  '+window.location.origin.toString());\n\n    this.router.navigate([]).then(result => { this.windowObjectReference = window.open(AppConfig.accServer.ACCWEBServers+'/accGCCS/'/*window.location.origin.toString()+\"/profile\"*/); });\n    console.log('window.location.origin.toString():  '+ this.windowObjectReference.window.document.getElementById(\"profile_title\").innerHTML);\n    var promise = new Promise((resolve, reject) => {this.windowObjectReference.window.document.getElementById(\"profile_title\").innerHTML = \"new title\";});\n\n    console.log('window.location.origin.toString():  '+ this.windowObjectReference.window.document.getElementById(\"profile_title\").innerHTML);\n\n  }\n\n  public forseRefreshToken(): void {\n\n    if (!this.isLoading) {\n      this.isLoading = true;\n      const token = this.token.getRefreshToken();\n      if (token)\n        this.authService.refreshToken(token).subscribe(\n          data => {\n            this.isLoading = false;\n            this.token.saveToken(data.accessToken);\n            this.token.saveRefreshToken(data.refreshToken);\n            this.refreshTokenSubject.next(data.accessToken);\n            this.currentUser = this.token.getUser();\n            this.accessToken = this.token.getToken();\n            this.refreshToken = this.token.getRefreshToken();\n          },\n          (err) => {\n            this.isLoading = false;\n\n            this.token.signOut();\n            return throwError(err);\n          }\n        );\n    }\n  }\n\n  public openNewTabForApp(appRequest: string[]): void {\n    const [ webapp, webappURLPrefix ] = appRequest.values();\n    var newAccessToken = \"\";\n    var newRefreshToken = \"\";\n    var newCurrentUser = \"\";\n\n    if (!this.isLoading) {\n      this.isLoading = true;\n      const token = this.token.getRefreshToken();\n      if (token)\n        this.authService.webapptab(token, webapp)\n          .subscribe(\n            data => {\n              let promise = new Promise<void>((resolve, reject) => {\n                this.isLoading = false;\n                newAccessToken = (data.accessToken);\n                newRefreshToken = (data.refreshToken);\n                newCurrentUser = (data);\n                setTimeout(() => {\n                  console.log(\"Failed open new tab\");\n                  resolve();//() => {resolve();}\n                }, 5000);\n              })\n                .then(() => {this.router.navigate([])\n                .then(result => { this.windowObjectReference = window.open(AppConfig.accServer.ACCWEBServers+webappURLPrefix);})\n                .then(result => { this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.TOKEN_KEY, newAccessToken);\n                    this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.REFRESHTOKEN_KEY, newRefreshToken);\n                    this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.USER_KEY, JSON.stringify(newCurrentUser));},\n                  (err) => { this.isLoading = false;\n                    return throwError(err);})});\n            },\n            (err) => {\n              this.isLoading = false;\n              return throwError(err);\n            })\n    }\n  }\n\n\n  public openNewWinForApp(appRequest: string[]): void {\n    /*webapp: string, webappURLPrefix: string*/\n    const [ webapp, webappURLPrefix ] = appRequest.values();\n    var newAccessToken = \"\";\n    var newRefreshToken = \"\";\n    var newCurrentUser = \"\";\n\n    if (!this.isLoading) {\n      this.isLoading = true;\n      const token = this.token.getRefreshToken();\n      if (token)\n        this.authService.webapptab(token, webapp)\n          .subscribe(\n            data => {\n              let promise = new Promise<void>((resolve, reject) => {\n                this.isLoading = false;\n                newAccessToken = (data.accessToken);\n                newRefreshToken = (data.refreshToken);\n                newCurrentUser = (data);\n                setTimeout(() => {\n                  console.log(\"Failed open new window\");\n                  resolve();//() => {resolve();}\n                }, 5000);\n              })\n              promise.then(result => { this.windowObjectReference = window.open(AppConfig.accServer.ACCWEBServers+webappURLPrefix+'start.html',\n                  'C-Sharpcorner', 'scrollbars=no');})\n                .then(result => { this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.TOKEN_KEY, newAccessToken);\n                    this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.REFRESHTOKEN_KEY, newRefreshToken);\n                    this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.USER_KEY, JSON.stringify(newCurrentUser));},\n            (err) => { this.isLoading = false;\n              return throwError(err);})\n    },\n    (error) => {\n              this.isLoading = false;\n              return throwError(error.error);\n            })\n    }\n  }\n\n}\n\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -9271,7 +9280,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n  <meta charset=\"UTF-8\">\r\n  <title>Title</title>\r\n</head>\r\n<body>\r\n<storybook-background1></storybook-background1>\r\n\r\n<!--button mat-raised-button (click)=\"setPassExpAlertData()\">setPassExpAlertData</button-->\r\n\r\n<storybook-avatar\r\n  id=\"avatar\"\r\n  [label]=\"this.currentUser.username\"\r\n  [isNotify]=\"this.isNotify()\"\r\n  header=\"{{'Your password will expire in ' + this.passExp +' Days.'}}\"\r\n  (actionButton)=\"openReplacePassForm()\"\r\n  (click)=\"this.setPermittedWebAppList()\">\r\n</storybook-avatar>\r\n\r\n<!--this.setPassExpAlertData() -->\r\n\r\n\r\n<storybook-app-menu\r\n  [profileApps]=\"permittedWebAppList\"\r\n  (openNewWinForApp)=\"openNewWinForApp($event)\"\r\n  (openNewTabForApp)=\"openNewTabForApp($event)\">\r\n</storybook-app-menu>\r\n\r\n</body>\r\n</html>\r\n"
+            "templateData": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n  <meta charset=\"UTF-8\">\r\n  <title>Title</title>\r\n</head>\r\n<body>\r\n<storybook-background1></storybook-background1>\r\n\r\n<!--button mat-raised-button (click)=\"setPassExpAlertData()\">setPassExpAlertData</button-->\r\n\r\n<storybook-avatar\r\n  id=\"avatar\"\r\n  [label]=\"this.currentUser.username\"\r\n  [isNotify]=\"this.isNotify()\"\r\n  header=\"{{'Your password will expire in ' + this.passExp +' Days.'}}\"\r\n  (actionButton)=\"openReplacePassForm()\"\r\n  (click)=\"this.setPermittedWebAppList()\">\r\n</storybook-avatar>\r\n\r\n<!--this.setPassExpAlertData() -->\r\n\r\n\r\n<storybook-app-menu\r\n  [profileApps]=\"permittedWebAppList\"\r\n  [isLoading]=\"isLoading\"\r\n  (openNewWinForApp)=\"openNewWinForApp($event)\"\r\n  (openNewTabForApp)=\"openNewTabForApp($event)\">\r\n</storybook-app-menu>\r\n\r\n</body>\r\n</html>\r\n"
         },
         {
             "name": "ProfileComponent",
@@ -12286,7 +12295,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "button.Vector {\r\n  position: absolute;\r\n  width: 20px;\r\n  height: 20px;\r\n  padding: 0;\r\n  margin: 0;\r\n  background: rgba(255, 255, 255, 0);\r\n}\r\n\r\nimg.Ex-Icon {\r\n  position: absolute;\r\n  top: 1px;\r\n  right: 1px;\r\n  width: 19px;\r\n  height: 19px;\r\n  object-fit: contain;\r\n  box-shadow: 0 1px 1px 0 rgba(61, 142, 207, 0.15);\r\n}\r\n",
+                    "data": "button.Vector {\r\n  position: absolute;\r\n  width: 70px;\r\n  height: 70px;\r\n  padding: 0;\r\n  margin: 0;\r\n  background: rgba(255, 255, 255, 0);\r\n}\r\n\r\nimg.Ex-Icon {\r\n  position: absolute;\r\n  top: 1px;\r\n  right: 1px;\r\n  width: 69px;\r\n  height: 69px;\r\n  object-fit: contain;\r\n  box-shadow: 0 1px 1px 0 rgba(61, 142, 207, 0.15);\r\n}\r\n",
                     "styleUrl": "./spinner1.component.css"
                 }
             ],
@@ -13262,13 +13271,13 @@
         },
         {
             "name": "StorybookModule",
-            "id": "module-StorybookModule-c48046500957bda95fa49b8b02bf68fbaecef59c6c6fb2f0f2ea4ff8e797bc872637fd7a8927a3b9dc2fd0f2b4bef1c662774285bfb4ac86df6f6bf0d49eed2a",
+            "id": "module-StorybookModule-ee60a367766502f295415d51a4ac2c9b08d37231f67c4be41e5af4de3d34af33bfe8d548484eb8088853f651bd24c30cf0e4e97fb7aeb2f73a57197318bb2d86",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/storybook/storybook.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n//import { BrowserModule } from '@angular/platform-browser';\nimport {FormsModule, ReactiveFormsModule} from '@angular/forms';\n\n\nimport {ButtonLanguageComponent} from \"../../stories/buttons/button-language/button-language.component\";\nimport {ButtonFortestComponent} from '../../stories/buttons/button-fortest/button-fortest.component';\nimport {ButtonGlobeComponent} from \"../../stories/buttons/button-globe/button-globe.component\";\nimport Background1Component from \"../../stories/pages/background1/background1Component\";\nimport {ButtonTadiranComponent} from \"../../stories/buttons/button-tadiran/button-tadiran.component\";\nimport CardComponent from \"../../stories/cards/card.component\";\nimport LoginFormComponent from \"../../stories/forms/login-form/login-form-component\";\nimport RegistryFormComponent from \"../../stories/forms/registry-form/registry-form.component\";\nimport {ButtonContinueComponent} from \"../../stories/buttons/button-continue/button-continue.component\";\nimport {ButtonExComponent} from \"../../stories/buttons/button-ex/button-ex.component\";\nimport {ButtonAppsComponent} from \"../../stories/buttons/button-apps/button-apps.component\";\nimport {ButtonSuccessfullyComponent} from \"../../stories/buttons/button-successfully/button-successfully.component\";\nimport Button from \"../../stories/buttons/button-example/button.component\";\nimport {AppMenuComponent} from \"../../stories/app-menu/app-menu.component\";\nimport {StoryInputComponent} from \"../../stories/inputs/story-input.component\";\nimport {HighlightDirective} from \"src/stories/buttons/button-fortest/custom-directive/Highlight.directive\";\nimport ReplacePassFormComponent from \"../../stories/forms/replace-pass-form/replace-pass-form.component\";\nimport PassStrengthComponent from \"../../stories/pass-strength/pass-strength.component\";\nimport {ApiErrorMessagePipe} from \"./pipes/api-error-message.pipe\";\nimport {AvatarComponent} from \"../../stories/avatars/avatar.component\";\nimport {AppComponent} from \"../app.component\";\nimport { DynamicCompDirective } from '../../stories/directive/dynamic-comp.directive';\nimport {PopoverDirective} from \"../../stories/directive/bubble-avatar/popover.directive\";\nimport { BubbleAvatarComponent } from '../../stories/directive/bubble-avatar/bubble-avatar.component';\nimport { ActionAvatarComponent } from '../../stories/actions/action-avatar/action-avatar.component';\nimport {PopoverInputDirective} from \"../../stories/directive/bubble-input/popover-input.directive\";\nimport { BubbleInputComponent } from '../../stories/directive/bubble-input/bubble-input.component';\nimport { ActionInputComponent } from '../../stories/actions/action-input/action-input.component';\nimport {MdbPopoverModule} from \"mdb-angular-ui-kit/popover\";\n\nimport {MatButtonModule} from \"@angular/material/button\";\nimport {ButtonExclamationMarkComponent} from \"../../stories/buttons/button-exclamation-mark/button-exclamation-mark.component\"\nimport {ApiErrorMessageService} from \"./pipes/api-error-message.service\";\n\n\n\n\n\n@NgModule({\n  declarations: [\n    ButtonGlobeComponent, Background1Component, ButtonTadiranComponent, ButtonLanguageComponent,\n    ButtonFortestComponent,\n    CardComponent,\n    LoginFormComponent, LoginFormComponent, RegistryFormComponent,\n    ButtonContinueComponent, ButtonExComponent, ButtonAppsComponent, ButtonSuccessfullyComponent, Button,\n    AppMenuComponent,\n    StoryInputComponent,\n    HighlightDirective,\n    ReplacePassFormComponent,\n    PassStrengthComponent,\n    ApiErrorMessagePipe,\n    AvatarComponent,\n    DynamicCompDirective,\n    ActionAvatarComponent , PopoverDirective, BubbleAvatarComponent,\n    ActionInputComponent, PopoverInputDirective, BubbleInputComponent,\n    ButtonExclamationMarkComponent,\n\n\n  ],\n  imports: [\n    CommonModule,\n    FormsModule, ReactiveFormsModule, MdbPopoverModule, MatButtonModule,\n  ],\n  providers: [ ApiErrorMessageService],\n  exports: [\n    ButtonGlobeComponent, Background1Component, ButtonTadiranComponent, ButtonLanguageComponent,\n    ButtonFortestComponent,\n    CardComponent,\n    LoginFormComponent, LoginFormComponent, RegistryFormComponent,\n    ButtonContinueComponent, ButtonExComponent, ButtonAppsComponent, ButtonSuccessfullyComponent, Button,\n    AppMenuComponent,\n    StoryInputComponent,\n    CommonModule,\n    FormsModule, ReactiveFormsModule,\n    HighlightDirective,\n    ReplacePassFormComponent,\n    PassStrengthComponent,\n    AvatarComponent,\n    DynamicCompDirective,\n    ActionAvatarComponent   , PopoverDirective, BubbleAvatarComponent,\n    ActionInputComponent, PopoverInputDirective, BubbleInputComponent,\n    ButtonExclamationMarkComponent,\n\n\n\n  ],\n  bootstrap: [AvatarComponent, ]\n})\nexport class StorybookModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n//import { BrowserModule } from '@angular/platform-browser';\nimport {FormsModule, ReactiveFormsModule} from '@angular/forms';\n\n\nimport {ButtonLanguageComponent} from \"../../stories/buttons/button-language/button-language.component\";\nimport {ButtonFortestComponent} from '../../stories/buttons/button-fortest/button-fortest.component';\nimport {ButtonGlobeComponent} from \"../../stories/buttons/button-globe/button-globe.component\";\nimport Background1Component from \"../../stories/pages/background1/background1Component\";\nimport {ButtonTadiranComponent} from \"../../stories/buttons/button-tadiran/button-tadiran.component\";\nimport CardComponent from \"../../stories/cards/card.component\";\nimport LoginFormComponent from \"../../stories/forms/login-form/login-form-component\";\nimport RegistryFormComponent from \"../../stories/forms/registry-form/registry-form.component\";\nimport {ButtonContinueComponent} from \"../../stories/buttons/button-continue/button-continue.component\";\nimport {ButtonExComponent} from \"../../stories/buttons/button-ex/button-ex.component\";\nimport {ButtonAppsComponent} from \"../../stories/buttons/button-apps/button-apps.component\";\nimport {ButtonSuccessfullyComponent} from \"../../stories/buttons/button-successfully/button-successfully.component\";\nimport Button from \"../../stories/buttons/button-example/button.component\";\nimport {AppMenuComponent} from \"../../stories/app-menu/app-menu.component\";\nimport {StoryInputComponent} from \"../../stories/inputs/story-input.component\";\nimport {HighlightDirective} from \"src/stories/buttons/button-fortest/custom-directive/Highlight.directive\";\nimport ReplacePassFormComponent from \"../../stories/forms/replace-pass-form/replace-pass-form.component\";\nimport PassStrengthComponent from \"../../stories/pass-strength/pass-strength.component\";\nimport {ApiErrorMessagePipe} from \"./pipes/api-error-message.pipe\";\nimport {AvatarComponent} from \"../../stories/avatars/avatar.component\";\nimport {AppComponent} from \"../app.component\";\nimport { DynamicCompDirective } from '../../stories/directive/dynamic-comp.directive';\nimport {PopoverDirective} from \"../../stories/directive/bubble-avatar/popover.directive\";\nimport { BubbleAvatarComponent } from '../../stories/directive/bubble-avatar/bubble-avatar.component';\nimport { ActionAvatarComponent } from '../../stories/actions/action-avatar/action-avatar.component';\nimport {PopoverInputDirective} from \"../../stories/directive/bubble-input/popover-input.directive\";\nimport { BubbleInputComponent } from '../../stories/directive/bubble-input/bubble-input.component';\nimport { ActionInputComponent } from '../../stories/actions/action-input/action-input.component';\nimport {MdbPopoverModule} from \"mdb-angular-ui-kit/popover\";\n\nimport {MatButtonModule} from \"@angular/material/button\";\nimport {ButtonExclamationMarkComponent} from \"../../stories/buttons/button-exclamation-mark/button-exclamation-mark.component\"\nimport {ApiErrorMessageService} from \"./pipes/api-error-message.service\";\nimport {Spinner1Component} from \"../../stories/spinners/spinner1/spinner1.component\";\n\n\n\n\n\n@NgModule({\n    declarations: [\n        ButtonGlobeComponent, Background1Component, ButtonTadiranComponent, ButtonLanguageComponent,\n        ButtonFortestComponent,\n        CardComponent,\n        LoginFormComponent, LoginFormComponent, RegistryFormComponent,\n        ButtonContinueComponent, ButtonExComponent, ButtonAppsComponent, ButtonSuccessfullyComponent, Button,\n        AppMenuComponent,\n        StoryInputComponent,\n        HighlightDirective,\n        ReplacePassFormComponent,\n        PassStrengthComponent,\n        ApiErrorMessagePipe,\n        AvatarComponent,\n        DynamicCompDirective,\n        ActionAvatarComponent, PopoverDirective, BubbleAvatarComponent,\n        ActionInputComponent, PopoverInputDirective, BubbleInputComponent,\n        ButtonExclamationMarkComponent,\n        Spinner1Component,\n\n\n    ],\n  imports: [\n    CommonModule,\n    FormsModule, ReactiveFormsModule, MdbPopoverModule, MatButtonModule,\n  ],\n  providers: [ ApiErrorMessageService],\n  exports: [\n    ButtonGlobeComponent, Background1Component, ButtonTadiranComponent, ButtonLanguageComponent,\n    ButtonFortestComponent,\n    CardComponent,\n    LoginFormComponent, LoginFormComponent, RegistryFormComponent,\n    ButtonContinueComponent, ButtonExComponent, ButtonAppsComponent, ButtonSuccessfullyComponent, Button,\n    AppMenuComponent,\n    StoryInputComponent,\n    CommonModule,\n    FormsModule, ReactiveFormsModule,\n    HighlightDirective,\n    ReplacePassFormComponent,\n    PassStrengthComponent,\n    AvatarComponent,\n    DynamicCompDirective,\n    ActionAvatarComponent   , PopoverDirective, BubbleAvatarComponent,\n    ActionInputComponent, PopoverInputDirective, BubbleInputComponent,\n    ButtonExclamationMarkComponent,\n    Spinner1Component,\n\n\n\n  ],\n  bootstrap: [AvatarComponent, ]\n})\nexport class StorybookModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -13366,6 +13375,9 @@
                             "name": "ReplacePassFormComponent"
                         },
                         {
+                            "name": "Spinner1Component"
+                        },
+                        {
                             "name": "StoryInputComponent"
                         }
                     ]
@@ -13457,6 +13469,9 @@
                         },
                         {
                             "name": "ReplacePassFormComponent"
+                        },
+                        {
+                            "name": "Spinner1Component"
                         },
                         {
                             "name": "StoryInputComponent"
@@ -13824,16 +13839,6 @@
                 "name": "Large",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/buttons/button-continue/button-continue.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Large",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/buttons/button-ex/button-ex.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -13845,6 +13850,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/buttons/button-example/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Large",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/buttons/button-continue/button-continue.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -14194,16 +14209,6 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/buttons/button-continue/button-continue.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/buttons/button-ex/button-ex.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -14215,6 +14220,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/buttons/button-example/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/buttons/button-continue/button-continue.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -14393,16 +14408,6 @@
                 "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/buttons/button-continue/button-continue.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Secondary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/buttons/button-ex/button-ex.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -14414,6 +14419,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/buttons/button-example/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Secondary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/buttons/button-continue/button-continue.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -14503,16 +14518,6 @@
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/buttons/button-continue/button-continue.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Small",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/buttons/button-ex/button-ex.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -14524,6 +14529,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/buttons/button-example/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Small",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/buttons/button-continue/button-continue.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -14683,21 +14698,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/pages/Page.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<Page>",
-                "defaultValue": "(args: Page) => ({\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/inputs/story-input.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "args => ({\n  props: {\n    ...args,\n    onPinInput: actionsData.onPinInput,\n    onArchiveInput: actionsData.onArchiveInput,\n  },\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/pages/Page.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Page>",
+                "defaultValue": "(args: Page) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -14743,16 +14758,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/buttons/button-continue/button-continue.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<ButtonContinueComponent>",
-                "defaultValue": "(args: ButtonContinueComponent) => ({\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/buttons/button-ex/button-ex.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -14763,21 +14768,31 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/buttons/button-exclamation-mark/button-exclamation-mark.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<ButtonExclamationMarkComponent>",
-                "defaultValue": "(args: ButtonExclamationMarkComponent) => ({\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/buttons/button-example/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<Button>",
                 "defaultValue": "(args: Button) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/buttons/button-continue/button-continue.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ButtonContinueComponent>",
+                "defaultValue": "(args: ButtonContinueComponent) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/buttons/button-exclamation-mark/button-exclamation-mark.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ButtonExclamationMarkComponent>",
+                "defaultValue": "(args: ButtonExclamationMarkComponent) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -17394,7 +17409,7 @@
                 "linktype": "component",
                 "name": "AppMenuComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/17",
+                "coverageCount": "0/18",
                 "status": "low"
             },
             {

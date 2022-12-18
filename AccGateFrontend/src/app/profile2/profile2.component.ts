@@ -178,15 +178,17 @@ export default class Profile2Component implements OnInit {
                 newRefreshToken = (data.refreshToken);
                 newCurrentUser = (data);
                 setTimeout(() => {
+                  this.isLoading = false;
                   console.log("Failed open new tab");
                   resolve();//() => {resolve();}
                 }, 5000);
               })
-                .then(() => {this.router.navigate([])
+              promise.then(() => {this.router.navigate([])
                 .then(result => { this.windowObjectReference = window.open(AppConfig.accServer.ACCWEBServers+webappURLPrefix);})
                 .then(result => { this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.TOKEN_KEY, newAccessToken);
                     this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.REFRESHTOKEN_KEY, newRefreshToken);
-                    this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.USER_KEY, JSON.stringify(newCurrentUser));},
+                    this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.USER_KEY, JSON.stringify(newCurrentUser));
+                    this.isLoading = false;},
                   (err) => { this.isLoading = false;
                     return throwError(err);})});
             },
@@ -213,11 +215,12 @@ export default class Profile2Component implements OnInit {
           .subscribe(
             data => {
               let promise = new Promise<void>((resolve, reject) => {
-                this.isLoading = false;
+
                 newAccessToken = (data.accessToken);
                 newRefreshToken = (data.refreshToken);
                 newCurrentUser = (data);
                 setTimeout(() => {
+                  this.isLoading = false;
                   console.log("Failed open new window");
                   resolve();//() => {resolve();}
                 }, 5000);
@@ -226,7 +229,8 @@ export default class Profile2Component implements OnInit {
                   'C-Sharpcorner', 'scrollbars=no');})
                 .then(result => { this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.TOKEN_KEY, newAccessToken);
                     this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.REFRESHTOKEN_KEY, newRefreshToken);
-                    this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.USER_KEY, JSON.stringify(newCurrentUser));},
+                    this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.USER_KEY, JSON.stringify(newCurrentUser));
+                    this.isLoading = false;},
             (err) => { this.isLoading = false;
               return throwError(err);})
     },

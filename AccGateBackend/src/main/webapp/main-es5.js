@@ -6164,10 +6164,12 @@
                   newRefreshToken = data.refreshToken;
                   newCurrentUser = data;
                   setTimeout(function () {
+                    _this24.isLoading = false;
                     console.log("Failed open new tab");
                     resolve(); //() => {resolve();}
                   }, 5000);
-                }).then(function () {
+                });
+                promise.then(function () {
                   _this24.router.navigate([]).then(function (result) {
                     _this24.windowObjectReference = window.open(_app_config__WEBPACK_IMPORTED_MODULE_0__.AppConfig.accServer.ACCWEBServers + webappURLPrefix);
                   }).then(function (result) {
@@ -6212,6 +6214,7 @@
                   newRefreshToken = data.refreshToken;
                   newCurrentUser = data;
                   setTimeout(function () {
+                    _this25.isLoading = false;
                     console.log("Failed open new window");
                     resolve(); //() => {resolve();}
                   }, 5000);

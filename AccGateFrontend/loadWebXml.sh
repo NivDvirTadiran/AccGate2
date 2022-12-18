@@ -2,7 +2,7 @@
 
 pwd;
 ls 'AccGateBackend/src/main/webapp/';
-sed -e "s/%ACC_VERSION%/7.4.003/g" -i  AccGateBackend/src/main/webapp/main*
+sed -e "s/%ACC_VERSION%/7.5.0013/g" -i  AccGateBackend/src/main/webapp/main*
 
 
 sleep 1;

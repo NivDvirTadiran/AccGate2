@@ -3010,11 +3010,12 @@ class Profile2Component {
                         newRefreshToken = (data.refreshToken);
                         newCurrentUser = (data);
                         setTimeout(() => {
+                            this.isLoading = false;
                             console.log("Failed open new tab");
                             resolve(); //() => {resolve();}
                         }, 5000);
-                    })
-                        .then(() => {
+                    });
+                    promise.then(() => {
                         this.router.navigate([])
                             .then(result => { this.windowObjectReference = window.open(_app_config__WEBPACK_IMPORTED_MODULE_0__.AppConfig.accServer.ACCWEBServers + webappURLPrefix); })
                             .then(result => {
@@ -3050,6 +3051,7 @@ class Profile2Component {
                         newRefreshToken = (data.refreshToken);
                         newCurrentUser = (data);
                         setTimeout(() => {
+                            this.isLoading = false;
                             console.log("Failed open new window");
                             resolve(); //() => {resolve();}
                         }, 5000);
