@@ -5,7 +5,7 @@ import {AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, 
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {DialogData} from "../login-main.component";
 import RegisterForm2Component from "../register-form2/register-form2.component";
-import {StoryInput} from "../../../../stories/inputs/story-input.model";
+import {StoryInput} from "../../../../stories/inputs/input/story-input.model";
 
 @Component({
   selector: 'app-modal',
@@ -53,9 +53,9 @@ export class ReplacePassForm2Component {
         PasswordValidators.patternValidator(new RegExp("(?=.*[0-9])"), {requiresDigit: true}),
         PasswordValidators.patternValidator(new RegExp("(?=.*[A-Z])"), {requiresUppercase: true}),
         PasswordValidators.patternValidator(new RegExp("(?=.*[a-z])"), {requiresLowercase: true} ),
-        PasswordValidators.patternValidator(new RegExp("(?=.*[$@^!%*?&])"), {requiresSpecialChars: true})
+        PasswordValidators.patternValidator(new RegExp("(?=.*[$@^!%*?&#><{}()+~])"), {requiresSpecialChars: true})
       ])),
-      confirmPassword: new FormControl(null, [
+      confirmPassword: new FormControl('', [
         Validators.minLength(8),
         PasswordValidators.patternValidator(new RegExp("(?=.*[0-9])"), {requiresDigit: true}),
         PasswordValidators.patternValidator(new RegExp("(?=.*[A-Z])"), {requiresUppercase: true}),

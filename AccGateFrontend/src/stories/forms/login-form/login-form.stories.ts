@@ -1,25 +1,25 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { componentWrapperDecorator, moduleMetadata, Meta, Story  } from '@storybook/angular';
-import AvatarComponent from './login-form-component';
 import CardComponent from '../../cards/card.component'
-import { StoryInputComponent } from "../../inputs/story-input.component";
+import { StoryInputComponent } from "../../inputs/input/story-input.component";
 
 import {CommonModule} from "@angular/common";
 
-import * as StoryInput from "../../inputs/story-input.stories";
+import * as StoryInput from "../../inputs/input/story-input.stories";
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {ButtonContinueComponent} from "../../buttons/button-continue/button-continue.component";
 import PassStrengthComponent from "../../pass-strength/pass-strength.component";
 import {ApiErrorMessagePipe} from "../../../app/storybook/pipes/api-error-message.pipe";
 import {ApiErrorMessageService} from "../../../app/storybook/pipes/api-error-message.service";
+import LoginFormComponent from "./login-form.component";
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
   title: 'Design System/Forms/LoginForm',
-  component: AvatarComponent,
+  component: LoginFormComponent,
   decorators: [
     moduleMetadata({
-      declarations: [ AvatarComponent, CardComponent, StoryInputComponent, ButtonContinueComponent,
+      declarations: [ CardComponent, StoryInputComponent, ButtonContinueComponent,
         PassStrengthComponent, ApiErrorMessagePipe, ],
       imports: [CommonModule, FormsModule, ReactiveFormsModule ],
     }),

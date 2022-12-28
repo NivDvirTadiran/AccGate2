@@ -1,6 +1,6 @@
 import Card from "../cards/card.component";
 import {componentWrapperDecorator, moduleMetadata} from "@storybook/angular";
-import {StoryInputComponent} from "../inputs/story-input.component";
+import {StoryInputComponent} from "../inputs/input/story-input.component";
 import {CommonModule} from "@angular/common";
 import {Meta, Story} from "@storybook/angular/types-6-0";
 import PassStrengthComponent from "./pass-strength.component";

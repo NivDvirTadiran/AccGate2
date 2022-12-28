@@ -85,4 +85,26 @@ export class AuthService {
       accessToken: token,
     }, httpOptions);
   }
+
+  TSV_ValidateCodeByName(username: string, email: string, code: string): Observable<any> {
+    return this.http.post(AUTH_API + 'tsv_codevalidatebyname', {
+      username,
+      email,
+      code,
+    }, httpOptions);
+  }
+
+  TSV_GenerateCodeByName( username: string, email: string): Observable<any> {
+    return this.http.post(AUTH_API + 'tsv_codegeneratebyname', {
+      username,
+      email,
+    }, httpOptions);
+  }
+
+  TSV_GenerateCodeByEmail( username: string, email: string): Observable<any> {
+    return this.http.post(AUTH_API + 'tsv_codegeneratebyemail', {
+      username,
+      email,
+    }, httpOptions);
+  }
 }

@@ -45,6 +45,8 @@ import {Login2Module} from "./login2/login2.module";
 import {StorybookModule} from "./storybook/storybook.module";
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {MdbValidationModule} from "mdb-angular-ui-kit/validation";
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatButtonModule} from "@angular/material/button";
 
 
 
@@ -97,7 +99,9 @@ import {MdbValidationModule} from "mdb-angular-ui-kit/validation";
     ButtonsModule,
     MDBBootstrapModule.forRoot(),
     Login2Module,
-    StorybookModule
+    StorybookModule,
+    MatDialogModule,
+    MatButtonModule,
   ],
   providers: [
     authInterceptorProviders,

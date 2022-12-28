@@ -10,7 +10,7 @@ import {ButtonGlobeComponent} from "../../stories/buttons/button-globe/button-gl
 import Background1Component from "../../stories/pages/background1/background1Component";
 import {ButtonTadiranComponent} from "../../stories/buttons/button-tadiran/button-tadiran.component";
 import CardComponent from "../../stories/cards/card.component";
-import LoginFormComponent from "../../stories/forms/login-form/login-form-component";
+import LoginFormComponent from "../../stories/forms/login-form/login-form.component";
 import RegistryFormComponent from "../../stories/forms/registry-form/registry-form.component";
 import {ButtonContinueComponent} from "../../stories/buttons/button-continue/button-continue.component";
 import {ButtonExComponent} from "../../stories/buttons/button-ex/button-ex.component";
@@ -18,7 +18,7 @@ import {ButtonAppsComponent} from "../../stories/buttons/button-apps/button-apps
 import {ButtonSuccessfullyComponent} from "../../stories/buttons/button-successfully/button-successfully.component";
 import Button from "../../stories/buttons/button-example/button.component";
 import {AppMenuComponent} from "../../stories/app-menu/app-menu.component";
-import {StoryInputComponent} from "../../stories/inputs/story-input.component";
+import {StoryInputComponent} from "../../stories/inputs/input/story-input.component";
 import {HighlightDirective} from "src/stories/buttons/button-fortest/custom-directive/Highlight.directive";
 import ReplacePassFormComponent from "../../stories/forms/replace-pass-form/replace-pass-form.component";
 import PassStrengthComponent from "../../stories/pass-strength/pass-strength.component";
@@ -38,6 +38,9 @@ import {MatButtonModule} from "@angular/material/button";
 import {ButtonExclamationMarkComponent} from "../../stories/buttons/button-exclamation-mark/button-exclamation-mark.component"
 import {ApiErrorMessageService} from "./pipes/api-error-message.service";
 import {Spinner1Component} from "../../stories/spinners/spinner1/spinner1.component";
+import VerificationFormComponent from "../../stories/forms/verification-form/verification-form.component";
+import {DigitcodeInputComponent} from "../../stories/inputs/digitcode-input/digitcode-input.component";
+import {CodeInputComponent} from "../../stories/inputs/code-input/code-input.component";
 
 
 
@@ -48,10 +51,10 @@ import {Spinner1Component} from "../../stories/spinners/spinner1/spinner1.compon
         ButtonGlobeComponent, Background1Component, ButtonTadiranComponent, ButtonLanguageComponent,
         ButtonFortestComponent,
         CardComponent,
-        LoginFormComponent, LoginFormComponent, RegistryFormComponent,
+        LoginFormComponent, LoginFormComponent, RegistryFormComponent, VerificationFormComponent,
         ButtonContinueComponent, ButtonExComponent, ButtonAppsComponent, ButtonSuccessfullyComponent, Button,
         AppMenuComponent,
-        StoryInputComponent,
+        StoryInputComponent, DigitcodeInputComponent, CodeInputComponent,
         HighlightDirective,
         ReplacePassFormComponent,
         PassStrengthComponent,
@@ -74,10 +77,10 @@ import {Spinner1Component} from "../../stories/spinners/spinner1/spinner1.compon
     ButtonGlobeComponent, Background1Component, ButtonTadiranComponent, ButtonLanguageComponent,
     ButtonFortestComponent,
     CardComponent,
-    LoginFormComponent, LoginFormComponent, RegistryFormComponent,
+    LoginFormComponent, LoginFormComponent, RegistryFormComponent, VerificationFormComponent,
     ButtonContinueComponent, ButtonExComponent, ButtonAppsComponent, ButtonSuccessfullyComponent, Button,
     AppMenuComponent,
-    StoryInputComponent,
+    StoryInputComponent, DigitcodeInputComponent, CodeInputComponent,
     CommonModule,
     FormsModule, ReactiveFormsModule,
     HighlightDirective,

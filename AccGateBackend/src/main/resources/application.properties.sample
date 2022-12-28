@@ -23,5 +23,9 @@ tadiran.gate.jwtRefreshExpirationMin= 144
 tadiran.gate.PassExpDays= 30
 tadiran.gate.PreviousAlertPassExpDays= 10
 
+# 12[Hour] x 3600[Sec] x 1000[Ms] = 43,200,000[MS]
+# 1[Hour] x 3600[Sec] x 1000[Ms] = 3,600,000[MS]
+tadiran.gate.pinCodeTTL= 3600000
+
 server.port=8445
 

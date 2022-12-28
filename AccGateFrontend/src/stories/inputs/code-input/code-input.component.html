@@ -1,0 +1,17 @@
+<span *ngFor="let holder of placeholders; index as i; let first = first; let last = last;"
+      [class.code-hidden]="isCodeHidden"  >
+  <storybook-digitcode-input
+    #storyInput
+    (onClick)="onClick($event)"
+    (onPaste)="onPaste($event,i)"
+    (onInput)="onInput($event, i)"
+    (onKeydown)="onKeydown($event, i)"
+    [inputType]="inputType"
+    [disabled]="disabled"
+    [inputMode]="inputMode"
+    [autocapitalize]="autocapitalize"
+    [isFirst]="first"
+    [isLast]="last">
+  </storybook-digitcode-input>
+
+</span>

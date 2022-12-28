@@ -2,12 +2,12 @@
 import { componentWrapperDecorator, moduleMetadata, Meta, Story  } from '@storybook/angular';
 import { FormComponent } from './form.component';
 import CardComponent from '../cards/card.component'
-import { StoryInputComponent } from "../inputs/story-input.component";
+import { StoryInputComponent } from "../inputs/input/story-input.component";
 
 import {CommonModule} from "@angular/common";
 
-import * as StoryInput from "../inputs/story-input.stories";
-import StoryInputStories from "../inputs/story-input.stories";
+import * as StoryInput from "../inputs/input/story-input.stories";
+import StoryInputStories from "../inputs/input/story-input.stories";
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {ButtonContinueComponent} from "../buttons/button-continue/button-continue.component";
 

@@ -1,0 +1,88 @@
+
+
+
+<div id="main-login-card" class="col-md-12">
+  <storybook-card class="card-container"></storybook-card>
+  <div  class="h-100 d-flex align-items-center justify-content-center">
+    <storybook-button-ex id="button-ex"  (click)="this.clickXButton.emit()" ></storybook-button-ex>
+    <div class="form-header">
+      <a >Aeonix App Center</a>
+    </div>
+
+    <br>
+    <!--form name="form"  (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate --> <!-- *ngIf="!isRegSuccess"-->
+      <form name="currentForm" >
+      <div  *ngIf="!isLoggedIn" class="Vector">
+
+
+
+            <!--div *ngIf="isLoggedIn">isRegSuccess</div>
+            <div *ngIf="!isLoggedIn && storyInputsInOrder.length === 0">empty</div>
+            <storybook-input
+              [storyInput]="storyInputsInOrder[0]"
+              (onArchiveInput)="onArchiveInput.emit($event)"
+              (onPinInput)="onPinInput.emit($event)"
+              [currentForm]="mForm">
+            </storybook-input>
+
+            <storybook-input
+              [storyInput]="storyInputsInOrder[1]"
+              (onArchiveInput)="onArchiveInput.emit($event)"
+              (onPinInput)="onPinInput.emit($event)"
+              [currentForm]="mForm">
+            </storybook-input-->
+  <br>
+  <br>
+  <br>
+
+
+
+        <div class="second-header" style="top: 82px;">
+          <a class="second-header-text"  href="#/login" style="position: relative; top: 10px; text-align: left">
+            {{ 'Please enter the Verification Code'}}<br>
+            {{ 'you received in your mail:'  }}
+          </a>
+      </div>
+
+
+      <div id="button-successfully" style="">
+            <storybook-button-successfully  *ngIf="status.isVerSuccess"  style="position: relative; top: 15px"></storybook-button-successfully>
+            <code-input *ngIf="!status.isVerSuccess"
+                        #codeInput
+                        [codeLength]="codeLength"
+                        (codeChanged)="onCodeChanged($event)"
+                        (codeCompleted)="onCodeCompleted($event)">
+            </code-input>
+      </div>
+
+
+
+
+
+      <div class="login-button">
+            <div class="login-failed-message" role="alert" style="position: relative; top: 15px">
+              <table *ngIf="this.status?.isVerFailed">
+                <tr>{{ this.status?.verErrorMessage.toString()  | apiErrorMessage: param }}</tr>
+                <tr  *ngFor="let message of this.status?.verErrorMessage.data?.confirmPassword.split(', ')">{{message.trim() | apiErrorMessage: param }}</tr>
+              </table>
+            </div>
+
+            <storybook-button-continue size="medium" label="Login " type="button" (click)="onSubmit()" style="position: relative; top: 15px"></storybook-button-continue>
+
+
+            <a *ngIf="!status.isVerSuccess" class="resend-verification"  (click)="generateNewCodeFor2SV.emit()" style="position: relative; top: 40px;">
+              {{ 'resend the verification code'  }}
+            </a>
+
+      </div>
+
+
+
+
+      </div>
+
+
+    </form>
+  </div>
+</div>
+

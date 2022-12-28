@@ -1,12 +1,6 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import {Story, Meta, moduleMetadata, componentWrapperDecorator} from '@storybook/angular';
 import { AvatarComponent } from './avatar.component';
-import RegistryFormComponent from "src/stories/forms/registry-form/registry-form.component";
-import CardComponent from "src/stories/cards/card.component";
-import {StoryInputComponent} from "src/stories/inputs/story-input.component";
-import {ButtonContinueComponent} from "src/stories/buttons/button-continue/button-continue.component";
-import {ButtonExComponent} from "src/stories/buttons/button-ex/button-ex.component";
-import {ButtonSuccessfullyComponent} from "src/stories/buttons/button-successfully/button-successfully.component";
 import {CommonModule} from "@angular/common";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {PopoverDirective} from "../directive/bubble-avatar/popover.directive";

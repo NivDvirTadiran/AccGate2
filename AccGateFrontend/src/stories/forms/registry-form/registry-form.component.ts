@@ -11,11 +11,11 @@ import {
   ViewChildren
 } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
-import { StoryInput } from "src/stories/inputs/story-input.model";
+import { StoryInput } from "src/stories/inputs/input/story-input.model";
 import { AuthService } from 'src/app/_services/auth.service';
 import {ApiErrorMessageService} from "../../../app/storybook/pipes/api-error-message.service";
 //import {BehaviorSubject} from "rxjs";
-//import {StoryInputComponent} from "../../inputs/story-input.component";
+//import {StoryInputComponent} from "../inputs/input/story-input.component";
 
 /*
 @Directive({selector: 'storybook-input'})
@@ -107,6 +107,7 @@ export default class RegistryFormComponent implements OnInit, AfterViewChecked, 
   @Output() sendRegReq: EventEmitter<void> = new EventEmitter();
 
   @Output() clickXButton: EventEmitter<void> = new EventEmitter();
+
 
 
   @Input()

@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import { StoryInput } from "../../stories/inputs/story-input.model";
+import { StoryInput } from "../../stories/inputs/input/story-input.model";
 import {AuthService} from "../_services/auth.service";
 import {AbstractControl, FormGroup} from "@angular/forms";
 import {TokenStorageService} from "../_services/token-storage.service";
@@ -9,13 +9,17 @@ import {BehaviorSubject, throwError} from "rxjs";
 import {UserService} from "../_services/user.service";
 import {MatDialog} from "@angular/material/dialog";
 import {ReplacePassForm2Component} from "../login2/login-main/replace-pass-form2/replace-pass-form2.component";
+import VerificationForm2Component from "../login2/login-main/verification-form2/verification-form2.component";
 
 
 export interface DialogData {
   username: string;
   password: string;
 }
-
+export interface TSVData {
+  username: string;
+  email: string;
+}
 
 @Component({
   selector: 'profile2',
@@ -49,14 +53,15 @@ export default class Profile2Component implements OnInit {
   constructor(private authService: AuthService,
               private token: TokenStorageService,
               private router: Router,
-              public replacePassFormDialog: MatDialog) {
+              public replacePassFormDialog: MatDialog,
+              public verificationFormDialog: MatDialog) {
     this.TOKEN_KEY = AppConfig.endpoints.TOKEN_KEY;
   }
 
 
   openReplacePassForm() {
     const replacePassFormDialogRef = this.replacePassFormDialog.open(ReplacePassForm2Component, {
-      data: {username: this.currentUser , password: ''},
+      data: {username: this.currentUser.username , password: ''},
     });
 
     replacePassFormDialogRef.beforeClosed().subscribe(result => {
@@ -78,6 +83,18 @@ export default class Profile2Component implements OnInit {
     return replacePassFormDialogRef.afterClosed().toPromise();
   }
 
+
+  openVerificationForm() {
+    const verificationFormDialogRef = this.verificationFormDialog.open(VerificationForm2Component, {
+      data: {username: this.currentUser.username , email: this.currentUser.email},
+    });
+
+    verificationFormDialogRef.afterClosed().subscribe(result => {
+      console.log('The register form dialog was closed');
+    });
+
+    return verificationFormDialogRef.afterClosed().toPromise();
+  }
 
   public passExp: number = 0; // By Days
   public previousAlertPassExp: number = 0; // By Days

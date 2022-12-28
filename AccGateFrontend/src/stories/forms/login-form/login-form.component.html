@@ -1,0 +1,54 @@
+
+
+
+<div id="main-login-card" class="col-md-12">
+  <storybook-card class="card-container"></storybook-card>
+  <div  class="h-100 d-flex align-items-center justify-content-center">
+    <div class="form-header">
+      <a>Aeonix App Center</a>
+    </div>
+
+    <br>
+    <!--form name="form"  (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate --> <!-- *ngIf="!isRegSuccess"-->
+      <form name="currentForm"   [formGroup]="mForm">
+      <div  *ngIf="!isLoggedIn" class="Vector">
+
+        <div class="login-button">
+
+            <div *ngIf="isLoggedIn">isRegSuccess</div>
+            <div *ngIf="!isLoggedIn && storyInputsInOrder.length === 0">empty</div>
+            <storybook-input
+              [storyInput]="storyInputsInOrder[0]"
+              (onArchiveInput)="onArchiveInput.emit($event)"
+              (onPinInput)="onPinInput.emit($event)"
+              [currentForm]="mForm">
+            </storybook-input>
+
+            <storybook-input
+              [storyInput]="storyInputsInOrder[1]"
+              (onArchiveInput)="onArchiveInput.emit($event)"
+              (onPinInput)="onPinInput.emit($event)"
+              [currentForm]="mForm">
+            </storybook-input>
+
+
+            <br>
+            <div class="thematic-break"></div>
+            <div class="login-failed-message" role="alert" >
+              <p *ngIf="isLoginFailed">*  {{ loginErrorMessage | apiErrorMessage: param }}</p>
+            </div>
+
+
+            <a (click)="openReplacePassword()" class="forgot-password"  href="#/login" >
+              {{ 'Forgot password?'  }}
+            </a>
+
+            <storybook-button-continue size="medium" label="Continue " type="button" (click)="onSubmit()" ></storybook-button-continue>
+
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div>
+

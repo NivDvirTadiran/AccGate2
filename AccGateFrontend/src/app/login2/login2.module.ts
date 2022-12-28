@@ -11,6 +11,7 @@ import {StorybookModule} from "../storybook/storybook.module";
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatButtonModule} from "@angular/material/button";
 import {ReplacePassForm2Component} from "./login-main/replace-pass-form2/replace-pass-form2.component";
+import VerificationForm2Component from "./login-main/verification-form2/verification-form2.component";
 
 
 
@@ -19,6 +20,7 @@ import {ReplacePassForm2Component} from "./login-main/replace-pass-form2/replace
   declarations: [
     ReplacePassForm2Component,
     RegisterForm2Component,
+    VerificationForm2Component,
     TaskComponent, TaskListComponent,
     LogtestComponent,
     Login2Component,

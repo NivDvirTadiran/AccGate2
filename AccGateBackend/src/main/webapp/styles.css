@@ -51330,7 +51330,6 @@ span.postfix, label.postfix {
   border-color: #cccccc;
 }
 /* We use this to get basic styling on all basic form elements */
-input[type=text],
 input[type=password],
 input[type=date],
 input[type=datetime],
@@ -51811,7 +51810,7 @@ meta.foundation-mq-topbar {
   width: 16px;
 }
 .top-bar .toggle-topbar.menu-icon a span:hover:after {
-  box-shadow: 0 0px 0 1px "", 0 7px 0 1px "", 0 14px 0 1px "";
+  box-shadow: 0 0 0 1px, 0 7px 0 1px, 0 14px 0 1px;
 }
 .top-bar.expanded {
   height: auto;
@@ -52126,7 +52125,7 @@ meta.foundation-mq-topbar {
   }
 
   .top-bar-section {
-    transition: none 0 0;
+    transition: none;
     left: 0 !important;
   }
 

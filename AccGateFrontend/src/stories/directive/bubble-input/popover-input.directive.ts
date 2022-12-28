@@ -19,6 +19,7 @@ export class PopoverInputDirective {
 
   popoverComponentRef?: ComponentRef<BubbleInputComponent>;
   @HostListener('mouseover', ['$event']) onMouseOver($event: any){
+    this.popoverComponentRef?.instance.setData(this.data!);
     this.popoverComponentRef?.instance.showPopup();
     //this.eleRef.nativeElement.style.color = 'blue';
   }
@@ -28,6 +29,7 @@ export class PopoverInputDirective {
   }
 
   @HostListener('click', ['$event']) onClick($event: any){
+    this.popoverComponentRef?.instance.setData(this.data!);
     this.popoverComponentRef?.instance.showPopup();
   }
 

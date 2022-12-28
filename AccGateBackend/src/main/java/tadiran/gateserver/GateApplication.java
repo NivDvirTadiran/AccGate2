@@ -7,8 +7,12 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.cache.concurrent.ConcurrentMapCacheManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -16,6 +20,7 @@ import javax.sql.DataSource;
 
 
 @SpringBootApplication //(exclude={DataSourceAutoConfiguration.class})
+@EnableScheduling
 public class GateApplication extends SpringBootServletInitializer {
 
 	@Override
@@ -34,8 +39,19 @@ public class GateApplication extends SpringBootServletInitializer {
 		public void addViewControllers(ViewControllerRegistry registry) {
 			registry.addViewController("/").setViewName("forward:/index.html");
 		}
+
 	}
 /*
+	@Configuration
+	@EnableCaching
+	public class SpringCachingConfig {
+
+		@Bean
+		public CacheManager cacheManager() {
+			return new ConcurrentMapCacheManager("pincodes");
+		}
+	}
+
 	@Configuration
 	public class DatasourceConfig {
 		@Bean

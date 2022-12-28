@@ -1,0 +1,17 @@
+
+
+<label class="Vector2" [ngStyle]="{'margin-left': isFirst ? '0' : '10px',  'margin-right': isLast ? '0' : '10px'}">
+
+   <input #input
+         (click)="onClick.emit($event)"
+         (paste)="onPaste.emit($event)"
+         (input)="onInput.emit($event)"
+         (keydown)="onKeydown.emit($event)"
+         [type]="this.inputType"
+         [disabled]="disabled"
+         [attr.inputmode]="inputMode"
+         [attr.autocapitalize]="autocapitalize"
+         [value]="value"
+         autocomplete="one-time-code"
+         class="digit"/>
+</label>

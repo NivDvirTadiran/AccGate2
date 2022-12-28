@@ -1,5 +1,5 @@
 import {Component, ElementRef, Inject, Input, OnInit, Renderer2, ViewChild} from '@angular/core';
-import { StoryInput } from "src/stories/inputs/story-input.model";
+import { StoryInput } from "src/stories/inputs/input/story-input.model";
 import {AuthService} from "src/app/_services/auth.service";
 import {AbstractControl, FormControl, FormGroup, Validators} from "@angular/forms";
 import {TokenStorageService} from "src/app/_services/token-storage.service";
@@ -10,6 +10,7 @@ import RegisterForm2Component from "./register-form2/register-form2.component";
 import {RegisterFormComponent} from "../../login/register-form/register-form.component";
 import {ReplacePassFormComponent} from "../../login/replace-pass-form/replace-pass-form.component";
 import {ReplacePassForm2Component} from "./replace-pass-form2/replace-pass-form2.component";
+import VerificationForm2Component from "./verification-form2/verification-form2.component";
 
 export interface DialogData {
   username: string;
@@ -97,6 +98,7 @@ export class LoginMainComponent implements OnInit {
   constructor(private renderer: Renderer2,
               public registerFormDialog: MatDialog,
               public replacePassFormDialog: MatDialog,
+              public verificationFormDialog: MatDialog,
               public authService: AuthService,
               private tokenStorage: TokenStorageService,
               private router: Router,) {
@@ -119,7 +121,6 @@ export class LoginMainComponent implements OnInit {
 
     return registerFormDialogRef.afterClosed().toPromise();
   }
-
 
   openReplacePassForm() {
     const replacePassFormDialogRef = this.replacePassFormDialog.open(ReplacePassForm2Component, {
@@ -144,6 +145,19 @@ export class LoginMainComponent implements OnInit {
 
     return replacePassFormDialogRef.afterClosed().toPromise();
   }
+
+  openVerificationForm() {
+    const verificationFormDialogRef = this.verificationFormDialog.open(VerificationForm2Component, {
+      data: {username: this.getUsernameCurrentFieldValue , password: this.getPasswordCurrentFieldValue},
+    });
+
+    verificationFormDialogRef.afterClosed().subscribe(result => {
+      console.log('The register form dialog was closed');
+    });
+
+    return verificationFormDialogRef.afterClosed().toPromise();
+  }
+
 
   ngOnInit(): void {};
 
@@ -236,7 +250,6 @@ export class LoginMainComponent implements OnInit {
             this.loginErrorMessage = err.error.message;
         }
 
-
         this.isLoginFailed = true;
       }
     );
@@ -249,7 +262,8 @@ export class LoginMainComponent implements OnInit {
 
   profile2(): void {
   this.router.navigate(['/profile2']);
-}
+  }
+
 
 }
 

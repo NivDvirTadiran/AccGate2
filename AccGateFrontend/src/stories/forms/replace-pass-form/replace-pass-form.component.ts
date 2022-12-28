@@ -11,12 +11,12 @@ import {
   ViewChildren
 } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
-import { StoryInput } from "src/stories/inputs/story-input.model";
+import { StoryInput } from "src/stories/inputs/input/story-input.model";
 import { AuthService } from 'src/app/_services/auth.service';
 import {PopoverOptions} from "../../directive/popover.interface";
 import {ActionInputComponent} from "../../actions/action-input/action-input.component";
 //import {BehaviorSubject} from "rxjs";
-//import {StoryInputComponent} from "../../inputs/story-input.component";
+//import {StoryInputComponent} from "../inputs/input/story-input.component";
 
 /*
 @Directive({selector: 'storybook-input'})

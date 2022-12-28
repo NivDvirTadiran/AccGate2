@@ -1,24 +1,20 @@
 package tadiran.gateserver.controllers;
 
 
-import java.time.Instant;
 import java.time.LocalDate;
 import java.util.*;
-import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
-import net.bytebuddy.implementation.bytecode.Throw;
+import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.AuthenticationException;
-import org.springframework.web.bind.MethodArgumentNotValidException;
 import tadiran.gateserver.models.*;
 import tadiran.gateserver.payload.request.*;
 import tadiran.gateserver.payload.response.*;
-import tadiran.gateserver.repository.AgentRepository;
-import tadiran.gateserver.repository.SupRepository;
+import tadiran.gateserver.repository.*;
 import tadiran.gateserver.security.jwt.exception.TokenRefreshException;
 import tadiran.gateserver.security.services.RefreshTokenService;
 import org.slf4j.Logger;
@@ -34,9 +30,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
-import tadiran.gateserver.repository.RoleRepository;
-import tadiran.gateserver.repository.UserRepository;
 import tadiran.gateserver.security.jwt.JwtUtils;
+import tadiran.gateserver.security.services.TwoStepVerificationService;
 import tadiran.gateserver.security.services.UserDetailsImpl;
 import tadiran.gateserver.security.services.UserDetailsServiceImpl;
 import tadiran.gateserver.models.Role;
@@ -74,6 +69,9 @@ public class AuthController {
 
   @Autowired
   UserDetailsServiceImpl userDetailsService;
+
+  @Autowired
+  TwoStepVerificationService twoStepVerificationService;
 
   @Value("${tadiran.gate.pass-exp-days}")
   private int passExpDays;
@@ -381,7 +379,6 @@ public class AuthController {
     roles.add(adminRole);
   }
 
-
   public boolean isActionPermitted(String requestAccessToken, ERole eRole) throws RuntimeException{
     logger.info("eRole.name()1: " + eRole.name());
     logger.info("requestAccessToken: " + requestAccessToken);
@@ -392,7 +389,6 @@ public class AuthController {
 
     //return isPermitted;
   }
-
 
   @PostMapping("/passexpdate")
   public ResponseEntity<?> passExpireDate(@Valid @RequestBody PassExpDateRequest request) {
@@ -514,4 +510,89 @@ public class AuthController {
                     "Refresh token is not in database!"));
 
   }
+
+
+  @PostMapping("/tsv_codevalidatebyname")
+  public ResponseEntity<?> TwoStepVerification_ValidateCode(@Valid @RequestBody  TSVValidateCodeRequest validateCodeRequest ) {
+    String code;
+    User user;
+
+    logger.info("get request codevalidate2sv");
+
+    if (userRepository.existsByUsername(validateCodeRequest.getUsername())) {
+      logger.info("Validate code for user: " + validateCodeRequest.getUsername());
+      user = userRepository.findByUsername(validateCodeRequest.getUsername()).get();
+      code = validateCodeRequest.getCode();
+    }
+    else {
+      logger.info("Can't find name: " + validateCodeRequest.getUsername());
+      return ResponseEntity
+              .badRequest()
+              .body(new MessageResponse("Error: Your pin code was unable to verified! Unknown User Account"));
+    }
+
+    logger.info("get request codegenerate2sv");
+
+    if  (twoStepVerificationService.ValidateCode(user, code)) {
+      return ResponseEntity.ok(new MessageResponse("Pin-Code match, User Approved!"));
+    }
+
+    return ResponseEntity.badRequest().body(new MessageResponse("Error: Invalidate Pin-Code! User Not Approved"));
+  }
+
+
+  @PostMapping("/tsv_codegeneratebyname")
+  public ResponseEntity<?> TwoStepVerification_GenerateCodeByUsername(@Valid @RequestBody TSVGenerateCodeRequest generateCodeRequest ) {
+    String code;
+    User user;
+
+    logger.debug("get request tsv_codegeneratebyname");
+
+    if (userRepository.existsByUsername(generateCodeRequest.getUsername())) {
+      logger.info("Generate code for user: " + generateCodeRequest.getUsername());
+      user = userRepository.findByUsername(generateCodeRequest.getUsername()).get();
+      code = twoStepVerificationService.GenerateCodeForUser(user);
+    }
+    else {
+      logger.debug("Can't find user: " + generateCodeRequest.getUsername());
+      return ResponseEntity
+              .badRequest()
+              .body(new MessageResponse("Error: Your pin code was unable to send! Unknown User Account"));
+    }
+
+
+    if (code != null) {
+      twoStepVerificationService.sendCodeByEmail(code, user);
+    }
+
+    return ResponseEntity.ok(new MessageResponse("Code successfully sent to user!"));
+  }
+
+
+  @PostMapping("/tsv_codegeneratebyemail")
+  public ResponseEntity<?> TwoStepVerification_GenerateCodeByEmail(@Valid @RequestBody TSVGenerateCodeRequest generateCodeRequest ) {
+    String code = null;
+    User user = null;
+
+    logger.info("get request tsv_codegeneratebyemail");
+
+    if (userRepository.existsByEmail(generateCodeRequest.getEmail())) {
+      logger.info("request code for user: " + generateCodeRequest.getEmail());
+      user = userRepository.findByEmail(generateCodeRequest.getEmail()).get();
+      code = twoStepVerificationService.GenerateCodeForUser(user);
+    }
+    else {
+      logger.info("Can't find email: " + generateCodeRequest.getEmail());
+      return ResponseEntity
+              .badRequest()
+              .body(new MessageResponse("Error: Your pin code was unable to send! Unknown User Account"));
+    }
+
+
+    twoStepVerificationService.sendCodeByEmail(code, user);
+
+    return ResponseEntity.ok(new MessageResponse("Code successfully sent to user!"));
+  }
+
+
 }

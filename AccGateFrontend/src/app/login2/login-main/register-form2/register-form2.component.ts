@@ -1,7 +1,7 @@
 import {Component, ElementRef, EventEmitter, Inject, OnInit, Output, Renderer2, ViewChild} from '@angular/core';
 import { AuthService } from 'src/app/_services/auth.service';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
-import {StoryInput} from "src/stories/inputs/story-input.model";
+import {StoryInput} from "src/stories/inputs/input/story-input.model";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {DialogData} from "../login-main.component";
 import {PasswordValidators} from "../replace-pass-form2/replace-pass-form2.component";
@@ -27,6 +27,9 @@ export default class RegisterForm2Component implements OnInit {
   errorFieldSubmitted: any = {};
   closeResult = '';
 
+
+  @Output() validateMail: EventEmitter<String> = new EventEmitter();
+
   storyInputsInOrder: StoryInput[]  = [
     {/*...mStoryInput.Default.args?.['storyInput'],*/ id: '2', title: 'username', state: 'USER NAME', icon: './assets/images/User2ldpi.png', type: 'text', placeholder: 'Ex.Saul Ramirez', hide: false  },
     {/*...mStoryInput.Default.args?.['storyInput'],*/ id: '3', title: 'password', state: 'PASSWORD', icon: './assets/images/LockIcon2ldpi.png', type: 'password', placeholder: 'your_password' , hide: true },
@@ -42,8 +45,8 @@ export default class RegisterForm2Component implements OnInit {
     this.registerForm = new FormGroup({
       username: new FormControl(data.username.toString(), Validators.minLength(2)),
       password: new FormControl(data.password.toString(), Validators.minLength(2)),
-      email: new FormControl(data.username.toString() + '@domain.com', Validators.email),
-      phone: new FormControl('123123131321', PasswordValidators.patternValidator(new RegExp("(?=.*[0-9 ]{8})"), {requiresPhoneChars: true}))
+      email: new FormControl('niv.dvir@tadirantele.com', Validators.email),
+      phone: new FormControl('054123456789', PasswordValidators.patternValidator(new RegExp("(?=.*[0-9 ]{8})"), {requiresPhoneChars: true}))
     });/*Validators.pattern(new RegExp("[0-9 ]{12}")*/
     this.empList.push("admin");
   }

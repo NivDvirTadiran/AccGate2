@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
-import { StoryInput } from "../inputs/story-input.model";
+import { StoryInput } from "../inputs/input/story-input.model";
 import { AuthService } from '../../app/_services/auth.service';
 import {MdbModalRef} from "mdb-angular-ui-kit/modal";
 

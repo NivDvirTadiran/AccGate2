@@ -8,8 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.sun.org.apache.bcel.internal.generic.ExceptionThrower;
-import org.intellij.lang.annotations.RegExp;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,6 +59,10 @@ public class AuthTokenFilter extends OncePerRequestFilter {
             request.getRequestURI().matches( "/accGate/(?:scripts|(?:polyfills|vendor|main|runtime)-es2017|favicon)\\.(?:js|ico)$") ||
                     request.getRequestURI().endsWith("/accGate") ||
             request.getRequestURI().endsWith("/login-main") ||
+            request.getRequestURI().endsWith("/auth/tsv_codegeneratebyname") ||
+            request.getRequestURI().endsWith("/auth/tsv_codegeneratebyemail") ||
+            request.getRequestURI().endsWith("/auth/tsv_codevalidatebyname") ||
+            request.getRequestURI().endsWith("/ExternalServices/zconnector/sendEmail") ||
             request.getRequestURI().startsWith("/accGate/login2")){
       //LOGGER.info("JWT token permited by url" + username);
       filterChain.doFilter(request, response);
