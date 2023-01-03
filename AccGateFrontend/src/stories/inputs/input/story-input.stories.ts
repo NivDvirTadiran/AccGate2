@@ -124,7 +124,7 @@ Phone.args = {
     title: 'phone',
     state: 'PHONE NUMBER FOR AUTHENTICATION',
     icon: './assets/images/Phone3ldpi.png',
-    type: 'phone',
+    type: 'tel',
     placeholder: 'Ex: +972547762084',
     hide: false
   },

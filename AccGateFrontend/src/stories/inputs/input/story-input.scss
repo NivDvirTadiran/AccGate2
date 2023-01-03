@@ -93,8 +93,9 @@ img.icon-input {
   position: absolute;
   width: 22.72px;
   height: 26.74px;
-  left: 20px;
-  bottom: 8px;
+  left: 17px;
+  bottom: 7px;
+
   transform: rotate(0deg);
   background-position: bottom;
 }
@@ -152,7 +153,7 @@ img.icon-input-showpass {
 
 }
 
-input[type=text]:focus {
+input:focus {
   background: #99999900;
   box-shadow: 0 0 5px #99999900;
   border-top-color: #99999900;
@@ -160,6 +161,13 @@ input[type=text]:focus {
   border-right-color: #99999900;
 }
 
+input:focus-visible {
+  background: #99999900;
+  box-shadow: 0 0 5px #99999900;
+  border-top-color: #99999900;
+  border-left-color: #99999900;
+  border-right-color: #99999900;
+}
 
 input::placeholder {
   color: #C8C8C8;
@@ -174,6 +182,14 @@ input[type=password]:focus {
   border-right-color: #99999900;
 }
 
+input[type=tel]:focus {
+  color: #000000;
+  background: #99999900;
+  box-shadow: 0 0 5px #99999900;
+  border-top-color: #99999900;
+  border-left-color: #99999900;
+  border-right-color: #99999900;
+}
 
 .Vector2 {
   box-sizing: border-box;

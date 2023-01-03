@@ -5,11 +5,14 @@ import {AbstractControl, FormGroup} from "@angular/forms";
 import {TokenStorageService} from "../_services/token-storage.service";
 import {Router} from "@angular/router";
 import {AppConfig} from "../app.config";
-import {BehaviorSubject, throwError} from "rxjs";
+import {BehaviorSubject, Subscription, throwError} from "rxjs";
 import {UserService} from "../_services/user.service";
 import {MatDialog} from "@angular/material/dialog";
 import {ReplacePassForm2Component} from "../login2/login-main/replace-pass-form2/replace-pass-form2.component";
 import VerificationForm2Component from "../login2/login-main/verification-form2/verification-form2.component";
+import RegisterForm2Component from "../login2/login-main/register-form2/register-form2.component";
+import MyAccountForm2Component from "../my-account-form2/my-account-form2.component";
+import {EventBusService} from "../_shared/event-bus.service";
 
 
 export interface DialogData {
@@ -20,6 +23,7 @@ export interface TSVData {
   username: string;
   email: string;
 }
+
 
 @Component({
   selector: 'profile2',
@@ -36,6 +40,7 @@ export default class Profile2Component implements OnInit {
   public isLoading = false;
   public appConfig: any;
   private TOKEN_KEY: string;
+  eventBusSub?: Subscription;
   permittedWebAppList = {
     realtime: false,
     scriptDesigner: false,
@@ -52,12 +57,26 @@ export default class Profile2Component implements OnInit {
 
   constructor(private authService: AuthService,
               private token: TokenStorageService,
+              private eventBusService: EventBusService,
               private router: Router,
+              public myAccountFormDialog: MatDialog,
               public replacePassFormDialog: MatDialog,
               public verificationFormDialog: MatDialog) {
     this.TOKEN_KEY = AppConfig.endpoints.TOKEN_KEY;
   }
 
+
+  openMyAccountForm() {
+    const myAccountFormDialogRef = this.myAccountFormDialog.open(MyAccountForm2Component, {
+      data: {currentUser: this.currentUser},
+    });
+
+    myAccountFormDialogRef.afterClosed().subscribe(result => {
+      console.log('The register form dialog was closed');
+    });
+
+    return myAccountFormDialogRef.afterClosed().toPromise();
+  }
 
   openReplacePassForm() {
     const replacePassFormDialogRef = this.replacePassFormDialog.open(ReplacePassForm2Component, {
@@ -83,7 +102,6 @@ export default class Profile2Component implements OnInit {
     return replacePassFormDialogRef.afterClosed().toPromise();
   }
 
-
   openVerificationForm() {
     const verificationFormDialogRef = this.verificationFormDialog.open(VerificationForm2Component, {
       data: {username: this.currentUser.username , email: this.currentUser.email},
@@ -96,6 +114,7 @@ export default class Profile2Component implements OnInit {
     return verificationFormDialogRef.afterClosed().toPromise();
   }
 
+
   public passExp: number = 0; // By Days
   public previousAlertPassExp: number = 0; // By Days
 
@@ -106,6 +125,11 @@ export default class Profile2Component implements OnInit {
     this.refreshToken = this.currentUser.refreshToken;
     this.setPassExpAlertData();
     this.setPermittedWebAppList();
+
+    this.eventBusSub = this.eventBusService.on('openChangePassword', () => {
+      this.openReplacePassForm();
+    });
+
   }
 
   setPassExpAlertData(): void {
@@ -124,9 +148,7 @@ export default class Profile2Component implements OnInit {
 
   }
 
-
   setPermittedWebAppList(): void {
-
     const token = this.token.getToken();
     if (token)
       this.authService.getPermittedWebAppList(token).subscribe(permittedWebAppList => {
@@ -136,7 +158,6 @@ export default class Profile2Component implements OnInit {
         console.log('Can not get server data defining permitted web apps for user');
         return throwError(err);
       });
-
   }
 
   openapp(): void {
@@ -215,7 +236,6 @@ export default class Profile2Component implements OnInit {
             })
     }
   }
-
 
   public openNewWinForApp(appRequest: string[]): void {
     /*webapp: string, webappURLPrefix: string*/

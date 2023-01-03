@@ -1951,12 +1951,12 @@ button, .button {
   padding-bottom: 1.0625rem;
   padding-left: 2rem;
   font-size: 1rem;
-  background-color: #2ba6cb;
+  background-color: rgba(43, 166, 203, 0);
   border-color: #2285a2;
   color: white;
   transition: background-color 300ms ease-out; }
 button:hover, button:focus, .button:hover, .button:focus {
-  background-color: #2285a2; }
+  background-color: #ADDBFF; }
 button:hover, button:focus, .button:hover, .button:focus {
   color: white; }
 button.secondary, .button.secondary {
@@ -2251,7 +2251,7 @@ input[type="week"],
 input[type="email"],
 input[type="number"],
 input[type="search"],
-input[type="tel"],
+//input[type="tel"],
 input[type="time"],
 input[type="url"],
 input[type="color"],
@@ -2285,7 +2285,7 @@ input[type="week"]:focus,
 input[type="email"]:focus,
 input[type="number"]:focus,
 input[type="search"]:focus,
-input[type="tel"]:focus,
+//input[type="tel"]:focus,
 input[type="time"]:focus,
 input[type="url"]:focus,
 input[type="color"]:focus,
@@ -2302,7 +2302,7 @@ input[type="week"]:focus,
 input[type="email"]:focus,
 input[type="number"]:focus,
 input[type="search"]:focus,
-input[type="tel"]:focus,
+//input[type="tel"]:focus,
 input[type="time"]:focus,
 input[type="url"]:focus,
 input[type="color"]:focus,
@@ -2320,7 +2320,7 @@ input[type="week"]:disabled,
 input[type="email"]:disabled,
 input[type="number"]:disabled,
 input[type="search"]:disabled,
-input[type="tel"]:disabled,
+//input[type="tel"]:disabled,
 input[type="time"]:disabled,
 input[type="url"]:disabled,
 input[type="color"]:disabled,
@@ -2355,9 +2355,9 @@ input[type="number"],
 input[type="search"][disabled],
 input[type="search"][readonly], fieldset[disabled]
 input[type="search"],
-input[type="tel"][disabled],
-input[type="tel"][readonly], fieldset[disabled]
-input[type="tel"],
+//input[type="tel"][disabled],
+//input[type="tel"][readonly], fieldset[disabled]
+//input[type="tel"],
 input[type="time"][disabled],
 input[type="time"][readonly], fieldset[disabled]
 input[type="time"],
@@ -2382,7 +2382,7 @@ input[type="week"].radius,
 input[type="email"].radius,
 input[type="number"].radius,
 input[type="search"].radius,
-input[type="tel"].radius,
+//input[type="tel"].radius,
 input[type="time"].radius,
 input[type="url"].radius,
 input[type="color"].radius,

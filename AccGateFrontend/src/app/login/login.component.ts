@@ -70,7 +70,7 @@ export class LoginComponent implements OnInit {
   openRegisterForm() {
     return this.registerFormService.open(RegisterFormComponent).onClose.toPromise();
     /*var promise = new Promise<void>((resolve, reject)  => {
-      let newRegisterFormService = this.registerFormService.open(RegisterForm2Component);
+      let newRegisterFormService = this.registerFormService.open(MyAccountForm2Component);
       setTimeout(() => {
         console.log("Async Work Complete");
         newRegisterFormService.close();

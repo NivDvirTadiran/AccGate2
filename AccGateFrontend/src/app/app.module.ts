@@ -47,6 +47,7 @@ import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {MdbValidationModule} from "mdb-angular-ui-kit/validation";
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatButtonModule} from "@angular/material/button";
+import MyAccountForm2Component from "./my-account-form2/my-account-form2.component";
 
 
 
@@ -69,7 +70,8 @@ import {MatButtonModule} from "@angular/material/button";
         ApiErrorMessagePipe,
         LoginErrorMessagePipe,
         //ReplacePassForm2Component,
-        ReplacePassFormComponent
+        ReplacePassFormComponent,
+        MyAccountForm2Component,
 
 
 

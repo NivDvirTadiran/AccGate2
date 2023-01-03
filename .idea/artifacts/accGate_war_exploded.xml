@@ -107,6 +107,8 @@
           <element id="library" level="project" name="Maven: org.jetbrains:annotations:23.1.0" />
           <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.18.22" />
           <element id="library" level="project" name="Maven: org.passay:passay:1.6.0" />
+          <element id="library" level="project" name="Maven: org.cryptacular:cryptacular:1.2.2" />
+          <element id="library" level="project" name="Maven: org.bouncycastle:bcprov-jdk15on:1.59" />
           <element id="library" level="project" name="Maven: com.google.guava:guava:20.0" />
           <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpclient:4.5.7" />
           <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.15" />

@@ -41,6 +41,9 @@ import {Spinner1Component} from "../../stories/spinners/spinner1/spinner1.compon
 import VerificationFormComponent from "../../stories/forms/verification-form/verification-form.component";
 import {DigitcodeInputComponent} from "../../stories/inputs/digitcode-input/digitcode-input.component";
 import {CodeInputComponent} from "../../stories/inputs/code-input/code-input.component";
+import MyAccountFormComponent from "../../stories/forms/my-account-form/my-account-form.component";
+import {AccountInputComponent} from "../../stories/inputs/account-input/account-input.component";
+
 
 
 
@@ -51,10 +54,10 @@ import {CodeInputComponent} from "../../stories/inputs/code-input/code-input.com
         ButtonGlobeComponent, Background1Component, ButtonTadiranComponent, ButtonLanguageComponent,
         ButtonFortestComponent,
         CardComponent,
-        LoginFormComponent, LoginFormComponent, RegistryFormComponent, VerificationFormComponent,
+        LoginFormComponent, LoginFormComponent, RegistryFormComponent, VerificationFormComponent, MyAccountFormComponent,
         ButtonContinueComponent, ButtonExComponent, ButtonAppsComponent, ButtonSuccessfullyComponent, Button,
         AppMenuComponent,
-        StoryInputComponent, DigitcodeInputComponent, CodeInputComponent,
+        StoryInputComponent, DigitcodeInputComponent, CodeInputComponent, AccountInputComponent,
         HighlightDirective,
         ReplacePassFormComponent,
         PassStrengthComponent,
@@ -77,10 +80,10 @@ import {CodeInputComponent} from "../../stories/inputs/code-input/code-input.com
     ButtonGlobeComponent, Background1Component, ButtonTadiranComponent, ButtonLanguageComponent,
     ButtonFortestComponent,
     CardComponent,
-    LoginFormComponent, LoginFormComponent, RegistryFormComponent, VerificationFormComponent,
+    LoginFormComponent, LoginFormComponent, RegistryFormComponent, VerificationFormComponent, MyAccountFormComponent,
     ButtonContinueComponent, ButtonExComponent, ButtonAppsComponent, ButtonSuccessfullyComponent, Button,
     AppMenuComponent,
-    StoryInputComponent, DigitcodeInputComponent, CodeInputComponent,
+    StoryInputComponent, DigitcodeInputComponent, CodeInputComponent, AccountInputComponent,
     CommonModule,
     FormsModule, ReactiveFormsModule,
     HighlightDirective,

@@ -52,7 +52,7 @@ Default.args = {
     { ...StoryInput.Default.args?.['storyInput'], id: '1', title: 'username', state: 'USER NAME', icon: './assets/images/User2ldpi.png', type: 'text', placeholder: 'Ex.Saul Ramirez' },
     { ...StoryInput.Default.args?.['storyInput'], id: '2', title: 'password', state: 'PASSWORD', icon: './assets/images/LockIcon2ldpi.png', type: 'password', placeholder: 'your_password'   },
     { ...StoryInput.Default.args?.['storyInput'], id: '4', title: 'email', state: 'EMAIL', icon: './assets/images/AtSign3ldpi.png', type: 'email', placeholder: 'Ex: abc@example.com' },
-    { ...StoryInput.Default.args?.['storyInput'], id: '5', title: 'phone', state: 'PHONE NUMBER FOR AUTHENTICATION', icon: './assets/images/Phone3ldpi.png', type: 'phone', placeholder: 'Ex: +972547762084' }
+    { ...StoryInput.Default.args?.['storyInput'], id: '5', title: 'phone', state: 'PHONE NUMBER FOR AUTHENTICATION', icon: './assets/images/Phone3ldpi.png', type: 'tel', placeholder: 'Ex: +972547762084' }
   ],
 };
 
@@ -64,8 +64,8 @@ MainRegistryForm.args = {
     { ...StoryInput.Default.args?.['storyInput'], id: '2', title: 'username', state: 'USER NAME', icon: './assets/images/User2ldpi.png', type: 'text', placeholder: 'Ex.Saul Ramirez', hide: false  },
     { ...StoryInput.Default.args?.['storyInput'], id: '3', title: 'password', state: 'PASSWORD', icon: './assets/images/LockIcon2ldpi.png', type: 'password', placeholder: 'your_password', hide: false    },
     { ...StoryInput.Default.args?.['storyInput'], id: '4', title: 'email', state: 'EMAIL', icon: './assets/images/AtSign3ldpi.png', type: 'email', placeholder: 'Ex: abc@example.com', hide: false  },
-    { ...StoryInput.Default.args?.['storyInput'], id: '5', title: 'phone', state: 'PHONE NUMBER FOR AUTHENTICATION', icon: './assets/images/Phone3ldpi.png', type: 'phone', placeholder: 'Ex: +972547762084', hide: false  }
-  // { id: '3', title: 'StoryInput 6 (pinned)', state: 'INPUT_PINNED' },
+    { ...StoryInput.Default.args?.['storyInput'], id: '5', title: 'phone', state: 'PHONE NUMBER FOR AUTHENTICATION', icon: './assets/images/Phone3ldpi.png', type: 'tel', placeholder: 'Ex: +972547762084', hide: false  }
+  // { id: '3', title: 'AccountInput 6 (pinned)', state: 'INPUT_PINNED' },
 ],
 };
 

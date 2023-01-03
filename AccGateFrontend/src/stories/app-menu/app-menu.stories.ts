@@ -41,8 +41,8 @@ Default.args = {
     { ...StoryInput.Default.args?.['storyInput'], id: '2', title: 'password', state: 'PASSWORD' },
   ],
  /* currentForm: [
-    { ...StoryInput.Default.args?.['currentForm'], username: new FormControl('ea5', Validators.minLength(2)), },
-    { ...StoryInput.Default.args?.['currentForm'], password: new FormControl('ea5', Validators.minLength(2)), },
+    { ...AccountInput.Default.args?.['currentForm'], username: new FormControl('ea5', Validators.minLength(2)), },
+    { ...AccountInput.Default.args?.['currentForm'], password: new FormControl('ea5', Validators.minLength(2)), },
   ],*/
 };
 
@@ -54,7 +54,7 @@ WithPinnedTasks.args = {
   // Inherited data coming from the Default story.
   storyInputs: [
     ...Default.args['storyInputs'].slice(0, 2),
-    { id: '3', title: 'StoryInput 6 (pinned)', state: 'INPUT_PINNED' },
+    { id: '3', title: 'AccountInput 6 (pinned)', state: 'INPUT_PINNED' },
   ],
 };
 

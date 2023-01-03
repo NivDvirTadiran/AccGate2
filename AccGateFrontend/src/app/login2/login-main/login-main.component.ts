@@ -69,20 +69,6 @@ export class LoginMainComponent implements OnInit {
   @Input()
   label = 'Login2Component';
 
-  /*user: User | null = null;
-
-  doLogout() {
-    this.user = null;
-  }
-
-  doLogin() {
-    this.user = { name: 'Jane Doe' };
-  }
-
-  doCreateAccount() {
-    this.user = { name: 'Jane Doe' };
-
-  }*/
 
   loginForm: FormGroup;
 
@@ -104,7 +90,7 @@ export class LoginMainComponent implements OnInit {
               private router: Router,) {
     this.loginForm = new FormGroup({
       username: new FormControl('Agent7', Validators.minLength(2)),
-      password: new FormControl('T@diran2022', Validators.minLength(2)),
+      password: new FormControl('T@diran2023', Validators.minLength(2)),
     });
 
   }

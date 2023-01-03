@@ -24,7 +24,11 @@ public class TestController {
     return accVersion;
   }
 
-
+  @GetMapping("/accountdetails")
+  @PreAuthorize("hasRole('User') or hasRole('SupervisorMonitor') or hasRole('Admin') or hasRole('SupervisorAdmin')")
+  public String accountDetails() {
+    return "User Content.";
+  }
 
 
   @GetMapping("/user")

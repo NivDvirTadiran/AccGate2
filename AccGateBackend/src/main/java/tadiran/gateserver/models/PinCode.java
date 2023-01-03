@@ -5,18 +5,14 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.io.Serializable;
+
 
 
 
 
 @Entity
-public class PinCode implements Serializable {
-  private static final long serialVersionUID = 5560221391479816650L;
+public class PinCode {
+
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
@@ -24,9 +20,6 @@ public class PinCode implements Serializable {
   @Column(nullable = false, unique = true)
   private String pinCode;
 
-  /*@ManyToOne(fetch = FetchType.EAGER)
-  @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-  private User user; */
 
   @OneToOne
   @JoinColumn(name = "userid", referencedColumnName = "id")
@@ -43,12 +36,6 @@ public class PinCode implements Serializable {
 
 
   private boolean isAlreadySent = false;
-/*
-  @ManyToMany(fetch = FetchType.LAZY)
-  @JoinTable(  name = "webapp_roles",
-          joinColumns = @JoinColumn(name = "webappid"),
-          inverseJoinColumns = @JoinColumn(name = "roleid"))
-  private Set<Role> roles = new HashSet<>();*/
 
   public PinCode(User user, EMsgType messageType, String pinCode) {
     this.user = user;

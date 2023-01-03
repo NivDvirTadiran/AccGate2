@@ -15,12 +15,12 @@ import { StoryInput } from "src/stories/inputs/input/story-input.model";
 import { AuthService } from 'src/app/_services/auth.service';
 import {ApiErrorMessageService} from "../../../app/storybook/pipes/api-error-message.service";
 //import {BehaviorSubject} from "rxjs";
-//import {StoryInputComponent} from "../inputs/input/story-input.component";
+//import {AccountInputComponent} from "../inputs/input/story-input.component";
 
 /*
 @Directive({selector: 'storybook-input'})
-export class StoryInput {
-  @Input() storyInput!: StoryInput;
+export class AccountInput {
+  @Input() storyInput!: AccountInput;
 }
 */
 @Component({
@@ -32,7 +32,7 @@ export default class RegistryFormComponent implements OnInit, AfterViewChecked, 
 
 /*
   @ViewChild('storybook-input')
-  set mStoryInput(v: StoryInput) {
+  set mStoryInput(v: AccountInput) {
     setTimeout(() => {
       this.selectedPane = v.id;
       console.log('this.selectedPane'+this.selectedPane.toString())

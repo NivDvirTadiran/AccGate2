@@ -63,9 +63,9 @@ VerificationForm.args = {
   // Shaping the stories through args composition.
   // Inherited data coming from the Default story.
   storyInputs: [
-    { /*...StoryInput.Default.args?.['storyInput'],*/ id: '1', title: 'username', state: 'USER NAME', icon: './assets/images/User2ldpi.png', type: 'text', placeholder: 'Ex.Saul Ramirez', hide: false },
-    { /*...StoryInput.Default.args?.['storyInput'],*/ id: '2', title: 'password', state: 'PASSWORD', icon: './assets/images/LockIcon2ldpi.png', type: 'password', placeholder: 'your_password', hide: false   },
-    // { id: '3', title: 'StoryInput 6 (pinned)', state: 'INPUT_PINNED' },
+    { /*...AccountInput.Default.args?.['storyInput'],*/ id: '1', title: 'username', state: 'USER NAME', icon: './assets/images/User2ldpi.png', type: 'text', placeholder: 'Ex.Saul Ramirez', hide: false },
+    { /*...AccountInput.Default.args?.['storyInput'],*/ id: '2', title: 'password', state: 'PASSWORD', icon: './assets/images/LockIcon2ldpi.png', type: 'password', placeholder: 'your_password', hide: false   },
+    // { id: '3', title: 'AccountInput 6 (pinned)', state: 'INPUT_PINNED' },
   ],
   mForm: [
     {username: new FormControl('Telecom2')}
@@ -87,7 +87,7 @@ VerificationFailed.args = {
   // Inherited data coming from the Default story.
   storyInputs: [
     ...Default.args['storyInputs'].slice(0, 2),
-   // { id: '3', title: 'StoryInput 6 (pinned)', state: 'INPUT_PINNED' },
+   // { id: '3', title: 'AccountInput 6 (pinned)', state: 'INPUT_PINNED' },
   ],
   validationForm: {
     username: new FormControl('Telecom2', Validators.minLength(2)),
@@ -110,7 +110,7 @@ verificationSuccess.args = {
   // Inherited data coming from the Default story.
   storyInputs: [
     ...Default.args['storyInputs'].slice(0, 2),
-    // { id: '3', title: 'StoryInput 6 (pinned)', state: 'INPUT_PINNED' },
+    // { id: '3', title: 'AccountInput 6 (pinned)', state: 'INPUT_PINNED' },
   ],
   validationForm: {
     username: new FormControl('Telecom2', Validators.minLength(2)),

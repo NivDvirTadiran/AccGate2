@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy  } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { TokenStorageService } from './_services/token-storage.service';
 import { EventBusService } from './_shared/event-bus.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,9 @@ export class AppComponent {
   eventBusSub?: Subscription;
   title?: 'accGate';
 
-  constructor(private tokenStorageService: TokenStorageService, private eventBusService: EventBusService) { }
+  constructor(private tokenStorageService: TokenStorageService,
+              private eventBusService: EventBusService,
+              private router: Router) { }
 
   ngOnInit(): void {
     this.isLoggedIn = !!this.tokenStorageService.getToken();
@@ -42,11 +45,12 @@ export class AppComponent {
   }
 
   logout(): void {
+    console.log("logging out")
     this.tokenStorageService.signOut();
     this.isLoggedIn = false;
     this.roles = [];
     this.showAdminBoard = false;
     this.showModeratorBoard = false;
-    //window.location.reload();
+    this.router.navigate(['/login2']);
   }
 }

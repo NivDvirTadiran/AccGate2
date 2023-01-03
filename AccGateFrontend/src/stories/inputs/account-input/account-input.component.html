@@ -1,0 +1,54 @@
+<div id="parent3"  [hidden]="storyInput?.hide" [ngClass]="classes"  >
+  <div id="parent1" >
+    <div class="main"  [formGroup]="this.currentForm">
+      <div>
+        <a class="user-name D-Caps-Regular">{{storyInput?.state}}</a>
+
+        <br>
+        <span [ngSwitch]="storyInput?.type">
+          <span *ngSwitchCase="'password'" >
+            <storybook-button-continue   size="small" label="Change Password" type="button" (onClick)="this.changePassword.emit()" >
+            </storybook-button-continue>
+          </span>
+          <span *ngSwitchCase="'enable-profile-picture'" >
+            <label class="UserNameType" >{{storyInput?.title}}  </label>
+            <div class="user-checkbox-header">
+            <input  style="position: relative; margin: 0 2px 0 2px;   top: 1px; right: 3px;"  type="checkbox"/>
+            <label class="EnableProfilePicture" >Enable Profile Picture</label>
+
+              <!--img src="./assets/images/EditIconA.png" class="icon-input-edit" alt="icon input type" /-->
+
+            </div>
+          </span>
+          <span *ngSwitchDefault >
+            <label  [attr.aria-label]="storyInput?.id + ''" for="{{ storyInput?.title }}" class="Vector2 ">
+              <img src="{{ storyInput?.icon }}" class="icon-input" alt="icon input userName"  name="{{ storyInput?.title }}" />
+              <div [inputPopover] = "this.popover" [data]="this.getErrorList(this.conditionList)" [header]="this.getErrorHeader(this.storyInput.title)">
+                <input
+                  type="{{storyInput?.type}}"
+                  id="{{ storyInput?.id }}"
+                  class="inputField"
+                  name="{{storyInput?.title}}"
+                  formControlName="{{storyInput?.title}}"
+                  placeholder="{{storyInput?.placeholder}}"
+                  required />
+              </div>
+
+
+              <br>
+
+
+            </label>
+
+            <button  class="icon-input-edit"  type="button">
+              <img src="./assets/images/EditIconA.png" class="icon-input-edit" alt="icon input type" />
+            </button>
+          </span>
+        </span>
+
+      </div>
+    </div>
+  </div>
+
+
+</div>

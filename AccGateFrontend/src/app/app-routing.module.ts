@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   //{ path: 'register2', component: Register2Component },
   { path: 'registeform', component: RegisterFormComponent },
-  //{ path: 'registerform2', component: RegisterForm2Component },
+  //{ path: 'registerform2', component: MyAccountForm2Component },
   { path: 'profile', component: ProfileComponent/*, canActivate: [AppRoutingGuard] */},
   { path: 'profile2', component: Profile2Component/*, canActivate: [AppRoutingGuard] */},
   { path: 'user', component: BoardUserComponent },

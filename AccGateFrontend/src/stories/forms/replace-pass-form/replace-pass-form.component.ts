@@ -16,12 +16,12 @@ import { AuthService } from 'src/app/_services/auth.service';
 import {PopoverOptions} from "../../directive/popover.interface";
 import {ActionInputComponent} from "../../actions/action-input/action-input.component";
 //import {BehaviorSubject} from "rxjs";
-//import {StoryInputComponent} from "../inputs/input/story-input.component";
+//import {AccountInputComponent} from "../inputs/input/story-input.component";
 
 /*
 @Directive({selector: 'storybook-input'})
-export class StoryInput {
-  @Input() storyInput!: StoryInput;
+export class AccountInput {
+  @Input() storyInput!: AccountInput;
 }
 */
 @Component({

@@ -86,6 +86,12 @@ export class AuthService {
     }, httpOptions);
   }
 
+  getAccountDetails(token: string): Observable<any> {
+    return this.http.post(AUTH_API + 'accountdetails', {
+      accessToken: token,
+    }, httpOptions);
+  }
+
   TSV_ValidateCodeByName(username: string, email: string, code: string): Observable<any> {
     return this.http.post(AUTH_API + 'tsv_codevalidatebyname', {
       username,

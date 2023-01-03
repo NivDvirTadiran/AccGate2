@@ -1,0 +1,74 @@
+
+
+
+<div id="main-login-card" class="col-md-12">
+  <storybook-card class="card-container"></storybook-card>
+  <div  class="h-100 d-flex align-items-center justify-content-center">
+    <storybook-button-ex id="button-ex" (click)="this.clickXButton.emit()" ></storybook-button-ex>
+    <button id="button-log-out" (click)="this.doLogout($event)" >Log out</button>
+    <label style="top: 1px; display: inline;">Log out</label>
+    <div class="form-header">
+      <a class="main-form-header" #formHeader>My Account</a>
+      <br>
+
+    <br>
+    <!--form name="form"  (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate --> <!-- *ngIf="!isRegSuccess"-->
+      <form name="currentForm"   [formGroup]="mForm">
+      <div class="Vector">
+
+
+        <div *ngIf="isRegSuccess" id="button-successfully" style="">
+          <storybook-button-successfully   style="position: relative; margin-bottom: 50px;"></storybook-button-successfully>
+        </div>
+
+        <div class="login-button">
+            <div *ngIf="!isRegSuccess && storyInputsInOrder.length === 0">empty</div>
+            <div *ngIf="!isRegSuccess">
+              <storybook-account-input
+                [storyInput]="storyInputsInOrder[0]"
+                (onArchiveInput)="onArchiveInput.emit($event)"
+                (onPinInput)="onPinInput.emit($event)"
+                [currentForm]="mForm">
+              </storybook-account-input>
+              <div class="thematic-break"></div>
+              <storybook-account-input
+                [storyInput]="storyInputsInOrder[1]"
+                (onArchiveInput)="onArchiveInput.emit($event)"
+                (onPinInput)="onPinInput.emit($event)"
+                [currentForm]="mForm"
+                [conditionList]="['requiresPhone']">
+              </storybook-account-input>
+              <div class="thematic-break"></div>
+              <storybook-account-input
+                [storyInput]="storyInputsInOrder[2]"
+                (onArchiveInput)="onArchiveInput.emit($event)"
+                (onPinInput)="onPinInput.emit($event)"
+                [currentForm]="mForm"
+                [conditionList]="['requiresEmail']">
+              </storybook-account-input>
+              <div class="thematic-break"></div>
+              <storybook-account-input
+                [storyInput]="storyInputsInOrder[3]"
+                (onArchiveInput)="onArchiveInput.emit($event)"
+                (changePassword)="changePassword.emit($event)"
+                (onPinInput)="onPinInput.emit($event)"
+                [currentForm]="mForm">
+              </storybook-account-input>
+
+            </div>
+
+            <div class="login-failed-message" role="alert" >
+              <p *ngIf="isRegFailed">*  {{ this.regErrorMessage['message'] | apiErrorMessage: param }}</p>
+            </div>
+
+            <storybook-button-continue  hidden size="small"
+                                       label="Continue" type="button" (click)="onSubmit()" >
+            </storybook-button-continue>
+        </div>
+        </div>
+
+    </form>
+  </div>
+  </div>
+</div>
+

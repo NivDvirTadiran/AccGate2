@@ -3,7 +3,7 @@ export interface StoryInput {
   title: string;
   state: string;
   icon:  string;
-  type:  'text' | 'password' | 'phone' | 'email';
+  type:  'text' | 'password' | 'tel' | 'email';
   placeholder: string;
   hide: boolean;
 

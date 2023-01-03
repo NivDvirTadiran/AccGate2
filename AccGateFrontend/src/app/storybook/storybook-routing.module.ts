@@ -7,8 +7,8 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
 
   //{ path: 'storybook-button-fortest', component: AvatarComponent },
-  /*{ path: 'regist', component: RegisterForm2Component },*/
-  /*{ path: 'register-form2', component: RegisterForm2Component },*/
+  /*{ path: 'regist', component: MyAccountForm2Component },*/
+  /*{ path: 'register-form2', component: MyAccountForm2Component },*/
   { path: '', redirectTo: 'home', pathMatch: 'full' },/**/
   { path: '**', redirectTo: 'home', },
 ];

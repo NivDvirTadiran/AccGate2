@@ -1,0 +1,284 @@
+
+
+
+
+
+$tottal-height: 160px !default;
+
+.main {
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  top: 0;
+  /*left: calc(50% - 445px/2 - 0.5px);
+  top: calc(50% - 101.16px/2 - 171.58px);
+  margin-bottom: 20px;*/
+  background-color: rgba(255, 255, 255, 0);
+
+}
+
+#storybook-pass {
+  border: 1px solid rgba(255, 0, 0, 0.11);
+  background-color: rgba(255, 255, 255, 0);
+}
+
+#parent1 {
+  position: sticky;
+  top: 1px;
+  height: 100px;
+  width: 100%;
+  /*border: 1px solid #c0077f;*/
+  background-color: rgba(255, 255, 255, 0);
+}
+
+#parent3 {
+  position: relative;
+  width: 100%;
+  margin: 10px 0 0 0;
+  /*height: 160px ;
+   border: 1px solid #072cc0;
+margin-bottom: 3px;*/
+  /*background-color: rgba(255, 255, 255, 0);*/
+}
+
+/*
+span.absolute {
+  position: absolute;
+  width: 100%;
+  height: 28px;
+  bottom: 0;
+  border: 1px solid #8AC007;
+  background-color: rgba(255, 255, 255, 0);
+}
+*/
+
+
+.user-name {
+  position: absolute;
+  width: 300px;
+  height: 35px;
+  left: 0%;
+  right: 82.7%;
+  top: 10%;
+  bottom: 68.37%;
+  /* identical to box height, or 223% */
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.011em;
+  text-transform: uppercase;
+
+  color: #000000;
+}
+
+
+/* D Caps Regular */
+.D-Caps-Regular {
+  font-family: Noto Sans, ui-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 31px;
+}
+
+.UserNameType {
+  position: absolute;
+  width: 228px;
+  height: 32px;
+  left: 0;
+  bottom: 0;
+  margin: 4.2px 1px 2.8px 0;
+
+  /* D Regular */
+
+  font-family: Noto Sans, ui-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 31px;
+  /* identical to box height, or 183% */
+
+
+  display: flex;
+  align-items: self-start;
+  letter-spacing: -0.011em;
+
+  color: #000000;
+}
+
+.inputField {
+  position: relative;
+  height: 25px;
+  width: 228px;
+  left: 35px;
+  bottom: -5px;
+  margin: 4.2px 1px 2.8px 20.3px;
+
+  /* D Example Italic */
+  object-fit: contain;
+  font-family: Noto Sans, ui-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 48%;
+  /* or 65% */
+
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.19px;
+
+  border-color: rgba(255, 255, 255, 0);
+  color: #000000;
+}
+
+.EnableProfilePicture{
+  display: inline;
+  position: relative;
+  margin: 4.2px 1px 2.8px 0;
+
+
+  /* D Regular */
+
+  font-family: Noto Sans, ui-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 31px;
+  /* identical to box height, or 183% */
+
+
+  text-align: right;
+  letter-spacing: -0.011em;
+
+  color: #000000;
+}
+
+.user-checkbox-header {
+  position: absolute;
+  right: 1px;
+  top: 50px;
+  padding: 0;
+  margin: 0;
+  border-bottom-width: 0px;
+  background-color: rgba(45, 148, 55, 0);
+  object-fit: contain;
+
+}
+
+
+.icon-input-edit {
+  position: absolute;
+  width: 18.4px;
+  height: 19.51px;
+  right: 10px;
+  bottom: 11px;
+  padding-top: 0px;
+  margin: 0;
+  border-bottom-width: 0px;
+  background-color: rgba(45, 148, 55, 0);
+}
+
+img.icon-input-edit {
+  position: absolute;
+  bottom: 1px;
+  right: 1px;
+  width: inherit;
+  height: inherit;
+  padding: 0px;
+  margin: 0px;
+  /*object-fit: contain;
+  box-shadow: 0 1px 1px 0 rgba(61, 142, 207, 0.15);*/
+
+}
+
+
+
+
+
+
+img.icon-input {
+  position: absolute;
+  width: 22.72px;
+  height: 26.74px;
+  left: 17px;
+  bottom: 7px;
+
+  transform: rotate(0deg);
+  background-position: bottom;
+}
+
+input:focus {
+  background: #99999900;
+  box-shadow: 0 0 5px #99999900;
+  border-top-color: #99999900;
+  border-left-color: #99999900;
+  border-right-color: #99999900;
+}
+
+
+input::placeholder {
+  color: #C8C8C8;
+}
+
+input[type=password]:focus {
+  color: #000000;
+  background: #99999900;
+  box-shadow: 0 0 5px #99999900;
+  border-top-color: #99999900;
+  border-left-color: #99999900;
+  border-right-color: #99999900;
+}
+
+input[type=tel]:focus {
+  color: #000000;
+  background: #99999900;
+  box-shadow: 0 0 5px #99999900;
+  border-top-color: #99999900;
+  border-left-color: #99999900;
+  border-right-color: #99999900;
+}
+
+.Vector2 {
+  box-sizing: border-box;
+  position: absolute;
+  //width: 100%;
+
+  left: 0.2%;
+  right: 10.03%;
+  top: 42.66%;
+  bottom: 0;
+
+  /* Blue */
+  border: 2px solid #3D8ECF;
+  border-radius: 10px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+.Button-App-Label {
+  position: relative;
+  width: 100%;
+  height: 33px;
+  horiz-align: center;
+
+}
+
+.storybook-input--addStrength {
+    height: 130px;
+
+
+
+}
+
+.storybook-input--clearStrength {
+
+
+    height: 110px;
+
+
+}
+
+

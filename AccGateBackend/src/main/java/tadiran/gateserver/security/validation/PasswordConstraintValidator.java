@@ -13,12 +13,18 @@ import javax.validation.ConstraintValidatorContext;
 //import org.passay.DigitCharacterRule;
 import lombok.SneakyThrows;
 import org.passay.*;
+import org.cryptacular.bean.EncodingHashBean;
+import org.cryptacular.spec.CodecSpec;
+import org.cryptacular.spec.DigestSpec;
 //import org.passay.NumericalSequenceRule;
 //import org.passay.QwertySequenceRule;
 //import org.passay.SpecialCharacterRule;
 //import org.passay.UppercaseCharacterRule;
 
 import tadiran.gateserver.annotation.ValidPassword;
+
+
+
 
 public class PasswordConstraintValidator implements ConstraintValidator<ValidPassword, String> {
 
@@ -27,9 +33,34 @@ public class PasswordConstraintValidator implements ConstraintValidator<ValidPas
 
     }
 
+
+
     @SneakyThrows
     @Override
     public boolean isValid(final String password, final ConstraintValidatorContext context) {
+
+        List<PasswordData.Reference> history = Arrays.asList(
+                // Password=P@ssword1
+                new PasswordData.HistoricalReference(
+                        "SHA256",
+                        "j93vuQDT5ZpZ5L9FxSfeh87zznS3CM8govlLNHU8GRWG/9LjUhtbFp7Jp1Z4yS7t"),
+
+                // Password=P@ssword2
+                new PasswordData.HistoricalReference(
+                        "SHA256",
+                        "mhR+BHzcQXt2fOUWCy4f903AHA6LzNYKlSOQ7r9np02G/9LjUhtbFp7Jp1Z4yS7t"),
+
+                // Password=P@ssword3
+                new PasswordData.HistoricalReference(
+                        "SHA256",
+                        "BDr/pEo1eMmJoeP6gRKh6QMmiGAyGcddvfAHH+VJ05iG/9LjUhtbFp7Jp1Z4yS7t")
+        );
+
+        EncodingHashBean hasher = new EncodingHashBean(
+                new CodecSpec("Base64"), // Handles base64 encoding
+                new DigestSpec("SHA256"), // Digest algorithm
+                1, // Number of hash rounds
+                false); // Salted hash == false
 
         //customizing validation messages
         Properties props = new Properties();
@@ -66,11 +97,15 @@ public class PasswordConstraintValidator implements ConstraintValidator<ValidPas
                 new IllegalSequenceRule(EnglishSequenceData.Alphabetical, 5, false),
 
                 // rejects passwords that contain a sequence of >= 5 characters numerical   (e.g. 12345)
-                new IllegalSequenceRule(EnglishSequenceData.Numerical, 5, false)
+                new IllegalSequenceRule(EnglishSequenceData.Numerical, 5, false),
+
+                // the following rules support enforcement of unique passwords in the context of password history
+                new DigestHistoryRule(hasher)
               ));
 
-
-        final RuleResult result = validator.validate(new PasswordData(password));
+        PasswordData data = new PasswordData(password);
+        data.setPasswordReferences(history);
+        final RuleResult result = validator.validate(data);
         if (result.isValid()) {
             return true;
         }

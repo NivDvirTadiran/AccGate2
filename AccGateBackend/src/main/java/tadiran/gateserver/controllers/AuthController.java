@@ -433,6 +433,26 @@ public class AuthController {
 
   }
 
+  @PostMapping("/accountdetails")
+  public ResponseEntity<?> accountDetails(@Valid @RequestBody PassExpDateRequest request) {
+
+    String requestAccessToken = request.getAccessToken();
+
+
+    WebApp realtime = new WebApp(EWebApp.WA_ACCREALTIME);
+    WebApp scriptDesigner = new WebApp(EWebApp.WA_GCCS);
+    WebApp agent = new WebApp(EWebApp.WA_AGENT);
+    //WebApp aeonixAdmin = new WebApp(EWebApp.WA_AEONIXADMIN);
+    WebApp admin = new WebApp(EWebApp.WA_ADMIN);
+
+    return userRepository.findByUsername(jwtUtils.getUserNameFromJwtToken(requestAccessToken))
+            .map(user -> {
+              return ResponseEntity.ok(new AccountDetailsResponse(user.getUsername(),user.getEmail(),user.getPhone())
+              );})
+            .orElseThrow(() -> new NullPointerException("Error: Can not find requested details"));
+
+  }
+
   @PostMapping("/refreshtoken")
   public ResponseEntity<?> refreshtoken(@Valid @RequestBody TokenRefreshRequest request ) {
 
