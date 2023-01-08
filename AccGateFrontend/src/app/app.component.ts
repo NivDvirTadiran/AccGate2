@@ -3,6 +3,8 @@ import { Subscription } from 'rxjs';
 import { TokenStorageService } from './_services/token-storage.service';
 import { EventBusService } from './_shared/event-bus.service';
 import {Router} from "@angular/router";
+import {workingModeConfiguration} from "./app.config";
+import { UserService } from 'src/app/_services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -20,6 +22,7 @@ export class AppComponent {
 
   constructor(private tokenStorageService: TokenStorageService,
               private eventBusService: EventBusService,
+              private userService: UserService,
               private router: Router) { }
 
   ngOnInit(): void {
@@ -34,8 +37,13 @@ export class AppComponent {
 
       this.username = user.username;
     }
+
     this.eventBusSub = this.eventBusService.on('logout', () => {
       this.logout();
+    });
+
+    this.eventBusSub = this.eventBusService.on('is2SVRequired', () => {
+      this.is2SVRequired();
     });
   }
 
@@ -52,5 +60,16 @@ export class AppComponent {
     this.showAdminBoard = false;
     this.showModeratorBoard = false;
     this.router.navigate(['/login2']);
+  }
+
+  is2SVRequired(): void {
+    console.log("is2SVRequired: ")
+    this.userService.isTowStepVerRequired().subscribe(
+      data => { console.log("data.data: " + data.data);
+        console.log("data.message: " + data.message);
+        workingModeConfiguration.runMode.TSV = (data.data);
+        console.log("workingModeConfiguration.runMode.TSV: " + workingModeConfiguration.runMode.TSV.toString());},
+      err => { console.log("Can't detect 2SV operation mode:  "+ err.error); }
+    );
   }
 }

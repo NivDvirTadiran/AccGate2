@@ -11,6 +11,12 @@ import {RegisterFormComponent} from "../../login/register-form/register-form.com
 import {ReplacePassFormComponent} from "../../login/replace-pass-form/replace-pass-form.component";
 import {ReplacePassForm2Component} from "./replace-pass-form2/replace-pass-form2.component";
 import VerificationForm2Component from "./verification-form2/verification-form2.component";
+import {UserService} from "../../_services/user.service";
+import { workingModeConfiguration } from "src/app/app.config"
+import {EventData} from "../../_shared/event.class";
+import { EventBusService } from 'src/app/_shared/event-bus.service';
+import {Subscription} from "rxjs";
+
 
 export interface DialogData {
   username: string;
@@ -30,6 +36,8 @@ export class LoginMainComponent implements OnInit {
   isLoginFailed = false;
   loginErrorMessage = '';
   roles: string[] = [];
+  public isLoading = false;
+  eventBusSub?: Subscription;
 
 
 
@@ -85,7 +93,9 @@ export class LoginMainComponent implements OnInit {
               public registerFormDialog: MatDialog,
               public replacePassFormDialog: MatDialog,
               public verificationFormDialog: MatDialog,
+              private eventBusService: EventBusService,
               public authService: AuthService,
+              public userService: UserService,
               private tokenStorage: TokenStorageService,
               private router: Router,) {
     this.loginForm = new FormGroup({
@@ -103,6 +113,9 @@ export class LoginMainComponent implements OnInit {
 
     registerFormDialogRef.afterClosed().subscribe(result => {
       console.log('The register form dialog was closed');
+      if (result.message === 'Registration Complete') {
+        this.setUsernameCurrentFieldValue(result.email);
+      }
     });
 
     return registerFormDialogRef.afterClosed().toPromise();
@@ -134,7 +147,7 @@ export class LoginMainComponent implements OnInit {
 
   openVerificationForm() {
     const verificationFormDialogRef = this.verificationFormDialog.open(VerificationForm2Component, {
-      data: {username: this.getUsernameCurrentFieldValue , password: this.getPasswordCurrentFieldValue},
+      data: {username: this.getUsernameCurrentFieldValue, email: "not@inuse.com"},
     });
 
     verificationFormDialogRef.afterClosed().subscribe(result => {
@@ -145,7 +158,13 @@ export class LoginMainComponent implements OnInit {
   }
 
 
-  ngOnInit(): void {};
+  ngOnInit(): void {
+    this.eventBusService.emit(new EventData('is2SVRequired', null));
+
+    this.eventBusSub = this.eventBusService.on('openVerification', () => {
+      this.openVerificationForm();
+    });
+  };
 
 
 
@@ -179,6 +198,7 @@ export class LoginMainComponent implements OnInit {
     console.warn('Login Request from login-main!');
     const { username, password } = this.loginForm.value;
 
+    this.isLoading = true;
     this.authService.login(username, password).subscribe(
       data => {
         this.tokenStorage.saveToken(data.accessToken);
@@ -237,8 +257,7 @@ export class LoginMainComponent implements OnInit {
         }
 
         this.isLoginFailed = true;
-      }
-    );
+      }, () => {this.isLoading = false;})
   }
 
 
@@ -249,6 +268,8 @@ export class LoginMainComponent implements OnInit {
   profile2(): void {
   this.router.navigate(['/profile2']);
   }
+
+
 
 
 }

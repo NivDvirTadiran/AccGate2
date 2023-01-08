@@ -3,6 +3,7 @@ package tadiran.gateserver.security.jwt;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import tadiran.gateserver.models.Agent;
@@ -62,6 +63,45 @@ public class JwtUtils {
             .setExpiration(Date.from(expiration))
             .signWith(SignatureAlgorithm.HS512, jwtSecret)
             .compact();
+  }
+
+  public String generatePinCodeToken(User user, String pincode) {
+
+    Instant issuedAt = Instant.now().truncatedTo(ChronoUnit.SECONDS);
+    Instant expiration = issuedAt.plus(jwtExpirationMin, ChronoUnit.MINUTES);
+
+    return Jwts.builder()
+            .setSubject(user.getUsername())
+            .claim("id",user.getId())
+            .claim("email",user.getEmail())
+            .claim("pincode",pincode)
+            .setIssuedAt(Date.from(issuedAt))
+            .setExpiration(Date.from(expiration))
+            .signWith(SignatureAlgorithm.HS512, jwtSecret)
+            .compact();
+  }
+
+  private Claims tokenToClaims(String token) {
+    return Jwts.parser()
+            .setSigningKey(jwtSecret)
+            .parseClaimsJws(token)
+            .getBody();
+  }
+
+  public String getUsernameFromPinCodeToken(String token) {
+    return tokenToClaims(token).getSubject();
+  }
+
+  public Long getIdFromPinCodeToken(String token) {
+    return tokenToClaims(token).get("id", Long.class);
+  }
+
+  public String getEmailFromPinCodeToken(String token) {
+    return tokenToClaims(token).get("email", String.class);
+  }
+
+  public String getCodeFromPinCodeToken(String token) {
+    return tokenToClaims(token).get("pincode", String.class);
   }
 
   public String getUserNameFromJwtToken(String token) {

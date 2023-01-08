@@ -6,6 +6,10 @@ import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {DialogData} from "../login-main.component";
 import RegisterForm2Component from "../register-form2/register-form2.component";
 import {StoryInput} from "../../../../stories/inputs/input/story-input.model";
+import {EventData} from "../../../_shared/event.class";
+import {workingModeConfiguration} from "../../../app.config";
+import {EventBusService} from "../../../_shared/event-bus.service";
+import {TokenStorageService} from "../../../_services/token-storage.service";
 
 @Component({
   selector: 'app-modal',
@@ -24,12 +28,10 @@ export class ReplacePassForm2Component {
     closeResult: '',
   };
 
-  //isSignUpFailed = false;
-  //submitted = false;
-  //errorMessage = '';
+  public isLoading = false;
+
   empList: Array<String> = [];
-  //apiResponse = { message: '', error: false };
-  //errorFieldSubmitted: any = {};
+
   closeResult = '';
 
   storyInputsInOrder: StoryInput[]  = [
@@ -43,6 +45,8 @@ export class ReplacePassForm2Component {
 
   constructor(private authService: AuthService,
               private renderer: Renderer2,
+              private eventBusService: EventBusService,
+              private tokenStorageService: TokenStorageService,
               public dialogRef: MatDialogRef<ReplacePassForm2Component>,
               @Inject(MAT_DIALOG_DATA) public data: DialogData) {
     this.replacePassForm = new FormGroup({
@@ -72,10 +76,13 @@ export class ReplacePassForm2Component {
     if (this.status.isRepSuccess) {
       this.dialogRef.close({message: 'Replace Password Complete', data: this.data});
     }
+    else if (workingModeConfiguration.runMode.TSV && this.tokenStorageService.getPinCodeToken() == null) {
+      this.eventBusService.emit(new EventData('openVerification', null));
+    }
     else {
       this.status.submitted = true;
-      const { userName, oldPassword, password, confirmPassword } = this.replacePassForm.value;
-      this.authService.replacePassForm(userName, oldPassword, password, confirmPassword).subscribe(
+      this.isLoading = true;
+      this.changePassword().subscribe(
         data => {
           console.log(data);
           this.status.isRepSuccess = true;
@@ -83,7 +90,7 @@ export class ReplacePassForm2Component {
           this.status.errorFieldSubmitted = {};
           this.status.apiResponse.error = false;
           this.status.apiResponse.message = 'Successful registration';
-          this.data.password = password;
+          this.data.password = this.password.value.toString();
         },
         error => {
           const errorResponse = JSON.parse(error.error);
@@ -96,11 +103,21 @@ export class ReplacePassForm2Component {
           }
         },
         () => {
+          this.isLoading = false;
           console.log('Replace Password closed');}
       );
     }
   }
 
+  private changePassword() {
+    const { userName, oldPassword, password, confirmPassword } = this.replacePassForm.value;
+    const pinCodeToken = this.tokenStorageService.getPinCodeToken();
+
+    if (pinCodeToken != null) {
+      return this.authService.TSV_ReplacePassForm(userName, oldPassword, password, confirmPassword, pinCodeToken);
+    }
+    return this.authService.replacePassForm(userName, oldPassword, password, confirmPassword);
+  }
 
 
   get userName(): AbstractControl {

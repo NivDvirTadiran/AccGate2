@@ -21,7 +21,7 @@ export default class VerificationFormComponent implements OnInit {
 
   @Input() status?: any;
 
-  @Input() isLoggedIn = false;
+  @Input() isLoading: boolean = false;
 
   // tslint:disable-next-line: no-output-on-prefix
   @Output() sendVerificationReq: EventEmitter<string> = new EventEmitter();
@@ -34,10 +34,10 @@ export default class VerificationFormComponent implements OnInit {
 
 
   onSubmit(): void {
-    console.warn('Login Request!');
+    console.warn('Send Verification Request!');
 
     this.sendVerificationReq.emit(this.code);
-    this.codeInput.reset();
+    if (!this.status.isVerSuccess) {this.codeInput.reset();}
   }
 
   ngOnInit(): void {

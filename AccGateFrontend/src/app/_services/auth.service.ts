@@ -100,6 +100,17 @@ export class AuthService {
     }, httpOptions);
   }
 
+  TSV_ReplacePassForm(username: string, oldPassword: string, password: string,
+                      confirmPassword: string, pinCodeToken: string): Observable<any> {
+    return this.http.post(AUTH_API + 'tsv_replace-pass-form', {
+      username,
+      oldPassword,
+      password,
+      confirmPassword,
+      pinCodeToken,
+    }, httpOptions);
+  }
+
   TSV_GenerateCodeByName( username: string, email: string): Observable<any> {
     return this.http.post(AUTH_API + 'tsv_codegeneratebyname', {
       username,

@@ -1,6 +1,7 @@
 tadiran.gate.ACCServerAddress1= %ACC_IP1%
 tadiran.gate.ACCServerAddress2= %ACC_IP2%
 tadiran.gate.accVersion= %ACC_VERSION%
+tadiran.gate.TSV= true
 spring.mvc.view.prefix=/
 spring.mvc.view.suffix=.html
 spring.mvc.servlet.load-on-startup=1
@@ -23,9 +24,7 @@ tadiran.gate.jwtRefreshExpirationMin= 144
 tadiran.gate.PassExpDays= 30
 tadiran.gate.PreviousAlertPassExpDays= 10
 
-# 12[Hour] x 3600[Sec] x 1000[Ms] = 43,200,000[MS]
-# 1[Hour] x 3600[Sec] x 1000[Ms] = 3,600,000[MS]
-tadiran.gate.pinCodeTTL= 3600000
+tadiran.gate.MailServer=localhost
 
 server.port=8445
 

@@ -9,6 +9,11 @@
       "name": "tadiran.gate.PreviousAlertPassExpDays",
       "type": "java.lang.Integer",
       "description": "Description for tadiran.gate.PreviousAlertPassExpDays."
+    },
+    {
+      "name": "tadiran.gate.TSV",
+      "type": "java.lang.Boolean",
+      "description": "if true user will require Two-Step-Verification for performing sensitive actions."
     }
   ]
 }

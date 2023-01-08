@@ -53,7 +53,10 @@ export default class RegistryFormComponent implements OnInit, AfterViewChecked, 
   };
 
   @Input() isRegFailed = false;
+
   @Input() regErrorMessage: any = {};
+
+  @Input() isLoading: boolean = false;
 
   openReplacePassword() {
     //this.replacePassFormService.open(ReplacePassForm2Component);

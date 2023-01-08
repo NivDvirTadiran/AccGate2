@@ -26,6 +26,7 @@ export default class RegisterForm2Component implements OnInit {
   @ViewChild('form', { static: false }) form?: ElementRef;
   errorFieldSubmitted: any = {};
   closeResult = '';
+  public isLoading = false;
 
 
   @Output() validateMail: EventEmitter<String> = new EventEmitter();
@@ -57,12 +58,12 @@ export default class RegisterForm2Component implements OnInit {
 
   onSubmit(): void {
     if (this.isRegSuccess) {
-      this.dialogRef.close('Registration Complete');
+      this.dialogRef.close({message: 'Registration Complete', email: this.email.value});
     }
     else {
       this.submitted = true;
       const { username, password, email, phone } = this.registerForm.getRawValue();
-
+      this.isLoading = true;
       this.authService.registerForm(username, email, password, phone).subscribe(
         data => {
           console.log(data);
@@ -83,6 +84,7 @@ export default class RegisterForm2Component implements OnInit {
           }
         },
         () => {
+          this.isLoading = false;
           console.log("Registration Complete");}
       );
     }

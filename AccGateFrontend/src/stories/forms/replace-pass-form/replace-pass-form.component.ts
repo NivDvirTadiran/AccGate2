@@ -88,6 +88,8 @@ export default class ReplacePassFormComponent implements OnInit, AfterViewChecke
 
   @Input() status?: any;
 
+  @Input() isLoading: boolean = false;
+
   // tslint:disable-next-line: no-output-on-prefix
   @Output() onPinInput: EventEmitter<any> = new EventEmitter();
 
@@ -113,7 +115,7 @@ export default class ReplacePassFormComponent implements OnInit, AfterViewChecke
   }
 
   onSubmit(): void {
-    console.warn('Registry Request Sent!');
+    console.warn('ReplacePassForm Request Sent!');
 
     //this.renderer.setAttribute(this.storybookInput?.nativeElement ,'hidden', 'true');
     //this.renderer.setAttribute(this.mainHeader?.nativeElement ,'hidden', 'true');

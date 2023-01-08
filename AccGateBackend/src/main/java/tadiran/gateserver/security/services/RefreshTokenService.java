@@ -39,6 +39,7 @@ public class RefreshTokenService {
         return jwtUtils.generateJwtToken(refreshToken.getId(), refreshToken.getUser(), refreshToken.getWebApp());
     }
 
+
     public RefreshToken createRefreshToken(Long userId, EWebApp webApp) {
         RefreshToken refreshToken = new RefreshToken();
         refreshToken.setUser(userRepository.findById(userId).get());

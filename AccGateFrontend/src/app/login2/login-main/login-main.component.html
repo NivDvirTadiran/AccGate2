@@ -15,14 +15,16 @@
 
 <storybook-background1></storybook-background1>
 
-<button  mat-raised-button  (click)="openReplacePassForm()">ReplacePassForm</button>
+<!--button mat-raised-button (click)="openReplacePassForm()">ReplacePassForm</button>
 <button mat-raised-button (click)="openRegisterForm()">RegisterForm</button>
-<button mat-raised-button (click)="profile2()">profile2</button>
+<button mat-raised-button (click)="openVerificationForm()">VerificationForm</button>
+<button mat-raised-button (click)="profile2()">profile2</button-->
 
 
 
 <storybook-login-form
   [isLoggedIn]="false"
+  [isLoading]="isLoading"
   [isLoginFailed]="isLoginFailed"
   [loginErrorMessage]="loginErrorMessage"
   [mForm]="loginForm"

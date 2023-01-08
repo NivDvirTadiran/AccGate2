@@ -79,6 +79,9 @@ public class AuthController {
   @Value("${tadiran.gate.PreviousAlertPassExpDays}")
   private int previousAlertPassExpDays;
 
+  @Value("${tadiran.gate.TSV}")
+  private Boolean isTwoStepVerficiiationRequire;
+
 
   @PostMapping("/signin")
   public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
@@ -205,8 +208,8 @@ public class AuthController {
 
   }
 
-  @PostMapping("/replace-pass-form")
-  public ResponseEntity<?> replacePassForm(@Valid @RequestBody ReplacePassFormRequest replacePassFormRequest) {
+
+  public ResponseEntity<?> replacePassForm(ReplacePassFormRequest replacePassFormRequest) {
     if (!userRepository.existsByUsername(replacePassFormRequest.getUsername())) {
       if (userDetailsService.isSupCredentials(replacePassFormRequest.getUsername(), replacePassFormRequest.getPassword()) ||
               userDetailsService.isAgentCredentials(replacePassFormRequest.getUsername(), replacePassFormRequest.getPassword())) {
@@ -534,32 +537,54 @@ public class AuthController {
 
   @PostMapping("/tsv_codevalidatebyname")
   public ResponseEntity<?> TwoStepVerification_ValidateCode(@Valid @RequestBody  TSVValidateCodeRequest validateCodeRequest ) {
-    String code;
-    User user;
 
-    logger.info("get request codevalidate2sv");
+    return twoStepVerificationService.ValidateCode(validateCodeRequest.getUsername(),
+                                                   validateCodeRequest.getCode());
 
-    if (userRepository.existsByUsername(validateCodeRequest.getUsername())) {
-      logger.info("Validate code for user: " + validateCodeRequest.getUsername());
-      user = userRepository.findByUsername(validateCodeRequest.getUsername()).get();
-      code = validateCodeRequest.getCode();
+  }
+
+  @PostMapping("/replace-pass-form")
+  public ResponseEntity<?> NoneTSV_replacePassForm(@Valid @RequestBody  TSVReplacePassFormRequest replacePassFormRequest) {
+
+    logger.info("isTwoStepVerficiiationRequire= " + this.isTwoStepVerficiiationRequire);
+
+    if (!this.isTwoStepVerficiiationRequire) {
+
+      return this.replacePassForm(
+              new ReplacePassFormRequest(
+                      replacePassFormRequest.getUsername(),
+                      replacePassFormRequest.getOldPassword(),
+                      replacePassFormRequest.getPassword(),
+                      replacePassFormRequest.getConfirmPassword()
+              )
+      );
+
     }
-    else {
-      logger.info("Can't find name: " + validateCodeRequest.getUsername());
-      return ResponseEntity
-              .badRequest()
-              .body(new MessageResponse("Error: Your pin code was unable to verified! Unknown User Account"));
-    }
+    return ResponseEntity.badRequest().body(new MessageResponse("Error: Two Step Verifiication is required!"));
+  }
 
-    logger.info("get request codegenerate2sv");
+  @PostMapping("/tsv_replace-pass-form")
+  public ResponseEntity<?> TwoStepVerification_replacePassForm(@Valid @RequestBody  TSVReplacePassFormRequest replacePassFormRequest) {
 
-    if  (twoStepVerificationService.ValidateCode(user, code)) {
-      return ResponseEntity.ok(new MessageResponse("Pin-Code match, User Approved!"));
+    logger.info("isTwoStepVerficiiationRequire= " + this.isTwoStepVerficiiationRequire);
+
+    if  (twoStepVerificationService
+            .validatePinCodeTokenUse(replacePassFormRequest.getUsername(),
+                                     replacePassFormRequest.getPinCodeToken())) {
+
+                    return this.replacePassForm(
+                            new ReplacePassFormRequest(
+                                   replacePassFormRequest.getUsername(),
+                                   replacePassFormRequest.getOldPassword(),
+                                   replacePassFormRequest.getPassword(),
+                                   replacePassFormRequest.getConfirmPassword()
+                            )
+                    );
+
     }
 
     return ResponseEntity.badRequest().body(new MessageResponse("Error: Invalidate Pin-Code! User Not Approved"));
   }
-
 
   @PostMapping("/tsv_codegeneratebyname")
   public ResponseEntity<?> TwoStepVerification_GenerateCodeByUsername(@Valid @RequestBody TSVGenerateCodeRequest generateCodeRequest ) {

@@ -20,3 +20,8 @@ export const AppConfig = {
     USER_KEY: 'user'
   }
 };
+export let workingModeConfiguration = {
+  runMode: {
+    TSV: false,
+  }
+};

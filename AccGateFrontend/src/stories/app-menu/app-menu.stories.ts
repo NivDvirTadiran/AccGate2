@@ -11,6 +11,7 @@ import StoryInputStories from "../inputs/input/story-input.stories";
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {ButtonContinueComponent} from "../buttons/button-continue/button-continue.component";
 import {ButtonAppsComponent} from "../buttons/button-apps/button-apps.component";
+import {Spinner1Component} from "../spinners/spinner1/spinner1.component";
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
@@ -18,7 +19,8 @@ export default {
   component: AppMenuComponent,
   decorators: [
     moduleMetadata({
-      declarations: [ AppMenuComponent, CardComponent, StoryInputComponent, ButtonContinueComponent, ButtonAppsComponent ],
+      declarations: [ AppMenuComponent, CardComponent, StoryInputComponent, ButtonContinueComponent,
+        Spinner1Component, ButtonAppsComponent ],
       imports: [ReactiveFormsModule],
     }),
     componentWrapperDecorator(story => `<div style="margin: 3em">${story}</div>`),
@@ -62,6 +64,7 @@ export const Loading = Template.bind({});
 Loading.args = {
   storyinputs: [],
   isLoggedIn: true,
+  isLoading: true,
 };
 
 export const Empty = Template.bind({});

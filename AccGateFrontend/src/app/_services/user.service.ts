@@ -1,9 +1,14 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {AppConfig} from "../app.config";
 
 const API_URL = AppConfig.accServer.ACCWEBServers+'/accGate/test/';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
+
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +22,10 @@ export class UserService {
 
   getAccVersion(): Observable<any> {
     return this.http.get(API_URL + 'accversion', { responseType: 'text' });
+  }
+
+  isTowStepVerRequired(): Observable<any> {
+    return this.http.get(API_URL + 'istsvon', httpOptions);
   }
 
   getUserBoard(): Observable<any> {

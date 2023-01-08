@@ -24,16 +24,32 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.ssl.SSLContextBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import tadiran.gateserver.models.EMsgType;
 import tadiran.gateserver.models.PinCode;
 import tadiran.gateserver.models.User;
+import tadiran.gateserver.payload.response.MessageResponse;
+import tadiran.gateserver.payload.response.TSVValidateCodeResponse;
+import tadiran.gateserver.repository.UserRepository;
+import tadiran.gateserver.security.jwt.JwtUtils;
 
 
 @Service
 public class TwoStepVerificationService {
     private static final Logger logger = LoggerFactory.getLogger(TwoStepVerificationService.class);
+
+    @Autowired
+    JwtUtils jwtUtils;
+
+    @Autowired
+    UserRepository userRepository;
+
+    @Value("${tadiran.gate.MailServer}")
+    private String mailServer;
 
     List<PinCode> pinCodeList = new ArrayList<>();
 
@@ -136,7 +152,7 @@ public class TwoStepVerificationService {
             HttpPost httpPost = new HttpPost();
             
             // set request URI ro thr created request object
-            httpPost.setURI(new URI("https://172.28.8.245:8443/ExternalServices/zconnector/sendEmail"));
+            httpPost.setURI(new URI("https://"+this.mailServer+":8443/ExternalServices/zconnector/sendEmail"));
             
             httpPost.setHeader("Authorization", "Basic QUNDVVNFUjojYlR3akducW5HTEtUazlH");
             httpPost.setHeader("Content-Type", "application/json");
@@ -177,18 +193,62 @@ public class TwoStepVerificationService {
 
     }
 
-    public boolean ValidateCode(User user, String code) {
+    private User locateUserFromName(String username) {
+        if (userRepository.existsByUsername(username)) {
+            logger.info("Validate code for user: " + username);
+            return userRepository.findByUsername(username).get();
+        }
+        else {
+            logger.info("Can't find name: " + username);
+            return null;
+        }
+    }
+
+    public ResponseEntity<?> ValidateCode(String username, String code) {
         logger.debug("ValidateCode: request pinCode: " + code);
+        User user = locateUserFromName(username);
+
+        if (user == null) { return ResponseEntity.badRequest()
+                    .body(new MessageResponse("Error: Your pin code was unable to verified! Unknown User Account"));
+        }
+
+
         PinCode pinCode = getPinCode(user);
-        if (pinCode != null) {
+        if (pinCode != null && Objects.equals(pinCode.getPinCode(), code)) {
             logger.debug("ValidateCode: memory pinCode: " + pinCode.getPinCode());
+            return ResponseEntity.ok(new TSVValidateCodeResponse(
+                                             this.generatePinCodeToken(user,code),
+                                             user.getUsername(),
+                                             user.getId(),
+                                             user.getEmail(),
+                                             code));
         }
         else {
             logger.debug("pincode not in memmory: pinCode == null");
-            return false;
         }
 
-        return Objects.equals(pinCode.getPinCode(), code);
+        return ResponseEntity.badRequest().body(new MessageResponse("Error: Invalidate Pin-Code! User Not Approved"));
+        //return Objects.equals(pinCode.getPinCode(), code);
+
     }
 
+    public boolean validatePinCodeTokenUse(String username, String pinCodeToken) {
+
+        // Check the Token
+        if (!jwtUtils.validateJwtToken(pinCodeToken)) {return false;}
+
+        // Check the User
+        if (!username.equals(jwtUtils.getUsernameFromPinCodeToken(pinCodeToken))) {return false;}
+        User user = locateUserFromName(username); if (user == null) { return false; }
+
+        // Check the PinCode (validate 2SV actually made by the user in the last 15 minutes)
+        PinCode pinCode = getPinCode(user); if (pinCode == null) { return false; }
+        if (!pinCode.getPinCode().equals(jwtUtils.getCodeFromPinCodeToken(pinCodeToken))) {return false;}
+
+        return true;
+    }
+
+    public String generatePinCodeToken(User user, String code) {
+        return jwtUtils.generatePinCodeToken(user, code);
+    }
 }

@@ -5,9 +5,11 @@ import {StoryInput} from "src/stories/inputs/input/story-input.model";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {DialogData} from "../login-main.component";
 import {PasswordValidators} from "../replace-pass-form2/replace-pass-form2.component";
-import {TSVData} from "../../../profile2/profile2.component";
-
-
+import {TokenStorageService} from "../../../_services/token-storage.service";
+export interface TSVData {
+  username: string;
+  email: string;
+}
 
 
 
@@ -24,6 +26,7 @@ export default class VerificationForm2Component implements OnInit {
     verErrorMessage: {},
   }
 
+  public isLoading = false;
   submitted = false;
   empList: Array<String> = [];
   apiResponse = { message: '', error: false };
@@ -41,6 +44,7 @@ export default class VerificationForm2Component implements OnInit {
 
   constructor(private authService: AuthService,
               private renderer: Renderer2,
+              private tokenStorage: TokenStorageService,
               public dialogRef: MatDialogRef<VerificationForm2Component>,
               @Inject(MAT_DIALOG_DATA) public data: TSVData) {
     this.verificationForm = new FormGroup({
@@ -51,44 +55,40 @@ export default class VerificationForm2Component implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.generateNewCodeFor2SV();
   }
 
   onSubmit(code: string): void {
-    if (this.status.isVerSuccess) {
-      this.dialogRef.close('User Validate');
-    }
-    else {
-      this.submitted = true;
-      const { username, password, email, phone } = this.verificationForm.getRawValue();
+    this.submitted = true;
 
-      this.authService.TSV_ValidateCodeByName(this.data.username, this.data.email, code).subscribe(
-        data => {
-          console.log(data);
-          this.status.isVerSuccess = true;
-          this.status.isVerFailed = false;
-          this.errorFieldSubmitted = {} ;
-          this.apiResponse.error = false;
-          this.apiResponse.message = 'Successful verification';
-        },
-        error => {
-          const errorResponse = error.error;
-          this.apiResponse.error = true;
-          this.apiResponse.message = 'Verification error';
-          this.status.verErrorMessage = error.error.message;
-          this.status.isVerFailed = true;
-          this.errorFieldSubmitted = errorResponse.message;
-          console.log(errorResponse);
-        },
-        () => {
-          console.log("Registration Complete");}
-      );
-    }
+    this.isLoading = true;
+    this.authService.TSV_ValidateCodeByName(this.data.username, this.data.email, code).subscribe(
+      data => {
+        console.log(data);
+        this.tokenStorage.savePinCodeToken(data.pinCodeToken);
+        this.status.isVerSuccess = true;
+        this.status.isVerFailed = false;
+        this.errorFieldSubmitted = {} ;
+        this.apiResponse.error = false;
+        this.apiResponse.message = 'Successful verification';
+        this.dialogRef.close('User Validate');
+      },
+      error => {
+        const errorResponse = error.error;
+        this.apiResponse.error = true;
+        this.apiResponse.message = 'Verification error';
+        this.status.verErrorMessage = error.error.message;
+        this.status.isVerFailed = true;
+        this.errorFieldSubmitted = errorResponse.message;
+        console.log(errorResponse);
+      },
+      () => {
+        this.isLoading = false;
+        console.log("Validate Code Request Finished");}
+    );
   }
 
   generateNewCodeFor2SV() {
-
-    const { username, password, email, phone } = this.verificationForm.getRawValue();
 
     this.authService.TSV_GenerateCodeByName(this.data.username, this.data.email).subscribe(
       data => {

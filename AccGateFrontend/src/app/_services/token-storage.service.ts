@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 const TOKEN_KEY = 'token';
 const REFRESHTOKEN_KEY = 'auth-refreshtoken';
+const PINCODETOKEN_KEY = 'auth-pincodetoken';
 const USER_KEY = 'user';
 
 @Injectable({
@@ -36,8 +37,18 @@ export class TokenStorageService {
       this.saveUser(user);
     }
   }
+
   public getRefreshToken(): string | null {
     return window.sessionStorage.getItem(REFRESHTOKEN_KEY);
+  }
+
+  public savePinCodeToken(token: string): void {
+    window.sessionStorage.removeItem(PINCODETOKEN_KEY);
+    window.sessionStorage.setItem(PINCODETOKEN_KEY, token);
+  }
+
+  public getPinCodeToken(): string | null {
+    return window.sessionStorage.getItem(PINCODETOKEN_KEY);
   }
 
   public saveUser(user: any): void {

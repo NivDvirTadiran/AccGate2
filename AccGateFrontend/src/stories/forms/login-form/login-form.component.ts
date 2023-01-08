@@ -20,10 +20,11 @@ export default class LoginFormComponent implements OnInit {
 
   @Input() formService!: AuthService;
 
-
   @Input() isLoginFailed = false;
+
   @Input() loginErrorMessage = '';
 
+  @Input() isLoading: boolean = false;
 
 
   openReplacePassword() {
@@ -46,13 +47,6 @@ export default class LoginFormComponent implements OnInit {
   username: new FormControl('Telecom4', Validators.minLength(2)),
   password: new FormControl('T@diran2022', Validators.minLength(2)),
 });*/
-
-/*
-  validationFormInOrder: { [p: string]: AbstractControl } =[];
-  @Input()
-  set registerForm(arr: FormGroup) {
-    this.validationFormInOrder = arr.controls
-  }*/
 
   @Input() isLoggedIn = false;
 

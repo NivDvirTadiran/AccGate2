@@ -12,6 +12,7 @@ import PassStrengthComponent from "../../pass-strength/pass-strength.component";
 import {ApiErrorMessagePipe} from "../../../app/storybook/pipes/api-error-message.pipe";
 import {ApiErrorMessageService} from "../../../app/storybook/pipes/api-error-message.service";
 import LoginFormComponent from "./login-form.component";
+import {Spinner1Component} from "../../spinners/spinner1/spinner1.component";
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
@@ -20,7 +21,7 @@ export default {
   decorators: [
     moduleMetadata({
       declarations: [ CardComponent, StoryInputComponent, ButtonContinueComponent,
-        PassStrengthComponent, ApiErrorMessagePipe, ],
+        Spinner1Component, PassStrengthComponent, ApiErrorMessagePipe],
       imports: [CommonModule, FormsModule, ReactiveFormsModule ],
     }),
     componentWrapperDecorator(story => `<div style="margin: 3em">${story}</div>`),
@@ -100,9 +101,12 @@ LoignFailed.args = {
 
 export const Loading = Template.bind({});
 Loading.args = {
-  storyinputs: [],
-  isLoggedIn: true,
+  storyInputs: [
+    ...Default.args['storyInputs'].slice(0, 2),
+    // { id: '3', title: 'AccountInput 6 (pinned)', state: 'INPUT_PINNED' },
+  ],
   isLoginFailed: false,
+  isLoading: true,
 
 
 };

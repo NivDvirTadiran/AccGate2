@@ -4,7 +4,7 @@ import {AuthService} from "../_services/auth.service";
 import {AbstractControl, FormGroup} from "@angular/forms";
 import {TokenStorageService} from "../_services/token-storage.service";
 import {Router} from "@angular/router";
-import {AppConfig} from "../app.config";
+import {AppConfig, workingModeConfiguration} from "../app.config";
 import {BehaviorSubject, Subscription, throwError} from "rxjs";
 import {UserService} from "../_services/user.service";
 import {MatDialog} from "@angular/material/dialog";
@@ -13,16 +13,14 @@ import VerificationForm2Component from "../login2/login-main/verification-form2/
 import RegisterForm2Component from "../login2/login-main/register-form2/register-form2.component";
 import MyAccountForm2Component from "../my-account-form2/my-account-form2.component";
 import {EventBusService} from "../_shared/event-bus.service";
+import {EventData} from "../_shared/event.class";
 
 
 export interface DialogData {
   username: string;
   password: string;
 }
-export interface TSVData {
-  username: string;
-  email: string;
-}
+
 
 
 @Component({
@@ -56,6 +54,7 @@ export default class Profile2Component implements OnInit {
 
 
   constructor(private authService: AuthService,
+              private userService: UserService,
               private token: TokenStorageService,
               private eventBusService: EventBusService,
               private router: Router,
@@ -115,6 +114,7 @@ export default class Profile2Component implements OnInit {
   }
 
 
+
   public passExp: number = 0; // By Days
   public previousAlertPassExp: number = 0; // By Days
 
@@ -125,11 +125,20 @@ export default class Profile2Component implements OnInit {
     this.refreshToken = this.currentUser.refreshToken;
     this.setPassExpAlertData();
     this.setPermittedWebAppList();
+    this.is2SVRequired();
 
     this.eventBusSub = this.eventBusService.on('openChangePassword', () => {
       this.openReplacePassForm();
     });
 
+    this.eventBusSub = this.eventBusService.on('openVerification', () => {
+      this.openVerificationForm();
+    });
+
+  }
+
+  is2SVRequired() {
+    this.eventBusService.emit(new EventData('is2SVRequired', null));
   }
 
   setPassExpAlertData(): void {
@@ -211,7 +220,6 @@ export default class Profile2Component implements OnInit {
           .subscribe(
             data => {
               let promise = new Promise<void>((resolve, reject) => {
-                this.isLoading = false;
                 newAccessToken = (data.accessToken);
                 newRefreshToken = (data.refreshToken);
                 newCurrentUser = (data);
@@ -225,15 +233,12 @@ export default class Profile2Component implements OnInit {
                 .then(result => { this.windowObjectReference = window.open(AppConfig.accServer.ACCWEBServers+webappURLPrefix);})
                 .then(result => { this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.TOKEN_KEY, newAccessToken);
                     this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.REFRESHTOKEN_KEY, newRefreshToken);
-                    this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.USER_KEY, JSON.stringify(newCurrentUser));
-                    this.isLoading = false;},
-                  (err) => { this.isLoading = false;
-                    return throwError(err);})});
+                    this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.USER_KEY, JSON.stringify(newCurrentUser));},
+                  (err) => { return throwError(err);})});
             },
             (err) => {
-              this.isLoading = false;
               return throwError(err);
-            })
+            }, () => {this.isLoading = false;})
     }
   }
 
@@ -274,7 +279,7 @@ export default class Profile2Component implements OnInit {
     (error) => {
               this.isLoading = false;
               return throwError(error.error);
-            })
+            }, () => {this.isLoading = false;})
     }
   }
 

@@ -1,6 +1,7 @@
 
 <storybook-verification-form
   [status]="status"
+  [isLoading]="isLoading"
   (sendVerificationReq)="onSubmit($event)"
   (generateNewCodeFor2SV)="generateNewCodeFor2SV()"
   (clickXButton)="this.dialogRef.close({message: 'xbutton'})">

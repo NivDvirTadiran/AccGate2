@@ -8,12 +8,6 @@ import {CommonModule} from "@angular/common";
 export default {
   title: 'Design System/Atoms/Spinners/Spinner1',
   component: Spinner1Component,
-  decorators: [
-    moduleMetadata({
-      declarations: [],
-      imports: [CommonModule],
-    }),
-  ],
   // More on argTypes: https://storybook.js.org/docs/angular/api/argtypes
 } as Meta;
 

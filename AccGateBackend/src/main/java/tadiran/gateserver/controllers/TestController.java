@@ -1,11 +1,15 @@
 package tadiran.gateserver.controllers;
 
+import net.minidev.json.JSONValue;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import tadiran.gateserver.payload.response.ApiResponse;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -13,6 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
   @Value("${tadiran.gate.accVersion}")
   private String accVersion;
+
+  @Value("${tadiran.gate.TSV}")
+  private java.lang.Boolean TSV;
 
   @GetMapping("/all")
   public String allAccess() {
@@ -22,6 +29,11 @@ public class TestController {
   @GetMapping("/accversion")
   public String accVersion() {
     return accVersion;
+  }
+
+  @GetMapping("/istsvon")
+  public ResponseEntity<?> isTSVRequired() {
+    return new ResponseEntity<>(new ApiResponse(TSV, "Two Step Verification is " + (TSV ? "On" : "Off")), HttpStatus.OK);
   }
 
   @GetMapping("/accountdetails")
