@@ -131,13 +131,6 @@ export default class MyAccountFormComponent implements OnInit, AfterViewChecked,
 
   onSubmit(): void {
     console.warn('Registry Request Sent!');
-
-    //this.renderer.setAttribute(this.storybookInput?.nativeElement ,'hidden', 'true');
-    //this.renderer.setAttribute(this.mainHeader?.nativeElement ,'hidden', 'true');
-    //this.renderer.setProperty(this.mainHeader?.nativeElement ,'innerHTML','You have successfully complete your registeration!');
-
-
-    //this.renderer.setAttribute(this.storybookInput?.nativeElement ,'innerHTML','true');
     this.sendRegReq.emit();
   }
 

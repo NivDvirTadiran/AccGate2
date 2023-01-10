@@ -101,6 +101,7 @@ export class ReplacePassForm2Component {
           if (errorResponse.error && errorResponse.message === 'VALIDATION_FAILED') {
             this.status.errorFieldSubmitted = errorResponse.data;
           }
+          this.isLoading = false;
         },
         () => {
           this.isLoading = false;

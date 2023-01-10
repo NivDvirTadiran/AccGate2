@@ -46,8 +46,8 @@ export default class RegisterForm2Component implements OnInit {
     this.registerForm = new FormGroup({
       username: new FormControl(data.username.toString(), Validators.minLength(2)),
       password: new FormControl(data.password.toString(), Validators.minLength(2)),
-      email: new FormControl('niv.dvir@tadirantele.com', Validators.email),
-      phone: new FormControl('054123456789', PasswordValidators.patternValidator(new RegExp("(?=.*[0-9 ]{8})"), {requiresPhoneChars: true}))
+      email: new FormControl('', Validators.email),
+      phone: new FormControl('', PasswordValidators.patternValidator(new RegExp("(?=.*[0-9 ]{8})"), {requiresPhoneChars: true}))
     });/*Validators.pattern(new RegExp("[0-9 ]{12}")*/
     this.empList.push("admin");
   }
@@ -82,6 +82,7 @@ export default class RegisterForm2Component implements OnInit {
           if (errorResponse.error && errorResponse.message === 'VALIDATION_FAILED') {
             this.errorFieldSubmitted = errorResponse.data;
           }
+          this.isLoading = false;
         },
         () => {
           this.isLoading = false;

@@ -70,10 +70,7 @@ export default class ReplacePassFormComponent implements OnInit, AfterViewChecke
   storyInputsInOrder: StoryInput[] = [];
 
   @Input() mForm: FormGroup  = new FormGroup({});
-  /*username: new FormControl('', Validators.minLength(2)),
-  password: new FormControl('T@diran2022', Validators.minLength(2)),
-  email: new FormControl('', Validators.email),
-  phone: new FormControl(null, Validators.pattern(new RegExp("[0-9 ]{12}")))*/
+
 
   changeLog: string[] = [];
 

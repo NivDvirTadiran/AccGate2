@@ -43,10 +43,7 @@ export default class LoginFormComponent implements OnInit {
    */
   storyInputsInOrder: StoryInput[] = [];
 
-  @Input() mForm: FormGroup = new FormGroup({}); /* = new FormGroup({
-  username: new FormControl('Telecom4', Validators.minLength(2)),
-  password: new FormControl('T@diran2022', Validators.minLength(2)),
-});*/
+  @Input() mForm: FormGroup = new FormGroup({});
 
   @Input() isLoggedIn = false;
 

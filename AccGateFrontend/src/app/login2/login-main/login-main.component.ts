@@ -7,8 +7,6 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 import {Router} from "@angular/router";
 import RegisterForm2Component from "./register-form2/register-form2.component";
 //import * as mStoryInput from "../../../stories/inputs/story-input.stories";
-import {RegisterFormComponent} from "../../login/register-form/register-form.component";
-import {ReplacePassFormComponent} from "../../login/replace-pass-form/replace-pass-form.component";
 import {ReplacePassForm2Component} from "./replace-pass-form2/replace-pass-form2.component";
 import VerificationForm2Component from "./verification-form2/verification-form2.component";
 import {UserService} from "../../_services/user.service";
@@ -99,8 +97,8 @@ export class LoginMainComponent implements OnInit {
               private tokenStorage: TokenStorageService,
               private router: Router,) {
     this.loginForm = new FormGroup({
-      username: new FormControl('Agent7', Validators.minLength(2)),
-      password: new FormControl('T@diran2023', Validators.minLength(2)),
+      username: new FormControl('', Validators.minLength(2)),
+      password: new FormControl('', Validators.minLength(2)),
     });
 
   }
@@ -184,15 +182,6 @@ export class LoginMainComponent implements OnInit {
     this.loginForm.get('password')?.setValue(pass);
   }
 
-/*
-  openRegisterForm() {
-    return this.registerFormService.open(RegisterFormComponent).onClose.toPromise();
-  }
-
-  openReplacePassword() {
-    this.replacePassFormService.open(ReplacePassForm2Component);
-  }
-*/
 
   onSubmit(): void {
     console.warn('Login Request from login-main!');
@@ -244,7 +233,7 @@ export class LoginMainComponent implements OnInit {
                     this.onSubmit();
                     break;
                   case undefined:
-                    //this.openReplacePassword();
+                    //Handle unknown response
                     break;
                   default:
                 }
@@ -257,7 +246,9 @@ export class LoginMainComponent implements OnInit {
         }
 
         this.isLoginFailed = true;
-      }, () => {this.isLoading = false;})
+        this.isLoading = false;
+      },
+      () => { this.isLoading = false; })
   }
 
 

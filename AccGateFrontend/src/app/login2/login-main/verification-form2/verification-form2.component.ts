@@ -1,10 +1,8 @@
-import {Component, ElementRef, EventEmitter, Inject, OnInit, Output, Renderer2, ViewChild} from '@angular/core';
+import {Component, ElementRef, Inject, OnInit, Renderer2, ViewChild} from '@angular/core';
 import { AuthService } from 'src/app/_services/auth.service';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import {StoryInput} from "src/stories/inputs/input/story-input.model";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-import {DialogData} from "../login-main.component";
-import {PasswordValidators} from "../replace-pass-form2/replace-pass-form2.component";
 import {TokenStorageService} from "../../../_services/token-storage.service";
 export interface TSVData {
   username: string;
@@ -81,6 +79,7 @@ export default class VerificationForm2Component implements OnInit {
         this.status.isVerFailed = true;
         this.errorFieldSubmitted = errorResponse.message;
         console.log(errorResponse);
+        this.isLoading = false;
       },
       () => {
         this.isLoading = false;
@@ -89,15 +88,17 @@ export default class VerificationForm2Component implements OnInit {
   }
 
   generateNewCodeFor2SV() {
-
+    this.isLoading = true;
     this.authService.TSV_GenerateCodeByName(this.data.username, this.data.email).subscribe(
       data => {
         console.log("Generating Code Succeeded", data);
       },
       error => {
+        this.isLoading = false;
         console.log("Error: Can't generate code for user ");
       },
       () => {
+        this.isLoading = false;
         console.log("Sending Generation Code Request Complete");
       });
   }

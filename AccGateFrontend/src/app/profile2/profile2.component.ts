@@ -16,6 +16,7 @@ import {EventBusService} from "../_shared/event-bus.service";
 import {EventData} from "../_shared/event.class";
 
 
+
 export interface DialogData {
   username: string;
   password: string;
@@ -206,44 +207,180 @@ export default class Profile2Component implements OnInit {
     }
   }
 
-  public openNewTabForApp(appRequest: string[]): void {
-    const [ webapp, webappURLPrefix ] = appRequest.values();
+  public async openNewTabForApp(appRequest: string[]) {
+    const [webapp, webappURLPrefix] = appRequest.values();
     var newAccessToken = "";
     var newRefreshToken = "";
     var newCurrentUser = "";
 
+
     if (!this.isLoading) {
-      this.isLoading = true;
       const token = this.token.getRefreshToken();
-      if (token)
-        this.authService.webapptab(token, webapp)
-          .subscribe(
-            data => {
-              let promise = new Promise<void>((resolve, reject) => {
-                newAccessToken = (data.accessToken);
-                newRefreshToken = (data.refreshToken);
-                newCurrentUser = (data);
-                setTimeout(() => {
-                  this.isLoading = false;
-                  console.log("Failed open new tab");
-                  resolve();//() => {resolve();}
-                }, 5000);
+      if (token) {
+
+        //const timeout = new Promise((res) => setTimeout(() => res("openNewTabForApp - timeout!"), 5000));
+        const timeout = (prom: Promise<any>, time: number, exception: Symbol) => {
+          let timer: number;
+          return Promise.race([
+            prom,
+            new Promise((_r, rej) => timer = setTimeout(rej, time, exception))
+          ]).finally(() => clearTimeout(timer));
+        }
+
+
+        const promise = async () => {
+          new Promise<any>((resolve, reject) => {
+            console.log('Spinner Start.');
+            this.isLoading = true;
+            return this.authService.webapptab(token, webapp).toPromise()
+              .then((val: any) => {
+                console.log('Request approved by the server.');
+                newAccessToken = (val.accessToken);
+                newRefreshToken = (val.refreshToken);
+                newCurrentUser = (val);
               })
-              promise.then(() => {this.router.navigate([])
-                .then(result => { this.windowObjectReference = window.open(AppConfig.accServer.ACCWEBServers+webappURLPrefix);})
-                .then(result => { this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.TOKEN_KEY, newAccessToken);
-                    this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.REFRESHTOKEN_KEY, newRefreshToken);
-                    this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.USER_KEY, JSON.stringify(newCurrentUser));},
-                  (err) => { return throwError(err);})});
-            },
-            (err) => {
-              return throwError(err);
-            }, () => {this.isLoading = false;})
+              .then((result) => {
+                  this.router.navigate([])
+                    .then(result => {
+                      this.windowObjectReference = window.open(AppConfig.accServer.ACCWEBServers + webappURLPrefix);
+                    })
+                    .then((result) => {
+                        console.log('Plant the secret ingredient.');
+                        this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.TOKEN_KEY, newAccessToken);
+                        this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.REFRESHTOKEN_KEY, newRefreshToken);
+                        this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.USER_KEY, JSON.stringify(newCurrentUser));
+                      },
+                      (err) => {
+                        console.log('failed loading the app webpage.');
+                        reject(throwError(err));
+                      })
+                },
+                (err) => {
+                  console.log('cant get a server request appropriate response for opening this webpage ')
+                  reject(throwError(err));
+                })
+              .then(() => {
+                  console.log('Spinner Stop.');
+                  this.isLoading = false;
+                  resolve("Success");
+                },
+                (err) => {reject(throwError(err))});
+
+          });
+        }
+
+        const timeoutError = Symbol();
+        try {
+
+          await timeout(promise(), 5000, timeoutError)
+            .then(() => {
+              this.isLoading = false;
+              console.log('openNewTabForApp: open tab app successfully finished');
+            });
+        }catch (e) {
+          if (e === timeoutError) {
+            // handle timeout
+            console.log('timeoutError: '+e.error);
+          }else {
+            // other error
+            console.log('Error: '+e.error);
+            throw e;
+          }
+        }
+
+      }
     }
   }
 
-  public openNewWinForApp(appRequest: string[]): void {
-    /*webapp: string, webappURLPrefix: string*/
+  public async openNewWinForApp(appRequest: string[]) {
+    const [webapp, webappURLPrefix] = appRequest.values();
+    var newAccessToken = "";
+    var newRefreshToken = "";
+    var newCurrentUser = "";
+
+
+    if (!this.isLoading) {
+      const token = this.token.getRefreshToken();
+      if (token) {
+
+
+        const timeout = (prom: Promise<any>, time: number, exception: Symbol) => {
+          let timer: number;
+          return Promise.race([
+            prom,
+            new Promise((_r, rej) => timer = setTimeout(rej, time, exception))
+          ]).finally(() => clearTimeout(timer));
+        }
+
+
+        const promise = async () => {
+          new Promise<any>((resolve, reject) => {
+            console.log('Spinner Start.');
+            this.isLoading = true;
+            return this.authService.webapptab(token, webapp).toPromise()
+              .then((val: any) => {
+                console.log('Request approved by the server.');
+                newAccessToken = (val.accessToken);
+                newRefreshToken = (val.refreshToken);
+                newCurrentUser = (val);
+              })
+              .then((result) => {
+                  console.log('Opening new tab/win for the requested page.');
+                  this.router.navigate([])
+                    .then(result => {
+                      console.log('Insert url and loading the page.');
+                      this.windowObjectReference = window.open(AppConfig.accServer.ACCWEBServers+webappURLPrefix+'start.html',
+                        'C-Sharpcorner', 'scrollbars=no');
+                    })
+                    .then((result) => {
+                        console.log('Plant the secret ingredient.');
+                        this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.TOKEN_KEY, newAccessToken);
+                        this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.REFRESHTOKEN_KEY, newRefreshToken);
+                        this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.USER_KEY, JSON.stringify(newCurrentUser));
+                      },
+                      (err) => {
+                        console.log('failed loading the app webpage.');
+                        reject(throwError(err));
+                      })
+                },
+                (err) => {
+                  console.log('cant get a server request appropriate response for opening this webpage ')
+                  reject(throwError(err));
+                })
+              .then(() => {
+                  console.log('Spinner Stop.');
+                  this.isLoading = false;
+                  resolve("Success");
+                },
+                (err) => {reject(throwError(err))});
+          });
+        }
+
+
+        const timeoutError = Symbol();
+        try {
+          await timeout(promise(), 5000, timeoutError)
+        }catch (e) {
+          if (e === timeoutError) {
+            // handle timeout
+            console.log('timeoutError: ' + e.error);
+          } else {
+            // other error
+            console.log('Error: ' + e.error);
+            throw e;
+          }
+        }finally {
+          console.log('openNewTabForApp: open tab app successfully finished');
+        }
+
+
+
+      }
+    }
+  }
+
+  /*public openNewWinForApp(appRequest: string[]): void {
+    //webapp: string, webappURLPrefix: string
     const [ webapp, webappURLPrefix ] = appRequest.values();
     var newAccessToken = "";
     var newRefreshToken = "";
@@ -257,12 +394,10 @@ export default class Profile2Component implements OnInit {
           .subscribe(
             data => {
               let promise = new Promise<void>((resolve, reject) => {
-
                 newAccessToken = (data.accessToken);
                 newRefreshToken = (data.refreshToken);
                 newCurrentUser = (data);
                 setTimeout(() => {
-                  this.isLoading = false;
                   console.log("Failed open new window");
                   resolve();//() => {resolve();}
                 }, 5000);
@@ -271,8 +406,7 @@ export default class Profile2Component implements OnInit {
                   'C-Sharpcorner', 'scrollbars=no');})
                 .then(result => { this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.TOKEN_KEY, newAccessToken);
                     this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.REFRESHTOKEN_KEY, newRefreshToken);
-                    this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.USER_KEY, JSON.stringify(newCurrentUser));
-                    this.isLoading = false;},
+                    this.windowObjectReference.window.sessionStorage.setItem(AppConfig.endpoints.USER_KEY, JSON.stringify(newCurrentUser));},
             (err) => { this.isLoading = false;
               return throwError(err);})
     },
@@ -281,7 +415,7 @@ export default class Profile2Component implements OnInit {
               return throwError(error.error);
             }, () => {this.isLoading = false;})
     }
-  }
+  }*/
 
 }
 

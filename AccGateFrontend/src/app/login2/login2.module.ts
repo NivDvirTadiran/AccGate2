@@ -2,8 +2,7 @@ import { NgModule } from '@angular/core';
 
 import { Login2RoutingModule } from './login2-routing.module';
 import RegisterForm2Component  from './login-main/register-form2/register-form2.component';
-import { LogtestComponent } from './logtest/logtest.component';
-import {LoginMainComponent, /*DialogOverviewExampleDialog*/} from './login-main/login-main.component';
+import {LoginMainComponent} from './login-main/login-main.component';
 import {TaskComponent } from "src/stories/task/task.component";
 import {TaskListComponent} from "../../stories/task-list/task-list.component";
 import {Login2Component} from "./login2.component";
@@ -22,7 +21,6 @@ import VerificationForm2Component from "./login-main/verification-form2/verifica
     RegisterForm2Component,
     VerificationForm2Component,
     TaskComponent, TaskListComponent,
-    LogtestComponent,
     Login2Component,
     LoginMainComponent,
 
