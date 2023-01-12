@@ -18,6 +18,7 @@
 <!--button mat-raised-button (click)="openReplacePassForm()">ReplacePassForm</button>
 <button mat-raised-button (click)="openRegisterForm()">RegisterForm</button>
 <button mat-raised-button (click)="openVerificationForm()">VerificationForm</button>
+<button mat-raised-button (click)="openForgotPassForm()">forgotPassForm</button>
 <button mat-raised-button (click)="profile2()">profile2</button-->
 
 
@@ -30,6 +31,7 @@
   [mForm]="loginForm"
   [storyInputs]="storyInputsInOrder"
   (sendLoginReq)="onSubmit()"
+  (openForgetPassForm)="openForgotPassForm()"
 ></storybook-login-form>
 
 

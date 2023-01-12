@@ -111,6 +111,14 @@ export class AuthService {
     }, httpOptions);
   }
 
+
+  ResetPassByMail( username: string, email: string): Observable<any> {
+    return this.http.post(AUTH_API + 'forgotpassword', {
+      username,
+      email,
+    }, httpOptions);
+  }
+
   TSV_GenerateCodeByName( username: string, email: string): Observable<any> {
     return this.http.post(AUTH_API + 'tsv_codegeneratebyname', {
       username,

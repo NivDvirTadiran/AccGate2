@@ -49,6 +49,10 @@ export default class ReplacePassFormComponent implements OnInit, AfterViewChecke
   };
 
   @Input() isRepFailed = false;
+
+  @Input() isRepSuccess = false;
+
+
   @Input() repErrorMessage = '';
 
   openReplacePassword() {
@@ -75,9 +79,9 @@ export default class ReplacePassFormComponent implements OnInit, AfterViewChecke
   changeLog: string[] = [];
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes.isRegSuccess) {
-      if (!changes.isRegSuccess.previousValue &&  changes.isRegSuccess.currentValue) {
-        console.warn('Register Request Succeeded!');
+    if (changes.isRepSuccess) {
+      if (!changes.isRepSuccess.previousValue &&  changes.isRepSuccess.currentValue) {
+        console.warn('ReplacePassForm Request Succeeded!');
         this.loadSuccessfullyLoggedIn();
       }
     }

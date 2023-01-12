@@ -76,9 +76,9 @@ export class ReplacePassForm2Component {
     if (this.status.isRepSuccess) {
       this.dialogRef.close({message: 'Replace Password Complete', data: this.data});
     }
-    else if (workingModeConfiguration.runMode.TSV && this.tokenStorageService.getPinCodeToken() == null) {
-      this.eventBusService.emit(new EventData('openVerification', null));
-    }
+    //else if (workingModeConfiguration.runMode.TSV && this.tokenStorageService.getPinCodeToken() == null) {
+    //  this.eventBusService.emit(new EventData('openVerification', null));
+    //}
     else {
       this.status.submitted = true;
       this.isLoading = true;
@@ -93,15 +93,24 @@ export class ReplacePassForm2Component {
           this.data.password = this.password.value.toString();
         },
         error => {
-          const errorResponse = JSON.parse(error.error);
-          this.status.apiResponse.error = true;
-          this.status.apiResponse.message = 'Replace password error';
-          this.status.repErrorMessage = errorResponse;
-          this.status.isRepFailed = true;
-          if (errorResponse.error && errorResponse.message === 'VALIDATION_FAILED') {
-            this.status.errorFieldSubmitted = errorResponse.data;
+          switch (error.error.message) {
+            case "Error: Invalidate Pin-Code! User Not Approved":
+              this.eventBusService.emit(new EventData('openVerification', null));
+              break;
+            default:
+              const errorResponse = JSON.parse(error.error);
+              this.status.apiResponse.error = true;
+              this.status.apiResponse.message = 'Replace password error';
+              this.status.repErrorMessage = errorResponse;
+              this.status.isRepFailed = true;
+              if (errorResponse.error && errorResponse.message === 'VALIDATION_FAILED') {
+                this.status.errorFieldSubmitted = errorResponse.data;
+              }
           }
+
           this.isLoading = false;
+
+          //Error: Invalidate Pin-Code! User Not Approved
         },
         () => {
           this.isLoading = false;
@@ -112,12 +121,12 @@ export class ReplacePassForm2Component {
 
   private changePassword() {
     const { userName, oldPassword, password, confirmPassword } = this.replacePassForm.value;
-    const pinCodeToken = this.tokenStorageService.getPinCodeToken();
+    let pinCodeToken = this.tokenStorageService.getPinCodeToken();
 
-    if (pinCodeToken != null) {
-      return this.authService.TSV_ReplacePassForm(userName, oldPassword, password, confirmPassword, pinCodeToken);
+    if (pinCodeToken == null) {
+      pinCodeToken = 'dismiss';
     }
-    return this.authService.replacePassForm(userName, oldPassword, password, confirmPassword);
+    return this.authService.TSV_ReplacePassForm(userName, oldPassword, password, confirmPassword, pinCodeToken);
   }
 
 

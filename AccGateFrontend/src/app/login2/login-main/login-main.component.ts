@@ -14,6 +14,7 @@ import { workingModeConfiguration } from "src/app/app.config"
 import {EventData} from "../../_shared/event.class";
 import { EventBusService } from 'src/app/_shared/event-bus.service';
 import {Subscription} from "rxjs";
+import ForgotPassForm2Component from "./forgot-pass-form2/forgot-pass-form2.component";
 
 
 export interface DialogData {
@@ -88,6 +89,7 @@ export class LoginMainComponent implements OnInit {
 
 
   constructor(private renderer: Renderer2,
+              public forgotPassFormDialog: MatDialog,
               public registerFormDialog: MatDialog,
               public replacePassFormDialog: MatDialog,
               public verificationFormDialog: MatDialog,
@@ -104,6 +106,22 @@ export class LoginMainComponent implements OnInit {
   }
 
 
+  openForgotPassForm() {
+    const forgotPassFormDialogRef = this.forgotPassFormDialog.open(ForgotPassForm2Component, {
+      data: {username: this.getUsernameCurrentFieldValue, email: "not@inuse.com"},
+    });
+
+    forgotPassFormDialogRef.afterClosed().subscribe(result => {
+      console.log('The forget password form dialog was closed');
+      if (result.message === 'Successful verification') {
+        //this.setUsernameCurrentFieldValue(result.data.username);
+        //this.setPasswordCurrentFieldValue(result.data.password.toString());
+      }
+    });
+
+    return forgotPassFormDialogRef.afterClosed().toPromise();
+  }
+
   openRegisterForm() {
     const registerFormDialogRef = this.registerFormDialog.open(RegisterForm2Component, {
       data: {username: this.getUsernameCurrentFieldValue , password: this.getPasswordCurrentFieldValue},
@@ -112,7 +130,8 @@ export class LoginMainComponent implements OnInit {
     registerFormDialogRef.afterClosed().subscribe(result => {
       console.log('The register form dialog was closed');
       if (result.message === 'Registration Complete') {
-        this.setUsernameCurrentFieldValue(result.email);
+        //this.setUsernameCurrentFieldValue(result.username);
+        //this.setEmailCurrentFieldValue(result.email);
       }
     });
 

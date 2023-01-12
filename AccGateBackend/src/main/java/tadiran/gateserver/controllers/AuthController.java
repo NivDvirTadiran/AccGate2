@@ -16,7 +16,7 @@ import tadiran.gateserver.payload.request.*;
 import tadiran.gateserver.payload.response.*;
 import tadiran.gateserver.repository.*;
 import tadiran.gateserver.security.jwt.exception.TokenRefreshException;
-import tadiran.gateserver.security.services.RefreshTokenService;
+import tadiran.gateserver.security.services.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,9 +31,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import tadiran.gateserver.security.jwt.JwtUtils;
-import tadiran.gateserver.security.services.TwoStepVerificationService;
-import tadiran.gateserver.security.services.UserDetailsImpl;
-import tadiran.gateserver.security.services.UserDetailsServiceImpl;
 import tadiran.gateserver.models.Role;
 
 
@@ -73,6 +70,9 @@ public class AuthController {
   @Autowired
   TwoStepVerificationService twoStepVerificationService;
 
+  @Autowired
+  ForgotPasswordService forgotPasswordService;
+
   @Value("${tadiran.gate.pass-exp-days}")
   private int passExpDays;
 
@@ -94,6 +94,13 @@ public class AuthController {
                     .body(new MessageResponse("Error: A registry process should be made!"));
       }
     }
+
+    if (forgotPasswordService.ValidateTemporaryPass(loginRequest.getUsername(), loginRequest.getPassword())) {
+      return ResponseEntity
+              .badRequest()
+              .body(new MessageResponse("User credentials have expired"));
+    }
+
 
     Authentication authentication = authenticationManager.authenticate(
         new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
@@ -227,11 +234,11 @@ public class AuthController {
       Authentication authentication = authenticationManager.authenticate(
               new UsernamePasswordAuthenticationToken(replacePassFormRequest.getUsername(), replacePassFormRequest.getOldPassword()));
     } catch (BadCredentialsException e) {
-      //return new ResponseEntity<>(
-
-          final Map<String, Object> body = new HashMap<>();
-          body.put("oldPassword", HttpServletResponse.SC_UNAUTHORIZED);
-      return new ResponseEntity<>(new ApiResponse(body, "VALIDATION_FAILED"), HttpStatus.BAD_REQUEST);
+      if (!forgotPasswordService.ValidateTemporaryPass(replacePassFormRequest.getUsername(), replacePassFormRequest.getOldPassword())) {
+        final Map<String, Object> body = new HashMap<>();
+        body.put("oldPassword", HttpServletResponse.SC_UNAUTHORIZED);
+        return new ResponseEntity<>(new ApiResponse(body, "VALIDATION_FAILED"), HttpStatus.BAD_REQUEST);
+      }
     } catch (AuthenticationException e) {
       e.printStackTrace();
     }
@@ -561,9 +568,11 @@ public class AuthController {
 
     logger.info("isTwoStepVerficiiationRequire= " + this.isTwoStepVerficiiationRequire);
 
-    if  (twoStepVerificationService
-            .validatePinCodeTokenUse(replacePassFormRequest.getUsername(),
-                                     replacePassFormRequest.getPinCodeToken())) {
+    if  (forgotPasswordService.ValidateTemporaryPass(replacePassFormRequest.getUsername(),
+                                replacePassFormRequest.getOldPassword()) ||
+         twoStepVerificationService.validatePinCodeTokenUse(replacePassFormRequest.getUsername(),
+                                replacePassFormRequest.getPinCodeToken())) {
+
 
                     return this.replacePassForm(
                             new ReplacePassFormRequest(
@@ -606,6 +615,32 @@ public class AuthController {
     return ResponseEntity.ok(new MessageResponse("Code successfully sent to user!"));
   }
 
+  @PostMapping("/forgotpassword") //send password to mail
+  public ResponseEntity<?> forgotPassword(@Valid @RequestBody TSVGenerateCodeRequest generateCodeRequest ) {
+    String pass;
+    User user;
+
+    logger.debug("get request forgotpassword");
+
+    if (userRepository.existsByUsername(generateCodeRequest.getUsername())) {
+      logger.info("Generate pass for user: " + generateCodeRequest.getUsername());
+      user = userRepository.findByUsername(generateCodeRequest.getUsername()).get();
+      pass = forgotPasswordService.GeneratePassForUser(user);
+    }
+    else {
+      logger.debug("Can't find user: " + generateCodeRequest.getUsername());
+      return ResponseEntity
+              .badRequest()
+              .body(new MessageResponse("Error: Unknown User Account"));
+    }
+
+
+    if (pass != null) {
+      forgotPasswordService.sendPassByEmail(pass, user);
+    }
+
+    return ResponseEntity.ok(new MessageResponse("Password successfully sent to email!"));
+  }
 
   @PostMapping("/tsv_codegeneratebyemail")
   public ResponseEntity<?> TwoStepVerification_GenerateCodeByEmail(@Valid @RequestBody TSVGenerateCodeRequest generateCodeRequest ) {

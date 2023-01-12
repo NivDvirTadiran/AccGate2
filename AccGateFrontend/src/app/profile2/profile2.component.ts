@@ -220,7 +220,7 @@ export default class Profile2Component implements OnInit {
 
         //const timeout = new Promise((res) => setTimeout(() => res("openNewTabForApp - timeout!"), 5000));
         const timeout = (prom: Promise<any>, time: number, exception: Symbol) => {
-          let timer: number;
+          let timer: any;
           return Promise.race([
             prom,
             new Promise((_r, rej) => timer = setTimeout(rej, time, exception))
@@ -305,7 +305,7 @@ export default class Profile2Component implements OnInit {
 
 
         const timeout = (prom: Promise<any>, time: number, exception: Symbol) => {
-          let timer: number;
+          let timer: any;
           return Promise.race([
             prom,
             new Promise((_r, rej) => timer = setTimeout(rej, time, exception))

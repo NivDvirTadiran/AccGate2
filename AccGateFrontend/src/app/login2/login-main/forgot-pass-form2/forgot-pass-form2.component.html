@@ -1,0 +1,12 @@
+
+<storybook-forgot-pass-form
+  [status]="status"
+  [isLoading]="isLoading"
+  [isVerSuccess]="status.isVerSuccess"
+  [isRecSuccess]="status.isRecSuccess"
+  [storyInputs]="storyInputsInOrder"
+  [mForm]="forgotPassForm"
+  (sendVerificationReq)="onSubmit($event)"
+  (generateNewCodeFor2SV)="generateNewCodeFor2SV()"
+  (clickXButton)="this.dialogRef.close({message: 'xbutton'})">
+</storybook-forgot-pass-form>

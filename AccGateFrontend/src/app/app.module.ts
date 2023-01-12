@@ -28,14 +28,12 @@ import { MdbScrollspyModule } from 'mdb-angular-ui-kit/scrollspy';
 import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
 import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ModalModule, TooltipModule, PopoverModule, ButtonsModule, MDBBootstrapModule } from 'angular-bootstrap-md';
+import { ModalModule, ButtonsModule, MDBBootstrapModule } from 'angular-bootstrap-md';
 
-//import {ReplacePassForm2Component} from "./login2/login2.module";
 import {ApiErrorMessagePipe} from "./pipes/api-error-message.pipe";
 import {LoginErrorMessagePipe} from "./pipes/login-error-message.pipe";
-import Button from '../stories/buttons/button-example/button.component'
 
-//import {TaskListComponent} from '../stories/task-list/task-list.component'
+
 import {Login2Module} from "./login2/login2.module";
 import {StorybookModule} from "./storybook/storybook.module";
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
@@ -43,9 +41,8 @@ import {MdbValidationModule} from "mdb-angular-ui-kit/validation";
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatButtonModule} from "@angular/material/button";
 import MyAccountForm2Component from "./my-account-form2/my-account-form2.component";
-
-
-
+import ForgotPassForm2Component from "./login2/login-main/forgot-pass-form2/forgot-pass-form2.component";
+import ResetPassForm2Component from "./login2/login-main/reset-pass-form2/reset-pass-form2.component";
 
 
 
@@ -60,43 +57,42 @@ import MyAccountForm2Component from "./my-account-form2/my-account-form2.compone
         ApiErrorMessagePipe,
         LoginErrorMessagePipe,
         MyAccountForm2Component,
-
-
-
+        ForgotPassForm2Component,
+        ResetPassForm2Component,
     ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    NgbDatepickerModule,
-    MdbAccordionModule,
-    MdbCarouselModule,
-    MdbCheckboxModule,
-    MdbCollapseModule,
-    MdbDropdownModule,
-    MdbFormsModule,
-    MdbModalModule,
-    MdbPopoverModule,
-    MdbRadioModule,
-    MdbRangeModule,
-    MdbRippleModule,
-    MdbScrollspyModule,
-    MdbTabsModule,
-    MdbTooltipModule,
-    MdbValidationModule,
-    BrowserAnimationsModule,
-    ModalModule,
-    ButtonsModule,
-    MDBBootstrapModule.forRoot(),
-    Login2Module,
-    StorybookModule,
-    MatDialogModule,
-    MatButtonModule,
-  ],
-  providers: [
-    authInterceptorProviders,
-  ],
-  bootstrap: [AppComponent]
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        NgbDatepickerModule,
+        MdbAccordionModule,
+        MdbCarouselModule,
+        MdbCheckboxModule,
+        MdbCollapseModule,
+        MdbDropdownModule,
+        MdbFormsModule,
+        MdbModalModule,
+        MdbPopoverModule,
+        MdbRadioModule,
+        MdbRangeModule,
+        MdbRippleModule,
+        MdbScrollspyModule,
+        MdbTabsModule,
+        MdbTooltipModule,
+        MdbValidationModule,
+        BrowserAnimationsModule,
+        ModalModule,
+        ButtonsModule,
+        MDBBootstrapModule.forRoot(),
+        Login2Module,
+        StorybookModule,
+        MatDialogModule,
+        MatButtonModule,
+    ],
+    providers: [
+        authInterceptorProviders,
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
 

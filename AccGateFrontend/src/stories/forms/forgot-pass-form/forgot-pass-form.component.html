@@ -1,0 +1,79 @@
+
+
+
+<div id="main-login-card" class="col-md-12">
+  <storybook-card class="card-container"></storybook-card>
+  <div  class="h-100 d-flex align-items-center justify-content-center">
+    <storybook-button-ex id="button-ex"  (click)="this.clickXButton.emit()" ></storybook-button-ex>
+    <div  #formHeader class="form-header">
+      Forgot Password?
+    </div>
+
+    <br>
+    <!--form name="form"  (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate --> <!-- *ngIf="!isRegSuccess"-->
+    <form name="currentForm" [formGroup]="mForm">
+      <div  class="Vector">
+
+        <br>
+        <br>
+        <br>
+
+        <div class="second-header" style="top: 85px;">
+          <p class="second-header-text"  #secondHeader href="#/login" style="position: relative; top: 5px; text-align: left">
+            {{ 'Please enter your User Name:'}}<br>
+          </p>
+        </div>
+
+
+        <div #formFields id="button-successfully" style="">
+          <storybook-button-successfully  *ngIf="status.isRecSuccess"  style="position: relative; top: 15px"></storybook-button-successfully>
+          <ng-template  *ngIf="status.isVerSuccess"  appDynamicComp>
+
+          </ng-template>
+
+          <storybook-input  style="" *ngIf="!status.isRecSuccess"
+                           [storyInput]="storyInputsInOrder[0]"
+                           (onArchiveInput)="onArchiveInput.emit($event)"
+                           (onPinInput)="onPinInput.emit($event)"
+                           [currentForm]="mForm">
+          </storybook-input>
+          <!--code-input *ngIf="!status.isVerSuccess"
+                      #codeInput
+                      [codeLength]="codeLength"
+                      (codeChanged)="onCodeChanged($event)"
+                      (codeCompleted)="onCodeCompleted($event)">
+          </code-input-->
+        </div>
+
+
+
+
+
+        <div class="login-button">
+          <div class="login-failed-message" role="alert" style="position: relative; top: 15px">
+            <table *ngIf="this.status?.isVerFailed">
+              <tr>{{ this.status?.verErrorMessage.toString()  | apiErrorMessage: param }}</tr>
+              <tr  *ngFor="let message of this.status?.verErrorMessage.data?.confirmPassword.split(', ')">{{message.trim() | apiErrorMessage: param }}</tr>
+            </table>
+          </div>
+
+          <storybook-button-continue #formButton size="small" [label]="this.formButtonLabel" type="button"
+                                     (onClick)="this.onSubmit()" style="position: relative; top: 15px"></storybook-button-continue>
+
+
+          <a *ngIf="status.isRecSuccess && !status.isVerSuccess" class="resend-verification"  (click)="generateNewCodeFor2SV.emit()" style="position: relative; top: 40px;">
+            {{ 'Send me a reset password once again'  }}
+          </a>
+
+        </div>
+
+
+
+
+      </div>
+
+
+    </form>
+  </div>
+</div>
+

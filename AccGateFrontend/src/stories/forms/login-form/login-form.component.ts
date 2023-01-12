@@ -39,7 +39,7 @@ export default class LoginFormComponent implements OnInit {
 
   /**
    * @ignore
-   * Component property to define ordering of tasks
+   * Component property to define ordering of Inputs
    */
   storyInputsInOrder: StoryInput[] = [];
 
@@ -54,6 +54,8 @@ export default class LoginFormComponent implements OnInit {
   @Output() onArchiveInput: EventEmitter<any> = new EventEmitter();
 
   @Output() sendLoginReq = new EventEmitter();
+
+  @Output() openForgetPassForm = new EventEmitter();
 
 
   @Input()

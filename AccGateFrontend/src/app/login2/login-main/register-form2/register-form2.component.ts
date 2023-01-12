@@ -58,7 +58,7 @@ export default class RegisterForm2Component implements OnInit {
 
   onSubmit(): void {
     if (this.isRegSuccess) {
-      this.dialogRef.close({message: 'Registration Complete', email: this.email.value});
+      this.dialogRef.close({message: 'Registration Complete', username: this.username.value, email: this.email.value});
     }
     else {
       this.submitted = true;

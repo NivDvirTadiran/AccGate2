@@ -43,6 +43,8 @@ import {DigitcodeInputComponent} from "../../stories/inputs/digitcode-input/digi
 import {CodeInputComponent} from "../../stories/inputs/code-input/code-input.component";
 import MyAccountFormComponent from "../../stories/forms/my-account-form/my-account-form.component";
 import {AccountInputComponent} from "../../stories/inputs/account-input/account-input.component";
+import ForgotPassFormComponent from "../../stories/forms/forgot-pass-form/forgot-pass-form.component";
+import ResetPassFormComponent from "../../stories/forms/reset-pass-form/reset-pass-form.component";
 
 
 
@@ -54,7 +56,7 @@ import {AccountInputComponent} from "../../stories/inputs/account-input/account-
         ButtonGlobeComponent, Background1Component, ButtonTadiranComponent, ButtonLanguageComponent,
         ButtonFortestComponent,
         CardComponent,
-        LoginFormComponent, LoginFormComponent, RegistryFormComponent, VerificationFormComponent, MyAccountFormComponent,
+        LoginFormComponent, LoginFormComponent, RegistryFormComponent, VerificationFormComponent, MyAccountFormComponent, ForgotPassFormComponent, ResetPassFormComponent,
         ButtonContinueComponent, ButtonExComponent, ButtonAppsComponent, ButtonSuccessfullyComponent, Button,
         AppMenuComponent,
         StoryInputComponent, DigitcodeInputComponent, CodeInputComponent, AccountInputComponent,
@@ -80,7 +82,7 @@ import {AccountInputComponent} from "../../stories/inputs/account-input/account-
     ButtonGlobeComponent, Background1Component, ButtonTadiranComponent, ButtonLanguageComponent,
     ButtonFortestComponent,
     CardComponent,
-    LoginFormComponent, LoginFormComponent, RegistryFormComponent, VerificationFormComponent, MyAccountFormComponent,
+    LoginFormComponent, LoginFormComponent, RegistryFormComponent, VerificationFormComponent, MyAccountFormComponent, ForgotPassFormComponent,  ResetPassFormComponent,
     ButtonContinueComponent, ButtonExComponent, ButtonAppsComponent, ButtonSuccessfullyComponent, Button,
     AppMenuComponent,
     StoryInputComponent, DigitcodeInputComponent, CodeInputComponent, AccountInputComponent,
