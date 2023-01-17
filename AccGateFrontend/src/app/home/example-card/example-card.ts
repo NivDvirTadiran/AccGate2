@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {BoardUserComponent} from "../../board-user/board-user.component";
+import {BoardUserComponent} from "../../login2/profile2/board-user/board-user.component";
 
 /**
  * @title Card with multiple sections

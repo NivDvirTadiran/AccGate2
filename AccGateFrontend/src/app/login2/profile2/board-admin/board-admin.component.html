@@ -1,0 +1,84 @@
+<storybook-background1></storybook-background1>
+
+<div class="container">
+  <header class="jumbotron">
+    <p>{{ content }}</p>
+  </header>
+  <div class="col-md-12">
+    <div class="card card-container">
+      <img
+        id="profile-img"
+        src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+        class="profile-img-card"
+      />
+      <form
+        *ngIf="!isSuccessful"
+        name="form"
+        (ngSubmit)="f.form.valid && onSubmit()"
+        #f="ngForm"
+        novalidate
+      >
+        <div class="form-group input-box">
+          <label for="userName" class="input-label">Time for password to be expired </label>
+
+          <input type="number" style="width: 70px;" class="form-control input-field" name="userName" [(ngModel)]="form.userName"
+                 required minlength="3" maxlength="20" #userName="ngModel"/>
+          <div class="alert-danger" *ngIf="userName.errors && f.submitted">
+            <div *ngIf="userName.errors.required">Username is required</div>
+            <div *ngIf="userName.errors.minlength">
+              Username must be at least 3 characters
+            </div>
+            <div *ngIf="userName.errors.maxlength">
+              Username must be at most 20 characters
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group input-box">
+          <label for="email" class="input-label">Alert duration before for pass expired</label>
+          <input type="number" class="form-control input-field" name="email" [(ngModel)]="form.email"
+                 required email #email="ngModel"/>
+          <div class="alert-danger" *ngIf="email.errors && f.submitted">
+            <div *ngIf="email.errors.required">Email is required</div>
+            <div *ngIf="email.errors.email">
+              Email must be a valid email address
+            </div>
+          </div>
+        </div>
+        <div class="form-group input-box">
+          <label for="password" class="input-label">Password</label>
+          <input type="password" class="form-control input-field" name="password" [(ngModel)]="form.password"
+                 required minlength="6" #password="ngModel"/>
+          <div class="alert-danger" *ngIf="password.errors && f.submitted">
+            <div *ngIf="password.errors.required">Password is required</div>
+            <div *ngIf="password.errors.minlength">
+              Password must be at least 6 characters
+            </div>
+          </div>
+        </div>
+        <div class="form-group input-box">
+          <label for="privilege" class="input-label">Privilege Level</label>
+          <select type="privilege" class="form-control  input-field" name="privilege" id="pet-select"
+                  [(ngModel)]="form.roles" required #roles="ngModel">
+            <option value="">--Please choose an option--</option>
+            <option value="admin">Admin</option>
+            <option value="mod">Moderator</option>
+            <option value="user">User</option>
+          </select>
+        </div>
+        <br>
+        <div class="form-group" style="position: static; display: flex; justify-content: center;">
+          <button class="btn btn-primary btn-block save-changes-button ">Save Changes</button>
+        </div>
+
+        <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+          Signup failed!<br />{{ errorMessage }}
+        </div>
+      </form>
+
+      <div class="alert alert-success" *ngIf="isSuccessful">
+        Your registration is successful!
+      </div>
+    </div>
+  </div>
+</div>

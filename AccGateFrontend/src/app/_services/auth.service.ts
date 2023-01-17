@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import {AppConfig} from "../app.config";
 
 
+
 const AUTH_API = AppConfig.accServer.ACCWEBServers+'/accGate/auth/';
 
 const httpOptions = {

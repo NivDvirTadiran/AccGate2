@@ -46498,7 +46498,6 @@ button, .button {
   background-color: rgba(43, 166, 203, 0);
   border-color: #2285a2;
   color: white;
-  transition: background-color 300ms ease-out;
 }
 button:hover, button:focus, .button:hover, .button:focus {
   background-color: #ADDBFF;

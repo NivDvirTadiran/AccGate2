@@ -1,0 +1,9 @@
+<button class="Vector" (click)="onClick.emit($event)" >
+  <label class="EnableProfilePicture">Tools</label>
+<img (click)="onClick.emit($event)" [ngClass]="classes" [ngStyle]="{ 'background-color': backgroundColor }"
+   src="./assets/images/AacConfiguration.png"
+       srcset="./assets/images/language-desktop-icon@2x.png 2x,
+             /assets/images/language-desktop-icon@3x.png 3x"
+       class="Language-Desktop-Icon"  alt="form-desktop-icon"/>
+
+</button>

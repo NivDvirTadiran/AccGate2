@@ -65,12 +65,16 @@ export class TokenStorageService {
   }
 
   public getRoles(): any {
-    const user = window.sessionStorage.getItem(USER_KEY);
-    if (user) {
-      return JSON.parse(user);
+    const user = this.getUser();
+    if (user.roles) {
+      return user.roles;
     }
     return {};
   }
 
 
+  public isSupervisorAdmin(): boolean {
+    const user = this.getUser();
+    return (user.roles.toString() === 'SupervisorAdmin');
+  }
 }

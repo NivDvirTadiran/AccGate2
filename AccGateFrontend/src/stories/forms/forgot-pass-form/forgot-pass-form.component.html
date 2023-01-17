@@ -4,7 +4,7 @@
 <div id="main-login-card" class="col-md-12">
   <storybook-card class="card-container"></storybook-card>
   <div  class="h-100 d-flex align-items-center justify-content-center">
-    <storybook-button-ex id="button-ex"  (click)="this.clickXButton.emit()" ></storybook-button-ex>
+    <storybook-button-ex id="button-ex" (click)="this.clickXButton.emit()" ></storybook-button-ex>
     <div  #formHeader class="form-header">
       Forgot Password?
     </div>
@@ -14,11 +14,9 @@
     <form name="currentForm" [formGroup]="mForm">
       <div  class="Vector">
 
-        <br>
-        <br>
-        <br>
 
-        <div class="second-header" style="top: 85px;">
+
+        <div class="second-header" style="top: 5px;">
           <p class="second-header-text"  #secondHeader href="#/login" style="position: relative; top: 5px; text-align: left">
             {{ 'Please enter your User Name:'}}<br>
           </p>

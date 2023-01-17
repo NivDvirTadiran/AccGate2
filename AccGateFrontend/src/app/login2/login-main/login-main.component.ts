@@ -4,7 +4,7 @@ import {AuthService} from "src/app/_services/auth.service";
 import {AbstractControl, FormControl, FormGroup, Validators} from "@angular/forms";
 import {TokenStorageService} from "src/app/_services/token-storage.service";
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import RegisterForm2Component from "./register-form2/register-form2.component";
 //import * as mStoryInput from "../../../stories/inputs/story-input.stories";
 import {ReplacePassForm2Component} from "./replace-pass-form2/replace-pass-form2.component";
@@ -97,7 +97,8 @@ export class LoginMainComponent implements OnInit {
               public authService: AuthService,
               public userService: UserService,
               private tokenStorage: TokenStorageService,
-              private router: Router,) {
+              private router: Router,
+              private activatedRoute:ActivatedRoute) {
     this.loginForm = new FormGroup({
       username: new FormControl('', Validators.minLength(2)),
       password: new FormControl('', Validators.minLength(2)),
@@ -276,7 +277,11 @@ export class LoginMainComponent implements OnInit {
   }
 
   profile2(): void {
-  this.router.navigate(['/profile2']);
+  this.router.navigate(['../profile2'], {relativeTo: this.activatedRoute});
+  }
+
+  home2(): void {
+  this.router.navigate(['/home']);
   }
 
 

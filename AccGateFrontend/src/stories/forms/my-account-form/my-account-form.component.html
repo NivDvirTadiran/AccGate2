@@ -61,11 +61,15 @@
               <p *ngIf="isRegFailed">*  {{ this.regErrorMessage['message'] | apiErrorMessage: param }}</p>
             </div>
 
-            <storybook-button-continue  hidden size="small"
+            <!--storybook-button-continue  hidden size="small"
                                        label="Continue" type="button" (click)="onSubmit()" >
-            </storybook-button-continue>
+            </storybook-button-continue-->
+
+            <storybook-button-configuration *ngIf="displayToolButton" class="button-configuration" size="large"
+                                            (click)="this.openUser.emit()">
+            </storybook-button-configuration>
         </div>
-        </div>
+      </div>
 
     </form>
   </div>

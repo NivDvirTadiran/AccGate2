@@ -1,15 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
-import { AppRoutingModule } from './app-routing.module';
+//import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HomeComponent } from './home/home.component';
-import Profile2Component from './profile2/profile2.component';
-import { BoardAdminComponent } from './board-admin/board-admin.component';
-import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
-import { BoardUserComponent } from './board-user/board-user.component';
+
+
 
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import {NgbDatepickerModule} from "@ng-bootstrap/ng-bootstrap";
@@ -40,9 +39,11 @@ import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {MdbValidationModule} from "mdb-angular-ui-kit/validation";
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatButtonModule} from "@angular/material/button";
-import MyAccountForm2Component from "./my-account-form2/my-account-form2.component";
 import ForgotPassForm2Component from "./login2/login-main/forgot-pass-form2/forgot-pass-form2.component";
 import ResetPassForm2Component from "./login2/login-main/reset-pass-form2/reset-pass-form2.component";
+import {AppRoutingModule} from "./app-routing.module";
+import {Profile2Module} from "./login2/profile2/profile2.module";
+
 
 
 
@@ -50,15 +51,11 @@ import ResetPassForm2Component from "./login2/login-main/reset-pass-form2/reset-
     declarations: [
         AppComponent,
         HomeComponent,
-        Profile2Component,
-        BoardAdminComponent,
-        BoardModeratorComponent,
-        BoardUserComponent,
         ApiErrorMessagePipe,
         LoginErrorMessagePipe,
-        MyAccountForm2Component,
         ForgotPassForm2Component,
         ResetPassForm2Component,
+
     ],
     imports: [
         BrowserModule,
@@ -85,12 +82,17 @@ import ResetPassForm2Component from "./login2/login-main/reset-pass-form2/reset-
         ButtonsModule,
         MDBBootstrapModule.forRoot(),
         Login2Module,
+        Profile2Module,
         StorybookModule,
         MatDialogModule,
         MatButtonModule,
+
+
     ],
     providers: [
         authInterceptorProviders,
+        AppComponent,
+        {provide: LocationStrategy, useClass: HashLocationStrategy}
     ],
     bootstrap: [AppComponent]
 })

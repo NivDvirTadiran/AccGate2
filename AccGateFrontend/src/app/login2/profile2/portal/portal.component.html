@@ -1,0 +1,36 @@
+<html>
+<head>
+  <style>
+
+  </style>
+  <title></title>
+</head>
+<body>
+<storybook-background1></storybook-background1>
+
+<!--button mat-raised-button (click)="openVerificationForm()">VerificationForm</button>
+<button mat-raised-button (click)="is2SVRequired()">is2SVRequired</button-->
+<!--button mat-raised-button (click)="setPassExpAlertData()">setPassExpAlertData</button-->
+
+
+<storybook-avatar
+  id="avatar"
+  [label]="this.currentUser.username"
+  [isNotify]="this.isNotify()"
+  header="{{'Your password will expire in ' + this.passExp +' Days.'}}"
+  (actionButton)="openReplacePassForm()"
+  (click)="this.openMyAccountForm()">
+</storybook-avatar>
+
+<!--this.setPassExpAlertData() -->
+
+
+<storybook-app-menu
+  [profileApps]="permittedWebAppList"
+  [isLoading]="isLoading"
+  (openNewWinForApp)="openNewWinForApp($event)"
+  (openNewTabForApp)="openNewTabForApp($event)">
+</storybook-app-menu>
+
+</body>
+</html>

@@ -30,23 +30,9 @@ export class AccountInput {
 })
 export default class MyAccountFormComponent implements OnInit, AfterViewChecked, OnChanges {
 
-/*
-  @ViewChild('storybook-input')
-  set mStoryInput(v: AccountInput) {
-    setTimeout(() => {
-      this.selectedPane = v.id;
-      console.log('this.selectedPane'+this.selectedPane.toString())
-    }, 30);
-  }
-  selectedPane: string = '';
-  shouldShow = true;
-  toggle() {
-    this.shouldShow = !this.shouldShow;
-  }
-*/
-
-
   @Output() onLogout = new EventEmitter<Event>();
+
+  @Output() openUser = new EventEmitter<Event>();
 
   doLogout(event: Event) {
     this.onLogout.emit(event);
@@ -62,6 +48,7 @@ export default class MyAccountFormComponent implements OnInit, AfterViewChecked,
 
   @Input() isRegFailed = false;
   @Input() regErrorMessage: any = {};
+  @Input() displayToolButton: boolean = false;
 
   openReplacePassword() {
     //this.replacePassFormService.open(ReplacePassForm2Component);
