@@ -1,4 +1,4 @@
-import Card from "../cards/card.component";
+import Card from "../cards/card/card.component";
 import {componentWrapperDecorator, moduleMetadata} from "@storybook/angular";
 import {StoryInputComponent} from "../inputs/input/story-input.component";
 import {CommonModule} from "@angular/common";

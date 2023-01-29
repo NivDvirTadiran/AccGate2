@@ -1,6 +1,13 @@
 {
-  "/register": {
-    "target": "http://localhost:8080",
-    "secure": false
+  "/accGate": {
+    "target": "https://localhost:8445",
+    "pathRewrite": {"^/accGate" : "localhost:8445/accGate"},
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/#" : {
+    "target": "https://localhost:8445/accGate/#",
+    "secure": false,
+    "logLevel": "debug"
   }
 }

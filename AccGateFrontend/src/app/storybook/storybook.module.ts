@@ -9,7 +9,8 @@ import {ButtonFortestComponent} from '../../stories/buttons/button-fortest/butto
 import {ButtonGlobeComponent} from "../../stories/buttons/button-globe/button-globe.component";
 import Background1Component from "../../stories/pages/background1/background1Component";
 import {ButtonTadiranComponent} from "../../stories/buttons/button-tadiran/button-tadiran.component";
-import CardComponent from "../../stories/cards/card.component";
+import CardComponent from "../../stories/cards/card/card.component";
+import CardRuggedComponent from "../../stories/cards/card-rugged/card-rugged.component";
 import LoginFormComponent from "../../stories/forms/login-form/login-form.component";
 import RegistryFormComponent from "../../stories/forms/registry-form/registry-form.component";
 import {ButtonContinueComponent} from "../../stories/buttons/button-continue/button-continue.component";
@@ -46,6 +47,9 @@ import {AccountInputComponent} from "../../stories/inputs/account-input/account-
 import ForgotPassFormComponent from "../../stories/forms/forgot-pass-form/forgot-pass-form.component";
 import ResetPassFormComponent from "../../stories/forms/reset-pass-form/reset-pass-form.component";
 import {ButtonConfigurationComponent} from "../../stories/buttons/button-configuration/button-configuration.component";
+import ConfigurationFormComponent from "../../stories/forms/configuration-form/configuration-form.component";
+import {ConfigurationInputComponent} from "../../stories/inputs/configuration-input/configuration-input.component";
+
 
 
 
@@ -56,13 +60,13 @@ import {ButtonConfigurationComponent} from "../../stories/buttons/button-configu
     declarations: [
         ButtonGlobeComponent, Background1Component, ButtonTadiranComponent, ButtonLanguageComponent,
         ButtonFortestComponent,
-        CardComponent,
+        CardComponent, CardRuggedComponent,
         LoginFormComponent, LoginFormComponent, RegistryFormComponent, VerificationFormComponent,
-        MyAccountFormComponent, ForgotPassFormComponent, ResetPassFormComponent,
+        MyAccountFormComponent, ForgotPassFormComponent, ResetPassFormComponent, ConfigurationFormComponent,
         ButtonContinueComponent, ButtonExComponent, ButtonAppsComponent, ButtonSuccessfullyComponent, Button,
         ButtonConfigurationComponent,
         AppMenuComponent,
-        StoryInputComponent, DigitcodeInputComponent, CodeInputComponent, AccountInputComponent,
+        StoryInputComponent, DigitcodeInputComponent, CodeInputComponent, AccountInputComponent, ConfigurationInputComponent,
         HighlightDirective,
         ReplacePassFormComponent,
         PassStrengthComponent,
@@ -84,12 +88,13 @@ import {ButtonConfigurationComponent} from "../../stories/buttons/button-configu
   exports: [
     ButtonGlobeComponent, Background1Component, ButtonTadiranComponent, ButtonLanguageComponent,
     ButtonFortestComponent,
-    CardComponent,
-    LoginFormComponent, LoginFormComponent, RegistryFormComponent, VerificationFormComponent, MyAccountFormComponent, ForgotPassFormComponent,  ResetPassFormComponent,
+    CardComponent, CardRuggedComponent,
+    LoginFormComponent, LoginFormComponent, RegistryFormComponent, VerificationFormComponent,
+    MyAccountFormComponent, ForgotPassFormComponent,  ResetPassFormComponent, ConfigurationFormComponent,
     ButtonContinueComponent, ButtonExComponent, ButtonAppsComponent, ButtonSuccessfullyComponent, Button,
     ButtonConfigurationComponent,
     AppMenuComponent,
-    StoryInputComponent, DigitcodeInputComponent, CodeInputComponent, AccountInputComponent,
+    StoryInputComponent, DigitcodeInputComponent, CodeInputComponent, AccountInputComponent, ConfigurationInputComponent,
     CommonModule,
     FormsModule, ReactiveFormsModule,
     HighlightDirective,

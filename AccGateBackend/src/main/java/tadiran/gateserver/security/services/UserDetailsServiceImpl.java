@@ -5,7 +5,6 @@ import tadiran.gateserver.models.Sup;
 import tadiran.gateserver.models.User;
 import tadiran.gateserver.payload.request.LoginRequest;
 import tadiran.gateserver.payload.request.RegisterFormRequest;
-import tadiran.gateserver.payload.request.SignupRequest;
 import tadiran.gateserver.repository.AgentRepository;
 import tadiran.gateserver.repository.SupRepository;
 import tadiran.gateserver.repository.UserRepository;
@@ -27,6 +26,13 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
   @Autowired
   SupRepository supRepository;
+
+  Long passExpDays;
+/*
+  public UserDetailsServiceImpl(Long passExpDays) {
+    this.passExpDays = passExpDays;
+  }
+*/
 
   @Override
   @Transactional

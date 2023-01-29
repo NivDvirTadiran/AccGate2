@@ -1,22 +1,29 @@
 <storybook-background1></storybook-background1>
 
+<storybook-configuration-form>
+
+</storybook-configuration-form>
+
 <div class="container">
+
   <header class="jumbotron">
     <p>{{ content }}</p>
   </header>
-  <div class="col-md-12">
-    <div class="card card-container">
-      <img
-        id="profile-img"
-        src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-        class="profile-img-card"
-      />
+
+
+  <!--storybook-card-rugged  ></storybook-card-rugged-->
+    <div class="col-md-12">
+
+      <!--div class="card"-->
+
+
       <form
         *ngIf="!isSuccessful"
         name="form"
         (ngSubmit)="f.form.valid && onSubmit()"
         #f="ngForm"
         novalidate
+        style="bottom: 2px;"
       >
         <div class="form-group input-box">
           <label for="userName" class="input-label">Time for password to be expired </label>
@@ -79,6 +86,7 @@
       <div class="alert alert-success" *ngIf="isSuccessful">
         Your registration is successful!
       </div>
+
     </div>
-  </div>
+  <!--/div-->
 </div>

@@ -8,6 +8,7 @@ import {MatButtonModule} from "@angular/material/button";
 import MyAccountForm2Component from "./my-account-form2/my-account-form2.component";
 import { BoardUserComponent } from './board-user/board-user.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
+import { BoardAdmin2Component } from './board-admin2/board-admin2.component';
 import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
 
 
@@ -16,7 +17,7 @@ import { BoardModeratorComponent } from './board-moderator/board-moderator.compo
   declarations: [
     PortalComponent,
     MyAccountForm2Component,
-    BoardUserComponent, BoardAdminComponent, BoardModeratorComponent
+    BoardUserComponent, BoardAdminComponent, BoardModeratorComponent, BoardAdmin2Component
   ],
   imports: [
     Profile2RoutingModule,

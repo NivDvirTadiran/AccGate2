@@ -1,7 +1,7 @@
 import { moduleMetadata, Story, Meta } from '@storybook/angular';
 import  Background1Component from './background1Component';
 import {CommonModule} from "@angular/common";
-import CardComponent from "../../cards/card.component";
+import CardComponent from "../../cards/card/card.component";
 import {ButtonContinueComponent} from "../../buttons/button-continue/button-continue.component";
 import {ButtonGlobeComponent} from "../../buttons/button-globe/button-globe.component";
 import {ButtonLanguageComponent} from "../../buttons/button-language/button-language.component";

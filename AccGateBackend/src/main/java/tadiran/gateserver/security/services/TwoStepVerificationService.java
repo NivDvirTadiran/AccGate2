@@ -8,9 +8,11 @@ import java.net.URISyntaxException;
 import java.security.KeyManagementException;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 
 import org.apache.http.HttpResponse;
@@ -29,6 +31,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
+import tadiran.gateserver.config.PropertiesManager;
 import tadiran.gateserver.models.EMsgType;
 import tadiran.gateserver.models.PinCode;
 import tadiran.gateserver.models.User;
@@ -36,6 +39,7 @@ import tadiran.gateserver.payload.response.MessageResponse;
 import tadiran.gateserver.payload.response.TSVValidateCodeResponse;
 import tadiran.gateserver.repository.UserRepository;
 import tadiran.gateserver.security.jwt.JwtUtils;
+
 
 
 @Service
@@ -53,15 +57,16 @@ public class TwoStepVerificationService {
 
     List<PinCode> pinCodeList = new ArrayList<>();
 
-    Random rand = new Random(); //instance of random class
+    static Random rand = new SecureRandom(); //instance of random class
 
     private String randomizeNewCode() {
+        Integer length = (Integer) PropertiesManager.getProperty("tadiran.gate.pin-code-length", Integer.class);
         // It will generate 4 digit random Number.
         // from 0 to 9999
-        int number = rand.nextInt(9999);
+        int number = rand.nextInt(((int) Math.pow(10, length))-1);
 
-        // this will convert any number sequence into 6 character.
-        return String.format("%04d", number);
+        // this will convert any number sequence into [length] character.
+        return String.format("%0"+String.valueOf(length)+"d", number);
     }
 
     public PinCode getPinCode(User user) {
@@ -72,11 +77,13 @@ public class TwoStepVerificationService {
     }
 
 
-    @Scheduled(fixedRate = 150000)
+    @Scheduled(	fixedDelay = 10, timeUnit = TimeUnit.MINUTES)
     public void deleteNonActivePinCodeLists() {
         List<PinCode> found = new ArrayList<PinCode>();
 
         logger.debug("Start deletion of nun active pin code from list..");
+
+        Long pinCodeValDura = (Long) PropertiesManager.getProperty("tadiran.gate.pin-code-length", Long.class);
 
         for (PinCode pinCode : pinCodeList) {
             logger.debug("User:  " + pinCode.getUser().getUsername() + "   Code: " + pinCode.getPinCode());
@@ -84,7 +91,7 @@ public class TwoStepVerificationService {
 
 
         pinCodeList.stream()
-                .filter(pinCode -> Instant.now().isAfter(pinCode.getCreateTime().plus(15, ChronoUnit.MINUTES)))
+                .filter(pinCode -> Instant.now().isAfter(pinCode.getCreateTime().plus(pinCodeValDura, ChronoUnit.MINUTES)))
                 .forEach(pinCode -> {
                     logger.debug("remove pinCode: "+pinCode.getPinCode() + "     for user: " + pinCode.getUser().getUsername());
                     found.add(pinCode);

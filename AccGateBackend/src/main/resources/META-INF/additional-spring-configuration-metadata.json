@@ -14,6 +14,16 @@
       "name": "tadiran.gate.TSV",
       "type": "java.lang.Boolean",
       "description": "if true user will require Two-Step-Verification for performing sensitive actions."
+    },
+    {
+      "name": "tadiran.gate.pin-code-length",
+      "type": "java.lang.Integer",
+      "description": "Define the amount of digits from which the PinCode will be composed."
+    },
+    {
+      "name": "tadiran.gate.pin-code-val-dura",
+      "type": "java.lang.Long",
+      "description": "Define the Duration (in Minutes) before pin-code Expired."
     }
   ]
 }

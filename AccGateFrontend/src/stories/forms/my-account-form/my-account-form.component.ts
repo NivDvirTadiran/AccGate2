@@ -80,8 +80,8 @@ export default class MyAccountFormComponent implements OnInit, AfterViewChecked,
         this.loadSuccessfullyLoggedIn();
       }
     }
-    /*if (changes.isRegFailed || changes.regErrorMessage) {
-      console.log('isRegFailed' + this.regErrorMessage['message'])
+    /*if (changes.isConfigFailed || changes.configErrorMessage) {
+      console.log('isConfigFailed' + this.configErrorMessage['message'])
     }*/
   }
 

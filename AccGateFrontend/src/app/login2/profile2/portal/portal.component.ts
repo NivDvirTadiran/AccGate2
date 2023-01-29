@@ -139,6 +139,10 @@ export default class PortalComponent implements OnInit {
       this.configuratin();
     });
 
+    this.eventBusSub = this.eventBusService.on('openPortal', () => {
+      this.portal();
+    });
+
   }
 
   is2SVRequired() {
@@ -421,7 +425,12 @@ export default class PortalComponent implements OnInit {
   }*/
 
   configuratin(): void {
-    this.router.navigate(['../admin'], {relativeTo: this.activatedRoute});
+    this.router.navigate(['../admin2'], {relativeTo: this.activatedRoute});
+  }
+
+  portal(): void {
+    console.log(this.activatedRoute.toString())
+    this.router.navigate(['../'], {relativeTo: this.activatedRoute});
   }
 
 

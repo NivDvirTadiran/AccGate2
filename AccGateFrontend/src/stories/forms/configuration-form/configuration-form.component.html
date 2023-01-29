@@ -1,0 +1,88 @@
+
+
+
+<div id="main-login-card" class="col-md-12">
+  <storybook-card-rugged class=""></storybook-card-rugged>
+  <div  class="h-100 d-flex align-items-center justify-content-center">
+    <storybook-button-ex id="button-ex" (click)="this.clickXButton.emit()" ></storybook-button-ex>
+    <button id="button-log-out" (click)="this.doLogout($event)" >Reset</button>
+    <div class="form-header">
+      <img
+        id="profile-img"
+        src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+        class="profile-img-card"
+      />
+      <a class="main-form-header" #formHeader>Board-Admin</a>
+
+
+      <br>
+
+    <br>
+    <!--form name="form"  (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate --> <!-- *ngIf="!isConfigSuccess"-->
+      <form name="currentForm"   [formGroup]="mForm">
+      <div class="Vector">
+
+        <div class="login-button">
+        <div *ngIf="isRegSuccess" id="button-successfully" style="">
+          <storybook-button-successfully   ></storybook-button-successfully>
+        </div>
+
+
+            <div *ngIf="!isRegSuccess">
+              <storybook-configuration-input
+                [storyInput]="storyInputsInOrder[0]"
+                (onArchiveInput)="onArchiveInput.emit($event)"
+                (onPinInput)="onPinInput.emit($event)"
+                [currentForm]="mForm">
+              </storybook-configuration-input>
+              <div class="thematic-break"></div>
+              <storybook-configuration-input
+                [storyInput]="storyInputsInOrder[1]"
+                (onArchiveInput)="onArchiveInput.emit($event)"
+                (onPinInput)="onPinInput.emit($event)"
+                [currentForm]="mForm">
+              </storybook-configuration-input>
+              <div class="thematic-break"></div>
+              <storybook-configuration-input
+                [storyInput]="storyInputsInOrder[2]"
+                (onArchiveInput)="onArchiveInput.emit($event)"
+                (onPinInput)="onPinInput.emit($event)"
+                [currentForm]="mForm">
+              </storybook-configuration-input>
+              <div class="thematic-break"></div>
+              <storybook-configuration-input
+                [storyInput]="storyInputsInOrder[3]"
+                (onArchiveInput)="onArchiveInput.emit($event)"
+                (changePassword)="changePassword.emit($event)"
+                (onPinInput)="onPinInput.emit($event)"
+                [currentForm]="mForm">
+              </storybook-configuration-input>
+              <div class="thematic-break"></div>
+              <storybook-configuration-input
+                [storyInput]="storyInputsInOrder[4]"
+                (onArchiveInput)="onArchiveInput.emit($event)"
+                (changePassword)="changePassword.emit($event)"
+                (onPinInput)="onPinInput.emit($event)"
+                [currentForm]="mForm">
+              </storybook-configuration-input>
+              <div class="thematic-break"></div>
+
+            </div>
+
+            <div class="login-failed-message" role="alert" >
+              <p *ngIf="isRegFailed">*  {{ this.regErrorMessage['message'] | apiErrorMessage: param }}</p>
+            </div>
+
+
+            <storybook-button-continue [label]="'Save Changes'" size="small" style="position: relative; align-items: end; display: flex; flex-direction: row-reverse;"
+                                       label="Continue" type="button" (click)="onSubmit()" >
+            </storybook-button-continue>
+
+      </div>
+      </div>
+
+    </form>
+  </div>
+  </div>
+</div>
+

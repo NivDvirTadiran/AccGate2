@@ -72,6 +72,10 @@ export class TokenStorageService {
     return {};
   }
 
+  public getUsername(): string {
+    const user = this.getUser();
+    return user.username.toString();
+  }
 
   public isSupervisorAdmin(): boolean {
     const user = this.getUser();

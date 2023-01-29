@@ -2,6 +2,7 @@ package tadiran.gateserver.security;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -25,6 +26,8 @@ import tadiran.gateserver.security.services.AgentDetailsServiceImpl;
 import tadiran.gateserver.security.services.UserDetailsServiceImpl;
 
 import javax.servlet.http.HttpServletResponse;
+import java.util.Arrays;
+import java.util.List;
 
 @Configuration
 @EnableWebSecurity
@@ -33,10 +36,12 @@ import javax.servlet.http.HttpServletResponse;
     //jsr250Enabled = true,
     prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-
-
+/*
+  @Value("${tadiran.gate.pass-exp-days}")
+  private final Long passExpDays = 30L;
+*/
   @Autowired
-  UserDetailsServiceImpl userDetailsService;
+  UserDetailsServiceImpl userDetailsService; // = new UserDetailsServiceImpl(passExpDays);
 
   @Autowired
   AgentDetailsServiceImpl agentDetailsService;
@@ -116,7 +121,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     UrlBasedCorsConfigurationSource source =
             new UrlBasedCorsConfigurationSource();
     CorsConfiguration config = new CorsConfiguration();
-    config.setAllowCredentials(true);
+    config.addAllowedOrigin("https://localhost:4200");
+    config.setAllowCredentials(false);
     config.addAllowedOrigin("*");
     config.addAllowedHeader("*");
     config.addAllowedMethod("*");

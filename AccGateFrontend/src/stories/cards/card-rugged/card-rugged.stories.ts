@@ -1,14 +1,14 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { Story, Meta } from '@storybook/angular/types-6-0';
-import Card from './card.component';
-import { StoryInputComponent } from "../inputs/input/story-input.component";
+import CardRuggedComponent from './card-rugged.component';
+import { StoryInputComponent } from "../../inputs/input/story-input.component";
 import {componentWrapperDecorator, moduleMetadata} from "@storybook/angular";
 import {CommonModule} from "@angular/common";
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
-  title: 'Design System/Atoms/Card',
-  component: Card,
+  title: 'Design System/Atoms/RuggedCard',
+  component: CardRuggedComponent,
   decorators: [
     moduleMetadata({
       declarations: [ StoryInputComponent ],
@@ -24,7 +24,7 @@ export default {
 } as Meta;
 
 // More on component templates: https://storybook.js.org/docs/angular/writing-stories/introduction#using-args
-const Template: Story<Card> = (args: Card) => ({
+const Template: Story<CardRuggedComponent> = (args: CardRuggedComponent) => ({
   props: args,
 });
 

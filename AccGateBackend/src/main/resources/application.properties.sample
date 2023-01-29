@@ -10,6 +10,10 @@ spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 spring.datasource.userName= ecc
 spring.datasource.password= !A_C_C-c0d8
 
+message-from-application-properties=Hello from application.properties
+greetings-message= Hello from application.properties2
+
+
 spring.jpa.properties.hibernate.dialect= org.hibernate.dialect.MySQL5InnoDBDialect
 spring.jpa.hibernate.ddl-auto=none
 
@@ -23,6 +27,9 @@ tadiran.gate.jwtRefreshExpirationMin= 144
 
 tadiran.gate.PassExpDays= 30
 tadiran.gate.PreviousAlertPassExpDays= 10
+
+tadiran.gate.pin-code-length=4
+tadiran.gate.pin-code-val-dura=15
 
 tadiran.gate.MailServer=localhost
 

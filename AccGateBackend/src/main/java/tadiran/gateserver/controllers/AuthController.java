@@ -1,16 +1,25 @@
 package tadiran.gateserver.controllers;
 
 
+
+import java.lang.reflect.Type;
+import java.security.Principal;
 import java.time.LocalDate;
 import java.util.*;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
-import org.junit.jupiter.api.Test;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.AuthenticationException;
+import tadiran.gateserver.config.PropertiesManager;
 import tadiran.gateserver.models.*;
 import tadiran.gateserver.payload.request.*;
 import tadiran.gateserver.payload.response.*;
@@ -82,7 +91,9 @@ public class AuthController {
   @Value("${tadiran.gate.TSV}")
   private Boolean isTwoStepVerficiiationRequire;
 
+  PropertiesManager propertiesManager = new PropertiesManager();
 
+  @CrossOrigin(origins = "https://localhost:4200", allowedHeaders = "Requestor-Type", exposedHeaders = "X-Get-Header")
   @PostMapping("/signin")
   public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
     if (!userRepository.existsByUsername(loginRequest.getUsername())) {
@@ -444,7 +455,7 @@ public class AuthController {
   }
 
   @PostMapping("/accountdetails")
-  public ResponseEntity<?> accountDetails(@Valid @RequestBody PassExpDateRequest request) {
+  public ResponseEntity<?> accountDetails(@Valid @RequestBody AccountDetailsRequest request) {
 
     String requestAccessToken = request.getAccessToken();
 
@@ -455,6 +466,57 @@ public class AuthController {
             .orElseThrow(() -> new UsernameNotFoundException("User Not Found with username: " + jwtUtils.getUserNameFromJwtToken(requestAccessToken)));
 
   }
+
+  //@GetMapping("/getconfigurationdata")
+  //@PreAuthorize("hasRole('Admin') or hasRole('SupervisorAdmin')")
+  @RequestMapping(value = "/getconfigurationdata", method = RequestMethod.GET)
+  public ResponseEntity<?> getConfigurationData() {
+    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+    UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
+    String currentPrincipalName = userDetails.getUsername();
+    if (userRepository.findByUsername(currentPrincipalName)
+            .map(user -> (user.verifyERoleExist(ERole.Admin) || user.verifyERoleExist(ERole.SupervisorAdmin)))
+            .orElse(false)) {ResponseEntity.status(HttpStatus.FORBIDDEN);}
+
+    this.propertiesManager.writeToProperties2();
+    this.propertiesManager.loadProperties();
+    this.propertiesManager.saveProperties();
+    List<Prop> prop = this.propertiesManager.stringPropertyNames();
+
+    logger.info("getConfigurationData - username: "+currentPrincipalName);
+
+    return userRepository.findByUsername(currentPrincipalName)
+            .map(user -> new ResponseEntity<>(new GetConfigurationDataResponse(prop), HttpStatus.OK))
+            .orElseThrow(() -> new UsernameNotFoundException("User Not Found with username: " + currentPrincipalName));
+
+
+//ResponseEntity.ok(new GetConfigurationDataResponse(prop,passExpDays,user.getPhone()))
+
+  }
+
+  //@PreAuthorize("hasRole('Admin') or hasRole('SupervisorAdmin')")
+  @PostMapping("/setconfigurationdata")
+  public ResponseEntity<?> setConfigurationData(@Valid @RequestBody SetConfigurationDataRequest request) {
+
+
+
+                    Gson g = new Gson();
+    Type collectionType = new TypeToken<Collection<Prop>>(){}.getType();
+    Collection<Prop> collectionProp = g.fromJson(request.getProp(), collectionType);
+
+
+    List<Prop> propList = new ArrayList<>();
+    for (Prop p  : collectionProp) {
+      propList.add(new Prop((String) p.getPropName(),(String) p.getPropValue()));
+    }
+
+    if (this.propertiesManager.saveProperties(propList))
+      return ResponseEntity.ok(new MessageResponse("Properties Saved"));
+    else
+      return ResponseEntity.badRequest().body(new MessageResponse("Error: Unable to save your changes"));
+
+  }
+
 
   @PostMapping("/refreshtoken")
   public ResponseEntity<?> refreshtoken(@Valid @RequestBody TokenRefreshRequest request ) {

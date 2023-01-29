@@ -37,6 +37,8 @@ public class AuthTokenFilter extends OncePerRequestFilter {
   protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
       throws ServletException, IOException {
 
+    boolean isAllowed = false;
+
 
     // Authorize (allow) all domains to consume the content
     ((HttpServletResponse) response).addHeader("Access-Control-Allow-Origin", "*");
@@ -55,17 +57,15 @@ public class AuthTokenFilter extends OncePerRequestFilter {
             request.getRequestURI().endsWith("/styles.css") ||
             request.getRequestURI().endsWith("/styles.scss") ||
             request.getRequestURI().matches( "/accGate/NotoSans-(?:Bold|Regular)\\.(?:woff|woff2|ttf)$") ||
-            //request.getRequestURI().matches( "/accGate/(?:scripts|polyfills-es2017|vendor-es2017|main-es2017|runtime-es2017|favicon)\\.(?:js|ico)$") ||
             request.getRequestURI().matches( "/accGate/(?:scripts|(?:polyfills|vendor|main|runtime)-es2017|favicon)\\.(?:js|ico)$") ||
-                    request.getRequestURI().endsWith("/accGate") ||
+            request.getRequestURI().endsWith("/accGate") ||
             request.getRequestURI().endsWith("/login-main") ||
             request.getRequestURI().endsWith("/auth/tsv_codegeneratebyname") ||
             request.getRequestURI().endsWith("/auth/tsv_codegeneratebyemail") ||
             request.getRequestURI().endsWith("/auth/tsv_codevalidatebyname") ||
             request.getRequestURI().endsWith("/ExternalServices/zconnector/sendEmail") ||
             request.getRequestURI().startsWith("/accGate/login2")){
-      //LOGGER.info("JWT token permited by url" + username);
-      filterChain.doFilter(request, response);
+      isAllowed = true;
     }
 
     try {
@@ -84,14 +84,14 @@ public class AuthTokenFilter extends OncePerRequestFilter {
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
         if (userDetails.isCredentialsNonExpired()) {
-          filterChain.doFilter(request, response);
+          isAllowed = true;
         }
       }
     } catch (Exception e) {
       logger.error("Cannot set user authentication: {}", e);
     }
 
-    response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+    if (!isAllowed) {response.setStatus(HttpServletResponse.SC_FORBIDDEN);}
     filterChain.doFilter(request, response);
 
 

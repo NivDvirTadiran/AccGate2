@@ -103,7 +103,6 @@ export default class MyAccountForm2Component implements OnInit {
   }
 
   displayConfigButton(): boolean {
-    console.log("isSupervisorAdmin: "+this.tokenStorageService.isSupervisorAdmin())
     return this.tokenStorageService.isSupervisorAdmin();
   }
 

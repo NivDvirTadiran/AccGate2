@@ -1,6 +1,6 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { componentWrapperDecorator, moduleMetadata, Meta, Story  } from '@storybook/angular';
-import CardComponent from '../../cards/card.component'
+import CardComponent from '../../cards/card/card.component'
 import { StoryInputComponent } from "../../inputs/input/story-input.component";
 
 import {CommonModule} from "@angular/common";

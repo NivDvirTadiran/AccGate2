@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import tadiran.gateserver.config.PropertiesManager;
 import tadiran.gateserver.models.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -34,11 +35,6 @@ public class UserDetailsImpl implements UserDetails {
 
   private Collection<? extends GrantedAuthority> authorities;
 
-
-  private final Long passExpDays = 30L;
-
-  @Value("${tadiran.gate.jwtRefreshExpirationMin}")
-  private long refreshTokenDurationMin;
 
   public UserDetailsImpl(Long id, String username, String email, String password,
       Collection<? extends GrantedAuthority> authorities, LocalDate passDate) {
@@ -105,9 +101,8 @@ public class UserDetailsImpl implements UserDetails {
 
   public boolean isPassExpired() {
     if (this.passDate == null) { return true; }
-
-    logger.info("UserDetailsImpl.isPassExpired.passExpDays2: " + this.passExpDays);
-    LocalDate expireDay = this.passDate.plusDays(this.passExpDays);
+    Long passExpDays = ((Long) PropertiesManager.getProperty("tadiran.gate.pass-exp-days", Long.class));
+    LocalDate expireDay = this.passDate.plusDays(passExpDays);
     LocalDate currentDate = LocalDate.now();
 
     return currentDate.isAfter(expireDay);

@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 // parse ful url to ip,port, params
 var parsedUrl = new URL(window.location.href);
 var url = parsedUrl.hostname;
-var port = parsedUrl.port;
+var port = parsedUrl.port; (parsedUrl.port=='4200' ?  '8445' : parsedUrl.port);
 var protocol = parsedUrl.protocol;
 const AUTH_API = protocol + "//" + url + ":" + port;
 

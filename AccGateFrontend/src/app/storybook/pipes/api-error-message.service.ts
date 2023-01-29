@@ -22,6 +22,7 @@ export class ApiErrorMessageService {
         "Passwords do not match!": "* Passwords do not match!",
         "Error: Email is already in use!": "Email is already in use!",
         "Error: Invalidate Pin-Code! User Not Approved": "* The Verification Code does not match",
+        "Error: Unable to save your changes": "* Unable to save your changes",
       },
     },
     eng: {

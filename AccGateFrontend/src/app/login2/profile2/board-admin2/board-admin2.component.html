@@ -1,0 +1,15 @@
+<storybook-background1></storybook-background1>
+
+<storybook-configuration-form  #form
+                               [isRegSuccess]="isConfigSuccess"
+                               [isRegFailed]="isConfigFailed"
+                               [regErrorMessage]="configErrorMessage"
+                               [storyInputs]="storyInputsInOrder"
+                               [mForm]="configurationForm"
+                               (saveChanges)="onSubmit()"
+                               (clickXButton)="returnPortal()"
+                               (onLogout)="doLogout()"
+                               (changePassword)="openChangePassword()">
+</storybook-configuration-form>
+
+

@@ -280,6 +280,10 @@ export class LoginMainComponent implements OnInit {
   this.router.navigate(['../profile2'], {relativeTo: this.activatedRoute});
   }
 
+  configuratin(): void {
+    this.router.navigate(['../profile2/admin2'], {relativeTo: this.activatedRoute});
+  }
+
   home2(): void {
   this.router.navigate(['/home']);
   }

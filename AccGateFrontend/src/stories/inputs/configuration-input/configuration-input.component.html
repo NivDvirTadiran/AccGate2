@@ -1,0 +1,119 @@
+<div id="parent3"  [hidden]="storyInput?.hide" [ngClass]="classes"  >
+  <div id="parent1" >
+    <div class="main"  [formGroup]="this.currentForm">
+      <div>
+        <!--a class="user-name D-Caps-Regular">{{storyInput?.state}}</a-->
+        <a class="user-name D-Caps-Regular">{{storyInput?.type}}</a>
+
+        <br>
+        <span ngSwitch="{{storyInput.name.valueOf()!}}">
+          <span *ngSwitchCase="'password'" >
+            <storybook-button-continue   size="small" label="Change Password" type="button" (onClick)="this.changePassword.emit()" >
+            </storybook-button-continue>
+          </span>
+
+          <span *ngSwitchCase="'tadiran_gate_PreviousAlertPassExpDays'" >
+            <label [attr.aria-label]="storyInput?.id + ''" for="{{ storyInput?.name }}" class="UserNameType" >{{storyInput?.title}}  </label>
+            <div class="user-checkbox-header">
+            <input  style="position: relative; margin: 0 2px 0 2px;   top: 1px; right: 3px;"
+                    type="range" min="14" max="180" step="1"
+                    id="{{ storyInput?.id }}"
+                    name="{{storyInput?.name}}"
+                    formControlName="{{storyInput?.name}}"
+                    placeholder="{{storyInput?.placeholder}}"/>
+              <label class="EnableProfilePicture" > {{this.formControler?.value}} </label>
+            </div>
+          </span>
+          <span *ngSwitchCase="'tadiran_gate_passExpDays'" >
+            <label class="UserNameType" >{{storyInput?.title}}  </label>
+            <div class="user-checkbox-header">
+            <input  style="position: relative; margin: 0 2px 0 2px;   top: 1px; right: 3px;"
+                    type="range" min="14" max="180" step="1"
+                    id="{{ storyInput?.id }}"
+                    name="{{storyInput?.name}}"
+                    formControlName="{{storyInput?.name}}"
+                    placeholder="{{storyInput?.placeholder}}"/>
+              <label class="EnableProfilePicture"  >{{this.formControler?.value}}</label>
+            </div>
+          </span>
+          <span *ngSwitchCase="'tadiran_gate_TSV'" >
+            <label class="UserNameType" >{{storyInput?.title}}  </label>
+            <div class="user-checkbox-header">
+            <input  style="position: relative; margin: 0 2px 0 2px;   top: 1px; right: 3px;"  type="checkbox"
+                    formControlName="{{storyInput?.name}}"/>
+            <label class="EnableProfilePicture" >Enable Profile Picture</label>
+            </div>
+          </span>
+          <span *ngSwitchCase="'spring_jpa_hibernate_ddlAuto'" >
+            <label class="UserNameType" >{{storyInput?.title}}  </label>
+            <div class="user-select-header">
+              <select #ddlauto id="ddl-auto" (change)="onSelectedDdlAuto()"
+                      formControlName="{{storyInput?.name}}">
+                <option value="">--Please choose an option--</option>
+                <option value="create">create</option>
+                <option value="create-drop">create-drop</option>
+                <option value="validate">validate</option>
+                <option value="update">update</option>
+                <option value="none">none</option>
+              </select>
+            </div>
+          </span>
+          <span *ngSwitchCase="'tadiran_gate_pinCodeLength'" >
+            <label class="UserNameType" >{{storyInput?.title}}  </label>
+            <div class="user-select-header">
+              <select  style="position: relative; margin: 0 2px 0 2px;   bottom: 1px; right: 3px;"
+                      #pinCodeLength id="{{ storyInput?.id }}"
+                      (change)="onSelectedDdlAuto()"
+                      formControlName="{{storyInput?.name}}">
+                <option value="">--Please choose an option--</option>
+                <option value="4">Four</option>
+                <option value="5">Five</option>
+                <option value="6">Six</option>
+              </select>
+            </div>
+          </span>
+          <span *ngSwitchCase="'tadiran_gate_pinCodeValDura'" >
+            <label class="UserNameType" >{{storyInput?.title}}  </label>
+            <div class="user-checkbox-header">
+            <input  style="position: relative; margin: 0 2px 0 2px;   top: 1px; right: 3px;"
+                    type="range" min="2" max="180" step="1"
+                    id="{{ storyInput?.id }}"
+                    name="{{storyInput?.name}}"
+                    formControlName="{{storyInput?.name}}"
+                    placeholder="{{storyInput?.placeholder}}"/>
+              <label class="EnableProfilePicture"  >{{this.formControler?.value}}</label>
+            </div>
+          </span>
+          <span *ngSwitchDefault >
+            <label  [attr.aria-label]="storyInput?.id + ''" for="{{ storyInput?.title }}" class="Vector2 ">
+              <img src="{{ storyInput?.icon }}" class="icon-input" alt="icon input userName"  name="{{ storyInput?.title }}" />
+              <div [inputPopover] = "this.popover" [data]="this.getErrorList(this.conditionList)" [header]="this.getErrorHeader(this.storyInput.title)">
+                <input
+                  type="{{storyInput?.type}}"
+                  id="{{ storyInput?.id }}"
+                  class="inputField"
+                  name="{{storyInput?.title}}"
+                  formControlName="{{storyInput?.title}}"
+                  placeholder="{{storyInput?.placeholder}}"
+                  required />
+              </div>
+
+
+              <br>
+
+
+            </label>
+
+
+            <button  class="icon-input-edit"  type="button">
+              <img src="./assets/images/EditIconA.png" class="icon-input-edit" alt="icon input type" />
+            </button>
+          </span>
+        </span>
+
+      </div>
+    </div>
+  </div>
+
+
+</div>
