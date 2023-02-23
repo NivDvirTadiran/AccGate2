@@ -41,7 +41,7 @@ export class UserService {
   }
 
   getAccountDetails(): Observable<any> {
-    return this.http.get(API_URL + 'accountdetails', { responseType: 'text' });
+    return this.http.get(API_URL + 'getaccountdetails', { responseType: 'text' });
   }
 
 }

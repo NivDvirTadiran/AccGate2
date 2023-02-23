@@ -30,7 +30,8 @@ public class AgentDetailsServiceImpl implements UserDetailsService {
             null,
             agent.getAPassword(),
             null,
-            null);
+            null,
+            true);
   }
 
   @Override

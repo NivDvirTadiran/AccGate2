@@ -1,4 +1,15 @@
-import {Component, EventEmitter, HostBinding, Inject, Injector, Input, OnInit, Output} from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  HostBinding, HostListener,
+  Inject,
+  Injector,
+  Input,
+  OnInit,
+  Output, Renderer2,
+  ViewChild
+} from '@angular/core';
 import { AccountInput } from './account-input.model'
 import {
   AbstractControl,
@@ -31,7 +42,7 @@ export interface ValidationForm {
 })
 export class AccountInputComponent implements OnInit{
 
-
+  param = {language: 'login-main'};
 
   popover: PopoverOptions = {
     content: ActionInputComponent
@@ -45,8 +56,9 @@ export class AccountInputComponent implements OnInit{
 
   // tslint:disable-next-line: no-output-on-prefix
   @Output()
-  onArchiveInput = new EventEmitter<Event>();
+  onSaveChanges = new EventEmitter<String>();
 
+  @Input() isLoading: boolean = false;
 
   @Output() changePassword: EventEmitter<void> = new EventEmitter();
 
@@ -56,20 +68,37 @@ export class AccountInputComponent implements OnInit{
 
   @Input() currentForm!: FormGroup;
 
-  private isStrength: string = (this.storyInput?.state === 'NEW PASSWORD') ? 'storybook-input--addStrength' : 'storybook-input--clearStrength';
+  @Input() regErrorMessage: any;
+
+  private isStrength: string = (this.storyInput?.state === 'NEW PASSWORD') ? 'storybook-account-input--addStrength' : 'storybook-account-input--clearStrength';
 
   public isPasswordTextHide: boolean = false;
 
   @Input() conditionList: string[] = [];
-  /*registerForm = new FormGroup({
-    username: new FormControl('', Validators.minLength(2)),
-    password: new FormControl('zaqwsx', Validators.minLength(2))
-  });
 
+  @ViewChild('mInput', { static: false }) mInput?: ElementRef;
 
-  get username2(): FormControl  {
-    return this.currentForm?.controls.username.get();
-  }*/
+  state: string = 'edit';
+
+  constructor(private renderer: Renderer2) {
+
+  }
+
+  onStateChange(state: string) {
+    if (state == 'edit' || state == 'save') {this.state = state;}
+    switch (state) {
+      case 'edit':
+      this.renderer.setAttribute(this.mInput?.nativeElement ,'readonly', 'true');
+      this.renderer.setAttribute(this.mInput?.nativeElement ,'style', 'color: #9a9a9a;');
+      this.onClickButtonSave();
+      break;
+      case 'save':
+      this.renderer.removeAttribute(this.mInput?.nativeElement ,'readonly');
+      this.renderer.removeAttribute(this.mInput?.nativeElement ,'style');
+      break;
+    }
+  }
+
 
   get username(): AbstractControl {
     return this.currentForm.get('username')!;
@@ -228,14 +257,14 @@ export class AccountInputComponent implements OnInit{
    * Component method to trigger the onArchive event
    * @param id string
    */
-  onArchive(id: any) {
-    this.onArchiveInput.emit(id);
+  onClickButtonSave() {
+    this.onSaveChanges.emit(this.storyInput.name);
   }
 
   public get classes(): string[] {
-    this.isStrength = (this.storyInput?.state === 'NEW PASSWORD') ? 'storybook-input--addStrength' : 'storybook-input--clearStrength';
+    this.isStrength = (this.storyInput?.state === 'NEW PASSWORD') ? 'storybook-account-input--addStrength' : 'storybook-account-input--clearStrength';
 
-    return ['storybook-input-strength',  this.isStrength];
+    return ['storybook-account-input-strength', `inputField--${this.state}`,  this.isStrength];
   }
 
 
@@ -243,5 +272,6 @@ export class AccountInputComponent implements OnInit{
     this.isPasswordTextHide = this.storyInput?.state.includes('PASSWORD');
 
   }
+
 
 }

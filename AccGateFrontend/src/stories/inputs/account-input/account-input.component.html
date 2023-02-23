@@ -2,7 +2,7 @@
   <div id="parent1" >
     <div class="main"  [formGroup]="this.currentForm">
       <div>
-        <a class="user-name D-Caps-Regular">{{storyInput?.state}}</a>
+        <p class="user-name D-Caps-Regular">{{storyInput?.state}}</p>
 
         <br>
         <span [ngSwitch]="storyInput?.type">
@@ -11,20 +11,27 @@
             </storybook-button-continue>
           </span>
           <span *ngSwitchCase="'enable-profile-picture'" >
-            <label class="UserNameType" >{{storyInput?.title}}  </label>
+            <label [attr.aria-label]="storyInput?.id + ''"  for="{{ storyInput?.title }}" class="UserNameType" >{{storyInput?.title}}  </label>
             <div class="user-checkbox-header">
-            <input  style="position: relative; margin: 0 2px 0 2px;   top: 1px; right: 3px;"  type="checkbox"/>
-            <label class="EnableProfilePicture" >Enable Profile Picture</label>
+            <input  style="position: relative; margin: 0 2px 0 2px;   top: 1px; right: 3px;"  type="checkbox"
+                    (change)="onClickButtonSave()"/>
+            <label class="EnableProfilePicture">Enable Profile Picture</label>
 
-              <!--img src="./assets/images/EditIconA.png" class="icon-input-edit" alt="icon input type" /-->
 
             </div>
+            <p class="confirmation-change D-Caps-Regular">{{ this.regErrorMessage | apiErrorMessage: param }}</p>
+              <!--table >
+                <tr>{{ this.regErrorMessage['message'] | apiErrorMessage: param }}</tr>
+                <tr  *ngFor="let message of this.regErrorMessage['message']">{{message.trim() | apiErrorMessage: param }}</tr>
+              </table-->
           </span>
           <span *ngSwitchDefault >
             <label  [attr.aria-label]="storyInput?.id + ''" for="{{ storyInput?.title }}" class="Vector2 ">
               <img src="{{ storyInput?.icon }}" class="icon-input" alt="icon input userName"  name="{{ storyInput?.title }}" />
-              <div [inputPopover] = "this.popover" [data]="this.getErrorList(this.conditionList)" [header]="this.getErrorHeader(this.storyInput.title)">
-                <input
+              <div [ngClass]="classes" [inputPopover] = "this.popover" [data]="this.getErrorList(this.conditionList)" [header]="this.getErrorHeader(this.storyInput.title)">
+                <input #mInput
+                  readonly="true"
+                  style="color: #9a9a9a;"
                   type="{{storyInput?.type}}"
                   id="{{ storyInput?.id }}"
                   class="inputField"
@@ -40,10 +47,14 @@
 
             </label>
 
-            <button  class="icon-input-edit"  type="button">
-              <img src="./assets/images/EditIconA.png" class="icon-input-edit" alt="icon input type" />
-            </button>
+            <storybook-button-edit-save (onStateChange)="onStateChange($event)" #addAttribute>
+            </storybook-button-edit-save>
+
+            <p *ngIf="(this.regErrorMessage?.detailName == storyInput?.name)" class="confirmation-change D-Caps-Regular"
+            >{{ this.regErrorMessage.detailValue  | apiErrorMessage: param }}</p>
+
           </span>
+
         </span>
 
       </div>

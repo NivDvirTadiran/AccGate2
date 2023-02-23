@@ -1,6 +1,11 @@
 package tadiran.gateserver.security.services;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.scheduling.annotation.Scheduled;
+import tadiran.gateserver.config.PropertiesManager;
 import tadiran.gateserver.models.Agent;
+import tadiran.gateserver.models.LoginAttempt;
 import tadiran.gateserver.models.Sup;
 import tadiran.gateserver.models.User;
 import tadiran.gateserver.payload.request.LoginRequest;
@@ -15,9 +20,17 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.servlet.http.HttpServletRequest;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
+  private static final Logger logger = LoggerFactory.getLogger(UserDetailsServiceImpl.class);
+
   @Autowired
   UserRepository userRepository;
 
@@ -27,12 +40,10 @@ public class UserDetailsServiceImpl implements UserDetailsService {
   @Autowired
   SupRepository supRepository;
 
-  Long passExpDays;
-/*
-  public UserDetailsServiceImpl(Long passExpDays) {
-    this.passExpDays = passExpDays;
-  }
-*/
+  @Autowired
+  private HttpServletRequest request;
+
+  private final List<LoginAttempt> tempLoginAttemptList = new ArrayList<>();
 
   @Override
   @Transactional
@@ -100,4 +111,120 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     }
     return null;
   }
+
+
+  @Scheduled(fixedDelay = 13, timeUnit = TimeUnit.MINUTES)
+  public void deleteNonActiveTempPassLists() {
+
+    List<LoginAttempt> found = new ArrayList<>();
+    LocalDateTime currentTime = LocalDateTime.now();
+    Integer lockDuration = ((Integer) PropertiesManager.getProperty("tadiran.gate.lock-time-duration", Integer.class));
+
+    logger.debug("Start deletion of nun active login attempts log record from list..");
+
+    tempLoginAttemptList.stream()
+            .filter(loginAttempt -> currentTime.isAfter(loginAttempt.getCreateTime().plusMinutes(lockDuration)))
+            .forEach(found::add);
+
+    tempLoginAttemptList.removeAll(found);
+
+  }
+
+  public void updateFailedLoginAttempts(UserDetailsImpl userDetailsImpl) {
+    if (userRepository.findByUsername(userDetailsImpl.getUsername()).isPresent()) {
+      User user = userRepository.findByUsername(userDetailsImpl.getUsername()).get();
+
+      if (user.isAccountNonLocked() ) {
+        if (user.getFailedAttempt() < ((Integer) PropertiesManager.getProperty("tadiran.gate.max-failed-attempts", Integer.class)) - 1) {
+          this.increaseFailedAttempts(user);
+        } else this.lock(user);
+      }
+    }
+  }
+
+  public void increaseFailedAttempts(User user) {
+    user.setFailedAttempt(user.getFailedAttempt() + 1);
+    userRepository.save(user);
+    //userRepository.updateFailedAttempts(newFailAttempts, user.getUsername());
+  }
+
+  public void resetFailedAttempts(UserDetailsImpl userDetailsImpl) {
+    if (userRepository.findByUsername(userDetailsImpl.getUsername()).isPresent()) {
+      User user = userRepository.findByUsername(userDetailsImpl.getUsername()).get();
+
+      user.setFailedAttempt(0);
+      userRepository.save(user);
+    }
+
+    //userRepository.updateFailedAttempts(0, userDetailsImpl.getUsername());
+  }
+
+
+  public void lock(User user) {
+    user.setAccountNonLocked(false);
+    user.setLockTime(LocalDateTime.now());
+
+    userRepository.save(user);
+  }
+
+  public void userSuccessLoginAttempt(UserDetailsImpl userDetailsImpl) {
+    resetFailedAttempts(userDetailsImpl);
+  }
+
+  public void userFailedLoginAttempt(UserDetailsImpl userDetailsImpl) {
+    if (userRepository.findByUsername(userDetailsImpl.getUsername()).isPresent()) {
+      User user = userRepository.findByUsername(userDetailsImpl.getUsername()).get();
+    }
+    updateFailedLoginAttempts(userDetailsImpl);
+  }
+
+  public void unknownUserFailedLoginAttempt(String username) {
+    String ipAddress = getClientIP();
+    LoginAttempt loginAttempt = new LoginAttempt();
+
+    loginAttempt.setIpAddress(ipAddress);
+    loginAttempt.setUsername(username);
+
+    tempLoginAttemptList.add(loginAttempt);
+  }
+
+  public void subUserLoginAttempt(String username) {
+    deleteAllLoginAttemptRecordOfSubUser(username);
+  }
+
+  public boolean isUsernameBlocked(String username) {
+    boolean ret;
+
+    try {
+      ret = tempLoginAttemptList.stream()
+              .filter(loginAttempt -> username.equals(loginAttempt.getUsername())).count() >=
+              ((Integer) PropertiesManager.getProperty("tadiran.gate.max-failed-attempts", Integer.class));
+      if (ret) {logger.info("username [" + username +"] is BLOCKED!");}
+    } catch (Exception e) {
+      return false;
+    }
+    return ret;
+  }
+
+  public void deleteAllLoginAttemptRecordOfSubUser(String username) {
+    List<LoginAttempt> found = new ArrayList<>();
+
+    logger.debug("Start deletion of all temporary login attempt record of user named: " + username);
+
+    tempLoginAttemptList.stream()
+            .filter(loginAttempt -> username.equals(loginAttempt.getUsername()))
+            .forEach(found::add);
+
+    tempLoginAttemptList.removeAll(found);
+
+  }
+
+  private String getClientIP() {
+    final String xfHeader = request.getHeader("X-Forwarded-For");
+    if (xfHeader != null) {
+      return xfHeader.split(",")[0];
+    }
+    return request.getRemoteAddr();
+  }
+
 }

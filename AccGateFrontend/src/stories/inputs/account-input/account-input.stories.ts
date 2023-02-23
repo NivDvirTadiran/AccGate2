@@ -5,6 +5,8 @@ import {AccountInputComponent} from "./account-input.component";
 import {CommonModule} from "@angular/common";
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import PassStrengthComponent from "src/stories/pass-strength/pass-strength.component";
+import {ButtonEditSaveComponent} from "../../buttons/button-edit-save/button-edit-save.component";
+import * as EditSaveButton from "src/stories/buttons/button-edit-save/button-edit-save.stories";
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
@@ -12,7 +14,7 @@ export default {
   component: AccountInputComponent,
   decorators: [
     moduleMetadata({
-      declarations: [ AccountInputComponent, PassStrengthComponent  ],
+      declarations: [ AccountInputComponent, PassStrengthComponent, ButtonEditSaveComponent  ],
       imports: [CommonModule, FormsModule, ReactiveFormsModule ],
     }),
     componentWrapperDecorator(story => `<div style="margin: 0 1em 1em 1em/*; width: 445px*/;">${story}</div>`),
@@ -28,14 +30,14 @@ export default {
 
 export const actionsData = {
   onPinInput: action('onPinInput'),
-  onArchiveInput: action('onArchiveInput'),
+  onSaveChanges: action('onArchiveInput'),
 };
 
 const Template: Story = args => ({
   props: {
     ...args,
-    onPinInput: actionsData.onPinInput,
-    onArchiveInput: actionsData.onArchiveInput,
+    onStateChange: EditSaveButton.actionsData.onStateChange,
+    onClick: EditSaveButton.actionsData.onClick,
   },
 });
 
@@ -65,6 +67,7 @@ Username.args = {
   ...Default.args,
   storyInput: {
     id: '2',
+    name: 'username',
     title: 'Saul Ramirez',
     state: 'USER NAME',
     icon: '',
@@ -82,6 +85,7 @@ export const Password = Template.bind({});
 Password.args = {
   storyInput: {
     id: '3',
+    name: 'password',
     title: 'password',
     state: 'PASSWORD',
     icon: './assets/images/LockIcon2ldpi.png',
@@ -96,6 +100,7 @@ NewPassword.args = {
   ...Default.args,
   storyInput: {
     id: '6',
+    name: 'newPassword',
     title: 'password',
     state: 'NEW PASSWORD',
     icon: './assets/images/LockIcon2ldpi.png',
@@ -109,6 +114,7 @@ export const Email = Template.bind({});
 Email.args = {
   storyInput: {
     id: '4',
+    name: 'email',
     title: 'email',
     state: 'EMAIL',
     icon: './assets/images/AtSign3ldpi.png',
@@ -121,10 +127,11 @@ export const Phone = Template.bind({});
 Phone.args = {
   storyInput: {
     id: '5',
+    name: 'phone',
     title: 'phone',
     state: 'PHONE NUMBER FOR AUTHENTICATION',
     icon: './assets/images/Phone3ldpi.png',
-    type: 'tel',
+    type: 'phone',
     placeholder: 'Ex: +972547762084',
     hide: false
   },

@@ -78,7 +78,6 @@ export class TokenStorageService {
   }
 
   public isSupervisorAdmin(): boolean {
-    const user = this.getUser();
-    return (user.roles.toString() === 'SupervisorAdmin');
+    return this.getUser().roles.includes("SupervisorAdmin");
   }
 }

@@ -5,25 +5,23 @@ import javax.persistence.*;
 
 @Entity(name = "refreshtoken")
 public class RefreshToken {
-    /*@GeneratedValue(generator = "user_id_seq", strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(
-            name = "user_id_seq",
-            sequenceName = "user_id_seq",
-            allocationSize = 50
-    )*/
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(nullable = false)
+    @SequenceGenerator(name = "refreshtoken_seq", sequenceName = "refreshtoken_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "refreshtoken_seq")
     private Long id;
+    
     @OneToOne
     @JoinColumn(name = "userid", referencedColumnName = "id")
     private User user;
+    
     @Column(nullable = false, unique = true)
     private String token;
+    
     @Column(nullable = false)
     private Instant expiryDate;
 
-    //@ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(  name = "refreshtoken_webapp",
             joinColumns = @JoinColumn(name = "refreshtokenid"),
             inverseJoinColumns = @JoinColumn(name = "webappid"))

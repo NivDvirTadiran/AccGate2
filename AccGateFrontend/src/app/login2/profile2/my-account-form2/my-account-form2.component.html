@@ -1,12 +1,13 @@
 
 <storybook-my-account-form #form
-  [isRegSuccess]="isRegSuccess"
-  [isRegFailed]="isRegFailed"
-  [regErrorMessage]="regErrorMessage"
+  [isRegSuccess]="isSaveDetailSuccess"
+  [isRegFailed]="isSaveDetailFailed"
+  [regErrorMessage]="saveDetailErrorMessage"
   [storyInputs]="storyInputsInOrder"
   [displayToolButton]="displayConfigButton()"
-  [mForm]="registerForm"
-  (sendRegReq)="onSubmit()"
+  [mForm]="myAccountForm"
+  [isLoading]="isLoading"
+  (onSaveChanges)="saveDetail($event)"
   (clickXButton)="this.dialogRef.close('xbutton')"
   (onLogout)="doLogout()"
   (changePassword)="openChangePassword()"

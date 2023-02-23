@@ -3,10 +3,12 @@ package tadiran.gateserver.models;
 import lombok.Builder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import tadiran.gateserver.config.PropertiesManager;
 
 
 import java.time.Instant;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.*;
 
 import javax.persistence.*;
@@ -58,6 +60,15 @@ public class User {
   private LocalDate pass_last_modified_on;
 
   private static final Logger logger = LoggerFactory.getLogger(User.class);
+
+  @Column(name = "account_non_locked")
+  private boolean accountNonLocked = true;
+
+  @Column(name = "failed_attempt")
+  public int failedAttempt;
+
+  @Column(name = "lock_time")
+  private LocalDateTime lockTime;
 
   public User() {
   }
@@ -196,5 +207,46 @@ public class User {
 
   public void setPhone(String phone) {
     this.phone = phone;
+  }
+
+  public boolean isAccountNonLocked() {
+    this.accountNonLocked = ((this.accountNonLocked) ? true : accountNonLocked);
+    return (accountNonLocked || this.unlockWhenTimeExpired());
+  }
+
+  public void setAccountNonLocked(boolean accountNonLocked) {
+    this.accountNonLocked = accountNonLocked;
+  }
+
+  public LocalDateTime getLockTime() {
+    return lockTime;
+  }
+
+  public void setLockTime(LocalDateTime lockTime) {
+    this.lockTime = lockTime;
+  }
+
+  public int getFailedAttempt() {
+    return failedAttempt;
+  }
+
+  public void setFailedAttempt(int failedAttempt) {
+    this.failedAttempt = failedAttempt;
+  }
+
+  public boolean unlockWhenTimeExpired() {
+    LocalDateTime currentTime = LocalDateTime.now();
+    LocalDateTime lockTime = this.getLockTime();
+
+    if (currentTime.isAfter(lockTime.plusMinutes(
+            ((Integer) PropertiesManager.getProperty("tadiran.gate.lock-time-duration", Integer.class))))) {
+      this.setAccountNonLocked(true);
+      this.setLockTime(null);
+      this.setFailedAttempt(0);
+
+      return true;
+    }
+
+    return false;
   }
 }

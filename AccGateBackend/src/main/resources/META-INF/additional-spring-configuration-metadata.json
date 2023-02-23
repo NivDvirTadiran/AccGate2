@@ -24,6 +24,16 @@
       "name": "tadiran.gate.pin-code-val-dura",
       "type": "java.lang.Long",
       "description": "Define the Duration (in Minutes) before pin-code Expired."
+    },
+    {
+      "name": "tadiran.gate.max-failed-attempts",
+      "type": "java.lang.Integer",
+      "description": "Define the amount of login request tries user can send before he get entered to lock stat."
+    },
+    {
+      "name": "tadiran.gate.lock-time-duration",
+      "type": "java.lang.Integer",
+      "description": "Define the Duration (in Minutes) for user to stay locked after {MAX_FAILED_ATTEMPTS} tries to login."
     }
   ]
 }

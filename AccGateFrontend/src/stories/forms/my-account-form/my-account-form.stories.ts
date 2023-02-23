@@ -13,6 +13,7 @@ import {ButtonExComponent} from "../../buttons/button-ex/button-ex.component";
 import {ButtonSuccessfullyComponent} from "../../buttons/button-successfully/button-successfully.component";
 import {AccountInputComponent} from "../../inputs/account-input/account-input.component";
 import {ButtonConfigurationComponent} from "../../buttons/button-configuration/button-configuration.component";
+import {ButtonEditSaveComponent} from "../../buttons/button-edit-save/button-edit-save.component";
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
@@ -20,7 +21,7 @@ export default {
   component: MyAccountFormComponent,
   decorators: [
     moduleMetadata({
-      declarations: [ MyAccountFormComponent, CardComponent, AccountInputComponent, ButtonContinueComponent,
+      declarations: [ MyAccountFormComponent, CardComponent, AccountInputComponent, ButtonContinueComponent, ButtonEditSaveComponent,
                       ButtonExComponent, ButtonSuccessfullyComponent, ButtonConfigurationComponent],
       imports: [CommonModule, FormsModule, ReactiveFormsModule],
     }),
@@ -43,7 +44,7 @@ const Template: Story = args => ({
   props: {
       ...args,
       onPinTask: AccountInput.actionsData.onPinInput,
-      onArchiveTask: AccountInput.actionsData.onArchiveInput,
+    onSaveChanges: AccountInput.actionsData.onSaveChanges,
       mForm: storyForm,
     },
 });

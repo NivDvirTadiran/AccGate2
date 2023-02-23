@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {AppConfig} from "../app.config";
-import {Prop} from "../login2/profile2/board-admin2/board-admin2.component";
+
 
 
 
@@ -88,9 +88,15 @@ export class AuthService {
     }, httpOptions);
   }
 
-  getAccountDetails(token: string): Observable<any> {
-    return this.http.post(AUTH_API + 'accountdetails', {
-      accessToken: token,
+  getAccountDetails(username: string): Observable<any> {
+    return this.http.post(AUTH_API + 'getaccountdetails', {
+      username: username,
+    }, httpOptions);
+  }
+
+  setAccountDetails( changedDetails: string): Observable<any> {
+    return this.http.post(AUTH_API + 'setaccountdetails', {
+      detail: changedDetails
     }, httpOptions);
   }
 

@@ -134,6 +134,7 @@ export class LoginMainComponent implements OnInit {
         //this.setUsernameCurrentFieldValue(result.username);
         //this.setEmailCurrentFieldValue(result.email);
       }
+      this.onSubmit();
     });
 
     return registerFormDialogRef.afterClosed().toPromise();
@@ -170,6 +171,7 @@ export class LoginMainComponent implements OnInit {
 
     verificationFormDialogRef.afterClosed().subscribe(result => {
       console.log('The register form dialog was closed');
+      this.eventBusService.emit(new EventData('submitReplacePassForm', null));
     });
 
     return verificationFormDialogRef.afterClosed().toPromise();

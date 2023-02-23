@@ -1,0 +1,39 @@
+button.Vector {
+  position: absolute;
+  width: 18.4px;
+  height: 20.51px;
+  right: 10px;
+  bottom: 10px;
+  padding-top: 0;
+  margin: 0;
+  border-bottom-width: 0;
+  background-color: rgba(45, 148, 55, 0);
+
+}
+
+.Edit-Save-Icon {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 19px;
+  height: 19px;
+
+}
+
+
+.storybook-button-edit-save--edit {
+    background-size: cover;
+    background-origin: border-box;
+    background-image: url(/assets/images/EditIconA.png);
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+
+.storybook-button-edit-save--save {
+    background-size: cover;
+    background-origin: border-box;
+    background-image: url(/assets/images/SaveIconA.png);
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+

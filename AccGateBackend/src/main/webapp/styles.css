@@ -46923,7 +46923,7 @@ input[type=time]:disabled,
 input[type=url]:disabled,
 input[type=color]:disabled,
 textarea:disabled {
-  background-color: #dddddd;
+  /*background-color: #dddddd;*/
   cursor: default;
 }
 input[type=text][disabled], input[type=text][readonly], fieldset[disabled] input[type=text],

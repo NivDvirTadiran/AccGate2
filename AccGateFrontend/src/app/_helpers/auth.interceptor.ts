@@ -53,8 +53,6 @@ export class AuthInterceptor implements HttpInterceptor {
           }),
           catchError((err) => {
             this.isRefreshing = false;
-
-            this.tokenService.signOut();
             return throwError(err);
           })
         );
@@ -71,29 +69,8 @@ export class AuthInterceptor implements HttpInterceptor {
     /* for Node.js Express back-end */
     //return request.clone({ headers: request.headers.set(TOKEN_HEADER_KEY, token) });
   }
-/*
-  public forseRefreshToken2() {
-    const token = this.tokenService.getRefreshToken();
-    if (token)
-      this.authService.refreshToken(token).pipe(
-        switchMap((token: any) => {
-          this.isRefreshing = false;
-          this.tokenService.saveToken(token.accessToken);
-          this.refreshTokenSubject.next(token.accessToken);
 
-          filter(token => token !== null),
-            take(1),
-            switchMap((token) => next.handle(this.addTokenHeader(request, token)))
-        }),
-        catchError((err) => {
-          this.isRefreshing = false;
 
-          this.tokenService.signOut();
-          return throwError(err);
-        })
-      );
-  }
-*/
   public forseRefreshToken(): void {
     const token = this.tokenService.getRefreshToken();
     if (token)

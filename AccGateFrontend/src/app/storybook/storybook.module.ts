@@ -49,6 +49,7 @@ import ResetPassFormComponent from "../../stories/forms/reset-pass-form/reset-pa
 import {ButtonConfigurationComponent} from "../../stories/buttons/button-configuration/button-configuration.component";
 import ConfigurationFormComponent from "../../stories/forms/configuration-form/configuration-form.component";
 import {ConfigurationInputComponent} from "../../stories/inputs/configuration-input/configuration-input.component";
+import {ButtonEditSaveComponent} from "../../stories/buttons/button-edit-save/button-edit-save.component";
 
 
 
@@ -64,7 +65,7 @@ import {ConfigurationInputComponent} from "../../stories/inputs/configuration-in
         LoginFormComponent, LoginFormComponent, RegistryFormComponent, VerificationFormComponent,
         MyAccountFormComponent, ForgotPassFormComponent, ResetPassFormComponent, ConfigurationFormComponent,
         ButtonContinueComponent, ButtonExComponent, ButtonAppsComponent, ButtonSuccessfullyComponent, Button,
-        ButtonConfigurationComponent,
+        ButtonConfigurationComponent, ButtonEditSaveComponent,
         AppMenuComponent,
         StoryInputComponent, DigitcodeInputComponent, CodeInputComponent, AccountInputComponent, ConfigurationInputComponent,
         HighlightDirective,
@@ -92,7 +93,7 @@ import {ConfigurationInputComponent} from "../../stories/inputs/configuration-in
     LoginFormComponent, LoginFormComponent, RegistryFormComponent, VerificationFormComponent,
     MyAccountFormComponent, ForgotPassFormComponent,  ResetPassFormComponent, ConfigurationFormComponent,
     ButtonContinueComponent, ButtonExComponent, ButtonAppsComponent, ButtonSuccessfullyComponent, Button,
-    ButtonConfigurationComponent,
+    ButtonConfigurationComponent, ButtonEditSaveComponent,
     AppMenuComponent,
     StoryInputComponent, DigitcodeInputComponent, CodeInputComponent, AccountInputComponent, ConfigurationInputComponent,
     CommonModule,

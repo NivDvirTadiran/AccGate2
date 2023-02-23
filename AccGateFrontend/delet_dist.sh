@@ -6,6 +6,8 @@ rm -rf 'AccGateBackend/src/main/webapp/';
 mkdir 'AccGateBackend/src/main/webapp';
 sleep 1;
 
+taskkill /IM 'C:\niv\download\OpenJDK8U-jdk_x64_windows_hotspot_8u322b06\jdk8u322-b06\bin\java.exe';
+
 #ls -la '/c/Program Files/Apache Software Foundation/Tomcat 9.0/webapps/dist';
 #rm -rf '/c/Program Files/Apache Software Foundation/Tomcat 9.0/webapps/dist';
 #echo ls -la '/c/Program Files/Apache Software Foundation/Tomcat 9.0/webapps/dist';

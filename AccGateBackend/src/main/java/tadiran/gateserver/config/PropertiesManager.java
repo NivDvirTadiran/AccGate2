@@ -1,6 +1,7 @@
 package tadiran.gateserver.config;
 
 import lombok.extern.log4j.Log4j2;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -14,15 +15,19 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.PropertySources;
 import org.springframework.core.env.Environment;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
 import org.springframework.util.DefaultPropertiesPersister;
 import tadiran.gateserver.models.PinCode;
 import tadiran.gateserver.models.Prop;
 
 import java.io.*;
+import java.nio.file.Files;
 import java.util.*;
 
 import static java.lang.System.getProperty;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 @Log4j2
@@ -39,8 +44,12 @@ public class PropertiesManager {
 
     private static Environment environment;
     private Properties properties;
-    private final String backUpPropertiesFile = "..//webapps//accGate//WEB-INF//classes//saved-preference.properties";
-    private final String defaultPropertiesFile = "..//webapps//accGate//WEB-INF//classes/application.properties";
+
+
+    private final String backUpPropertiesFile = "saved-preference.properties";
+
+
+    private final String defaultPropertiesFile = "application.properties";
 
     public PropertiesManager() {
         properties = new Properties();
@@ -63,19 +72,6 @@ public class PropertiesManager {
     }
 
 
-  /*
-    public Map<String, String> stringPropertyNames() {
-        Map<String, String> h = new HashMap<>();
-        for (Map.Entry<Object, Object> e : properties.entrySet()) {
-            Object k = e.getKey();
-            Object v = e.getValue();
-            if (k instanceof String && v instanceof String) {
-                h.put((String) k, (String) v);
-            }
-        }
-        return h;
-    }
-*/
     public static Object getProperty(String key, Class<?> propClass) {
         return environment.getProperty(key, propClass);
     }
@@ -85,35 +81,32 @@ public class PropertiesManager {
         properties.setProperty(key, val);
     }
 
-    public void writeToProperties2() {
-        try {
-            // create and set properties into properties object
-            properties = new Properties();
-            properties.setProperty("Prop1", "toto");
-            properties.setProperty("Prop2", "test");
-            properties.setProperty("Prop3", "tata");
-            // get or create the file
-            File f = new File(backUpPropertiesFile);
-            OutputStream out = new FileOutputStream( f );
-            // write into it
-            DefaultPropertiesPersister p = new DefaultPropertiesPersister();
-            p.store(properties, out, "Header COmment");
-        } catch (Exception e ) {
-            e.printStackTrace();
-        }
+
+    @Test
+    public void whenResourceAsFile_thenReadSuccessful()
+            throws IOException {
+
+        File resource = new ClassPathResource(
+                "application.properties").getFile();
+        String employees = new String(
+                Files.readAllLines(resource.toPath()).get(0));
+        assertEquals(
+                "tadiran.gate.ACCServerAddress1= %ACC_IP1%",
+                employees);
     }
+
 
     public void printProperties() {
         log.info("properties: " + properties.stringPropertyNames().toString());
         logger.info("properties: " + properties.stringPropertyNames().toString());
     }
 
-
+    @Test
     public void loadProperties() {
         FileReader reader = null;
-        File file = new File(defaultPropertiesFile);
 
         try {
+            File file = new ClassPathResource(defaultPropertiesFile).getFile();
             reader = new FileReader(file);
 
             properties = new Properties();
@@ -123,7 +116,12 @@ public class PropertiesManager {
             e.printStackTrace();
         }
 
-        System.setProperty("app.home", "test");
+        printProperties();
+
+        assertEquals(
+                properties.stringPropertyNames().toArray()[0],
+                "tadiran.gate.pin-code-length");
+        //System.setProperty("app.home", "test");
     }
 
     public boolean saveProperties(List<Prop>  prop) {
@@ -140,9 +138,10 @@ public class PropertiesManager {
 
     public boolean saveProperties() {
         FileWriter writer = null;
-        File file = new File(backUpPropertiesFile);
+
 
         try {
+            File file = new ClassPathResource(backUpPropertiesFile).getFile();
             writer = new FileWriter(file);
             properties.store(writer, "write a file");
 

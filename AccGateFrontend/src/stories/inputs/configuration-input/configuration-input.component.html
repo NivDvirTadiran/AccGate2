@@ -3,7 +3,7 @@
     <div class="main"  [formGroup]="this.currentForm">
       <div>
         <!--a class="user-name D-Caps-Regular">{{storyInput?.state}}</a-->
-        <a class="user-name D-Caps-Regular">{{storyInput?.type}}</a>
+        <p class="user-name D-Caps-Regular">{{storyInput?.type}}</p>
 
         <br>
         <span ngSwitch="{{storyInput.name.valueOf()!}}">
@@ -13,7 +13,7 @@
           </span>
 
           <span *ngSwitchCase="'tadiran_gate_PreviousAlertPassExpDays'" >
-            <label [attr.aria-label]="storyInput?.id + ''" for="{{ storyInput?.name }}" class="UserNameType" >{{storyInput?.title}}  </label>
+            <p [attr.aria-label]="storyInput?.id + ''" class="UserNameType" >{{storyInput?.title}}  </p>
             <div class="user-checkbox-header">
             <input  style="position: relative; margin: 0 2px 0 2px;   top: 1px; right: 3px;"
                     type="range" min="14" max="180" step="1"
@@ -25,7 +25,7 @@
             </div>
           </span>
           <span *ngSwitchCase="'tadiran_gate_passExpDays'" >
-            <label class="UserNameType" >{{storyInput?.title}}  </label>
+            <p class="UserNameType" >{{storyInput?.title}}  </p>
             <div class="user-checkbox-header">
             <input  style="position: relative; margin: 0 2px 0 2px;   top: 1px; right: 3px;"
                     type="range" min="14" max="180" step="1"
@@ -37,7 +37,7 @@
             </div>
           </span>
           <span *ngSwitchCase="'tadiran_gate_TSV'" >
-            <label class="UserNameType" >{{storyInput?.title}}  </label>
+            <p class="UserNameType" >{{storyInput?.title}}  </p>
             <div class="user-checkbox-header">
             <input  style="position: relative; margin: 0 2px 0 2px;   top: 1px; right: 3px;"  type="checkbox"
                     formControlName="{{storyInput?.name}}"/>
@@ -45,7 +45,7 @@
             </div>
           </span>
           <span *ngSwitchCase="'spring_jpa_hibernate_ddlAuto'" >
-            <label class="UserNameType" >{{storyInput?.title}}  </label>
+            <p class="UserNameType" >{{storyInput?.title}}  </p>
             <div class="user-select-header">
               <select #ddlauto id="ddl-auto" (change)="onSelectedDdlAuto()"
                       formControlName="{{storyInput?.name}}">
@@ -59,7 +59,7 @@
             </div>
           </span>
           <span *ngSwitchCase="'tadiran_gate_pinCodeLength'" >
-            <label class="UserNameType" >{{storyInput?.title}}  </label>
+            <p class="UserNameType" >{{storyInput?.title}}  </p>
             <div class="user-select-header">
               <select  style="position: relative; margin: 0 2px 0 2px;   bottom: 1px; right: 3px;"
                       #pinCodeLength id="{{ storyInput?.id }}"
@@ -73,7 +73,7 @@
             </div>
           </span>
           <span *ngSwitchCase="'tadiran_gate_pinCodeValDura'" >
-            <label class="UserNameType" >{{storyInput?.title}}  </label>
+            <p class="UserNameType" >{{storyInput?.title}}  </p>
             <div class="user-checkbox-header">
             <input  style="position: relative; margin: 0 2px 0 2px;   top: 1px; right: 3px;"
                     type="range" min="2" max="180" step="1"

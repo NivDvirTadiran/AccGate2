@@ -119,7 +119,7 @@ export class BoardAdmin2Component implements OnInit {
           //let prop: new Prop
         });
 
-        console.log('Account Details is received from server.');
+        console.log('Properties Configurations is received from server.');
       }, (err) => {
         console.log('Can not get user account details');
         return throwError(err);

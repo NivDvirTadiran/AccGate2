@@ -5,7 +5,9 @@ import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import java.util.Set;
 
+import org.mockito.internal.stubbing.answers.ThrowsException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import tadiran.gateserver.models.Agent;
 import tadiran.gateserver.models.User;
 import org.slf4j.Logger;
@@ -113,14 +115,13 @@ public class JwtUtils {
   }
 
   public EWebApp getWebAppFromJwtToken(String token) {
-    return Jwts.parser()
-            .setSigningKey(jwtSecret)
-            .parseClaimsJws(token)
-            .getBody()
-            .get("WebApp",EWebApp.class);
+    logger.info("get(\"WebApp\").toString():   "+tokenToClaims(token).get("WebApp").toString());
+    logger.info("get(\"WebApp\").getClass().toString()"+tokenToClaims(token).get("WebApp").getClass().toString());
+
+    return EWebApp.valueOf(tokenToClaims(token).get("WebApp").toString());
   }
 
-  public boolean validateJwtToken(String authToken) {
+  public boolean validateJwtToken(String authToken)  {
     try {
       Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(authToken);
       return true;

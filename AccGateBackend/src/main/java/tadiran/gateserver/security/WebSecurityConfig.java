@@ -2,10 +2,8 @@ package tadiran.gateserver.security;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -25,23 +23,17 @@ import tadiran.gateserver.security.jwt.AuthTokenFilter;
 import tadiran.gateserver.security.services.AgentDetailsServiceImpl;
 import tadiran.gateserver.security.services.UserDetailsServiceImpl;
 
-import javax.servlet.http.HttpServletResponse;
-import java.util.Arrays;
-import java.util.List;
 
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(
-    //securedEnabled = true,
-    //jsr250Enabled = true,
+    securedEnabled = true,
+    jsr250Enabled = true,
     prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-/*
-  @Value("${tadiran.gate.pass-exp-days}")
-  private final Long passExpDays = 30L;
-*/
+
   @Autowired
-  UserDetailsServiceImpl userDetailsService; // = new UserDetailsServiceImpl(passExpDays);
+  UserDetailsServiceImpl userDetailsServiceImpl;
 
   @Autowired
   AgentDetailsServiceImpl agentDetailsService;
@@ -55,18 +47,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   }
 
 
+  @Bean
+  public CustomAuthenticationProvider authProvider() {
+    return new CustomAuthenticationProvider();
+  }
+
   @Override
   public void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
-    authenticationManagerBuilder.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
+    authenticationManagerBuilder
+            .authenticationProvider(authProvider())
+            .userDetailsService(userDetailsServiceImpl)
+            .passwordEncoder(passwordEncoder());
   }
-
-
-/*
-  @Override
-  public void configure(AuthenticationManagerBuilder userAuthenticationManagerBuilder) throws Exception {
-    userAuthenticationManagerBuilder.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
-  }
-*/
 
   @Bean
   @Override
@@ -101,10 +93,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     http.authorizeRequests()
             // Our public endpoints
             .antMatchers("/test/**").permitAll()
-            .antMatchers("/auth/**").permitAll()
-            .antMatchers("/**").permitAll()
+            .antMatchers("/auth/signin").permitAll()
+            .antMatchers("/login2/").permitAll()
+            .antMatchers("**/styles.scss").permitAll()
+            .antMatchers("/login2/login-main").permitAll()
+            .antMatchers("/assets/**").permitAll()
+            .antMatchers("/accGate/NotoSans-(?:Bold|Regular)\\.(?:woff|woff2|ttf)$").permitAll()
+            .antMatchers("/accGate/(?:scripts|(?:polyfills|vendor|main|runtime)-es2017|favicon)\\.(?:js|ico)$").permitAll()
+            .regexMatchers("\\/(?:auth|accGate\\/auth)\\/tsv_code(?:generate|validate)by(?:name|email)$").permitAll()
+            .regexMatchers("\\/(?:auth|accGate\\/auth)\\/(?:register-form|tsv_replace-pass-form|replace-pass-form|refreshtoken|forgotpassword)").permitAll()
             .antMatchers("/*").permitAll()
-            .antMatchers("/").permitAll()
             // Our private endpoints
             .anyRequest().authenticated();
 

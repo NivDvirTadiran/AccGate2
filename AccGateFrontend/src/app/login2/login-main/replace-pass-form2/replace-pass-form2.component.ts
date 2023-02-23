@@ -10,13 +10,16 @@ import {EventData} from "../../../_shared/event.class";
 import {workingModeConfiguration} from "../../../app.config";
 import {EventBusService} from "../../../_shared/event-bus.service";
 import {TokenStorageService} from "../../../_services/token-storage.service";
+import {Subscription} from "rxjs";
+
+
 
 @Component({
   selector: 'app-modal',
   templateUrl: './replace-pass-form2.component.html',
   styleUrls: ['./replace-pass-form2.component.css']
 })
-export class ReplacePassForm2Component {
+export class ReplacePassForm2Component  {
   replacePassForm: FormGroup;
   status = {
     isRepSuccess: false,
@@ -27,6 +30,8 @@ export class ReplacePassForm2Component {
     errorFieldSubmitted: {},
     closeResult: '',
   };
+
+  eventBusSub?: Subscription;
 
   public isLoading = false;
 
@@ -70,7 +75,11 @@ export class ReplacePassForm2Component {
   }
 
   ngOnInit(): void {
-  }
+    this.eventBusSub = this.eventBusService.on('submitReplacePassForm', () => {
+      this.onSubmit();
+    });
+  };
+
 
   onSubmit(): void {
     if (this.status.isRepSuccess) {

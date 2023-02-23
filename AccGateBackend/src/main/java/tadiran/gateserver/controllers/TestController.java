@@ -36,7 +36,7 @@ public class TestController {
     return new ResponseEntity<>(new ApiResponse(TSV, "Two Step Verification is " + (TSV ? "On" : "Off")), HttpStatus.OK);
   }
 
-  @GetMapping("/accountdetails")
+  @GetMapping("/getaccountdetails")
   @PreAuthorize("hasRole('User') or hasRole('SupervisorMonitor') or hasRole('Admin') or hasRole('SupervisorAdmin')")
   public String accountDetails() {
     return "User Content.";

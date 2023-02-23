@@ -3,9 +3,10 @@ package tadiran.gateserver.controllers;
 
 
 import java.lang.reflect.Type;
-import java.security.Principal;
 import java.time.LocalDate;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
@@ -13,10 +14,7 @@ import javax.validation.Valid;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import org.json.JSONArray;
-import org.json.JSONObject;
 import org.springframework.http.HttpStatus;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.AuthenticationException;
 import tadiran.gateserver.config.PropertiesManager;
@@ -82,12 +80,6 @@ public class AuthController {
   @Autowired
   ForgotPasswordService forgotPasswordService;
 
-  @Value("${tadiran.gate.pass-exp-days}")
-  private int passExpDays;
-
-  @Value("${tadiran.gate.PreviousAlertPassExpDays}")
-  private int previousAlertPassExpDays;
-
   @Value("${tadiran.gate.TSV}")
   private Boolean isTwoStepVerficiiationRequire;
 
@@ -96,6 +88,12 @@ public class AuthController {
   @CrossOrigin(origins = "https://localhost:4200", allowedHeaders = "Requestor-Type", exposedHeaders = "X-Get-Header")
   @PostMapping("/signin")
   public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
+    if (userDetailsService.isUsernameBlocked(loginRequest.getUsername())) {
+      return ResponseEntity
+              .badRequest()
+              .body(new MessageResponse("User account is locked"));
+    }
+
     if (!userRepository.existsByUsername(loginRequest.getUsername())) {
       logger.info("signin: user  not exist");
       if (userDetailsService.isSupCredentials(loginRequest) ||
@@ -105,34 +103,28 @@ public class AuthController {
                     .body(new MessageResponse("Error: A registry process should be made!"));
       }
     }
-
+/*
     if (forgotPasswordService.ValidateTemporaryPass(loginRequest.getUsername(), loginRequest.getPassword())) {
       return ResponseEntity
               .badRequest()
               .body(new MessageResponse("User credentials have expired"));
     }
-
+*/
 
     Authentication authentication = authenticationManager.authenticate(
         new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
 
     SecurityContextHolder.getContext().setAuthentication(authentication);
-    UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
 
-    User user = userRepository.findByUsername(userDetails.getUsername())
-            .orElseThrow(() -> new UsernameNotFoundException("User Not Found with username: " + userDetails.getUsername()));
+    User user = userRepository.findByUsername(authentication.getName())
+            .orElseThrow(() -> new UsernameNotFoundException("User Not Found"));
 
     Set<Role> roles = user.getRoles();
     List<String> rolesList = new ArrayList<String>();
     roles.forEach((role) -> rolesList.add(role.getERole().name()));
     logger.info("getRolesList: " + rolesList);
 
-      /*List<String> roles = userDetails.getAuthorities().stream()
-                .map(item -> item.getAuthority())
-                .collect(Collectors.toList());*/
-
-
-    RefreshToken refreshToken = refreshTokenService.createRefreshToken(userDetails.getId(), EWebApp.WA_GATE);
+    RefreshToken refreshToken = refreshTokenService.createRefreshToken(user.getId(), EWebApp.WA_GATE);
     String jwt = refreshTokenService.generateJwtToken(refreshToken);
 
     return ResponseEntity.ok(new JwtResponse(jwt,
@@ -415,6 +407,8 @@ public class AuthController {
   public ResponseEntity<?> passExpireDate(@Valid @RequestBody PassExpDateRequest request) {
 
     String requestAccessToken = request.getAccessToken();
+    Long passExpDays = ((Long) PropertiesManager.getProperty("tadiran.gate.pass-exp-days", Long.class));
+    Integer previousAlertPassExpDays = ((Integer) PropertiesManager.getProperty("tadiran.gate.PreviousAlertPassExpDays", Integer.class));
 
     return userRepository.findByUsername(jwtUtils.getUserNameFromJwtToken(requestAccessToken))
             .map(User::getPassLastModifiedOn)
@@ -454,22 +448,66 @@ public class AuthController {
 
   }
 
-  @PostMapping("/accountdetails")
-  public ResponseEntity<?> accountDetails(@Valid @RequestBody AccountDetailsRequest request) {
+  @PostMapping("/getaccountdetails")
+  public ResponseEntity<?> getAccountDetails(@Valid @RequestBody GetAccountDetailsRequest request) {
 
-    String requestAccessToken = request.getAccessToken();
+    String accountUsername = request.getUsername();
+    logger.info("getConfigurationData - username: "+accountUsername);
+    /*Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+    UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
+    String currentPrincipalName = userDetails.getUsername();*/
 
-    return userRepository.findByUsername(jwtUtils.getUserNameFromJwtToken(requestAccessToken))
+    return userRepository.findByUsername(accountUsername)
             .map(user ->
               ResponseEntity.ok(new AccountDetailsResponse(user.getUsername(),user.getEmail(),user.getPhone())
               ))
-            .orElseThrow(() -> new UsernameNotFoundException("User Not Found with username: " + jwtUtils.getUserNameFromJwtToken(requestAccessToken)));
+            .orElseThrow(() -> new UsernameNotFoundException("User Not Found with username: " + accountUsername));
 
   }
 
+  @PostMapping("/setaccountdetails")
+  public ResponseEntity<?> setAccountDetails(@Valid @RequestBody SetAccountDetailsRequest request) {
+    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+    UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
+    String currentPrincipalName = userDetails.getUsername();
+
+    Gson g = new Gson();
+    Type collectionType = new TypeToken<Collection<Detail>>(){}.getType();
+    Collection<Detail> collectionDetail = g.fromJson(request.getDetail(), collectionType);
+    List<String> detailName = new ArrayList<>();;
+
+    User userToChange = userRepository.findByUsername(currentPrincipalName)
+            .map(user -> {
+
+              for (Detail p  : collectionDetail) {
+                switch (p.getDetailName()) {
+                  case "phone":
+                    user.setPhone(p.getDetailValue());
+                    p.setDetailValue("* Your phone number has been updated");
+                    break;
+                  case "email":
+                    user.setEmail(p.getDetailValue());
+                    p.setDetailValue("* Your email address has been updated");
+                    break;
+                }
+              }
+              return user;
+              }).orElse(null);
+
+
+    if (userToChange != null && userRepository.save(userToChange).equals(userToChange)) {
+
+      return ResponseEntity.ok(new MessageResponse(g.toJson(collectionDetail)));
+    }
+    else
+
+    return ResponseEntity.badRequest().body(new MessageResponse("Error: Unable to save your details"));
+  }
+
+
   //@GetMapping("/getconfigurationdata")
-  //@PreAuthorize("hasRole('Admin') or hasRole('SupervisorAdmin')")
   @RequestMapping(value = "/getconfigurationdata", method = RequestMethod.GET)
+  //@PreAuthorize("hasRole('Admin') or hasRole('SupervisorAdmin')")
   public ResponseEntity<?> getConfigurationData() {
     Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
     UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
@@ -478,7 +516,6 @@ public class AuthController {
             .map(user -> (user.verifyERoleExist(ERole.Admin) || user.verifyERoleExist(ERole.SupervisorAdmin)))
             .orElse(false)) {ResponseEntity.status(HttpStatus.FORBIDDEN);}
 
-    this.propertiesManager.writeToProperties2();
     this.propertiesManager.loadProperties();
     this.propertiesManager.saveProperties();
     List<Prop> prop = this.propertiesManager.stringPropertyNames();
@@ -497,10 +534,15 @@ public class AuthController {
   //@PreAuthorize("hasRole('Admin') or hasRole('SupervisorAdmin')")
   @PostMapping("/setconfigurationdata")
   public ResponseEntity<?> setConfigurationData(@Valid @RequestBody SetConfigurationDataRequest request) {
+    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+    UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
+    String currentPrincipalName = userDetails.getUsername();
+    if (userRepository.findByUsername(currentPrincipalName)
+            .map(user -> (user.verifyERoleExist(ERole.Admin) || user.verifyERoleExist(ERole.SupervisorAdmin)))
+            .orElse(false)) {ResponseEntity.status(HttpStatus.FORBIDDEN);}
 
 
-
-                    Gson g = new Gson();
+    Gson g = new Gson();
     Type collectionType = new TypeToken<Collection<Prop>>(){}.getType();
     Collection<Prop> collectionProp = g.fromJson(request.getProp(), collectionType);
 
@@ -519,12 +561,19 @@ public class AuthController {
 
 
   @PostMapping("/refreshtoken")
-  public ResponseEntity<?> refreshtoken(@Valid @RequestBody TokenRefreshRequest request ) {
+  public ResponseEntity<?> refreshtoken(@Valid @RequestBody TokenRefreshRequest request/*, @RequestHeader (name="Authorization") String requestAccessToken*/ ) {
 
     //logger.info("/refreshtoken requested by url source: ", authException.getMessage());
+/*
+    if (StringUtils.hasText(requestAccessToken) && requestAccessToken.startsWith("Bearer ")) {
+      requestAccessToken = requestAccessToken.substring("Bearer ".length());
+    }
+*/
     String requestRefreshToken = request.getRefreshToken();
-    String requestAccessToken = request.getAccessToken();
-    //EWebApp webAppCurrent = jwtUtils.getWebAppFromJwtToken(requestAccessToken);
+    EWebApp webAppCurrent =  refreshTokenService.findByToken(requestRefreshToken)
+            .map(refreshTokenService::verifyExpiration)
+            .map(RefreshToken::getWebApp).orElseThrow(() -> new TokenRefreshException(requestRefreshToken,
+                    "WebApp is not read and verify!")); //jwtUtils.getWebAppFromJwtToken(requestAccessToken);
     return refreshTokenService.findByToken(requestRefreshToken)
             .map(refreshTokenService::verifyExpiration)
             .map(RefreshToken::getId)
@@ -535,10 +584,12 @@ public class AuthController {
               return ResponseEntity.ok(new TokenRefreshResponse(token, newRefreshToken.getToken()));
             })*/
 
+
             .map(tokenId -> {
+              logger.info("A token refresh request has been granted - WebApp: "+webAppCurrent);
               //String token = jwtUtils.generateToken(tokenId );
               RefreshToken newRefreshToken = (refreshTokenService.refreshRefreshToken(tokenId));
-              newRefreshToken = refreshTokenService.setWebApp(newRefreshToken, EWebApp.WA_GATE /*webAppCurrent*/);
+              newRefreshToken = refreshTokenService.setWebApp(newRefreshToken, webAppCurrent);
               String token = refreshTokenService.generateJwtToken(newRefreshToken);
               return ResponseEntity.ok(new TokenRefreshResponse(token, newRefreshToken.getToken()));
             })
@@ -566,7 +617,7 @@ public class AuthController {
             //.filter(user -> user.getRoles().stream().anyMatch(role -> role.isSatisfied(request.getRequiredRoles())))
             .map(user -> {
               boolean isPermitted = user.getRoles().stream().anyMatch(role -> role.isSatisfied(request.getRequiredRoles()));
-              RefreshToken newRefreshToken = refreshTokenService.createRefreshToken(user.getId(), EWebApp.WA_GATE);
+              RefreshToken newRefreshToken = refreshTokenService.createRefreshToken(user.getId(), webApp);
               String newAccessToken = refreshTokenService.generateJwtToken(newRefreshToken);
               logger.info("authenticateWebAppTab - request.getRequiredRoles():  " + request.getRequiredRoles().toString());
               logger.info("authenticateWebAppTab - user.getRoles().stream():  " + user.getRoles().stream().toString());

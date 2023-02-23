@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import tadiran.gateserver.config.PropertiesManager;
 import tadiran.gateserver.models.User;
@@ -16,6 +17,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import tadiran.gateserver.repository.UserRepository;
 
 public class UserDetailsImpl implements UserDetails {
   private static final Logger logger = LoggerFactory.getLogger(UserDetailsImpl.class);
@@ -35,15 +37,20 @@ public class UserDetailsImpl implements UserDetails {
 
   private Collection<? extends GrantedAuthority> authorities;
 
+  private boolean isAccountNonLocked;
+
+  @Autowired
+  UserRepository userRepository;
 
   public UserDetailsImpl(Long id, String username, String email, String password,
-      Collection<? extends GrantedAuthority> authorities, LocalDate passDate) {
+      Collection<? extends GrantedAuthority> authorities, LocalDate passDate, boolean isAccountNonLocked) {
     this.id = id;
     this.username = username;
     this.email = email;
     this.password = password;
     this.authorities = authorities;
     this.passDate = passDate;
+    this.isAccountNonLocked = isAccountNonLocked;
   }
 
   public static UserDetailsImpl build(User user) {
@@ -57,7 +64,8 @@ public class UserDetailsImpl implements UserDetails {
         user.getEmail(),
         user.getPassword(), 
         authorities,
-        user.getPassLastModifiedOn());
+        user.getPassLastModifiedOn(),
+        user.isAccountNonLocked());
   }
 
 
@@ -91,7 +99,7 @@ public class UserDetailsImpl implements UserDetails {
 
   @Override
   public boolean isAccountNonLocked() {
-    return true;
+    return this.isAccountNonLocked;
   }
 
   @Override

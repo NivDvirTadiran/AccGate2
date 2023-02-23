@@ -50,11 +50,7 @@ export default class MyAccountFormComponent implements OnInit, AfterViewChecked,
   @Input() regErrorMessage: any = {};
   @Input() displayToolButton: boolean = false;
 
-  openReplacePassword() {
-    //this.replacePassFormService.open(ReplacePassForm2Component);
-  }
 
-  @ViewChild('formHeader', { static: false }) mainHeader?: ElementRef;
   @ViewChild('storybook-input', { static: false }) storybookInput?: ElementRef;
 
 
@@ -66,26 +62,18 @@ export default class MyAccountFormComponent implements OnInit, AfterViewChecked,
   storyInputsInOrder: AccountInput[] = [];
 
   @Input() mForm: FormGroup  = new FormGroup({});
-  /*username: new FormControl('', Validators.minLength(2)),
-  password: new FormControl('T@diran2022', Validators.minLength(2)),
-  email: new FormControl('', Validators.email),
-  phone: new FormControl(null, Validators.pattern(new RegExp("[0-9 ]{12}")))*/
 
   changeLog: string[] = [];
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes.isRegSuccess) {
       if (!changes.isRegSuccess.previousValue &&  changes.isRegSuccess.currentValue) {
-        console.warn('Register Request Succeeded!');
-        this.loadSuccessfullyLoggedIn();
+        console.warn('Change Detail Succeeded!');
       }
     }
-    /*if (changes.isConfigFailed || changes.configErrorMessage) {
-      console.log('isConfigFailed' + this.configErrorMessage['message'])
-    }*/
   }
 
-
+  @Input() isLoading: boolean = false;
 
   @Input() isRegSuccess = false;
 
@@ -93,13 +81,15 @@ export default class MyAccountFormComponent implements OnInit, AfterViewChecked,
   @Output() onPinInput: EventEmitter<any> = new EventEmitter();
 
   // tslint:disable-next-line: no-output-on-prefix
-  @Output() onArchiveInput: EventEmitter<any> = new EventEmitter();
+  @Output() onSaveChanges: EventEmitter<any> = new EventEmitter();
 
   @Output() sendRegReq: EventEmitter<void> = new EventEmitter();
 
   @Output() clickXButton: EventEmitter<void> = new EventEmitter();
 
   @Output() changePassword: EventEmitter<void> = new EventEmitter();
+
+  @Output() changedDetailSave: EventEmitter<String> = new EventEmitter();
 
 
 
@@ -144,12 +134,6 @@ export default class MyAccountFormComponent implements OnInit, AfterViewChecked,
 
   ngAfterViewChecked(): void {
     //console.log(this.childComp?.length)
-  }
-
-  loadSuccessfullyLoggedIn(){
-    this.renderer.setProperty(this.mainHeader?.nativeElement ,'innerHTML','You have successfully complete your registeration!');
-
-
   }
 
 }
