@@ -1,4 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {PopoverOptions} from "../../directive/popover.interface";
+import {ActionAvatarComponent} from "../../actions/action-avatar/action-avatar.component";
+
 
 
 
@@ -60,6 +63,8 @@ export default class Background1Component {
 
   constructor() {}
 
+  @Output()
+  changeLang: EventEmitter<Event> = new EventEmitter();
 
 
 

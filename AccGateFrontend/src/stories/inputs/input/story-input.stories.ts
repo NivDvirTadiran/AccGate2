@@ -5,6 +5,8 @@ import {StoryInputComponent} from "./story-input.component";
 import {CommonModule} from "@angular/common";
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import PassStrengthComponent from "src/stories/pass-strength/pass-strength.component";
+import {TranslateService} from "../../../app/storybook/pipes/translate/translate.service";
+import {TranslatePipe} from "../../../app/storybook/pipes/translate/translate.pipe";
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
@@ -12,17 +14,14 @@ export default {
   component: StoryInputComponent,
   decorators: [
     moduleMetadata({
-      declarations: [ StoryInputComponent, PassStrengthComponent  ],
+      declarations: [ StoryInputComponent, PassStrengthComponent, TranslatePipe, TranslateService  ],
       imports: [CommonModule, FormsModule, ReactiveFormsModule ],
     }),
     componentWrapperDecorator(story => `<div style="margin: 3em">${story}</div>`),
   ],
-  /*argTypes: {
-    registerForm: new FormGroup({
-      username: new FormControl('', Validators.minLength(2)),
-      password: new FormControl('zaqwsx', Validators.minLength(2))
-    }),
-  },*/
+  argTypes: {
+    direction: {control: { type: 'radio' }},
+  },
   excludeStories: /.*Data$/,
 } as Meta;
 
@@ -36,6 +35,7 @@ const Template: Story = args => ({
     ...args,
     onPinInput: actionsData.onPinInput,
     onArchiveInput: actionsData.onArchiveInput,
+
   },
 });
 
@@ -57,6 +57,8 @@ Default.args = {
     password: new FormControl('', []),
   },*/
   hideInput: false,
+  direction: 'rtl',
+
 
 };
 
@@ -76,6 +78,7 @@ Username.args = {
     ...Default.args['currentForm'],
     password: new FormControl('ea6', Validators.minLength(2)),
   },
+  direction: 'rtl',
 };
 
 export const Password = Template.bind({});

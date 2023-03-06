@@ -1,25 +1,25 @@
 <div id="parent3"  [hidden]="storyInput?.hide" [ngClass]="classes"  >
   <div id="parent1" >
-    <div class="main"  [formGroup]="this.currentForm">
-      <div>
-        <p class="user-name D-Caps-Regular">{{storyInput?.state}}</p>
+    <div class="main"  [formGroup]="this.currentForm" >
+      <div  style="{{_translate?.currentDir == 'rtl' ? 'text-align: right;' : 'text-align: left;'}}" >
+        <p  >{{storyInput.state | translate }}</p>
 
         <br>
         <span [ngSwitch]="storyInput?.type">
           <span *ngSwitchCase="'password'" >
-            <storybook-button-continue   size="small" label="Change Password" type="button" (onClick)="this.changePassword.emit()" >
+            <storybook-button-continue   size="small" label="{{'Change Password' | translate}}" type="button" (onClick)="this.changePassword.emit()" >
             </storybook-button-continue>
           </span>
           <span *ngSwitchCase="'enable-profile-picture'" >
-            <label [attr.aria-label]="storyInput?.id + ''"  for="{{ storyInput?.title }}" class="UserNameType" >{{storyInput?.title}}  </label>
+            <label [attr.aria-label]="storyInput?.id + ''"  for="{{ storyInput?.title }}" class="UserNameType" >{{storyInput.title | translate}}  </label>
             <div class="user-checkbox-header">
             <input  style="position: relative; margin: 0 2px 0 2px;   top: 1px; right: 3px;"  type="checkbox"
                     (change)="onClickButtonSave()"/>
-            <label class="EnableProfilePicture">Enable Profile Picture</label>
+            <label class="EnableProfilePicture">{{ 'Enable Profile Picture' | translate }}</label>
 
 
             </div>
-            <p class="confirmation-change D-Caps-Regular">{{ this.regErrorMessage | apiErrorMessage: param }}</p>
+            <p class="confirmation-change D-Caps-Regular">{{ this.regErrorMessage | translate }}</p>
               <!--table >
                 <tr>{{ this.regErrorMessage['message'] | apiErrorMessage: param }}</tr>
                 <tr  *ngFor="let message of this.regErrorMessage['message']">{{message.trim() | apiErrorMessage: param }}</tr>
@@ -37,7 +37,7 @@
                   class="inputField"
                   name="{{storyInput?.title}}"
                   formControlName="{{storyInput?.title}}"
-                  placeholder="{{storyInput?.placeholder}}"
+                  placeholder="{{storyInput.placeholder | translate}}"
                   required />
               </div>
 
@@ -51,7 +51,7 @@
             </storybook-button-edit-save>
 
             <p *ngIf="(this.regErrorMessage?.detailName == storyInput?.name)" class="confirmation-change D-Caps-Regular"
-            >{{ this.regErrorMessage.detailValue  | apiErrorMessage: param }}</p>
+            >{{ this.regErrorMessage.detailValue | translate }}</p>
 
           </span>
 

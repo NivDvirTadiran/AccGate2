@@ -4,6 +4,7 @@ import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/fo
 import {StoryInput} from "src/stories/inputs/input/story-input.model";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {TokenStorageService} from "../../../_services/token-storage.service";
+import {TranslateService} from "../../../storybook/pipes/translate/translate.service";
 export interface TSVData {
   username: string;
   email: string;
@@ -44,7 +45,8 @@ export default class VerificationForm2Component implements OnInit {
               private renderer: Renderer2,
               private tokenStorage: TokenStorageService,
               public dialogRef: MatDialogRef<VerificationForm2Component>,
-              @Inject(MAT_DIALOG_DATA) public data: TSVData) {
+              @Inject(MAT_DIALOG_DATA) public data: TSVData,
+              public _translate: TranslateService) {
     this.verificationForm = new FormGroup({
       username: new FormControl(data.username.toString(), Validators.minLength(2)),
       email: new FormControl(data.email.toString(), Validators.email),

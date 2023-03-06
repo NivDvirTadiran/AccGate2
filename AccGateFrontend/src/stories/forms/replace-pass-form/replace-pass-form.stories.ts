@@ -13,6 +13,8 @@ import {ButtonExComponent} from "../../buttons/button-ex/button-ex.component";
 import {ButtonSuccessfullyComponent} from "../../buttons/button-successfully/button-successfully.component";
 //import {Password} from "../../inputs/story-input.stories";
 import PassStrengthComponent from "../../pass-strength/pass-strength.component";
+import {TranslatePipe} from "../../../app/storybook/pipes/translate/translate.pipe";
+import {TranslateService} from "../../../app/storybook/pipes/translate/translate.service";
 //import {ApiErrorMessagePipe} from "../../../app/storybook/pipes/api-error-message.pipe";
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
@@ -22,7 +24,8 @@ export default {
   decorators: [
     moduleMetadata({
       declarations: [ ReplacePassFormComponent, CardComponent, StoryInputComponent, ButtonContinueComponent,
-                      ButtonExComponent, ButtonSuccessfullyComponent, PassStrengthComponent, ],
+                      ButtonExComponent, ButtonSuccessfullyComponent, PassStrengthComponent,
+                      TranslatePipe, TranslateService],
       imports: [CommonModule, FormsModule, ReactiveFormsModule],
     }),
     componentWrapperDecorator(story => `<div style="margin: 3em">${story}</div>`),

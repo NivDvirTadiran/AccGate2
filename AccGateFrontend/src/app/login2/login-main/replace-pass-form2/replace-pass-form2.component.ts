@@ -11,6 +11,7 @@ import {workingModeConfiguration} from "../../../app.config";
 import {EventBusService} from "../../../_shared/event-bus.service";
 import {TokenStorageService} from "../../../_services/token-storage.service";
 import {Subscription} from "rxjs";
+import {TranslateService} from "../../../storybook/pipes/translate/translate.service";
 
 
 
@@ -53,7 +54,8 @@ export class ReplacePassForm2Component  {
               private eventBusService: EventBusService,
               private tokenStorageService: TokenStorageService,
               public dialogRef: MatDialogRef<ReplacePassForm2Component>,
-              @Inject(MAT_DIALOG_DATA) public data: DialogData) {
+              @Inject(MAT_DIALOG_DATA) public data: DialogData,
+              public _translate: TranslateService) {
     this.replacePassForm = new FormGroup({
       userName: new FormControl(data.username, Validators.required),
       oldPassword: new FormControl(data.password, Validators.minLength(1)),

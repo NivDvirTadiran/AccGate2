@@ -23,6 +23,7 @@ import {
 import {PopoverOptions} from "src/stories/directive/popover.interface";
 import {ActionInputComponent} from "src/stories/actions/action-input/action-input.component";
 import {ActionInput} from "src/stories/actions/action-input/action-input.interface";
+import {TranslateService} from "../../../app/storybook/pipes/translate/translate.service";
 
 
 export interface GroupForm {
@@ -59,6 +60,8 @@ export class AccountInputComponent implements OnInit{
   onSaveChanges = new EventEmitter<String>();
 
   @Input() isLoading: boolean = false;
+
+  @Input() _translate?: TranslateService;
 
   @Output() changePassword: EventEmitter<void> = new EventEmitter();
 

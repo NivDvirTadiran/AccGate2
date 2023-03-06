@@ -14,6 +14,8 @@ import {ButtonSuccessfullyComponent} from "../../buttons/button-successfully/but
 import {ButtonConfigurationComponent} from "../../buttons/button-configuration/button-configuration.component";
 import {ConfigurationInputComponent} from "../../inputs/configuration-input/configuration-input.component";
 import {PinCodeLength, PinCodeValDura} from "src/stories/inputs/configuration-input/configuration-input.stories";
+import {TranslatePipe} from "../../../app/storybook/pipes/translate/translate.pipe";
+import {TranslateService} from "../../../app/storybook/pipes/translate/translate.service";
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
@@ -22,7 +24,7 @@ export default {
   decorators: [
     moduleMetadata({
       declarations: [ ConfigurationFormComponent, CardComponent, ConfigurationInputComponent, ButtonContinueComponent,
-                      ButtonExComponent, ButtonSuccessfullyComponent, ButtonConfigurationComponent],
+          TranslatePipe, TranslateService, ButtonExComponent, ButtonSuccessfullyComponent, ButtonConfigurationComponent],
       imports: [CommonModule, FormsModule, ReactiveFormsModule],
     }),
     componentWrapperDecorator(story => `<div style="margin: 3em">${story}</div>`),

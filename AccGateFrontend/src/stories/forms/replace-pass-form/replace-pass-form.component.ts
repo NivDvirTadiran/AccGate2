@@ -15,6 +15,7 @@ import { StoryInput } from "src/stories/inputs/input/story-input.model";
 import { AuthService } from 'src/app/_services/auth.service';
 import {PopoverOptions} from "../../directive/popover.interface";
 import {ActionInputComponent} from "../../actions/action-input/action-input.component";
+import {TranslateService} from "../../../app/storybook/pipes/translate/translate.service";
 //import {BehaviorSubject} from "rxjs";
 //import {AccountInputComponent} from "../inputs/input/story-input.component";
 
@@ -52,6 +53,7 @@ export default class ReplacePassFormComponent implements OnInit, AfterViewChecke
 
   @Input() isRepSuccess = false;
 
+  @Input() _translate?: TranslateService;
 
   @Input() repErrorMessage = '';
 
@@ -158,7 +160,7 @@ export default class ReplacePassFormComponent implements OnInit, AfterViewChecke
   }
 
   loadSuccessfullyLoggedIn(){
-    this.renderer.setProperty(this.mainHeader?.nativeElement ,'innerHTML','You have successfully changed your password!');
+    this.renderer.setProperty(this.mainHeader?.nativeElement ,'innerHTML',this._translate?.translate('You have successfully changed your password!'));
   }
 
 }

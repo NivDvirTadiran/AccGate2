@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule, HashLocationStrategy, LocationStrategy} from '@angular/common';
 //import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
@@ -50,6 +50,12 @@ import {ButtonConfigurationComponent} from "../../stories/buttons/button-configu
 import ConfigurationFormComponent from "../../stories/forms/configuration-form/configuration-form.component";
 import {ConfigurationInputComponent} from "../../stories/inputs/configuration-input/configuration-input.component";
 import {ButtonEditSaveComponent} from "../../stories/buttons/button-edit-save/button-edit-save.component";
+import {TranslatePipe, } from "./pipes/translate/translate.pipe";
+import {TranslateService, TRANSLATION_PROVIDERS} from "./pipes/translate/translate.service";
+import {} from "./pipes/translate/translations";
+import {PopoverLanguageDirective} from "../../stories/directive/bubble-language/popover-language.directive";
+import {BubbleLanguageComponent} from "../../stories/directive/bubble-language/bubble-language.component";
+
 
 
 
@@ -71,13 +77,15 @@ import {ButtonEditSaveComponent} from "../../stories/buttons/button-edit-save/bu
         HighlightDirective,
         ReplacePassFormComponent,
         PassStrengthComponent,
-        ApiErrorMessagePipe,
+        ApiErrorMessagePipe, TranslatePipe,
         AvatarComponent,
         DynamicCompDirective,
         ActionAvatarComponent, PopoverDirective, BubbleAvatarComponent,
         ActionInputComponent, PopoverInputDirective, BubbleInputComponent,
+        /*ActionInputComponent,*/ PopoverLanguageDirective, BubbleLanguageComponent,
         ButtonExclamationMarkComponent,
         Spinner1Component,
+
 
 
     ],
@@ -85,7 +93,8 @@ import {ButtonEditSaveComponent} from "../../stories/buttons/button-edit-save/bu
     CommonModule,
     FormsModule, ReactiveFormsModule, MdbPopoverModule, MatButtonModule,
   ],
-  providers: [ ApiErrorMessageService],
+  providers: [ ApiErrorMessageService, TRANSLATION_PROVIDERS, TranslateService,
+  ],
   exports: [
     ButtonGlobeComponent, Background1Component, ButtonTadiranComponent, ButtonLanguageComponent,
     ButtonFortestComponent,
@@ -101,12 +110,14 @@ import {ButtonEditSaveComponent} from "../../stories/buttons/button-edit-save/bu
     HighlightDirective,
     ReplacePassFormComponent,
     PassStrengthComponent,
+    TranslatePipe,
     AvatarComponent,
     DynamicCompDirective,
     ActionAvatarComponent   , PopoverDirective, BubbleAvatarComponent,
     ActionInputComponent, PopoverInputDirective, BubbleInputComponent,
     ButtonExclamationMarkComponent,
     Spinner1Component,
+
 
 
 

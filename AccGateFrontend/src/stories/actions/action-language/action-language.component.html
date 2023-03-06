@@ -1,0 +1,19 @@
+<div class="password-alert-text">
+  <form name="languages" >
+    <input type="radio" id="English" name="fav_language" (click)="changeLanguage('eng')" value="English" checked >
+    <label for="English">{{this._translate.translate('English')}}</label><br>
+    <input type="radio" id="Hebrew" name="fav_language" (click)="changeLanguage('heb')" value="Hebrew">
+    <label for="Hebrew">{{this._translate.translate('Hebrew')}}</label><br>
+    <input type="radio" id="Spanish" name="fav_language" (click)="changeLanguage('esp')" value="Spanish">
+    <label for="Spanish">{{this._translate.translate('Spanish')}}</label><br>
+    <input type="radio" id="Chainese" name="fav_language" (click)="changeLanguage('chi')" value="Chainese">
+    <label for="Chainese">{{this._translate.translate('Chinese')}}</label><br>
+    <input type="radio" id="Russian" name="fav_language" (click)="changeLanguage('esp')" value="Russian">
+    <label for="Russian">{{ this._translate.translate("Russian") }}</label><br>
+  </form>
+
+  <!-- Show Current lang -->
+<!--p>"{{this._translate.currentLang}}"</p>
+<p>"{{this._translate.currentDir}}"</p-->
+
+</div>

@@ -6,6 +6,7 @@
                   [isLoading]="isLoading"
                   [storyInputs]="storyInputsInOrder"
                   [mForm]="registerForm"
+                  [direction]="this._translate.currentDir"
                   (sendRegReq)="onSubmit()"
                   (clickXButton)="this.dialogRef.close('xbutton')">
 </storybook-registry-form>

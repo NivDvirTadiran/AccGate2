@@ -6,7 +6,7 @@
   <div  class="h-100 d-flex align-items-center justify-content-center">
     <storybook-button-ex id="button-ex" (click)="this.clickXButton.emit()" ></storybook-button-ex>
     <div  #formHeader class="form-header">
-      Forgot Password?
+      {{'Forgot Password?'  | translate }}
     </div>
 
     <br>
@@ -18,7 +18,7 @@
 
         <div class="second-header" style="top: 5px;">
           <p class="second-header-text"  #secondHeader href="#/login" style="position: relative; top: 5px; text-align: left">
-            {{ 'Please enter your User Name:'}}<br>
+            {{ 'Please enter your User Name:'  | translate}}<br>
           </p>
         </div>
 
@@ -50,17 +50,17 @@
         <div class="login-button">
           <div class="login-failed-message" role="alert" style="position: relative; top: 15px">
             <table *ngIf="this.status?.isVerFailed">
-              <tr>{{ this.status?.verErrorMessage.toString()  | apiErrorMessage: param }}</tr>
-              <tr  *ngFor="let message of this.status?.verErrorMessage.data?.confirmPassword.split(', ')">{{message.trim() | apiErrorMessage: param }}</tr>
+              <tr>{{ this.status?.verErrorMessage.toString()   | translate }}</tr>
+              <tr  *ngFor="let message of this.status?.verErrorMessage.data?.confirmPassword.split(', ')">{{message.trim()  | translate }}</tr>
             </table>
           </div>
 
-          <storybook-button-continue #formButton size="small" [label]="this.formButtonLabel" type="button"
+          <storybook-button-continue #formButton size="small" [label]="this.formButtonLabel  | translate" type="button"
                                      (onClick)="this.onSubmit()" style="position: relative; top: 15px"></storybook-button-continue>
 
 
           <a *ngIf="status.isRecSuccess && !status.isVerSuccess" class="resend-verification"  (click)="generateNewCodeFor2SV.emit()" style="position: relative; top: 40px;">
-            {{ 'Send me a reset password once again'  }}
+            {{ 'Send me a reset password once again'  | translate }}
           </a>
 
         </div>

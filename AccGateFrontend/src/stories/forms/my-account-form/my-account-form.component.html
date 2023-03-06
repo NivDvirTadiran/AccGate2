@@ -5,11 +5,11 @@
   <storybook-card class="card-container"></storybook-card>
   <div  class="h-100 d-flex align-items-center justify-content-center">
     <storybook-button-ex id="button-ex" (click)="this.clickXButton.emit()" ></storybook-button-ex>
-    <button id="button-log-out" (click)="this.doLogout($event)" >Log out</button>
+    <button id="button-log-out" (click)="this.doLogout($event)" >{{ 'Log out' | translate }}</button>
     <label style="top: 1px; display: inline;">Log out</label>
-    <div class="form-header">
+    <div class="form-header" style="{{_translate?.currentDir == 'rtl' ? 'text-align: right;' : 'text-align: left;'}}" >
 
-      <a class="main-form-header" >My Account</a>
+      <a class="main-form-header" >{{'My Account' | translate}} </a>
       <br>
 
     <br>
@@ -31,7 +31,8 @@
                 [storyInput]="storyInputsInOrder[0]"
                 (onSaveChanges)="onSaveChanges.emit($event)"
                 [regErrorMessage]="regErrorMessage"
-                [currentForm]="mForm">
+                [currentForm]="mForm"
+                [_translate]="_translate">
               </storybook-account-input>
               <div class="thematic-break"></div>
               <storybook-account-input
@@ -39,6 +40,7 @@
                 (onSaveChanges)="onSaveChanges.emit($event)"
                 [currentForm]="mForm"
                 [regErrorMessage]="regErrorMessage"
+                [_translate]="_translate"
                 [conditionList]="['requiresPhone']">
               </storybook-account-input>
               <div class="thematic-break"></div>
@@ -47,6 +49,7 @@
                 (onSaveChanges)="onSaveChanges.emit($event)"
                 [regErrorMessage]="regErrorMessage"
                 [currentForm]="mForm"
+                [_translate]="_translate"
                 [conditionList]="['requiresEmail']">
               </storybook-account-input>
               <div class="thematic-break"></div>
@@ -54,18 +57,20 @@
                 [storyInput]="storyInputsInOrder[3]"
                 (changePassword)="changePassword.emit($event)"
                 [regErrorMessage]="regErrorMessage"
-                [currentForm]="mForm">
+                [currentForm]="mForm"
+                [_translate]="_translate">
               </storybook-account-input>
 
             </div>
 
             <div class="login-failed-message" role="alert" >
-              <p *ngIf="isRegFailed">*  {{ this.regErrorMessage | apiErrorMessage: param }}</p>
+              <p *ngIf="isRegFailed">*  {{ this.regErrorMessage  }}</p>
             </div>
 
 
-            <storybook-button-configuration *ngIf="displayToolButton" class="button-configuration" size="large"
-                                            (click)="this.openUser.emit()">
+            <storybook-button-configuration *ngIf="displayToolButton" class="button-configuration" size="small"
+                                            style="{{_translate?.currentDir == 'rtl' ? 'left: 105px;' : 'right: -40px;'}}"
+                                            (click)="this.openUser.emit()" [_translate]="_translate" >
             </storybook-button-configuration>
         </div>
       </div>

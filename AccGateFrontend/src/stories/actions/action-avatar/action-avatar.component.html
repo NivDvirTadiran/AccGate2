@@ -1,6 +1,6 @@
-<div class="password-alert-text">
+<div [dir]="_translate.currentDir" class="password-alert-text">
 <p>
   {{this.actionHeader}}
 </p>
-<a [highlight]="'red'" [colorName]="'red'" (click)="this.actionButton.emit()" class="action-text" >Change it now ></a>
+<a [highlight]="'red'" [colorName]="'red'" (click)="this.actionButton.emit()" class="action-text" >{{'Change it now >' | translate}}</a>
 </div>

@@ -6,7 +6,7 @@
   <div  class="h-100 d-flex align-items-center justify-content-center">
     <storybook-button-ex id="button-ex"  (click)="this.clickXButton.emit()" ></storybook-button-ex>
     <div class="form-header">
-      <a >Aeonix App Center</a>
+      <a >{{'Aeonix App Center' | translate}}</a>
     </div>
 
     <br>
@@ -32,10 +32,11 @@
               [currentForm]="mForm">
             </storybook-input-->
 
-        <div class="second-header" style="top: 5px;">
-          <a class="second-header-text"  href="#/login" style="position: relative; top: 5px; text-align: left">
-            {{ 'Please enter the Verification Code'}}<br>
-            {{ 'you received in your mail:'  }}
+        <div class="second-header" style="top: 5px;" >
+          <a [dir]="_translate?.currentDir" class="second-header-text"  href="#/login"
+             style="{{_translate?.currentDir == 'rtl' ? 'text-align: right;' : 'text-align: left;'}}">
+            {{ 'Please enter the Verification Code' | translate}}<br>
+            {{ 'you received in your mail:' | translate }}
           </a>
       </div>
 
@@ -57,16 +58,16 @@
       <div class="login-button">
             <div class="login-failed-message" role="alert" style="position: relative; top: 15px">
               <table *ngIf="this.status?.isVerFailed">
-                <tr>{{ this.status?.verErrorMessage.toString()  | apiErrorMessage: param }}</tr>
-                <tr  *ngFor="let message of this.status?.verErrorMessage.data?.confirmPassword.split(', ')">{{message.trim() | apiErrorMessage: param }}</tr>
+                <tr>{{ this.status?.verErrorMessage.toString()  | translate }}</tr>
+                <tr  *ngFor="let message of this.status?.verErrorMessage.data?.confirmPassword.split(', ')">{{message.trim() | translate }}</tr>
               </table>
             </div>
 
-            <storybook-button-continue size="medium" label="Login " type="button" (click)="onSubmit()" style="position: relative; top: 15px"></storybook-button-continue>
+            <storybook-button-continue size="medium" label="{{'Login' | translate}}" type="button" (click)="onSubmit()" style="position: relative; top: 15px"></storybook-button-continue>
 
 
-            <a *ngIf="!status.isVerSuccess" class="resend-verification"  (click)="generateNewCodeFor2SV.emit()" style="position: relative; top: 40px;">
-              {{ 'resend the verification code'  }}
+            <a *ngIf="!status.isVerSuccess" class="resend-verification" [dir]="_translate?.currentDir" (click)="generateNewCodeFor2SV.emit()" style="position: relative; top: 40px;">
+              {{ 'resend the verification code' | translate }}
             </a>
 
       </div>

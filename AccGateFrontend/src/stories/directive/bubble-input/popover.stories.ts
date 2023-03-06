@@ -30,7 +30,7 @@ const Template: Story<PopoverInputDirective> = (args) => ({
     declarations: [PopoverInputDirective, ActionAvatarComponent, BubbleAvatarComponent],
     imports: [CommonModule]
   },
-  template: `<button [twPopover] = "mPopover" > PopoverDirective Example </button>`
+  template: `<button [inputPopover] = mPopover > PopoverDirective Example </button>`
 });
 
 export const Default = Template.bind({});

@@ -5,6 +5,7 @@ import {StoryInput} from "src/stories/inputs/input/story-input.model";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {DialogData} from "../login-main.component";
 import {PasswordValidators} from "../replace-pass-form2/replace-pass-form2.component";
+import {TranslateService} from "../../../storybook/pipes/translate/translate.service";
 
 
 
@@ -40,6 +41,7 @@ export default class RegisterForm2Component implements OnInit {
   ];
 
   constructor(private authService: AuthService,
+              public _translate: TranslateService,
               private renderer: Renderer2,
               public dialogRef: MatDialogRef<RegisterForm2Component>,
               @Inject(MAT_DIALOG_DATA) public data: DialogData) {

@@ -483,11 +483,11 @@ public class AuthController {
                 switch (p.getDetailName()) {
                   case "phone":
                     user.setPhone(p.getDetailValue());
-                    p.setDetailValue("* Your phone number has been updated");
+                    p.setDetailValue("* your phone number has been updated");
                     break;
                   case "email":
                     user.setEmail(p.getDetailValue());
-                    p.setDetailValue("* Your email address has been updated");
+                    p.setDetailValue("* your email address has been updated");
                     break;
                 }
               }

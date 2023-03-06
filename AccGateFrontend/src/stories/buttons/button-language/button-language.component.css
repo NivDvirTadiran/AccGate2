@@ -1,9 +1,14 @@
 .Vector {
   position: absolute;
   top: 54px;
-  right: 68px;
-  width: 26px;
+  right: 38px;
+  width: 29px;
   height: 26px;
+
+}
+
+button {
+  padding-left: 0;
 }
 
 img.Language-Desktop-Icon {

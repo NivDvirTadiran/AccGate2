@@ -11,6 +11,8 @@ import {EventBusService} from "src/app/_shared/event-bus.service";
 import MyAccountForm2Component from "../my-account-form2/my-account-form2.component";
 import VerificationForm2Component from "../../login-main/verification-form2/verification-form2.component";
 import {EventData} from "src/app/_shared/event.class";
+import {TranslateService} from "../../../storybook/pipes/translate/translate.service";
+
 
 
 
@@ -19,6 +21,7 @@ export interface DialogData {
   username: string;
   password: string;
 }
+
 
 
 
@@ -60,7 +63,8 @@ export default class PortalComponent implements OnInit {
               private activatedRoute:ActivatedRoute,
               public myAccountFormDialog: MatDialog,
               public replacePassFormDialog: MatDialog,
-              public verificationFormDialog: MatDialog) {
+              public verificationFormDialog: MatDialog,
+              private _translate: TranslateService) {
     this.TOKEN_KEY = AppConfig.endpoints.TOKEN_KEY;
   }
 

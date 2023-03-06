@@ -6,13 +6,17 @@ import { StoryInputComponent } from "../../inputs/input/story-input.component";
 import {CommonModule} from "@angular/common";
 
 import * as StoryInput from "../../inputs/input/story-input.stories";
-import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {ButtonContinueComponent} from "../../buttons/button-continue/button-continue.component";
 import PassStrengthComponent from "../../pass-strength/pass-strength.component";
 import {ApiErrorMessagePipe} from "../../../app/storybook/pipes/api-error-message.pipe";
 import {ApiErrorMessageService} from "../../../app/storybook/pipes/api-error-message.service";
 import LoginFormComponent from "./login-form.component";
 import {Spinner1Component} from "../../spinners/spinner1/spinner1.component";
+import {TranslatePipe} from "../../../app/storybook/pipes/translate/translate.pipe";
+
+//import {TRANSLATION_PROVIDERS, TRANSLATIONS} from "../../../app/storybook/pipes/translate/translations";
+import {TranslateService} from "src/app/storybook/pipes/translate/translate.service";
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
@@ -20,12 +24,14 @@ export default {
   component: LoginFormComponent,
   decorators: [
     moduleMetadata({
-      declarations: [ CardComponent, StoryInputComponent, ButtonContinueComponent,
-        Spinner1Component, PassStrengthComponent, ApiErrorMessagePipe],
-      imports: [CommonModule, FormsModule, ReactiveFormsModule ],
+      declarations: [ CardComponent, StoryInputComponent, ButtonContinueComponent, TranslateService,
+        Spinner1Component, PassStrengthComponent, ApiErrorMessagePipe, TranslatePipe],
+      imports: [CommonModule, FormsModule, ReactiveFormsModule, ],
     }),
     componentWrapperDecorator(story => `<div style="margin: 3em">${story}</div>`),
+
   ],
+  //.add('Testform', () => ({template: '<mods-undo-form></mods-undo-form>'})),
 } as Meta;
 
 

@@ -13,6 +13,7 @@ import {TokenStorageService} from "src/app/_services/token-storage.service";
 import {UserService} from "src/app/_services/user.service";
 import {Prop} from "../board-admin2/board-admin2.component";
 import {toArray} from "rxjs/operators";
+import {TranslateService} from "../../../storybook/pipes/translate/translate.service";
 
 
 
@@ -52,7 +53,7 @@ export default class MyAccountForm2Component implements OnInit {
   myAccountForm: FormGroup;
   isSaveDetailSuccess = false;
   isSaveDetailFailed = false;
-  isLoading = false;
+  isLoading = true;
   saveDetailErrorMessage: any;
   empList: Array<String> = [];
   apiResponse = { message: '', error: false };
@@ -81,7 +82,8 @@ export default class MyAccountForm2Component implements OnInit {
               private tokenStorageService: TokenStorageService,
               private renderer: Renderer2,
               public dialogRef: MatDialogRef<MyAccountFormComponent>,
-              @Inject(MAT_DIALOG_DATA) public data: MyAccountData) {
+              @Inject(MAT_DIALOG_DATA) public data: MyAccountData,
+              public _translate: TranslateService) {
     this.myAccountForm = new FormGroup({
       username: new FormControl(''),
       phone: new FormControl('', PasswordValidators.patternValidator(new RegExp("(?=.*[0-9 ]{8})"), {requiresPhoneChars: true})),
@@ -91,6 +93,7 @@ export default class MyAccountForm2Component implements OnInit {
   }
 
   ngOnInit(): void {
+    this.isLoading = false;
     this.getAccountDetails();
   }
 

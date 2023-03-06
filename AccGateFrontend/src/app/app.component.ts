@@ -5,6 +5,7 @@ import { EventBusService } from './_shared/event-bus.service';
 import {Router} from "@angular/router";
 import {workingModeConfiguration} from "./app.config";
 import { UserService } from 'src/app/_services/user.service';
+import {TranslateService} from "./storybook/pipes/translate/translate.service";
 
 @Component({
   selector: 'app-root',
@@ -21,11 +22,13 @@ export class AppComponent {
   title?: 'accGate';
 
   constructor(private tokenStorageService: TokenStorageService,
+              private _translate: TranslateService,
               private eventBusService: EventBusService,
               private userService: UserService,
               private router: Router) { }
 
   ngOnInit(): void {
+
     this.isLoggedIn = !!this.tokenStorageService.getToken();
 
     if (this.isLoggedIn) {
@@ -72,4 +75,11 @@ export class AppComponent {
       err => { console.log("Can't detect 2SV operation mode:  "+ err.error); }
     );
   }
+
+  selectedLanguage:string="eng";
+  changeLanguage(newLang: string){
+    console.log("lang set to"+newLang);
+    this._translate.use(newLang);
+  }
+
 }

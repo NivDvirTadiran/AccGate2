@@ -16,6 +16,8 @@ import {CodeInputComponent} from "../../inputs/code-input/code-input.component";
 import {DigitcodeInputComponent} from "../../inputs/digitcode-input/digitcode-input.component";
 import {ButtonSuccessfullyComponent} from "../../buttons/button-successfully/button-successfully.component";
 import {ButtonExComponent} from "../../buttons/button-ex/button-ex.component";
+import {TranslatePipe} from "../../../app/storybook/pipes/translate/translate.pipe";
+import {TranslateService} from "../../../app/storybook/pipes/translate/translate.service";
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
@@ -23,8 +25,9 @@ export default {
   component: ForgotPassFormComponent,
   decorators: [
     moduleMetadata({
-      declarations: [ CardComponent, StoryInputComponent, ButtonContinueComponent, CodeInputComponent, DigitcodeInputComponent,
-        PassStrengthComponent, ApiErrorMessagePipe, ButtonSuccessfullyComponent, ButtonExComponent ],
+      declarations: [ CardComponent, StoryInputComponent, ButtonContinueComponent, CodeInputComponent,
+        DigitcodeInputComponent, TranslatePipe, TranslateService, PassStrengthComponent,
+        ApiErrorMessagePipe, ButtonSuccessfullyComponent, ButtonExComponent ],
       imports: [CommonModule, FormsModule, ReactiveFormsModule ],
     }),
     componentWrapperDecorator(story => `<div style="margin: 3em">${story}</div>`),

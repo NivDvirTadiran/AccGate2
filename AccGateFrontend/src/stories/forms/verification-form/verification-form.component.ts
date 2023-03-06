@@ -3,6 +3,7 @@ import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/fo
 import { StoryInput } from "src/stories/inputs/input/story-input.model";
 import { AuthService } from 'src/app/_services/auth.service';
 import {CodeInputComponent} from "../../inputs/code-input/code-input.component";
+import {TranslateService} from "../../../app/storybook/pipes/translate/translate.service";
 
 
 
@@ -20,6 +21,8 @@ export default class VerificationFormComponent implements OnInit {
   param = {language: 'login-main'};
 
   @Input() status?: any;
+
+  @Input() _translate?: TranslateService;
 
   @Input() isLoading: boolean = false;
 

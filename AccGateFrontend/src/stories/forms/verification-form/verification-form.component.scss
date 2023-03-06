@@ -128,12 +128,15 @@ storybook-button-successfully {
 }
 
 .second-header-text {
+  position: relative;
   /* D UnderLine Regular */
   font-family: "Noto Sans", ui-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 17px;
   line-height: 31px;
+  top: 5px;
+
   /* identical to box height, or 183% */
 
   display: flex;

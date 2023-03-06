@@ -9,8 +9,8 @@ import {BubbleAvatarComponent} from "./bubble-avatar.component";
 
 
 export default {
-  title: 'Design System/Atoms/Directives/PopoverAvatarDirective',
-  component: PopoverDirective, // (2) don't forget it
+  title: 'Design System/Atoms/Directives/BubbleAvatarDirective',
+  component: BubbleAvatarComponent, // (2) don't forget it
   decorators: [
     moduleMetadata({
       declarations: [ PopoverDirective, ActionAvatarComponent, BubbleAvatarComponent],
@@ -20,6 +20,8 @@ export default {
   ],
 } as Meta;
 
+
+
 const mPopover: PopoverOptions = {
   content: ActionAvatarComponent
 };
@@ -28,9 +30,9 @@ const Template: Story<PopoverDirective> = (args) => ({
   props: args,
   moduleMetadata: { // (3) don't forget it
     declarations: [PopoverDirective, ActionAvatarComponent, BubbleAvatarComponent],
-    imports: [CommonModule]
+    imports: [CommonModule, FormsModule, ReactiveFormsModule]
   },
-  template: `<button [twPopover] = "mPopover" > PopoverDirective Example </button>`
+  template: `<button [twPopover] = "mPopover" > BubbleAvatarDirective Example </button>`
 });
 
 export const Default = Template.bind({});

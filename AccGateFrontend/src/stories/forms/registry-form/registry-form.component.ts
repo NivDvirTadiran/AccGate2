@@ -13,7 +13,7 @@ import {
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { StoryInput } from "src/stories/inputs/input/story-input.model";
 import { AuthService } from 'src/app/_services/auth.service';
-import {ApiErrorMessageService} from "../../../app/storybook/pipes/api-error-message.service";
+import {TranslateService} from "../../../app/storybook/pipes/translate/translate.service";
 //import {BehaviorSubject} from "rxjs";
 //import {AccountInputComponent} from "../inputs/input/story-input.component";
 
@@ -68,7 +68,10 @@ export default class RegistryFormComponent implements OnInit, AfterViewChecked, 
 
   param = {language: 'login-main'};
 
-  constructor(private renderer: Renderer2) {
+
+  constructor(private renderer: Renderer2,
+              public _translate: TranslateService) {
+
   }
 
   /**
@@ -78,10 +81,7 @@ export default class RegistryFormComponent implements OnInit, AfterViewChecked, 
   storyInputsInOrder: StoryInput[] = [];
 
   @Input() mForm: FormGroup  = new FormGroup({});
-  /*username: new FormControl('', Validators.minLength(2)),
-  password: new FormControl('T@diran2022', Validators.minLength(2)),
-  email: new FormControl('', Validators.email),
-  phone: new FormControl(null, Validators.pattern(new RegExp("[0-9 ]{12}")))*/
+
 
   changeLog: string[] = [];
 
@@ -97,7 +97,7 @@ export default class RegistryFormComponent implements OnInit, AfterViewChecked, 
     }*/
   }
 
-
+  @Input() direction: 'rtl' | 'ltr' = 'ltr';
 
   @Input() isRegSuccess = false;
 
@@ -128,13 +128,6 @@ export default class RegistryFormComponent implements OnInit, AfterViewChecked, 
 
   onSubmit(): void {
     console.warn('Registry Request Sent!');
-
-    //this.renderer.setAttribute(this.storybookInput?.nativeElement ,'hidden', 'true');
-    //this.renderer.setAttribute(this.mainHeader?.nativeElement ,'hidden', 'true');
-    //this.renderer.setProperty(this.mainHeader?.nativeElement ,'innerHTML','You have successfully complete your registeration!');
-
-
-    //this.renderer.setAttribute(this.storybookInput?.nativeElement ,'innerHTML','true');
     this.sendRegReq.emit();
   }
 
@@ -164,9 +157,11 @@ export default class RegistryFormComponent implements OnInit, AfterViewChecked, 
   }
 
   loadSuccessfullyLoggedIn(){
-    this.renderer.setProperty(this.mainHeader?.nativeElement ,'innerHTML','You have successfully complete your registeration!');
+    this.renderer.setProperty(this.mainHeader?.nativeElement ,'innerHTML',this._translate.translate('You have successfully completed your registration!') );
+  }
 
-
+  public get classes(): string[] {
+    return ['storybook-input-strength', `storybook-input--${this.direction}`];
   }
 
 }

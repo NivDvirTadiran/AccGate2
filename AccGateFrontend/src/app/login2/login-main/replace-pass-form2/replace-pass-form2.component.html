@@ -4,6 +4,7 @@
                          [storyInputs]="storyInputsInOrder"
                          [mForm]="replacePassForm"
                          [isRepSuccess]="status.isRepSuccess"
+                         [_translate]="_translate"
                          (sendRegReq)="onSubmit()"
                          (clickXButton)="this.dialogRef.close({message: 'xbutton'})"
 ></storybook-replace-pass-form>

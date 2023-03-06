@@ -1,7 +1,10 @@
 
 
 
+$direction-start: left !default;
 $tottal-height: 160px !default;
+
+
 
 .main {
   position: absolute;
@@ -61,12 +64,33 @@ span.absolute {
 */
 
 
-.user-name {
+.user-name:dir(ltr) {
+
   position: absolute;
   width: 300px;
   height: 35px;
-  left: 0%;
-  right: 82.7%;
+  left: 0;
+
+ /* right: 82.7%;*/
+  top: 10%;
+  bottom: 68.37%;
+  /* identical to box height, or 223% */
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.011em;
+  text-transform: uppercase;
+
+  color: #000000;
+}
+
+
+.user-name:dir(rtl) {
+
+  position: absolute;
+  width: 300px;
+  height: 35px;
+  right: 0;
+  /*right: 82.7%;*/
   top: 10%;
   bottom: 68.37%;
   /* identical to box height, or 223% */
@@ -89,11 +113,11 @@ span.absolute {
 }
 
 
+
 img.icon-input {
   position: absolute;
   width: 22.72px;
   height: 26.74px;
-  left: 17px;
   bottom: 7px;
 
   transform: rotate(0deg);
@@ -101,13 +125,14 @@ img.icon-input {
 }
 
 
+
 .DanK203 {
   position: relative;
   height: 25px;
-  width: 228px;
-  left: 35px;
+  width: 345px;
+  left: 45px;
   bottom: -5px;
-  margin: 4.2px 1px 2.8px 20.3px;
+  margin: 4.2px 1px 2.8px 0.3px;
 
   /* D Example Italic */
   object-fit: contain;
@@ -119,7 +144,7 @@ img.icon-input {
   /* or 65% */
 
   box-shadow: none;
-  display: flex;
+  display: unset;
   align-items: center;
   letter-spacing: -0.19px;
 
@@ -204,6 +229,7 @@ input[type=tel]:focus {
   /* Blue */
   border: 2px solid #3D8ECF;
   border-radius: 10px;
+  text-align: left;
 }
 
 label {
@@ -221,15 +247,41 @@ label {
 
 .storybook-input--addStrength {
     height: 160px;
-
-
-
 }
 
 .storybook-input--clearStrength {
-
-
     height: 110px;
+}
 
 
+.storybook-input--rtl {
+  img.icon-input {
+    left: unset;
+    right: 17px;
+  }
+
+  .icon-input-showpass {
+    right: unset;
+    left: 10px;
+  }
+  img.icon-input-showpass {
+    right: unset;
+    left: 1px;
+  }
+}
+
+.storybook-input--ltr {
+  img.icon-input {
+    right: unset;
+    left: 17px;
+  }
+
+  .icon-input-showpass {
+    left: unset;
+    right: 10px;
+  }
+  img.icon-input-showpass {
+    left: unset;
+    right: 1px;
+  }
 }

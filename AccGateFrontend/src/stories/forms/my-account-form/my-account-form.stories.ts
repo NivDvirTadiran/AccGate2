@@ -14,6 +14,8 @@ import {ButtonSuccessfullyComponent} from "../../buttons/button-successfully/but
 import {AccountInputComponent} from "../../inputs/account-input/account-input.component";
 import {ButtonConfigurationComponent} from "../../buttons/button-configuration/button-configuration.component";
 import {ButtonEditSaveComponent} from "../../buttons/button-edit-save/button-edit-save.component";
+import {TranslatePipe} from "../../../app/storybook/pipes/translate/translate.pipe";
+import {TranslateService} from "../../../app/storybook/pipes/translate/translate.service";
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
@@ -21,8 +23,9 @@ export default {
   component: MyAccountFormComponent,
   decorators: [
     moduleMetadata({
-      declarations: [ MyAccountFormComponent, CardComponent, AccountInputComponent, ButtonContinueComponent, ButtonEditSaveComponent,
-                      ButtonExComponent, ButtonSuccessfullyComponent, ButtonConfigurationComponent],
+      declarations: [ MyAccountFormComponent, CardComponent, AccountInputComponent, ButtonContinueComponent,
+                      ButtonEditSaveComponent, ButtonExComponent, ButtonSuccessfullyComponent,
+                      ButtonConfigurationComponent, TranslatePipe, TranslateService],
       imports: [CommonModule, FormsModule, ReactiveFormsModule],
     }),
     componentWrapperDecorator(story => `<div style="margin: 3em">${story}</div>`),

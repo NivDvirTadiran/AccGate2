@@ -3,6 +3,7 @@ import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/fo
 import { StoryInput } from "../inputs/input/story-input.model";
 import { AuthService } from '../../app/_services/auth.service';
 import {MdbModalRef} from "mdb-angular-ui-kit/modal";
+import {TranslateService} from "../../app/storybook/pipes/translate/translate.service";
 //import {Profile2Expose} from "src/app/profile2/profile2.interface";
 
 export interface Profile2Expose {
@@ -47,7 +48,7 @@ export class AppMenuComponent implements OnInit {
     //this.replacePassFormService.open(ReplacePassForm2Component);
   }
 
-  constructor() {
+  constructor(private _translate: TranslateService) {
     this.validationForm = new FormGroup({
       username: new FormControl('Telecom2', Validators.minLength(2)),
       //email: new FormControl(null, Validators.email),

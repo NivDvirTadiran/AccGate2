@@ -1,8 +1,8 @@
-<div class="Vector">
-<img (click)="onClick.emit($event)" [ngClass]="classes" [ngStyle]="{ 'background-color': backgroundColor }"
+<div [languagePopover] = "this.popover" header="'this.header'" [bubbleOn]="this.isNotify" class="Vector">
+  <button  (click)="this.onClick.emit($event);">
+<img [ngClass]="classes" [ngStyle]="{ 'background-color': backgroundColor }"
    src="./assets/images/language-desktop-icon.png"
        srcset="./assets/images/language-desktop-icon@2x.png 2x,
              /assets/images/language-desktop-icon@3x.png 3x"
-       class="Language-Desktop-Icon"  alt="form-desktop-icon"/>
-
+       class="Language-Desktop-Icon"  alt="form-desktop-icon"/></button>
 </div>

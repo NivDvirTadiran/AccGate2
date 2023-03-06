@@ -1,20 +1,21 @@
 <div id="parent3"  [hidden]="storyInput?.hide" [ngClass]="classes"  >
-<div id="parent1" >
+<div  id="parent1" >
   <div class="main"  [formGroup]="this.currentForm">
-  <div>
-  <p class="user-name D-Caps-Regular">{{storyInput?.state}}</p>
+  <div >
+  <p [dir]="this.direction" class="user-name D-Caps-Regular">{{storyInput.state  | translate}} </p>
 
   <br>
-  <label [attr.aria-label]="storyInput?.id + ''" for="{{ storyInput?.title }}" class="Vector2 ">
-    <img src="{{ storyInput?.icon }}" class="icon-input" alt="icon input userName"  name="{{ storyInput?.title }}" />
+  <label  [attr.aria-label]="storyInput?.id + ''" for="{{ storyInput?.title }}" class="Vector2 ">
+    <img  src="{{ storyInput?.icon }}" class="icon-input" alt="icon input userName"  name="{{ storyInput?.title }}" />
     <div [inputPopover] = "this.popover" [data]="this.getErrorList(this.conditionList)" [header]="this.getErrorHeader(this.storyInput.title)">
     <input
+      [dir]="direction"
       type="{{storyInput?.type}}"
       id="{{ storyInput?.id }}"
       class="DanK203"
       name="{{storyInput?.title}}"
       formControlName="{{storyInput?.title}}"
-      placeholder="{{storyInput?.placeholder}}"
+      placeholder="{{storyInput.placeholder | translate }}"
       required />
     </div>
 

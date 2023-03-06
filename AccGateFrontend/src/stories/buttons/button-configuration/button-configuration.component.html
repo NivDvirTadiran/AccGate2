@@ -1,9 +1,11 @@
-<button class="Vector" (click)="onClick.emit($event)" >
-  <label class="EnableProfilePicture">Tools</label>
+<button class="Vector" (click)="onClick.emit($event)"
+        style="{{_translate?.currentDir == 'rtl' ? 'width: 72px;' : 'width: 97px;'}}" >
+  <label class="EnableProfilePicture">{{'Settings' | translate}}</label>
 <img (click)="onClick.emit($event)" [ngClass]="classes" [ngStyle]="{ 'background-color': backgroundColor }"
-   src="./assets/images/AacConfiguration.png"
-       srcset="./assets/images/language-desktop-icon@2x.png 2x,
+
+     src="./assets/images/AacConfiguration.png"
+       srcset="./assets/images/AacConfiguration.png,
              /assets/images/language-desktop-icon@3x.png 3x"
-       class="Language-Desktop-Icon"  alt="form-desktop-icon"/>
+       class="Settings-Icon"  alt="form-desktop-icon"/>
 
 </button>

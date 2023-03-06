@@ -5,7 +5,7 @@
   <storybook-card class="card-container"></storybook-card>
   <div  class="h-100 d-flex align-items-center justify-content-center">
     <div class="form-header">
-      <a>Aeonix App Center</a>
+      <a >{{'Aeonix App Center' | translate}}</a>
     </div>
     <div><storybook-spinner1  *ngIf="isLoading"></storybook-spinner1></div>
 
@@ -20,6 +20,7 @@
             <div *ngIf="!isLoggedIn && storyInputsInOrder.length === 0">empty</div>
             <storybook-input
               [storyInput]="storyInputsInOrder[0]"
+              [direction]="this._translate.currentDir"
               (onArchiveInput)="onArchiveInput.emit($event)"
               (onPinInput)="onPinInput.emit($event)"
               [currentForm]="mForm">
@@ -27,6 +28,7 @@
 
             <storybook-input
               [storyInput]="storyInputsInOrder[1]"
+              [direction]="this._translate.currentDir"
               (onArchiveInput)="onArchiveInput.emit($event)"
               (onPinInput)="onPinInput.emit($event)"
               [currentForm]="mForm">
@@ -36,15 +38,15 @@
             <br>
             <div class="thematic-break"></div>
             <div class="login-failed-message" role="alert" >
-              <p *ngIf="isLoginFailed">*  {{ loginErrorMessage | apiErrorMessage: param }}</p>
+              <p *ngIf="isLoginFailed">*  {{ loginErrorMessage.toString() | translate  }}</p>
             </div>
 
 
-            <a (click)="this.openForgetPassForm.emit();" class="forgot-password"  >
-              {{ 'Forgot password?'  }}
+            <a (click)="this.openForgetPassForm.emit();" class="forgot-password" [dir]="this._translate.currentDir" >
+              {{ 'Forgot Password?' | translate}}
             </a>
 
-            <storybook-button-continue size="medium" label="Continue " type="button" (click)="onSubmit()" ></storybook-button-continue>
+            <storybook-button-continue size="medium" label="{{'Continue' | translate}}" type="button" (click)="onSubmit()" ></storybook-button-continue>
 
         </div>
 

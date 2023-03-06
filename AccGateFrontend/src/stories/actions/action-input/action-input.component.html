@@ -1,18 +1,18 @@
-<div class="password-alert-text" Style="text-indent: 27px; padding-bottom: 15px">
-<tr><strong>{{this.actionHeader}}</strong></tr>
+<div  [dir]="this.direction" class="password-alert-text" Style="text-indent: 27px; padding-bottom: 15px">
+<tr><strong>{{this.actionHeader  |translate }}</strong></tr>
 </div>
-<div >
+<div [dir]="this.direction" >
 
-  <table >
+  <table>
 
     <!--thead>
 
     </thead-->
     <tbody>
-      <tr *ngFor="let actionInput of actionInputs">
+      <tr  *ngFor="let actionInput of actionInputs">
         <td  *ngIf="actionInput.isFulfilled" Style="color: green">✔</td>
         <td  *ngIf="!actionInput.isFulfilled" Style="color: red">X</td>
-        <td Style="text-indent: 7px">{{ actionInput.presentingMessage }}</td>
+        <td Style="text-indent: 7px">{{ actionInput.presentingMessage |translate  }}</td>
       </tr>
     </tbody>
   </table>

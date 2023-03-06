@@ -12,6 +12,8 @@ import {
 import {PopoverOptions} from "src/stories/directive/popover.interface";
 import {ActionInputComponent} from "src/stories/actions/action-input/action-input.component";
 import {ActionInput} from "src/stories/actions/action-input/action-input.interface";
+import {AppConfig} from "../../../app/app.config";
+import {TranslateService} from "../../../app/storybook/pipes/translate/translate.service";
 
 
 export interface GroupForm {
@@ -50,6 +52,11 @@ export class StoryInputComponent implements OnInit{
 
   @Input()
   hideInput = false;
+
+
+  @Input() direction: 'rtl' | 'ltr' = 'ltr';
+
+  constructor(public _translate: TranslateService) {}
 
   showPassChange(): void {
     this.storyInput.type = (this.storyInput?.type == 'password' ? 'text' : 'password')
@@ -236,7 +243,7 @@ export class StoryInputComponent implements OnInit{
   public get classes(): string[] {
     this.isStrength = (this.storyInput?.state === 'NEW PASSWORD') ? 'storybook-input--addStrength' : 'storybook-input--clearStrength';
 
-    return ['storybook-input-strength',  this.isStrength];
+    return ['storybook-input-strength', `storybook-input--${this.direction}`, this.isStrength];
   }
 
 

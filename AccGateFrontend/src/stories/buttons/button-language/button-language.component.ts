@@ -1,4 +1,8 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import {PopoverOptions} from "../../directive/popover.interface";
+import {ActionLanguageComponent} from "../../actions/action-language/action-language.component";
+import {AppConfig} from "../../../app/app.config";
+
 
 @Component({
   selector: 'storybook-button-language',
@@ -44,10 +48,18 @@ export class ButtonLanguageComponent {
     return ['storybook-button-form', `storybook-language-icon--${this.size}`, mode];
   }
 
+  popover: PopoverOptions = {
+    content: ActionLanguageComponent
+  };
+
+  @Input()
+  isNotify: boolean = true;
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
+
 
 }

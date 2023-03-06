@@ -18,6 +18,11 @@ export const AppConfig = {
     TOKEN_KEY: 'token',
     REFRESHTOKEN_KEY: 'auth-refreshtoken',
     USER_KEY: 'user'
+  },
+  translateLanguage: {
+    lang: 'eng',
+    dir: "ltr"
+
   }
 };
 export let workingModeConfiguration = {

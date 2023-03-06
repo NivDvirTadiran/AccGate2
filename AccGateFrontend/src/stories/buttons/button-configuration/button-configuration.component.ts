@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import {TranslateService} from "../../../app/storybook/pipes/translate/translate.service";
 
 @Component({
   selector: 'storybook-button-configuration',
@@ -32,6 +33,7 @@ export class ButtonConfigurationComponent {
   @Input()
   label = 'accGateButton2';
 
+  @Input() _translate?: TranslateService;
   /**
    * Optional click handler
    */

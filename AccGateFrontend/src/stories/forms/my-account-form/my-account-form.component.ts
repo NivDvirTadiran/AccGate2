@@ -1,10 +1,10 @@
 import {
-  AfterViewChecked,
+  AfterViewChecked, AfterViewInit, OnInit,
   Component, Directive,
   ElementRef,
   EventEmitter,
   Input, OnChanges,
-  OnInit,
+
   Output,
   QueryList,
   Renderer2, SimpleChanges, ViewChild,
@@ -14,8 +14,12 @@ import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/fo
 import { AuthService } from 'src/app/_services/auth.service';
 import {ApiErrorMessageService} from "../../../app/storybook/pipes/api-error-message.service";
 import {AccountInput} from "../../inputs/account-input/account-input.model";
+import {TranslateService} from "../../../app/storybook/pipes/translate/translate.service";
 //import {BehaviorSubject} from "rxjs";
 //import {AccountInputComponent} from "../inputs/input/story-input.component";
+
+interface ngAfterViewInit {
+}
 
 /*
 @Directive({selector: 'storybook-input'})
@@ -28,7 +32,7 @@ export class AccountInput {
   templateUrl: './my-account-form.component.html',
   styleUrls: ['./my-account-form.css'],
 })
-export default class MyAccountFormComponent implements OnInit, AfterViewChecked, OnChanges {
+export default class MyAccountFormComponent implements OnInit, AfterViewInit, OnChanges {
 
   @Output() onLogout = new EventEmitter<Event>();
 
@@ -73,9 +77,11 @@ export default class MyAccountFormComponent implements OnInit, AfterViewChecked,
     }
   }
 
-  @Input() isLoading: boolean = false;
+  @Input() isLoading?: boolean;
 
   @Input() isRegSuccess = false;
+
+  @Input() _translate?: TranslateService;
 
   // tslint:disable-next-line: no-output-on-prefix
   @Output() onPinInput: EventEmitter<any> = new EventEmitter();
@@ -112,7 +118,7 @@ export default class MyAccountFormComponent implements OnInit, AfterViewChecked,
   }
 
   ngOnInit(): void {
-
+    //this.isLoading = false;
   }
 
 
@@ -132,7 +138,8 @@ export default class MyAccountFormComponent implements OnInit, AfterViewChecked,
     return this.mForm?.get('phone')!;
   }
 
-  ngAfterViewChecked(): void {
+  ngAfterViewInit(): void {
+
     //console.log(this.childComp?.length)
   }
 

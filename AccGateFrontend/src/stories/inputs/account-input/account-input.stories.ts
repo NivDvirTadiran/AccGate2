@@ -7,6 +7,8 @@ import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} fr
 import PassStrengthComponent from "src/stories/pass-strength/pass-strength.component";
 import {ButtonEditSaveComponent} from "../../buttons/button-edit-save/button-edit-save.component";
 import * as EditSaveButton from "src/stories/buttons/button-edit-save/button-edit-save.stories";
+import {TranslatePipe} from "../../../app/storybook/pipes/translate/translate.pipe";
+import {TranslateService} from "../../../app/storybook/pipes/translate/translate.service";
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
@@ -14,7 +16,7 @@ export default {
   component: AccountInputComponent,
   decorators: [
     moduleMetadata({
-      declarations: [ AccountInputComponent, PassStrengthComponent, ButtonEditSaveComponent  ],
+      declarations: [ AccountInputComponent, PassStrengthComponent, ButtonEditSaveComponent, TranslatePipe, TranslateService  ],
       imports: [CommonModule, FormsModule, ReactiveFormsModule ],
     }),
     componentWrapperDecorator(story => `<div style="margin: 0 1em 1em 1em/*; width: 445px*/;">${story}</div>`),

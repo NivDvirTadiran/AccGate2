@@ -5,10 +5,10 @@
   <storybook-card class="card-container"></storybook-card>
   <div  class="h-100 d-flex align-items-center justify-content-center">
     <storybook-button-ex id="button-ex" (click)="this.clickXButton.emit()" ></storybook-button-ex>
-    <div class="form-header">
-      <a class="main-form-header" #formHeader>Complete Registration</a>
+    <div class="form-header" style="{{this.direction == 'rtl' ? 'text-align: right;' : 'text-align: left;'}}">
+      <a class="main-form-header" #formHeader>{{ 'Complete Registration' | translate }}</a>
       <br>
-      <a *ngIf="!isRegSuccess" class="sub-form-header">complete the registration by filling the missing info:</a>
+      <a *ngIf="!isRegSuccess" class="sub-form-header">{{'Complete the registration by filling the missing info:'  | translate }}</a>
 
     <br>
     <!--form name="form"  (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate --> <!-- *ngIf="!isConfigSuccess"-->
@@ -25,18 +25,21 @@
             <div *ngIf="!isRegSuccess">
               <storybook-input
                 [storyInput]="storyInputsInOrder[0]"
+                [direction]="this.direction"
                 (onArchiveInput)="onArchiveInput.emit($event)"
                 (onPinInput)="onPinInput.emit($event)"
                 [currentForm]="mForm">
               </storybook-input>
               <storybook-input
                 [storyInput]="storyInputsInOrder[1]"
+                [direction]="this.direction"
                 (onArchiveInput)="onArchiveInput.emit($event)"
                 (onPinInput)="onPinInput.emit($event)"
                 [currentForm]="mForm">
               </storybook-input>
               <storybook-input
                 [storyInput]="storyInputsInOrder[2]"
+                [direction]="'ltr'"
                 (onArchiveInput)="onArchiveInput.emit($event)"
                 (onPinInput)="onPinInput.emit($event)"
                 [currentForm]="mForm"
@@ -44,6 +47,7 @@
               </storybook-input>
               <storybook-input
                 [storyInput]="storyInputsInOrder[3]"
+                [direction]="'ltr'"
                 (onArchiveInput)="onArchiveInput.emit($event)"
                 (onPinInput)="onPinInput.emit($event)"
                 [currentForm]="mForm"
@@ -60,11 +64,11 @@
 
             <div *ngIf="!isRegSuccess" class="thematic-break"></div>
             <div class="login-failed-message" role="alert" >
-              <p *ngIf="isRegFailed">*  {{ this.regErrorMessage['message'] | apiErrorMessage: param }}</p>
+              <p *ngIf="isRegFailed">*  {{ this.regErrorMessage['message'] | translate }}</p>
             </div>
 
-            <storybook-button-continue [label]="isRegSuccess ? 'Continue' :'Complete Rgistration'"  size="small"
-                                       label="Continue" type="button" (click)="onSubmit()" >
+            <storybook-button-continue [label]="isRegSuccess ? 'Continue' :'Complete Registration' | translate "  size="small"
+                                       label="'Continue' " type="button" (click)="onSubmit()" >
             </storybook-button-continue>
         </div>
         </div>

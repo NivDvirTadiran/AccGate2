@@ -11,6 +11,8 @@ import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} fr
 import {ButtonContinueComponent} from "../../buttons/button-continue/button-continue.component";
 import {ButtonExComponent} from "../../buttons/button-ex/button-ex.component";
 import {ButtonSuccessfullyComponent} from "../../buttons/button-successfully/button-successfully.component";
+import {TranslatePipe} from "../../../app/storybook/pipes/translate/translate.pipe";
+import {TranslateService} from "../../../app/storybook/pipes/translate/translate.service";
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
@@ -19,7 +21,7 @@ export default {
   decorators: [
     moduleMetadata({
       declarations: [ RegistryFormComponent, CardComponent, StoryInputComponent, ButtonContinueComponent,
-                      ButtonExComponent, ButtonSuccessfullyComponent],
+                      TranslatePipe, TranslateService, ButtonExComponent, ButtonSuccessfullyComponent],
       imports: [CommonModule, FormsModule, ReactiveFormsModule],
     }),
     componentWrapperDecorator(story => `<div style="margin: 3em">${story}</div>`),

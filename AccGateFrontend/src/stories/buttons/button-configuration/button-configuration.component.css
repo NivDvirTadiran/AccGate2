@@ -2,7 +2,6 @@
   position: absolute;
   top: 28px;
   right: 38px;
-  width: 72px;
   height: 27px;
   padding: 0;
   margin: 0;
@@ -11,7 +10,7 @@
   object-fit: contain;
 }
 
-img.Language-Desktop-Icon {
+img.Settings-Icon {
   position: absolute;
   display: inline;
   top: 1px;

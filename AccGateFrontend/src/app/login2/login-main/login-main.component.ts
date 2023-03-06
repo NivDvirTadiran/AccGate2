@@ -10,11 +10,13 @@ import RegisterForm2Component from "./register-form2/register-form2.component";
 import {ReplacePassForm2Component} from "./replace-pass-form2/replace-pass-form2.component";
 import VerificationForm2Component from "./verification-form2/verification-form2.component";
 import {UserService} from "../../_services/user.service";
-import { workingModeConfiguration } from "src/app/app.config"
 import {EventData} from "../../_shared/event.class";
 import { EventBusService } from 'src/app/_shared/event-bus.service';
 import {Subscription} from "rxjs";
 import ForgotPassForm2Component from "./forgot-pass-form2/forgot-pass-form2.component";
+import {TranslateService} from "../../storybook/pipes/translate/translate.service";
+
+
 
 
 export interface DialogData {
@@ -27,7 +29,7 @@ export interface DialogData {
 @Component({
   selector: 'login-main',
   templateUrl: './login-main.component.html',
-  styleUrls: ['./login-main.component.scss']
+  styleUrls: ['./login-main.component.scss'],
 })
 export class LoginMainComponent implements OnInit {
 
@@ -37,6 +39,7 @@ export class LoginMainComponent implements OnInit {
   roles: string[] = [];
   public isLoading = false;
   eventBusSub?: Subscription;
+
 
 
 
@@ -86,6 +89,7 @@ export class LoginMainComponent implements OnInit {
   }
 
   @ViewChild('formHeader', { static: false }) mainHeader?: ElementRef;
+  lang =  {language: 'eng'};
 
 
   constructor(private renderer: Renderer2,
@@ -93,6 +97,7 @@ export class LoginMainComponent implements OnInit {
               public registerFormDialog: MatDialog,
               public replacePassFormDialog: MatDialog,
               public verificationFormDialog: MatDialog,
+              public _translate: TranslateService,
               private eventBusService: EventBusService,
               public authService: AuthService,
               public userService: UserService,
@@ -179,6 +184,8 @@ export class LoginMainComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this._translate.use('eng');
+
     this.eventBusService.emit(new EventData('is2SVRequired', null));
 
     this.eventBusSub = this.eventBusService.on('openVerification', () => {
@@ -290,7 +297,14 @@ export class LoginMainComponent implements OnInit {
   this.router.navigate(['/home']);
   }
 
-
+  changLanguage(event: Event) {
+    //console.log("change language3  " + AppConfig.translateLanguage.lang);
+    //AppConfig.translateLanguage.lang = 'eng';
+    this._translate.use('heb');
+    console.log("change language3  " + this._translate.currentLang);
+   // this.lang.lang = 'esp';
+    //let translationSet: TranslationSet = {'eng'};
+  }
 
 
 }

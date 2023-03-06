@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActionInput} from "./action-input.interface";
+import {TranslateService} from "../../../app/storybook/pipes/translate/translate.service";
 
 
 interface USERS {
@@ -16,9 +17,10 @@ interface USERS {
 export class ActionInputComponent implements OnInit {
 
   actionInputs?: ActionInput[];
-  actionHeader?: string = "The password must contain:";
+  actionHeader: string = "The password must contain:";
+  direction = this._translate.currentDir;
 
-  constructor() {
+  constructor(public _translate: TranslateService) {
 
   }
 

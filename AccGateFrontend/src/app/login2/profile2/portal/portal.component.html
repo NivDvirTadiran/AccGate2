@@ -19,7 +19,7 @@
   id="avatar"
   [label]="this.currentUser.username"
   [isNotify]="this.isNotify()"
-  header="{{'Your password will expire in ' + this.passExp +' Days.'}}"
+  header="{{'Your password will expire in '| translate}}{{this.passExp}}{{' Days.' | translate}}"
   (actionButton)="openReplacePassForm()"
   (click)="this.openMyAccountForm()">
 </storybook-avatar>

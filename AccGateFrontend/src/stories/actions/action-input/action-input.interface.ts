@@ -1,5 +1,5 @@
 export interface ActionInput {
-  conditionName: String;
-  presentingMessage: String;
+  conditionName: string;
+  presentingMessage: string;
   isFulfilled: boolean;
 }

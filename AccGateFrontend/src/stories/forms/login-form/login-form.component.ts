@@ -2,8 +2,9 @@ import {Component, ElementRef, EventEmitter, Input, OnInit, Output, Renderer2, V
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { StoryInput } from "../../inputs/input/story-input.model";
 import { AuthService } from '../../../app/_services/auth.service';
-//import {ApiErrorMessageService} from "../../../app/storybook/pipes/api-error-message.service";
-//import {ApiErrorMessageService} from "../../../app/storybook/pipes/api-error-message.service";
+import {AppConfig} from "src/app/app.config";
+import {TranslateService} from "../../../app/storybook/pipes/translate/translate.service";
+
 
 
 
@@ -15,8 +16,14 @@ import { AuthService } from '../../../app/_services/auth.service';
 })
 export default class LoginFormComponent implements OnInit {
 
+  constructor(public _translate: TranslateService) {
+  }
+
+
 
   param = {language: 'login-main'};
+  @Input() lang =  {language: 'eng'};
+
 
   @Input() formService!: AuthService;
 
@@ -31,9 +38,7 @@ export default class LoginFormComponent implements OnInit {
     //this.replacePassFormService.open(ReplacePassForm2Component);
   }
 
-  constructor(/*private apiErrorMessage: ApiErrorMessageService*/) {
 
-  }
 
 
 
@@ -97,6 +102,7 @@ export default class LoginFormComponent implements OnInit {
   get phone(): AbstractControl {
     return this.mForm?.get('phone')!;
   }
+
 
 
 }
